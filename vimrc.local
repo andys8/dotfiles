@@ -1,0 +1,64 @@
+" Theme
+colo gruvbox
+
+" Copy command
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
+
+" Date
+nnoremap <C-d> "=strftime("%Y-%m-%d")<CR>P"
+inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
+cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
+
+" Expand snippets
+let g:UltiSnipsExpandTrigger="<c-j>"
+
+" YouCompleteMe
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>y :YcmCompleter FixIt<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
+
+" Elm
+let g:polyglot_disabled = ['elm']
+let g:elm_detailed_complete = 1
+let g:elm_format_autosave = 1
+let g:elm_syntastic_show_warnings = 1
+let g:elm_make_show_warnings = 1
+
+" Haskell
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+" Ale: Linting
+nnoremap <silent> <leader>p :ALEFix<cr>
+nmap <silent> <leader>a <Plug>(ale_next_wrap)
+let g:ale_lint_delay = 500
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'typescript': ['prettier'],
+\   'json': ['prettier'],
+\   'markdown': ['prettier'],
+\   'elm': ['elm-format'],
+\   'haskell': ['hfmt'],
+\   'scala': ['scalafmt'],
+\}
+
+" Shell
+" set shell=/bin/bash
+
+" Prettier keymap
+" nnoremap <Leader>p <Plug>(PrettierAsync)
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.scss,*.css PrettierAsync
+
+" Tabs / spaces
+"set expandtab
+"set shiftwidth=2
+"set softtabstop=0
+

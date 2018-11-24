@@ -1,0 +1,36 @@
+" Easymotion with ,,w and ,,b and ,,e
+Plug 'easymotion/vim-easymotion'
+
+" Multi Cursor with CTRL+n and c(hange)
+Plug 'terryma/vim-multiple-cursors'
+
+" Surround word: Use eg. ysiw` and ds`
+Plug 'tpope/vim-surround'
+
+" Snippets for jest
+Plug 'joaohkfaria/vim-jest-snippets'
+
+" Auto completion
+Plug 'valloric/youcompleteme'
+
+" Linting for elm, formatting for many
+Plug 'w0rp/ale'
+
+" Colorschemes like cobalt2
+Plug 'flazz/vim-colorschemes'
+
+" Repeat surround commands
+Plug 'tpope/vim-repeat'
+
+" Start screen
+Plug 'mhinz/vim-startify'
+
+"" Haskell Bundle
+Plug 'eagletmt/neco-ghc'
+
+" Scala server
+" Plug 'ensime/ensime-vim'
+
+" Prettier ,p
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
