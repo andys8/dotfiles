@@ -28,6 +28,11 @@ endif
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
+" FIX: elm moved in position to fix <https://github.com/avelino/vim-bootstrap/issues/302>
+" elm
+"" Elm Bundle
+Plug 'elmcast/elm-vim'
+
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
@@ -80,11 +85,6 @@ Plug 'tomasr/molokai'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
-
-" elm
-"" Elm Bundle
-Plug 'elmcast/elm-vim'
-
 
 " html
 "" HTML Bundle
