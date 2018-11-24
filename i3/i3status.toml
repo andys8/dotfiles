@@ -1,0 +1,46 @@
+theme = "slick"
+icons = "awesome"
+
+# [[block]]
+# block = "net"
+# device = "wlp2s0"
+# ssid = true
+# ip = false
+# speed_up = false
+# speed_down = true
+# graph_up = false
+# interval = 10
+
+# [[block]]
+# block = "memory"
+# display_type = "memory"
+# format_mem = "{Mup}%"
+# format_swap = "{SUp}%"
+
+# [[block]]
+# block = "cpu"
+# interval = 5
+
+# [[block]]
+# block = "load"
+# interval = 5
+# format = "{1m}"
+
+# [[block]]
+# block = "sound"
+
+# [[block]]
+# block = "xrandr"
+# icons = true
+# resolution = true
+# interval = 5
+
+[[block]]
+block = "time"
+interval = 60
+format = "%d.%m. %R"
+
+[[block]]
+block = "battery"
+interval = 120
+
