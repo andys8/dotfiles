@@ -49,6 +49,10 @@ let g:ale_fixers = {
 \   'scala': ['scalafmt'],
 \}
 
+" List toggle
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>ö'
+
 " Shell
 " set shell=/bin/bash
 

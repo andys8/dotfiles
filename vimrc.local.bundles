@@ -28,6 +28,9 @@ Plug 'mhinz/vim-startify'
 "" Haskell Bundle
 Plug 'eagletmt/neco-ghc'
 
+" Toggle location list (errors)
+Plug 'valloric/listtoggle'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
