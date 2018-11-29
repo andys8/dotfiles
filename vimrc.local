@@ -38,7 +38,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " Ale: Linting
 nnoremap <silent> <leader>p :ALEFix<cr>
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
-let g:ale_lint_delay = 500
+let g:ale_lint_delay = 750
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
