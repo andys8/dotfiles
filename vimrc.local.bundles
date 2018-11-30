@@ -16,7 +16,7 @@ Plug 'valloric/youcompleteme'
 " Linting for elm, formatting for many
 Plug 'w0rp/ale'
 
-" Colorschemes like cobalt2
+" Colorscheme colection
 Plug 'flazz/vim-colorschemes'
 
 " Repeat surround commands
@@ -33,9 +33,6 @@ Plug 'valloric/listtoggle'
 
 " Rainbow brackets
 Plug 'luochen1990/rainbow'
-
-" Themes
-Plug 'connorholyday/vim-snazzy'
 
 " Ctags are created automatically
 Plug 'craigemery/vim-autotag'
