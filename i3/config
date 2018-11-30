@@ -204,7 +204,7 @@ exec ~/.screenlayout/startup-monitor.sh
 
 # Brightness
 bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0
-bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.5
+bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6
 
 # Screenshot
 bindsym --release Shift+Print exec gnome-screenshot -a
