@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 
-# Link
+# Vim
 ln -sf ~/dotfiles/vimrc                 ~/.vimrc
 ln -sf ~/dotfiles/vimrc.local           ~/.vimrc.local
 ln -sf ~/dotfiles/vimrc.local.bundles   ~/.vimrc.local.bundles
 
+# Ctags
+ln -sf ~/dotfiles/ctags                 ~/.ctags
+
+# i3
 rm -rf ~/.config/i3
 ln -sf ~/dotfiles/i3                    ~/.config
+
+# Git
+mkdir ~/.config/git
+ln -sf ~/dotfiles/git/ignore            ~/.config/git/ignore
 
 # Vim plugin installation
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall

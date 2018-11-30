@@ -23,7 +23,7 @@ nnoremap <leader>y :YcmCompleter FixIt<CR>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
@@ -62,6 +62,23 @@ let g:lt_quickfix_list_toggle_map = '<leader>ö'
 
 " Rainbow brackets
 let g:rainbow_active = 1
+
+" Ctags
+let g:tagbar_type_elm = {
+  \ 'kinds' : [
+      \ 'f:function:0:0',
+      \ 'm:modules:0:0',
+      \ 'i:imports:1:0',
+      \ 't:types:1:0',
+      \ 'a:type aliases:0:0',
+      \ 'c:type constructors:0:0',
+      \ 'p:ports:0:0',
+      \ 's:functions:0:0',
+  \ ]
+\}
+
+set tags+=tags,tags.vendors
+nnoremap <leader>d <C-]>
 
 " Shell
 " set shell=/bin/bash

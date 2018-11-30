@@ -37,6 +37,9 @@ Plug 'luochen1990/rainbow'
 " Themes
 Plug 'connorholyday/vim-snazzy'
 
+" Ctags are created automatically
+Plug 'craigemery/vim-autotag'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
