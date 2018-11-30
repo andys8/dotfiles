@@ -60,6 +60,9 @@ let g:ale_fixers = {
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>ö'
 
+" Rainbow brackets
+let g:rainbow_active = 1
+
 " Shell
 " set shell=/bin/bash
 

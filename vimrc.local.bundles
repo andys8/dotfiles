@@ -31,6 +31,9 @@ Plug 'eagletmt/neco-ghc'
 " Toggle location list (errors)
 Plug 'valloric/listtoggle'
 
+" Rainbow brackets
+Plug 'luochen1990/rainbow'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
