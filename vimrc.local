@@ -1,5 +1,5 @@
 " Theme
-colo gruvbox
+colo snazzy
 
 " Allow project-specific .vimrc files
 set exrc
