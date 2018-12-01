@@ -52,7 +52,7 @@ let g:ale_fixers = {
 \   'json': ['prettier'],
 \   'markdown': ['prettier'],
 \   'elm': ['elm-format'],
-\   'haskell': ['hfmt'],
+\   'haskell': ['brittany'],
 \   'scala': ['scalafmt'],
 \}
 
