@@ -11,7 +11,10 @@ ln -sf ~/dotfiles/ctags                 ~/.ctags
 # i3
 rm -rf ~/.config/i3
 ln -sf ~/dotfiles/i3                    ~/.config
-ln -sf ~/dotfiles/rofi                  ~/.config/rofi
+
+# rofi (dmenu for i3)
+rm -rf ~/.config/rofi
+ln -sf ~/dotfiles/rofi                  ~/.config
 
 # Git
 mkdir -p ~/.config/git
