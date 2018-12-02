@@ -41,11 +41,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Escape kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Shift+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i -config ~/.config/rofi'
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run -i -config ~/.config/rofi
 
 # Using rofi instead of dmenu
 # bindsym $mod+d exec --no-startup-id "rofi -modi drun -show drun"

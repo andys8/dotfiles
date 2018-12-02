@@ -11,10 +11,12 @@ ln -sf ~/dotfiles/ctags                 ~/.ctags
 # i3
 rm -rf ~/.config/i3
 ln -sf ~/dotfiles/i3                    ~/.config
+ln -sf ~/dotfiles/rofi                  ~/.config/rofi
 
 # Git
-mkdir ~/.config/git
+mkdir -p ~/.config/git
 ln -sf ~/dotfiles/git/ignore            ~/.config/git/ignore
+
 
 # Vim plugin installation
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
