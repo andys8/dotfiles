@@ -19,7 +19,7 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 
 " YouCompleteMe
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-nnoremap <leader>y :YcmCompleter FixIt<CR>
+nnoremap <leader>s :YcmCompleter FixIt<CR>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
