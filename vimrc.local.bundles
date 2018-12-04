@@ -37,6 +37,9 @@ Plug 'luochen1990/rainbow'
 " Ctags are created automatically
 Plug 'craigemery/vim-autotag'
 
+" Auto detect indentation width
+Plug 'tpope/vim-sleuth'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
