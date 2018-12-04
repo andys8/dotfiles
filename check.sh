@@ -18,6 +18,10 @@ check volumeicon
 check nm-applet
 check python3
 check vim
+check brittany
+check ghc-mod
+check prettier
+check elm-format
 
 echo "All dependencies are available"
 exit 0
