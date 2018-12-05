@@ -22,6 +22,8 @@ check brittany
 check ghc-mod
 check prettier
 check elm-format
+check hlint
+check hdevtools
 
 echo "All dependencies are available"
 exit 0

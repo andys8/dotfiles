@@ -42,7 +42,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " Ale: Linting
 nnoremap <silent> <leader>p :ALEFix<cr>
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
-let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_text_changed = 'off'
 let g:ale_completion_delay = 200
 let g:ale_lint_delay = 750
 let g:ale_fixers = {
@@ -54,6 +54,9 @@ let g:ale_fixers = {
 \   'elm': ['elm-format'],
 \   'haskell': ['brittany'],
 \   'scala': ['scalafmt'],
+\}
+let g:ale_linters = {
+\   'haskell': ['hdevtools', 'hlint']
 \}
 
 " List toggle
@@ -79,6 +82,7 @@ let g:tagbar_type_elm = {
 
 set tags+=tags,tags.vendors
 nnoremap <leader>d <C-]>
+
 
 " Shell
 " set shell=/bin/bash
