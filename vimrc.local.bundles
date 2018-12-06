@@ -40,6 +40,9 @@ Plug 'craigemery/vim-autotag'
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
 
+" Typescript JSX
+Plug 'peitalin/vim-jsx-typescript'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
