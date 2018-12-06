@@ -24,6 +24,7 @@ check prettier
 check elm-format
 check hlint
 check hdevtools
+check alacritty
 
 echo "All dependencies are available"
 exit 0
