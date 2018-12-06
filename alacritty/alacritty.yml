@@ -103,7 +103,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -134,9 +134,9 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x181c24'
+    background: '0x141c20'
     # background: '0x000000'
-    foreground: '0xeaeaea'
+    foreground: '0xffffff'
 
     # Bright and dim foreground colors
     #
@@ -155,26 +155,46 @@ colors:
   #  cursor: '0xffffff'
 
   # Normal colors
-  normal:
-    black:   '0x000000'
-    red:     '0xd54e53'
-    green:   '0xb9ca4a'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xffffff'
+  # normal:
+  #   black:   '0x000000'
+  #   red:     '0xd54e53'
+  #   green:   '0xb9ca4a'
+  #   yellow:  '0xe6c547'
+  #   blue:    '0x7aa6da'
+  #   magenta: '0xc397d8'
+  #   cyan:    '0x70c0ba'
+  #   white:   '0xffffff'
 
   # Bright colors
+  # bright:
+  #   black:   '0x666666'
+  #   red:     '0xff3334'
+  #   green:   '0x9ec400'
+  #   yellow:  '0xe7c547'
+  #   blue:    '0x7aa6da'
+  #   magenta: '0xb77ee0'
+  #   cyan:    '0x54ced6'
+  #   white:   '0xffffff'
+
+  normal:
+    black:   '0x282828'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xeeeeee'
+
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xffffff'
+    black:   '0x4c4c4c'
+    red:     '0xf43753'
+    green:   '0xc9d05c'
+    yellow:  '0xffc24b'
+    blue:    '0xb3deef'
+    magenta: '0xd3b987'
+    cyan:    '0x73cef4'
+    white:   '0xfeffff'
 
   # Dim colors
   #
