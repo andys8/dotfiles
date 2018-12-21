@@ -38,7 +38,7 @@ icons = "awesome"
 [[block]]
 block = "time"
 interval = 60
-format = "%d.%m. %R"
+format = " %d.%m. %R"
 
 [[block]]
 block = "battery"
