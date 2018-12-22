@@ -224,6 +224,9 @@ exec xset r rate 200 80
 # Display standbye
 exec xset dpms 300
 
+# Run startup script (which is different on each machine)
+exec --no-startup-id ~/bin/startup.sh
+
 # Windows: Border
 for_window [class="^.*"] border pixel 3
 new_window pixel 3

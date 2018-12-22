@@ -25,6 +25,7 @@ check elm-format
 check hlint
 check hdevtools
 check alacritty
+check ~/bin/startup.sh
 
 echo "All dependencies are available"
 exit 0
