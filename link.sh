@@ -25,3 +25,6 @@ rm -rf ~/.config/alacritty
 mkdir -p ~/.config/alacritty
 ln -sf ~/dotfiles/alacritty/alacritty.yml   ~/.config/alacritty/alacritty.yml
 
+# Fish
+ln -sf ~/dotfiles/config.fish               ~/.config/fish/config.fish
+

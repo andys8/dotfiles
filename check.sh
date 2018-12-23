@@ -26,6 +26,7 @@ check hlint
 check hdevtools
 check alacritty
 check fish
+check omf
 
 # Scripts
 check ~/bin/startup.sh
