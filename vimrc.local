@@ -79,10 +79,15 @@ let g:tagbar_type_elm = {
       \ 's:functions:0:0',
   \ ]
 \}
-
 set tags+=tags,tags.vendors
 autocmd FileType elm,haskell nnoremap <leader>d <C-]>
 
+" Spell checking
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.txt setlocal spell
+autocmd FileType gitcommit setlocal spell
+highlight clear SpellBad
+highlight SpellBad term=underline cterm=underline ctermfg=009
 
 " Shell
 " set shell=/bin/bash
@@ -93,7 +98,7 @@ autocmd FileType elm,haskell nnoremap <leader>d <C-]>
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.scss,*.css PrettierAsync
 
 " Tabs / spaces
-"set expandtab
-"set shiftwidth=2
-"set softtabstop=0
+" set expandtab
+" set shiftwidth=2
+" set softtabstop=0
 
