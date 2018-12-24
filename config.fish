@@ -10,11 +10,13 @@ function fish_greeting
 end
 
 # Bobthefish theme options
+set -g theme_nerd_fonts yes
 set -g theme_display_vagrant no
 set -g theme_display_docker_machine no
 set -g theme_display_hg no
 set -g theme_display_ruby no
 set -g theme_display_date no
+set -g theme_display_vi yes
 
 # Autojump
 [ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish

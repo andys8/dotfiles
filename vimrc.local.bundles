@@ -43,6 +43,9 @@ Plug 'tpope/vim-sleuth'
 " Typescript JSX
 Plug 'peitalin/vim-jsx-typescript'
 
+" Nerd font icons
+Plug 'ryanoasis/vim-devicons'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
