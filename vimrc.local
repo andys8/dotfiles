@@ -57,7 +57,8 @@ let g:ale_fixers = {
 \   'scala': ['scalafmt'],
 \}
 let g:ale_linters = {
-\   'haskell': ['hdevtools', 'hlint']
+\   'haskell': ['hdevtools', 'hlint'],
+\   'javascript': ['eslint']
 \}
 
 " List toggle
