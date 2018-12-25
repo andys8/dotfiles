@@ -19,15 +19,18 @@ cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " YouCompleteMe
-autocmd FileType typescript nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-autocmd FileType typescript nnoremap <leader>s :YcmCompleter FixIt<CR>
-autocmd FileType typescript nnoremap <leader>g :YcmCompleter GoTo<CR>
-autocmd FileType typescript nnoremap <leader>t :YcmCompleter GetType<CR>
-autocmd FileType typescript nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-autocmd FileType typescript nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
-autocmd FileType typescript nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>s :YcmCompleter FixIt<CR>
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
+
+" Java
+let g:syntastic_java_checkers = []
 
 " Elm
 let g:polyglot_disabled = ['elm']

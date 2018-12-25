@@ -4,5 +4,5 @@
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
 
 # Setup YouCompleteMe
-python3 ~/.vim/plugged/youcompleteme/install.py
+python3 ~/.vim/plugged/youcompleteme/install.py --ts-completer --java-completer
 
