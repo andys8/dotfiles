@@ -46,6 +46,9 @@ Plug 'peitalin/vim-jsx-typescript'
 " Nerd font icons
 Plug 'ryanoasis/vim-devicons'
 
+" Zen mode
+Plug 'junegunn/goyo.vim'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 

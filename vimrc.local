@@ -95,6 +95,9 @@ autocmd FileType gitcommit setlocal spell
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=009
 
+" Zen mode / goyo
+nnoremap <F6> :Goyo<CR>
+
 " Shell
 " set shell=/bin/bash
 
