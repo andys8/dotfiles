@@ -49,6 +49,9 @@ Plug 'ryanoasis/vim-devicons'
 " Zen mode
 Plug 'junegunn/goyo.vim'
 
+" Expand region
+Plug 'terryma/vim-expand-region'
+
 " Scala server
 " Plug 'ensime/ensime-vim'
 
