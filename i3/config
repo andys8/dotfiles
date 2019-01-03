@@ -232,7 +232,7 @@ for_window [class="^.*"] border pixel 3
 new_window pixel 3
 
 # UI: Colors
-client.focused #00b0ef #00b0ef #141414 #00b0ef
+client.focused #00b0ef #ffffff #141414 #ffffff
 client.focused_inactive #141414 #141414 #00b0ef #141414
 client.unfocused #141414 #141414 #7d7d7d #141414
 client.urgent #ff7066 #ff7066 #141414 #ff7066
