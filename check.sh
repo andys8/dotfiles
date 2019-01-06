@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 check() {
-  command -v "$1" >/dev/null 2>&1 || { echo "$1 missing"; exit 1; }
+  command -v "$1" >/dev/null 2>&1 || { echo "'$1' missing"; exit 1; }
 }
 
 # Software
@@ -27,6 +27,7 @@ check hdevtools
 check alacritty
 check fish
 check eslint
+check rg
 
 # Scripts
 check ~/bin/startup.sh
