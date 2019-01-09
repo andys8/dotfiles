@@ -243,7 +243,7 @@ bar {
     font pango:Roboto Mono for Powerline, FontAwesome 10
     position bottom
     tray_output primary
-    status_command ~/.config/i3/i3status-rs ~/.config/i3/i3status.toml
+    status_command killall i3status-rs; ~/.config/i3/i3status-rs ~/.config/i3/i3status.toml
     colors {
         separator #666666
         background #222222
