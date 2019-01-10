@@ -102,6 +102,10 @@ nmap <c-l> [s1z=<c-o>
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
 
+" Command to read windows files (crlf)
+abbrev windowsfile e ++ff=dos
+abbrev dosfile e ++ff=dos
+
 " Shell
 " set shell=/bin/bash
 
