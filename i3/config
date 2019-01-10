@@ -96,10 +96,10 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws_www   "1:www"
-set $ws_work  "2:work"
-set $ws_term  "3:term"
-set $ws_chat  "4:chat"
+set $ws_www   "1 "
+set $ws_work  "2 "
+set $ws_term  "3 "
+set $ws_chat  "4 "
 
 workspace $ws_work  output DP-1-2
 workspace $ws_www   output DP-1-1
@@ -134,6 +134,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 assign [class="Google-chrome"]          $ws_www
 assign [class="Firefox"]                $ws_www
 assign [class="HipChat"]                $ws_chat
+assign [class="Slack"]                  $ws_chat
 assign [class="jetbrains-idea"]         $ws_work
 assign [class="Code"]                   $ws_work
 
