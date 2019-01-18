@@ -31,3 +31,37 @@ xset r rate 200 80
 if status --is-interactive
   fish_hybrid_key_bindings
 end
+
+# Abbreviations
+if not set -q abbrs_initialized
+  set -U abbrs_initialized
+  echo 'Fish: Setting abbreviations'
+
+  abbr r 'ranger'
+  abbr v 'vim'
+  abbr t 'tig'
+  abbr n 'npm'
+  abbr nr 'npm run'
+  abbr g 'git'
+  abbr ga 'git add'
+  abbr gc 'git commit -m'
+  abbr gco 'git checkout'
+  abbr gd 'git diff'
+  abbr gf 'git fetch'
+  abbr gl 'git log'
+  abbr gm 'git merge'
+  abbr gp 'git push'
+  abbr gpl 'git pull'
+  abbr gr 'git remote'
+  abbr gs 'git status'
+  abbr gst 'git stash'
+  abbr agi 'sudo apt-get install'
+  abbr agr 'sudo apt-get remove'
+  abbr ls 'exa -a'
+  abbr ll 'exa -al'
+  abbr update 'sudo apt-get update; and sudo apt-get upgrade'
+  abbr .. 'cd ..'
+  abbr ... 'cd ../..'
+
+end
+
