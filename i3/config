@@ -189,6 +189,9 @@ bindsym $alt+$mod+l exec i3lock -t -i $(find ~/Pictures/wallpaper/lock/* | shuf 
 # restart network
 bindsym $alt+$mod+n exec gksudo service network-manager restart
 
+# password manager
+bindsym $alt+$mod+p exec "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+
 # Poweroff
 bindsym X86PowerOff exec poweroff
 bindsym Ctrl+$alt+$mod+P exec poweroff

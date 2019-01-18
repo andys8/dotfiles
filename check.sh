@@ -28,6 +28,7 @@ check alacritty
 check fish
 check eslint
 check rg
+check gopass
 
 # Scripts
 check ~/bin/startup.sh
