@@ -62,6 +62,7 @@ if not set -q abbrs_initialized
   abbr update 'sudo apt-get update; and sudo apt-get upgrade'
   abbr .. 'cd ..'
   abbr ... 'cd ../..'
+  abbr ackf 'ack -f | ack'
 
 end
 
