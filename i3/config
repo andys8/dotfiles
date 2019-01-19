@@ -245,7 +245,7 @@ client.urgent #ff7066 #ff7066 #141414 #ff7066
 bar {
     # font pango:DejaVu Sans Mono, FontAwesome 12
     font pango:Roboto Mono for Powerline, FontAwesome 10
-    position bottom
+    position top
     tray_output primary
     status_command killall i3status-rs; ~/.config/i3/i3status-rs ~/.config/i3/i3status.toml
     colors {
