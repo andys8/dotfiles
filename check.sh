@@ -29,6 +29,7 @@ check fish
 check eslint
 check rg
 check gopass
+check toilet
 
 # Scripts
 check ~/bin/startup.sh
