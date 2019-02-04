@@ -23,6 +23,7 @@ set -g theme_display_vi yes
 
 # Environment
 set -gx PATH $HOME/.local/bin $PATH
+set -g EDITOR vim
 
 # Cursor speed
 xset r rate 200 80
