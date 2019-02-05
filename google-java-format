@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Format java code - downloads, caches and wraps googles format jar
+# compare https://github.com/maltzj/google-style-precommit-hook/blob/master/format-code.sh
+
+VERSION=1.7
+FILE=google-java-format-$VERSION-all-deps.jar
+URL=https://github.com/google/google-java-format/releases/download/google-java-format-$VERSION/$FILE
+
+cd ~/.cache || exit
+if [ ! -f $FILE ]
+then
+    curl -LJO "$URL"
+fi
+
+java -jar $FILE "$@"

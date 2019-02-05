@@ -28,3 +28,5 @@ ln -sf ~/dotfiles/alacritty/alacritty.yml   ~/.config/alacritty/alacritty.yml
 # Fish
 ln -sf ~/dotfiles/config.fish               ~/.config/fish/config.fish
 
+# Google Java Format
+ln -sf ~/dotfiles/google-java-format        ~/bin/google-java-format
