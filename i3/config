@@ -183,6 +183,9 @@ bindsym Shift+$mod+Return exec x-www-browser
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# Workspace back and forth
+bindsym $mod+i workspace back_and_forth
+
 # lock screen
 bindsym $alt+$mod+l exec i3lock -t -i $(find ~/Pictures/wallpaper/lock/* | shuf -n1)
 
