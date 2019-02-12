@@ -44,6 +44,7 @@ if not set -q abbrs_initialized
   abbr n 'npm'
   abbr nr 'npm run'
   abbr g 'git'
+  abbr gi 'git'
   abbr ga 'git add'
   abbr gc 'git commit -m'
   abbr gco 'git checkout'
