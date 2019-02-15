@@ -203,7 +203,6 @@ bindsym Ctrl+$alt+$mod+P exec poweroff
 bindsym $alt+$mod+1 exec "~/.screenlayout/1-monitor.sh && i3-msg restart"
 bindsym $alt+$mod+2 exec "~/.screenlayout/2-monitor.sh && i3-msg restart"
 bindsym $alt+$mod+3 exec "~/.screenlayout/3-monitor.sh && i3-msg restart"
-exec ~/.screenlayout/startup-monitor.sh
 
 # Brightness
 bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0
