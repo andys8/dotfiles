@@ -30,6 +30,9 @@ check eslint
 check rg
 check gopass
 check toilet
+check diff-so-fancy
+check vimdiff
+check vim
 
 # Scripts
 check ~/bin/startup.sh

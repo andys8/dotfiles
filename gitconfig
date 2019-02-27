@@ -1,0 +1,65 @@
+[core]
+	autocrlf = input
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+	a = add
+	d = diff
+	co = checkout
+	br = branch
+	ci = commit
+	s = status
+	st = status
+	fe = fetch
+	re = reset
+	pl = pull
+	ps = push
+	l = log --graph --date=short
+	amend = commit -a --amend --no-edit
+	track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+[push]
+	default = current
+[http]
+	postBuffer = 1048576000
+[ssh]
+	postBuffer = 524288000
+[rerere]
+	enabled = 1
+[diff]
+	tool = vimdiff
+	algorithm = patience
+[difftool]
+	prompt = false
+[help]
+	autocorrect = 20
+[branch]
+	autosetupmerge = true
+[rebase]
+	missingCommitsCheck = error
+[mergetool]
+	prompt = false
+	keepbackup = false
+[merge]
+	summary = true
+	verbosity = 1
+	tool = vimdiff
+[color]
+	ui = true
+[color "branch"]
+        current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 227
+	frag = magenta bold
+	commit = 227 bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[include]
+	path = .gitconfig.user
