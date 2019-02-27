@@ -89,6 +89,16 @@ let g:tagbar_type_elm = {
       \ 's:functions:0:0',
   \ ]
 \}
+
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+\ }
+
 set tags+=tags,tags.vendors
 autocmd FileType elm,haskell nnoremap <leader>d <C-]>
 
