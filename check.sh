@@ -33,6 +33,7 @@ check toilet
 check diff-so-fancy
 check vimdiff
 check vim
+check shellcheck
 
 # Scripts
 check ~/bin/startup.sh
