@@ -6,6 +6,28 @@ This repository will be checked out in home dir.
 ./install.sh
 ```
 
+## Local files
+
+### `~/.gitconfig.user`
+
+Local default git user configuration
+
+```
+[user]
+	name = andys8
+	email = andys8@users.noreply.github.com
+```
+
+### `~/bin/startup.sh`
+
+Local script executed on machine startup
+
+```bash
+#!/bin/bash
+dropbox start &
+duplicati &
+```
+
 ## Alacritty
 
 ### DPI
