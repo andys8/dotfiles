@@ -8,7 +8,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 
 " Snippets for jest
-Plug 'joaohkfaria/vim-jest-snippets'
+Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
 " Auto completion
 Plug 'valloric/youcompleteme'
@@ -26,7 +26,7 @@ Plug 'tpope/vim-repeat'
 Plug 'mhinz/vim-startify'
 
 "" Haskell Bundle
-Plug 'eagletmt/neco-ghc'
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Toggle location list (errors)
 Plug 'valloric/listtoggle'
@@ -35,13 +35,13 @@ Plug 'valloric/listtoggle'
 Plug 'luochen1990/rainbow'
 
 " Ctags are created automatically
-Plug 'craigemery/vim-autotag'
+Plug 'craigemery/vim-autotag', { 'for': 'elm' }
 
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
 
 " Typescript JSX
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript', { 'for': ['javascript', 'typescript'] }
 
 " Nerd font icons
 Plug 'ryanoasis/vim-devicons'
