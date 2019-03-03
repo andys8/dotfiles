@@ -1,0 +1,10 @@
+#!/bin/bash
+# Start a terminal (if there is none), and show (toggle) it as i3 scratchpad
+# See <https://www.reddit.com/r/i3wm/comments/8q44zr/script_to_runs_scratchpad_if_not_running/>
+
+if ! pgrep -f __scratchpad ; then
+    i3-msg "exec --no-startup-id i3-sensible-terminal --title __scratchpad"
+    sleep 0.5
+fi
+
+i3-msg "[title=\"__scratchpad\"] scratchpad show; sticky enable"

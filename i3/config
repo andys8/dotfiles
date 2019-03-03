@@ -33,8 +33,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Ctrl+Return exec i3-sensible-terminal --title floating_term
-bindsym $mod+$alt+Return exec i3-sensible-terminal --title floating_term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -138,10 +136,6 @@ assign [class="Slack"]                  $ws_chat
 assign [class="jetbrains-idea"]         $ws_work
 assign [class="Code"]                   $ws_work
 
-for_window [class="Google-chrome"] focus
-for_window [title="floating_term"] floating enable
-for_window [window_role=floating_term] floating enable
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -212,6 +206,10 @@ bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6
 # Screenshot
 bindsym --release Shift+Print exec gnome-screenshot -a
 bindsym --release Print exec gnome-screenshot -i
+
+# Scratchpad dropdown terminal
+for_window [title="^__scratchpad$"] border 1pixel, sticky enable, floating enable, move scratchpad
+bindsym $mod+minus exec ~/.config/i3/i3-scratchpad-terminal
 
 # sound volume keys
 exec --no-startup-id volumeicon
