@@ -27,10 +27,10 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>s :YcmCompleter FixIt<CR>
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>u :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
-nnoremap <leader>m :YcmCompleter RefactorRename<space>
+nnoremap <leader>r :YcmCompleter RefactorRename<space>
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
