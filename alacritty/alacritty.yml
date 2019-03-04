@@ -128,9 +128,9 @@ render_timer: false
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
 
-# Colors (Tomorrow Night Bright)
+# See: <https://github.com/jwilm/alacritty/wiki/Color-schemes>
+# Colors (Dracula)
 colors:
-  # Colors (Dracula)
   # Default colors
   primary:
     background: '0x282a36'
@@ -157,7 +157,6 @@ colors:
     magenta: '0xff92d0'
     cyan:    '0x9aedfe'
     white:   '0xe6e6e6'
-
 
 # Visual Bell
 #
