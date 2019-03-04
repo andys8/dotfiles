@@ -126,6 +126,10 @@ if &diff
     map <leader>o :diffo<CR>
 endif
 
+" Search with Rg (overwrites vimrc)
+nmap <silent> <leader>f :Rg<CR>
+nmap <silent> <leader>F :Rgrep<CR>
+
 " Shell
 " set shell=/bin/bash
 
