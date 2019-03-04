@@ -10,7 +10,6 @@ commands=(
   i3-nagbar
   i3lock
   xrandr
-  gnome-screenshot
   volumeicon
   nm-applet
   python3
@@ -33,6 +32,7 @@ commands=(
   shellcheck
   fd
   ncdu
+  maim
   ~/bin/startup.sh
 )
 

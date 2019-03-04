@@ -204,8 +204,8 @@ bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0
 bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6
 
 # Screenshot
-bindsym --release Shift+Print exec gnome-screenshot -a
-bindsym --release Print exec gnome-screenshot -i
+bindsym Print exec maim -s | xclip -selection clipboard -t image/png
+bindsym Shift+Print exec maim -s ~/Pictures/screenshot-$(date +%s).png
 
 # Scratchpad dropdown terminal
 for_window [title="^__scratchpad$"] border 1pixel, sticky enable, floating enable, move scratchpad
