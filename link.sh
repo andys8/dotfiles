@@ -17,8 +17,8 @@ rm -rf ~/.config/rofi
 ln -sf ~/dotfiles/rofi                      ~/.config
 
 # Git
-mkdir -p ~/.config/git
-ln -sf ~/dotfiles/git/ignore                ~/.config/git/ignore
+rm -rf ~/.config/git
+ln -sf ~/dotfiles/git                       ~/.config
 ln -sf ~/dotfiles/gitconfig                 ~/.gitconfig
 
 # Alacritty
