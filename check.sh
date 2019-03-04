@@ -31,6 +31,8 @@ commands=(
   vimdiff
   vim
   shellcheck
+  fd
+  ncdu
   ~/bin/startup.sh
 )
 
