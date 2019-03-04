@@ -1,0 +1,11 @@
+#!/bin/bash
+
+HOOK_NAME=${0##*/}
+HOOK_LOCAL_PATH="./.git/hooks/$HOOK_NAME"
+
+# Run local hook in repository, too
+# <https://stackoverflow.com/questions/51178382>
+if [ -e "$HOOK_LOCAL_PATH" ]; then
+    $HOOK_LOCAL_PATH "$@"
+fi
+
