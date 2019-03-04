@@ -33,6 +33,7 @@ commands=(
   fd
   ncdu
   maim
+  sxiv
   ~/bin/startup.sh
 )
 
