@@ -11,6 +11,9 @@ set secure
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
+" Select all
+nmap <C-a> ggVG
+
 " Date
 nnoremap <C-d> "=strftime("%Y-%m-%d")<CR>P"
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
