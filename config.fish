@@ -33,6 +33,15 @@ if status --is-interactive
   fish_hybrid_key_bindings
 end
 
+# sudo !!
+function sudo
+  if test "$argv" = !!
+    eval command sudo $history[1]
+  else
+    command sudo $argv
+  end
+end
+
 # Abbreviations
 if not set -q abbrs_initialized
   set -U abbrs_initialized
