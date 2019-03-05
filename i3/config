@@ -18,8 +18,8 @@ set $alt Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-#font pango:Dank Mono 10
+#font pango:DejaVu Sans Mono 8
+font pango:SauceCodePro Nerd Font 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -244,8 +244,7 @@ client.urgent #ff7066 #ff7066 #141414 #ff7066
 
 # Status Bar
 bar {
-    # font pango:DejaVu Sans Mono, FontAwesome 12
-    font pango:Roboto Mono for Powerline, FontAwesome 10
+    font pango:SauceCodePro Nerd Font 10
     position top
     tray_output primary
     status_command killall i3status-rs; ~/.config/i3/i3status-rs ~/.config/i3/i3status.toml
