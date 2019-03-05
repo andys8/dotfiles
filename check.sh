@@ -34,6 +34,7 @@ commands=(
   ncdu
   maim
   sxiv
+  preload
   ~/bin/startup.sh
 )
 
