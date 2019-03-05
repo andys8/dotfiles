@@ -90,19 +90,19 @@ tabspaces: 8
 font:
   # Normal (roman) font face
   normal:
-    family: 'FuraCode Nerd Font'
+    family: 'SauceCodePro Nerd Font'
     # The `style` can be specified to pick a specific face.
     #style: Regular
 
   # Bold font face
   bold:
-    family: 'FuraCode Nerd Font'
+    family: 'SauceCodePro Nerd Font'
     # The `style` can be specified to pick a specific face.
     #style: Bold
 
   # Italic font face
   italic:
-    family: 'FuraCode Nerd Font'
+    family: 'SauceCodePro Nerd Font'
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
