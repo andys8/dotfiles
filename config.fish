@@ -10,6 +10,7 @@ function fish_greeting
 end
 
 # Bobthefish theme options
+set -g theme_color_scheme dracula
 set -g theme_nerd_fonts yes
 set -g theme_display_vagrant no
 set -g theme_display_docker_machine no
