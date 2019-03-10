@@ -193,7 +193,7 @@ new_window pixel 3
 client.background       #F8F8F2
 
 # Windows colors        border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #ffffff   #ffffff
+client.focused          #6272A4 #6272A4 #F8F8F2 #F8F8F2   #F8F8F2
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #44475A #44475A #F8F8F2 #44475A   #44475A
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
@@ -206,14 +206,14 @@ bar {
     status_command "killall i3status-rs; ~/.config/i3/i3status-rs ~/.config/i3/i3status.toml"
     colors {
         background #282A36
-        statusline #F8F8F2
+        statusline #FFFFFF
         separator  #44475A
 
-        focused_workspace  #44475A #44475A #F8F8F2
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #F8F8F2
-        binding_mode       #FF5555 #FF5555 #F8F8F2
+        focused_workspace  #6272A4 #6272A4 #FFFFFF
+        active_workspace   #44475A #282A36 #FFFFFF
+        inactive_workspace #44475A #44475A #FFFFFF
+        urgent_workspace   #FF5555 #FF5555 #FFFFFF
+        binding_mode       #FF5555 #FF5555 #FFFFFF
     }
 }
 
