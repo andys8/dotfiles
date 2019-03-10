@@ -8,6 +8,7 @@ commands=(
   i3-sensible-terminal
   i3-dmenu-desktop
   i3-nagbar
+  i3-msg
   i3lock
   xrandr
   volumeicon
