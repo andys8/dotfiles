@@ -18,7 +18,6 @@
 --exclude=*.bundle.*
 --exclude=elm-stuff
 
-# Elm <https://github.com/kbsymanz/ctags-elm/blob/master/.ctags>
 --langdef=Elm
 --langmap=Elm:.elm
 --regex-Elm=/^ *([[:lower:]][[:alnum:]_]+)[[:blank:]]*:[^:].*->.*/\1/f,function,functions/
@@ -28,7 +27,6 @@
 --regex-Elm=/^type[[:blank:]]+alias[[:blank:]]+([[:upper:]][[:alnum:]_]+)/\1/a,type-alias,type-aliases/
 
 
-# Markdown <https://github.com/majutsushi/tagbar/wiki#markdown>
 --langdef=markdown
 --langmap=markdown:.md.markdown.mdown.mkd.mkdn
 --regex-markdown=/^#[ \t]+(.*)/\1/h,heading1/
