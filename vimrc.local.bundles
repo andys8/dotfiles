@@ -29,7 +29,7 @@ Plug 'mhinz/vim-startify'
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
 
 " Toggle location list (errors)
-Plug 'valloric/listtoggle'
+Plug 'danielwe/listtoggle'
 
 " Rainbow brackets
 Plug 'luochen1990/rainbow'
