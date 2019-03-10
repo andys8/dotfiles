@@ -2,6 +2,7 @@
 colo gruvbox
 set relativenumber
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'dracula'
 
 " Allow project-specific .vimrc files
 set exrc
