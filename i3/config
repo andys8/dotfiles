@@ -219,9 +219,6 @@ bar {
 
 # ----- Startup -----
 
-# Sound applet
-exec --no-startup-id volumeicon
-
 # Network manager applet
 exec --no-startup-id nm-applet
 

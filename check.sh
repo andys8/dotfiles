@@ -11,7 +11,6 @@ commands=(
   i3-msg
   i3lock
   xrandr
-  volumeicon
   nm-applet
   python3
   vim
