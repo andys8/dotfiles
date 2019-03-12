@@ -9,7 +9,7 @@ endif
 
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "elm,html,javascript,scala"
+let g:vim_bootstrap_langs = "html,javascript,scala"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
 
 if !filereadable(vimplug_exists)
@@ -27,11 +27,6 @@ endif
 
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
-
-" FIX: elm moved in position to fix <https://github.com/avelino/vim-bootstrap/issues/302>
-" elm
-"" Elm Bundle
-Plug 'elmcast/elm-vim'
 
 "*****************************************************************************
 "" Plug install packages
@@ -471,20 +466,6 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "*****************************************************************************
 "" Custom configs
 "*****************************************************************************
-
-" elm
-" elm-vim
-let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 1
-
-" vim-polyglot
-let g:polyglot_disabled = ['elm']
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
-
 
 " html
 " for html files, 2 spaces
