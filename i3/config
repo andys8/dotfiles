@@ -105,6 +105,7 @@ bindsym $alt+$mod+p exec "gopass ls --flat | rofi -dmenu | xargs --no-run-if-emp
 # Monitors
 bindsym $mod+$alt+1 exec "~/.screenlayout/1-monitor.sh && i3-msg restart"
 bindsym $mod+$alt+2 exec "~/.screenlayout/2-monitor.sh && i3-msg restart"
+bindsym $mod+$alt+Shift+2 exec "~/.screenlayout/2-monitor-dp1.sh && i3-msg restart"
 bindsym $mod+$alt+3 exec "~/.screenlayout/3-monitor.sh && i3-msg restart"
 
 # Brightness
