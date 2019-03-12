@@ -52,9 +52,6 @@ Plug 'junegunn/goyo.vim'
 " Expand region
 Plug 'terryma/vim-expand-region'
 
-" Scala server
-" Plug 'ensime/ensime-vim'
-
-" Prettier ,p
-" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" Colors visualized with background
+Plug 'gorodinskiy/vim-coloresque'
 
