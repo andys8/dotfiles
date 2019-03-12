@@ -17,6 +17,7 @@
 --exclude=dist
 --exclude=*.bundle.*
 --exclude=elm-stuff
+--exclude=.coverage
 
 --langdef=Elm
 --langmap=Elm:.elm
