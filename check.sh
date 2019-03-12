@@ -35,6 +35,7 @@ commands=(
   maim
   sxiv
   preload
+  markdownlint
   ~/bin/startup.sh
 )
 

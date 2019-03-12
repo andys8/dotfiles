@@ -73,7 +73,8 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
 \   'haskell': ['hdevtools', 'hlint'],
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'markdown': ['markdownlint']
 \}
 
 " List toggle
