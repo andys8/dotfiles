@@ -18,6 +18,8 @@
 --exclude=*.bundle.*
 --exclude=elm-stuff
 --exclude=.coverage
+--exclude=package-lock.json
+--exclude=.history
 
 --langdef=Elm
 --langmap=Elm:.elm
