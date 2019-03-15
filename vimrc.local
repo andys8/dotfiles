@@ -108,7 +108,8 @@ let g:tagbar_type_markdown = {
 \ }
 
 set tags+=tags,tags.vendors
-autocmd FileType elm,haskell nnoremap <leader>d <C-]>
+autocmd FileType elm,haskell nnoremap <leader>d g<C-]>
+autocmd FileType elm,haskell nnoremap <leader>D :Tags <C-R><C-W><CR>
 
 " Spell checking
 autocmd FileType markdown,text,gitcommit setlocal spell
@@ -134,7 +135,7 @@ if &diff
 endif
 
 " Search with Rg (overwrites vimrc)
-nmap <silent> <leader>f :Rg<CR>
+nmap <silent> <Leader>f :Rg <C-R><C-W><CR>
 nmap <silent> <leader>F :Rgrep<CR>
 
 " Shell
