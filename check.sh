@@ -2,41 +2,37 @@
 
 # Dependencies
 commands=(
-  bash
-  rofi
-  i3
-  i3-sensible-terminal
-  i3-dmenu-desktop
-  i3-nagbar
-  i3-msg
-  i3lock
-  xrandr
-  nm-applet
-  python3
-  vim
-  brittany
-  ghc-mod
-  prettier
-  elm-format
-  hlint
-  hdevtools
   alacritty
-  fish
-  eslint
-  rg
-  gopass
-  toilet
+  bash
+  brittany
   diff-so-fancy
-  vimdiff
-  vim
-  shellcheck
   fd
-  ncdu
+  fish
+  ghc-mod
+  gopass
+  hdevtools
+  hlint
+  i3
+  i3-dmenu-desktop
+  i3-msg
+  i3-nagbar
+  i3-sensible-terminal
+  i3lock
   maim
-  sxiv
-  preload
   markdownlint
-  ~/bin/startup.sh
+  ncdu
+  nm-applet
+  preload
+  python3
+  rg
+  rofi
+  shellcheck
+  sxiv
+  toilet
+  vim
+  vimdiff
+  xrandr
+  zathura
 )
 
 files=(
