@@ -9,19 +9,19 @@ set exrc
 set secure
 
 " Copy command
-vmap <C-x> :!pbcopy<CR>
-vmap <C-c> :w !pbcopy<CR><CR>
+vnoremap <C-x> :!pbcopy<CR>
+vnoremap <C-c> :w !pbcopy<CR><CR>
 
 " Select all
-nmap <C-a> ggVG
+nnoremap <C-a> ggVG
+
+" Exit insert mode
+inoremap jj <ESC>
 
 " Date
 nnoremap <C-d> "=strftime("%Y-%m-%d")<CR>P"
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
-
-" Exit insert mode
-inoremap jj <ESC>
 
 " Expand snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -54,13 +54,13 @@ let g:ale_elm_analyse_use_global = 1
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-
 " Ale: Linting
-nnoremap <silent> <leader>p :ALEFix<cr>
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
 let g:ale_lint_on_text_changed = 'off'
 let g:ale_completion_delay = 200
 let g:ale_lint_delay = 750
+nnoremap <silent> <leader>p :ALEFix<cr>
+nnoremap <silent> <leader>a <Plug>(ale_next_wrap)
+
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
@@ -72,6 +72,7 @@ let g:ale_fixers = {
 \   'scala': ['scalafmt'],
 \   'java': ['google_java_format'],
 \}
+
 let g:ale_linters = {
 \   'haskell': ['hdevtools', 'hlint'],
 \   'javascript': ['eslint'],
@@ -112,6 +113,10 @@ set tags+=tags,tags.vendors
 autocmd FileType elm,haskell nnoremap <leader>d g<C-]>
 autocmd FileType elm,haskell nnoremap <leader>D :Tags <C-R><C-W><CR>
 
+" Search with Rg (overwrites vimrc)
+nnoremap <silent> <Leader>f :Rg <C-R><C-W><CR>
+nnoremap <silent> <leader>F :Rgrep<CR>
+
 " Spell checking
 autocmd FileType markdown,text,gitcommit setlocal spell
 autocmd FileType markdown,text,gitcommit nnoremap <leader>s [s1z=<c-o>
@@ -134,21 +139,4 @@ if &diff
     map <leader>d :difft<CR>
     map <leader>o :diffo<CR>
 endif
-
-" Search with Rg (overwrites vimrc)
-nmap <silent> <Leader>f :Rg <C-R><C-W><CR>
-nmap <silent> <leader>F :Rgrep<CR>
-
-" Shell
-" set shell=/bin/bash
-
-" Prettier keymap
-" nnoremap <Leader>p <Plug>(PrettierAsync)
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.scss,*.css PrettierAsync
-
-" Tabs / spaces
-" set expandtab
-" set shiftwidth=2
-" set softtabstop=0
 
