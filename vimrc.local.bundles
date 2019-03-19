@@ -57,3 +57,7 @@ Plug 'gorodinskiy/vim-coloresque'
 
 " Elm-Analyse fork with Ale
 Plug 'antew/vim-elm-analyse', { 'for': 'elm' }
+
+" Run test suites with :Test*
+Plug 'janko-m/vim-test'
+
