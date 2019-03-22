@@ -41,6 +41,7 @@ let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
 
 " Java
 let g:syntastic_java_checkers = []
+let g:ale_java_google_java_format_options = '--aosp'
 
 " Elm (plugin part of vim-polyglot)
 let g:syntastic_always_populate_loc_list = 1
