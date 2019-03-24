@@ -11,7 +11,7 @@ Plug 'tpope/vim-surround'
 Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
 " Auto completion
-Plug 'valloric/youcompleteme'
+Plug 'valloric/youcompleteme', { 'do': 'python3 ~/.vim/plugged/youcompleteme/install.py --ts-completer --java-completer '}
 
 " Linting for elm, formatting for many
 Plug 'w0rp/ale'

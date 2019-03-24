@@ -16,5 +16,3 @@ npminstallations=(
 for i in "${npminstallations[@]}"
 do (npm install -g "$i"); done
 
-# Setup YouCompleteMe
-python3 ~/.vim/plugged/youcompleteme/install.py --ts-completer --java-completer
