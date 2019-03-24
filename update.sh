@@ -5,9 +5,9 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
 
 # Npm installable dependencies
 npminstallations=(
-  antew/elm-analyse\#lsp
   elm
   elm-format
+  elm-lsp
   elm-test
   prettier
   typescript
