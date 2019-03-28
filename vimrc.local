@@ -121,7 +121,13 @@ let g:tagbar_type_markdown = {
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <leader>F :Rgrep<CR>
 " Rg will ignore filenames
-command! -nargs=* Rg call fzf#vim#grep('rg --line-number --no-heading --color "always" --smart-case '.shellescape(<q-args>), 1, {'options': '--delimiter : --nth 3..'})
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
+  \ 1,
+  \ {'options': '--delimiter : --nth 2..'},
+  \ <bang>0)
+
 
 " Spell checking
 autocmd FileType markdown,text,gitcommit setlocal spell
