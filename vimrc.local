@@ -49,6 +49,7 @@ let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
 let g:elm_setup_keybindings = 0
 let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 1
 let g:ale_elm_lsp_use_global = 1
 
 " Haskell
