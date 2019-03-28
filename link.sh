@@ -5,6 +5,9 @@ ln -sf ~/dotfiles/vimrc                     ~/.vimrc
 ln -sf ~/dotfiles/vimrc.local               ~/.vimrc.local
 ln -sf ~/dotfiles/vimrc.local.bundles       ~/.vimrc.local.bundles
 
+# Idea VIM
+ln -sf ~/dotfiles/ideavimrc                 ~/.ideavimrc
+
 # Ctags
 ln -sf ~/dotfiles/ctags                     ~/.ctags
 

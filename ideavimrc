@@ -1,0 +1,66 @@
+source ~/.vimrc
+
+let mapleader=','
+
+" Plugins
+set surround
+set multiple-cursors
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmode
+set number
+set relativenumber
+set scrolloff=3
+set history=100000
+set clipboard=unnamed
+
+
+" Quit insert mode
+inoremap jj <Esc>
+
+" Multiple cursors
+nnoremap <C-n> <A-n>
+nnoremap <C-p> <A-p>
+nnoremap <C-x> <A-x>
+
+" Tab operation
+nnoremap <leader>q :action PreviousTab<cr>
+nnoremap <leader>w :action NextTab<cr>
+
+nnoremap gf :action GotoFile<CR>
+nnoremap gt :action GotoTest<CR>
+
+nnoremap <leader>s :action GotoAction<cr>
+nnoremap <leader>g :action GotoSymbol<CR>
+nnoremap <leader>t :action TypeHintsMenu<CR>
+nnoremap <leader>u :action ShowUsages<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>e :action GotoFile<CR>
+nnoremap <leader>p :action ReformatCode<cr>
+nnoremap <leader>f :action SearchEverywhere<CR>
+
+nnoremap <F2> :action SelectInProjectView<CR>
+nnoremap <F3> :action SelectInProjectView<CR>
+nnoremap <F4> :action FileStructurePopup<CR>
+
+" window navigation
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+" Close window
+nnoremap <leader>c :q<CR>
+
+" History
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
+" Clear search
+nnoremap <leader><space> :nohlsearch<cr>
+
