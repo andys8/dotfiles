@@ -7,7 +7,6 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
 npminstallations=(
   elm
   elm-format
-  elm-lsp
   elm-test
   prettier
   typescript
