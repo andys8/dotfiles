@@ -14,9 +14,7 @@ Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 Plug 'valloric/youcompleteme', { 'do': 'python3 ~/.vim/plugged/youcompleteme/install.py --ts-completer --java-completer '}
 
 " Linting for elm, formatting for many
-" Plug 'w0rp/ale'
-" Temporary replaced with elm fork <https://github.com/w0rp/ale/pull/2378>
-Plug 'antew/ale', { 'branch': 'feature/elm-lsp-linter' }
+Plug 'w0rp/ale'
 
 " Colorscheme colection
 Plug 'flazz/vim-colorschemes'
