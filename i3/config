@@ -124,10 +124,10 @@ set $ws_work    "2 "
 set $ws_term    "3 "
 set $ws_chat    "4 "
 
-workspace $ws_work  output DP-1
 workspace $ws_work  output DP-1-2
-workspace $ws_www   output eDP-1
+workspace $ws_work  output DP-1
 workspace $ws_www   output DP-1-1
+workspace $ws_www   output eDP-1
 workspace $ws_term  output eDP-1
 workspace $ws_chat  output eDP-1
 
