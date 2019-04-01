@@ -152,3 +152,8 @@ if &diff
     map <leader>o :diffo<CR>
 endif
 
+" Startify
+let g:startify_files_number = 5
+let g:startify_change_to_dir = 0
+let startify_custom_header = split(system('toilet -f pagga " Vim"'), '\n')
+
