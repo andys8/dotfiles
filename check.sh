@@ -7,6 +7,7 @@ commands=(
   brittany
   diff-so-fancy
   fd
+  feh
   fish
   ghc-mod
   gopass
@@ -39,6 +40,7 @@ commands=(
 files=(
   ~/.gitconfig.user
   ~/bin/startup.sh
+  ~/Pictures/wallpaper/wallpaper.png
 )
 
 check() { command -v "$1" >/dev/null 2>&1 || { echo "'$1' missing"; exit 1; } }

@@ -235,6 +235,9 @@ exec --no-startup-id xset dpms 300
 # Battery warning script
 exec --no-startup-id ~/.config/i3/i3-battery-popup
 
+# Wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
+
 # Run startup script (which is different on each machine)
 exec --no-startup-id ~/bin/startup.sh
 
