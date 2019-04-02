@@ -221,7 +221,7 @@ bar {
 # ----- Startup -----
 
 # Network manager applet
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet --sm-disable
 
 # Keyboard layout: German, no dead keys
 exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
