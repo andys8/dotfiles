@@ -41,6 +41,7 @@ files=(
   ~/.gitconfig.user
   ~/bin/startup.sh
   ~/Pictures/wallpaper/wallpaper.png
+  ~/Pictures/wallpaper/lock/*
 )
 
 check() { command -v "$1" >/dev/null 2>&1 || { echo "'$1' missing"; exit 1; } }
