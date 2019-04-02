@@ -23,6 +23,7 @@ ln -sf ~/dotfiles/rofi                      ~/.config
 rm -rf ~/.config/git
 ln -sf ~/dotfiles/git                       ~/.config
 ln -sf ~/dotfiles/gitconfig                 ~/.gitconfig
+ln -sf ~/dotfiles/tigrc                     ~/.tigrc
 
 # Alacritty
 rm -rf ~/.config/alacritty
