@@ -24,6 +24,7 @@ commands=(
   nm-applet
   preload
   python3
+  ranger
   rg
   rofi
   shellcheck
