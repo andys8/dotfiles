@@ -1,10 +1,9 @@
-source ~/.vimrc
+" IdeaVim plugin configuration for IntelliJ IDEA
 
 let mapleader=','
 
 " Plugins
 set surround
-set multiple-cursors
 
 set hlsearch
 set incsearch
@@ -22,18 +21,16 @@ set clipboard=unnamed
 inoremap jj <Esc>
 
 " Multiple cursors
-nnoremap <C-n> <A-n>
-nnoremap <C-p> <A-p>
-nnoremap <C-x> <A-x>
+map <C-n> <A-j>
 
 " Tab operation
-nnoremap <leader>q :action PreviousTab<cr>
-nnoremap <leader>w :action NextTab<cr>
+nnoremap <leader>q :action PreviousTab<CR>
+nnoremap <leader>w :action NextTab<CR>
 
 nnoremap gf :action GotoFile<CR>
 nnoremap gt :action GotoTest<CR>
 
-nnoremap <leader>s :action GotoAction<cr>
+nnoremap <leader>s :action ShowIntentionActions<CR>
 nnoremap <leader>g :action GotoSymbol<CR>
 nnoremap <leader>t :action TypeHintsMenu<CR>
 nnoremap <leader>u :action ShowUsages<CR>
@@ -41,11 +38,12 @@ nnoremap <leader>d :action GotoDeclaration<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>e :action GotoFile<CR>
-nnoremap <leader>p :action ReformatCode<cr>
+nnoremap <leader>p :action ReformatCode<CR>
 nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>a :action GotoNextError<CR>
 
 nnoremap <F2> :action SelectInProjectView<CR>
-nnoremap <F3> :action SelectInProjectView<CR>
+nnoremap <F3> <a-1>
 nnoremap <F4> :action FileStructurePopup<CR>
 
 " window navigation
@@ -58,9 +56,12 @@ nnoremap <c-k> <c-w>k
 nnoremap <leader>c :q<CR>
 
 " History
-nnoremap <c-o> :action Back<cr>
-nnoremap <c-i> :action Forward<cr>
+nnoremap <c-o> :action Back<CR>
+nnoremap <c-i> :action Forward<CR>
 
 " Clear search
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Comment
+noremap gcc :action CommentByLineComment<CR>
 
