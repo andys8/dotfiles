@@ -18,6 +18,13 @@ nnoremap <C-a> ggVG
 " Exit insert mode
 inoremap jj <ESC>
 
+" Save
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <ESC>:w<CR>
+
+" Saves the file (handling the permission-denied error)
+cnoremap w!! w !sudo tee % >/dev/null
+
 " Date
 nnoremap <C-d> "=strftime("%Y-%m-%d")<CR>P"
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
