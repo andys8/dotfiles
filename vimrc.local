@@ -70,7 +70,7 @@ let g:ale_lint_on_text_changed = 'off'
 let g:ale_completion_delay = 200
 let g:ale_lint_delay = 750
 nnoremap <silent> <leader>p :ALEFix<CR>
-nnoremap <silent> <leader>a :ALENextWrap<CR>
+nnoremap <silent> <leader>a :ALENext -wrap -error<CR>
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
