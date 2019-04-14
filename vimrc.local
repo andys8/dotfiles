@@ -26,7 +26,6 @@ inoremap <C-s> <ESC>:w<CR>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Date
-nnoremap <C-d> "=strftime("%Y-%m-%d")<CR>P"
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
