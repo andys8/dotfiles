@@ -14,6 +14,8 @@ vnoremap <C-c> :w !pbcopy<CR><CR>
 
 " Select all
 nnoremap <C-a> ggVG
+nnoremap <C-a> ggVG
+
 
 " Exit insert mode
 inoremap jj <ESC>
@@ -72,22 +74,22 @@ nnoremap <silent> <leader>p :ALEFix<CR>
 nnoremap <silent> <leader>a :ALENext -wrap -error<CR>
 
 let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'scss': ['prettier'],
-\   'json': ['prettier'],
-\   'markdown': ['prettier'],
-\   'elm': ['elm-format'],
-\   'haskell': ['brittany'],
-\   'scala': ['scalafmt'],
-\   'java': ['google_java_format'],
-\}
+      \ 'javascript': ['prettier'],
+      \ 'typescript': ['prettier'],
+      \ 'scss': ['prettier'],
+      \ 'json': ['prettier'],
+      \ 'markdown': ['prettier'],
+      \ 'elm': ['elm-format'],
+      \ 'haskell': ['brittany'],
+      \ 'scala': ['scalafmt'],
+      \ 'java': ['google_java_format']
+      \}
 
 let g:ale_linters = {
-\   'haskell': ['hdevtools', 'hlint'],
-\   'javascript': ['eslint'],
-\   'markdown': ['markdownlint']
-\}
+      \ 'haskell': ['hdevtools', 'hlint'],
+      \ 'javascript': ['eslint'],
+      \ 'markdown': ['markdownlint']
+      \}
 
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -103,7 +105,7 @@ autocmd FileType elm,haskell nnoremap <leader>d g<C-]>
 autocmd FileType elm,haskell nnoremap <leader>D :Tags <C-R><C-W><CR>
 
 let g:tagbar_type_elm = {
-  \ 'kinds' : [
+      \ 'kinds' : [
       \ 'f:function:0:0',
       \ 'm:modules:0:0',
       \ 'i:imports:1:0',
@@ -112,17 +114,17 @@ let g:tagbar_type_elm = {
       \ 'c:type constructors:0:0',
       \ 'p:ports:0:0',
       \ 's:functions:0:0',
-  \ ]
-\}
+      \ ]
+      \}
 
 let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-\ }
+      \ 'ctagstype' : 'markdown',
+      \ 'kinds' : [
+      \ 'h:Heading_L1',
+      \ 'i:Heading_L2',
+      \ 'k:Heading_L3'
+      \ ]
+      \}
 
 
 " Search with Rg (overwrites vimrc)
@@ -130,11 +132,11 @@ nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <leader>F :Rgrep<CR>
 " Rg will ignore filenames
 command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
-  \ 1,
-  \ {'options': '--delimiter : --nth 2..'},
-  \ <bang>0)
+      \ call fzf#vim#grep(
+      \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
+      \ 1,
+      \ {'options': '--delimiter : --nth 2..'},
+      \ <bang>0)
 
 
 " Spell checking
@@ -152,12 +154,12 @@ abbrev dosfile e ++ff=dos
 
 " vimdiff
 if &diff
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
-    map <leader>g :diffget<CR>
-    map <leader>d :difft<CR>
-    map <leader>o :diffo<CR>
+  map <leader>1 :diffget LOCAL<CR>
+  map <leader>2 :diffget BASE<CR>
+  map <leader>3 :diffget REMOTE<CR>
+  map <leader>g :diffget<CR>
+  map <leader>d :difft<CR>
+  map <leader>o :diffo<CR>
 endif
 
 " Startify
