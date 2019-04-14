@@ -16,6 +16,9 @@ vnoremap <C-c> :w !pbcopy<CR><CR>
 nnoremap <C-a> ggVG
 nnoremap <C-a> ggVG
 
+" Scroll
+nnoremap <C-u> <PageDown>
+nnoremap <C-i> <PageUp>
 
 " Exit insert mode
 inoremap jj <ESC>
