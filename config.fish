@@ -6,6 +6,11 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
+# Environment
+set -gx PATH $HOME/.local/bin $HOME/.fnm $PATH
+set -gx EDITOR vim
+
+# No greeting
 function fish_greeting
 end
 
@@ -22,9 +27,8 @@ set -g theme_display_vi yes
 # Autojump
 [ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish
 
-# Environment
-set -gx PATH $HOME/.local/bin $PATH
-set -g EDITOR vim
+# fnm
+fnm env --multi | source
 
 # Cursor speed
 xset r rate 200 80

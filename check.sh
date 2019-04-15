@@ -6,9 +6,11 @@ commands=(
   bash
   brittany
   diff-so-fancy
+  elm
   fd
   feh
   fish
+  fnm
   ghc-mod
   gopass
   hdevtools
@@ -20,7 +22,6 @@ commands=(
   i3-sensible-terminal
   i3lock
   maim
-  markdownlint
   ncdu
   nm-applet
   preload

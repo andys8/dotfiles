@@ -5,9 +5,9 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
 
 # Npm installable dependencies
 npminstallations=(
-  elm
   elm-format
   elm-test
+  markdownlint-cli
   prettier
   typescript
 )
