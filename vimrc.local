@@ -1,6 +1,7 @@
 " Theme
 colo gruvbox
 set relativenumber
+set confirm
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 
