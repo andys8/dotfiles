@@ -13,10 +13,6 @@ set secure
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
 
-" Select all
-nnoremap <C-a> ggVG
-nnoremap <C-a> ggVG
-
 " Scroll
 nnoremap <C-u> <PageDown>
 nnoremap <C-i> <PageUp>
