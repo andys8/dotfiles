@@ -9,6 +9,10 @@ let g:airline_theme = 'dracula'
 set exrc
 set secure
 
+" Switch themes
+command Light colo lightning
+command Dark colo contrasty
+
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
