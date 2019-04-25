@@ -21,6 +21,7 @@ commands=(
   i3-nagbar
   i3-sensible-terminal
   i3lock
+  idea
   maim
   ncdu
   nm-applet

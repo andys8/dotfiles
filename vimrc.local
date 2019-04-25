@@ -58,6 +58,7 @@ let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
 let g:syntastic_java_checkers = []
 let g:ale_java_google_java_format_options = '--aosp'
 let g:ale_java_javac_executable = "javac -cp ~/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar"
+autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
 
 
 " Elm (plugin part of vim-polyglot)
