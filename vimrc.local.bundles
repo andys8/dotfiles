@@ -52,9 +52,6 @@ Plug 'junegunn/goyo.vim'
 " Expand region
 Plug 'terryma/vim-expand-region'
 
-" Colors visualized with background
-Plug 'gorodinskiy/vim-coloresque'
-
 " Run test suites with :Test*
 Plug 'janko-m/vim-test'
 
