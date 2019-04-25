@@ -4,6 +4,7 @@ set relativenumber
 set confirm
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
+set updatetime=750
 
 " Allow project-specific .vimrc files
 set exrc
