@@ -74,8 +74,8 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ale_lint_on_text_changed = 'off'
 let g:ale_completion_delay = 200
 let g:ale_lint_delay = 750
-nnoremap <silent> <leader>p :ALEFix<CR>
-nnoremap <silent> <leader>a :ALENext -wrap -error<CR>
+" nnoremap <silent> <leader>p :ALEFix<CR>
+" nnoremap <silent> <leader>a :ALENext -wrap -error<CR>
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -92,6 +92,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \ 'haskell': ['hdevtools', 'hlint'],
       \ 'javascript': ['eslint'],
+      \ 'typescript': [],
       \ 'markdown': ['markdownlint']
       \}
 
@@ -171,3 +172,46 @@ let g:startify_files_number = 5
 let g:startify_change_to_dir = 0
 let startify_custom_header = split(system('toilet -f pagga " I like Vim"'), '\n')
 
+" Coc
+set hidden
+set nobackup
+set nowritebackup
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=750
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+nnoremap <F5> :CocRebuild<CR>
+nnoremap <silent> <leader>g  :<C-u>CocList -I symbols<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+nmap <leader>r <Plug>(coc-rename)
+nmap <leader>s  <Plug>(coc-codeaction)
+nmap <leader>S  <Plug>(coc-fix-current)
+nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>A <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>d <Plug>(coc-definition)
+nmap <silent> <leader>D <Plug>(coc-implementation)
+nmap <silent> <leader>t <Plug>(coc-type-definition)
+nmap <silent> <leader>u <Plug>(coc-references)
+nmap <silent> <leader>p <Plug>(coc-format)
+vmap <silent> <leader>p  <Plug>(coc-format-selected)
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
