@@ -6,6 +6,7 @@ commands=(
   bash
   brittany
   diff-so-fancy
+  dtrx
   elm
   fd
   feh
