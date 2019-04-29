@@ -46,11 +46,15 @@ nnoremap <F2> :action SelectInProjectView<CR>
 nnoremap <F3> <a-1>
 nnoremap <F4> :action FileStructurePopup<CR>
 
-" window navigation
+" Window navigation
 nnoremap <c-l> <c-w>l
 nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
+
+" Split window
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>h :action SplitHorizontally<CR>
 
 " Close window
 nnoremap <leader>c :q<CR>
