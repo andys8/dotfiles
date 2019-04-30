@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Vim
 ln -sf ~/dotfiles/vimrc                     ~/.vimrc
@@ -33,5 +34,9 @@ ln -sf ~/dotfiles/alacritty/alacritty.yml   ~/.config/alacritty/alacritty.yml
 # Fish
 ln -sf ~/dotfiles/config.fish               ~/.config/fish/config.fish
 
+# Bash
+ln -sf ~/dotfiles/bashrc                    ~/.bashrc
+
 # Google Java Format
 ln -sf ~/dotfiles/google-java-format        ~/bin/google-java-format
+
