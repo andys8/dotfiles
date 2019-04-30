@@ -1,9 +1,7 @@
-" Theme
-colo gruvbox
+" Vim configuration
 set relativenumber
 set confirm
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'dracula'
+set shell=/bin/bash
 set updatetime=750
 set nobackup
 set noswapfile
@@ -11,6 +9,11 @@ set noswapfile
 " Allow project-specific .vimrc files
 set exrc
 set secure
+
+" Theme
+colo gruvbox
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'dracula'
 
 " Switch themes
 command Light colo lightning
