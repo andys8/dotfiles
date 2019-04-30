@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Vim plugin installation
-vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean +qall
+vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 
 # Npm installable dependencies
 npminstallations=(
@@ -14,4 +15,10 @@ npminstallations=(
 
 for i in "${npminstallations[@]}"
 do (npm install -g "$i"); done
+
+# Update version managers
+asdf update
+asdf plugin-update --all
+fish -c "sdk update"
+fish -c "omf update"
 

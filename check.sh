@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Dependencies
 commands=(
   alacritty
+  asdf
+  autojump
   bash
   brittany
   diff-so-fancy
@@ -36,6 +39,7 @@ commands=(
   toilet
   vim
   vimdiff
+  xclip
   xrandr
   zathura
 )
