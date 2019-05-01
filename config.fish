@@ -86,7 +86,6 @@ if not set -q abbrs_initialized
   abbr gst 'git stash'
   abbr agi 'sudo apt-get install'
   abbr agr 'sudo apt-get remove'
-  abbr ls 'exa -a'
   abbr ll 'exa -al'
   abbr update 'sudo apt-get update; and sudo apt-get upgrade'
   abbr .. 'cd ..'
