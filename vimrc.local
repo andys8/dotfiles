@@ -63,7 +63,6 @@ let g:ale_java_google_java_format_options = '--aosp'
 let g:ale_java_javac_executable = "javac -cp ~/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar"
 autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
 
-
 " Elm (plugin part of vim-polyglot)
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -156,6 +155,8 @@ autocmd FileType markdown,text,gitcommit setlocal spell
 autocmd FileType markdown,text,gitcommit nnoremap <leader>s [s1z=<c-o>
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=009
+command! -nargs=0 German silent set spelllang=de
+command! -nargs=0 English silent set spelllang=en
 
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
