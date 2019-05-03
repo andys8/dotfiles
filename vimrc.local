@@ -87,6 +87,7 @@ nnoremap <silent> <leader>A :ALENext -wrap<CR>
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'typescript': ['prettier'],
+      \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
       \ 'json': ['prettier'],
       \ 'markdown': ['prettier'],
