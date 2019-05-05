@@ -23,9 +23,8 @@ command Dark colo contrasty
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
 
-" Scroll
-nnoremap <C-u> <PageDown>
-nnoremap <C-i> <PageUp>
+" Tab to switch buffer (instead of tab)
+nmap <Tab> :bn<CR>
 
 " Exit insert mode
 inoremap jj <ESC>
