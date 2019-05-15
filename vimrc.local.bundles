@@ -52,3 +52,6 @@ Plug 'terryma/vim-expand-region'
 " Run test suites with :Test*
 Plug 'janko-m/vim-test'
 
+" Change root directory automatically
+Plug 'airblade/vim-rooter'
+
