@@ -27,6 +27,7 @@ commands=(
   i3lock
   idea
   maim
+  mdp
   ncdu
   nm-applet
   preload
