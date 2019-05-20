@@ -11,7 +11,7 @@ set exrc
 set secure
 
 " Theme
-colo gruvbox
+colo dracula
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 
