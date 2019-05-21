@@ -182,4 +182,4 @@ let startify_custom_header = split(system('toilet -f pagga " I like Vim"'), '\n'
 
 " Rooter
 let g:rooter_silent_chdir = 1
-let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', '.git/']
+let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.git/']
