@@ -24,7 +24,7 @@ commands=(
   i3-msg
   i3-nagbar
   i3-sensible-terminal
-  i3lock
+  i3lock-fancy
   idea
   maim
   mdp
@@ -49,7 +49,6 @@ files=(
   ~/.gitconfig.user
   ~/bin/startup.sh
   ~/Pictures/wallpaper/wallpaper.png
-  ~/Pictures/wallpaper/lock/*
 )
 
 check() { command -v "$1" >/dev/null 2>&1 || { echo "'$1' missing"; exit 1; } }

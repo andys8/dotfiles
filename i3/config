@@ -94,7 +94,7 @@ bindsym X86PowerOff exec poweroff
 bindsym Ctrl+$alt+$mod+P exec poweroff
 
 # lock screen
-bindsym $alt+$mod+l exec i3lock -c 000000 -e -i $(find ~/Pictures/wallpaper/lock/* | shuf -n1)
+bindsym $alt+$mod+l exec i3lock-fancy -p
 
 # restart network
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager
