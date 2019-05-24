@@ -39,7 +39,7 @@ nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>e :action GotoFile<CR>
 nnoremap <leader>p :action ReformatCode<CR>
-nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>f :action FindModal<CR>
 nnoremap <leader>a :action GotoNextError<CR>
 
 nnoremap <F2> :action SelectInProjectView<CR>
