@@ -25,6 +25,7 @@ commands=(
   i3-nagbar
   i3-sensible-terminal
   i3lock-fancy
+  i3status-rs
   idea
   maim
   mdp
