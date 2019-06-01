@@ -19,6 +19,5 @@ do (npm install -g "$i"); done
 # Update version managers
 asdf update
 asdf plugin-update --all
-fish -c "sdk update"
 fish -c "omf update"
 
