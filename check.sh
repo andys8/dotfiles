@@ -11,6 +11,7 @@ commands=(
   diff-so-fancy
   dtrx
   elm
+  elm-language-server
   fd
   feh
   fish

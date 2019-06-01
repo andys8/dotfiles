@@ -34,6 +34,9 @@ Plug 'luochen1990/rainbow'
 " Ctags are created automatically
 Plug 'craigemery/vim-autotag', { 'for': 'elm' }
 
+" Elm language server
+Plug 'antew/vim-elm-language-server', { 'for': 'elm' }
+
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
 
