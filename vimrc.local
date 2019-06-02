@@ -16,8 +16,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 
 " Switch themes
-command Light colo lightning
-command Dark colo Dark
+command Light colo lightning | RainbowToggleOff
+command Dark colo Dark | RainbowToggleOff
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
