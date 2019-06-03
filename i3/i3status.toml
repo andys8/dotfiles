@@ -2,14 +2,19 @@ theme = "slick"
 icons = "awesome"
 
 [[block]]
+block = "battery"
+interval = 120
+
+[[block]]
+block = "time"
+interval = 360
+format = "%d.%m."
+
+[[block]]
 block = "time"
 interval = 60
-format = "%d.%m. %R"
+format = "%R"
 
 [[block]]
 block = "sound"
-
-[[block]]
-block = "battery"
-interval = 120
 
