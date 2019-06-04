@@ -450,5 +450,5 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
-  - { key: PageDown, mods: Shift,   action: ScrollPageDown               }
-  - { key: PageUp,   mods: Shift,   action: ScrollPageUp                 }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown,  mode: ~Alt  }
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp,    mode: ~Alt  }
