@@ -88,6 +88,7 @@ autocmd FileType elm nnoremap <silent> <leader>u :ALEFindReferences<CR>
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'typescript': ['prettier'],
+      \ 'yaml': ['prettier'],
       \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
       \ 'json': ['prettier'],
