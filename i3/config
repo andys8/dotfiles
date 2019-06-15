@@ -162,6 +162,7 @@ bindsym $mod+i workspace back_and_forth
 assign [class="Google-chrome"]      $ws_www
 assign [class="Firefox"]            $ws_www
 assign [class="HipChat"]            $ws_chat
+assign [class="Rambox"]             $ws_chat
 assign [class="Slack"]              $ws_chat
 assign [class="jetbrains-idea"]     $ws_work
 assign [class="Code"]               $ws_work
