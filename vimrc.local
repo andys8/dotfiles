@@ -95,6 +95,7 @@ let g:ale_fixers = {
       \ 'markdown': ['prettier'],
       \ 'elm': ['elm-format'],
       \ 'haskell': ['brittany'],
+      \ 'sh': ['shfmt'],
       \ 'scala': ['scalafmt'],
       \ 'java': ['google_java_format']
       \}

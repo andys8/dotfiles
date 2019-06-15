@@ -38,6 +38,7 @@ commands=(
   rg
   rofi
   shellcheck
+  shfmt
   sxiv
   toilet
   vim
