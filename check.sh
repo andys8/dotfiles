@@ -7,7 +7,6 @@ commands=(
   asdf
   autojump
   bash
-  brittany
   diff-so-fancy
   dtrx
   elm
@@ -15,6 +14,7 @@ commands=(
   fd
   feh
   fish
+  floskell
   fnm
   ghc-mod
   gopass
