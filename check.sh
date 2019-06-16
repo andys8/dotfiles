@@ -18,7 +18,6 @@ commands=(
   fnm
   ghc-mod
   gopass
-  hdevtools
   hlint
   i3
   i3-dmenu-desktop
@@ -39,6 +38,7 @@ commands=(
   rofi
   shellcheck
   shfmt
+  stack
   sxiv
   toilet
   vim
