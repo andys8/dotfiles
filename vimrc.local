@@ -67,9 +67,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:elm_syntastic_show_warnings = 1
 let g:elm_setup_keybindings = 0
-let g:elm_format_autosave = 1
 let g:elm_format_fail_silently = 1
-
+let g:elm_format_autosave = 0
+autocmd FileType elm let g:ale_fix_on_save = 1
 
 " Haskell
 let g:haskellmode_completion_ghc = 0
@@ -79,11 +79,13 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ale_lint_on_text_changed = 'off'
 let g:ale_completion_delay = 200
 let g:ale_lint_delay = 750
+
 nnoremap <silent> <leader>p :ALEFix<CR>
 nnoremap <silent> <leader>a :ALENext -wrap<CR>
 nnoremap <silent> <leader>A :ALENext -wrap -error<CR>
 autocmd FileType elm nnoremap <silent> <leader>d :ALEGoToDefinition<CR>
 autocmd FileType elm nnoremap <silent> <leader>u :ALEFindReferences<CR>
+
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -103,11 +105,8 @@ let g:ale_fixers = {
 let g:ale_linters = {
       \ 'haskell': ['stack-ghc', 'hlint'],
       \ 'javascript': ['eslint'],
-      \ 'markdown': ['markdownlint']
-      \}
-
-let g:ale_linters_ignore = {
-      \ 'elm': ['make']
+      \ 'markdown': ['markdownlint'],
+      \ 'elm': ['elm_ls']
       \}
 
 " List toggle
