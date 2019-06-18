@@ -70,10 +70,6 @@ let g:elm_setup_keybindings = 0
 let g:elm_format_fail_silently = 1
 let g:elm_format_autosave = 0
 
-" Haskell
-let g:haskellmode_completion_ghc = 0
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-
 " Ale: Linting
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
@@ -119,9 +115,6 @@ let g:rainbow_active = 1
 
 " Ctags
 set tags+=tags;tags.vendors;,tags;
-
-autocmd FileType haskell nnoremap <leader>d g<C-]>
-autocmd FileType haskell nnoremap <leader>D :Tags <C-R><C-W><CR>
 
 let g:tagbar_type_elm = {
       \ 'kinds' : [
