@@ -75,7 +75,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
 let g:ale_completion_delay = 200
-autocmd FileType elm let g:ale_fix_on_save = 1
+autocmd FileType elm let b:ale_fix_on_save = 1
 
 nnoremap <silent> <leader>p :ALEFix<CR>
 nnoremap <silent> <leader>a :ALENext -wrap<CR>
