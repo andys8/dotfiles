@@ -44,17 +44,26 @@ cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 
 " YouCompleteMe
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-nnoremap <leader>s :YcmCompleter FixIt<CR>
-nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>u :YcmCompleter GoToReferences<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename<space>
+" nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+" nnoremap <leader>s :YcmCompleter FixIt<CR>
+" nnoremap <leader>g :YcmCompleter GoTo<CR>
+" nnoremap <leader>t :YcmCompleter GetType<CR>
+" nnoremap <leader>u :YcmCompleter GoToReferences<CR>
+" nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+" nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
+" nnoremap <leader>r :YcmCompleter RefactorRename<space>
 
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_semantic_triggers = { 'elm': , 'haskell' : ['.'] }
+
+" Autocompletion 
+set completeopt+=menuone,noselect
+set shortmess+=c
+set belloff+=ctrlg
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#chains = {
+      \ 'default' : ['ulti', 'path', 'omni', 'keyn', 'dict', 'uspl'],
+      \}
 
 " Java
 let g:syntastic_java_checkers = []
@@ -77,6 +86,8 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
 let g:ale_completion_delay = 200
 autocmd FileType elm let b:ale_fix_on_save = 1
+" set omnifunc=ale#completion#OmniFunc
+
 
 nnoremap <silent> <leader>p :ALEFix<CR>
 nnoremap <silent> <leader>a :ALENext -wrap<CR>
