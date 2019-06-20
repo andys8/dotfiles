@@ -81,8 +81,8 @@ nnoremap <silent> <leader>p :ALEFix<CR>
 nnoremap <silent> <leader>a :ALENext -wrap<CR>
 nnoremap <silent> <leader>A :ALENext -wrap -error<CR>
 autocmd FileType elm nnoremap <silent> <leader>d :ALEGoToDefinition<CR>
+autocmd FileType elm nnoremap <silent> <leader>D :ALEHover<CR>
 autocmd FileType elm nnoremap <silent> <leader>u :ALEFindReferences<CR>
-
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
