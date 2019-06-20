@@ -5,7 +5,8 @@ set -euo pipefail
 ln -sf ~/dotfiles/vimrc                     ~/.vimrc
 ln -sf ~/dotfiles/vimrc.local               ~/.vimrc.local
 ln -sf ~/dotfiles/vimrc.local.bundles       ~/.vimrc.local.bundles
-
+ln -sf ~/dotfiles/coc-settings.json         ~/.vim/coc-settings.json
+ 
 # Idea VIM
 ln -sf ~/dotfiles/ideavimrc                 ~/.ideavimrc
 
