@@ -69,6 +69,7 @@ let g:elm_syntastic_show_warnings = 1
 let g:elm_setup_keybindings = 0
 let g:elm_format_fail_silently = 1
 let g:elm_format_autosave = 0
+let g:polyglot_disabled = ['elm']
 
 " Ale: Linting
 let g:ale_lint_on_text_changed = 0
