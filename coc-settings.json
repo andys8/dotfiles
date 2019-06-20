@@ -1,22 +1,17 @@
 {
-    "languageserver": {
-        "elmLS": {
-            "command": "elm-language-server",
-            "args": [
-                "--stdio"
-            ],
-            "filetypes": [
-                "elm"
-            ],
-            "rootPatterns": [
-                "elm.json"
-            ],
-            "initializationOptions": {
-                "runtime": "node",
-                "elmPath": "elm",
-                "elmFormatPath": "elm-format",
-                "elmTestPath": "elm-test"
-            }
-        }
+  "diagnostic.refreshAfterSave": true,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "runtime": "node",
+        "elmPath": "elm",
+        "elmFormatPath": "elm-format",
+        "elmTestPath": "elm-test"
+      }
     }
+  }
 }
