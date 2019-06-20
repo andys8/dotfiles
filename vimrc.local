@@ -43,47 +43,20 @@ cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 " Expand snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-" YouCompleteMe
-nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-nnoremap <leader>s :YcmCompleter FixIt<CR>
-nnoremap <leader>g :YcmCompleter GoTo<CR>
-nnoremap <leader>t :YcmCompleter GetType<CR>
-nnoremap <leader>u :YcmCompleter GoToReferences<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>o :YcmCompleter OrganizeImports<CR>
-nnoremap <leader>r :YcmCompleter RefactorRename<space>
-
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_semantic_triggers = { 'elm' : ['.'], 'haskell' : ['.'] }
-
 " Java
 let g:syntastic_java_checkers = []
 let g:ale_java_google_java_format_options = '--aosp'
 let g:ale_java_javac_executable = "javac -cp ~/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar"
 autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
 
-" Elm (plugin part of vim-polyglot)
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:elm_syntastic_show_warnings = 1
-let g:elm_setup_keybindings = 0
-let g:elm_format_fail_silently = 1
-let g:elm_format_autosave = 0
+" Elm
 let g:polyglot_disabled = ['elm']
 
 " Ale: Linting
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
-let g:ale_completion_delay = 200
 autocmd FileType elm let b:ale_fix_on_save = 1
-
-nnoremap <silent> <leader>p :ALEFix<CR>
-nnoremap <silent> <leader>a :ALENext -wrap<CR>
-nnoremap <silent> <leader>A :ALENext -wrap -error<CR>
-autocmd FileType elm nnoremap <silent> <leader>d :ALEGoToDefinition<CR>
-autocmd FileType elm nnoremap <silent> <leader>D :ALEHover<CR>
-autocmd FileType elm nnoremap <silent> <leader>u :ALEFindReferences<CR>
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -178,10 +151,42 @@ if &diff
 endif
 
 " Startify
-let g:startify_files_number = 5
+let g:startify_files_number = 3
 let g:startify_change_to_dir = 0
 let startify_custom_header = split(system('toilet -f pagga " I like Vim"'), '\n')
 
 " Rooter
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.git/']
+
+
+" Coc
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+nnoremap <F5> :CocRebuild<CR>
+nnoremap <silent> <leader>g  :<C-u>CocList -I symbols<CR>
+nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+nmap <leader>r <Plug>(coc-rename)
+nmap <leader>s <Plug>(coc-codeaction)
+nmap <leader>S <Plug>(coc-fix-current)
+nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>A <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>d <Plug>(coc-definition)
+nmap <silent> <leader>D <Plug>(coc-implementation)
+nmap <silent> <leader>t <Plug>(coc-type-definition)
+nmap <silent> <leader>u <Plug>(coc-references)
+nmap <silent> <leader>p <Plug>(coc-format)
+
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

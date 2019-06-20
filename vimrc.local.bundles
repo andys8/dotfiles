@@ -10,9 +10,6 @@ Plug 'tpope/vim-surround'
 " Snippets for jest
 Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
-" Auto completion
-Plug 'valloric/youcompleteme', { 'do': 'python3 ~/.vim/plugged/youcompleteme/install.py --ts-completer --java-completer '}
-
 " Colorscheme colection
 Plug 'flazz/vim-colorschemes'
 
@@ -33,9 +30,6 @@ Plug 'craigemery/vim-autotag', { 'for': ['haskell'] }
 
 " Elm syntax
 Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
-
-" Elm language server
-Plug 'antew/vim-elm-language-server', { 'for': 'elm' }
 
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
@@ -58,3 +52,5 @@ Plug 'janko-m/vim-test'
 " Change root directory automatically
 Plug 'airblade/vim-rooter'
 
+" Coc (Language Server and Completion)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
