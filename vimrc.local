@@ -57,6 +57,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
 autocmd FileType elm let b:ale_fix_on_save = 1
+nmap <silent> <leader>p :ALEFix<CR>
 
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
@@ -77,7 +78,7 @@ let g:ale_linters = {
       \ 'haskell': ['stack-ghc', 'hlint'],
       \ 'javascript': ['eslint'],
       \ 'markdown': ['markdownlint'],
-      \ 'elm': ['elm_ls']
+      \ 'elm': []
       \}
 
 " List toggle
@@ -162,10 +163,7 @@ let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.g
 
 " Coc
 
-" Smaller updatetime for CursorHold & CursorHoldI
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
+set updatetime=300 "Smaller updatetime for CursorHold & CursorHoldI
 set shortmess+=c
 
 function! s:check_back_space() abort
@@ -185,7 +183,6 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>D <Plug>(coc-implementation)
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
-nmap <silent> <leader>p <Plug>(coc-format)
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()

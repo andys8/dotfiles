@@ -26,7 +26,7 @@ Plug 'danielwe/listtoggle'
 Plug 'luochen1990/rainbow'
 
 " Ctags are created automatically
-Plug 'craigemery/vim-autotag', { 'for': ['haskell'] }
+Plug 'craigemery/vim-autotag', { 'for': 'haskell' }
 
 " Elm syntax
 Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
