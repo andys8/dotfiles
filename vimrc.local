@@ -2,7 +2,8 @@
 set relativenumber
 set confirm
 set shell=/bin/bash
-set updatetime=750
+set updatetime=300 "for Coc
+set shortmess+=c
 set nobackup
 set noswapfile
 
@@ -150,8 +151,6 @@ let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.git/']
 
 " Coc
-set updatetime=300 "Smaller updatetime for CursorHold & CursorHoldI
-set shortmess+=c
 hi CocErrorHighlight ctermfg=black ctermbg=red cterm=bold guifg=Black guibg=Red gui=bold
 
 function! s:check_back_space() abort
