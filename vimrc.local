@@ -56,7 +56,6 @@ let g:polyglot_disabled = ['elm']
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
-autocmd FileType elm let b:ale_fix_on_save = 1
 nmap <silent> <leader>p :ALEFix<CR>
 
 let g:ale_fixers = {
@@ -168,9 +167,10 @@ nmap <leader>S <Plug>(coc-fix-current)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>d <Plug>(coc-definition)
-nmap <silent> <leader>D <Plug>(coc-implementation)
+nmap <silent> <leader>D :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
+autocmd FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
