@@ -1,6 +1,7 @@
 {
   "diagnostic.refreshAfterSave": false,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "suggest.maxCompleteItemCount": 5,
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
