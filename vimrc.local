@@ -141,16 +141,6 @@ nnoremap <F6> :Goyo<CR>
 abbrev windowsfile e ++ff=dos
 abbrev dosfile e ++ff=dos
 
-" vimdiff
-if &diff
-  map <leader>1 :diffget LOCAL<CR>
-  map <leader>2 :diffget BASE<CR>
-  map <leader>3 :diffget REMOTE<CR>
-  map <leader>g :diffget<CR>
-  map <leader>d :difft<CR>
-  map <leader>o :diffo<CR>
-endif
-
 " Startify
 let g:startify_files_number = 3
 let g:startify_change_to_dir = 0
@@ -160,9 +150,7 @@ let startify_custom_header = split(system('toilet -f pagga " I like Vim"'), '\n'
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.git/']
 
-
 " Coc
-
 set updatetime=300 "Smaller updatetime for CursorHold & CursorHoldI
 set shortmess+=c
 
@@ -187,3 +175,14 @@ nmap <silent> <leader>u <Plug>(coc-references)
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+
+" vimdiff
+if &diff
+  map <leader>1 :diffget LOCAL<CR>
+  map <leader>2 :diffget BASE<CR>
+  map <leader>3 :diffget REMOTE<CR>
+  map <leader>g :diffget<CR>
+  map <leader>d :difft<CR>
+  map <leader>o :diffo<CR>
+endif
