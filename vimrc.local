@@ -159,7 +159,6 @@ function! s:check_back_space() abort
 endfunction
 
 nnoremap <F5> :CocRebuild<CR>
-nnoremap <silent> <leader>g  :<C-u>CocList -I symbols<CR>
 nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>s <Plug>(coc-codeaction)
@@ -167,7 +166,7 @@ nmap <leader>S <Plug>(coc-fix-current)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>d <Plug>(coc-definition)
-nmap <silent> <leader>D :call CocAction('doHover')<CR>
+nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 autocmd FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
