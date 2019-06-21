@@ -1,5 +1,5 @@
 {
-  "diagnostic.refreshAfterSave": true,
+  "diagnostic.refreshAfterSave": false,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "languageserver": {
     "elmLS": {
