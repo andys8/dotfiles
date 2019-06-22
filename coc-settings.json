@@ -1,5 +1,5 @@
 {
-  "diagnostic.refreshAfterSave": false,
+  "diagnostic.refreshAfterSave": true,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": false,
   "suggest.minTriggerInputLength": 3,
