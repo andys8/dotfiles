@@ -7,7 +7,7 @@ set -q XDG_DATA_HOME
 source $OMF_PATH/init.fish
 
 # Environment
-set -gx PATH $HOME/.local/bin $HOME/.fnm $PATH
+set -gx PATH $HOME/.local/bin $PATH
 set -gx EDITOR vim
 
 # No greeting
@@ -46,7 +46,7 @@ function sudo
     command sudo $argv
   end
 end
-#
+
 # Fix for LD_PRELOAD not found in sdk and screenfetch
 set -x LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 
