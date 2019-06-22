@@ -1,4 +1,5 @@
 " Vim configuration
+scriptencoding utf-8
 set relativenumber
 set confirm
 set shell=/bin/bash
