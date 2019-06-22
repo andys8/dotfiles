@@ -3,10 +3,12 @@ scriptencoding utf-8
 set relativenumber
 set confirm
 set shell=/bin/bash
-set updatetime=300 "for Coc
 set shortmess+=c
 set nobackup
 set noswapfile
+
+" updatetime has performance impact
+set updatetime=500
 
 " Allow project-specific .vimrc files
 set exrc
