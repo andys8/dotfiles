@@ -76,6 +76,7 @@ if not set -q abbrs_initialized
   abbr gc 'git commit -m'
   abbr gco 'git checkout'
   abbr gd 'git diff'
+  abbr gds 'git diff --staged'
   abbr gf 'git fetch'
   abbr gl 'git log'
   abbr gm 'git merge'
