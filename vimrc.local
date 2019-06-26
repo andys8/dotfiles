@@ -148,7 +148,7 @@ abbrev dosfile e ++ff=dos
 " Startify
 let g:startify_files_number = 3
 let g:startify_change_to_dir = 0
-let startify_custom_header = split(system('toilet -f pagga " I like Vim"'), '\n')
+let startify_custom_header = split(system('toilet -f pagga " VIM Editor"'), '\n')
 
 " Rooter
 let g:rooter_silent_chdir = 1
