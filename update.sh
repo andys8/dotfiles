@@ -4,6 +4,9 @@ set -euo pipefail
 # Vim plugin installation
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 
+# Coc plugins
+vim +"CocInstall -sync coc-tsserver coc-java coc-json" +qall
+
 # Npm installable dependencies
 npminstallations=(
   elm-test
