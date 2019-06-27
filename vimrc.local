@@ -48,11 +48,6 @@ cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 " Expand snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
 
-" Java
-let g:syntastic_java_checkers = []
-let g:ale_java_google_java_format_options = '--aosp'
-let g:ale_java_javac_executable = "javac -cp ~/.m2/repository/org/projectlombok/lombok/1.18.6/lombok-1.18.6.jar"
-autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
 
 " Elm
 let g:polyglot_disabled = ['elm']
@@ -84,6 +79,13 @@ let g:ale_linters = {
       \ 'markdown': ['markdownlint'],
       \ 'elm': []
       \}
+
+" Java
+let g:syntastic_java_checkers = []
+let g:ale_java_google_java_format_options = '--aosp'
+autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
+autocmd FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
+autocmd FileType java nmap <silent> <leader>p <Plug>(coc-format)
 
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -174,7 +176,6 @@ nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 autocmd FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
-autocmd FileType elm nmap <silent> K :call CocAction('doHover')<CR>
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
