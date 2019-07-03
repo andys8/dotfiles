@@ -19,9 +19,6 @@ Plug 'mhinz/vim-startify'
 " Toggle location list (errors)
 Plug 'danielwe/listtoggle'
 
-" Rainbow brackets
-Plug 'luochen1990/rainbow'
-
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
 

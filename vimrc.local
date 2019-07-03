@@ -20,8 +20,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 
 " Switch themes
-command Light colo lightning | RainbowToggleOff
-command Dark colo Dark | RainbowToggleOff
+command Light colo lightning 
+command Dark colo Dark
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
@@ -90,9 +90,6 @@ autocmd FileType java nmap <silent> <leader>p <Plug>(coc-format)
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>ö'
-
-" Rainbow brackets
-let g:rainbow_active = 1
 
 " Ctags
 set tags+=tags;tags.vendors;,tags;
