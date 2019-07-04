@@ -48,6 +48,9 @@ cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 " Expand snippets
 let g:UltiSnipsExpandTrigger="<c-j>"
 
+" Multiple cursors
+let g:multi_cursor_exit_from_visual_mode = 1
+let g:multi_cursor_exit_from_insert_mode = 1
 
 " Elm
 let g:polyglot_disabled = ['elm']
