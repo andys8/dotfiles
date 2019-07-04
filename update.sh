@@ -5,7 +5,7 @@ set -euo pipefail
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 
 # Coc plugins
-vim +"CocInstall -sync coc-tsserver coc-java coc-json" +qall
+vim +"CocInstall -sync coc-tsserver coc-java coc-json coc-ultisnips" +qall
 
 # Npm installable dependencies
 npminstallations=(
