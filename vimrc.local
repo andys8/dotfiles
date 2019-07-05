@@ -80,15 +80,10 @@ let g:ale_linters = {
       \ 'haskell': ['stack-ghc', 'hlint'],
       \ 'javascript': ['eslint'],
       \ 'markdown': ['markdownlint'],
-      \ 'elm': []
+      \ 'elm': [],
+      \ 'java': []
       \}
 
-" Java
-let g:syntastic_java_checkers = []
-let g:ale_java_google_java_format_options = '--aosp'
-autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
-autocmd FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
-autocmd FileType java nmap <silent> <leader>p <Plug>(coc-format)
 
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
@@ -165,7 +160,6 @@ function! s:check_back_space() abort
 endfunction
 
 nnoremap <F5> :CocRebuild<CR>
-nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>s <Plug>(coc-codeaction)
 nmap <leader>S <Plug>(coc-fix-current)
@@ -176,11 +170,19 @@ nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 autocmd FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
+autocmd FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" Java
+let g:syntastic_java_checkers = []
+autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
+autocmd FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
+autocmd FileType java nmap <silent> <leader>p <Plug>(coc-format)
+autocmd FileType java xmap <silent> <leader>o <Plug>(coc-format-selected)
+autocmd FileType java nnoremap <leader>o :CocCommand java.action.organizeImports<CR>
 
 " vimdiff
 if &diff
