@@ -92,6 +92,7 @@ if not set -q abbrs_initialized
   abbr ... 'cd ../..'
   abbr ackf 'ack -f | ack'
   abbr tl 'toilet -t -F border -f future --gay'
+  abbr cheat 'curl cheat.sh/'
 
 end
 
