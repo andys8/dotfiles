@@ -18,6 +18,8 @@ set secure
 colo dracula
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
+let g:airline#extensions#tagbar#enabled = 0
+let g:airline_highlighting_cache = 1
 
 " Switch themes
 command Light colo lightning 
