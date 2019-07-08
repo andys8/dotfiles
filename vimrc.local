@@ -151,9 +151,11 @@ let startify_custom_header = split(system('toilet -f pagga " VIM Editor"'), '\n'
 
 " Rooter
 let g:rooter_silent_chdir = 1
-let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml','pom.xml', '.git/']
+let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', 'pom.xml', '.git/']
 
 " Coc
+let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json', 'coc-ultisnips', 'coc-java' ]
+
 hi CocErrorHighlight ctermfg=black ctermbg=red cterm=bold guifg=Black guibg=Red gui=bold
 
 function! s:check_back_space() abort
