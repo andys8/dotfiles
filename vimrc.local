@@ -156,7 +156,13 @@ let g:rooter_silent_chdir = 1
 let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', 'pom.xml', '.git/']
 
 " Coc
-let g:coc_global_extensions = [ 'coc-tsserver', 'coc-json', 'coc-ultisnips', 'coc-java' ]
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-json',
+      \ 'coc-ultisnips',
+      \ 'coc-java',
+      \ 'coc-prettier'
+      \ ]
 
 hi CocErrorHighlight ctermfg=black ctermbg=red cterm=bold guifg=Black guibg=Red gui=bold
 
