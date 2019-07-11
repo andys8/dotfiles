@@ -37,6 +37,7 @@
 	autosetupmerge = true
 [rebase]
 	missingCommitsCheck = error
+	autoStash = true
 [mergetool]
 	prompt = false
 	keepbackup = false
@@ -64,3 +65,5 @@
 	whitespace = red reverse
 [include]
 	path = .gitconfig.user
+[pull]
+	rebase = true
