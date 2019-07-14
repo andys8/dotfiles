@@ -29,6 +29,8 @@ window:
     x: 0
     y: 0
 
+  dynamic_padding: false
+
   # Window decorations
   #
   # Values for `decorations`:
@@ -264,6 +266,12 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
+
+# Startup directory
+#
+# Directory the shell is started in. If this is unset, or `None`, the working
+# directory of the parent process will be used.
+working_directory: None
 
 # Key bindings
 #
