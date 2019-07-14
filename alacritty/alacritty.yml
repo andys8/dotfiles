@@ -238,7 +238,7 @@ selection:
   # When set to `true`, selected text will be copied to both the primary and
   # the selection clipboard. Otherwise, it will only be copied to the selection
   # clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 dynamic_title: true
 
