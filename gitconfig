@@ -31,6 +31,8 @@
 	algorithm = patience
 [difftool]
 	prompt = false
+[difftool "idea"]
+	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
 [help]
 	autocorrect = 20
 [branch]
@@ -45,6 +47,9 @@
 	summary = true
 	verbosity = 1
 	tool = vimdiff
+[mergetool "idea"]
+	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
 [color]
 	ui = true
 [color "branch"]
