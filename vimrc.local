@@ -133,7 +133,8 @@ command! -bang -nargs=* Rg
 
 " Spell checking
 autocmd FileType markdown,text,gitcommit setlocal spell
-autocmd FileType markdown,text,gitcommit nnoremap <leader>s [s1z=<c-o>
+autocmd FileType markdown,text,gitcommit nnoremap <leader>s 1z=]S
+autocmd FileType markdown,text,gitcommit nnoremap <leader>a ]S
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=009
 command! -nargs=0 German silent set spelllang=de
