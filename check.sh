@@ -44,6 +44,7 @@ commands=(
   toilet
   vim
   vimdiff
+  wcalc
   xclip
   xrandr
   zathura
