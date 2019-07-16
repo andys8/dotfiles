@@ -17,7 +17,6 @@ abbr -a -U -- gds 'git diff --staged'
 abbr -a -U -- gf 'git fetch'
 abbr -a -U -- gi git
 abbr -a -U -- gl 'git log'
-abbr -a -U -- c 'wcalc'
 abbr -a -U -- cheat 'curl https://cheat.sh/'
 abbr -a -U -- gm 'git merge'
 abbr -a -U -- gp 'git push'
