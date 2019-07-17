@@ -29,8 +29,8 @@ command Dark colo Dark
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
 
-" Tab to switch buffer (instead of tab)
-nmap <Tab> :bn<CR>
+" Tab is the same as <C-i> and should jump forward
+nunmap <Tab>
 
 " Exit insert mode
 inoremap jj <ESC>
