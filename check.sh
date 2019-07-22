@@ -37,6 +37,7 @@ commands=(
   ranger
   rg
   rofi
+  screenkey
   shellcheck
   shfmt
   stack
