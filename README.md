@@ -40,6 +40,20 @@ Add `WINIT_HIDPI_FACTOR=1.0` to `/etc/environment`
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 80
 sudo update-alternatives --config x-terminal-emulator
 ```
+
 ## i3status-rust
 
 Install from source ([Instructions](https://github.com/greshake/i3status-rust#getting-started))
+
+## Python
+
+Select default version:
+
+```shell
+sudo update-alternatives --config python
+```
+
+If missing, add with:
+
+```shell
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
