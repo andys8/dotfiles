@@ -7,13 +7,17 @@ let
 in {
 
   inherit (pkgs)
-    nix
+    autojump # jump into directory with j
+    dtrx # extract files
     fzf # fuzzy find tool
+    nix # nix package manager
+    ranger # file manager
+    ripgrep # fast grep
   ;
 
   inherit (pkgs.elmPackages)
     elm # compiler
-    elm-format
+    elm-format # elm pretty print
     elm-test # elm test runner
   ;
 
@@ -23,11 +27,13 @@ in {
 
   inherit (fixed)
     cargo # rust package manager
-    scala # scala compiler
-    sbt # sbt package manager
     exa # ls replacement
-    shfmt # format shell scripts
     hlint # haskell linter
     mdp # markdown presentations
+    ncdu # disk usage
+    sbt # sbt package manager
+    scala # scala compiler
+    shfmt # format shell scripts
+    wcalc # calculator
   ;
 }

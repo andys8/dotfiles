@@ -4,13 +4,7 @@ set -euo pipefail
 # Dependencies
 commands=(
   alacritty
-  autojump
   bash
-  diff-so-fancy
-  dtrx
-  elm
-  elm-format
-  elm-language-server
   fd
   feh
   fish
@@ -18,7 +12,6 @@ commands=(
   fnm
   ghc-mod
   gopass
-  hlint
   i3
   i3-dmenu-desktop
   i3-msg
@@ -28,25 +21,19 @@ commands=(
   i3status-rs
   idea
   maim
-  mdp
-  ncdu
   nix-channel
   nix-env
   nm-applet
   preload
   python3
-  ranger
-  rg
   rofi
   screenkey
   shellcheck
-  shfmt
   stack
   sxiv
   toilet
   vim
   vimdiff
-  wcalc
   xclip
   xrandr
   xss-lock
