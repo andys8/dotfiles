@@ -6,5 +6,5 @@ let
   }) {};
 in {
   inherit (pkgs) nix;
-  inherit (fixed) hello;
+  inherit (fixed) hello cargo;
 }
