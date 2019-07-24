@@ -6,5 +6,6 @@ let
   }) {};
 in {
   inherit (pkgs) nix;
-  inherit (fixed) hello cargo scala sbt node-elm-test;
+  inherit (pkgs.elmPackages) elm elm-format elm-test;
+  inherit (fixed) hello cargo scala sbt;
 }
