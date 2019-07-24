@@ -231,7 +231,7 @@ exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocap
 exec --no-startup-id xset r rate 200 80
 
 # Display standbye
-exec --no-startup-id xset dpms 300
+exec --no-startup-id xset dpms 120
 
 # Battery warning script
 exec --no-startup-id ~/.config/i3/i3-battery-popup
