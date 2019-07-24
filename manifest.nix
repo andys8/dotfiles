@@ -8,6 +8,7 @@ in {
 
   inherit (pkgs)
     nix
+    fzf # fuzzy find tool
   ;
 
   inherit (pkgs.elmPackages)
