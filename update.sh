@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nix
-nix-env -u
+nix-channel --update
 nix-env -irf manifest.nix
 
 # Vim plugin installation

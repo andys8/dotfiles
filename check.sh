@@ -31,6 +31,7 @@ commands=(
   maim
   mdp
   ncdu
+  nix-channel
   nix-env
   nm-applet
   preload
