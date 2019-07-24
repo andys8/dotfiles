@@ -29,7 +29,6 @@ in {
     cargo # rust package manager
     exa # ls replacement
     hlint # haskell linter
-    mdp # markdown presentations
     ncdu # disk usage
     sbt # sbt package manager
     scala # scala compiler

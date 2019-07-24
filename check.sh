@@ -21,6 +21,7 @@ commands=(
   i3status-rs
   idea
   maim
+  mdp
   nix-channel
   nix-env
   nm-applet
