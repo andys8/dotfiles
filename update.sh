@@ -10,6 +10,7 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 
 # Npm installable dependencies
 npminstallations=(
+  @elm-tooling/elm-language-server@1.1.1
   markdownlint-cli
   prettier
   typescript
