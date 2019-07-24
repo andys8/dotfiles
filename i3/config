@@ -230,6 +230,9 @@ exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocap
 # Keyboard rate
 exec --no-startup-id xset r rate 200 80
 
+# Lock screen on disabled monitor
+exec --no-startup-id xss-lock -- i3lock-fancy
+
 # Display standbye
 exec --no-startup-id xset dpms 120
 

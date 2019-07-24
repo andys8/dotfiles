@@ -48,6 +48,7 @@ commands=(
   wcalc
   xclip
   xrandr
+  xss-lock
   zathura
 )
 
