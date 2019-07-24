@@ -30,7 +30,7 @@ set -g theme_display_vi yes
 fnm env --multi | source
 
 # Cursor speed
-xset r rate 200 80
+/usr/bin/xset r rate 200 80
 
 # Key bindings: vim and default emacs
 if status --is-interactive
