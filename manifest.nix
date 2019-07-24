@@ -5,8 +5,28 @@ let
     sha256 = "0q2m2qhyga9yq29yz90ywgjbn9hdahs7i8wwlq7b55rdbyiwa5dy";
   }) {};
 in {
-  inherit (pkgs) nix exa shfmt hlint mdp;
-  inherit (pkgs.gitAndTools) diff-so-fancy;
-  inherit (pkgs.elmPackages) elm elm-format elm-test;
-  inherit (fixed) hello cargo scala sbt;
+
+  inherit (pkgs)
+    nix
+  ;
+
+  inherit (pkgs.elmPackages)
+    elm # compiler
+    elm-format
+    elm-test # elm test runner
+  ;
+
+  inherit (pkgs.gitAndTools)
+    diff-so-fancy # git diff with colors
+  ;
+
+  inherit (fixed)
+    cargo # rust package manager
+    scala # scala compiler
+    sbt # sbt package manager
+    exa # ls replacement
+    shfmt # format shell scripts
+    hlint # haskell linter
+    mdp # markdown presentations
+  ;
 }
