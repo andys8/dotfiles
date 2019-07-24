@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Nix
+nix-env -irf manifest.nix
+
 # Vim plugin installation
 vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 

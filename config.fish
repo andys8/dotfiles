@@ -46,6 +46,11 @@ function sudo
   end
 end
 
+# Nix
+if test -e "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  eval (bash -c "source ~/.nix-profile/etc/profile.d/nix.sh; echo export NIX_PATH=\"\$NIX_PATH\"; echo export PATH=\"\$PATH\"; echo export NIX_SSL_CERT_FILE=\"\$NIX_SSL_CERT_FILE\"")
+end
+
 # Fix for LD_PRELOAD not found in sdk and screenfetch
 set -x LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 

@@ -31,6 +31,7 @@ commands=(
   maim
   mdp
   ncdu
+  nix-env
   nm-applet
   preload
   python3
