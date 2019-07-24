@@ -6,5 +6,5 @@ let
   }) {};
 in {
   inherit (pkgs) nix;
-  inherit (fixed) hello cargo;
+  inherit (fixed) hello cargo scala sbt;
 }
