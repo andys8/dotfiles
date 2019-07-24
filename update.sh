@@ -10,10 +10,10 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 
 # Update version managers
 fish -c "omf update"
-npm i -g npm
 
 # Npm installable dependencies
 npminstallations=(
+  npm
   @elm-tooling/elm-language-server@1.1.1
   markdownlint-cli
   prettier
