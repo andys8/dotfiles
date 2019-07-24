@@ -5,7 +5,7 @@ let
     sha256 = "0q2m2qhyga9yq29yz90ywgjbn9hdahs7i8wwlq7b55rdbyiwa5dy";
   }) {};
 in {
-  inherit (pkgs) nix exa;
+  inherit (pkgs) nix exa shfmt;
   inherit (pkgs.gitAndTools) diff-so-fancy;
   inherit (pkgs.elmPackages) elm elm-format elm-test;
   inherit (fixed) hello cargo scala sbt;
