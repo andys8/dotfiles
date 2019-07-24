@@ -4,7 +4,6 @@ set -euo pipefail
 # Dependencies
 commands=(
   alacritty
-  asdf
   autojump
   bash
   diff-so-fancy
