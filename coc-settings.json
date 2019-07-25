@@ -1,10 +1,10 @@
 {
+  "diagnostic.refreshOnInsertMode": false,
   "diagnostic.refreshAfterSave": false,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": false,
   "suggest.minTriggerInputLength": 2,
   "suggest.maxCompleteItemCount": 5,
-  "diagnostic.refreshOnInsertMode": false,
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok-1.18.6.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok-1.18.6.jar",
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "languageserver": {
