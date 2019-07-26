@@ -166,6 +166,7 @@ let g:coc_global_extensions = [
       \ ]
 
 hi CocErrorHighlight ctermfg=black ctermbg=red cterm=bold guifg=Black guibg=Red gui=bold
+hi CocFloating ctermbg=236 guibg=#292c3a
 
 function! s:check_back_space() abort
   let col = col('.') - 1
