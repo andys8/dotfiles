@@ -1,16 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-# Nix
-nix-channel --update
-nix-env -irf manifest.nix
-
-# Vim plugin installation
-vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
-
-# Update version managers
-fish -c "omf update"
-
 # Npm installable dependencies
 npm set prefix ~/.npm-global
 npminstallations=(
