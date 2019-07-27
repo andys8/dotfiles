@@ -7,14 +7,15 @@ let
 in {
 
   inherit (pkgs)
+    arandr # gui for monitors with xrandr
     autojump # jump into directory with j
     dtrx # extract files
     fzf # fuzzy find tool
     maim # screenshots
     nix # nix package manager
     ranger # file manager
-    screenkey # visualize typed keys
     ripgrep # fast grep
+    screenkey # visualize typed keys
   ;
 
   inherit (pkgs.elmPackages)
