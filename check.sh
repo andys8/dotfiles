@@ -41,21 +41,25 @@ files=(
   /usr/local/share/lombok/lombok-1.18.6.jar
 )
 
-check() { 
-  command -v "$1" >/dev/null 2>&1 || { echo "'$1' missing"; exit 1; }
+check() {
+  command -v "$1" >/dev/null 2>&1 || {
+    echo "'$1' missing"
+    exit 1
+  }
 }
 
 exists() {
-  if [ ! -f "$1" ]; then echo "'$1' missing"; exit 1; fi
+  if [ ! -f "$1" ]; then
+    echo "'$1' missing"
+    exit 1
+  fi
 }
 
 # Check commands
-for i in "${commands[@]}"
-do check "$i"; done
+for i in "${commands[@]}"; do check "$i"; done
 
 # Verify files exist
-for i in "${files[@]}"
-do exists "$i"; done
+for i in "${files[@]}"; do exists "$i"; done
 
 # Otherwise good case
 echo "All dependencies are available"

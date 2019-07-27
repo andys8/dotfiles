@@ -80,11 +80,12 @@ let g:ale_fixers = {
       \}
 
 let g:ale_linters = {
+      \ 'elm': [],
       \ 'haskell': ['stack-ghc', 'hlint'],
+      \ 'java': [],
       \ 'javascript': ['eslint'],
       \ 'markdown': ['markdownlint'],
-      \ 'elm': [],
-      \ 'java': []
+      \ 'sh': ['shellcheck']
       \}
 
 

@@ -20,6 +20,5 @@ npminstallations=(
   typescript
 )
 
-for i in "${npminstallations[@]}"
-do (npm install -g "$i"); done
-
+for i in "${npminstallations[@]}"; do (npm install -g "$i")
+done
