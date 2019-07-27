@@ -7,6 +7,7 @@ let
 in {
 
   inherit (pkgs)
+    i3status-rust # i3 status bar
     arandr # gui for monitors with xrandr
     autojump # jump into directory with j
     dtrx # extract files

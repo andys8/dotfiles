@@ -41,10 +41,6 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-## i3status-rust
-
-Install from source ([Instructions](https://github.com/greshake/i3status-rust#getting-started))
-
 ## Python
 
 Select default version:
