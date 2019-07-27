@@ -27,6 +27,7 @@ in {
 
   inherit (pkgs.gitAndTools)
     diff-so-fancy # git diff with colors
+    tig # diff and comit view
   ;
 
   inherit (fixed)
