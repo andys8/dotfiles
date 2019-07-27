@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu pipefail
 
-./link.sh
-./check.sh
-./update.sh
-./abbreviations.fish
+./scripts/link.sh
+./scripts/check.sh
+./scripts/update.sh
+./scripts/abbreviations.fish
