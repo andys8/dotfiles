@@ -76,8 +76,7 @@ let g:ale_fixers = {
       \ 'elm': ['elm-format'],
       \ 'haskell': ['floskell'],
       \ 'sh': ['shfmt'],
-      \ 'scala': ['scalafmt'],
-      \ 'java': ['google_java_format']
+      \ 'scala': ['scalafmt']
       \}
 
 let g:ale_linters = {
