@@ -24,7 +24,7 @@ set -g theme_display_date no
 set -g theme_display_vi yes
 
 # Autojump
-[ -f /usr/share/autojump/autojump.fish ]; and source /usr/share/autojump/autojump.fish
+[ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ]; and source "$HOME/.nix-profile/share/autojump/autojump.fish"
 
 # fnm
 fnm env --multi | source
@@ -57,9 +57,4 @@ set -x LESS_TERMCAP_us (set_color -u brred)
 set -x LESS_TERMCAP_me (set_color normal)
 set -x LESS_TERMCAP_ue (set_color normal)
 set -x LESS_TERMCAP_se (set_color normal)
-
-# Nix
-# if test -e "$HOME/.nix-profile/etc/profile.d/nix.sh"
-#   eval (bash -c "source ~/.nix-profile/etc/profile.d/nix.sh; echo export NIX_PATH=\"\$NIX_PATH\"; echo export PATH=\"\$PATH\"; echo export NIX_SSL_CERT_FILE=\"\$NIX_SSL_CERT_FILE\"")
-# end
 
