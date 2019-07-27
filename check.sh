@@ -5,12 +5,9 @@ set -euo pipefail
 commands=(
   alacritty
   bash
-  fd
-  feh
   fish
   floskell
   ghc-mod
-  gopass
   i3
   i3-dmenu-desktop
   i3-msg
@@ -22,11 +19,11 @@ commands=(
   mdp
   nix-channel
   nix-env
+  nix-shell
   nm-applet
   preload
   python3
   rofi
-  shellcheck
   stack
   toilet
   vim

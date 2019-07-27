@@ -7,18 +7,24 @@ let
 in {
 
   inherit (pkgs)
-    i3status-rust # i3 status bar
     arandr # gui for monitors with xrandr
     autojump # jump into directory with j
     dtrx # extract files
+    fd # "find" for files
+    feh # Background viewer
     fzf # fuzzy find tool
+    gopass # password manager for pass
+    i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots
+    meld # git merge tool (graphical)
     nix # nix package manager
+    pass # password manager
     ranger # file manager
-    sxiv # image viewer
     ripgrep # fast grep
     screenkey # visualize typed keys
+    shellcheck # linter for shell scripts
+    sxiv # image viewer
   ;
 
   inherit (pkgs.elmPackages)
