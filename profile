@@ -26,4 +26,4 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Nix
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
-
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
