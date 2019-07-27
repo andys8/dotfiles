@@ -1,0 +1,10 @@
+package apt
+package autojump
+package foreign-env
+package last-working-dir
+package pbcopy
+package sdk
+package yadd
+theme bobthefish
+theme default
+theme robbyrussell

@@ -35,6 +35,8 @@ ln -sf ~/dotfiles/profile                   ~/.profile
 
 # Fish
 ln -sf ~/dotfiles/config.fish               ~/.config/fish/config.fish
+rm -rf ~/.config/omf
+ln -sf ~/dotfiles/omf                       ~/.config
 
 # Bash
 ln -sf ~/dotfiles/bashrc                    ~/.bashrc
