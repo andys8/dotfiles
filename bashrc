@@ -47,9 +47,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# fnm: Node version manager
-eval "`fnm env --multi`"
-
 # Autojump
 . $HOME/.nix-profile/share/autojump/autojump.bash
 

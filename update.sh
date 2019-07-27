@@ -12,8 +12,8 @@ vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
 fish -c "omf update"
 
 # Npm installable dependencies
+npm set prefix ~/.npm-global
 npminstallations=(
-  npm
   @elm-tooling/elm-language-server@1.1.1
   markdownlint-cli
   prettier

@@ -6,12 +6,12 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-# Environment
-set -gx EDITOR vim
-
 # No greeting
 function fish_greeting
 end
+
+# Environment
+set -gx EDITOR vim
 
 # Bobthefish theme options
 set -g theme_color_scheme dracula
@@ -25,9 +25,6 @@ set -g theme_display_vi yes
 
 # Autojump
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ]; and source "$HOME/.nix-profile/share/autojump/autojump.fish"
-
-# fnm
-fnm env --multi | source
 
 # Cursor speed
 /usr/bin/xset r rate 200 80

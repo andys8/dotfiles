@@ -20,6 +20,9 @@ fi
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# node global installations
+PATH="$HOME/.npm-global/bin:$PATH"
+
 # set PATH so it includes user's private bin if it exists
 PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 

@@ -9,7 +9,6 @@ commands=(
   feh
   fish
   floskell
-  fnm
   ghc-mod
   gopass
   i3

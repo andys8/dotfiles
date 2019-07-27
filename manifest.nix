@@ -33,6 +33,7 @@ in {
     exa # ls replacement
     hlint # haskell linter
     ncdu # disk usage
+    nodejs-11_x # nodejs and npm
     sbt # sbt package manager
     scala # scala compiler
     shfmt # format shell scripts
