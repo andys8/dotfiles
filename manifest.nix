@@ -13,6 +13,7 @@ in {
     maim # screenshots
     nix # nix package manager
     ranger # file manager
+    screenkey # visualize typed keys
     ripgrep # fast grep
   ;
 

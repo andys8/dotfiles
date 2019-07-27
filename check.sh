@@ -28,7 +28,6 @@ commands=(
   preload
   python3
   rofi
-  screenkey
   shellcheck
   stack
   sxiv
