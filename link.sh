@@ -30,6 +30,9 @@ ln -sf ~/dotfiles/tigrc                     ~/.tigrc
 # Alacritty
 ln -sf ~/dotfiles/alacritty.yml             ~/.alacritty.yml
 
+# Profile
+ln -sf ~/dotfiles/profile                   ~/.profile
+
 # Fish
 ln -sf ~/dotfiles/config.fish               ~/.config/fish/config.fish
 

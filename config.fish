@@ -59,7 +59,7 @@ set -x LESS_TERMCAP_ue (set_color normal)
 set -x LESS_TERMCAP_se (set_color normal)
 
 # Nix
-if test -e "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  eval (bash -c "source ~/.nix-profile/etc/profile.d/nix.sh; echo export NIX_PATH=\"\$NIX_PATH\"; echo export PATH=\"\$PATH\"; echo export NIX_SSL_CERT_FILE=\"\$NIX_SSL_CERT_FILE\"")
-end
+# if test -e "$HOME/.nix-profile/etc/profile.d/nix.sh"
+#   eval (bash -c "source ~/.nix-profile/etc/profile.d/nix.sh; echo export NIX_PATH=\"\$NIX_PATH\"; echo export PATH=\"\$PATH\"; echo export NIX_SSL_CERT_FILE=\"\$NIX_SSL_CERT_FILE\"")
+# end
 

@@ -78,9 +78,3 @@ eval "`fnm env --multi`"
 # Autojump
 . /usr/share/autojump/autojump.sh
 
-# sdkman (has to be at end of file)
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# nix
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
