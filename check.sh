@@ -29,7 +29,6 @@ commands=(
   rofi
   shellcheck
   stack
-  sxiv
   toilet
   vim
   vimdiff

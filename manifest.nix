@@ -15,6 +15,7 @@ in {
     maim # screenshots
     nix # nix package manager
     ranger # file manager
+    sxiv # image viewer
     ripgrep # fast grep
     screenkey # visualize typed keys
   ;
