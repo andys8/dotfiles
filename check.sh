@@ -20,7 +20,6 @@ commands=(
   i3lock-fancy
   i3status-rs
   idea
-  maim
   mdcat
   mdp
   nix-channel

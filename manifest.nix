@@ -10,6 +10,7 @@ in {
     autojump # jump into directory with j
     dtrx # extract files
     fzf # fuzzy find tool
+    maim # screenshots
     nix # nix package manager
     ranger # file manager
     ripgrep # fast grep
