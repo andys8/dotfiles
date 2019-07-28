@@ -11,7 +11,6 @@ set -eu pipefail
 ./scripts/update-nix.sh
 ./scripts/update-vim.sh
 ./scripts/update-fish.fish
-./scripts/update-sdkman.fish
 ./scripts/update-npm.sh
 
 # Abbreviations
