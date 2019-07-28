@@ -48,6 +48,11 @@ cnoremap w!! w !sudo tee % >/dev/null
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
+" Open links in browser
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 " Expand snippets
 let g:UltiSnipsExpandTrigger='<c-j>'
 

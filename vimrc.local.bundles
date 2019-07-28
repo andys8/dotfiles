@@ -47,3 +47,6 @@ Plug 'andys8/vim-elm-syntax', { 'for': ['elm'] }
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['javascript', 'typescript'] }
 Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
+" Open links in browser
+Plug 'tyru/open-browser.vim'
+
