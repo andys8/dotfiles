@@ -1,4 +1,5 @@
 " Vim configuration
+
 scriptencoding utf-8
 set relativenumber
 set confirm
@@ -48,7 +49,7 @@ inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 cnoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Expand snippets
-let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger='<c-j>'
 
 " Multiple cursors
 let g:multi_cursor_exit_from_visual_mode = 1
@@ -59,7 +60,7 @@ let g:multi_cursor_select_all_word_key = '<leader><C-n>'
 " Elm
 let g:polyglot_disabled = ['elm']
 
-" Ale: Linting
+" Ale Linting
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
@@ -132,13 +133,16 @@ command! -bang -nargs=* Rg
 
 
 " Spell checking
-autocmd FileType markdown,text,gitcommit setlocal spell
-autocmd FileType markdown,text,gitcommit nnoremap <leader>s 1z=]S
-autocmd FileType markdown,text,gitcommit nnoremap <leader>a ]S
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=009
 command! -nargs=0 German silent set spelllang=de
 command! -nargs=0 English silent set spelllang=en
+augroup markdown
+  au!
+  au FileType markdown,text,gitcommit setlocal spell
+  au FileType markdown,text,gitcommit nnoremap <leader>s 1z=]S
+  au FileType markdown,text,gitcommit nnoremap <leader>a ]S
+augroup END
 
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
@@ -170,7 +174,7 @@ hi CocFloating ctermbg=236 guibg=#292c3a
 
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 nnoremap <F5> :CocRebuild<CR>
@@ -184,8 +188,14 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
-autocmd FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
-autocmd FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+augroup elm
+  au!
+  au FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
+augroup END
+augroup typescript
+  au!
+  au FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+augroup END
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
@@ -193,11 +203,14 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Java
 let g:syntastic_java_checkers = []
-autocmd FileType java command! -nargs=0 Format silent exec "!idea format %"
-autocmd FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
-autocmd FileType java nmap <silent> <leader>p <Plug>(coc-format)
-autocmd FileType java xmap <silent> <leader>o <Plug>(coc-format-selected)
-autocmd FileType java nnoremap <leader>o :CocCommand java.action.organizeImports<CR>
+augroup java
+  au!
+  au FileType java command! -nargs=0 Format silent exec "!idea format %"
+  au FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
+  au FileType java nmap <silent> <leader>p <Plug>(coc-format)
+  au FileType java xmap <silent> <leader>o <Plug>(coc-format-selected)
+  au FileType java nnoremap <leader>o :CocCommand java.action.organizeImports<CR>
+augroup END
 
 " vimdiff
 if &diff
@@ -208,3 +221,4 @@ if &diff
   map <leader>d :difft<CR>
   map <leader>o :diffo<CR>
 endif
+
