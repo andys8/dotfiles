@@ -203,7 +203,7 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 # Status Bar
 bar {
-    position top
+    position bottom
     tray_output primary
     status_command "killall i3status-rs; i3status-rs ~/.config/i3/i3status.toml"
     colors {
