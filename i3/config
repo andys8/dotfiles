@@ -208,14 +208,14 @@ bar {
     status_command "killall i3status-rs; i3status-rs ~/.config/i3/i3status.toml"
     colors {
         background #282A36
-        statusline #FFFFFF
+        statusline #F8F8F2
         separator  #44475A
 
-        focused_workspace  #6272A4 #6272A4 #FFFFFF
-        active_workspace   #44475A #282A36 #FFFFFF
-        inactive_workspace #44475A #44475A #FFFFFF
-        urgent_workspace   #FF5555 #FF5555 #FFFFFF
-        binding_mode       #FF5555 #FF5555 #FFFFFF
+        focused_workspace  #44475A #44475A #F8F8F2
+        active_workspace   #282A36 #44475A #F8F8F2
+        inactive_workspace #282A36 #282A36 #BFBFBF
+        urgent_workspace   #FF5555 #FF5555 #F8F8F2
+        binding_mode       #FF5555 #FF5555 #F8F8F2
     }
 }
 
