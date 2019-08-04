@@ -6,7 +6,6 @@ commands=(
   alacritty
   bash
   fish
-  floskell
   ghc-mod
   i3
   i3-dmenu-desktop

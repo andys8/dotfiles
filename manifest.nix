@@ -33,6 +33,10 @@ in {
     elm-test # elm test runner
   ;
 
+  inherit (pkgs.haskellPackages)
+    brittany # code formatter
+  ;
+
   inherit (pkgs.gitAndTools)
     diff-so-fancy # git diff with colors
     tig # diff and comit view

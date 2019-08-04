@@ -80,7 +80,7 @@ let g:ale_fixers = {
       \ 'json': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'elm': ['elm-format'],
-      \ 'haskell': ['floskell'],
+      \ 'haskell': ['brittany'],
       \ 'sh': ['shfmt'],
       \ 'scala': ['scalafmt']
       \}
