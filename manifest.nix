@@ -35,6 +35,7 @@ in {
 
   inherit (pkgs.haskellPackages)
     brittany # code formatter
+    patat # markdown presentation tool
   ;
 
   inherit (pkgs.gitAndTools)
@@ -45,6 +46,7 @@ in {
   inherit (fixed)
     cargo # rust package manager
     exa # ls replacement
+    ghc # haskell compiler
     hlint # haskell linter
     ncdu # disk usage
     nodejs-11_x # nodejs and npm
