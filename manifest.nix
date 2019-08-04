@@ -45,6 +45,7 @@ in {
   ;
 
   inherit (fixed)
+    cabal-install # haskell build tool
     cargo # rust package manager
     exa # ls replacement
     ghc # haskell compiler
