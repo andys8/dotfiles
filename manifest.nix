@@ -39,6 +39,7 @@ in {
   ;
 
   inherit (pkgs.gitAndTools)
+    git-gone # prune merged branches
     diff-so-fancy # git diff with colors
     tig # diff and comit view
   ;
