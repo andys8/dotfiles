@@ -119,10 +119,10 @@ bindsym Shift+Print exec "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s)
 
 # ----- Workspaces -----
 
-set $ws_www     "1 "
-set $ws_work    "2 "
-set $ws_term    "3 "
-set $ws_chat    "4 "
+set $ws_www     "1  "
+set $ws_work    "2  "
+set $ws_term    "3  "
+set $ws_chat    "4  "
 
 workspace $ws_work  output DP-1-2 DP-1
 workspace $ws_www   output DP-1-1 eDP-1
