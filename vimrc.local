@@ -193,6 +193,7 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
+nmap <silent> <leader>i <Plug>(coc-implementation)
 augroup elm
   au!
   au FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
