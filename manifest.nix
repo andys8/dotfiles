@@ -55,6 +55,7 @@ in {
     sbt # sbt package manager
     scala # scala compiler
     shfmt # format shell scripts
+    vokoscreen # screen recorder
     wcalc # calculator
   ;
 }
