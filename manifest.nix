@@ -9,6 +9,7 @@ in {
   inherit (pkgs)
     arandr # gui for monitors with xrandr
     autojump # jump into directory with j
+    cachix # cache nix packages
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer

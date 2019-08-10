@@ -80,14 +80,14 @@ let g:ale_fixers = {
       \ 'json': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'elm': ['elm-format'],
-      \ 'haskell': ['brittany'],
+      \ 'haskell': [],
       \ 'sh': ['shfmt'],
       \ 'scala': ['scalafmt']
       \}
 
 let g:ale_linters = {
       \ 'elm': [],
-      \ 'haskell': ['stack-ghc', 'hlint'],
+      \ 'haskell': [],
       \ 'java': [],
       \ 'javascript': ['eslint'],
       \ 'markdown': ['markdownlint'],
@@ -197,6 +197,10 @@ nmap <silent> <leader>i <Plug>(coc-implementation)
 augroup elm
   au!
   au FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
+augroup END
+augroup haskell
+  au!
+  au FileType haskell nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 augroup END
 augroup typescript
   au!
