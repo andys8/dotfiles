@@ -6,6 +6,9 @@ block = "battery"
 interval = 120
 
 [[block]]
+block = "sound"
+
+[[block]]
 block = "time"
 interval = 360
 format = "%d.%m."
@@ -14,7 +17,4 @@ format = "%d.%m."
 block = "time"
 interval = 60
 format = "%R"
-
-[[block]]
-block = "sound"
 
