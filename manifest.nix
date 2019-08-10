@@ -35,7 +35,6 @@ in {
 
   inherit (pkgs.haskellPackages)
     brittany # code formatter
-    patat # markdown presentation tool
   ;
 
   inherit (pkgs.gitAndTools)
