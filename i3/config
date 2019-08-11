@@ -234,7 +234,7 @@ exec --no-startup-id xset r rate 200 80
 exec --no-startup-id xss-lock -- i3lock-fancy
 
 # Display standbye
-exec --no-startup-id xset dpms 120
+exec --no-startup-id xset dpms 180
 
 # Battery warning script
 exec --no-startup-id ~/.config/i3/i3-battery-popup
