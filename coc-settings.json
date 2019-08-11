@@ -17,10 +17,10 @@
       "rootPatterns": ["elm.json"],
       "trace.server": "verbose",
       "initializationOptions": {
-        "runtime": "node",
         "elmPath": "elm",
         "elmFormatPath": "elm-format",
-        "elmTestPath": "elm-test"
+        "elmTestPath": "elm-test",
+        "diagnosticsOnSaveOnly": true
       }
     },
     "haskell": {
