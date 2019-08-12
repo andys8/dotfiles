@@ -15,6 +15,11 @@ set updatetime=500
 set exrc
 set secure
 
+" gvim
+set guioptions=c
+set guifont=Iosevka\ Nerd\ Font\ 14
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
 " Theme
 colo dracula
 let g:airline_powerline_fonts = 1
