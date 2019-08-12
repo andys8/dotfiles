@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu pipefail
 
+git pull
+
 # Link files and directories
 ./scripts/link.sh
 
