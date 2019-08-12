@@ -72,17 +72,18 @@ let g:ale_lint_on_save = 1
 nmap <silent> <leader>p :ALEFix<CR>
 
 let g:ale_fixers = {
-      \ 'javascript': ['prettier'],
-      \ 'typescript': ['prettier'],
-      \ 'yaml': ['prettier'],
       \ 'css': ['prettier'],
-      \ 'scss': ['prettier'],
-      \ 'json': ['prettier'],
-      \ 'markdown': ['prettier'],
       \ 'elm': ['elm-format'],
       \ 'haskell': [],
+      \ 'javascript': ['prettier'],
+      \ 'json': ['prettier'],
+      \ 'less': ['prettier'],
+      \ 'markdown': ['prettier'],
+      \ 'scala': ['scalafmt'],
+      \ 'scss': ['prettier'],
       \ 'sh': ['shfmt'],
-      \ 'scala': ['scalafmt']
+      \ 'typescript': ['prettier'],
+      \ 'yaml': ['prettier']
       \}
 
 let g:ale_linters = {
