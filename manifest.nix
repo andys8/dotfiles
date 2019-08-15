@@ -36,6 +36,7 @@ in {
 
   inherit (pkgs.haskellPackages)
     brittany # code formatter
+    hoogle # documenation
   ;
 
   inherit (pkgs.gitAndTools)
