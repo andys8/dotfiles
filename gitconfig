@@ -5,18 +5,19 @@
 	hooksPath = ~/.config/git/hooks
 [alias]
 	a = add
-	d = diff
-	co = checkout
+	amend = commit -a --amend --no-edit
+	b = brunch
 	br = branch
 	ci = commit
-	s = status
-	st = status
+	co = checkout
+	d = diff
 	fe = fetch
-	re = reset
+	l = log --graph --date=short
 	pl = pull
 	ps = push
-	l = log --graph --date=short
-	amend = commit -a --amend --no-edit
+	re = reset
+	s = status
+	st = status
 	track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
 	default = current
