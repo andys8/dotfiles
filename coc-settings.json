@@ -32,7 +32,7 @@
         "languageServerHaskell": {
           "hlintOn": true,
           "maxNumberOfProblems": 10,
-          "completionSnippetsOn": true,
+          "completionSnippetsOn": false,
           "formattingProvider": "brittany"
         }
       }
