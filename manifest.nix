@@ -12,6 +12,7 @@ in {
     cachix # cache nix packages
     dtrx # extract files
     fd # "find" for files
+    translate-shell # trans command
     feh # Background viewer
     fzf # fuzzy find tool
     gopass # password manager for pass
