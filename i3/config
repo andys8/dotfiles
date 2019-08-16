@@ -169,23 +169,35 @@ assign [class="jetbrains-idea"]     $ws_work
 assign [class="Code"]               $ws_work
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
-    bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+bindsym $mod+r mode "resize"
 
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+mode "resize" {
+    bindsym h resize shrink width  2 px or 2 ppt
+    bindsym j resize grow   height 2 px or 2 ppt
+    bindsym k resize shrink height 2 px or 2 ppt
+    bindsym l resize grow   width  2 px or 2 ppt
+
+    bindsym Left  resize shrink width  2 px or 2 ppt
+    bindsym Down  resize grow   height 2 px or 2 ppt
+    bindsym Up    resize shrink height 2 px or 2 ppt
+    bindsym Right resize grow   width  2 px or 2 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Resizing windows by 10 in i3 using keyboard only
+bindsym $mod+Ctrl+h resize shrink width  2 px or 2 ppt
+bindsym $mod+Ctrl+j resize grow   height 2 px or 2 ppt
+bindsym $mod+Ctrl+k resize shrink height 2 px or 2 ppt
+bindsym $mod+Ctrl+l resize grow   width  2 px or 2 ppt
+
+bindsym $mod+Ctrl+Left  resize shrink width  2 px or 2 ppt
+bindsym $mod+Ctrl+Down  resize grow   height 2 px or 2 ppt
+bindsym $mod+Ctrl+Up    resize shrink height 2 px or 2 ppt
+bindsym $mod+Ctrl+Right resize grow   width  2 px or 2 ppt
+
 
 # ----- UI and Colors -----
 
