@@ -151,8 +151,8 @@ command! -nargs=0 English silent set spelllang=en
 augroup markdown
   au!
   au FileType markdown,text,gitcommit setlocal spell
-  au FileType markdown,text,gitcommit nnoremap <leader>s 1z=]S
-  au FileType markdown,text,gitcommit nnoremap <leader>a ]S
+  au FileType markdown,text,gitcommit nnoremap <buffer> <leader>s 1z=]S
+  au FileType markdown,text,gitcommit nnoremap <buffer> <leader>a ]S
 augroup END
 
 " Zen mode / goyo
@@ -210,15 +210,15 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " TypeScript
 augroup typescript
   au!
-  au FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+  au FileType typescript nnoremap <buffer> <leader>o :CocCommand tsserver.organizeImports<CR>
 augroup END
 
 " Java
 let g:syntastic_java_checkers = []
+command! -nargs=0 IdeaFormat silent exec "!idea format %"
 augroup java
   au!
-  au FileType java command! -nargs=0 Format silent exec "!idea format %"
-  au FileType java nnoremap <leader>o :CocCommand java.action.organizeImports<CR>
+  au FileType java nnoremap <buffer> <leader>o :CocCommand java.action.organizeImports<CR>
 augroup END
 
 " vimdiff
