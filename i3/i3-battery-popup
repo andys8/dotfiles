@@ -26,20 +26,28 @@
 #      Give this a value in seconds: 5s, 10s, or in minutes: 5m                #
 #      Default: 5m                                                             #
 #                                                                              #
+# -s : Play a sound file. This uses the command 'aplay' and depends on         #
+#      a working pulseaudio installation                                       #
+#                                                                              #
+# -v : The volume to play audio at. Expects a number 0-100.                    #
+#                                                                              #
 # -n : Use notify-send for message.                                            #
 #                                                                              #
 # -N : Don't use Tcl/Tk dialog. Use i3-nagbar.                                 #
 #                                                                              #
 # By R-J Ekker, 2016                                                           #
+# Thanks to:                                                                   #
+# - Louis-Jacob Lebel (https://github.com/lebel-louisjacob)                    #
+# - Martin Jablečník (https://github.com/Applemann)                            #
 ################################################################################
 
 error () {
-    echo $1 >&2
+    echo "$1" >&2
     echo "Exiting" >&2
-    exit $2
+    exit "$2"
 }
 
-while getopts 'L:l:m:t:F:i:nN' opt; do
+while getopts 's:v:L:l:m:t:s:F:i:nND' opt; do
     case $opt in
         L)
             [[ $OPTARG =~ ^[0-9]+$ ]] || error "${opt}: ${OPTARG} is not a number" 2
@@ -65,7 +73,22 @@ while getopts 'L:l:m:t:F:i:nN' opt; do
             [[ $OPTARG =~ ^[0-9]+[ms]?$ ]] || error "${opt}: ${OPTARG} is not a valid period" 2
             SLEEP_TIME="${OPTARG}"
             ;;
+        s)
+            [ -f "$OPTARG" ] || error "${opt}: ${OPTARG}: no such file" 2
+            SOUND_TO_PLAY="${OPTARG}"
+            ;;
+        v)
+            SOUND_VOLUME_PERC="${OPTARG}"
+            [[ $OPTARG -ge 0 && $OPTARG -le 100 ]] || error "${opt}: ${OPTARG}: not an integer between 0 and 100" 2
+            SOUND_VOLUME=$(( "$OPTARG" * 65536 / 100 ))
+            ;;
+        D)
+            # Print some extra info
+            DEBUG="y"
+            ;;
         F)
+            # Redirect debugging info to logfile
+            # if -D not specified this will log nothing
             LOGFILE="${OPTARG}"
             ;;
         :)
@@ -104,12 +127,12 @@ EOF
 }
 
 is_battery_discharging() {
-    cat $BATTERIES | grep Charging && return 1
-    return 0
+    grep STATUS=Discharging "${BATTERIES[@]}" && return 0
+    return 1
 } >/dev/null
 
 get_battery_perc() {
-    cat $BATTERIES | awk -f <(get_awk_source)
+    awk -f <(get_awk_source) "${BATTERIES[@]}"
 }
 
 show_popup() {
@@ -133,10 +156,17 @@ show_notify(){
         fi
     fi
     [[ -n $NOTIFY_ICON ]] && NOTIFY_OPT="-i ${NOTIFY_ICON}"
-    notify-send -u critical ${NOTIFY_OPT} "${1}"
+    notify-send -u critical "${1}" ${NOTIFY_OPT}
+}
+
+play_sound(){
+    if [[ -n $SOUND_TO_PLAY ]]; then
+        paplay "$SOUND_TO_PLAY" --volume $SOUND_VOLUME
+    fi
 }
 
 show_message(){
+    play_sound &
     if [[ -n $USE_NOTIFY_SEND ]] && which notify-send; then
         show_notify "$1"
     elif [[ -z $DONT_USE_WISH ]] && which wish; then
@@ -146,18 +176,24 @@ show_message(){
     fi
 } >&2
 
+debug(){
+    [[ -n $DEBUG ]] && echo "$1"
+}
+
 main (){
     # Setting defaults
     UPPER_LIMIT="${UPPER_LIMIT:-10}"
-    UPPER_HALF=$(( $UPPER_LIMIT / 2 ))
+    UPPER_HALF=$(( UPPER_LIMIT / 2 ))
     LOWER_LIMIT=${LOWER_LIMIT:-$UPPER_HALF}
     MESSAGE="${MESSAGE:-Warning: Battery is getting low}"
     SLEEP_TIME="${SLEEP_TIME:-5m}"
+    # Note: BATTERIES is an array
+    BATTERIES=( /sys/class/power_supply/BAT*/uevent )
+    SOUND_VOLUME="${SOUND_VOLUME:-65536}"
 
-    BATTERIES=/sys/class/power_supply/BAT*/uevent
-
-    echo "Upper ${UPPER_LIMIT}; Lower ${LOWER_LIMIT}; sleep ${SLEEP_TIME}"
-    echo "Current: $(get_battery_perc)%"
+    debug "Upper ${UPPER_LIMIT}; Lower ${LOWER_LIMIT}; sleep ${SLEEP_TIME}"
+    debug "Current: $(get_battery_perc)%"
+    [[ -n $SOUND_TO_PLAY ]] && debug "Playing: \"${SOUND_TO_PLAY}\", Volume: ${SOUND_VOLUME_PERC}%"
 
     LIMIT="${UPPER_LIMIT}"
     # This will be set to "y" after first click
@@ -165,14 +201,16 @@ main (){
     POPUP_CLICKED=""
 
     while true; do
-        echo -n "Checking.. "
+        debug "Checking.. "
 
         PERC=$(get_battery_perc)
-        echo "got ${PERC}%"
+        debug "got ${PERC}%"
 
         if is_battery_discharging; then
+            debug "Battery is discharging"
+
             if [[ $PERC -lt $LIMIT ]]; then
-                echo "showing warning" >&2
+                debug "showing warning"
                 show_message "${MESSAGE}"
 
                 if [[ -z $POPUP_CLICKED ]]; then
@@ -185,7 +223,6 @@ main (){
                 fi
             fi
         else
-            echo "Battery Charging"
             # restart messages, reset limits
             POPUP_CLICKED=""
             if [[ $PERC -gt $UPPER_LIMIT ]]; then
@@ -194,28 +231,14 @@ main (){
                 LIMIT=${LOWER_LIMIT}
             fi
         fi
-        echo "sleeping ${SLEEP_TIME}; current limit ${LIMIT}%; ${POPUP_CLICKED:+Popup was clicked}"
+        debug "sleeping ${SLEEP_TIME}; current limit ${LIMIT}%; ${POPUP_CLICKED:+Popup was clicked}"
         sleep "${SLEEP_TIME}"
     done
-} >&2
-
-
-LOCK_FILE="${HOME}/.i3-battery-popup.lock"
-
-release_lock() {
-    # This shouldn't be necessary but it seems
-    # the lock doesn't release on i3 exit
-    flock --unlock 200
 }
 
 
-(
-    if [[ -n $LOGFILE ]]; then
-        exec >>"$LOGFILE" 2>&1
-    fi
+if [[ -n $LOGFILE ]]; then
+    exec >>"$LOGFILE" 2>&1
+fi
 
-    flock -xn 200 || { show_message "$(basename ${0}): cannot acquire lock ${LOCK_FILE}"; exit 3; }
-    trap release_lock EXIT
-
-    main 200>&-
-) 200>"${LOCK_FILE}"
+main
