@@ -74,7 +74,7 @@ let g:polyglot_disabled = ['elm']
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_save = 1
-nmap <silent> <leader>p :ALEFix<CR>
+nmap <silent> <leader>P :ALEFix<CR>
 
 let g:ale_fixers = {
       \ 'css': ['prettier'],
@@ -191,8 +191,8 @@ endfunction
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
-nmap <leader>s <Plug>(coc-codeaction)
-nmap <leader>S <Plug>(coc-fix-current)
+nmap <silent> <leader>S <Plug>(coc-fix-current)
+nmap <silent> <leader>s <Plug>(coc-codeaction)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>d <Plug>(coc-definition)
@@ -200,31 +200,24 @@ nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
-augroup elm
-  au!
-  au FileType elm nmap <silent> <leader>p :call CocActionAsync('format')<CR>
-augroup END
-augroup haskell
-  au!
-  au FileType haskell nmap <silent> <leader>p :call CocActionAsync('format')<CR>
-augroup END
-augroup typescript
-  au!
-  au FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
-augroup END
+nmap <silent> <leader>p :call CocActionAsync('format')<CR>
+xmap <silent> <leader>p <Plug>(coc-format-selected)
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" TypeScript
+augroup typescript
+  au!
+  au FileType typescript nnoremap <leader>o :CocCommand tsserver.organizeImports<CR>
+augroup END
 
 " Java
 let g:syntastic_java_checkers = []
 augroup java
   au!
   au FileType java command! -nargs=0 Format silent exec "!idea format %"
-  au FileType java xmap <silent> <leader>p <Plug>(coc-format-selected)
-  au FileType java nmap <silent> <leader>p <Plug>(coc-format)
-  au FileType java xmap <silent> <leader>o <Plug>(coc-format-selected)
   au FileType java nnoremap <leader>o :CocCommand java.action.organizeImports<CR>
 augroup END
 
