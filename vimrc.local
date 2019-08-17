@@ -191,8 +191,8 @@ endfunction
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
-nmap <silent> <leader>S <Plug>(coc-fix-current)
-nmap <silent> <leader>s <Plug>(coc-codeaction)
+nmap <silent> <leader>s <Plug>(coc-fix-current)
+nmap <silent> <leader>S <Plug>(coc-codeaction)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>d <Plug>(coc-definition)
