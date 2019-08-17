@@ -41,6 +41,17 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 sudo update-alternatives --config x-terminal-emulator
 ```
 
+## st (suckless-terminal)
+
+Install [`andys8/st`](https://github.com/andys8/st)
+
+### Set as default terminal
+
+```shell
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/st 80
+sudo update-alternatives --config x-terminal-emulator
+```
+
 ## Python
 
 Select default version:

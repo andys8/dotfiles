@@ -23,6 +23,7 @@ commands=(
   preload
   python3
   rofi
+  st
   stack
   toilet
   vim
