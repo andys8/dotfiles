@@ -9,7 +9,6 @@ in {
   inherit (pkgs)
     arandr # gui for monitors with xrandr
     autojump # jump into directory with j
-    cachix # cache nix packages
     dtrx # extract files
     fd # "find" for files
     translate-shell # trans command
@@ -48,6 +47,7 @@ in {
 
   inherit (fixed)
     cabal-install # haskell build tool
+    cachix # cache nix packages
     cargo # rust package manager
     exa # ls replacement
     ghc # haskell compiler
