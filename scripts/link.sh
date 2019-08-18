@@ -43,3 +43,8 @@ ln -sf ~/dotfiles/bashrc ~/.bashrc
 
 # Google Java Format
 ln -sf ~/dotfiles/google-java-format ~/bin/google-java-format
+
+# Xmonad
+ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
+ln -sf ~/dotfiles/xmonad/xmobar.config ~/.xmonad/xmobar.config
+ln -sf ~/dotfiles/xmonad/startup.sh ~/.xmonad/startup.sh
