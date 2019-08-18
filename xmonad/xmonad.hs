@@ -127,20 +127,20 @@ tab = avoidStruts $ renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed
   shrinkText
   myTabTheme
 
-layouts = avoidStruts
-  (   ( renamed [CutWordsLeft 1]
+layouts =
+  avoidStruts
+      ( renamed [CutWordsLeft 1]
       $ addTopBar
       $ windowNavigation
       $ renamed [Replace "BSP"]
       $ addTabs shrinkText myTabTheme
       $ subLayout [] Simplest
       $ myGaps
-      $ addSpace (BSP.emptyBSP)
+      $ addSpace BSP.emptyBSP
       )
-  ||| tab
-  )
+    ||| tab
 
-myLayout = smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) $ layouts
+myLayout = smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
 
 myNav2DConf = def { defaultTiledNavigation = centerNavigation
                   , floatNavigation        = centerNavigation
@@ -245,7 +245,7 @@ myTabTheme = def { fontName            = myFont
 myModMask = mod4Mask
 altMask = mod1Mask
 
-myKeys conf@(XConfig { XMonad.modMask = modMask }) =
+myKeys conf@XConfig { XMonad.modMask = modMask } =
   M.fromList
     $
   ----------------------------------------------------------------------
@@ -419,7 +419,7 @@ myKeys conf@(XConfig { XMonad.modMask = modMask }) =
 
   -- Quit xmonad.
        , ( (modMask .|. shiftMask, xK_q)
-         , io (exitWith ExitSuccess)
+         , io exitSuccess
          )
 
   -- Restart xmonad.
@@ -513,24 +513,23 @@ myKeys conf@(XConfig { XMonad.modMask = modMask }) =
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
-myMouseBindings (XConfig { XMonad.modMask = modMask }) =
-  M.fromList
-    $ [
+myMouseBindings XConfig { XMonad.modMask = modMask } = M.fromList
+  [
     -- mod-button1, Set the window to floating mode and move by dragging
-        ( (modMask, button1)
-        , (\w -> focus w >> mouseMoveWindow w)
-        )
+    ( (modMask, button1)
+    , \w -> focus w >> mouseMoveWindow w
+    )
 
     -- mod-button2, Raise the window to the top of the stack
-      , ( (modMask, button2)
-        , (\w -> focus w >> windows W.swapMaster)
-        )
+  , ( (modMask, button2)
+    , \w -> focus w >> windows W.swapMaster
+    )
 
     -- mod-button3, Set the window to floating mode and resize by dragging
-      , ((modMask, button3), (\w -> focus w >> mouseResizeWindow w))
+  , ((modMask, button3), \w -> focus w >> mouseResizeWindow w)
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
-      ]
+  ]
 
 
 ------------------------------------------------------------------------
