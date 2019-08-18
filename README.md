@@ -64,3 +64,16 @@ If missing, add with:
 
 ```shell
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
+```
+
+## Xmonad
+
+`/usr/share/xsessions/xmonad.desktop` for lightdm
+
+```
+[Desktop Entry]
+Name=XMonad
+Comment=Lightweight tiling window manager
+Exec=xmonad
+Type=XSession
+```
