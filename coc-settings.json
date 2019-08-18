@@ -27,8 +27,7 @@
       "command": "hie-wrapper",
       "rootPatterns": ["stack.yaml", "*.cabal", "cabal.config", "package.yaml"],
       "filetypes": ["hs", "lhs", "haskell"],
-      "initializationOptions": {},
-      "settings": {
+      "initializationOptions": {
         "languageServerHaskell": {
           "hlintOn": true,
           "maxNumberOfProblems": 10,
