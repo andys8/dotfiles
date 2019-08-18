@@ -8,7 +8,6 @@ commands=(
   fish
   git-brunch
   i3
-  i3-dmenu-desktop
   i3-msg
   i3-nagbar
   i3-sensible-terminal

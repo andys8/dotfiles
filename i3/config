@@ -29,8 +29,8 @@ bindsym $mod+Escape kill
 bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -p "" -dmenu -i -display-run "> "'
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -i -display-run "$ "
+bindsym $mod+d       exec --no-startup-id "rofi -modi drun,run -show drun -show-icons"
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show run -i -display-run '$ '"
 
 # change focus
 bindsym $mod+h focus left
