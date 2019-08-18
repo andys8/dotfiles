@@ -11,7 +11,6 @@ in {
     autojump # jump into directory with j
     dtrx # extract files
     fd # "find" for files
-    translate-shell # trans command
     feh # Background viewer
     fzf # fuzzy find tool
     gopass # password manager for pass
@@ -26,6 +25,9 @@ in {
     screenkey # visualize typed keys
     shellcheck # linter for shell scripts
     sxiv # image viewer
+    translate-shell # trans command
+    xmobar # status bar for xmonad
+    xmonad-with-packages # window manager in haskell
   ;
 
   inherit (pkgs.elmPackages)
