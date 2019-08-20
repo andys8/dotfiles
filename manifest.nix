@@ -63,5 +63,6 @@ in {
     shfmt # format shell scripts
     vokoscreen # screen recorder
     wcalc # calculator
+    sent # suckless presentation tool
   ;
 }
