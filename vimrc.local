@@ -28,8 +28,9 @@ let g:airline#extensions#tagbar#enabled = 0
 let g:airline_highlighting_cache = 1
 
 " Switch themes
-command Light colo lightning 
-command Dark colo Dark
+command Dracula colo dracula | set nocursorline
+command Dark colo seoul | set nocursorline
+command Light colo github | set cursorline
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
