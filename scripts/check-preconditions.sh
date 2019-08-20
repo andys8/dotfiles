@@ -19,9 +19,11 @@ commands=(
   nix-env
   nix-shell
   nm-applet
+  pgrep
   preload
   python3
   rofi
+  setxkbmap
   st
   stack
   toilet
@@ -29,6 +31,7 @@ commands=(
   vimdiff
   xclip
   xrandr
+  xset
   xss-lock
   zathura
 )

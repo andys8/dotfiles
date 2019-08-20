@@ -26,6 +26,7 @@ in {
     shellcheck # linter for shell scripts
     sxiv # image viewer
     translate-shell # trans command
+    trayer # tray icons for xmonad
     xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
   ;
