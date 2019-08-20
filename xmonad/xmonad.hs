@@ -8,6 +8,8 @@ import           System.Exit
 import qualified Data.List                     as L
 
 import           XMonad
+
+import           XMonad.Actions.CycleWS
 import           XMonad.Actions.Navigation2D
 import           XMonad.Actions.UpdatePointer
 
@@ -40,6 +42,7 @@ import           XMonad.Layout.Grid
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Layout.ZoomRow
+
 
 import           XMonad.Util.Run                          ( spawnPipe )
 import           XMonad.Util.EZConfig                     ( additionalKeys )
@@ -323,7 +326,49 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
        , ( (controlMask .|. modMask .|. altMask, xK_p)
          , confirmPrompt greenXPConfig "Poweroff" $ spawn "poweroff"
          )
-
+      -- lock
+       , ( (modMask .|. altMask, xK_l)
+         , spawn "i3lock-fancy -p"
+         )
+      -- cycle through workspaces
+       , ((modMask, xK_Tab), moveTo Next NonEmptyWS)
+       , ((modMask .|. shiftMask, xK_Tab), moveTo Prev NonEmptyWS)
+       , ( (modMask, xK_i)
+         , toggleWS
+         )
+      -- gopass password manager
+       , ( (modMask .|. altMask, xK_p)
+         , spawn
+           "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+         )
+      -- Monitors
+       , ( (modMask .|. altMask, xK_1)
+         , spawn "~/.screenlayout/1-monitor.sh" <> restart "xmonad" True
+         )
+       , ( (modMask .|. altMask, xK_2)
+         , spawn "~/.screenlayout/2-monitor.sh" <> restart "xmonad" True
+         )
+       , ( (modMask .|. altMask .|. shiftMask, xK_2)
+         , spawn "~/.screenlayout/2-monitor-dp1.sh" <> restart "xmonad" True
+         )
+       , ( (modMask .|. altMask, xK_3)
+         , spawn "~/.screenlayout/3-monitor.sh" <> restart "xmonad" True
+         )
+      -- Monitor Brightness
+       , ( (0, xF86XK_MonBrightnessUp)
+         , spawn "xrandr --output eDP-1 --brightness 1.0"
+         )
+       , ( (0, xF86XK_MonBrightnessDown)
+         , spawn "xrandr --output eDP-1 --brightness 0.6"
+         )
+      -- Screenshot
+       , ( (0, xK_Print)
+         , spawn
+           "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
+         )
+       , ( (shiftMask, xK_Print)
+         , spawn "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+         )
       -- change focus
        -- , ((modMask, xK_h), windows W.focusLeft)
        -- , ((modMask, xK_j), windows W.focusDown)
@@ -341,34 +386,37 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
        --   )
 
   -- Take a selective screenshot using the command specified by mySelectScreenshot.
-       , ( (modMask .|. shiftMask, xK_p)
-         , spawn mySelectScreenshot
-         )
+       -- , ( (modMask .|. shiftMask, xK_p)
+       --   , spawn mySelectScreenshot
+       --   )
 
-  -- Take a full screenshot using the command specified by myScreenshot.
-       , ( (modMask .|. controlMask .|. shiftMask, xK_p)
-         , spawn myScreenshot
-         )
+  -- -- Take a full screenshot using the command specified by myScreenshot.
+       -- , ( (modMask .|. controlMask .|. shiftMask, xK_p)
+       --   , spawn myScreenshot
+       --   )
 
   -- Toggle current focus window to fullscreen
-       , ( (modMask, xK_f)
-         , sendMessage $ Toggle FULL
-         )
+       -- , ( (modMask, xK_f)
+       --   , sendMessage $ Toggle FULL
+       --   )
 
   -- Mute volume.
-       , ( (0, xF86XK_AudioMute)
-         , spawn "amixer -q set Master toggle"
-         )
+       -- , ( (0, xF86XK_AudioMute)
+       --   , spawn "amixer -q set Master toggle"
+       --   )
+       -- , ( (0, xF86XK_AudioMute)
+       --   , spawn "amixer -q set Master toggle"
+       --   )
 
-  -- Decrease volume.
-       , ( (0, xF86XK_AudioLowerVolume)
-         , spawn "amixer -q set Master 5%-"
-         )
+  -- -- Decrease volume.
+       -- , ( (0, xF86XK_AudioLowerVolume)
+       --   , spawn "amixer -q set Master 5%-"
+       --   )
 
-  -- Increase volume.
-       , ( (0, xF86XK_AudioRaiseVolume)
-         , spawn "amixer -q set Master 5%+"
-         )
+  -- -- Increase volume.
+       -- , ( (0, xF86XK_AudioRaiseVolume)
+       --   , spawn "amixer -q set Master 5%+"
+       --   )
 
   -- Audio previous.
        , ( (0, 0x1008FF16)
@@ -511,12 +559,10 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          , withFocused (sendMessage . MergeAll)
          )
   -- Group the current tabbed windows
-       , ( (modMask .|. controlMask, xK_u)
-         , withFocused (sendMessage . UnMerge)
-         )
+       , ((modMask .|. controlMask, xK_u), withFocused (sendMessage . UnMerge))
 
   -- Toggle through tabes from the right
-       , ((modMask, xK_Tab), onGroup W.focusDown')
+       -- , ((modMask, xK_Tab), onGroup W.focusDown')
        ]
 
     ++
