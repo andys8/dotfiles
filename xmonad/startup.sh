@@ -3,11 +3,12 @@
 # System tray
 if [ -z "$(pgrep trayer)" ]; then
     trayer \
-        --edge top \
+        --edge bottom \
         --align center \
         --widthtype request \
         --heighttype pixel \
         --height 22 \
+        --iconspacing 3 \
         --alpha 0 \
         --transparent true \
         --tint 0x282c34 &
