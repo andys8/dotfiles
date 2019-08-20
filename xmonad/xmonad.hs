@@ -166,7 +166,7 @@ bsp =
 grid =
   renamed [Replace "Grid"] $ avoidStruts $ addTopBar $ addSpace $ myGaps Grid
 
-layouts = bsp ||| grid ||| avoidStruts Simplest
+layouts = bsp ||| avoidStruts Simplest
 
 myLayout = smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
 
