@@ -18,6 +18,7 @@ import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 
 import           XMonad.Layout.Gaps
+import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
@@ -30,6 +31,7 @@ import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoFrillsDecoration
 import           XMonad.Layout.Renamed
 import           XMonad.Layout.Simplest
+import           XMonad.Layout.Grid
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Layout.ZoomRow
@@ -38,10 +40,12 @@ import           XMonad.Util.Run                          ( spawnPipe )
 import           XMonad.Util.EZConfig                     ( additionalKeys )
 import           XMonad.Util.Cursor
 
+
 import           Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet               as W
 import qualified Data.Map                      as M
 
+-- TODO: Scratchpad terminal
 
 ----------------------------mupdf--------------------------------------------
 -- Terminimport XMonad.Hooks.EwmhDesktopsal
@@ -123,22 +127,25 @@ myManageHook = composeAll
 outerGaps = 10
 myGaps = gaps [(U, outerGaps), (R, outerGaps), (L, outerGaps), (D, outerGaps)]
 addSpace = renamed [CutWordsLeft 2] . spacing gap
-tab = avoidStruts $ renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed
-  shrinkText
-  myTabTheme
+-- tab = avoidStruts $ renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed
+--   shrinkText
+--   myTabTheme
 
-layouts =
+bsp =
   avoidStruts
-      ( renamed [CutWordsLeft 1]
-      $ addTopBar
-      $ windowNavigation
-      $ renamed [Replace "BSP"]
-      $ addTabs shrinkText myTabTheme
-      $ subLayout [] Simplest
-      $ myGaps
-      $ addSpace BSP.emptyBSP
-      )
-    ||| tab
+    $ renamed [CutWordsLeft 1]
+    $ addTopBar
+    $ windowNavigation
+    $ renamed [Replace "BSP"]
+    $ addTabs shrinkText myTabTheme
+    $ subLayout [] Simplest
+    $ myGaps
+    $ addSpace BSP.emptyBSP
+
+grid =
+  renamed [Replace "Grid"] $ avoidStruts $ addTopBar $ addSpace $ myGaps Grid
+
+layouts = bsp ||| grid ||| avoidStruts Simplest
 
 myLayout = smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
 
@@ -254,6 +261,38 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
 
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
        [
+
+      -- File Browser
+         ( (modMask, xK_n)
+         , spawn "xdg-open ."
+         )
+
+      -- browser
+       , ( (modMask .|. shiftMask, xK_Return)
+         , spawn myBrowser
+         )
+      -- kill focused window
+       , ((modMask, xK_Escape), kill)
+       , ((modMask .|. shiftMask, xK_Escape), kill)
+       , ((modMask, xK_q), kill)
+       , ( (altMask, xK_F4)
+         , kill
+         )
+      -- start dmenu (a program launcher)
+       , ((modMask, xK_d), spawn "rofi -modi drun,run -show drun -show-icons")
+       , ( (modMask .|. shiftMask, xK_d)
+         , spawn "rofi -show run -i -display-run \"$ \""
+         )
+
+      -- change focus
+       -- , ((modMask, xK_h), windows W.focusLeft)
+       -- , ((modMask, xK_j), windows W.focusDown)
+       -- , ( (modMask, xK_k)
+       --   , windows W.focusUp
+       --   )
+       -- , ( (modMask, xK_l)
+       --   , windows W.focusRight
+       --   )
        -- custom (andys8)
        -- [ ( (modMask .|. shiftMask, xK_Return)
        --   , spawn $ XMonad.terminal conf
@@ -261,7 +300,7 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
 
   -- Spawn the launcher using command specified by myLauncher.
   -- Use this to launch programs without a key binding.
-         ( (modMask, xK_p)
+       , ( (modMask, xK_p)
          , spawn myLauncher
          )
 
@@ -316,21 +355,9 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          )
   --------------------------------------------------------------------
   -- Custom (andys8)
-  -- demnu 
-       , ( (modMask, xK_d)
-         , spawn "rofi -modi drun,run -show drun -show-icons"
-         )
--- dmenu binaries
-       , ( (modMask .|. shiftMask, xK_d)
-         , spawn "rofi -show run -i -display-run \"$ \""
-         )
   -- terminal binding
        , ( (modMask, xK_Return)
          , spawn $ XMonad.terminal conf
-         )
-  -- browser
-       , ( (modMask .|. shiftMask, xK_Return)
-         , spawn myBrowser
          )
 
 
@@ -354,19 +381,10 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          )
 
   -- Resize viewed windows to the correct size.
-       , ( (modMask, xK_n)
-         , refresh
-         )
+       -- , ( (modMask, xK_n)
+       --   , refresh
+       --   )
 
-  -- Move focus to the next window.
-       , ( (modMask, xK_j)
-         , windows W.focusDown
-         )
-
-  -- Move focus to the previous window.
-       , ( (modMask, xK_k)
-         , windows W.focusUp
-         )
 
   -- Move focus to the master window.
        , ( (modMask, xK_m)
@@ -423,7 +441,8 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          )
 
   -- Restart xmonad.
-       , ((modMask, xK_q), restart "xmonad" True)
+  --
+       , ((modMask .|. shiftMask, xK_r), restart "xmonad" True)
        ]
     ++
 
@@ -437,15 +456,15 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
-       [ ( (m .|. modMask, key)
-         , screenWorkspace sc >>= flip whenJust (windows . f)
-         )
-       | (key, sc) <- zip [xK_w, xK_e, xK_r] [0 ..]
-       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
-       ]
+       -- [ ( (m .|. modMask, key)
+       --   , screenWorkspace sc >>= flip whenJust (windows . f)
+       --   )
+       -- | (key, sc) <- zip [xK_w, xK_e, xK_r] [0 ..]
+       -- , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+       -- ]
 
 
-    ++
+    -- ++
   -- Bindings for manage sub tabs in layouts please checkout the link below for reference
   -- https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Layout-SubLayouts.html
        [
@@ -567,6 +586,10 @@ main = do
     $ withNavigation2DConfig myNav2DConf
     $ additionalNav2DKeys
         (xK_Up, xK_Left, xK_Down, xK_Right)
+        [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
+        False
+    $ additionalNav2DKeys
+        (xK_k, xK_h, xK_j, xK_l)
         [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
         False
     $ ewmh
