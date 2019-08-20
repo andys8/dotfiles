@@ -19,6 +19,11 @@ if [ -z "$(pgrep nm-applet)" ]; then
     nm-applet --sm-disable &
 fi
 
+# Volume Icon
+if [ -z "$(pgrep volumeicon)" ]; then
+    volumeicon &
+fi
+
 # Lock screen on disabled monitor
 if [ -z "$(pgrep xss-lock)" ]; then
     xss-lock -- i3lock-fancy &
@@ -44,4 +49,3 @@ feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
 
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
-
