@@ -17,11 +17,16 @@ import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 
+
+
 import           XMonad.Layout.Gaps
 import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
+
+import           XMonad.Prompt
+import           XMonad.Prompt.ConfirmPrompt
 import           XMonad.Layout.NoBorders
 import           XMonad.Layout.Tabbed
 import           XMonad.Layout.ThreeColumns
@@ -52,7 +57,7 @@ import qualified Data.Map                      as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "st"
+myTerminal = "x-terminal-emulator"
 
 -- The command to lock the screen or show the screensaver.
 myScreensaver = "dm-tool switch-to-greeter"
@@ -68,7 +73,6 @@ myScreenshot = "xfce4-screenshooter"
 -- preset keybindings.
 myLauncher = "rofi -show"
 
-myBrowser = "x-www-browser"
 
 
 
@@ -76,9 +80,21 @@ myBrowser = "x-www-browser"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces =
-  ["1: term", "2: web", "3: code", "4: media"] ++ map show [5 .. 9]
+data Workspace = WorkspaceWWW | WorkspaceWork | WorkspaceTerm | WorkspaceChat
 
+instance Show Workspace where
+  -- set $ws_www     "1  "
+  -- set $ws_work    "2  "
+  -- set $ws_term    "3  "
+  -- set $ws_chat    "4  "
+  show WorkspaceWWW  = "1: web"
+  show WorkspaceWork = "2: work"
+  show WorkspaceTerm = "3: term"
+  show WorkspaceChat = "4: chat"
+
+myWorkspaces =
+  (show <$> [WorkspaceWWW, WorkspaceWork, WorkspaceTerm, WorkspaceChat])
+    ++ (show <$> [5 .. 9])
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -95,21 +111,23 @@ myWorkspaces =
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-  [ className =? "Google-chrome" --> doShift "2:web"
-  , resource =? "desktop_window" --> doIgnore
-  , className =? "Galculator" --> doCenterFloat
-  , className =? "Steam" --> doCenterFloat
-  , className =? "Gimp" --> doCenterFloat
-  , resource =? "gpicview" --> doCenterFloat
-  , className =? "MPlayer" --> doCenterFloat
-  , className =? "Pavucontrol" --> doCenterFloat
-  , className =? "Mate-power-preferences" --> doCenterFloat
-  , className =? "Xfce4-power-manager-settings" --> doCenterFloat
-  , className =? "VirtualBox" --> doShift "4:vm"
-  , className =? "Xchat" --> doShift "5:media"
-  , className =? "stalonetray" --> doIgnore
+  [ resource =? "desktop_window" --> doIgnore
   , isFullscreen --> (doF W.focusDown <+> doFullFloat)
-    -- , isFullscreen                             --> doFullFloat
+  -- , resource =? "gpicview" --> doCenterFloat
+  -- , className =? "Google-chrome" --> doShift "2:web"
+  -- , className =? "Galculator" --> doCenterFloat
+  -- , className =? "Steam" --> doCenterFloat
+  -- , className =? "Gimp" --> doCenterFloat
+  -- , className =? "MPlayer" --> doCenterFloat
+  -- , className =? "Pavucontrol" --> doCenterFloat
+  -- , className =? "Mate-power-preferences" --> doCenterFloat
+  -- , className =? "Xfce4-power-manager-settings" --> doCenterFloat
+  -- , className =? "VirtualBox" --> doShift "4:vm"
+  -- , className =? "Xchat" --> doShift "5:media"
+  -- , className =? "stalonetray" --> doIgnore
+  -- added (andys8)
+  , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
+  , className =? "Rambox" --> doShift (show WorkspaceChat)
   ]
 
 
@@ -262,14 +280,17 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
        [
 
-      -- File Browser
-         ( (modMask, xK_n)
+      -- terminal
+         ( (modMask, xK_Return)
+         , spawn $ XMonad.terminal conf
+         )
+      -- file browser
+       , ( (modMask, xK_n)
          , spawn "xdg-open ."
          )
-
       -- browser
        , ( (modMask .|. shiftMask, xK_Return)
-         , spawn myBrowser
+         , spawn "x-www-browser"
          )
       -- kill focused window
        , ((modMask, xK_Escape), kill)
@@ -278,10 +299,29 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
        , ( (altMask, xK_F4)
          , kill
          )
-      -- start dmenu (a program launcher)
+      -- select application with rofi
        , ((modMask, xK_d), spawn "rofi -modi drun,run -show drun -show-icons")
        , ( (modMask .|. shiftMask, xK_d)
          , spawn "rofi -show run -i -display-run \"$ \""
+         )
+      -- quit xmonad
+       , ( (modMask .|. shiftMask, xK_e)
+         , confirmPrompt greenXPConfig "Exit xmonad and logoff"
+           $ io (exitWith ExitSuccess)
+         )
+      -- restart xmonad
+       , ( (modMask .|. shiftMask, xK_r)
+         , restart "xmonad" True
+         )
+      -- poweroff computer
+       , ( (0, xF86XK_PowerDown)
+         , confirmPrompt greenXPConfig "Poweroff" $ spawn "poweroff"
+         )
+       , ( (0, xF86XK_PowerOff)
+         , confirmPrompt greenXPConfig "Poweroff" $ spawn "poweroff"
+         )
+       , ( (controlMask .|. modMask .|. altMask, xK_p)
+         , confirmPrompt greenXPConfig "Poweroff" $ spawn "poweroff"
          )
 
       -- change focus
@@ -293,16 +333,12 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
        -- , ( (modMask, xK_l)
        --   , windows W.focusRight
        --   )
-       -- custom (andys8)
-       -- [ ( (modMask .|. shiftMask, xK_Return)
-       --   , spawn $ XMonad.terminal conf
-       --   )
 
   -- Spawn the launcher using command specified by myLauncher.
   -- Use this to launch programs without a key binding.
-       , ( (modMask, xK_p)
-         , spawn myLauncher
-         )
+       -- , ( (modMask, xK_p)
+       --   , spawn myLauncher
+       --   )
 
   -- Take a selective screenshot using the command specified by mySelectScreenshot.
        , ( (modMask .|. shiftMask, xK_p)
@@ -355,10 +391,6 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          )
   --------------------------------------------------------------------
   -- Custom (andys8)
-  -- terminal binding
-       , ( (modMask, xK_Return)
-         , spawn $ XMonad.terminal conf
-         )
 
 
   --------------------------------------------------------------------
@@ -366,9 +398,9 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
   --
 
   -- Close focused window.
-       , ( (modMask .|. shiftMask, xK_c)
-         , kill
-         )
+       -- , ( (modMask .|. shiftMask, xK_c)
+       --   , kill
+       --   )
 
   -- Cycle through the available layout algorithms.
        , ( (modMask, xK_space)
@@ -428,21 +460,10 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
          )
 
   -- Decrement the number of windows in the master area.
-       , ( (modMask, xK_period)
-         , sendMessage (IncMasterN (-1))
-         )
+       , ((modMask, xK_period), sendMessage (IncMasterN (-1)))
 
   -- Toggle the status bar gap.
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
-
-  -- Quit xmonad.
-       , ( (modMask .|. shiftMask, xK_q)
-         , io exitSuccess
-         )
-
-  -- Restart xmonad.
-  --
-       , ((modMask .|. shiftMask, xK_r), restart "xmonad" True)
        ]
     ++
 
