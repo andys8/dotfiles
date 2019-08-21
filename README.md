@@ -72,8 +72,17 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
 ```
 [Desktop Entry]
-Name=XMonad
-Comment=Lightweight tiling window manager
+Type=Application
+Encoding=UTF-8
+Name=Xmonad
 Exec=xmonad
-Type=XSession
+X-GNOME-WMName=Xmonad
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false
 ```
+
+### `Super + Space` on Ubuntu
+
+Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
+
