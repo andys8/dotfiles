@@ -8,6 +8,7 @@ in {
 
   inherit (pkgs)
     arandr # gui for monitors with xrandr
+    autorandr # xrandr monitor profiles
     autojump # jump into directory with j
     dtrx # extract files
     fd # "find" for files
