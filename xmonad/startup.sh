@@ -20,8 +20,8 @@ if [ -z "$(pgrep nm-applet)" ]; then
 fi
 
 # Volume Icon
-if [ -z "$(pgrep volumeicon)" ]; then
-    volumeicon &
+if [ -z "$(pgrep pa-applet)" ]; then
+    pa-applet &
 fi
 
 # Lock screen on disabled monitor
