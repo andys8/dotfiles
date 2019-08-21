@@ -8,8 +8,8 @@ in {
 
   inherit (pkgs)
     arandr # gui for monitors with xrandr
-    autorandr # xrandr monitor profiles
     autojump # jump into directory with j
+    autorandr # xrandr monitor profiles
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer
@@ -20,7 +20,9 @@ in {
     maim # screenshots
     meld # git merge tool (graphical)
     nix # nix package manager
+    pa_applet # volume tray icon
     pass # password manager
+    pavucontrol # pulse audio settings
     ranger # file manager
     ripgrep # fast grep
     screenkey # visualize typed keys
@@ -28,7 +30,6 @@ in {
     sxiv # image viewer
     translate-shell # trans command
     trayer # tray icons for xmonad
-    pa_applet # volume tray icon
     xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
   ;
