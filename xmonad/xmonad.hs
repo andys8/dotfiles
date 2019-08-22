@@ -20,11 +20,12 @@ import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 
-
-
 import           XMonad.Layout.Gaps
 import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
+import           XMonad.Layout.IndependentScreens
+                                                ( countScreens )
+
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 
@@ -274,7 +275,7 @@ myTabTheme = def { fontName            = myFont
 myModMask = mod4Mask
 altMask = mod1Mask
 
-myKeys conf@XConfig { XMonad.modMask = modMask } =
+myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
   M.fromList
     $
   ----------------------------------------------------------------------
@@ -522,10 +523,13 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
        -- | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
        -- , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
        -- ]
-       [ ((m .|. modMask, k), windows $ f (if i == show WorkspaceWork then 1 else 0) i)
-       | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-       , (f, m) <- [(viewOnScreen, 0), (\_ -> W.shift, shiftMask)]
-       ]
+       (let toScreenId workspace =
+                if workspace == show WorkspaceWork && nScreens == 2 then 1 else 0
+        in  [ ((m .|. modMask, k), windows $ f (toScreenId i) i)
+            | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+            , (f, m) <- [(viewOnScreen, 0), (\_ -> W.shift, shiftMask)]
+            ]
+       )
     ++
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -651,7 +655,8 @@ myStartupHook = do
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.config"
+  xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobar.config"
+  nScreens <- countScreens
   -- xmproc <- spawnPipe "taffybar"
   xmonad
     $ docks
@@ -667,7 +672,8 @@ main = do
     $ ewmh
          -- $ pagerHints -- uncomment to use taffybar
     $ defaults
-        { logHook =
+        { keys    = myKeys nScreens
+        , logHook =
           dynamicLogWithPP xmobarPP
               { ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
                               . wrap "[" "]"
@@ -697,7 +703,6 @@ defaults = def {
                , focusedBorderColor = myFocusedBorderColor
 
     -- key bindings
-               , keys               = myKeys
                , mouseBindings      = myMouseBindings
 
     -- hooks, layouts
