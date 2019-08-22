@@ -3,6 +3,7 @@
 # System tray
 if [ -z "$(pgrep trayer)" ]; then
     trayer \
+        --monitor primary \
         --edge bottom \
         --align center \
         --widthtype request \
