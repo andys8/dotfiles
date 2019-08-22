@@ -11,13 +11,14 @@ import           XMonad
 
 import           XMonad.Actions.CycleWS
 import           XMonad.Actions.Navigation2D
+import           XMonad.Actions.OnScreen
 import           XMonad.Actions.UpdatePointer
 
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
+import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 
 
 
@@ -44,8 +45,8 @@ import           XMonad.Layout.WindowNavigation
 import           XMonad.Layout.ZoomRow
 
 
-import           XMonad.Util.Run                          ( spawnPipe )
-import           XMonad.Util.EZConfig                     ( additionalKeys )
+import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.EZConfig           ( additionalKeys )
 import           XMonad.Util.Cursor
 
 
@@ -517,9 +518,13 @@ myKeys conf@XConfig { XMonad.modMask = modMask } =
 
   -- mod-[1..9], Switch to workspace N
   -- mod-shift-[1..9], Move client to workspace N
-       [ ((m .|. modMask, k), windows $ f i)
+       -- [ ((m .|. modMask, k), windows $ f i)
+       -- | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+       -- , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+       -- ]
+       [ ((m .|. modMask, k), windows $ f (if i == show WorkspaceWork then 1 else 0) i)
        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
+       , (f, m) <- [(viewOnScreen, 0), (\_ -> W.shift, shiftMask)]
        ]
     ++
 
