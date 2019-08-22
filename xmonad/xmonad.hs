@@ -637,7 +637,7 @@ myMouseBindings XConfig { XMonad.modMask = modMask } = M.fromList
 --
 -- By default, do nothing.
 myStartupHook = do
-  -- setWMName "LG3D"
+  setWMName "LG3D"
   spawn "bash ~/.xmonad/startup.sh"
   setDefaultCursor xC_left_ptr
 
