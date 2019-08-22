@@ -42,6 +42,7 @@ in {
 
   inherit (pkgs.haskellPackages)
     brittany # code formatter
+    git-brunch # git checkout branch tui
     hoogle # documenation
   ;
 

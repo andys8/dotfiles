@@ -6,7 +6,6 @@ commands=(
   alacritty
   bash
   fish
-  git-brunch
   i3
   i3-msg
   i3-nagbar
