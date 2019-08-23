@@ -20,7 +20,7 @@
         "elmPath": "elm",
         "elmFormatPath": "elm-format",
         "elmTestPath": "elm-test",
-        "diagnosticsOnSaveOnly": true
+        "elmAnalyseTrigger": "save"
       }
     },
     "haskell": {
