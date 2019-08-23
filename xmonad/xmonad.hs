@@ -12,6 +12,7 @@ import           XMonad
 import           XMonad.Actions.CycleWS
 import           XMonad.Actions.Navigation2D
 import           XMonad.Actions.OnScreen
+import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.UpdatePointer
 
 import           XMonad.Hooks.DynamicLog
@@ -523,13 +524,17 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        -- | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
        -- , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
        -- ]
-       (let toScreenId workspace =
-                if workspace == show WorkspaceWork && nScreens == 2 then 1 else 0
-        in  [ ((m .|. modMask, k), windows $ f (toScreenId i) i)
-            | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-            , (f, m) <- [(viewOnScreen, 0), (\_ -> W.shift, shiftMask)]
-            ]
-       )
+       [ ((m .|. modMask, k), f i)
+       | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+       , (f, m) <-
+         [ ( \workspace -> do
+             screenId <- toScreenId nScreens workspace
+             windows $ viewOnScreen screenId workspace
+           , 0
+           )
+         , (windows . W.shift, shiftMask)
+         ]
+       ]
     ++
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
@@ -712,3 +717,21 @@ defaults = def {
                , manageHook         = manageDocks <+> myManageHook
                , startupHook        = myStartupHook
                }
+
+
+-- Screens
+
+toScreenId :: Int -> String -> X (ScreenId)
+toScreenId nScreens workspace =
+  maybe 0 id
+    <$> (getScreen horizontalScreenOrderer $ toPhysicalScreen nScreens workspace
+        )
+
+
+toPhysicalScreen :: Int -> String -> PhysicalScreen
+toPhysicalScreen 2 workspace | workspace == show WorkspaceWork = 1
+                             | otherwise                       = 0
+toPhysicalScreen 3 workspace | workspace == show WorkspaceWWW  = 0
+                             | workspace == show WorkspaceWork = 1
+                             | otherwise                       = 2
+toPhysicalScreen _ _ = 0
