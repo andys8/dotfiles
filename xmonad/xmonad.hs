@@ -134,6 +134,9 @@ myManageHook = composeAll
   -- added (andys8)
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
   , className =? "Rambox" --> doShift (show WorkspaceChat)
+  , className =? "Slack" --> doShift (show WorkspaceChat)
+  , className =? "Code" --> doShift (show WorkspaceWork)
+  , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
   ]
 
 
