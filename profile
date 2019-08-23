@@ -26,3 +26,7 @@ PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+
+# IDEA keyboard freeze fix
+# <https://youtrack.jetbrains.com/issue/IDEA-78860>
+export IBUS_ENABLE_SYNC_MODE=1
