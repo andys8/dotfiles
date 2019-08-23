@@ -50,6 +50,7 @@ import           XMonad.Layout.ZoomRow
 import           XMonad.Util.Run                ( spawnPipe )
 import           XMonad.Util.EZConfig           ( additionalKeys )
 import           XMonad.Util.Cursor
+import           XMonad.Util.Paste
 
 
 import           Graphics.X11.ExtraTypes.XF86
@@ -374,6 +375,10 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
          )
        , ( (shiftMask, xK_Print)
          , spawn "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+         )
+      -- X-selection-paste buffer
+       , ( (0, xK_Insert)
+         , pasteSelection
          )
       -- change focus
        -- , ((modMask, xK_h), windows W.focusLeft)
