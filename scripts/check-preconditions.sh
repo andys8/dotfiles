@@ -20,6 +20,7 @@ commands=(
   nm-applet
   pgrep
   preload
+  pulseaudio
   python3
   rofi
   setxkbmap

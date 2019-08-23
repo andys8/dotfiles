@@ -22,6 +22,7 @@ fi
 
 # Volume Icon
 if [ -z "$(pgrep pa-applet)" ]; then
+    pulseaudio -D;
     pa-applet &
 fi
 
@@ -47,6 +48,9 @@ xset r rate 200 80
 
 # Wallpaper
 feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
+
+# Pulse Audio for pa-applet
+pulseaudio -D
 
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
