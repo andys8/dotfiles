@@ -19,13 +19,12 @@ import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
-import           XMonad.Hooks.EwmhDesktops      ( ewmh )
+import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 
 import           XMonad.Layout.Gaps
 import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
-import           XMonad.Layout.IndependentScreens
-                                                ( countScreens )
+import           XMonad.Layout.IndependentScreens         ( countScreens )
 
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
@@ -38,6 +37,7 @@ import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.Spacing
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
+import           XMonad.Layout.OneBig
 import           XMonad.Layout.NoFrillsDecoration
 import           XMonad.Layout.Renamed
 import           XMonad.Layout.Simplest
@@ -47,8 +47,8 @@ import           XMonad.Layout.WindowNavigation
 import           XMonad.Layout.ZoomRow
 
 
-import           XMonad.Util.Run                ( spawnPipe )
-import           XMonad.Util.EZConfig           ( additionalKeys )
+import           XMonad.Util.Run                          ( spawnPipe )
+import           XMonad.Util.EZConfig                     ( additionalKeys )
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
 
@@ -152,16 +152,13 @@ myManageHook = composeAll
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 
-outerGaps = 10
-myGaps = gaps [(U, outerGaps), (R, outerGaps), (L, outerGaps), (D, outerGaps)]
+myGaps = gaps [(U, gap), (R, gap), (L, gap), (D, gap)]
 addSpace = renamed [CutWordsLeft 2] . spacing gap
--- tab = avoidStruts $ renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed
---   shrinkText
---   myTabTheme
+-- tab =
+--   renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed shrinkText myTabTheme
 
 bsp =
-  avoidStruts
-    $ renamed [CutWordsLeft 1]
+  renamed [CutWordsLeft 1]
     $ addTopBar
     $ windowNavigation
     $ renamed [Replace "BSP"]
@@ -170,12 +167,15 @@ bsp =
     $ myGaps
     $ addSpace BSP.emptyBSP
 
-grid =
-  renamed [Replace "Grid"] $ avoidStruts $ addTopBar $ addSpace $ myGaps Grid
+grid = renamed [Replace "Grid"] $ addTopBar $ addSpace $ myGaps Grid
 
-layouts = bsp ||| avoidStruts Simplest
+oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ myGaps
+  (OneBig (3 / 4) (3 / 4))
 
-myLayout = smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
+layouts = bsp ||| oneBig ||| grid
+
+myLayout =
+  avoidStruts $ smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
 
 myNav2DConf = def { defaultTiledNavigation = centerNavigation
                   , floatNavigation        = centerNavigation
@@ -224,8 +224,8 @@ cyan = "#2aa198"
 green = "#859900"
 
 -- sizes
-gap = 10
-topbar = 10
+gap = 8
+topbar = 8
 border = 0
 prompt = 20
 status = 20
@@ -380,6 +380,10 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        , ( (0, xK_Insert)
          , pasteSelection
          )
+      -- Toggle current focus window to fullscreen
+       , ( (modMask, xK_f)
+         , sendMessage $ Toggle FULL
+         )
       -- change focus
        -- , ((modMask, xK_h), windows W.focusLeft)
        -- , ((modMask, xK_j), windows W.focusDown)
@@ -406,10 +410,6 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        --   , spawn myScreenshot
        --   )
 
-  -- Toggle current focus window to fullscreen
-       -- , ( (modMask, xK_f)
-       --   , sendMessage $ Toggle FULL
-       --   )
 
   -- Mute volume.
        -- , ( (0, xF86XK_AudioMute)
