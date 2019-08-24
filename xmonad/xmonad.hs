@@ -15,7 +15,6 @@ import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
 
-import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
 import           XMonad.Layout.Gaps
 import           XMonad.Layout.IndependentScreens         ( countScreens )
@@ -34,14 +33,11 @@ import           XMonad.Layout.Simplest
 import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.Tabbed
-import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.WindowNavigation
-import           XMonad.Layout.ZoomRow
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
 
 import           XMonad.Util.Cursor
-import           XMonad.Util.EZConfig                     ( additionalKeys )
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                          ( spawnPipe )
 
@@ -49,27 +45,6 @@ import qualified Data.Map                      as M
 import           Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet               as W
 
--- TODO: Scratchpad terminal
-----------------------------mupdf--------------------------------------------
--- Terminimport XMonad.Hooks.EwmhDesktopsal
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
-myTerminal = "x-terminal-emulator"
-
--- The command to lock the screen or show the screensaver.
-myScreensaver = "dm-tool switch-to-greeter"
-
--- The command to take a selective screenshot, where you select
--- what you'd like to capture on the screen.
-mySelectScreenshot = "select-screenshot"
-
--- The command to take a fullscreen screenshot.
-myScreenshot = "xfce4-screenshooter"
-
--- The command to use as a launcher, to launch commands that don't have
--- preset keybindings.
-myLauncher = "rofi -show"
 
 ------------------------------------------------------------------------
 -- Workspaces
@@ -92,9 +67,10 @@ instance Show Workspace
   show WorkspaceTerm = "3: term"
   show WorkspaceChat = "4: chat"
 
+myWorkspaces :: [String]
 myWorkspaces =
   (show <$> [WorkspaceWWW, WorkspaceWork, WorkspaceTerm, WorkspaceChat])
-    ++ (show <$> [5 .. 9])
+    ++ (show <$> ([5 .. 9] :: [Int]))
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -142,12 +118,10 @@ myManageHook = composeAll
 --
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
-myGaps = gaps [(U, gap), (R, gap), (L, gap), (D, gap)]
-
-addSpace = renamed [CutWordsLeft 2] . spacing gap
+addSpace = spacingRaw True (Border 5 5 5 5) True (Border 10 10 10 10) True
 
 -- tab =
---   renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed shrinkText myTabTheme
+--   renamed [Replace "Tabbed"] $ addTopBar $ tabbed shrinkText myTabTheme
 bsp =
   renamed [CutWordsLeft 1]
     $ addTopBar
@@ -155,13 +129,11 @@ bsp =
     $ renamed [Replace "BSP"]
     $ addTabs shrinkText myTabTheme
     $ subLayout [] Simplest
-    $ myGaps
     $ addSpace BSP.emptyBSP
 
-grid = renamed [Replace "Grid"] $ addTopBar $ addSpace $ myGaps Grid
+grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
 
-oneBig =
-  renamed [Replace "OneBig"] $ addTopBar $ addSpace $ myGaps (OneBig 0.75 0.65)
+oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
 layouts = bsp ||| oneBig ||| grid
 
@@ -588,27 +560,7 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
   -- , ((modMask .|. shiftMask,                 xK_n     ), sendMessage BSP.MoveNode)
        ]
 
-------------------------------------------------------------------------
--- Mouse bindings
---
--- Focus rules
--- True if your focus should follow your mouse cursor.
-myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
 
-myMouseBindings XConfig { XMonad.modMask = modMask } = M.fromList
-    -- mod-button1, Set the window to floating mode and move by dragging
-  [ ( (modMask, button1)
-    , \w -> focus w >> mouseMoveWindow w
-    )
-    -- mod-button2, Raise the window to the top of the stack
-  , ( (modMask, button2)
-    , \w -> focus w >> windows W.swapMaster
-    )
-    -- mod-button3, Set the window to floating mode and resize by dragging
-  , ((modMask, button3), \w -> focus w >> mouseResizeWindow w)
-    -- you may also bind events to the mouse scroll wheel (button4 and button5)
-  ]
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -674,15 +626,15 @@ main = do
 --
 defaults = def
     -- simple stuff
-               { terminal           = myTerminal
-               , focusFollowsMouse  = myFocusFollowsMouse
+               { terminal           = "x-terminal-emulator"
+               , focusFollowsMouse  = True
                , borderWidth        = myBorderWidth
                , modMask            = myModMask
                , workspaces         = myWorkspaces
                , normalBorderColor  = myNormalBorderColor
                , focusedBorderColor = myFocusedBorderColor
     -- key bindings
-               , mouseBindings      = myMouseBindings
+               -- , mouseBindings      = myMouseBindings
     -- hooks, layouts
                , layoutHook         = myLayout
     -- handleEventHook    = E.fullscreenEventHook,
