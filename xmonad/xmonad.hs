@@ -169,8 +169,8 @@ bsp =
 
 grid = renamed [Replace "Grid"] $ addTopBar $ addSpace $ myGaps Grid
 
-oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ myGaps
-  (OneBig (3 / 4) (3 / 4))
+oneBig =
+  renamed [Replace "OneBig"] $ addTopBar $ addSpace $ myGaps (OneBig 0.75 0.65)
 
 layouts = bsp ||| oneBig ||| grid
 
