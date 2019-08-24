@@ -80,7 +80,7 @@ nmap <silent> <leader>P :ALEFix<CR>
 let g:ale_fixers = {
       \ 'css': ['prettier'],
       \ 'elm': ['elm-format'],
-      \ 'haskell': [],
+      \ 'haskell': ['hindent'],
       \ 'javascript': ['prettier'],
       \ 'json': ['prettier'],
       \ 'less': ['prettier'],

@@ -44,6 +44,7 @@ in {
     brittany # code formatter
     git-brunch # git checkout branch tui
     hoogle # documenation
+    hindent # Haskell format (alternative)
   ;
 
   inherit (pkgs.gitAndTools)

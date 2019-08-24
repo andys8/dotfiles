@@ -1,11 +1,5 @@
--- xmonad config used by Malcolm MD
--- https://github.com/randomthought/xmonad-config
-
-import           System.IO
 import           System.Exit
--- import System.Taffybar.Hooks.PagerHints (pagerHints)
-
-import qualified Data.List                     as L
+import           System.IO
 
 import           XMonad
 
@@ -16,49 +10,46 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.UpdatePointer
 
 import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 
-import           XMonad.Layout.Gaps
 import           XMonad.Layout.Accordion
 import           XMonad.Layout.Fullscreen
+import           XMonad.Layout.Gaps
 import           XMonad.Layout.IndependentScreens         ( countScreens )
 
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 
-import           XMonad.Prompt
-import           XMonad.Prompt.ConfirmPrompt
-import           XMonad.Layout.NoBorders
-import           XMonad.Layout.Tabbed
-import           XMonad.Layout.ThreeColumns
-import           XMonad.Layout.Spacing
+import           XMonad.Layout.Grid
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
-import           XMonad.Layout.OneBig
+import           XMonad.Layout.NoBorders
 import           XMonad.Layout.NoFrillsDecoration
+import           XMonad.Layout.OneBig
 import           XMonad.Layout.Renamed
 import           XMonad.Layout.Simplest
-import           XMonad.Layout.Grid
+import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
+import           XMonad.Layout.Tabbed
+import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Layout.ZoomRow
+import           XMonad.Prompt
+import           XMonad.Prompt.ConfirmPrompt
 
-
-import           XMonad.Util.Run                          ( spawnPipe )
-import           XMonad.Util.EZConfig                     ( additionalKeys )
 import           XMonad.Util.Cursor
+import           XMonad.Util.EZConfig                     ( additionalKeys )
 import           XMonad.Util.Paste
+import           XMonad.Util.Run                          ( spawnPipe )
 
-
+import qualified Data.Map                      as M
 import           Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet               as W
-import qualified Data.Map                      as M
 
 -- TODO: Scratchpad terminal
-
 ----------------------------mupdf--------------------------------------------
 -- Terminimport XMonad.Hooks.EwmhDesktopsal
 -- The preferred terminal program, which is used in a binding below and by
@@ -80,20 +71,22 @@ myScreenshot = "xfce4-screenshooter"
 -- preset keybindings.
 myLauncher = "rofi -show"
 
-
-
-
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-data Workspace = WorkspaceWWW | WorkspaceWork | WorkspaceTerm | WorkspaceChat
+data Workspace
+  = WorkspaceWWW
+  | WorkspaceWork
+  | WorkspaceTerm
+  | WorkspaceChat
 
-instance Show Workspace where
+instance Show Workspace
   -- set $ws_www     "1  "
   -- set $ws_work    "2  "
   -- set $ws_term    "3  "
   -- set $ws_chat    "4  "
+                            where
   show WorkspaceWWW  = "1: web"
   show WorkspaceWork = "2: work"
   show WorkspaceTerm = "3: term"
@@ -140,8 +133,6 @@ myManageHook = composeAll
   , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
   ]
 
-
-
 ------------------------------------------------------------------------
 -- Layouts
 -- You can specify and transform your layouts by modifying these values.
@@ -151,12 +142,12 @@ myManageHook = composeAll
 --
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
-
 myGaps = gaps [(U, gap), (R, gap), (L, gap), (D, gap)]
+
 addSpace = renamed [CutWordsLeft 2] . spacing gap
+
 -- tab =
 --   renamed [Replace "Tabbed"] $ addTopBar $ myGaps $ tabbed shrinkText myTabTheme
-
 bsp =
   renamed [CutWordsLeft 1]
     $ addTopBar
@@ -190,10 +181,8 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
                                                                         ]
                   }
 
-
 ------------------------------------------------------------------------
 -- Colors and borders
-
 -- Color of current window title in xmobar.
 xmobarTitleColor = "#C678DD"
 
@@ -204,46 +193,70 @@ xmobarCurrentWorkspaceColor = "#51AFEF"
 myBorderWidth = 0
 
 myNormalBorderColor = "#000000"
+
 myFocusedBorderColor = active
 
 base03 = "#002b36"
+
 base02 = "#073642"
+
 base01 = "#586e75"
+
 base00 = "#657b83"
+
 base0 = "#839496"
+
 base1 = "#93a1a1"
+
 base2 = "#eee8d5"
+
 base3 = "#fdf6e3"
+
 yellow = "#b58900"
+
 orange = "#cb4b16"
+
 red = "#dc322f"
+
 magenta = "#d33682"
+
 violet = "#6c71c4"
+
 blue = "#268bd2"
+
 cyan = "#2aa198"
+
 green = "#859900"
 
 -- sizes
 gap = 8
+
 topbar = 8
+
 border = 0
+
 prompt = 20
+
 status = 20
 
 active = blue
+
 activeWarn = red
+
 inactive = base02
+
 focusColor = blue
+
 unfocusColor = base02
 
 -- myFont      = "-*-Zekton-medium-*-*-*-*-160-*-*-*-*-*-*"
 -- myBigFont   = "-*-Zekton-medium-*-*-*-*-240-*-*-*-*-*-*"
 -- myFont = "xft:Zekton:size=9:bold:antialias=true"
 myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
+
 -- myBigFont = "xft:Zekton:size=9:bold:antialias=true"
 -- myWideFont =
 --   "xft:Eurostar Black Extended:" ++ "style=Regular:pixelsize=180:hinting=true"
-
 -- this is a "fake title" used as a highlight bar in lieu of full borders
 -- (I find this a cleaner and less visually intrusive solution)
 topBarTheme = def { fontName            = myFont
@@ -278,6 +291,7 @@ myTabTheme = def { fontName            = myFont
 -- "windows key" is usually mod4Mask.
 --
 myModMask = mod4Mask
+
 altMask = mod1Mask
 
 myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
@@ -286,12 +300,9 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
   ----------------------------------------------------------------------
   -- Custom key bindings
   --
-
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
-       [
-
       -- terminal
-         ( (modMask, xK_Return)
+       [ ( (modMask, xK_Return)
          , spawn $ XMonad.terminal conf
          )
       -- file browser
@@ -303,9 +314,9 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
          , spawn "x-www-browser"
          )
       -- kill focused window
-       , ((modMask, xK_Escape), kill)
+       , ((modMask, xK_Escape)              , kill)
        , ((modMask .|. shiftMask, xK_Escape), kill)
-       , ((modMask, xK_q), kill)
+       , ((modMask, xK_q)                   , kill)
        , ( (altMask, xK_F4)
          , kill
          )
@@ -338,7 +349,7 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
          , spawn "i3lock-fancy -p"
          )
       -- cycle through workspaces
-       , ((modMask, xK_Tab), moveTo Next NonEmptyWS)
+       , ((modMask, xK_Tab)              , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab), moveTo Prev NonEmptyWS)
        , ( (modMask, xK_i)
          , toggleWS
@@ -393,24 +404,19 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        -- , ( (modMask, xK_l)
        --   , windows W.focusRight
        --   )
-
   -- Spawn the launcher using command specified by myLauncher.
   -- Use this to launch programs without a key binding.
        -- , ( (modMask, xK_p)
        --   , spawn myLauncher
        --   )
-
   -- Take a selective screenshot using the command specified by mySelectScreenshot.
        -- , ( (modMask .|. shiftMask, xK_p)
        --   , spawn mySelectScreenshot
        --   )
-
   -- -- Take a full screenshot using the command specified by myScreenshot.
        -- , ( (modMask .|. controlMask .|. shiftMask, xK_p)
        --   , spawn myScreenshot
        --   )
-
-
   -- Mute volume.
        -- , ( (0, xF86XK_AudioMute)
        --   , spawn "amixer -q set Master toggle"
@@ -418,114 +424,90 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        -- , ( (0, xF86XK_AudioMute)
        --   , spawn "amixer -q set Master toggle"
        --   )
-
   -- -- Decrease volume.
        -- , ( (0, xF86XK_AudioLowerVolume)
        --   , spawn "amixer -q set Master 5%-"
        --   )
-
   -- -- Increase volume.
        -- , ( (0, xF86XK_AudioRaiseVolume)
        --   , spawn "amixer -q set Master 5%+"
        --   )
-
   -- Audio previous.
        , ( (0, 0x1008FF16)
          , spawn ""
          )
-
   -- Play/pause.
        , ( (0, 0x1008FF14)
          , spawn ""
          )
-
   -- Audio next.
        , ( (0, 0x1008FF17)
          , spawn ""
          )
-
   -- Eject CD tray.
        , ( (0, 0x1008FF2C)
          , spawn "eject -T"
          )
   --------------------------------------------------------------------
   -- Custom (andys8)
-
-
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
   --
-
   -- Close focused window.
        -- , ( (modMask .|. shiftMask, xK_c)
        --   , kill
        --   )
-
   -- Cycle through the available layout algorithms.
        , ( (modMask, xK_space)
          , sendMessage NextLayout
          )
-
   --  Reset the layouts on the current workspace to default.
        , ( (modMask .|. shiftMask, xK_space)
          , setLayout $ XMonad.layoutHook conf
          )
-
   -- Resize viewed windows to the correct size.
        -- , ( (modMask, xK_n)
        --   , refresh
        --   )
-
-
   -- Move focus to the master window.
        , ( (modMask, xK_m)
          , windows W.focusMaster
          )
-
   -- Swap the focused window and the master window.
   -- andys8: Removed because conflict
        -- , ( (modMask, xK_Return)
        --   , windows W.swapMaster
        --   )
-
   -- Swap the focused window with the next window.
        , ( (modMask .|. shiftMask, xK_j)
          , windows W.swapDown
          )
-
   -- Swap the focused window with the previous window.
        , ( (modMask .|. shiftMask, xK_k)
          , windows W.swapUp
          )
-
   -- Shrink the master area.
        , ( (modMask, xK_h)
          , sendMessage Shrink
          )
-
   -- Expand the master area.
        , ( (modMask, xK_l)
          , sendMessage Expand
          )
-
   -- Push window back into tiling.
        , ( (modMask, xK_t)
          , withFocused $ windows . W.sink
          )
-
   -- Increment the number of windows in the master area.
        , ( (modMask, xK_comma)
          , sendMessage (IncMasterN 1)
          )
-
   -- Decrement the number of windows in the master area.
        , ((modMask, xK_period), sendMessage (IncMasterN (-1)))
-
   -- Toggle the status bar gap.
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
        ]
     ++
-
   -- mod-[1..9], Switch to workspace N
   -- mod-shift-[1..9], Move client to workspace N
        -- [ ((m .|. modMask, k), windows $ f i)
@@ -544,7 +526,6 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
          ]
        ]
     ++
-
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
        -- [ ( (m .|. modMask, key)
@@ -553,14 +534,11 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        -- | (key, sc) <- zip [xK_w, xK_e, xK_r] [0 ..]
        -- , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]
        -- ]
-
-
     -- ++
   -- Bindings for manage sub tabs in layouts please checkout the link below for reference
   -- https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Layout-SubLayouts.html
-       [
     -- Tab current focused window with the window to the left
-         ( (modMask .|. controlMask, xK_h)
+       [ ( (modMask .|. controlMask, xK_h)
          , sendMessage $ pullGroup L
          )
     -- Tab current focused window with the window to the right
@@ -575,18 +553,15 @@ myKeys nScreens conf@XConfig { XMonad.modMask = modMask } =
        , ( (modMask .|. controlMask, xK_j)
          , sendMessage $ pullGroup D
          )
-
   -- Tab all windows in the current workspace with current window as the focus
        , ( (modMask .|. controlMask, xK_m)
          , withFocused (sendMessage . MergeAll)
          )
   -- Group the current tabbed windows
        , ((modMask .|. controlMask, xK_u), withFocused (sendMessage . UnMerge))
-
   -- Toggle through tabes from the right
        -- , ((modMask, xK_Tab), onGroup W.focusDown')
        ]
-
     ++
   -- Some bindings for BinarySpacePartition
   -- https://github.com/benweitzman/BinarySpacePartition
@@ -622,23 +597,18 @@ myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
 myMouseBindings XConfig { XMonad.modMask = modMask } = M.fromList
-  [
     -- mod-button1, Set the window to floating mode and move by dragging
-    ( (modMask, button1)
+  [ ( (modMask, button1)
     , \w -> focus w >> mouseMoveWindow w
     )
-
     -- mod-button2, Raise the window to the top of the stack
   , ( (modMask, button2)
     , \w -> focus w >> windows W.swapMaster
     )
-
     -- mod-button3, Set the window to floating mode and resize by dragging
   , ((modMask, button3), \w -> focus w >> mouseResizeWindow w)
-
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
   ]
-
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -649,8 +619,6 @@ myMouseBindings XConfig { XMonad.modMask = modMask } = M.fromList
 --
 -- > logHook = dynamicLogDzen
 --
-
-
 ------------------------------------------------------------------------
 -- Startup hook
 -- Perform an arbitrary action each time xmonad starts or is restarted
@@ -662,7 +630,6 @@ myStartupHook = do
   setWMName "LG3D"
   spawn "bash ~/.xmonad/startup.sh"
   setDefaultCursor xC_left_ptr
-
 
 ------------------------------------------------------------------------
 -- Run xmonad with all the defaults we set up.
@@ -705,19 +672,17 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = def {
+defaults = def
     -- simple stuff
-                 terminal           = myTerminal
+               { terminal           = myTerminal
                , focusFollowsMouse  = myFocusFollowsMouse
                , borderWidth        = myBorderWidth
                , modMask            = myModMask
                , workspaces         = myWorkspaces
                , normalBorderColor  = myNormalBorderColor
                , focusedBorderColor = myFocusedBorderColor
-
     -- key bindings
                , mouseBindings      = myMouseBindings
-
     -- hooks, layouts
                , layoutHook         = myLayout
     -- handleEventHook    = E.fullscreenEventHook,
@@ -726,15 +691,12 @@ defaults = def {
                , startupHook        = myStartupHook
                }
 
-
 -- Screens
-
 toScreenId :: Int -> String -> X (ScreenId)
 toScreenId nScreens workspace =
   maybe 0 id
     <$> (getScreen horizontalScreenOrderer $ toPhysicalScreen nScreens workspace
         )
-
 
 toPhysicalScreen :: Int -> String -> PhysicalScreen
 toPhysicalScreen 2 workspace | workspace == show WorkspaceWork = 1
