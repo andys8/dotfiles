@@ -27,6 +27,7 @@
       "command": "hie-wrapper",
       "rootPatterns": ["stack.yaml", "*.cabal", "cabal.config", "package.yaml"],
       "filetypes": ["hs", "lhs", "haskell"],
+      "trace.server": "verbose",
       "initializationOptions": {
         "languageServerHaskell": {
           "hlintOn": true,
