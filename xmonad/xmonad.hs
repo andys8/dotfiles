@@ -13,11 +13,9 @@ import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 import           XMonad.Hooks.ManageDocks
-import           XMonad.Hooks.ManageHelpers
 import           XMonad.Hooks.SetWMName
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
-import           XMonad.Layout.Fullscreen
 import           XMonad.Layout.Grid
 import           XMonad.Layout.IndependentScreens         ( countScreens )
 import           XMonad.Layout.MultiToggle
@@ -61,7 +59,7 @@ myWorkspaces =
 
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
-  , isFullscreen --> (doF StackSet.focusDown <+> doFullFloat)
+  -- , isFullscreen --> (doF StackSet.focusDown <+> doFullFloat)
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
   , className =? "Rambox" --> doShift (show WorkspaceChat)
   , className =? "Slack" --> doShift (show WorkspaceChat)
@@ -191,6 +189,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((nothing, xF86XK_MonBrightnessDown)        , brightnessDown)
        , ((nothing, xK_Insert)                       , pasteSelection)
        , ((modMask, xK_f), sendMessage $ Toggle FULL)
+       , ((modMask .|. shiftMask, xK_f)              , sendMessage ToggleStruts)
        , ((modMask, xK_space)                        , sendMessage NextLayout)
        , ((modMask .|. shiftMask, xK_space), setLayout $ XMonad.layoutHook conf)
        , ((modMask .|. controlMask, xK_l), sendMessage $ ExpandTowards R)
@@ -246,7 +245,6 @@ main = do
           , normalBorderColor  = active
           , focusedBorderColor = inactive
           , layoutHook         = myLayout
-          , handleEventHook    = fullscreenEventHook
           , manageHook         = manageDocks <+> myManageHook
           , startupHook        = myStartupHook
           }
