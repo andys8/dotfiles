@@ -14,6 +14,7 @@ git pull
 ./scripts/update-vim.sh
 ./scripts/update-fish.fish
 ./scripts/update-npm.sh
+./scripts/update-xmonad.sh
 
 # Abbreviations
 ./scripts/fish-abbreviations.fish
