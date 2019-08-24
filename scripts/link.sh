@@ -48,3 +48,5 @@ ln -sf ~/dotfiles/google-java-format ~/bin/google-java-format
 ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/dotfiles/xmonad/xmobar.config ~/.xmonad/xmobar.config
 ln -sf ~/dotfiles/xmonad/startup.sh ~/.xmonad/startup.sh
+ln -sf ~/dotfiles/xmonad/stack.yaml ~/.xmonad/stack.yaml
+ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
