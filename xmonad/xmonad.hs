@@ -54,8 +54,8 @@ instance Show Workspace where
 
 myWorkspaces :: [String]
 myWorkspaces =
-  (show <$> [WorkspaceWWW, WorkspaceWork, WorkspaceTerm, WorkspaceChat])
-    ++ (show <$> ([5 .. 9] :: [Int]))
+  let wsNamed = [WorkspaceWWW, WorkspaceWork, WorkspaceTerm, WorkspaceChat]
+  in  (show <$> wsNamed) ++ (show <$> [length wsNamed + 1 .. 9])
 
 -- Window rules --
 
@@ -102,10 +102,10 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
 
 -- Theme --
 
-active = "#ffb86c"
+active = "#f8f8f2"
 inactive = "#6272a4"
 urgent = "#dc322f"
-xmobarActiveWorkspaceColor = "#8be9fd"
+xmobarActiveWorkspaceColor = "#ff79c6"
 xmobarTitleColor = "#6272a4"
 myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
 
@@ -118,7 +118,7 @@ topBarTheme = def { fontName            = myFont
                   , activeTextColor     = active
                   , urgentBorderColor   = urgent
                   , urgentTextColor     = urgent
-                  , decoHeight          = 6
+                  , decoHeight          = 5
                   }
 
 myTabTheme = def { fontName            = myFont
@@ -150,13 +150,13 @@ screenshotClipboard =
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
 brightnessUp = spawn "xrandr --output eDP-1 --brightness 1.0"
 brightnessDown = spawn "xrandr --output eDP-1 --brightness 0.6"
-exitXmonad = confirm "exit xmonad and logoff" $ io (exitWith ExitSuccess)
+exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
 
 setMonitors :: Int -> X ()
 setMonitors i = spawn ("autorandr -l " <> show i) <> restartXmonad
 
-updateMonitors = spawn ("autorandr -c") <> restartXmonad
+updateMonitors = spawn "autorandr -c" <> restartXmonad
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
