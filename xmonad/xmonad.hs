@@ -65,6 +65,7 @@ myManageHook = composeAll
   , className =? "Slack" --> doShift (show WorkspaceChat)
   , className =? "Code" --> doShift (show WorkspaceWork)
   , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
+  , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
   ]
 
 -- Layouts --
