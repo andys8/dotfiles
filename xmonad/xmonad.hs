@@ -101,7 +101,7 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
 
 -- Theme --
 
-active = "#f8f8f2"
+active = "#8be9fd"
 inactive = "#6272a4"
 urgent = "#dc322f"
 xmobarActiveWorkspaceColor = "#ff79c6"
