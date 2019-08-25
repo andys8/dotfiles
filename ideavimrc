@@ -5,6 +5,7 @@ let mapleader=','
 " Plugins
 set surround
 
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -14,7 +15,7 @@ set number
 set relativenumber
 set scrolloff=3
 set history=100000
-set clipboard=unnamed
+set clipboard=unnamed,ideaput
 
 
 " Quit insert mode
