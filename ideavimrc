@@ -36,6 +36,7 @@ nnoremap <leader>g :action GotoSymbol<CR>
 nnoremap <leader>t :action TypeHintsMenu<CR>
 nnoremap <leader>u :action ShowUsages<CR>
 nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>e :action GotoFile<CR>
