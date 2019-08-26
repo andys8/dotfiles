@@ -101,7 +101,7 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
 
 -- Theme --
 
-active = "#ffb86c"
+active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"
 xmobarActiveWorkspaceColor = "#ff79c6"
@@ -117,7 +117,7 @@ topBarTheme = def { fontName            = myFont
                   , activeTextColor     = active
                   , urgentBorderColor   = urgent
                   , urgentTextColor     = urgent
-                  , decoHeight          = 5
+                  , decoHeight          = 6
                   }
 
 myTabTheme = def { fontName            = myFont
