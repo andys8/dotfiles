@@ -4,6 +4,7 @@ let
     url = "https://github.com/NixOS/nixpkgs/archive/19.03.tar.gz";
     sha256 = "0q2m2qhyga9yq29yz90ywgjbn9hdahs7i8wwlq7b55rdbyiwa5dy";
   }) {};
+  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 in {
 
   inherit (pkgs)
@@ -69,4 +70,8 @@ in {
     wcalc # calculator
     sent # suckless presentation tool
   ;
+
+  # haskell ide engine
+  hie = (all-hies.selection { selector = p: { inherit (p) ghc864 ghc865; }; });
+
 }
