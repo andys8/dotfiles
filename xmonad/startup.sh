@@ -52,8 +52,5 @@ feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
 # Pulse Audio for pa-applet
 pulseaudio -D
 
-# Monitors
-autorandr -c
-
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
