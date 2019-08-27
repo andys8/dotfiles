@@ -154,16 +154,13 @@ exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
 
 setMonitors :: Int -> X ()
-setMonitors i = spawn ("autorandr -l " <> show i) <> restartXmonad
+setMonitors i = spawn ("autorandr -l " <> show i)
 
-updateMonitors = spawn "autorandr -c" <> restartXmonad
+updateMonitors = spawn "autorandr -c"
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
-  (windows $ viewOnScreen screenId workspace)
-    <+> (sendToScreen horizontalScreenOrderer
-                      (toPhysicalScreen nScreens workspace)
-        )
+  windows $ greedyViewOnScreen screenId workspace
 
 moveToWorkspace = windows . StackSet.shift
 
@@ -223,6 +220,13 @@ myStartupHook = do
   spawn "bash ~/.xmonad/startup.sh"
   setDefaultCursor xC_left_ptr
 
+monitorSetupHook nScreens workspaces = mconcat
+  (updateScreen nScreens <$> reverse workspaces)
+ where
+  updateScreen nScreens workspace = do
+    screenId <- toScreenId nScreens workspace
+    windows $ greedyViewOnScreen screenId workspace
+
 -- Main --
 
 main = do
@@ -240,19 +244,20 @@ main = do
         [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
         False
     $ ewmh
-    $ def { keys               = myKeys nScreens
-          , logHook = myXmobar xmproc >> updatePointer (0.75, 0.75) (0.75, 0.75)
-          , terminal           = "x-terminal-emulator"
-          , focusFollowsMouse  = True
-          , borderWidth        = 0
-          , modMask            = mod4Mask
-          , workspaces         = myWorkspaces
-          , normalBorderColor  = active
-          , focusedBorderColor = inactive
-          , layoutHook         = myLayout
-          , manageHook         = manageDocks <+> myManageHook
-          , startupHook        = myStartupHook
-          }
+    $ def
+        { keys               = myKeys nScreens
+        , logHook = myXmobar xmproc >> updatePointer (0.75, 0.75) (0.75, 0.75)
+        , terminal           = "x-terminal-emulator"
+        , focusFollowsMouse  = True
+        , borderWidth        = 0
+        , modMask            = mod4Mask
+        , workspaces         = myWorkspaces
+        , normalBorderColor  = active
+        , focusedBorderColor = inactive
+        , layoutHook         = myLayout
+        , manageHook         = manageDocks <+> myManageHook
+        , startupHook = myStartupHook <+> monitorSetupHook nScreens myWorkspaces
+        }
 
 myXmobar xmproc = dynamicLogWithPP xmobarPP
   { ppCurrent = xmobarColor xmobarActiveWorkspaceColor "" . wrap "[" "]"
@@ -264,13 +269,13 @@ myXmobar xmproc = dynamicLogWithPP xmobarPP
 -- Screens --
 
 toScreenId :: Int -> String -> X ScreenId
-toScreenId nScreens ws = fromMaybe 0
+toScreenId nScreens ws = fromMaybe (S 0)
   <$> getScreen horizontalScreenOrderer (toPhysicalScreen nScreens ws)
 
 toPhysicalScreen :: Int -> String -> PhysicalScreen
-toPhysicalScreen 2 ws | ws == show WorkspaceWork = 1
-                      | otherwise                = 0
-toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = 0
-                      | ws == show WorkspaceWork = 1
-                      | otherwise                = 2
-toPhysicalScreen _ _ = 0
+toPhysicalScreen 2 ws | ws == show WorkspaceWork = P 1
+                      | otherwise                = P 0
+toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = P 0
+                      | ws == show WorkspaceWork = P 1
+                      | otherwise                = P 2
+toPhysicalScreen _ _ = P 0
