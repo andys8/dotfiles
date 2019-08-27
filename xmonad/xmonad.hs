@@ -11,13 +11,14 @@ import           XMonad.Actions.OnScreen
 import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
+import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens         ( countScreens )
+import           XMonad.Layout.IndependentScreens
+                                                ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -34,7 +35,7 @@ import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as StackSet
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                          ( spawnPipe )
+import           XMonad.Util.Run                ( spawnPipe )
 
 -- Workspaces --
 
@@ -159,7 +160,10 @@ updateMonitors = spawn "autorandr -c" <> restartXmonad
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
-  windows $ viewOnScreen screenId workspace
+  (windows $ viewOnScreen screenId workspace)
+    <+> (sendToScreen horizontalScreenOrderer
+                      (toPhysicalScreen nScreens workspace)
+        )
 
 moveToWorkspace = windows . StackSet.shift
 
@@ -262,11 +266,11 @@ myXmobar xmproc = dynamicLogWithPP xmobarPP
 toScreenId :: Int -> String -> X ScreenId
 toScreenId nScreens ws = fromMaybe 0
   <$> getScreen horizontalScreenOrderer (toPhysicalScreen nScreens ws)
- where
-  toPhysicalScreen 2 ws | ws == show WorkspaceWork = 1
-                        | otherwise                = 0
-  toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = 0
-                        | ws == show WorkspaceWork = 1
-                        | otherwise                = 2
-  toPhysicalScreen _ _ = 0
 
+toPhysicalScreen :: Int -> String -> PhysicalScreen
+toPhysicalScreen 2 ws | ws == show WorkspaceWork = 1
+                      | otherwise                = 0
+toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = 0
+                      | ws == show WorkspaceWork = 1
+                      | otherwise                = 2
+toPhysicalScreen _ _ = 0
