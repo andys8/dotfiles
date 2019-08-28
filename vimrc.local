@@ -41,7 +41,6 @@ nunmap <Tab>
 
 " Exit insert mode
 inoremap jj <ESC>
-inoremap jk <ESC>
 
 " Save
 nnoremap <C-s> :w<CR>
