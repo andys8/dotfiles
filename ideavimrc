@@ -32,7 +32,7 @@ nnoremap gf :action GotoFile<CR>
 nnoremap gt :action GotoTest<CR>
 
 nnoremap <leader>s :action ShowIntentionActions<CR>
-nnoremap <leader>g :action GotoSymbol<CR>
+nnoremap <leader>g :action QuickJavaDoc<CR>
 nnoremap <leader>t :action TypeHintsMenu<CR>
 nnoremap <leader>u :action ShowUsages<CR>
 nnoremap <leader>d :action GotoDeclaration<CR>
