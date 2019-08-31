@@ -6,5 +6,5 @@ cachix use all-hies
 
 # Nix
 nix-channel --update
-nix-env -irf manifest.nix
+nix-env -irf packages.nix
 
