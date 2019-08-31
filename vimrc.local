@@ -6,7 +6,9 @@ set confirm
 set shell=/bin/bash
 set shortmess+=c
 set nobackup
+set nowritebackup
 set noswapfile
+set signcolumn=yes
 
 " updatetime has performance impact
 set updatetime=500
@@ -183,11 +185,6 @@ let g:coc_global_extensions = [
 hi! link CocErrorHighlight SpellBad
 hi! CocFloating ctermbg=236 guibg=#292c3a
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
@@ -197,12 +194,17 @@ nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
-nmap <silent> K :call CocAction('doHover')<CR>
+nmap <silent> K         :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 xmap <silent> <leader>p <Plug>(coc-format-selected)
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
