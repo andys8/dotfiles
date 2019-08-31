@@ -12,7 +12,6 @@
     "elmLS": {
       "enable": true,
       "command": "elm-language-server",
-      "args": ["--stdio"],
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
       "trace.server": "verbose",
