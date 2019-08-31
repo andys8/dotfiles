@@ -197,6 +197,7 @@ nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
+nmap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
