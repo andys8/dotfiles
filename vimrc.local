@@ -185,6 +185,9 @@ let g:coc_global_extensions = [
 hi! link CocErrorHighlight SpellBad
 hi! CocFloating ctermbg=236 guibg=#292c3a
 
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
