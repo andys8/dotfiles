@@ -24,6 +24,10 @@ inoremap jj <Esc>
 " Multiple cursors
 map <C-n> <A-j>
 
+" Jump back and forward
+map <C-o> :action Back<CR>
+map <C-i> :action Forward<CR>
+
 " Tab operation
 nnoremap <leader>q :action PreviousTab<CR>
 nnoremap <leader>w :action NextTab<CR>
