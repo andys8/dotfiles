@@ -235,6 +235,7 @@ if &diff
 endif
 
 " Git gutter
+let g:gitgutter_sign_priority = 1
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '➜'
 let g:gitgutter_sign_removed = '✘'
