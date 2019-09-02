@@ -60,13 +60,13 @@ myWorkspaces =
 
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
-  -- , isFullscreen --> (doF StackSet.focusDown <+> doFullFloat)
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
   , className =? "Rambox" --> doShift (show WorkspaceChat)
   , className =? "Slack" --> doShift (show WorkspaceChat)
   , className =? "Code" --> doShift (show WorkspaceWork)
   , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
   , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
+  , className =? "Screenruler" --> doFloat
   ]
 
 -- Layouts --
