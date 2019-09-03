@@ -2,6 +2,12 @@ let
   pkgs = import <nixpkgs> {};
   fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.03.tar.gz") {};
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+  elmTools = import (pkgs.fetchFromGitHub {
+    owner = "turboMaCk";
+    repo = "nix-elm-tools";
+    rev = "d138d5405a5df4903c753079a649b70ab28cc8d8";
+    sha256 = "1n3kybxnm93jjsaww7pa7bgm8xal81c5sf8aw7ag6r5jjw16skm8";
+  }) { inherit pkgs; };
 in
 (with fixed; [
   cabal-install # haskell build tool
@@ -55,6 +61,9 @@ in
   elm # compiler
   elm-format # elm pretty print
   elm-test # elm test runner
+]) ++
+(with elmTools; [
+  elm-language-server
 ]) ++
 (with pkgs.haskellPackages; [
   brittany # code formatter
