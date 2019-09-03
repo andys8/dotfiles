@@ -10,7 +10,7 @@
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "languageserver": {
     "elmLS": {
-      "enable": true,
+      "enable": false,
       "command": "elm-language-server",
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
