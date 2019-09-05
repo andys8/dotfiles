@@ -73,3 +73,5 @@
 	path = .gitconfig.user
 [pull]
 	rebase = true
+[hub]
+	protocol = https
