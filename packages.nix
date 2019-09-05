@@ -53,8 +53,9 @@ in
   xmonad-with-packages # window manager in haskell
 ]) ++
 (with pkgs.gitAndTools; [
-  git-gone # prune merged branches
   diff-so-fancy # git diff with colors
+  git-gone # prune merged branches
+  hub # github commandline tool
   tig # diff and comit view
 ]) ++
 (with pkgs.elmPackages; [
