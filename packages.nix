@@ -3,10 +3,10 @@ let
   fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.03.tar.gz") {};
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
   elmTools = import (pkgs.fetchFromGitHub {
-    owner = "turboMaCk";
+    owner = "andys8";
     repo = "nix-elm-tools";
-    rev = "d138d5405a5df4903c753079a649b70ab28cc8d8";
-    sha256 = "1n3kybxnm93jjsaww7pa7bgm8xal81c5sf8aw7ag6r5jjw16skm8";
+    rev = "a2dadfa9b721460813e88ac03a153cd8dd60c7d9";
+    sha256 = "0wwjw8hfiba3bvq43v6d5i20khxrcipil0liz45fanni17ldswfl";
   }) { inherit pkgs; };
 in
 (with fixed; [
