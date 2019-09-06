@@ -49,8 +49,5 @@ xset r rate 200 80
 # Wallpaper
 feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
 
-# Pulse Audio for pa-applet
-pulseaudio -D
-
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
