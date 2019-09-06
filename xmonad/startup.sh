@@ -12,7 +12,7 @@ if [ -z "$(pgrep trayer)" ]; then
         --iconspacing 3 \
         --alpha 0 \
         --transparent true \
-        --tint 0x282c34 &
+        --tint 0x44475a &
 fi
 
 # Network Manager Icon
