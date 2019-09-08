@@ -18,6 +18,7 @@ commands=(
   nix-env
   nix-shell
   nm-applet
+  nmt
   pgrep
   preload
   pulseaudio
