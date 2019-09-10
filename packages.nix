@@ -5,8 +5,8 @@ let
   elmTools = import (pkgs.fetchFromGitHub {
     owner = "andys8";
     repo = "nix-elm-tools";
-    rev = "a2dadfa9b721460813e88ac03a153cd8dd60c7d9";
-    sha256 = "0wwjw8hfiba3bvq43v6d5i20khxrcipil0liz45fanni17ldswfl";
+    rev = "fd9773caff6da2d62b1b792346c151fd23bca50e";
+    sha256 = "1m8j4m3m3v78a69jc2id7l6n64w2h4f4lgvi54c319irqk8zbrlr";
   }) { inherit pkgs; };
 in
 (with fixed; [
