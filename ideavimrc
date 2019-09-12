@@ -37,7 +37,7 @@ nnoremap gt :action GotoTest<CR>
 
 nnoremap <leader>s :action ShowIntentionActions<CR>
 nnoremap <leader>g :action QuickJavaDoc<CR>
-nnoremap <leader>t :action TypeHintsMenu<CR>
+nnoremap <leader>t :action ExpressionTypeInfo<CR>
 nnoremap <leader>u :action ShowUsages<CR>
 nnoremap <leader>i :action GotoDeclaration<CR>
 nnoremap <leader>d :action GotoImplementation<CR>
