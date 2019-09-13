@@ -11,14 +11,14 @@ import           XMonad.Actions.OnScreen
 import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops      ( ewmh )
+import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
+import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens
-                                                ( countScreens )
+import           XMonad.Layout.IndependentScreens         ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -35,7 +35,7 @@ import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as StackSet
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.Run                          ( spawnPipe )
 
 -- Workspaces --
 
@@ -164,6 +164,10 @@ viewWorkspace nScreens workspace = do
 
 moveToWorkspace = windows . StackSet.shift
 
+toggleLastWorkspace nScreens = do
+  (_ : lastWorkspace : _) <- WH.workspaceHistory
+  viewWorkspace nScreens lastWorkspace
+
 myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspaces = workspaces }
   = Data.Map.fromList
     $  [ ((modMask, xK_Return)                       , spawn terminal)
@@ -183,7 +187,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_l)                , spawn lock)
        , ((modMask, xK_Tab)                          , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab)            , moveTo Prev NonEmptyWS)
-       , ((modMask, xK_i)                            , toggleWS)
+       , ((modMask, xK_i), toggleLastWorkspace nScreens)
        , ((modMask .|. altMask, xK_p)                , spawn rofiPass)
        , ((nothing, xK_Print), spawn screenshotClipboard)
        , ((shiftMask, xK_Print)                      , spawn screenshotFile)
@@ -246,7 +250,9 @@ main = do
     $ ewmh
     $ def
         { keys               = myKeys nScreens
-        , logHook = myXmobar xmproc >> updatePointer (0.75, 0.75) (0.75, 0.75)
+        , logHook            = myXmobar xmproc
+                               >> updatePointer (0.75, 0.75) (0.75, 0.75)
+                               >> WH.workspaceHistoryHook
         , terminal           = "x-terminal-emulator"
         , focusFollowsMouse  = True
         , borderWidth        = 0
