@@ -26,7 +26,6 @@ commands=(
   setxkbmap
   st
   stack
-  toilet
   vim
   vimdiff
   xclip

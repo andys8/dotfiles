@@ -17,14 +17,15 @@ in
   ghc # haskell compiler
   hlint # haskell linter
   ncdu # disk usage
-  rofi # dmenu replacement
   nodejs-11_x # nodejs and npm
+  rofi # dmenu replacement
   sbt # sbt package manager
   scala # scala compiler
+  sent # suckless presentation tool
   shfmt # format shell scripts
+  toilet # ascii art fonts
   vokoscreen # screen recorder
   wcalc # calculator
-  sent # suckless presentation tool
 ]) ++
 (with pkgs; [
   arandr # gui for monitors with xrandr
