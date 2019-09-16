@@ -5,6 +5,7 @@ set -euo pipefail
 commands=(
   alacritty
   bash
+  fc-list
   fish
   i3
   i3-msg
@@ -41,6 +42,12 @@ files=(
   /usr/local/share/lombok/lombok-1.18.6.jar
 )
 
+fonts=(
+  FiraCode Nerd
+  Iosevka Nerd
+  SauceCodePro Nerd
+)
+
 check() {
   command -v "$1" >/dev/null 2>&1 || {
     echo "'$1' missing"
@@ -55,11 +62,21 @@ exists() {
   fi
 }
 
+fontInstalled() {
+  fc-list | grep -i "$1" >/dev/null 2>&1 || {
+    echo "Font '$1' missing"
+    exit 1
+  }
+}
+
 # Check commands
 for i in "${commands[@]}"; do check "$i"; done
 
 # Verify files exist
 for i in "${files[@]}"; do exists "$i"; done
+
+# Check fonts
+for i in "${fonts[@]}"; do fontInstalled "$i"; done
 
 # Otherwise good case
 echo "All dependencies are available"
