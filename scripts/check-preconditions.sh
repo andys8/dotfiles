@@ -23,7 +23,6 @@ commands=(
   preload
   pulseaudio
   python3
-  rofi
   setxkbmap
   st
   stack

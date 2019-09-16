@@ -17,6 +17,7 @@ in
   ghc # haskell compiler
   hlint # haskell linter
   ncdu # disk usage
+  rofi # dmenu replacement
   nodejs-11_x # nodejs and npm
   sbt # sbt package manager
   scala # scala compiler
