@@ -74,6 +74,6 @@ in
 ]) ++
 [(all-hies.selection {
   selector = p: {
-    inherit (p) ghc864 ghc865; # haskell ide engine
+    inherit (p) ghc864 ghc865 ghc843; # haskell ide engine
   };
 })]
