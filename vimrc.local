@@ -41,6 +41,9 @@ vnoremap <C-c> :w !pbcopy<CR><CR>
 " Tab is the same as <C-i> and should jump forward
 nunmap <Tab>
 
+" Paste multiple times
+xnoremap p "_dP
+
 " Exit insert mode
 inoremap jj <ESC>
 
