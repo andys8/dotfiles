@@ -16,6 +16,7 @@ in
   exa # ls replacement
   ghc # haskell compiler
   hlint # haskell linter
+  mdp # markdown presentation
   ncdu # disk usage
   nodejs-11_x # nodejs and npm
   rofi # dmenu replacement

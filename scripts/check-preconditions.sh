@@ -13,7 +13,6 @@ commands=(
   i3lock-fancy
   idea
   mdcat
-  mdp
   nix-channel
   nix-env
   nix-shell
