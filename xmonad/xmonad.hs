@@ -160,7 +160,7 @@ updateMonitors = spawn "autorandr -c"
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
-  windows $ greedyViewOnScreen screenId workspace
+  windows $ viewOnScreen screenId workspace
 
 moveToWorkspace = windows . StackSet.shift
 
@@ -229,7 +229,7 @@ monitorSetupHook nScreens workspaces = mconcat
  where
   updateScreen nScreens workspace = do
     screenId <- toScreenId nScreens workspace
-    windows $ greedyViewOnScreen screenId workspace
+    windows $ viewOnScreen screenId workspace
 
 -- Main --
 
