@@ -34,7 +34,8 @@ ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 ln -sf ~/dotfiles/profile ~/.profile
 
 # Fish
-ln -sf ~/dotfiles/config.fish ~/.config/fish/config.fish
+ln -sf ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
+ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
 rm -rf ~/.config/omf
 ln -sf ~/dotfiles/omf ~/.config
 
