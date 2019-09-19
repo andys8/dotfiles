@@ -51,6 +51,7 @@ nnoremap <leader>a :action GotoNextError<CR>
 nnoremap <F2> :action SelectInProjectView<CR>
 nnoremap <F3> :action HideSideWindows<CR>
 nnoremap <F4> :action FileStructurePopup<CR>
+nnoremap <F6> :action ToggleDistractionFreeMode<CR>
 
 " Window navigation
 nnoremap <c-l> <c-w>l
