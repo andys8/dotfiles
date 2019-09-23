@@ -51,3 +51,6 @@ ln -sf ~/dotfiles/xmonad/xmobar.config ~/.xmonad/xmobar.config
 ln -sf ~/dotfiles/xmonad/startup.sh ~/.xmonad/startup.sh
 ln -sf ~/dotfiles/xmonad/stack.yaml ~/.xmonad/stack.yaml
 ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
+
+# Ranger
+ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
