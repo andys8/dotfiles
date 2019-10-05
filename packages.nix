@@ -12,6 +12,7 @@ in
   hlint # haskell linter
   mdp # markdown presentation
   ncdu # disk usage
+  nethogs # network traffic monitoring
   nodejs-11_x # nodejs and npm
   rofi # dmenu replacement
   sbt # sbt package manager
