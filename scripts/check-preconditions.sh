@@ -3,36 +3,37 @@ set -euo pipefail
 
 # Dependencies
 commands=(
-  alacritty
-  bash
-  fc-list
-  fish
-  i3
+  alacritty # terminal-emulator
+  bash # shell
+  fc-list # list fonts
+  fish # shell
+  i3 # tiling window manager
   i3-msg
   i3-nagbar
   i3-sensible-terminal
   i3lock-fancy
-  idea
-  mdcat
+  idea # intellij ide
+  lynis # system audit
+  mdcat # markdown viewer
   nix-channel
   nix-env
   nix-shell
-  nm-applet
-  nmt
-  pgrep
-  preload
+  nm-applet # network manager applet
+  nmt # network manager tui
+  pgrep # grep processes
+  preload # keep programs in ram
   pulseaudio
   python3
   setxkbmap
-  st
-  stack
+  st # simple terminal
+  stack # haskell build tool
   vim
   vimdiff
   xclip
-  xrandr
+  xrandr # monitor setup
   xset
-  xss-lock
-  zathura
+  xss-lock # lock the screen
+  zathura # pdf viewer
 )
 
 files=(
