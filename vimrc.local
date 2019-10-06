@@ -190,7 +190,7 @@ hi! link CocErrorHighlight SpellBad
 hi! CocFloating ctermbg=236 guibg=#292c3a
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)

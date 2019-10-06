@@ -1,7 +1,7 @@
 {
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.refreshAfterSave": false,
-  "diagnostic.maxWindowHeight": 30,
+  "diagnostic.maxWindowHeight": 20,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": false,
   "suggest.minTriggerInputLength": 2,
