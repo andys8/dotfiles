@@ -28,7 +28,7 @@ abbr -a -U -- lg lazygit
 abbr -a -U -- ll 'exa -al'
 abbr -a -U -- n npm
 abbr -a -U -- nr 'npm run'
-abbr -a -U -- ns 'nix-env -qaP | grep '
+abbr -a -U -- ns 'nix-env -qaP | grep'
 abbr -a -U -- open xdg-open
 abbr -a -U -- r ranger
 abbr -a -U -- sdkman sdk
