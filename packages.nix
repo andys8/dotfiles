@@ -66,8 +66,9 @@ in
 (with pkgs.haskellPackages; [
   brittany # code formatter
   git-brunch # git checkout branch tui
-  hoogle # documenation
   hindent # Haskell format (alternative)
+  hoogle # documenation
+  network-manager-tui # network tui
 ]) ++
 [(all-hies.selection {
   selector = p: {

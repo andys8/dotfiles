@@ -15,12 +15,11 @@ commands=(
   idea # intellij ide
   lynis # system audit
   mdcat # markdown viewer
-  metals-vim # scala language server
+  metals-vim # scala language server, nix: <https://github.com/NixOS/nixpkgs/pull/60336>
   nix-channel
   nix-env
   nix-shell
   nm-applet # network manager applet
-  nmt # network manager tui
   pgrep # grep processes
   preload # keep programs in ram
   pulseaudio
