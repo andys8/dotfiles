@@ -1,10 +1,12 @@
 let
   pkgs = import <nixpkgs> {};
-  fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.03.tar.gz") {};
+  fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
   all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
 in
 (
   with fixed; [
+    arandr # gui for monitors with xrandr
+    autorandr # xrandr monitor profiles
     cabal-install # haskell build tool
     cachix # cache nix packages
     cargo # rust package manager
@@ -15,7 +17,7 @@ in
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
-    nodejs-11_x # nodejs and npm
+    nodejs-12_x # nodejs and npm
     rofi # dmenu replacement
     sbt # sbt package manager
     scala # scala compiler
@@ -27,9 +29,7 @@ in
   ]
 ) ++ (
   with pkgs; [
-    arandr # gui for monitors with xrandr
     autojump # jump into directory with j
-    autorandr # xrandr monitor profiles
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer
