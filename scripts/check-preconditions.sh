@@ -15,6 +15,7 @@ commands=(
   idea # intellij ide
   lynis # system audit
   mdcat # markdown viewer
+  metals-vim # scala language server
   nix-channel
   nix-env
   nix-shell

@@ -7,6 +7,7 @@ in
   cabal-install # haskell build tool
   cachix # cache nix packages
   cargo # rust package manager
+  coursier # scala build tool
   exa # ls replacement
   ghc # haskell compiler
   hlint # haskell linter
