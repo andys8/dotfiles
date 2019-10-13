@@ -9,6 +9,7 @@ import           XMonad.Actions.CycleWS
 import           XMonad.Actions.Navigation2D
 import           XMonad.Actions.OnScreen
 import           XMonad.Actions.PhysicalScreens
+import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.EwmhDesktops                ( ewmh )
@@ -32,7 +33,7 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
-import qualified XMonad.StackSet               as StackSet
+import qualified XMonad.StackSet               as W
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                          ( spawnPipe )
@@ -130,7 +131,7 @@ myTabTheme = def { fontName            = myFont
                  , inactiveBorderColor = inactive
                  }
 
--- Key bindings
+-- Key bindings --
 
 altMask = mod1Mask
 nothing = 0
@@ -162,7 +163,7 @@ viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
   windows $ viewOnScreen screenId workspace
 
-moveToWorkspace = windows . StackSet.shift
+moveToWorkspace = windows . W.shift
 
 toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
@@ -197,7 +198,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask, xK_f), sendMessage $ Toggle FULL)
        , ((modMask .|. shiftMask, xK_f)              , sendMessage ToggleStruts)
        , ((modMask, xK_space)                        , sendMessage NextLayout)
-       , ((modMask .|. shiftMask, xK_space), setLayout $ XMonad.layoutHook conf)
+       , ((modMask .|. controlMask, xK_space)        , sinkAll)
+       , ((modMask .|. shiftMask, xK_space), setLayout (layoutHook conf))
        , ((modMask .|. controlMask, xK_l), sendMessage $ ExpandTowards R)
        , ((modMask .|. controlMask, xK_h), sendMessage $ ExpandTowards L)
        , ((modMask .|. controlMask, xK_j), sendMessage $ ExpandTowards D)
@@ -216,6 +218,18 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
          , (modMask .|. shiftMask, moveToWorkspace)
          ]
        ]
+
+-- Mouse Bindings --
+
+myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
+  [ ( (modMask .|. controlMask, button1)
+    , \w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster
+    )
+  , ((modMask .|. controlMask, button2), \w -> focus w >> windows W.shiftMaster)
+  , ( (modMask .|. controlMask, button3)
+    , \w -> focus w >> mouseResizeWindow w >> windows W.shiftMaster
+    )
+  ]
 
 -- Startup --
 
@@ -250,6 +264,7 @@ main = do
     $ ewmh
     $ def
         { keys               = myKeys nScreens
+        , mouseBindings      = myMouseBindings
         , logHook            = myXmobar xmproc
                                >> updatePointer (0.75, 0.75) (0.75, 0.75)
                                >> WH.workspaceHistoryHook
