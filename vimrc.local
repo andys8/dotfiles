@@ -90,6 +90,7 @@ let g:ale_fixers = {
       \ 'json': ['prettier'],
       \ 'less': ['prettier'],
       \ 'markdown': ['prettier'],
+      \ 'nix': ['nixpkgs-fmt'],
       \ 'scala': [],
       \ 'scss': ['prettier'],
       \ 'sh': ['shfmt'],
