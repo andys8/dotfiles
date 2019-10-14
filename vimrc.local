@@ -32,7 +32,7 @@ let g:airline_highlighting_cache = 1
 " Switch themes
 command Dracula colo dracula | set nocursorline
 command Dark colo seoul | set nocursorline
-command Light colo github | set cursorline
+command Light colo github | set cursorline | highlight CursorLine ctermbg=darkgray ctermfg=white
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
