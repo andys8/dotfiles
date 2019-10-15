@@ -13,6 +13,7 @@ in
     coursier # scala build tool
     exa # ls replacement
     ghc # haskell compiler
+    git # git version control
     hlint # haskell linter
     mdp # markdown presentation
     ncdu # disk usage
