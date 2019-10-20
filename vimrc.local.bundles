@@ -50,3 +50,5 @@ Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 " Open links in browser
 Plug 'tyru/open-browser.vim'
 
+" Makrdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
