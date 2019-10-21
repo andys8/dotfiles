@@ -40,7 +40,8 @@ files=(
   ~/.gitconfig.user
   ~/bin/startup.sh
   ~/Pictures/wallpaper/wallpaper.png
-  /usr/local/share/lombok/lombok-1.18.6.jar
+  /usr/local/share/lombok/lombok-1.18.6.jar # lombok in vim
+  ~/.npm-global/bin/elm-language-server # temporary node elm language server (coc)
 )
 
 fonts=(
