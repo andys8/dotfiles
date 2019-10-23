@@ -12,14 +12,15 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
+import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens         ( countScreens )
+import           XMonad.Layout.IndependentScreens
+                                                ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -36,7 +37,7 @@ import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                          ( spawnPipe )
+import           XMonad.Util.Run                ( spawnPipe )
 
 -- Workspaces --
 
@@ -210,7 +211,9 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_1)                , setMonitors 1)
        , ((modMask .|. altMask, xK_2)                , setMonitors 2)
        , ((modMask .|. altMask, xK_3)                , setMonitors 3)
+       , ((modMask .|. altMask, xK_r)                , restartXmonad)
        ]
+
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_9]
        , (modifier , action) <-
