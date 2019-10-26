@@ -7,6 +7,7 @@ npminstallations=(
   markdownlint-cli
   prettier
   typescript
+  @elm-tooling/elm-language-server
 )
 
 for i in "${npminstallations[@]}"; do (npm install -g "$i")
