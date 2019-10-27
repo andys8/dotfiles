@@ -20,6 +20,7 @@ commands=(
   nix-env
   nix-shell
   nm-applet # network manager applet
+  notify-send # notifications used by script
   pgrep # grep processes
   preload # keep programs in ram
   pulseaudio

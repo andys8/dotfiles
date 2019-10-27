@@ -33,8 +33,7 @@ fi
 
 # Battery warning script
 if [ -z "$(pgrep -f i3-battery-popup)" ]; then
-    # TODO: Rename
-    ~/.config/i3/i3-battery-popup &
+    ~/.config/i3/i3-battery-popup -n &
 fi
 
 # Keyboard layout: German, no dead keys
