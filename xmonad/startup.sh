@@ -28,7 +28,7 @@ fi
 
 # Lock screen on disabled monitor
 if [ -z "$(pgrep xss-lock)" ]; then
-    xss-lock -- i3lock-fancy &
+    xss-lock -l -- i3lock-fancy &
 fi
 
 # Battery warning script
