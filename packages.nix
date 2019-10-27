@@ -26,6 +26,7 @@ in
     toilet # ascii art fonts
     vokoscreen # screen recorder
     wcalc # calculator
+    xcalib # x color configuration
   ]
 ) ++ (
   with pkgs; [

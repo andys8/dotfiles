@@ -160,6 +160,8 @@ setMonitors i = spawn ("autorandr -l " <> show i)
 
 updateMonitors = spawn "autorandr -c"
 
+invertXColors = spawn "xcalib -invert -alter"
+
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
   windows $ viewOnScreen screenId workspace
@@ -212,6 +214,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_2)                , setMonitors 2)
        , ((modMask .|. altMask, xK_3)                , setMonitors 3)
        , ((modMask .|. altMask, xK_r)                , restartXmonad)
+       , ((modMask .|. altMask, xK_i)                , invertXColors)
        ]
 
     ++ [ ((modifier, key), action workspace)
