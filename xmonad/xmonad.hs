@@ -160,7 +160,7 @@ setMonitors i = spawn ("autorandr -l " <> show i)
 
 updateMonitors = spawn "autorandr -c"
 
-invertXColors = spawn "xcalib -invert -alter"
+invertXColors = spawn "xrandr-invert-colors"
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
