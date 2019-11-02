@@ -209,6 +209,7 @@ nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 xmap <silent> <leader>p <Plug>(coc-format-selected)
+nnoremap <silent> <leader>o :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -220,19 +221,9 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" TypeScript
-augroup typescript
-  au!
-  au FileType typescript nnoremap <buffer> <leader>o :CocCommand tsserver.organizeImports<CR>
-augroup END
-
 " Java
 let g:syntastic_java_checkers = []
 command! -nargs=0 IdeaFormat silent exec "!idea format %"
-augroup java
-  au!
-  au FileType java nnoremap <buffer> <leader>o :CocCommand java.action.organizeImports<CR>
-augroup END
 
 " vimdiff
 if &diff
