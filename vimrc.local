@@ -243,3 +243,7 @@ let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_removed_first_line = '✘'
 let g:gitgutter_sign_modified_removed='±'
 
+" NerdTree
+let g:NERDTreeMinimalUI = 1
+nmap <silent> <leader>n :NERDTreeToggle<CR>
+nmap <silent> <leader>N :NERDTreeFind<CR>
