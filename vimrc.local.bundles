@@ -4,10 +4,10 @@ Plug 'easymotion/vim-easymotion'
 " Multi Cursor with CTRL+n and c(hange)
 Plug 'terryma/vim-multiple-cursors'
 
-" Surround word: Use eg. ysiw` and ds`
+" Surround word: Use e.g. ysiw` and ds`
 Plug 'tpope/vim-surround'
 
-" Colorscheme colection
+" Colorscheme collection
 Plug 'flazz/vim-colorschemes'
 
 " Repeat surround commands
@@ -50,5 +50,5 @@ Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 " Open links in browser
 Plug 'tyru/open-browser.vim'
 
-" Makrdown preview
+" Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }

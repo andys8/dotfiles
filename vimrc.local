@@ -154,6 +154,7 @@ command! -bang -nargs=* Rg
 " Spell checking
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=009
+command! -nargs=0 SpellToggle set spell!
 command! -nargs=0 German silent set spelllang=de
 command! -nargs=0 English silent set spelllang=en
 augroup markdown
