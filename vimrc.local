@@ -181,11 +181,12 @@ let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', 'pom.xml', '.
 
 " Coc
 let g:coc_global_extensions = [
-      \ 'coc-tsserver',
-      \ 'coc-json',
-      \ 'coc-ultisnips',
       \ 'coc-java',
-      \ 'coc-prettier'
+      \ 'coc-json',
+      \ 'coc-prettier',
+      \ 'coc-tsserver',
+      \ 'coc-ultisnips',
+      \ 'coc-vetur'
       \ ]
 
 hi! link CocErrorHighlight SpellBad
