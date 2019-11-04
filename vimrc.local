@@ -102,7 +102,7 @@ let g:ale_linters = {
       \ 'elm': [],
       \ 'haskell': [],
       \ 'java': [],
-      \ 'javascript': ['eslint'],
+      \ 'javascript': [],
       \ 'markdown': ['markdownlint'],
       \ 'scala' : [],
       \ 'sh': ['shellcheck']
@@ -181,6 +181,7 @@ let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', 'pom.xml', '.
 
 " Coc
 let g:coc_global_extensions = [
+      \ 'coc-eslint',
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-prettier',
