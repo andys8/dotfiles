@@ -13,7 +13,7 @@
   "languageserver": {
     "elmLS": {
       "enable": true,
-      "command": "~/.npm-global/bin/elm-language-server",
+      "command": "elm-language-server",
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
       "trace.server": "verbose",
