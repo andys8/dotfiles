@@ -72,6 +72,15 @@ let g:multi_cursor_exit_from_insert_mode = 1
 let g:multi_cursor_start_word_key = '<C-n>'
 let g:multi_cursor_select_all_word_key = '<leader><C-n>'
 
+" Multiple cursor fix for delimitmate issue with '"' char
+function! Multiple_cursors_before()
+    exe 'DelimitMateOff'
+endfunction
+
+function! Multiple_cursors_after()
+    exe 'DelimitMateOn'
+endfunction
+
 " Elm
 let g:polyglot_disabled = ['elm']
 
