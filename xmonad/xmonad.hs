@@ -1,6 +1,7 @@
 import           System.Exit
 import           System.IO
 
+import           Data.List
 import qualified Data.Map
 import           Data.Maybe
 import           Graphics.X11.ExtraTypes.XF86
@@ -40,26 +41,31 @@ import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
 
 -- Workspaces --
-
 data Workspace
   = WorkspaceWWW
   | WorkspaceWork
   | WorkspaceTerm
   | WorkspaceChat
+  | Workspace5
+  | Workspace6
+  deriving (Enum)
 
 instance Show Workspace where
-  show WorkspaceWWW  = "1: \62056" -- "1:  "
-  show WorkspaceWork = "2: \58911" -- "2:  "
-  show WorkspaceTerm = "3: \61728" -- "3:  "
-  show WorkspaceChat = "4: \61574" -- "4:  "
+  show WorkspaceWWW  = "1 \62056" -- "1  "
+  show WorkspaceWork = "2 \58911" -- "2  "
+  show WorkspaceTerm = "3 \61728" -- "3  "
+  show WorkspaceChat = "4 \61574" -- "4  "
+  show Workspace5    = "5 \62003" -- "5  "
+  show Workspace6    = "6 \63231" -- "6  "
 
 myWorkspaces :: [String]
-myWorkspaces =
-  let wsNamed = [WorkspaceWWW, WorkspaceWork, WorkspaceTerm, WorkspaceChat]
-  in  (show <$> wsNamed) ++ (show <$> [length wsNamed + 1 .. 9])
+myWorkspaces = show <$> [WorkspaceWWW ..]
+
+toClickableWorkspace ws =
+  "<action=`xdotool key super+" ++ show (index + 1) ++ "`>" ++ ws ++ "</action>"
+  where index = fromMaybe 0 $ elemIndex ws myWorkspaces
 
 -- Window rules --
-
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
@@ -72,7 +78,6 @@ myManageHook = composeAll
   ]
 
 -- Layouts --
-
 addSpace = spacingRaw True (Border 5 5 5 5) True (Border 10 10 10 10) True
 
 addTopBar = noFrillsDeco shrinkText topBarTheme
@@ -103,12 +108,13 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
                   }
 
 -- Theme --
-
 active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"
 xmobarActiveWorkspaceColor = "#ff79c6"
-xmobarTitleColor = "#6272a4"
+xmobarTitleColor = "#8be9fd"
+xmobarLayoutColor = "#ffb86c"
+
 myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
 
 topBarTheme = def { fontName            = myFont
@@ -133,26 +139,38 @@ myTabTheme = def { fontName            = myFont
                  }
 
 -- Key bindings --
-
 altMask = mod1Mask
+
 nothing = 0
 
 confirm = confirmPrompt amberXPConfig
 
 fileBrowser = spawn "xdg-open ."
+
 webBrowser = spawn "x-www-browser"
+
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
+
 rofiRun = "rofi -show run -i -display-run \"$ \""
+
 lock = "i3lock-fancy -p"
+
 rofiPass =
   "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+
 screenshotClipboard =
   "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
+
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
+
 brightnessUp = spawn "xrandr --output eDP-1 --brightness 1.0"
+
 brightnessDown = spawn "xrandr --output eDP-1 --brightness 0.6"
+
 exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
+
 restartXmonad = restart "xmonad" True
 
 setMonitors :: Int -> X ()
@@ -216,9 +234,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_r)                , restartXmonad)
        , ((modMask .|. altMask, xK_i)                , invertXColors)
        ]
-
     ++ [ ((modifier, key), action workspace)
-       | (workspace, key   ) <- zip workspaces [xK_1 .. xK_9]
+       | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
        , (modifier , action) <-
          [ (modMask              , viewWorkspace nScreens)
          , (modMask .|. shiftMask, moveToWorkspace)
@@ -226,7 +243,6 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        ]
 
 -- Mouse Bindings --
-
 myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
   [ ( (modMask .|. controlMask, button1)
     , \w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster
@@ -238,7 +254,6 @@ myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
   ]
 
 -- Startup --
-
 myStartupHook = do
   setWMName "LG3D"
   spawn "bash ~/.xmonad/startup.sh"
@@ -252,7 +267,6 @@ monitorSetupHook nScreens workspaces = mconcat
     windows $ viewOnScreen screenId workspace
 
 -- Main --
-
 main = do
   xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobar.config"
   nScreens <- countScreens
@@ -287,14 +301,18 @@ main = do
         }
 
 myXmobar xmproc = dynamicLogWithPP xmobarPP
-  { ppCurrent = xmobarColor xmobarActiveWorkspaceColor "" . wrap "[" "]"
+  { ppCurrent = xmobarColor xmobarActiveWorkspaceColor ""
+  , ppVisible = toClickableWorkspace
+  , ppHidden  = toClickableWorkspace
+  , ppLayout  = xmobarColor xmobarLayoutColor ""
+  , ppUrgent  = xmobarColor urgent ""
   , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 50
-  , ppSep     = "   "
+  , ppWsSep   = " | "
+  , ppSep     = replicate 6 ' '
   , ppOutput  = hPutStrLn xmproc
   }
 
 -- Screens --
-
 toScreenId :: Int -> String -> X ScreenId
 toScreenId nScreens ws = fromMaybe (S 0)
   <$> getScreen horizontalScreenOrderer (toPhysicalScreen nScreens ws)

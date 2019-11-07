@@ -31,6 +31,7 @@ commands=(
   vim
   vimdiff
   xclip
+  xdotool # control x via command line
   xrandr # monitor setup
   xset
   xss-lock # lock the screen
