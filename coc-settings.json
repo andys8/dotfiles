@@ -18,9 +18,7 @@
       "rootPatterns": ["elm.json"],
       "trace.server": "verbose",
       "initializationOptions": {
-        "elmPath": "elm",
         "elmFormatPath": "elm-format",
-        "elmTestPath": "elm-test",
         "elmAnalyseTrigger": "save"
       }
     },
