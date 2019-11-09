@@ -10,6 +10,8 @@
   "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok-1.18.6.jar -Xbootclasspath/a:/usr/local/share/lombok/lombok-1.18.6.jar",
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "tsserver.formatOnType": false,
+  "vetur.format.styleInitialIndent": true,
+  "vetur.format.scriptInitialIndent": true,
   "languageserver": {
     "elmLS": {
       "enable": true,
