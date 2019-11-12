@@ -12,6 +12,10 @@
   "tsserver.formatOnType": false,
   "vetur.format.styleInitialIndent": true,
   "vetur.format.scriptInitialIndent": true,
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact"
+  ],
   "languageserver": {
     "elmLS": {
       "enable": true,
