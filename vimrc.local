@@ -191,6 +191,7 @@ let g:coc_global_extensions = [
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-prettier',
+      \ 'coc-tslint-plugin',
       \ 'coc-tsserver',
       \ 'coc-ultisnips',
       \ 'coc-vetur'
