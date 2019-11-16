@@ -928,7 +928,7 @@ c.hints.auto_follow = 'always'
 ## Automatically enter insert mode if an editable element is focused
 ## after loading the page.
 ## Type: Bool
-# c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_load = True
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
