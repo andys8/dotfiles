@@ -208,8 +208,8 @@ nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
 nmap <silent> <leader>s <Plug>(coc-fix-current)
 nmap <silent> <leader>S <Plug>(coc-codeaction)
-nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
+nmap <silent> <leader>a <Plug>(coc-diagnostic-info)
+nmap <silent> <leader>A <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> K         :call CocAction('doHover')<CR>

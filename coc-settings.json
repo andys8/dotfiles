@@ -1,7 +1,10 @@
 {
+  "diagnostic.messageTarget": "float",
+  "diagnostic.enableMessage": "always",
+  "diagnostic.messageDelay": 3000,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.refreshAfterSave": false,
-  "diagnostic.maxWindowHeight": 20,
+  "diagnostic.maxWindowHeight": 30,
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": true,
   "suggest.minTriggerInputLength": 2,
@@ -12,10 +15,7 @@
   "tsserver.formatOnType": false,
   "vetur.format.styleInitialIndent": true,
   "vetur.format.scriptInitialIndent": true,
-  "eslint.filetypes": [
-    "javascript",
-    "javascriptreact"
-  ],
+  "eslint.filetypes": ["javascript", "javascriptreact"],
   "languageserver": {
     "elmLS": {
       "enable": true,
