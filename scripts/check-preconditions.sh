@@ -25,6 +25,7 @@ commands=(
   preload # keep programs in ram
   pulseaudio
   python3
+  qutebrowser # keyboard based webbrowser
   setxkbmap
   st # simple terminal
   stack # haskell build tool

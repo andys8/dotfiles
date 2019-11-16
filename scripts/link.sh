@@ -54,3 +54,6 @@ ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
 
 # Ranger
 ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
+
+# Qutebrowser
+ln -sf ~/dotfiles/qutebrowser/config.py ~/.config/qutebrowser/config.py
