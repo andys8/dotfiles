@@ -1176,7 +1176,7 @@ c.hints.auto_follow = 'always'
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'close'
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool

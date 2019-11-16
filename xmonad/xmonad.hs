@@ -13,15 +13,14 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops      ( ewmh )
+import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens
-                                                ( countScreens )
+import           XMonad.Layout.IndependentScreens         ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -38,7 +37,7 @@ import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.Run                          ( spawnPipe )
 
 -- Workspaces --
 data Workspace
@@ -69,12 +68,13 @@ toClickableWorkspace ws =
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
-  , className =? "Rambox" --> doShift (show WorkspaceChat)
-  , className =? "Slack" --> doShift (show WorkspaceChat)
   , className =? "Code" --> doShift (show WorkspaceWork)
+  , className =? "Rambox" --> doShift (show WorkspaceChat)
+  , className =? "Screenruler" --> doFloat
+  , className =? "Slack" --> doShift (show WorkspaceChat)
   , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
   , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
-  , className =? "Screenruler" --> doFloat
+  , className =? "qutebrowser" --> doShift (show WorkspaceWWW)
   ]
 
 -- Layouts --
@@ -147,7 +147,8 @@ confirm = confirmPrompt amberXPConfig
 
 fileBrowser = spawn "xdg-open ."
 
-webBrowser = spawn "x-www-browser"
+quteWebBrowser = spawn "qutebrowser"
+defaultWebBrowser = spawn "x-www-browser"
 
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 
@@ -194,7 +195,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
   = Data.Map.fromList
     $  [ ((modMask, xK_Return)                       , spawn terminal)
        , ((modMask, xK_n)                            , fileBrowser)
-       , ((modMask .|. shiftMask, xK_Return)         , webBrowser)
+       , ((modMask .|. shiftMask, xK_Return)         , quteWebBrowser)
+       , ((modMask .|. controlMask, xK_Return)       , defaultWebBrowser)
        , ((modMask, xK_Escape)                       , kill)
        , ((modMask .|. shiftMask, xK_Escape)         , kill)
        , ((modMask, xK_q)                            , kill)
