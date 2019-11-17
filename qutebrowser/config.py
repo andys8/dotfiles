@@ -164,7 +164,7 @@ c.colors.hints.fg = 'black'
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-c.colors.hints.match.fg = '#ff79c6'
+c.colors.hints.match.fg = '#bd93f9'
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -176,7 +176,7 @@ c.colors.keyhint.fg = '#FFFFFF'
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-c.colors.keyhint.suffix.fg = '#FFFF00'
+c.colors.keyhint.suffix.fg = '#f1fa8c'
 
 ## Background color of an error message.
 ## Type: QssColor
@@ -770,11 +770,11 @@ c.editor.command = ["i3-sensible-terminal", "-e", "vim", "{}"]
 
 ## Font used for the hints.
 ## Type: Font
-# c.fonts.hints = 'bold 10pt monospace'
+c.fonts.hints = 'bold 12pt monospace'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-# c.fonts.keyhint = '10pt monospace'
+c.fonts.keyhint = '12pt monospace'
 
 ## Font used for error messages.
 ## Type: Font
