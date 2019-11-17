@@ -82,5 +82,5 @@ for i in "${files[@]}"; do exists "$i"; done
 for i in "${fonts[@]}"; do fontInstalled "$i"; done
 
 # Otherwise good case
-echo "All dependencies are available"
+echo "All preconditions are fine"
 exit 0

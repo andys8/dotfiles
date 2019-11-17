@@ -19,3 +19,6 @@ git pull
 
 # Abbreviations
 ./scripts/fish-abbreviations.fish
+
+# Checks
+./scripts/check-postconditions.sh
