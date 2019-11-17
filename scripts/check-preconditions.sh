@@ -22,8 +22,10 @@ commands=(
   nm-applet # network manager applet
   notify-send # notifications used by script
   pgrep # grep processes
+  pip3 # python packages
   preload # keep programs in ram
   pulseaudio
+  python3
   python3
   setxkbmap
   st # simple terminal

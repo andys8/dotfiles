@@ -8,9 +8,7 @@ commands=(
   elm-test
   markdownlint
   nmt # network-manager-tui
-  pip3 # python packages
   prettier
-  python3
   qutebrowser # Keyboard based webbrowser
   tsc
 )
