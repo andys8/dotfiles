@@ -57,3 +57,4 @@ ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
 
 # Qutebrowser
 ln -sf ~/dotfiles/qutebrowser/config.py ~/.config/qutebrowser/config.py
+ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py

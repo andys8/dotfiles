@@ -3,6 +3,12 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+# Dracula theme
+# https://github.com/evannagle/qutebrowser-dracula-theme
+# Changes: Renamed file, overwriting hint colors
+import dracula
+dracula.blood(c, { 'font': { 'size': 11 } })
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig()
@@ -154,11 +160,11 @@ c.backend = 'webengine'
 
 ## Font color for hints.
 ## Type: QssColor
-# c.colors.hints.fg = 'black'
+c.colors.hints.fg = 'black'
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-# c.colors.hints.match.fg = 'green'
+c.colors.hints.match.fg = '#ff79c6'
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -166,11 +172,11 @@ c.backend = 'webengine'
 
 ## Text color for the keyhint widget.
 ## Type: QssColor
-# c.colors.keyhint.fg = '#FFFFFF'
+c.colors.keyhint.fg = '#FFFFFF'
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-# c.colors.keyhint.suffix.fg = '#FFFF00'
+c.colors.keyhint.suffix.fg = '#FFFF00'
 
 ## Background color of an error message.
 ## Type: QssColor
