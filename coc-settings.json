@@ -1,7 +1,9 @@
 {
   "diagnostic.messageTarget": "float",
   "diagnostic.enableMessage": "always",
-  "diagnostic.messageDelay": 3000,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.messageDelay": 800,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.refreshAfterSave": false,
   "diagnostic.maxWindowHeight": 30,
