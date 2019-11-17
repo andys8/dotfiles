@@ -740,7 +740,7 @@ c.backend = 'webengine'
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-c.editor.command = ["i3-sensible-terminal", "-e", "'vim {file}'"]
+c.editor.command = ["i3-sensible-terminal", "-e", "vim", "{}"]
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1580,7 +1580,7 @@ config.bind('gi', 'hint inputs')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-# config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
