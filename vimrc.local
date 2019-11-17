@@ -26,8 +26,8 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 colo dracula
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
-let g:airline#extensions#tagbar#enabled = 0
 let g:airline_highlighting_cache = 1
+let g:airline_extensions = ['coc']
 
 " Switch themes
 command Dracula colo dracula | set nocursorline
@@ -92,7 +92,6 @@ nmap <silent> <leader>P :ALEFix<CR>
 
 let g:ale_fixers = {
       \ 'css': ['prettier'],
-      \ 'elm': ['elm-format'],
       \ 'haskell': ['hindent'],
       \ 'html': ['prettier'],
       \ 'javascript': ['prettier'],
