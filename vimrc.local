@@ -30,7 +30,6 @@ let g:airline_highlighting_cache = 1
 let g:airline_extensions = ['coc']
 
 " Switch themes
-command Dracula colo dracula | set nocursorline
 command Dark colo seoul | set nocursorline
 command Light highlight CursorLine ctermbg=darkgray ctermfg=white | set cursorline | colo github
 
@@ -196,9 +195,6 @@ let g:coc_global_extensions = [
       \ 'coc-vetur'
       \ ]
 
-hi! link CocErrorHighlight SpellBad
-hi! CocFloating ctermbg=236 guibg=#292c3a
-
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
@@ -230,6 +226,19 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() 
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+" Coc Errors
+hi! default link CocErrorHighlight SpellBad
+
+" Coc Floating (e.g. errors)
+hi link CocFloating Visual
+hi link CocErrorFloat Visual
+hi link CocWarningFloat Visual
+hi link CocInfoFloat Visual
+
+" Pmenu (e.g. completions)
+hi! link Pmenu Visual
+hi! link PmenuSel ErrorMsg
+
 " Java
 let g:syntastic_java_checkers = []
 command! -nargs=0 IdeaFormat silent exec "!idea format %"
@@ -256,3 +265,4 @@ let g:gitgutter_sign_modified_removed='±'
 let g:NERDTreeMinimalUI = 1
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <leader>N :NERDTreeFind<CR>
+
