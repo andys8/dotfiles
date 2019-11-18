@@ -482,6 +482,7 @@ c.colors.keyhint.suffix.fg = '#f1fa8c'
 ##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
 ##   - never: Don't accept cookies at all.
 # c.content.cookies.accept = 'no-3rdparty'
+c.content.cookies.accept = 'all'
 
 ## Store cookies. Note this option needs a restart with QtWebEngine on Qt
 ## < 5.9.
