@@ -27,7 +27,7 @@ colo dracula
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dracula'
 let g:airline_highlighting_cache = 1
-let g:airline_extensions = ['coc']
+let g:airline_extensions = ['coc', 'tabline']
 
 " Switch themes
 command Dark colo seoul | set nocursorline
