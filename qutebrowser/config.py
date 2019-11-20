@@ -264,7 +264,7 @@ c.colors.keyhint.suffix.fg = '#f1fa8c'
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-# c.colors.statusbar.insert.bg = 'darkgreen'
+c.colors.statusbar.insert.bg = '#ff79c6'
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
