@@ -292,3 +292,11 @@ let g:NERDTreeMinimalUI = 1
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <leader>N :NERDTreeFind<CR>
 
+" Folding
+set foldmethod=indent
+set foldnestmax=1
+set nofoldenable
+set foldlevel=0
+
+noremap <leader>z zM<CR>
+noremap <leader>Z zR<CR>
