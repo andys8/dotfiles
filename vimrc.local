@@ -260,6 +260,19 @@ let g:gitgutter_sign_modified = '➜'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_removed_first_line = '✘'
 let g:gitgutter_sign_modified_removed='±'
+let g:gitgutter_preview_win_floating = 1
+
+nmap <silent> <leader>m :call GitGutterNextHunkCycle()<CR>
+nmap <silent> <leader>M :GitGutterPreviewHunk<CR>
+
+function! GitGutterNextHunkCycle()
+  let line = line('.')
+  silent! GitGutterNextHunk
+  if line('.') == line
+    normal! 1G
+    GitGutterNextHunk
+  endif
+endfunction
 
 " NerdTree
 let g:NERDTreeMinimalUI = 1
