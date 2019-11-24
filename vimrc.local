@@ -17,6 +17,11 @@ set updatetime=500
 set timeoutlen=500
 set ttimeoutlen=50
 
+set lazyredraw
+set scrolljump=3
+set synmaxcol=300
+syntax sync minlines=256
+
 " Allow project-specific .vimrc files
 set exrc
 set secure
