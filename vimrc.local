@@ -11,7 +11,7 @@ set noswapfile
 set signcolumn=yes
 
 " updatetime has performance impact
-set updatetime=500
+set updatetime=300
 
 " timouts regarding keys
 set timeoutlen=500
