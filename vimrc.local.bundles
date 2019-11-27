@@ -7,8 +7,8 @@ Plug 'terryma/vim-multiple-cursors'
 " Surround word: Use e.g. ysiw` and ds`
 Plug 'tpope/vim-surround'
 
-" Colorscheme collection
-Plug 'flazz/vim-colorschemes'
+" Colorscheme dracula
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 " Repeat surround commands
 Plug 'tpope/vim-repeat'
