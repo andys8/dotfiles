@@ -32,7 +32,11 @@ set guifont=Iosevka\ Nerd\ Font\ 14
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Theme
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
 colo dracula
+
+" Airline
 let g:airline_theme = 'dracula'
 let g:airline_extensions = ['coc', 'tabline', 'quickfix']
 let g:airline_powerline_fonts = 1
