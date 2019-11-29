@@ -5,6 +5,7 @@ set -euo pipefail
 commands=(
   alacritty # terminal-emulator
   bash # shell
+  chromium-browser
   fc-list # list fonts
   fish # shell
   i3 # tiling window manager

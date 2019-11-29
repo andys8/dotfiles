@@ -148,7 +148,7 @@ confirm = confirmPrompt amberXPConfig
 fileBrowser = spawn "xdg-open ."
 
 quteWebBrowser = spawn "qutebrowser"
-defaultWebBrowser = spawn "x-www-browser"
+chromiumWebBrowser = spawn "chromium-browser"
 
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 
@@ -196,7 +196,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
     $  [ ((modMask, xK_Return)                       , spawn terminal)
        , ((modMask, xK_n)                            , fileBrowser)
        , ((modMask .|. shiftMask, xK_Return)         , quteWebBrowser)
-       , ((modMask .|. controlMask, xK_Return)       , defaultWebBrowser)
+       , ((modMask .|. controlMask, xK_Return)       , chromiumWebBrowser)
        , ((modMask, xK_Escape)                       , kill)
        , ((modMask .|. shiftMask, xK_Escape)         , kill)
        , ((modMask, xK_q)                            , kill)
