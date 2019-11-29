@@ -36,7 +36,7 @@
 [difftool "idea"]
 	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
 [help]
-	autocorrect = 20
+	autocorrect = 10
 [branch]
 	autosetupmerge = true
 [rebase]
