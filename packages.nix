@@ -31,6 +31,7 @@ in
 ) ++ (
   with pkgs; [
     autojump # jump into directory with j
+    chromium # web browser
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer
