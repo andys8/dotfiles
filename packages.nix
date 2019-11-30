@@ -41,6 +41,7 @@ in
     i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots
+    mdcat # markdown viewer
     meld # git merge tool (graphical)
     nix # nix package manager
     nixpkgs-fmt # format nix

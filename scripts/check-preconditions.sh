@@ -13,7 +13,6 @@ commands=(
   i3-sensible-terminal
   idea # intellij ide
   lynis # system audit
-  mdcat # markdown viewer
   metals-vim # scala language server, nix: <https://github.com/NixOS/nixpkgs/pull/60336>
   nix-channel
   nix-env
