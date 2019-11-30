@@ -12,6 +12,7 @@ commands=(
   i3-nagbar
   i3-sensible-terminal
   idea # intellij ide
+  java
   lynis # system audit
   metals-vim # scala language server, nix: <https://github.com/NixOS/nixpkgs/pull/60336>
   nix-channel
