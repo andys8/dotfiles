@@ -50,9 +50,9 @@ files=(
 )
 
 fonts=(
-  FiraCode Nerd
-  Iosevka Nerd
-  SauceCodePro Nerd
+  "FiraCode Nerd"
+  "Iosevka Nerd"
+  "SauceCodePro Nerd"
 )
 
 check() {
