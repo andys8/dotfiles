@@ -256,7 +256,7 @@ hi! link PmenuSel ErrorMsg
 
 " Java
 let g:syntastic_java_checkers = []
-command! -nargs=0 IdeaFormat silent exec "!idea format %" | :e
+command! -nargs=0 IdeaFormat silent :w | exec "!idea format %" | :e
 
 " vimdiff
 if &diff
