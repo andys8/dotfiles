@@ -35,6 +35,7 @@ ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 ln -sf ~/dotfiles/profile ~/.profile
 
 # Fish
+mkdir -p ~/.config/fish/functions
 ln -sf ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
 rm -rf ~/.config/omf
@@ -44,9 +45,11 @@ ln -sf ~/dotfiles/omf ~/.config
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 
 # Google Java Format
+mkdir -p ~/bin
 ln -sf ~/dotfiles/google-java-format ~/bin/google-java-format
 
 # Xmonad
+mkdir -p ~/.xmonad
 ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
 ln -sf ~/dotfiles/xmonad/xmobar.config ~/.xmonad/xmobar.config
 ln -sf ~/dotfiles/xmonad/startup.sh ~/.xmonad/startup.sh
@@ -54,8 +57,10 @@ ln -sf ~/dotfiles/xmonad/stack.yaml ~/.xmonad/stack.yaml
 ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
 
 # Ranger
+mkdir -p ~/.config/ranger
 ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
 
 # Qutebrowser
+mkdir -p ~/.config/qutebrowser
 ln -sf ~/dotfiles/qutebrowser/config.py ~/.config/qutebrowser/config.py
 ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
