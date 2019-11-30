@@ -37,7 +37,6 @@ in
     feh # Background viewer
     fzf # fuzzy find tool
     gopass # password manager for pass
-    i3lock-fancy # lockscreen
     i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots

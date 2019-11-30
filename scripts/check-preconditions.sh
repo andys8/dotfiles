@@ -11,6 +11,7 @@ commands=(
   i3-msg
   i3-nagbar
   i3-sensible-terminal
+  i3lock-fancy # lockscreen
   idea # intellij ide
   java
   lynis # system audit
