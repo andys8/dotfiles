@@ -11,7 +11,6 @@ commands=(
   i3-msg
   i3-nagbar
   i3-sensible-terminal
-  i3lock-fancy
   idea # intellij ide
   lynis # system audit
   mdcat # markdown viewer
@@ -25,7 +24,6 @@ commands=(
   pip3 # python packages
   preload # keep programs in ram
   pulseaudio
-  python3
   python3
   setxkbmap
   st # simple terminal

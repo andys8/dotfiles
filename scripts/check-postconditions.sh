@@ -12,6 +12,7 @@ commands=(
   qutebrowser # Keyboard based webbrowser
   chromium-browser # web browser
   tsc # typescript compiler
+  i3lock-fancy # lockscreen
 )
 
 check() {
