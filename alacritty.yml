@@ -51,15 +51,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
   # Scroll to the bottom when new text is written to the terminal.
   auto_scroll: false
 
@@ -365,10 +356,8 @@ key_bindings:
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-#  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
-#  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
@@ -458,3 +447,5 @@ key_bindings:
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
   - { key: PageDown, mods: Shift,   action: ScrollPageDown,  mode: ~Alt  }
   - { key: PageUp,   mods: Shift,   action: ScrollPageUp,    mode: ~Alt  }
+  - { key: J,        mods: Alt,     action: ScrollPageDown               }
+  - { key: K,        mods: Alt,     action: ScrollPageUp                 }
