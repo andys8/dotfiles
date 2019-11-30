@@ -27,6 +27,7 @@ commands=(
   setxkbmap
   st # simple terminal
   stack # haskell build tool
+  timeshift # backup tool
   vim
   vimdiff
   xclip
