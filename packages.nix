@@ -8,7 +8,6 @@ in
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     cabal-install # haskell build tool
-    cachix # cache nix packages
     cargo # rust package manager
     coursier # scala build tool
     exa # ls replacement
