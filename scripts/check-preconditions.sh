@@ -29,6 +29,7 @@ commands=(
   st # simple terminal
   stack # haskell build tool
   timeshift # backup tool
+  unzip
   vim
   vimdiff
   xclip
