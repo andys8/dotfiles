@@ -37,6 +37,7 @@ commands=(
   xrandr # monitor setup
   xset
   xss-lock # lock the screen
+  zip
   zathura # pdf viewer
 )
 
