@@ -20,7 +20,8 @@ bindsym $mod+minus exec ~/.config/i3/i3-scratchpad-terminal
 bindsym $mod+n exec xdg-open .
 
 # Internet Browser
-bindsym $mod+Shift+Return exec x-www-browser
+bindsym $mod+Shift+Return exec "qutebrowser"
+bindsym $mod+Ctrl+Return exec "chromium-browser"
 
 # kill focused window
 bindsym $mod+Shift+q kill

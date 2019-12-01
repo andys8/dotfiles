@@ -33,3 +33,6 @@ export IBUS_ENABLE_SYNC_MODE=1
 
 # Fix xmonad java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# set i3-sensible-terminal
+export TERMINAL=st
