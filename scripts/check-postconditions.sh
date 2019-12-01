@@ -9,7 +9,6 @@ commands=(
   markdownlint # markdown analysis
   nmt # network-manager-tui
   prettier # js/css/markdown formatter
-  qutebrowser # Keyboard based webbrowser
   chromium-browser # web browser
   tsc # typescript compiler
   i3lock-fancy # lockscreen

@@ -15,7 +15,6 @@ git pull
 ./scripts/update-fish.fish
 ./scripts/update-npm.sh
 ./scripts/update-xmonad.sh
-./scripts/update-qutebrowser.sh
 
 # Abbreviations
 ./scripts/fish-abbreviations.fish
