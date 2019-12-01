@@ -43,7 +43,7 @@ function sudo
 end
 
 # Fix for LD_PRELOAD not found in sdk and screenfetch
-set -x LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
+# set -x LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 
 # Colors in man pages / less
 set -x LESS_TERMCAP_mb (set_color -o magenta)
