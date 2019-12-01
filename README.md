@@ -28,6 +28,22 @@ dropbox start &
 duplicati &
 ```
 
+## Shell
+
+### Change shell to fish
+
+```bash
+chsh -s $(which fish)
+```
+
+### Fish theme
+
+Set theme to `dracula` in web ui.
+
+```shell
+fish_config
+```
+
 ## Alacritty
 
 ### DPI
