@@ -2,7 +2,9 @@
 set -euo pipefail
 
 # all-hies with cachix
-nix-env -iA cachix -f https://cachix.org/api/v1/install
+command -v "cachix" >/dev/null 2>&1 || {
+  nix-env -iA cachix -f https://cachix.org/api/v1/install
+}
 cachix use all-hies
 
 # Nix

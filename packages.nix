@@ -30,6 +30,7 @@ in
 ) ++ (
   with pkgs; [
     autojump # jump into directory with j
+    cachix # nix chaching
     chromium # web browser
     dtrx # extract files
     fd # "find" for files
