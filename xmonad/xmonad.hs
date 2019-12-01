@@ -50,12 +50,12 @@ data Workspace
   deriving (Enum)
 
 instance Show Workspace where
-  show WorkspaceWWW  = "1 \62056" -- "1  "
-  show WorkspaceWork = "2 \58911" -- "2  "
-  show WorkspaceTerm = "3 \61728" -- "3  "
-  show WorkspaceChat = "4 \61574" -- "4  "
-  show Workspace5    = "5 \62003" -- "5  "
-  show Workspace6    = "6 \63231" -- "6  "
+  show WorkspaceWWW  = "1 \62056 " -- "1  "
+  show WorkspaceWork = "2 \58911 " -- "2  "
+  show WorkspaceTerm = "3 \61728 " -- "3  "
+  show WorkspaceChat = "4 \61574 " -- "4  "
+  show Workspace5    = "5 \62003 " -- "5  "
+  show Workspace6    = "6 \63231 " -- "6  "
 
 myWorkspaces :: [String]
 myWorkspaces = show <$> [WorkspaceWWW ..]
@@ -290,7 +290,7 @@ main = do
         , logHook            = myXmobar xmproc
                                >> updatePointer (0.75, 0.75) (0.75, 0.75)
                                >> WH.workspaceHistoryHook
-        , terminal           = "x-terminal-emulator"
+        , terminal           = "i3-sensible-terminal"
         , focusFollowsMouse  = True
         , borderWidth        = 0
         , modMask            = mod4Mask

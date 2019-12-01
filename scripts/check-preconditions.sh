@@ -51,6 +51,7 @@ files=(
 
 fonts=(
   "FiraCode Nerd"
+  "Font Awesome 5 Free Solid"
   "Iosevka Nerd"
   "SauceCodePro Nerd"
 )
