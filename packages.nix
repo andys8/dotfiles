@@ -8,6 +8,7 @@ in
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     cabal-install # haskell build tool
+    cachix # nix chaching
     cargo # rust package manager
     coursier # scala build tool
     exa # ls replacement
@@ -30,7 +31,6 @@ in
 ) ++ (
   with pkgs; [
     autojump # jump into directory with j
-    cachix # nix chaching
     chromium # web browser
     dtrx # extract files
     fd # "find" for files

@@ -1,14 +1,16 @@
 #!/bin/bash
 set -euo pipefail
 
+# Update the channel
+nix-channel --update
+
 # all-hies with cachix
 command -v "cachix" >/dev/null 2>&1 || {
   nix-env -iA cachix -f https://cachix.org/api/v1/install
 }
 cachix use all-hies
 
-# Nix
-nix-channel --update
+# Install packages
 nix-env -irf packages.nix
 
 # Collect garbage (chance ~ 10%)
