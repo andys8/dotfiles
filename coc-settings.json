@@ -33,7 +33,12 @@
     },
     "haskell": {
       "command": "hie-wrapper",
-      "rootPatterns": ["stack.yaml", "*.cabal", "cabal.config", "package.yaml"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml"
+      ],
       "filetypes": ["hs", "lhs", "haskell"],
       "trace.server": "verbose",
       "initializationOptions": {
