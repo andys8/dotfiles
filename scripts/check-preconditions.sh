@@ -45,9 +45,8 @@ commands=(
 
 files=(
   ~/.gitconfig.user
-  ~/bin/startup.sh
   ~/Pictures/wallpaper/wallpaper.png
-  /usr/local/share/lombok/lombok-1.18.6.jar # lombok in vim
+  ~/bin/startup.sh
 )
 
 fonts=(
