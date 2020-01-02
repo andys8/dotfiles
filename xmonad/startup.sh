@@ -45,6 +45,9 @@ xset dpms 180
 # Keyboard rate
 xset r rate 200 80
 
+# No bell
+xset -b
+
 # Wallpaper
 feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
 
