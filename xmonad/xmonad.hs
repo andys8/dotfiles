@@ -35,7 +35,6 @@ import           XMonad.Layout.WindowNavigation
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
-import           XMonad.Util.Cursor
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                          ( spawnPipe )
 
@@ -259,7 +258,6 @@ myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
 myStartupHook = do
   setWMName "LG3D"
   spawn "bash ~/.xmonad/startup.sh"
-  setDefaultCursor xC_left_ptr
 
 monitorSetupHook nScreens workspaces = mconcat
   (updateScreen nScreens <$> reverse workspaces)
