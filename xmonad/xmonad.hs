@@ -175,9 +175,9 @@ exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
 
 setMonitors :: Int -> X ()
-setMonitors i = spawn ("autorandr -l " <> show i)
+setMonitors i = spawn ("autorandr --load " <> show i)
 
-updateMonitors = spawn "autorandr -c"
+updateMonitors = spawn "autorandr --change"
 
 invertXColors = spawn "xrandr-invert-colors"
 
