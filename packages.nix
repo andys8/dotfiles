@@ -30,6 +30,7 @@ in
   ]
 ) ++ (
   with pkgs; [
+    ack # search in files
     autojump # jump into directory with j
     chromium # web browser
     dtrx # extract files
