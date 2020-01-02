@@ -48,11 +48,6 @@
           "formattingProvider": "brittany"
         }
       }
-    },
-    "metals": {
-      "command": "metals-vim",
-      "rootPatterns": ["build.sbt"],
-      "filetypes": ["scala", "sbt"]
     }
   },
   "suggest.completionItemKindLabels": {

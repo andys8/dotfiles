@@ -15,7 +15,6 @@ commands=(
   idea # intellij ide
   java
   lynis # system audit
-  metals-vim # scala language server, nix: <https://github.com/NixOS/nixpkgs/pull/60336>
   nix-channel
   nix-env
   nix-shell
@@ -85,6 +84,16 @@ for i in "${files[@]}"; do exists "$i"; done
 
 # Check fonts
 for i in "${fonts[@]}"; do fontInstalled "$i"; done
+
+[[ $(vim --version) =~ \+clipboard ]] || {
+  echo "Vim should have '+clipboard'";
+  exit 1;
+}
+
+[[ -z "$JAVA_HOME" ]] && {
+  echo "\$JAVA_HOME has to be set";
+  exit 1;
+}
 
 # Otherwise good case
 echo "All preconditions are fine"
