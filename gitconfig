@@ -70,9 +70,9 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[include]
-	path = .gitconfig.user
 [pull]
 	rebase = true
 [hub]
 	protocol = https
+[include]
+	path = ~/.gitconfig.user

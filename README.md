@@ -16,6 +16,9 @@ Local default git user configuration
 [user]
     name = andys8
     email = andys8@users.noreply.github.com
+
+[includeIf "gitdir:~/dev/repository/work/"]
+	path = ~/.gitconfig.work
 ```
 
 ### `~/bin/startup.sh`
