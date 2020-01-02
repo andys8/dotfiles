@@ -3,15 +3,16 @@ set -euo pipefail
 
 # Dependencies
 commands=(
+  chromium-browser # web browser
   elm # elm compiler
   elm-json # elm installation helper
   elm-test # elm test runner
+  git-brunch # branch change tool
+  i3lock-fancy # lockscreen
   markdownlint # markdown analysis
   nmt # network-manager-tui
   prettier # js/css/markdown formatter
-  chromium-browser # web browser
   tsc # typescript compiler
-  i3lock-fancy # lockscreen
 )
 
 check() {
