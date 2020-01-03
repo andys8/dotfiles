@@ -105,3 +105,6 @@ X-GNOME-Autostart-Notify=false
 
 Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 
+## Time
+
+Arch: Enable time synchronization with `timedatectl set-ntp true`.
