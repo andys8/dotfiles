@@ -20,9 +20,13 @@ if [ -z "$(pgrep nm-applet)" ]; then
     nm-applet --sm-disable &
 fi
 
+# pulseaudio
+if [ -z "$(pgrep pulseaudio)" ]; then
+    pulseaudio -D &
+fi
+
 # Volume Icon
 if [ -z "$(pgrep pa-applet)" ]; then
-    pulseaudio -D;
     pa-applet &
 fi
 
