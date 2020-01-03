@@ -90,8 +90,13 @@ for i in "${fonts[@]}"; do fontInstalled "$i"; done
   exit 1;
 }
 
-[[ -z "$JAVA_HOME" ]] && {
+[ -z "${JAVA_HOME-}" ] && {
   echo "\$JAVA_HOME has to be set";
+  exit 1;
+}
+
+[[ "${WINIT_HIDPI_FACTOR-}" != "1.0" ]] && {
+  echo "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty";
   exit 1;
 }
 
