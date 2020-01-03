@@ -1,16 +1,18 @@
 # dotfiles
 
-This repository will be checked out in home dir.
-
+This repository needs to be cloned in home directory (`~`). The `install.sh` script checks pre- and post-conditions, links files and installs/updates programs.
 ```sh
+cd ~
+git clone https://github.com/andys8/dotfiles.git
+cd dotfiles
 ./install.sh
 ```
 
-## Local files
+## Local files (depending on machine)
 
 ### `~/.gitconfig.user`
 
-Local default git user configuration
+Local default git user configuration with an example for conditional includes.
 
 ```
 [user]
@@ -36,16 +38,12 @@ duplicati &
 ### Change shell to fish
 
 ```bash
-chsh -s $(which fish)
+chsh -s $(chsh -l | grep -m 1 fish)
 ```
 
 ### Fish theme
 
-Set theme to `dracula` in web ui.
-
-```shell
-fish_config
-```
+Open config with `fish_config` and set theme to `dracula` in web ui.
 
 ## Alacritty
 
