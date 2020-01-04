@@ -52,6 +52,7 @@ in
     ripgrep # fast grep
     screenkey # visualize typed keys
     shellcheck # linter for shell scripts
+    slack-term # slack tui
     sxiv # image viewer
     translate-shell # trans command
     trayer # tray icons for xmonad
