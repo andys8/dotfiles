@@ -1121,6 +1121,7 @@ c.input.insert_mode.auto_load = True
 ##   - uk-UA: Ukrainian (Ukraine)
 ##   - vi-VN: Vietnamese (Viet Nam)
 # c.spellcheck.languages = []
+c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool

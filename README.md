@@ -48,9 +48,9 @@ Open config with `fish_config` and set theme to `dracula` in Web-UI.
 
 ## Terminal
 
-## Alacritty
+### Alacritty
 
-### DPI
+#### DPI
 
 Add `WINIT_HIDPI_FACTOR=1.0` to `/etc/environment`
 
@@ -60,29 +60,15 @@ Add `WINIT_HIDPI_FACTOR=1.0` to `/etc/environment`
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 80
 ```
 
-## st (suckless-terminal)
+### st (suckless-terminal)
 
 Install [`andys8/st`](https://github.com/andys8/st)
 
-### Add st to terminals and set as default
+#### Add st to terminals and set as default
 
 ```shell
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/st 80
 sudo update-alternatives --config x-terminal-emulator
-```
-
-## Python
-
-Select default version:
-
-```shell
-sudo update-alternatives --config python
-```
-
-If missing, add with:
-
-```shell
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 ```
 
 ## Xmonad
@@ -105,6 +91,31 @@ X-GNOME-Autostart-Notify=false
 
 Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 
+## Qutebrowser
+
+### Download dictionaries for spell checking
+
+```sh
+git clone https://github.com/qutebrowser/qutebrowser.git
+./qutebrowser/scripts/dictcli.py install en-US
+./qutebrowser/scripts/dictcli.py install de-DE
+```
+
 ## Time
 
 Arch: Enable time synchronization with `timedatectl set-ntp true`.
+
+## Python
+
+Select default version:
+
+```shell
+sudo update-alternatives --config python
+```
+
+If missing, add with:
+
+```shell
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
+```
+
