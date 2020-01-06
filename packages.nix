@@ -32,6 +32,7 @@ in
   with pkgs; [
     ack # search in files
     autojump # jump into directory with j
+    rclone # copy cloud to cloud
     chromium # web browser
     dtrx # extract files
     fd # "find" for files
