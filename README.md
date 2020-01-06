@@ -1,6 +1,7 @@
 # dotfiles
 
 This repository needs to be cloned in home directory (`~`). The `install.sh` script checks pre- and post-conditions, links files and installs/updates programs.
+
 ```sh
 cd ~
 git clone https://github.com/andys8/dotfiles.git
@@ -14,13 +15,13 @@ cd dotfiles
 
 Local default git user configuration with an example for conditional includes.
 
-```
+```text
 [user]
     name = andys8
     email = andys8@users.noreply.github.com
 
 [includeIf "gitdir:~/dev/repository/work/"]
-	path = ~/.gitconfig.work
+    path = ~/.gitconfig.work
 ```
 
 ### `~/bin/startup.sh`
@@ -43,7 +44,9 @@ chsh -s $(chsh -l | grep -m 1 fish)
 
 ### Fish theme
 
-Open config with `fish_config` and set theme to `dracula` in web ui.
+Open config with `fish_config` and set theme to `dracula` in Web-UI.
+
+## Terminal
 
 ## Alacritty
 
@@ -51,18 +54,17 @@ Open config with `fish_config` and set theme to `dracula` in web ui.
 
 Add `WINIT_HIDPI_FACTOR=1.0` to `/etc/environment`
 
-### Set as default terminal
+### Add alacritty to terminals
 
 ```shell
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 80
-sudo update-alternatives --config x-terminal-emulator
 ```
 
 ## st (suckless-terminal)
 
 Install [`andys8/st`](https://github.com/andys8/st)
 
-### Set as default terminal
+### Add st to terminals and set as default
 
 ```shell
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/st 80
@@ -87,7 +89,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 
 `/usr/share/xsessions/xmonad.desktop` for lightdm
 
-```
+```text
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8

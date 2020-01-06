@@ -5,7 +5,6 @@ set -euo pipefail
 npm set prefix ~/.npm-global
 npminstallations=(
   elm-json # update and change elm.json files
-  markdownlint-cli # markdown linter
   prettier # js/ts/css formatter
   typescript # ts compiler
 )

@@ -121,7 +121,6 @@ let g:ale_fixers = {
 
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
-      \ 'markdown': ['markdownlint'],
       \ 'sh': ['shellcheck']
       \}
 
@@ -200,15 +199,16 @@ let g:rooter_patterns = ['package.json', 'elm.json', 'stack.yaml', 'pom.xml', '.
 " Coc
 let g:coc_global_extensions = [
       \ 'coc-eslint',
-      \ 'coc-metals',
       \ 'coc-java',
       \ 'coc-json',
+      \ 'coc-markdownlint',
+      \ 'coc-metals',
       \ 'coc-prettier',
       \ 'coc-tslint-plugin',
       \ 'coc-tsserver',
       \ 'coc-ultisnips',
-      \ 'coc-yaml',
-      \ 'coc-vetur'
+      \ 'coc-vetur',
+      \ 'coc-yaml'
       \ ]
 
 " Use `:Fold` to fold current buffer

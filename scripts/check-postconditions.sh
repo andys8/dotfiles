@@ -9,7 +9,6 @@ commands=(
   elm-test # elm test runner
   git-brunch # branch change tool
   i3lock-fancy # lockscreen
-  markdownlint # markdown analysis
   nmt # network-manager-tui
   prettier # js/css/markdown formatter
   tsc # typescript compiler

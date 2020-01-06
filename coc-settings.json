@@ -50,6 +50,11 @@
       }
     }
   },
+  "markdownlint.onOpen": false,
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
+  },
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
