@@ -45,10 +45,6 @@ ln -sf ~/dotfiles/omf ~/.config
 # Bash
 ln -sf ~/dotfiles/bashrc ~/.bashrc
 
-# Google Java Format
-mkdir -p ~/bin
-ln -sf ~/dotfiles/google-java-format ~/bin/google-java-format
-
 # Xmonad
 mkdir -p ~/.xmonad
 ln -sf ~/dotfiles/xmonad/xmonad.hs ~/.xmonad/xmonad.hs
