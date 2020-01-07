@@ -38,6 +38,7 @@ ln -sf ~/dotfiles/profile ~/.profile
 mkdir -p ~/.config/fish/functions
 ln -sf ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
+ln -sf ~/dotfiles/fish/hostip.fish ~/.config/fish/functions/hostip.fish
 rm -rf ~/.config/omf
 ln -sf ~/dotfiles/omf ~/.config
 
