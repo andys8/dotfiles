@@ -27,6 +27,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # aliases
+alias dco='docker-dompose'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
