@@ -117,7 +117,11 @@ Set credentials in `~/.netrc`
 
 ## Python
 
-Select default version:
+### Pip
+
+Arch: Install `sudo pacman -Syu python-pip`
+
+### Select default python version
 
 ```shell
 sudo update-alternatives --config python
