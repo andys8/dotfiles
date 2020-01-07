@@ -28,6 +28,11 @@ check() {
 # Check commands
 for i in "${commands[@]}"; do check "$i"; done
 
+# autorandr config
+[[ $(autorandr --current) != "" ]] || {
+  fail "autorandr needs to be setup with configurations";
+}
+
 # Otherwise good case
 echo "All postconditions are fine"
 exit 0
