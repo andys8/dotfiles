@@ -14,13 +14,16 @@ commands=(
   tsc # typescript compiler
 )
 
-check() {
-  command -v "$1" >/dev/null 2>&1 || {
-    echo "'$1' missing"
-    exit 1
-  }
+fail() {
+  echo "$1"
+  exit 1
 }
 
+check() {
+  command -v "$1" >/dev/null 2>&1 || {
+    fail "Command '$1' missing"
+  }
+}
 
 # Check commands
 for i in "${commands[@]}"; do check "$i"; done

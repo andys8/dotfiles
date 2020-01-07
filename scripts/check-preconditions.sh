@@ -45,7 +45,6 @@ files=(
   ~/.gitconfig.user
   ~/Pictures/wallpaper/wallpaper.png
   ~/bin/startup.sh
-  ~/.sdkman/bin/sdkman-init.sh
 )
 
 fonts=(
@@ -54,29 +53,41 @@ fonts=(
   "SauceCodePro Nerd"
 )
 
+fail() {
+  echo "$1"
+  exit 1
+}
+
 check() {
   command -v "$1" >/dev/null 2>&1 || {
-    echo "'$1' missing"
-    exit 1
+    fail "Command '$1' missing"
   }
 }
 
 exists() {
   if [ ! -f "$1" ]; then
-    echo "'$1' missing"
-    exit 1
+    fail "File '$1' missing"
   fi
 }
 
 fontInstalled() {
   fc-list | grep -i "$1" >/dev/null 2>&1 || {
-    echo "Font '$1' missing"
-    exit 1
+    fail "Font '$1' missing"
   }
 }
 
 # Check commands
 for i in "${commands[@]}"; do check "$i"; done
+
+# Vim copy paste
+[[ $(vim --version) =~ \+clipboard ]] || {
+  fail "Vim should have '+clipboard'";
+}
+
+# sdkman
+[[ ! -f ~/.sdkman/bin/sdkman-init.sh ]] && {
+  fail "sdkman installation is missing";
+}
 
 # Verify files exist
 for i in "${files[@]}"; do exists "$i"; done
@@ -84,19 +95,12 @@ for i in "${files[@]}"; do exists "$i"; done
 # Check fonts
 for i in "${fonts[@]}"; do fontInstalled "$i"; done
 
-[[ $(vim --version) =~ \+clipboard ]] || {
-  echo "Vim should have '+clipboard'";
-  exit 1;
-}
-
 [ -z "${JAVA_HOME-}" ] && {
-  echo "\$JAVA_HOME has to be set";
-  exit 1;
+  fail "\$JAVA_HOME has to be set";
 }
 
 [[ "${WINIT_HIDPI_FACTOR-}" != "1.0" ]] && {
-  echo "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty";
-  exit 1;
+  fail "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty";
 }
 
 # Otherwise good case
