@@ -38,8 +38,8 @@ duplicati &
 
 ### Change shell to fish
 
-```bash
-chsh -s $(chsh -l | grep -m 1 fish)
+```shell
+bash -c 'chsh -s $(chsh -l | grep -m 1 fish)'
 ```
 
 ### Fish theme
