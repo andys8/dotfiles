@@ -34,6 +34,10 @@ dropbox start &
 duplicati &
 ```
 
+### `~/.profile.local`
+
+Can be used for environment variables (optional).
+
 ## Shell
 
 ### Change shell to fish

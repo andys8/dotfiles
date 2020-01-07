@@ -36,3 +36,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set i3-sensible-terminal
 export TERMINAL=st
+
+# Source local profile if it exists
+if [ -f "$HOME/.profile.local" ]; then
+    . "$HOME/.profile.local"
+fi
