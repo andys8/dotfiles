@@ -13,14 +13,15 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
+import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens         ( countScreens )
+import           XMonad.Layout.IndependentScreens
+                                                ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -36,7 +37,7 @@ import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                          ( spawnPipe )
+import           XMonad.Util.Run                ( spawnPipe )
 
 -- Workspaces --
 data Workspace
@@ -165,9 +166,12 @@ screenshotClipboard =
 
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
 
-brightnessUp = spawn "xrandr --output eDP-1 --brightness 1.0"
-
-brightnessDown = spawn "xrandr --output eDP-1 --brightness 0.6"
+setBrightness b =
+  spawn
+    $  "xrandr --output eDP-1 --brightness "
+    ++ b
+    ++ " || xrandr --output eDP1 --brightness "
+    ++ b
 
 exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 
@@ -214,8 +218,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_p)                , spawn rofiPass)
        , ((nothing, xK_Print), spawn screenshotClipboard)
        , ((shiftMask, xK_Print)                      , spawn screenshotFile)
-       , ((nothing, xF86XK_MonBrightnessUp)          , brightnessUp)
-       , ((nothing, xF86XK_MonBrightnessDown)        , brightnessDown)
+       , ((nothing, xF86XK_MonBrightnessUp)          , setBrightness "1.0")
+       , ((nothing, xF86XK_MonBrightnessDown)        , setBrightness "0.6")
        , ((nothing, xK_Insert)                       , pasteSelection)
        , ((modMask, xK_f), sendMessage $ Toggle FULL)
        , ((modMask .|. shiftMask, xK_f)              , sendMessage ToggleStruts)
