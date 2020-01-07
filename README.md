@@ -111,6 +111,10 @@ git clone https://github.com/qutebrowser/qutebrowser.git
 
 Arch: Enable time synchronization with `timedatectl set-ntp true`.
 
+## Git
+
+Set credentials in `~/.netrc`
+
 ## Python
 
 Select default version:
