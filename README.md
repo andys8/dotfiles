@@ -93,6 +93,12 @@ Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 
 ## Qutebrowser
 
+### Make Qutebrowser the default web browser
+
+```shell
+xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
+```
+
 ### Download dictionaries for spell checking
 
 ```sh
