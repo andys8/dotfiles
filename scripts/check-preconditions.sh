@@ -28,7 +28,6 @@ commands=(
   qutebrowser # Keyboard based webbrowser
   setxkbmap
   st # simple terminal
-  stack # haskell build tool
   timeshift # backup tool
   unzip
   vim
