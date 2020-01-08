@@ -28,6 +28,7 @@ in
     vokoscreen # screen recorder
     wcalc # calculator
     xrandr-invert-colors # invert colors
+    yarn # alternative node package manager
   ]
 ) ++ (
   with pkgs; [
