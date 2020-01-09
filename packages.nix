@@ -11,6 +11,7 @@ in
     cachix # nix chaching
     cargo # rust package manager
     coursier # scala build tool
+    ctop # top for containers
     exa # ls replacement
     ghc # haskell compiler
     hlint # haskell linter
