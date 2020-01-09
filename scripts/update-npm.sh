@@ -4,9 +4,10 @@ set -euo pipefail
 # Npm installable dependencies
 npm set prefix ~/.npm-global
 npminstallations=(
-  elm-json # update and change elm.json files
-  prettier # js/ts/css formatter
-  typescript # ts compiler
+  elm-json # Update and change elm.json files
+  prettier # JS/TS/CSS/Markdown formatter
+  qrcode-terminal # Encode text as QR code
+  typescript # TS compiler
 )
 
 for i in "${npminstallations[@]}"; do (npm install -g "$i")
