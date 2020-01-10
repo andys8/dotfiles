@@ -19,8 +19,13 @@ fi
 # node global installations
 PATH="$HOME/.npm-global/bin:$PATH"
 
-# set PATH so it includes user's private bin if it exists
-PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+if [[ $PATH != *"$HOME/.local/bin"* ]];then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [[ $PATH != *"$HOME/bin"* ]];then
+    PATH="$HOME/bin:$PATH"
+fi
 
 # Nix
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
