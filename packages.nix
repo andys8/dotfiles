@@ -24,7 +24,6 @@ in
     scala # scala compiler
     sent # suckless presentation tool
     shfmt # format shell scripts
-    stack # haskell build tool
     toilet # ascii art fonts
     vokoscreen # screen recorder
     wcalc # calculator
