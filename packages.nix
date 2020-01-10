@@ -10,6 +10,7 @@ in
     autorandr # xrandr monitor profiles
     cabal-install # haskell build tool
     cachix # nix chaching
+    cabal2nix # Convert cabal files to nix
     cargo # rust package manager
     coursier # scala build tool
     ctop # top for containers
