@@ -30,6 +30,7 @@ in
     wcalc # calculator
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
+    gnome3.zenity # show ui messages and dialogs
   ]
 ) ++ (
   with pkgs; [
