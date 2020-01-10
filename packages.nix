@@ -15,6 +15,7 @@ in
     ctop # top for containers
     exa # ls replacement
     ghc # haskell compiler
+    ghcid # ghci daemon
     hlint # haskell linter
     mdp # markdown presentation
     ncdu # disk usage
