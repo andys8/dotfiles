@@ -101,7 +101,7 @@ bindsym $alt+$mod+l exec i3lock-fancy -p
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager
 
 # password manager
-bindsym $alt+$mod+p exec "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+bindsym $alt+$mod+p exec "lastpass-rofi.sh"
 
 # Monitors
 bindsym $mod+$alt+1 exec "autorandr --load 1 && i3-msg restart"

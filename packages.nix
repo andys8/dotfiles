@@ -41,7 +41,6 @@ in
     fd # "find" for files
     feh # Background viewer
     fzf # fuzzy find tool
-    gopass # password manager for pass
     i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots
@@ -50,7 +49,6 @@ in
     nix # nix package manager
     nixpkgs-fmt # format nix
     pa_applet # volume tray icon
-    pass # password manager
     pavucontrol # pulse audio settings
     ranger # file manager
     ripgrep # fast grep

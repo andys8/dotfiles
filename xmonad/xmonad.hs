@@ -156,8 +156,7 @@ rofiRun = "rofi -show run -i -display-run \"$ \""
 
 lock = "i3lock-fancy -p"
 
-rofiPass =
-  "gopass ls --flat | rofi -dmenu | xargs --no-run-if-empty gopass show -c"
+rofiPass = "lastpass-rofi.sh"
 
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
 
