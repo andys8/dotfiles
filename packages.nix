@@ -1,7 +1,8 @@
 let
   pkgs = import <nixpkgs> {};
   fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
-  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+  # haskell-ide-engine 0.14.0.0
+  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/c6e93d2d641ef48703eabed8ec5cde3d774cb0e5") {};
 in
 (
   with fixed; [
