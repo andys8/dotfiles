@@ -24,6 +24,7 @@ commands=(
   pip3 # python packages
   preload # keep programs in ram
   pulseaudio
+  git-brunch # [TMP] Remove once git-bruch 1.0.0.0 is available in nix
   python3
   qutebrowser # Keyboard based webbrowser
   setxkbmap
