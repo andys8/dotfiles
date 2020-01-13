@@ -17,7 +17,11 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
 # c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
-c.aliases = {'chromium': 'spawn chromium-browser {url}', 'q': 'quit'}
+c.aliases = {
+    'chromium': 'spawn chromium-browser {url}',
+    'qrcode': 'spawn i3-sensible-terminal -e sh -c "qrcode-terminal {url}; read -p \'\'"',
+    'q': 'quit'
+}
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.

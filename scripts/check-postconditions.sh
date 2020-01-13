@@ -11,6 +11,7 @@ commands=(
   i3lock-fancy # lockscreen
   nmt # network-manager-tui
   prettier # js/css/markdown formatter
+  qrcode-terminal # show qr codes
   tsc # typescript compiler
 )
 
