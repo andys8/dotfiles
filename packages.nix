@@ -88,12 +88,16 @@ in
     hoogle # function documentation
     network-manager-tui # network tui
   ]
-) ++ [
-  (
-    all-hies.selection {
-      selector = p: {
-        inherit (p) ghc865; # haskell ide engine
-      };
-    }
-  )
-]
+)
+# haskell ide engine
+# -> Currently local installation is preferred
+#
+# ++ [
+#   (
+#     all-hies.selection {
+#       selector = p: {
+#         inherit (p) ghc865;
+#       };
+#     }
+#   )
+# ]

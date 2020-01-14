@@ -7,6 +7,8 @@ commands=(
   bash # shell
   fc-list # list fonts
   fish # shell
+  git-brunch # [TMP] Remove once git-bruch 1.0.0.0 is available in nix
+  hie-wrapper # haskell ide engine
   i3 # tiling window manager
   i3-msg
   i3-nagbar
@@ -24,7 +26,6 @@ commands=(
   pip3 # python packages
   preload # keep programs in ram
   pulseaudio
-  git-brunch # [TMP] Remove once git-bruch 1.0.0.0 is available in nix
   python3
   qutebrowser # Keyboard based webbrowser
   setxkbmap
