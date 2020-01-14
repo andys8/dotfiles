@@ -8,6 +8,7 @@ in
   with fixed; [
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
+    awscli # amazon web services
     cabal-install # haskell build tool
     cachix # nix chaching
     cabal2nix # Convert cabal files to nix
