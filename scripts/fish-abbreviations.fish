@@ -32,9 +32,10 @@ abbr -a -U -- n npm
 abbr -a -U -- nr 'npm run'
 abbr -a -U -- ns 'nix-env -qaP | grep'
 abbr -a -U -- open xdg-open
-abbr -a -U -- pai 'pacman -S'
-abbr -a -U -- par 'pacman -Rs'
-abbr -a -U -- pau 'pacman -Syu'
+abbr -a -U -- paci 'sudo pacman -S'
+abbr -a -U -- pacr 'sudo pacman -Rs'
+abbr -a -U -- pacs 'pacman -Ss'
+abbr -a -U -- pacu 'sudo pacman -Syu'
 abbr -a -U -- r ranger
 abbr -a -U -- sdkman sdk
 abbr -a -U -- t tig
