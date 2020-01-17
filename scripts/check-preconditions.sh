@@ -8,7 +8,6 @@ commands=(
   cabal # haskell tool
   fc-list # list fonts
   fish # shell
-  git-brunch # [TMP] Remove once git-bruch 1.0.0.0 is available in nix
   hie-wrapper # haskell ide engine
   i3 # tiling window manager
   i3-msg
