@@ -9,14 +9,12 @@ in
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     awscli # amazon web services
-    cabal-install # haskell build tool
     cachix # nix chaching
     cabal2nix # Convert cabal files to nix
     cargo # rust package manager
     coursier # scala build tool
     ctop # top for containers
     exa # ls replacement
-    ghc # haskell compiler
     ghcid # ghci daemon
     hlint # haskell linter
     mdp # markdown presentation
@@ -28,7 +26,6 @@ in
     scala # scala compiler
     sent # suckless presentation tool
     shfmt # format shell scripts
-    stack # haskell build tool
     toilet # ascii art fonts
     vokoscreen # screen recorder
     wcalc # calculator

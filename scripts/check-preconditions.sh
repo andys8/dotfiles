@@ -5,6 +5,7 @@ set -euo pipefail
 commands=(
   alacritty # terminal-emulator
   bash # shell
+  cabal # haskell tool
   fc-list # list fonts
   fish # shell
   git-brunch # [TMP] Remove once git-bruch 1.0.0.0 is available in nix
@@ -30,6 +31,7 @@ commands=(
   qutebrowser # Keyboard based webbrowser
   setxkbmap
   st # simple terminal
+  stack # haskell build tool
   timeshift # backup tool
   unzip
   vim
