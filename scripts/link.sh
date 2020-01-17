@@ -65,3 +65,6 @@ ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
 # bin
 mkdir -p ~/bin
 ln -sf ~/dotfiles/bin/lastpass-rofi.sh ~/bin/lastpass-rofi.sh
+
+# safe-rm
+ln -sf ~/dotfiles/safe-rm ~/.safe-rm

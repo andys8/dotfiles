@@ -37,6 +37,7 @@ abbr -a -U -- pacr 'sudo pacman -Rs'
 abbr -a -U -- pacs 'pacman -Ss'
 abbr -a -U -- pacu 'sudo pacman -Syu'
 abbr -a -U -- r ranger
+abbr -a -U -- rm 'safe-rm'
 abbr -a -U -- sdkman sdk
 abbr -a -U -- t tig
 abbr -a -U -- tl 'toilet -t -F border -f future --gay'
