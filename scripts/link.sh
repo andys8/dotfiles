@@ -68,3 +68,7 @@ ln -sf ~/dotfiles/bin/lastpass-rofi.sh ~/bin/lastpass-rofi.sh
 
 # safe-rm
 ln -sf ~/dotfiles/safe-rm ~/.safe-rm
+
+# pulseaudio
+mkdir -p ~/.config/pulse
+ln -sf ~/dotfiles/pulseaudio/client.conf ~/.config/pulse/client.conf
