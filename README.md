@@ -148,3 +148,22 @@ git checkout 0.14.0.0 # version
 git submodule update
 stack ./install.hs hie-8.6.5
 ```
+
+## `sudo`
+
+Open `sudo visudo` and add these lines to enable asterisks and silly feedback.
+
+```text
+Defaults insults
+Defaults pwfeedback
+```
+
+## Pacman
+
+Enable in `/etc/pacman.conf`:
+
+```text
+Color
+ILoveCandy
+VerbosePkgLists
+```
