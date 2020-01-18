@@ -30,8 +30,13 @@ check() {
 for i in "${commands[@]}"; do check "$i"; done
 
 # autorandr config
-[[ $(autorandr --current) != "" ]] || {
+[[ $(autorandr --current) == "" ]] && {
   fail "autorandr needs to be setup with configurations";
+}
+
+# preload
+[[ $(systemctl is-active preload) != "active" ]] && {
+  fail "service 'preload' not active (systemctl enable preload)";
 }
 
 # Otherwise good case
