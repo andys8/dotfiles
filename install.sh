@@ -6,7 +6,7 @@ git pull
 # Link files and directories
 ./scripts/link.sh
 
-# Checks
+# Checks before
 ./scripts/check-preconditions.sh
 
 # Updates
@@ -19,5 +19,6 @@ git pull
 # Abbreviations
 ./scripts/fish-abbreviations.fish
 
-# Checks
+# Checks afterwards
+./scripts/check-preconditions.sh
 ./scripts/check-postconditions.sh
