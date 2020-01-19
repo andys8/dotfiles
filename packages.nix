@@ -38,7 +38,7 @@ in
   with pkgs; [
     ack # search in files
     autojump # jump into directory with j
-    rclone # copy cloud to cloud
+    cbatticon # battery icon and warning
     chromium # web browser
     dtrx # extract files
     fd # "find" for files
@@ -54,6 +54,7 @@ in
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     ranger # file manager
+    rclone # copy cloud to cloud
     ripgrep # fast grep
     screenkey # visualize typed keys
     shellcheck # linter for shell scripts

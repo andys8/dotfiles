@@ -30,9 +30,9 @@ if [ -z "$(pgrep xss-lock)" ]; then
     xss-lock -l -- i3lock-fancy &
 fi
 
-# Battery warning script
-if [ -z "$(pgrep -f i3-battery-popup)" ]; then
-    ~/.config/i3/i3-battery-popup -n &
+# Battery icon (and notification)
+if [ -z "$(pgrep cbatticon)" ]; then
+    cbatticon -u 30 &
 fi
 
 # Keyboard layout: German, no dead keys

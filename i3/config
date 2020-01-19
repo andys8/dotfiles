@@ -252,8 +252,8 @@ exec --no-startup-id xss-lock -l -- i3lock-fancy
 # Display standbye
 exec --no-startup-id xset dpms 180
 
-# Battery warning script
-exec --no-startup-id ~/.config/i3/i3-battery-popup
+# Battery icon and warning
+exec --no-startup-id cbatticon -u 30
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpaper.jpg
