@@ -26,6 +26,7 @@ abbr -a -U -- gr 'git remote'
 abbr -a -U -- gs 'git status'
 abbr -a -U -- gst 'git stash'
 abbr -a -U -- gti git
+abbr -a -U -- jd 'cd ~/dotfiles'
 abbr -a -U -- lg lazygit
 abbr -a -U -- ll 'exa -al'
 abbr -a -U -- n npm
