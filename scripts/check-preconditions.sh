@@ -44,8 +44,8 @@ commands=(
 )
 
 files=(
+  /usr/share/backgrounds/wallpaper.jpg
   ~/.gitconfig.user
-  ~/Pictures/wallpaper/wallpaper.png
   ~/bin/startup.sh
 )
 

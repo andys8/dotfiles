@@ -256,7 +256,7 @@ exec --no-startup-id xset dpms 180
 exec --no-startup-id ~/.config/i3/i3-battery-popup
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/wallpaper.jpg
 
 # Run startup script (which is different on each machine)
 exec --no-startup-id ~/bin/startup.sh

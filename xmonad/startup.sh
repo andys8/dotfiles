@@ -48,7 +48,7 @@ xset r rate 200 80
 xset -b
 
 # Wallpaper
-feh --bg-fill ~/Pictures/wallpaper/wallpaper.png
+feh --bg-fill /usr/share/backgrounds/wallpaper.jpg
 
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
