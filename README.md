@@ -30,8 +30,10 @@ Local script executed on machine startup
 
 ```bash
 #!/bin/bash
-dropbox start &
-duplicati &
+[ -z "$(pgrep dropbox)" ] && dropbox start &
+[ -z "$(pgrep -f duplicati)" ] && duplicati &
+# ubuntu, but not arch
+[ -z "$(pgrep pulseaudio)" ] && pulseaudio --daemonize
 ```
 
 ### `~/.profile.local`
