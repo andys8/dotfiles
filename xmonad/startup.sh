@@ -3,16 +3,17 @@
 # System tray
 if [ -z "$(pgrep trayer)" ]; then
     trayer \
-        --monitor primary \
-        --edge bottom \
         --align center \
-        --widthtype request \
-        --heighttype pixel \
-        --height 22 \
-        --iconspacing 3 \
         --alpha 0 \
+        --distance 2 \
+        --edge bottom \
+        --height 18 \
+        --heighttype pixel \
+        --iconspacing 6 \
+        --monitor primary \
+        --tint 0x44475a \
         --transparent true \
-        --tint 0x44475a &
+        --widthtype request &
 fi
 
 # Network Manager Icon
