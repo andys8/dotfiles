@@ -1373,6 +1373,8 @@ c.url.start_pages = ['about:blank']
 config.bind(',c', 'tab-close')
 config.bind(',q', 'tab-prev')
 config.bind(',w', 'tab-next')
+config.bind('<Ctrl-Tab>', 'tab-next')
+config.bind('<Ctrl-Shift-Tab>', 'tab-prev')
 config.bind('<Ctrl-i>', 'forward')
 config.bind('<Ctrl-o>', 'back')
 config.bind('F', 'hint links tab-bg')
