@@ -1332,7 +1332,8 @@ c.url.default_page = 'about:blank'
 c.url.searchengines = {
     'DEFAULT': 'https://google.de/search?q={}',
     'dd': 'https://duckduckgo.com/?q={}',
-    'npm': 'https://www.npmjs.com/search?q={}'
+    'npm': 'https://www.npmjs.com/search?q={}',
+    'hackage': 'https://hackage.haskell.org/packages/search?terms={}'
 }
 
 ## Page(s) to open at the start.
