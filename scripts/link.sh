@@ -77,3 +77,6 @@ ln -sf ~/dotfiles/safe-rm ~/.safe-rm
 # pulseaudio
 mkdir -p ~/.config/pulse
 ln -sf ~/dotfiles/pulseaudio/client.conf ~/.config/pulse/client.conf
+
+# ghci
+ln -sf ~/dotfiles/ghci ~/.ghci

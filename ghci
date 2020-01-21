@@ -1,0 +1,12 @@
+:def hoogle \str -> return $ ":! hoogle --count=15 \"" ++ str ++ "\""
+:set +m # Multiline with `let`
+:set +t # show type info for `it`
+:set -Wall
+:set -XOverloadedStrings
+:set -XRecordWildCards
+:set -fno-warn-type-defaults
+:set -fno-warn-unused-binds
+:set -fno-warn-unused-do-bind
+:set -fno-warn-unused-imports
+:set editor vim
+:set prompt "λ> "
