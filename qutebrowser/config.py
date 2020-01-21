@@ -536,7 +536,7 @@ c.content.cookies.accept = 'all'
 ## qutebrowser asks websites to not track your identity. If set to null,
 ## the DNT header is not sent at all.
 ## Type: Bool
-# c.content.headers.do_not_track = True
+c.content.headers.do_not_track = True
 
 ## When to send the Referer header. The Referer header tells websites
 ## from which website you were coming from when visting them.
@@ -645,7 +645,7 @@ c.content.javascript.can_access_clipboard = True
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications = 'ask'
+c.content.notifications = False
 
 ## Allow pdf.js to view PDF files in the browser. Note that the files can
 ## still be downloaded by clicking the download button in the pdf.js
@@ -1146,7 +1146,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
-# c.tabs.background = False
+c.tabs.background = True
 
 ## Mouse button with which to close tabs.
 ## Type: String
