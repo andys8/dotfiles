@@ -21,18 +21,19 @@ in
     ncdu # disk usage
     nethogs # network traffic monitoring
     nodejs-12_x # nodejs and npm
+    gnome3.zenity # show ui messages and dialogs
     rofi # dmenu replacement
     safe-rm # rm with safety
     sbt # sbt package manager
     scala # scala compiler
     sent # suckless presentation tool
     shfmt # format shell scripts
+    time # measure time
     toilet # ascii art fonts
     vokoscreen # screen recorder
     wcalc # calculator
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
-    gnome3.zenity # show ui messages and dialogs
   ]
 ) ++ (
   with pkgs; [
