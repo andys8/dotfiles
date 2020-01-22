@@ -96,6 +96,7 @@ bindsym Ctrl+$alt+$mod+P exec poweroff
 
 # lock screen
 bindsym $alt+$mod+l exec i3lock-fancy -p
+bindsym Ctrl+$alt+$mod+BackSpace exec i3lock-fancy -p
 
 # restart network
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager

@@ -210,6 +210,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((nothing, xF86XK_PowerDown)                , poweroffComputer)
        , ((nothing, xF86XK_PowerOff)                 , poweroffComputer)
        , ((controlMask .|. modMask .|. altMask, xK_p), poweroffComputer)
+       , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn lock)
        , ((modMask .|. altMask, xK_l)                , spawn lock)
        , ((modMask, xK_Tab)                          , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab)            , moveTo Prev NonEmptyWS)
