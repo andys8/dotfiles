@@ -23,6 +23,8 @@ abbr -a -U -- gm 'git merge'
 abbr -a -U -- gp 'git push'
 abbr -a -U -- gpl 'git pull'
 abbr -a -U -- gr 'git remote'
+abbr -a -U -- grd 'git rebase -i origin/development'
+abbr -a -U -- grm 'git rebase -i origin/master'
 abbr -a -U -- gs 'git status'
 abbr -a -U -- gst 'git stash'
 abbr -a -U -- gti git
