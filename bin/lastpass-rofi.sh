@@ -15,10 +15,11 @@ done
 
 # Login
 if ! lpass status; then
-    ZENITY_INPUT="$(zenity --entry --text='Please enter your LastPass username:')"
-    [ -z "$ZENITY_INPUT" ] && exit
+    # environment variable `LPASS_USER` is read
+    [ -z "$LPASS_USER" ] && LPASS_USER="$(zenity --entry --text='LastPass Username:')"
+    [ -z "$LPASS_USER" ] && exit
 
-    if ! lpass login --trust "$ZENITY_INPUT"; then
+    if ! lpass login --trust "$LPASS_USER"; then
         zenity --error --text="Failed to login to LastPass. Please check your credentials and try again."
         exit 1
     fi

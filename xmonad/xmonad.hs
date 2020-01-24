@@ -72,6 +72,7 @@ myManageHook = composeAll
   , className =? "Rambox" --> doShift (show WorkspaceChat)
   , className =? "Screenruler" --> doFloat
   , className =? "Slack" --> doShift (show WorkspaceChat)
+  , className =? "Zenity" --> doFloat
   , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
   , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
   , className =? "qutebrowser" --> doShift (show WorkspaceWWW)
