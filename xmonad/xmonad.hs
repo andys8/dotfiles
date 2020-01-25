@@ -160,6 +160,8 @@ lock = "i3lock-fancy -p"
 rofiPass = "lastpass-rofi.sh"
 
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+screenshotWholeScreen =
+  "maim --hidecursor ~/Pictures/screenshot-$(date +%s).png"
 
 screenshotClipboard =
   "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
@@ -218,6 +220,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask, xK_i), toggleLastWorkspace nScreens)
        , ((modMask .|. altMask, xK_p)                , spawn rofiPass)
        , ((nothing, xK_Print), spawn screenshotClipboard)
+       , ((altMask, xK_Print), spawn screenshotWholeScreen)
        , ((shiftMask, xK_Print)                      , spawn screenshotFile)
        , ((nothing, xF86XK_MonBrightnessUp)          , setBrightness "1.0")
        , ((nothing, xF86XK_MonBrightnessDown)        , setBrightness "0.6")
