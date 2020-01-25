@@ -19,7 +19,7 @@ fi
 # node global installations
 PATH="$HOME/.npm-global/bin:$PATH"
 
-if [[ $PATH != *"$HOME/.local/bin"* ]];then
+if [ $PATH != *"$HOME/.local/bin"* ]; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
@@ -32,7 +32,7 @@ export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/us
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 # bin in home
-if [[ $PATH != *"$HOME/bin"* ]];then
+if [ $PATH != *"$HOME/bin"* ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
