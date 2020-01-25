@@ -1334,7 +1334,8 @@ c.url.searchengines = {
     'DEFAULT': 'https://google.de/search?q={}',
     'dd': 'https://duckduckgo.com/?q={}',
     'npm': 'https://www.npmjs.com/search?q={}',
-    'hackage': 'https://hackage.haskell.org/packages/search?terms={}'
+    'hackage': 'https://hackage.haskell.org/packages/search?terms={}',
+    'hoogle': 'https://hoogle.haskell.org/?hoogle={}'
 }
 
 ## Page(s) to open at the start.
