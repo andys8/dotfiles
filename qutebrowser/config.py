@@ -1331,6 +1331,7 @@ c.url.default_page = 'qute://bookmarks'
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
+    'aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
     'DEFAULT': 'https://google.de/search?q={}',
     'dd': 'https://duckduckgo.com/?q={}',
     'npm': 'https://www.npmjs.com/search?q={}',
