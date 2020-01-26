@@ -5,6 +5,7 @@ set -euo pipefail
 npm set prefix ~/.npm-global
 npminstallations=(
   elm-json # Update and change elm.json files
+  fx # json viewer
   prettier # JS/TS/CSS/Markdown formatter
   qrcode-terminal # Encode text as QR code
   typescript # TS compiler
