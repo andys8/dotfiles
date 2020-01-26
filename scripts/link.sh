@@ -80,3 +80,6 @@ ln -sf ~/dotfiles/pulseaudio/client.conf ~/.config/pulse/client.conf
 
 # ghci
 ln -sf ~/dotfiles/ghci ~/.ghci
+
+# fx
+ln -sf ~/dotfiles/fx/fxrc ~/.fxrc
