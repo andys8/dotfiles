@@ -3,6 +3,10 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+# Load settings added with ui
+# See <https://github.com/qutebrowser/qutebrowser/blob/master/doc/help/configuring.asciidoc#loading-autoconfigyml>
+config.load_autoconfig()
+
 # Dracula theme
 # https://github.com/evannagle/qutebrowser-dracula-theme
 # Changes: Renamed file, overwriting hint colors
