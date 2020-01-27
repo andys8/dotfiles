@@ -41,7 +41,7 @@ Plug 'airblade/vim-rooter'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Elm syntax
-Plug 'andys8/vim-elm-syntax', { 'for': ['elm'] }
+Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
 
 " Typescript JSX
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['javascript', 'typescript'] }
@@ -51,4 +51,7 @@ Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 Plug 'tyru/open-browser.vim'
 
 " Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for' : 'markdown' }
+
+" Haskell Hoogle
+Plug 'twinside/vim-hoogle', { 'for' : 'haskell' }
