@@ -32,6 +32,7 @@ abbr -a -U -- gti git
 abbr -a -U -- jd 'cd ~/dotfiles'
 abbr -a -U -- lg lazygit
 abbr -a -U -- ll 'exa -al'
+abbr -a -U -- mirror 'autorandr common'
 abbr -a -U -- n npm
 abbr -a -U -- nr 'npm run'
 abbr -a -U -- ns 'nix-env -qaP | grep'
