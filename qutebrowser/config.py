@@ -167,6 +167,7 @@ c.backend = 'webengine'
 ## for transparency.
 ## Type: QssColor
 # c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+c.colors.hints.bg = 'yellow'
 
 ## Font color for hints.
 ## Type: QssColor
@@ -765,11 +766,11 @@ c.editor.command = ["i3-sensible-terminal", "-e", "vim", "{}"]
 
 ## Font used in the completion categories.
 ## Type: Font
-# c.fonts.completion.category = 'bold 10pt monospace'
+c.fonts.completion.category = 'bold 12pt monospace'
 
 ## Font used in the completion widget.
 ## Type: Font
-# c.fonts.completion.entry = '10pt monospace'
+c.fonts.completion.entry = '12pt monospace'
 
 ## Font used for the debugging console.
 ## Type: QtFont
@@ -810,7 +811,7 @@ c.fonts.prompts = '12pt sans-serif'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '12pt monospace'
+c.fonts.statusbar = '14pt monospace'
 
 ## Font used in the tab bar.
 ## Type: QtFont
