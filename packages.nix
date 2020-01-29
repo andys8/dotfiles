@@ -45,6 +45,7 @@ in
     fd # "find" for files
     feh # Background viewer
     fzf # fuzzy find tool
+    glow # markdown viewer
     i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots
