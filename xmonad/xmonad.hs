@@ -208,8 +208,6 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((altMask, xK_F4)                           , kill)
        , ((modMask, xK_d)                            , spawn rofiApplications)
        , ((modMask .|. shiftMask, xK_d)              , spawn rofiRun)
-       , ((modMask .|. shiftMask, xK_e)              , exitXmonad)
-       , ((modMask .|. shiftMask, xK_r)              , restartXmonad)
        , ((nothing, xF86XK_PowerDown)                , poweroffComputer)
        , ((nothing, xF86XK_PowerOff)                 , poweroffComputer)
        , ((controlMask .|. modMask .|. altMask, xK_p), poweroffComputer)
@@ -241,6 +239,9 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_2)                , setMonitors 2)
        , ((modMask .|. altMask, xK_3)                , setMonitors 3)
        , ((modMask .|. altMask, xK_r)                , restartXmonad)
+       , ((modMask .|. shiftMask, xK_r)              , restartXmonad)
+       , ((modMask .|. altMask, xK_e)                , exitXmonad)
+       , ((modMask .|. shiftMask, xK_e)              , exitXmonad)
        , ((modMask .|. altMask, xK_i)                , invertXColors)
        ]
     ++ [ ((modifier, key), action workspace)
