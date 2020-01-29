@@ -155,7 +155,7 @@ rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 
 rofiRun = "rofi -show run -i -display-run \"$ \""
 
-lock = "i3lock-fancy -p"
+lock = "lock"
 
 rofiPass = "lastpass-rofi.sh"
 

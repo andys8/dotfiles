@@ -97,8 +97,8 @@ bindsym X86PowerOff exec poweroff
 bindsym Ctrl+$alt+$mod+P exec poweroff
 
 # lock screen
-bindsym $alt+$mod+l exec i3lock-fancy -p
-bindsym Ctrl+$alt+$mod+BackSpace exec i3lock-fancy -p
+bindsym $alt+$mod+l exec lock
+bindsym Ctrl+$alt+$mod+BackSpace exec lock
 
 # restart network
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager
@@ -251,7 +251,7 @@ exec --no-startup-id xset r rate 200 80
 exec --no-startup-id xset -b
 
 # Lock screen on disabled monitor
-exec --no-startup-id xss-lock -l -- i3lock-fancy
+exec --no-startup-id xss-lock -l -- lock
 
 # Display standbye
 exec --no-startup-id xset dpms 180

@@ -8,7 +8,7 @@ commands=(
   elm-json # elm installation helper
   elm-test # elm test runner
   git-brunch # branch change tool
-  i3lock-fancy # lockscreen
+  lock # bin/lock file is on the path
   nmt # network-manager-tui
   prettier # js/css/markdown formatter
   qrcode-terminal # show qr codes
