@@ -34,7 +34,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 " Theme
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
-colo dracula
+colorscheme dracula
 
 " Airline
 let g:airline_theme = 'dracula'
@@ -46,6 +46,9 @@ let g:airline#extensions#coc#warning_symbol = ' '
 
 " Switch themes
 command Dark colo torte
+
+" Ignore files
+set wildignore+=*/node_modules/*,*/.stack-work/*
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
