@@ -148,8 +148,7 @@ confirm = confirmPrompt amberXPConfig
 
 fileBrowser = spawn "xdg-open ."
 
--- disabling gpu for now because of probably related freezes in arch
-quteWebBrowser = spawn "qutebrowser --qt-flag disable-gpu"
+quteWebBrowser = spawn "qutebrowser"
 chromiumWebBrowser = spawn "chromium-browser"
 
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
