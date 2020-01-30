@@ -94,7 +94,7 @@ bindsym $mod+$alt+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3
 
 # poweroff
 bindsym X86PowerOff exec poweroff
-bindsym Ctrl+$alt+$mod+P exec poweroff
+bindsym Ctrl+$alt+$mod+Escape exec poweroff
 
 # lock screen
 bindsym $alt+$mod+l exec lock
