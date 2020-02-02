@@ -4,6 +4,7 @@ set -euo pipefail
 # Npm installable dependencies
 npm set prefix ~/.npm-global
 npminstallations=(
+  bash-language-server
   elm-json # Update and change elm.json files
   fx # json viewer
   ramda # used in fx (needs to be installed globally)
