@@ -57,6 +57,17 @@
       "ignoredRootPaths": ["~"]
     }
   },
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "sh": "shfmt",
+    "nix": "nixpkgs-fmt"
+  },
+  "diagnostic-languageserver.formatters": {
+    "shfmt": { "command": "shfmt" },
+    "nixpkgs-fmt": { "command": "nixpkgs-fmt" }
+  },
   "markdownlint.onOpen": false,
   "markdownlint.config": {
     "default": true,
