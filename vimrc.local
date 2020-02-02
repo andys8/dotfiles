@@ -101,46 +101,12 @@ endfunction
 " Elm
 let g:polyglot_disabled = ['elm']
 
-" Ale Linting
-let g:ale_lint_on_text_changed = 0
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_save = 1
-nmap <silent> <leader>P :ALEFix<CR>
-
-let g:ale_fixers = { 'haskell': ['hindent'] }
-
-let g:ale_linters_explicit = 1
-let g:ale_linters = {}
-
 " List toggle
 let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>ö'
 
 " Ctags
 set tags+=tags;tags.vendors;,tags;
-
-let g:tagbar_type_elm = {
-      \ 'kinds' : [
-      \ 'f:function:0:0',
-      \ 'm:modules:0:0',
-      \ 'i:imports:1:0',
-      \ 't:types:1:0',
-      \ 'a:type aliases:0:0',
-      \ 'c:type constructors:0:0',
-      \ 'p:ports:0:0',
-      \ 's:functions:0:0',
-      \ ]
-      \}
-
-let g:tagbar_type_markdown = {
-      \ 'ctagstype' : 'markdown',
-      \ 'kinds' : [
-      \ 'h:Heading_L1',
-      \ 'i:Heading_L2',
-      \ 'k:Heading_L3'
-      \ ]
-      \}
-
 
 " Search with Rg (overwrites vimrc)
 nnoremap <silent> <Leader>f :Rg<CR>
@@ -203,8 +169,8 @@ let g:rooter_patterns = [
       \ 'elm.json',
       \ 'stack.yaml',
       \ 'pom.xml',
-      \ '.git/',
-      \ 'requirements.txt'
+      \ 'requirements.txt',
+      \ '.git/'
       \ ]
 
 " Coc
