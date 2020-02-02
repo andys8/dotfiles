@@ -225,6 +225,7 @@ let g:rooter_patterns = [
 
 " Coc
 let g:coc_global_extensions = [
+      \ 'coc-docker',
       \ 'coc-eslint',
       \ 'coc-java',
       \ 'coc-json',
