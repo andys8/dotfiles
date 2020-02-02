@@ -45,7 +45,7 @@
         "languageServerHaskell": {
           "hlintOn": true,
           "maxNumberOfProblems": 10,
-          "completionSnippetsOn": false,
+          "completionSnippetsOn": true,
           "formattingProvider": "brittany"
         }
       }
