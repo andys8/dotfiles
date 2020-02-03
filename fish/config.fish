@@ -14,6 +14,7 @@ xset r rate 200 80
 
 # Bobthefish theme options
 set -g theme_color_scheme dracula
+set -g theme_display_cmd_duration no
 set -g theme_display_date no
 set -g theme_display_docker_machine no
 set -g theme_display_hg no
