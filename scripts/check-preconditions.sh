@@ -37,6 +37,7 @@ commands=(
   xclip
   xdotool # control x via command line
   xrandr # monitor setup
+  xrdb # load Xresources
   xset
   xss-lock # lock the screen
   zathura # pdf viewer
@@ -45,6 +46,7 @@ commands=(
 
 files=(
   /usr/share/backgrounds/wallpaper.jpg
+  /usr/share/icons/xcursor-breeze/index.theme
   ~/.gitconfig.user
   ~/bin/startup.sh
 )

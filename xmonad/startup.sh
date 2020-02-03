@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Load Xresources
+xrdb ~/.Xresources
+
 # System tray
 if [ -z "$(pgrep trayer)" ]; then
     trayer \

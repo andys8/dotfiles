@@ -84,3 +84,6 @@ ln -sf ~/dotfiles/ghci ~/.ghci
 
 # fx
 ln -sf ~/dotfiles/fx/fxrc ~/.fxrc
+
+# Xresources
+ln -sf ~/dotfiles/Xresources ~/.Xresources
