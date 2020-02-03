@@ -1,0 +1,4 @@
+#!/bin/bash
+API="https://api.getdango.com/api/emoji"
+EMOJI=$(zenity --entry --text "Emoji")
+[[ $EMOJI ]] && curl -G -s "$API" --data-urlencode "q=$EMOJI" | jq '.results[].text' -r | rofi -dmenu | xclip -sel clip

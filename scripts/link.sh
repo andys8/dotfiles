@@ -67,6 +67,7 @@ mkdir -p ~/bin
 ln -sf ~/dotfiles/bin/lastpass-rofi.sh ~/bin/lastpass-rofi.sh
 ln -sf ~/dotfiles/bin/image-info ~/bin/image-info
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
+ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
 
 # sxiv
 mkdir -p ~/.config/sxiv/exec
