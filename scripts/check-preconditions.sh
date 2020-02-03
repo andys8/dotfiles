@@ -34,7 +34,7 @@ commands=(
   unzip
   vim
   vimdiff
-  xclip
+  xclip # copy/paste
   xdotool # control x via command line
   xrandr # monitor setup
   xrdb # load Xresources

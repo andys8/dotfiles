@@ -9,19 +9,20 @@ in
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     awscli # amazon web services
-    cachix # nix chaching
     cabal2nix # Convert cabal files to nix
+    cachix # nix chaching
     cargo # rust package manager
     coursier # scala build tool
     ctop # top for containers
     exa # ls replacement
     ghcid # ghci daemon
+    gnome3.zenity # show ui messages and dialogs
     hlint # haskell linter
+    jq # json processor
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
     nodejs-12_x # nodejs and npm
-    gnome3.zenity # show ui messages and dialogs
     rofi # dmenu replacement
     safe-rm # rm with safety
     sbt # sbt package manager
