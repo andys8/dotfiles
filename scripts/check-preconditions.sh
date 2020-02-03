@@ -46,7 +46,6 @@ commands=(
 
 files=(
   /usr/share/backgrounds/wallpaper.jpg
-  /usr/share/icons/xcursor-breeze/index.theme
   ~/.gitconfig.user
   ~/bin/startup.sh
 )
@@ -58,7 +57,7 @@ fonts=(
 )
 
 fail() {
-  echo "$1"
+  echo "ERROR: $1"
   exit 1
 }
 
@@ -89,8 +88,13 @@ for i in "${commands[@]}"; do check "$i"; done
 }
 
 # sdkman
-[[ ! -f ~/.sdkman/bin/sdkman-init.sh ]] && {
+[[ -f ~/.sdkman/bin/sdkman-init.sh ]] || {
   fail "sdkman installation is missing";
+}
+
+# xcursor theme: breeze
+[[ $(find /usr/share/icons ~/.local/share/icons -type d -name "cursors") =~ "breeze" ]] || {
+  fail "xcursor theme breeze is missing";
 }
 
 # Verify files exist
