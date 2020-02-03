@@ -4,6 +4,7 @@ set -euo pipefail
 # Dependencies
 commands=(
   alacritty # terminal-emulator
+  awk # used in shell scripts
   bash # shell
   cabal # haskell tool
   fc-list # list fonts
@@ -31,6 +32,7 @@ commands=(
   st # simple terminal
   stack # haskell build tool
   timeshift # backup tool
+  tr # used in shell scripts
   unzip
   vim
   vimdiff
@@ -53,6 +55,7 @@ files=(
 fonts=(
   "Font Awesome 5 Free Solid"
   "Iosevka Nerd"
+  "Noto Color Emoji"
   "SauceCodePro Nerd"
 )
 

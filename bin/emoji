@@ -1,4 +1,9 @@
 #!/bin/bash
-API="https://api.getdango.com/api/emoji"
-EMOJI=$(zenity --entry --text "Emoji Search:")
-[[ $EMOJI ]] && curl -G -s "$API" --data-urlencode "q=$EMOJI" | jq '.results[].text' -r | rofi -dmenu -p "Emoji" -lines 2 -columns 5 -width 15 | xclip -sel clip
+# Emoji rofi selection
+
+EMOJILIST="https://raw.githubusercontent.com/andys8/rofi-emoji-lists/master/full-list.txt"
+FILE="$HOME/.cache/emojis.txt"
+FONT="Noto Color Emoji 12"
+
+[ -f "$FILE" ] || curl --silent "$EMOJILIST" --output "$FILE"
+rofi -dmenu -markup-rows -i -columns 8 -lines 10 -width 20 -p 'Emoji' -font "$FONT" <"$FILE" | awk '{ print $NF }' | tr -d '\n' | xclip -sel clip
