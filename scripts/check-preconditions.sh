@@ -96,7 +96,7 @@ for i in "${commands[@]}"; do check "$i"; done
 }
 
 # xcursor theme: breeze
-[[ $(find /usr/share/icons ~/.local/share/icons -type d -name "cursors") =~ "breeze" ]] || {
+[[ $(find /usr/share/icons -type d -name "cursors") =~ "breeze" ]] || {
   fail "xcursor theme breeze is missing";
 }
 
