@@ -13,14 +13,15 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops                ( ewmh )
+import           XMonad.Hooks.EwmhDesktops      ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens         ( countScreens )
+import           XMonad.Layout.IndependentScreens
+                                                ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -36,7 +37,7 @@ import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                          ( spawnPipe )
+import           XMonad.Util.Run                ( spawnPipe )
 
 -- Workspaces --
 data Workspace
@@ -143,7 +144,7 @@ altMask = mod1Mask
 
 nothing = 0
 
-confirm = confirmPrompt amberXPConfig
+confirm = confirmPrompt $ greenXPConfig { font = myFont, height = 22 }
 
 fileBrowser = spawn "xdg-open ."
 
