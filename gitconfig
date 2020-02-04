@@ -10,16 +10,17 @@
 	br = branch
 	ci = commit
 	co = checkout
+	currentbranch = rev-parse --abbrev-ref HEAD
 	d = diff
 	fe = fetch
 	l = log --graph --date=short
 	pl = pull
+	please = push --force-with-lease
 	ps = push
 	re = reset
 	s = status
 	st = status
 	track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-	currentbranch = rev-parse --abbrev-ref HEAD
 [push]
 	default = current
 [http]
