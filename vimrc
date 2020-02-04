@@ -90,6 +90,7 @@ set shell=/bin/bash
 "*****************************************************************************
 syntax on
 set ruler
+set number
 
 let no_buffers_menu=1
 
