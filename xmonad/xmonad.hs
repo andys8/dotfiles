@@ -144,7 +144,10 @@ altMask = mod1Mask
 
 nothing = 0
 
-confirm = confirmPrompt $ greenXPConfig { font = myFont, height = 22 }
+confirm = confirmPrompt $ greenXPConfig { font     = myFont
+                                        , height   = 60
+                                        , position = CenteredAt 0.5 0.3
+                                        }
 
 fileBrowser = spawn "xdg-open ."
 
