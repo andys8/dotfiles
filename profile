@@ -22,22 +22,23 @@ PATH="$HOME/.npm-global/bin:$PATH"
 # fx
 export NODE_PATH="$HOME/.npm-global/lib/node_modules"
 
+# ~/.local/bin
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH";
+fi
+
 # Nix
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh;
 fi
 
-export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
-
-# # bin in home and .local
-if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  export PATH="$HOME/.local/bin:$PATH";
-fi
-
+# ~/bin
 if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
   export PATH="$HOME/bin:$PATH";
 fi
+
+export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 # IDEA keyboard freeze fix
 # <https://youtrack.jetbrains.com/issue/IDEA-78860>
