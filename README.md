@@ -169,3 +169,7 @@ Color
 ILoveCandy
 VerbosePkgLists
 ```
+
+## Theme
+
+Install `xcursor-breeze` and [`Ant-Dracula`](https://github.com/EliverLara/Ant-Dracula) theme. Configure with `lxappearance`.

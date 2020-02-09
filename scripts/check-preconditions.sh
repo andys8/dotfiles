@@ -16,6 +16,7 @@ commands=(
   i3lock # lockscreen
   idea # intellij ide
   java
+  lxappearance # configure themes
   lynis # system audit
   nix-channel
   nix-env
@@ -95,9 +96,21 @@ for i in "${commands[@]}"; do check "$i"; done
   fail "sdkman installation is missing";
 }
 
-# xcursor theme: breeze
+# cursor theme: xcursor-breeze
 [[ $(find /usr/share/icons -type d -name "cursors") =~ "breeze" ]] || {
-  fail "xcursor theme breeze is missing";
+  fail "xcursor-breeze cursor theme is missing";
+}
+[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "breeze" ]] || {
+  fail "xcursor-breeze cursor theme is not configured as gtk 3.0 theme";
+}
+
+# theme: ant-dracula
+[[ -d /usr/share/themes/Ant-Dracula ]] || {
+  fail "Ant-Dracula theme is missing";
+}
+
+[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Ant-Dracula" ]] || {
+  fail "Ant-Dracula theme is not configured as gtk 3.0 theme";
 }
 
 # Verify files exist
