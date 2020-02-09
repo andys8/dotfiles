@@ -5,38 +5,41 @@ xrdb ~/.Xresources
 
 # System tray
 if [ -z "$(pgrep trayer)" ]; then
-    trayer \
-        --align center \
-        --alpha 0 \
-        --distance 2 \
-        --edge bottom \
-        --height 18 \
-        --heighttype pixel \
-        --iconspacing 6 \
-        --monitor primary \
-        --tint 0x44475a \
-        --transparent true \
-        --widthtype request &
+	trayer \
+		--align center \
+		--alpha 0 \
+		--distance 2 \
+		--edge bottom \
+		--height 18 \
+		--heighttype pixel \
+		--iconspacing 6 \
+		--monitor primary \
+		--tint 0x44475a \
+		--transparent true \
+		--widthtype request &
 fi
 
 # Network Manager Icon
 if [ -z "$(pgrep nm-applet)" ]; then
-    nm-applet --sm-disable &
+	nm-applet --sm-disable &
 fi
 
 # Volume Icon
 if [ -z "$(pgrep pa-applet)" ]; then
-    pa-applet &
+	pa-applet &
 fi
 
 # Lock screen on disabled monitor
 if [ -z "$(pgrep xss-lock)" ]; then
-    xss-lock -l -- lock &
+	xss-lock -l -- lock &
 fi
 
-# Battery icon (and notification)
+# Battery icon(s) (and notification)
 if [ -z "$(pgrep cbatticon)" ]; then
-    cbatticon -u 30 &
+	BATTERIES=$(cd /sys/class/power_supply && find BAT*)
+	for BAT in $BATTERIES; do
+		cbatticon -u 30 "$BAT" &
+	done
 fi
 
 # Keyboard layout: German, no dead keys
