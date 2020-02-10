@@ -1,6 +1,6 @@
 transparent false
-geometry 10x1-550-0
-max_geometry 10x1-550-0
+geometry 10x1-510-0
+max_geometry 10x1-510-0
 icon_gravity SE
 window_layer bottom
 sticky true
