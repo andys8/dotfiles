@@ -29,6 +29,7 @@ in
     scala # scala compiler
     sent # suckless presentation tool
     shfmt # format shell scripts
+    stalonetray # tray icons
     time # measure time
     toilet # ascii art fonts
     vokoscreen # screen recorder
@@ -64,7 +65,6 @@ in
     slack-term # slack tui
     sxiv # image viewer
     translate-shell # trans command
-    trayer # tray icons for xmonad
     xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
   ]

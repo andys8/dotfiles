@@ -1,0 +1,8 @@
+transparent false
+geometry 10x1-550-0
+icon_gravity SE
+window_layer bottom
+sticky true
+icon_size 16
+slot_size 22
+background "#44475a"

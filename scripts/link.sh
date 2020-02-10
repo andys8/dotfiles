@@ -88,3 +88,6 @@ ln -sf ~/dotfiles/fx/fxrc ~/.fxrc
 
 # Xresources
 ln -sf ~/dotfiles/Xresources ~/.Xresources
+
+# stalonetray
+ln -sf ~/dotfiles/stalonetrayrc ~/.stalonetrayrc

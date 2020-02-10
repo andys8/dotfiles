@@ -4,19 +4,8 @@
 xrdb ~/.Xresources
 
 # System tray
-if [ -z "$(pgrep trayer)" ]; then
-	trayer \
-		--align center \
-		--alpha 0 \
-		--distance 2 \
-		--edge bottom \
-		--height 18 \
-		--heighttype pixel \
-		--iconspacing 6 \
-		--monitor primary \
-		--tint 0x44475a \
-		--transparent true \
-		--widthtype request &
+if [ -z "$(pgrep stalonetray)" ]; then
+	stalonetray &
 fi
 
 # Network Manager Icon
