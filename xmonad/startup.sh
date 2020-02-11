@@ -4,9 +4,8 @@
 xrdb ~/.Xresources
 
 # System tray
-if [ -z "$(pgrep stalonetray)" ]; then
-	stalonetray &
-fi
+killall stalonetray
+stalonetray &
 
 # Network Manager Icon
 if [ -z "$(pgrep nm-applet)" ]; then
