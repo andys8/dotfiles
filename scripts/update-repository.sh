@@ -2,5 +2,5 @@
 set -euo pipefail
 
 git fetch
-git diff @ "@{upstream}"
+git --no-pager diff @ "@{upstream}"
 git pull
