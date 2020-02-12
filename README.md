@@ -105,7 +105,9 @@ Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 ```
 
-### Download dictionaries for spell checking
+### Spell checking
+
+Download dictionaries for spell checking
 
 ```sh
 git clone https://github.com/qutebrowser/qutebrowser.git
