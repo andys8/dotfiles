@@ -1,0 +1,5 @@
+#!/bin/bash
+# Better UI for hoogle with zenity input and rofi selection
+
+HOOGLE_SEARCH="$(zenity --entry --text='Hoogle Search' --width=400)"
+[ "$HOOGLE_SEARCH" ] && hoogle --count=100 "$HOOGLE_SEARCH" | rofi -dmenu -i -p 'Hoogle' | xclip -sel clip
