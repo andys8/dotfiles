@@ -79,7 +79,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 ## Xmonad
 
-`/usr/share/xsessions/xmonad.desktop` for lightdm
+`/usr/share/xsessions/xmonad.desktop` for lightdm entry
 
 ```text
 [Desktop Entry]
