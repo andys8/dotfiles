@@ -160,7 +160,7 @@ rofiRun = "rofi -show run -i -display-run \"$ \""
 
 lock = "lock"
 
-rofiPass = "lastpass-rofi.sh"
+rofiPass = "lastpass-rofi"
 
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
 screenshotWholeScreen =

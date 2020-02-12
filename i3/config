@@ -104,7 +104,7 @@ bindsym Ctrl+$alt+$mod+BackSpace exec lock
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager
 
 # password manager
-bindsym $alt+$mod+p exec "lastpass-rofi.sh"
+bindsym $alt+$mod+p exec "lastpass-rofi"
 
 # Monitors
 bindsym $mod+$alt+1 exec "autorandr --load 1 && i3-msg restart"
