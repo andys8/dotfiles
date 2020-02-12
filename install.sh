@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu pipefail
 
-git pull
+./scripts/update-repository.sh
 
 # Link files and directories
 ./scripts/link.sh
