@@ -92,3 +92,5 @@ ln -sf ~/dotfiles/Xresources ~/.Xresources
 
 # stalonetray
 ln -sf ~/dotfiles/stalonetrayrc ~/.stalonetrayrc
+
+echo "Links updated"

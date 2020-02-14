@@ -5,15 +5,13 @@ section() {
 	echo "$(tput setaf 2)>>> $1$(tput sgr 0)"
 }
 
-section "Install and update dotfiles"
-
 section "Update repository"
 ./scripts/update-repository.sh
 
 section "Check pre-conditions"
 ./scripts/check-preconditions.sh
 
-section "Create symbolic links"
+section "Create symlinks"
 ./scripts/link.sh
 
 section "Update Nix"

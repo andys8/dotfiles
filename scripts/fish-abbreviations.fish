@@ -50,3 +50,5 @@ abbr -a -U -- tl 'toilet -t -F border -f future --gay'
 abbr -a -U -- v vim
 abbr -a -U -- vi vim
 abbr -a -U -- öö ll
+
+echo "Fish abbreviations updated"
