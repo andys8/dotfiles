@@ -100,6 +100,7 @@ for i in "${commands[@]}"; do check "$i"; done
 [[ $(find /usr/share/icons -type d -name "cursors") =~ "breeze" ]] || {
   fail "xcursor-breeze cursor theme is missing";
 }
+
 [[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "breeze" ]] || {
   fail "xcursor-breeze cursor theme is not configured as gtk 3.0 theme";
 }
@@ -111,6 +112,13 @@ for i in "${commands[@]}"; do check "$i"; done
 
 [[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Ant-Dracula" ]] || {
   fail "Ant-Dracula theme is not configured as gtk 3.0 theme";
+}
+
+# qutebrowser fixed version
+QUTEBROWSER_VERSION=$(qutebrowser --version | head -n1)
+QUTEBROWSER_EXPECTED="v1.10."
+[[ $QUTEBROWSER_VERSION =~ $QUTEBROWSER_EXPECTED ]] || {
+  fail "Qutebrowser version has to match $QUTEBROWSER_EXPECTED ($QUTEBROWSER_VERSION)";
 }
 
 # Verify files exist

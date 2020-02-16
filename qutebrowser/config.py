@@ -803,7 +803,7 @@ c.fonts.keyhint = '12pt monospace'
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = '"SauceCodePro Nerd Font", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.default_family = ['SauceCodePro Nerd Font', 'Courier', 'Liberation Mono', 'monospace', 'Fixed', 'Consolas', 'Terminal']
 
 ## Font used for prompts.
 ## Type: Font
