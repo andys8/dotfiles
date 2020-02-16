@@ -12,6 +12,7 @@ in
     cabal2nix # Convert cabal files to nix
     cachix # nix chaching
     cargo # rust package manager
+    chromium # web browser
     coursier # scala build tool
     ctop # top for containers
     exa # ls replacement
@@ -41,7 +42,6 @@ in
     ack # search in files
     autojump # jump into directory with j
     cbatticon # battery icon and warning
-    chromium # web browser
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer
