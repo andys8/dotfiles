@@ -13,15 +13,14 @@ import           XMonad.Actions.PhysicalScreens
 import           XMonad.Actions.SinkAll
 import           XMonad.Actions.UpdatePointer
 import           XMonad.Hooks.DynamicLog
-import           XMonad.Hooks.EwmhDesktops      ( ewmh )
+import           XMonad.Hooks.EwmhDesktops                ( ewmh )
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.SetWMName
 import           XMonad.Hooks.WorkspaceHistory as WH
 import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
-import           XMonad.Layout.IndependentScreens
-                                                ( countScreens )
+import           XMonad.Layout.IndependentScreens         ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -37,7 +36,7 @@ import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
 import qualified XMonad.StackSet               as W
 import           XMonad.Util.Paste
-import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.Run                          ( spawnPipe )
 
 -- Workspaces --
 data Workspace
@@ -96,7 +95,12 @@ grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
 
 oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
-layouts = bsp ||| oneBig ||| grid
+zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace BSP.emptyBSP
+ where
+  zenSpace =
+    spacingRaw False (Border 100 100 500 500) True (Border 10 10 10 10) True
+
+layouts = bsp ||| oneBig ||| grid ||| zenMode
 
 myLayout =
   avoidStruts $ smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
