@@ -23,6 +23,7 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 # c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
 c.aliases = {
     'chromium': 'spawn chromium-browser {url}',
+    'lastpass': 'spawn --userscript qute-lastpass',
     'o': 'open',
     'q': 'quit',
     'qrcode': 'spawn i3-sensible-terminal -e sh -c "qrcode-terminal {url}; read -p \'\'"'
