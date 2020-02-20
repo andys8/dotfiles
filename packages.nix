@@ -1,8 +1,6 @@
 let
   pkgs = import <nixpkgs> {};
   fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
-  # haskell-ide-engine 0.14.0.0
-  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/c6e93d2d641ef48703eabed8ec5cde3d774cb0e5") {};
 in
 (
   with fixed; [
@@ -82,21 +80,4 @@ in
     elm-language-server # language-server
     elm-test # elm test runner
   ]
-) ++ (
-  with pkgs.haskellPackages; [
-    brittany # code formatter
-    git-brunch # git checkout branch tui
-    hindent # Haskell format (alternative)
-    hoogle # function documentation
-    network-manager-tui # network tui
-  ]
-) ++ [
-  (
-    # haskell ide engine
-    all-hies.selection {
-      selector = p: {
-        inherit (p) ghc865;
-      };
-    }
-  )
-]
+)
