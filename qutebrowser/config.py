@@ -574,6 +574,7 @@ c.content.headers.do_not_track = True
 ## always exempt from hostblocking.
 ## Type: List of String
 # c.content.host_blocking.whitelist = ['piwik.org']
+c.content.host_blocking.whitelist = ['www.googleadservices.com']
 
 ## Enable hyperlink auditing (`<a ping>`).
 ## Type: Bool
