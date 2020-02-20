@@ -32,6 +32,7 @@ commands=(
   setxkbmap
   st # simple terminal
   stack # haskell build tool
+  tar
   timeshift # backup tool
   tr # used in shell scripts
   unzip

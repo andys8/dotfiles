@@ -8,7 +8,6 @@ nix-channel --update
 command -v "cachix" >/dev/null 2>&1 || {
   nix-env -iA cachix -f https://cachix.org/api/v1/install
 }
-cachix use all-hies
 
 # Install packages
 nix-env -irf packages.nix
