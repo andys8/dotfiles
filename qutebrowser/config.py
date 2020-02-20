@@ -1048,7 +1048,8 @@ c.input.insert_mode.auto_load = True
 # c.qt.force_software_rendering = False
 
 # disabling gpu for now because of probably related freezes in arch
-c.qt.force_software_rendering = 'chromium'
+# GPU currently enabled
+# c.qt.force_software_rendering = 'chromium'
 
 ## Turn on Qt HighDPI scaling. This is equivalent to setting
 ## QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
