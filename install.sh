@@ -26,6 +26,8 @@ section "Update Node/NPM"
 ./scripts/update-npm.sh
 section "Update Xmonad"
 ./scripts/update-xmonad.sh
+section "Update haskell-ide-engine"
+./scripts/update-haskell-ide-engine.sh
 
 section "Check post-conditions"
 ./scripts/check-preconditions.sh
