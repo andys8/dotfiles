@@ -605,7 +605,7 @@ c.content.cookies.accept = 'all'
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
-# c.content.dns_prefetch = False
+c.content.dns_prefetch = True
 
 ## Expand each subframe to its contents. This will flatten all the frames
 ## to become one scrollable page.
