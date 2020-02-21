@@ -955,7 +955,7 @@ c.fonts.default_family = ['SauceCodePro Nerd Font', 'Courier', 'Liberation Mono'
 ## either a float value with a "pt" suffix, or an integer value with a
 ## "px" suffix.
 ## Type: String
-c.fonts.default_size = '12pt'
+c.fonts.default_size = '13pt'
 
 ## Font used for the downloadbar.
 ## Type: Font
