@@ -1947,6 +1947,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 ## Bindings for insert mode
 config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
+config.bind('<Escape>', 'leave-mode ;; jseval -q document.activeElement.blur()', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
 
 ## Bindings for passthrough mode
