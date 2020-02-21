@@ -94,7 +94,7 @@ c.backend = 'webengine'
 ## Type: QssColor
 # c.colors.completion.item.selected.border.bottom = '#bbbb00'
 
-## Top border color of the completion widget category headers.
+## Top border color of the selected completion item.
 ## Type: QssColor
 # c.colors.completion.item.selected.border.top = '#bbbb00'
 
@@ -102,8 +102,12 @@ c.backend = 'webengine'
 ## Type: QtColor
 # c.colors.completion.item.selected.fg = 'black'
 
+## Foreground color of the matched text in the selected completion item.
+## Type: QtColor
+# c.colors.completion.item.selected.match.fg = '#ff4444'
+
 ## Foreground color of the matched text in the completion.
-## Type: QssColor
+## Type: QtColor
 # c.colors.completion.match.fg = '#ff4444'
 
 ## Background color of the completion widget for odd rows.
@@ -117,6 +121,26 @@ c.backend = 'webengine'
 ## Color of the scrollbar handle in the completion view.
 ## Type: QssColor
 # c.colors.completion.scrollbar.fg = 'white'
+
+## Background color of the context menu. If set to null, the Qt default
+## is used.
+## Type: QssColor
+# c.colors.contextmenu.menu.bg = None
+
+## Foreground color of the context menu. If set to null, the Qt default
+## is used.
+## Type: QssColor
+# c.colors.contextmenu.menu.fg = None
+
+## Background color of the context menu's selected item. If set to null,
+## the Qt default is used.
+## Type: QssColor
+# c.colors.contextmenu.selected.bg = None
+
+## Foreground color of the context menu's selected item. If set to null,
+## the Qt default is used.
+## Type: QssColor
+# c.colors.contextmenu.selected.fg = None
 
 ## Background color for the download bar.
 ## Type: QssColor
@@ -337,7 +361,7 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 # c.colors.statusbar.url.warn.fg = 'yellow'
 
 ## Background color of the tab bar.
-## Type: QtColor
+## Type: QssColor
 # c.colors.tabs.bar.bg = '#555555'
 
 ## Background color of unselected even tabs.
@@ -377,6 +401,38 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Type: QtColor
 # c.colors.tabs.odd.fg = 'white'
 
+## Background color of pinned unselected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.even.bg = 'darkseagreen'
+
+## Foreground color of pinned unselected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.even.fg = 'white'
+
+## Background color of pinned unselected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.odd.bg = 'seagreen'
+
+## Foreground color of pinned unselected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.odd.fg = 'white'
+
+## Background color of pinned selected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.even.bg = 'black'
+
+## Foreground color of pinned selected even tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.even.fg = 'white'
+
+## Background color of pinned selected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.odd.bg = 'black'
+
+## Foreground color of pinned selected odd tabs.
+## Type: QtColor
+# c.colors.tabs.pinned.selected.odd.fg = 'white'
+
 ## Background color of selected even tabs.
 ## Type: QtColor
 # c.colors.tabs.selected.even.bg = 'black'
@@ -398,6 +454,10 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Type: QtColor
 # c.colors.webpage.bg = 'white'
 
+## Force `prefers-color-scheme: dark` colors for websites.
+## Type: Bool
+# c.colors.webpage.prefers_color_scheme_dark = False
+
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
 ## Type: Int
@@ -415,6 +475,15 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Minimum amount of characters needed to update completions.
 ## Type: Int
 # c.completion.min_chars = 1
+
+## Which categories to show (in which order) in the :open completion.
+## Type: FlagList
+## Valid values:
+##   - searchengines
+##   - quickmarks
+##   - bookmarks
+##   - history
+# c.completion.open_categories = ['searchengines', 'quickmarks', 'bookmarks', 'history']
 
 ## Move on to the next part when there's only one possible completion
 ## left.
@@ -442,18 +511,27 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Type: Bool
 # c.completion.shrink = False
 
-## Format of timestamps (e.g. for the history completion).
-## Type: TimestampTemplate
+## Format of timestamps (e.g. for the history completion). See
+## https://sqlite.org/lang_datefunc.html for allowed substitutions.
+## Type: String
 # c.completion.timestamp_format = '%Y-%m-%d'
 
 ## Execute the best-matching command on a partial match.
 ## Type: Bool
 # c.completion.use_best_match = False
 
+## A list of patterns which should not be shown in the history. This only
+## affects the completion. Matching URLs are still saved in the history
+## (and visible on the qute://history page), but hidden in the
+## completion. Changing this setting will cause the completion history to
+## be regenerated on the next start, which will take a short while.
+## Type: List of UrlPattern
+# c.completion.web_history.exclude = []
+
 ## Number of URLs to show in the web history. 0: no history / -1:
 ## unlimited
 ## Type: Int
-# c.completion.web_history_max_items = -1
+# c.completion.web_history.max_items = -1
 
 ## Require a confirmation before quitting the application.
 ## Type: ConfirmQuit
@@ -463,6 +541,11 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
 # c.confirm_quit = ['never']
+
+## Automatically start playing `<video>` elements. Note: On Qt < 5.11,
+## this option needs a restart and does not support URL patterns.
+## Type: Bool
+# c.content.autoplay = True
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -486,12 +569,17 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Type: Int
 # c.content.cache.size = None
 
+## Allow websites to read canvas elements. Note this is needed for some
+## websites to work properly.
+## Type: Bool
+# c.content.canvas_reading = True
+
 ## Which cookies to accept.
 ## Type: String
 ## Valid values:
 ##   - all: Accept all cookies.
-##   - no-3rdparty: Accept cookies from the same origin only.
-##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain.
+##   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
+##   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 ##   - never: Don't accept cookies at all.
 # c.content.cookies.accept = 'no-3rdparty'
 c.content.cookies.accept = 'all'
@@ -506,16 +594,18 @@ c.content.cookies.accept = 'all'
 ## Type: String
 # c.content.default_encoding = 'iso-8859-1'
 
-## Enable extra tools for Web developers. This needs to be enabled for
-## `:inspector` to work and also adds an _Inspect_ entry to the context
-## menu. For QtWebEngine, see `--enable-webengine-inspector` in
-## `qutebrowser --help` instead.
-## Type: Bool
-# c.content.developer_extras = False
+## Allow websites to share screen content. On Qt < 5.10, a dialog box is
+## always displayed, even if this is set to "true".
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.desktop_capture = 'ask'
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
-# c.content.dns_prefetch = True
+# c.content.dns_prefetch = False
 
 ## Expand each subframe to its contents. This will flatten all the frames
 ## to become one scrollable page.
@@ -530,9 +620,10 @@ c.content.cookies.accept = 'all'
 ##   - ask
 # c.content.geolocation = 'ask'
 
-## Value to send in the `Accept-Language` header.
+## Value to send in the `Accept-Language` header. Note that the value
+## read from JavaScript is always the global value.
 ## Type: String
-# c.content.headers.accept_language = 'en-US,en'
+# c.content.headers.accept_language = 'en-US,en;q=0.9'
 
 ## Custom headers for qutebrowser HTTP requests.
 ## Type: Dict
@@ -545,17 +636,28 @@ c.content.cookies.accept = 'all'
 c.content.headers.do_not_track = True
 
 ## When to send the Referer header. The Referer header tells websites
-## from which website you were coming from when visting them.
+## from which website you were coming from when visiting them. No restart
+## is needed with QtWebKit.
 ## Type: String
 ## Valid values:
 ##   - always: Always send the Referer.
 ##   - never: Never send the Referer. This is not recommended, as some sites may break.
-##   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites.
+##   - same-domain: Only send the Referer for the same domain. This will still protect your privacy, but shouldn't break any sites. With QtWebEngine, the referer will still be sent for other domains, but with stripped path information.
 # c.content.headers.referer = 'same-domain'
 
-## User agent to send. Unset to send the default.
-## Type: String
-# c.content.headers.user_agent = None
+## User agent to send.  The following placeholders are defined:  *
+## `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+## The underlying WebKit version (set to a fixed value   with
+## QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+## QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+## `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+## QtWebEngine. * `{upstream_browser_version}`: The corresponding
+## Safari/Chrome version. * `{qutebrowser_version}`: The currently
+## running qutebrowser version.  The default value is equal to the
+## unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+## read from JavaScript is always the global value.
+## Type: FormatString
+# c.content.headers.user_agent = 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {qt_key}/{qt_version} {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}'
 
 ## Enable host blocking.
 ## Type: Bool
@@ -564,16 +666,23 @@ c.content.headers.do_not_track = True
 ## List of URLs of lists which contain hosts to block.  The file can be
 ## in one of the following formats:  - An `/etc/hosts`-like file - One
 ## host per line - A zip-file of any of the above, with either only one
-## file, or a file   named `hosts` (with any extension).
+## file, or a file   named `hosts` (with any extension).  It's also
+## possible to add a local file or directory via a `file://` URL. In case
+## of a directory, all files in the directory are read as adblock lists.
+## The file `~/.config/qutebrowser/blocked-hosts` is always read if it
+## exists.
 ## Type: List of Url
-# c.content.host_blocking.lists = ['https://www.malwaredomainlist.com/hostslist/hosts.txt', 'http://someonewhocares.org/hosts/hosts', 'http://winhelp2002.mvps.org/hosts.zip', 'http://malwaredomains.lehigh.edu/files/justdomains.zip', 'https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&mimetype=plaintext']
+# c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
-## List of domains that should always be loaded, despite being ad-
-## blocked. Domains may contain * and ? wildcards and are otherwise
-## required to exactly match the requested domain. Local domains are
-## always exempt from hostblocking.
-## Type: List of String
-# c.content.host_blocking.whitelist = ['piwik.org']
+## A list of patterns that should always be loaded, despite being ad-
+## blocked. Note this whitelists blocked hosts, not first-party URLs. As
+## an example, if `example.org` loads an ad from `ads.example.org`, the
+## whitelisted host should be `ads.example.org`. If you want to disable
+## the adblocker on a given page, use the `content.host_blocking.enabled`
+## setting with a URL pattern instead. Local domains are always exempt
+## from hostblocking.
+## Type: List of UrlPattern
+# c.content.host_blocking.whitelist = []
 c.content.host_blocking.whitelist = ['www.googleadservices.com']
 
 ## Enable hyperlink auditing (`<a ping>`).
@@ -609,7 +718,9 @@ c.content.javascript.can_access_clipboard = True
 ## Log levels to use for JavaScript console logging messages. When a
 ## JavaScript message with the level given in the dictionary key is
 ## logged, the corresponding dictionary value selects the qutebrowser
-## logger to use. On QtWebKit, the "unknown" setting is always used.
+## logger to use. On QtWebKit, the "unknown" setting is always used. The
+## following levels are valid: `none`, `debug`, `info`, `warning`,
+## `error`.
 ## Type: Dict
 # c.content.javascript.log = {'unknown': 'debug', 'info': 'debug', 'warning': 'debug', 'error': 'debug'}
 
@@ -642,6 +753,20 @@ c.content.javascript.can_access_clipboard = True
 ##   - ask
 # c.content.media_capture = 'ask'
 
+## Allow websites to lock your mouse pointer.
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.mouse_lock = 'ask'
+
+## Automatically mute tabs. Note that if the `:tab-mute` command is used,
+## the mute status for the affected tab is now controlled manually, and
+## this setting doesn't have any effect.
+## Type: Bool
+# c.content.mute = False
+
 ## Netrc-file for HTTP authentication. If unset, `~/.netrc` is used.
 ## Type: File
 # c.content.netrc_file = None
@@ -659,6 +784,15 @@ c.content.notifications = False
 ## viewer.
 ## Type: Bool
 # c.content.pdfjs = False
+
+## Allow websites to request persistent storage quota via
+## `navigator.webkitPersistentStorage.requestQuota`.
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.persistent_storage = 'ask'
 
 ## Enable plugins in Web pages.
 ## Type: Bool
@@ -685,6 +819,20 @@ c.content.notifications = False
 ## Type: Bool
 # c.content.proxy_dns_requests = True
 
+## Allow websites to register protocol handlers via
+## `navigator.registerProtocolHandler`.
+## Type: BoolAsk
+## Valid values:
+##   - true
+##   - false
+##   - ask
+# c.content.register_protocol_handler = 'ask'
+
+## Enable quirks (such as faked user agent headers) needed to get
+## specific sites to work properly.
+## Type: Bool
+# c.content.site_specific_quirks = True
+
 ## Validate SSL handshakes.
 ## Type: BoolAsk
 ## Valid values:
@@ -701,6 +849,16 @@ c.content.notifications = False
 ## Type: Bool
 # c.content.webgl = True
 
+## Which interfaces to expose via WebRTC. On Qt 5.10, this option doesn't
+## work because of a Qt bug.
+## Type: String
+## Valid values:
+##   - all-interfaces: WebRTC has the right to enumerate all interfaces and bind them to discover public interfaces.
+##   - default-public-and-private-interfaces: WebRTC should only use the default route used by http. This also exposes the associated default private address. Default route is the route chosen by the OS on a multi-homed endpoint.
+##   - default-public-interface-only: WebRTC should only use the default route used by http. This doesn't expose any local addresses.
+##   - disable-non-proxied-udp: WebRTC should only use TCP to contact peers or servers unless the proxy server supports UDP. This doesn't expose any local addresses either.
+# c.content.webrtc_ip_handling_policy = 'all-interfaces'
+
 ## Limit fullscreen to the browser window (does not expand to fill the
 ## screen).
 ## Type: Bool
@@ -708,7 +866,9 @@ c.content.notifications = False
 
 ## Monitor load requests for cross-site scripting attempts. Suspicious
 ## scripts will be blocked and reported in the inspector's JavaScript
-## console. Enabling this feature might have an impact on performance.
+## console. Note that bypasses for the XSS auditor are widely known and
+## it can be abused for cross-site info leaks in some scenarios, see:
+## https://www.chromium.org/developers/design-documents/xss-auditor
 ## Type: Bool
 # c.content.xss_auditing = False
 
@@ -753,7 +913,7 @@ c.content.notifications = False
 # c.downloads.remove_finished = -1
 
 ## Editor (and arguments) to use for the `open-editor` command. The
-## following placeholders are defined: * `{file}`: Filename of the file
+## following placeholders are defined:  * `{file}`: Filename of the file
 ## to be edited. * `{line}`: Line in which the caret is found in the
 ## text. * `{column}`: Column in which the caret is found in the text. *
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
@@ -768,56 +928,70 @@ c.editor.command = ["i3-sensible-terminal", "-e", "vim", "{}"]
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = 'bold 12pt monospace'
+# c.fonts.completion.category = 'bold default_size default_family'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '12pt monospace'
+# c.fonts.completion.entry = 'default_size default_family'
+
+## Font used for the context menu. If set to null, the Qt default is
+## used.
+## Type: Font
+# c.fonts.contextmenu = None
 
 ## Font used for the debugging console.
 ## Type: QtFont
-# c.fonts.debug_console = '10pt monospace'
+# c.fonts.debug_console = 'default_size default_family'
+
+## Default font families to use. Whenever "default_family" is used in a
+## font setting, it's replaced with the fonts listed here. If set to an
+## empty value, a system-specific monospace default is used.
+## Type: List of Font, or Font
+# c.fonts.default_family = []
+c.fonts.default_family = ['SauceCodePro Nerd Font', 'Courier', 'Liberation Mono', 'monospace', 'Fixed', 'Consolas', 'Terminal']
+
+## Default font size to use. Whenever "default_size" is used in a font
+## setting, it's replaced with the size listed here. Valid values are
+## either a float value with a "pt" suffix, or an integer value with a
+## "px" suffix.
+## Type: String
+c.fonts.default_size = '12pt'
 
 ## Font used for the downloadbar.
 ## Type: Font
-# c.fonts.downloads = '10pt monospace'
+# c.fonts.downloads = 'default_size default_family'
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = 'bold 12pt monospace'
+# c.fonts.hints = 'bold default_size default_family'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '12pt monospace'
+# c.fonts.keyhint = 'default_size default_family'
 
 ## Font used for error messages.
 ## Type: Font
-# c.fonts.messages.error = '10pt monospace'
+# c.fonts.messages.error = 'default_size default_family'
 
 ## Font used for info messages.
 ## Type: Font
-# c.fonts.messages.info = '10pt monospace'
+# c.fonts.messages.info = 'default_size default_family'
 
 ## Font used for warning messages.
 ## Type: Font
-# c.fonts.messages.warning = '10pt monospace'
-
-## Default monospace fonts. Whenever "monospace" is used in a font
-## setting, it's replaced with the fonts listed here.
-## Type: Font
-c.fonts.default_family = ['SauceCodePro Nerd Font', 'Courier', 'Liberation Mono', 'monospace', 'Fixed', 'Consolas', 'Terminal']
+# c.fonts.messages.warning = 'default_size default_family'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '12pt sans-serif'
+# c.fonts.prompts = 'default_size sans-serif'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '14pt monospace'
+# c.fonts.statusbar = 'default_size default_family'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '12pt monospace'
+# c.fonts.tabs = 'default_size default_family'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -897,6 +1071,10 @@ c.hints.auto_follow = 'always'
 ## Type: Bool
 # c.hints.hide_unmatched_rapid_hints = True
 
+## Leave hint mode when starting a new page load.
+## Type: Bool
+# c.hints.leave_on_load = True
+
 ## Minimum number of characters used for hint strings.
 ## Type: Int
 # c.hints.min_chars = 1
@@ -922,6 +1100,11 @@ c.hints.auto_follow = 'always'
 ## Type: Bool
 # c.hints.scatter = True
 
+## CSS selectors used to determine which elements on a page should have
+## hints.
+## Type: Dict
+# c.hints.selectors = {'all': ['a', 'area', 'textarea', 'select', 'input:not([type="hidden"])', 'button', 'frame', 'iframe', 'img', 'link', 'summary', '[onclick]', '[onmousedown]', '[role="link"]', '[role="option"]', '[role="button"]', '[ng-click]', '[ngClick]', '[data-ng-click]', '[x-ng-click]', '[tabindex]'], 'links': ['a[href]', 'area[href]', 'link[href]', '[role="link"][href]'], 'images': ['img'], 'media': ['audio', 'img', 'video'], 'url': ['[src]', '[href]'], 'inputs': ['input[type="text"]', 'input[type="date"]', 'input[type="datetime-local"]', 'input[type="email"]', 'input[type="month"]', 'input[type="number"]', 'input[type="password"]', 'input[type="search"]', 'input[type="tel"]', 'input[type="time"]', 'input[type="url"]', 'input[type="week"]', 'input:not([type])', 'textarea']}
+
 ## Make characters in hint strings uppercase.
 ## Type: Bool
 # c.hints.uppercase = False
@@ -933,6 +1116,10 @@ c.hints.auto_follow = 'always'
 ## Type: Int
 # c.history_gap_interval = 30
 
+## Allow Escape to quit the crash reporter.
+## Type: Bool
+# c.input.escape_quits_reporter = True
+
 ## Which unbound keys to forward to the webview in normal mode.
 ## Type: String
 ## Valid values:
@@ -940,6 +1127,10 @@ c.hints.auto_follow = 'always'
 ##   - auto: Forward unbound non-alphanumeric keys.
 ##   - none: Don't forward any keys.
 # c.input.forward_unbound_keys = 'auto'
+
+## Enter insert mode if an editable element is clicked.
+## Type: Bool
+# c.input.insert_mode.auto_enter = True
 
 ## Leave insert mode if a non-editable element is clicked.
 ## Type: Bool
@@ -949,6 +1140,12 @@ c.hints.auto_follow = 'always'
 ## after loading the page.
 ## Type: Bool
 c.input.insert_mode.auto_load = True
+
+## Leave insert mode when starting a new page load. Patterns may be
+## unreliable on this setting, and they may match the url you are
+## navigating to, or the URL you are navigating from.
+## Type: Bool
+c.input.insert_mode.leave_on_load = True
 
 ## Switch to insert mode when clicking flash and other plugins.
 ## Type: Bool
@@ -1012,7 +1209,7 @@ c.input.insert_mode.auto_load = True
 # c.new_instance_open_target = 'tab'
 
 ## Which window to choose when opening links as new tabs. When
-## `new_instance_open_target` is not set to `window`, this is ignored.
+## `new_instance_open_target` is set to `window`, this is ignored.
 ## Type: String
 ## Valid values:
 ##   - first-opened: Open new tabs in the first (oldest) opened window.
@@ -1042,25 +1239,63 @@ c.input.insert_mode.auto_load = True
 ## Type: String
 # c.qt.force_platform = None
 
-## Force software rendering for QtWebEngine. This is needed for
-## QtWebEngine to work with Nouveau drivers.
-## Type: Bool
-# c.qt.force_software_rendering = False
+## Force a Qt platformtheme to use. This sets the `QT_QPA_PLATFORMTHEME`
+## environment variable which controls dialogs like the filepicker. By
+## default, Qt determines the platform theme based on the desktop
+## environment.
+## Type: String
+# c.qt.force_platformtheme = None
 
+## Force software rendering for QtWebEngine. This is needed for
+## QtWebEngine to work with Nouveau drivers and can be useful in other
+## scenarios related to graphic issues.
+## Type: String
+## Valid values:
+##   - software-opengl: Tell LibGL to use a software implementation of GL (`LIBGL_ALWAYS_SOFTWARE` / `QT_XCB_FORCE_SOFTWARE_OPENGL`)
+##   - qt-quick: Tell Qt Quick to use a software renderer instead of OpenGL. (`QT_QUICK_BACKEND=software`)
+##   - chromium: Tell Chromium to disable GPU support and use Skia software rendering instead. (`--disable-gpu`)
+##   - none: Don't force software rendering.
+# c.qt.force_software_rendering = 'none'
 # disabling gpu for now because of probably related freezes in arch
 # GPU currently enabled
 # c.qt.force_software_rendering = 'chromium'
 
 ## Turn on Qt HighDPI scaling. This is equivalent to setting
-## QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
-## as it can cause issues with some bitmap fonts. As an alternative to
-## this, it's possible to set font sizes and the `zoom.default` setting.
+## QT_AUTO_SCREEN_SCALE_FACTOR=1 or QT_ENABLE_HIGHDPI_SCALING=1 (Qt >=
+## 5.14) in the environment. It's off by default as it can cause issues
+## with some bitmap fonts. As an alternative to this, it's possible to
+## set font sizes and the `zoom.default` setting.
 ## Type: Bool
 # c.qt.highdpi = False
 
-## Show a scrollbar.
-## Type: Bool
-# c.scrolling.bar = False
+## When to use Chromium's low-end device mode. This improves the RAM
+## usage of renderer processes, at the expense of performance.
+## Type: String
+## Valid values:
+##   - always: Always use low-end device mode.
+##   - auto: Decide automatically (uses low-end mode with < 1 GB available RAM).
+##   - never: Never use low-end device mode.
+# c.qt.low_end_device_mode = 'auto'
+
+## Which Chromium process model to use. Alternative process models use
+## less resources, but decrease security and robustness. See the
+## following pages for more details:    -
+## https://www.chromium.org/developers/design-documents/process-models
+## - https://doc.qt.io/qt-5/qtwebengine-features.html#process-models
+## Type: String
+## Valid values:
+##   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
+##   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
+##   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
+# c.qt.process_model = 'process-per-site-instance'
+
+## When to show the scrollbar.
+## Type: String
+## Valid values:
+##   - always: Always show the scrollbar.
+##   - never: Never show the scrollbar.
+##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
+# c.scrolling.bar = 'when-searching'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
@@ -1068,7 +1303,7 @@ c.input.insert_mode.auto_load = True
 # c.scrolling.smooth = False
 
 ## When to find text on a page case-insensitively.
-## Type: String
+## Type: IgnoreCase
 ## Valid values:
 ##   - always: Search case-insensitively.
 ##   - never: Search case-sensitively.
@@ -1155,6 +1390,18 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 ##   - bottom
 # c.statusbar.position = 'bottom'
 
+## List of widgets displayed in the statusbar.
+## Type: List of String
+## Valid values:
+##   - url: Current page URL.
+##   - scroll: Percentage of the current page position like `10%`.
+##   - scroll_raw: Raw percentage of the current page position like `10`.
+##   - history: Display an arrow when possible to go back/forward in history.
+##   - tabs: Current active tab, e.g. `2`.
+##   - keypress: Display pressed keys when composing a vi command.
+##   - progress: Progress bar for the current page loading.
+# c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
 c.tabs.background = True
@@ -1181,9 +1428,17 @@ c.tabs.background = True
 ## Type: Float
 # c.tabs.favicons.scale = 1.0
 
-## Show favicons in the tab bar.
-## Type: Bool
-# c.tabs.favicons.show = True
+## When to show favicons in the tab bar.
+## Type: String
+## Valid values:
+##   - always: Always show favicons.
+##   - never: Always hide favicons.
+##   - pinned: Show favicons only on pinned tabs.
+# c.tabs.favicons.show = 'always'
+
+## Maximum stack size to remember for tab switches (-1 for no maximum).
+## Type: Int
+# c.tabs.focus_stack_size = 10
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
@@ -1201,13 +1456,37 @@ c.tabs.background = True
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-c.tabs.last_close = 'close'
+# c.tabs.last_close = 'close'
+
+## Maximum width (in pixels) of tabs (-1 for no maximum). This setting
+## only applies when tabs are horizontal. This setting does not apply to
+## pinned tabs, unless `tabs.pinned.shrink` is False. This setting may
+## not apply properly if max_width is smaller than the minimum size of
+## tab contents, or smaller than tabs.min_width.
+## Type: Int
+# c.tabs.max_width = -1
+
+## Minimum width (in pixels) of tabs (-1 for the default minimum size
+## behavior). This setting only applies when tabs are horizontal. This
+## setting does not apply to pinned tabs, unless `tabs.pinned.shrink` is
+## False.
+## Type: Int
+# c.tabs.min_width = -1
+
+## When switching tabs, what input mode is applied.
+## Type: String
+## Valid values:
+##   - persist: Retain the current mode.
+##   - restore: Restore previously saved mode.
+##   - normal: Always revert to normal mode.
+# c.tabs.mode_on_change = 'normal'
 
 ## Switch between tabs using the mouse wheel.
 ## Type: Bool
 # c.tabs.mousewheel_switching = True
 
-## Position of new tabs opened from another tab.
+## Position of new tabs opened from another tab. See
+## `tabs.new_position.stacking` for controlling stacking behavior.
 ## Type: NewTabPosition
 ## Valid values:
 ##   - prev: Before the current tab.
@@ -1216,7 +1495,14 @@ c.tabs.last_close = 'close'
 ##   - last: At the end.
 # c.tabs.new_position.related = 'next'
 
-## Position of new tabs which aren't opened from another tab.
+## Stack related tabs on top of each other when opened consecutively.
+## Only applies for `next` and `prev` values of
+## `tabs.new_position.related` and `tabs.new_position.unrelated`.
+## Type: Bool
+# c.tabs.new_position.stacking = True
+
+## Position of new tabs which are not opened from another tab. See
+## `tabs.new_position.stacking` for controlling stacking behavior.
 ## Type: NewTabPosition
 ## Valid values:
 ##   - prev: Before the current tab.
@@ -1229,9 +1515,9 @@ c.tabs.last_close = 'close'
 ## Type: Padding
 # c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
 
-## Stay in insert/passthrough mode when switching tabs.
+## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
-# c.tabs.persist_mode_on_change = False
+# c.tabs.pinned.frozen = True
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
@@ -1282,21 +1568,32 @@ c.tabs.last_close = 'close'
 
 ## Format to use for the tab title. The following placeholders are
 ## defined:  * `{perc}`: Percentage as a string like `[10%]`. *
-## `{perc_raw}`: Raw percentage, e.g. `10`. * `{title}`: Title of the
-## current web page. * `{title_sep}`: The string ` - ` if a title is set,
-## empty otherwise. * `{index}`: Index of this tab. * `{id}`: Internal
-## tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
+## `{perc_raw}`: Raw percentage, e.g. `10`. * `{current_title}`: Title of
+## the current web page. * `{title_sep}`: The string ` - ` if a title is
+## set, empty otherwise. * `{index}`: Index of this tab. * `{id}`:
+## Internal tab ID of this tab. * `{scroll_pos}`: Page scroll position. *
 ## `{host}`: Host of the current web page. * `{backend}`: Either
 ## ''webkit'' or ''webengine'' * `{private}`: Indicates when private mode
 ## is enabled. * `{current_url}`: URL of the current web page. *
-## `{protocol}`: Protocol (http/https/...) of the current web page.
+## `{protocol}`: Protocol (http/https/...) of the current web page. *
+## `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
-# c.tabs.title.format = '{index}: {title}'
+# c.tabs.title.format = '{audio}{index}: {current_title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
 ## Type: FormatString
 # c.tabs.title.format_pinned = '{index}'
+
+## Show tooltips on tabs. Note this setting only affects windows opened
+## after it has been set.
+## Type: Bool
+# c.tabs.tooltips = True
+
+## Number of close tab actions to remember, per window (-1 for no
+## maximum).
+## Type: Int
+# c.tabs.undo_stack_size = 100
 
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
@@ -1326,10 +1623,16 @@ c.url.default_page = 'qute://bookmarks'
 ## Type: FlagList
 ## Valid values:
 ##   - host
+##   - port
 ##   - path
 ##   - query
 ##   - anchor
 # c.url.incdec_segments = ['path', 'query']
+
+## Open base URL of the searchengine if a searchengine shortcut is
+## invoked without parameters.
+## Type: Bool
+# c.url.open_base_url = False
 
 ## Search engines which can be used via the address bar. Maps a search
 ## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -1360,14 +1663,15 @@ c.url.start_pages = ['qute://bookmarks']
 ## Type: List of String
 # c.url.yank_ignored_parameters = ['ref', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
 
-## Hide the window decoration when using wayland.
+## Hide the window decoration.  This setting requires a restart on
+## Wayland.
 ## Type: Bool
-# c.window.hide_wayland_decoration = False
+# c.window.hide_decoration = False
 
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
-# c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
+# c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
 
 ## Default zoom level.
 ## Type: Perc
@@ -1424,6 +1728,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('<Alt-7>', 'tab-focus 7')
 # config.bind('<Alt-8>', 'tab-focus 8')
 # config.bind('<Alt-9>', 'tab-focus -1')
+# config.bind('<Alt-m>', 'tab-mute')
 # config.bind('<Ctrl-A>', 'navigate increment')
 # config.bind('<Ctrl-Alt-p>', 'print')
 # config.bind('<Ctrl-B>', 'scroll-page 0 -1')
@@ -1437,6 +1742,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('<Ctrl-Return>', 'follow-selected -t')
 # config.bind('<Ctrl-Shift-N>', 'open -p')
 # config.bind('<Ctrl-Shift-T>', 'undo')
+# config.bind('<Ctrl-Shift-Tab>', 'nop')
 # config.bind('<Ctrl-Shift-W>', 'close')
 # config.bind('<Ctrl-T>', 'open -t')
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
@@ -1491,6 +1797,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('g0', 'tab-focus 1')
 # config.bind('gB', 'set-cmd-text -s :bookmark-load -t')
 # config.bind('gC', 'tab-clone')
+# config.bind('gD', 'tab-give')
 # config.bind('gO', 'set-cmd-text :open -t -r {url:pretty}')
 # config.bind('gU', 'navigate up -t')
 # config.bind('g^', 'tab-focus 1')
@@ -1499,6 +1806,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
+# config.bind('gi', 'hint inputs --first')
 # config.bind('gl', 'tab-move -')
 # config.bind('gm', 'tab-move')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
@@ -1521,8 +1829,26 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('sk', 'set-cmd-text -s :bind')
 # config.bind('sl', 'set-cmd-text -s :set -t')
 # config.bind('ss', 'set-cmd-text -s :set')
+# config.bind('tIH', 'config-cycle -p -u *://*.{url:host}/* content.images ;; reload')
+# config.bind('tIh', 'config-cycle -p -u *://{url:host}/* content.images ;; reload')
+# config.bind('tIu', 'config-cycle -p -u {url} content.images ;; reload')
+# config.bind('tPH', 'config-cycle -p -u *://*.{url:host}/* content.plugins ;; reload')
+# config.bind('tPh', 'config-cycle -p -u *://{url:host}/* content.plugins ;; reload')
+# config.bind('tPu', 'config-cycle -p -u {url} content.plugins ;; reload')
+# config.bind('tSH', 'config-cycle -p -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tSh', 'config-cycle -p -u *://{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tSu', 'config-cycle -p -u {url} content.javascript.enabled ;; reload')
 # config.bind('th', 'back -t')
+# config.bind('tiH', 'config-cycle -p -t -u *://*.{url:host}/* content.images ;; reload')
+# config.bind('tih', 'config-cycle -p -t -u *://{url:host}/* content.images ;; reload')
+# config.bind('tiu', 'config-cycle -p -t -u {url} content.images ;; reload')
 # config.bind('tl', 'forward -t')
+# config.bind('tpH', 'config-cycle -p -t -u *://*.{url:host}/* content.plugins ;; reload')
+# config.bind('tph', 'config-cycle -p -t -u *://{url:host}/* content.plugins ;; reload')
+# config.bind('tpu', 'config-cycle -p -t -u {url} content.plugins ;; reload')
+# config.bind('tsH', 'config-cycle -p -t -u *://*.{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tsh', 'config-cycle -p -t -u *://{url:host}/* content.javascript.enabled ;; reload')
+# config.bind('tsu', 'config-cycle -p -t -u {url} content.javascript.enabled ;; reload')
 # config.bind('u', 'undo')
 # config.bind('v', 'enter-mode caret')
 # config.bind('wB', 'set-cmd-text -s :bookmark-load -w')
@@ -1538,10 +1864,12 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('xO', 'set-cmd-text :open -b -r {url:pretty}')
 # config.bind('xo', 'set-cmd-text -s :open -b')
 # config.bind('yD', 'yank domain -s')
+# config.bind('yM', 'yank inline [{title}]({url}) -s')
 # config.bind('yP', 'yank pretty-url -s')
 # config.bind('yT', 'yank title -s')
 # config.bind('yY', 'yank -s')
 # config.bind('yd', 'yank domain')
+# config.bind('ym', 'yank inline [{title}]({url})')
 # config.bind('yp', 'yank pretty-url')
 # config.bind('yt', 'yank title')
 # config.bind('yy', 'yank')
@@ -1571,6 +1899,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 # config.bind('j', 'move-to-next-line', mode='caret')
 # config.bind('k', 'move-to-prev-line', mode='caret')
 # config.bind('l', 'move-to-next-char', mode='caret')
+# config.bind('o', 'reverse-selection', mode='caret')
 # config.bind('v', 'toggle-selection', mode='caret')
 # config.bind('w', 'move-to-next-word', mode='caret')
 # config.bind('y', 'yank selection', mode='caret')
@@ -1618,16 +1947,18 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 ## Bindings for insert mode
 config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
-# config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
+# config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
 
 ## Bindings for passthrough mode
-# config.bind('<Ctrl-V>', 'leave-mode', mode='passthrough')
+# config.bind('<Shift-Escape>', 'leave-mode', mode='passthrough')
 
 ## Bindings for prompt mode
 # config.bind('<Alt-B>', 'rl-backward-word', mode='prompt')
 # config.bind('<Alt-Backspace>', 'rl-backward-kill-word', mode='prompt')
 # config.bind('<Alt-D>', 'rl-kill-word', mode='prompt')
 # config.bind('<Alt-F>', 'rl-forward-word', mode='prompt')
+# config.bind('<Alt-Shift-Y>', 'prompt-yank --sel', mode='prompt')
+# config.bind('<Alt-Y>', 'prompt-yank', mode='prompt')
 # config.bind('<Ctrl-?>', 'rl-delete-char', mode='prompt')
 # config.bind('<Ctrl-A>', 'rl-beginning-of-line', mode='prompt')
 # config.bind('<Ctrl-B>', 'rl-backward-char', mode='prompt')
@@ -1635,6 +1966,7 @@ config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Ctrl-F>', 'rl-forward-char', mode='prompt')
 # config.bind('<Ctrl-H>', 'rl-backward-delete-char', mode='prompt')
 # config.bind('<Ctrl-K>', 'rl-kill-line', mode='prompt')
+# config.bind('<Ctrl-P>', 'prompt-open-download --pdfjs', mode='prompt')
 # config.bind('<Ctrl-U>', 'rl-unix-line-discard', mode='prompt')
 # config.bind('<Ctrl-W>', 'rl-unix-word-rubout', mode='prompt')
 # config.bind('<Ctrl-X>', 'prompt-open-download', mode='prompt')
@@ -1645,8 +1977,16 @@ config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Shift-Tab>', 'prompt-item-focus prev', mode='prompt')
 # config.bind('<Tab>', 'prompt-item-focus next', mode='prompt')
 # config.bind('<Up>', 'prompt-item-focus prev', mode='prompt')
-# config.bind('n', 'prompt-accept no', mode='prompt')
-# config.bind('y', 'prompt-accept yes', mode='prompt')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
+
+## Bindings for yesno mode
+# config.bind('<Alt-Shift-Y>', 'prompt-yank --sel', mode='yesno')
+# config.bind('<Alt-Y>', 'prompt-yank', mode='yesno')
+# config.bind('<Escape>', 'leave-mode', mode='yesno')
+# config.bind('<Return>', 'prompt-accept', mode='yesno')
+# config.bind('N', 'prompt-accept --save no', mode='yesno')
+# config.bind('Y', 'prompt-accept --save yes', mode='yesno')
+# config.bind('n', 'prompt-accept no', mode='yesno')
+# config.bind('y', 'prompt-accept yes', mode='yesno')
