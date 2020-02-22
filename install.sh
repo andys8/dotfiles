@@ -30,6 +30,8 @@ section "Update haskell-ide-engine"
 ./scripts/update-haskell-ide-engine.sh
 section "Update ranger plugins"
 ./scripts/update-ranger.sh
+section "Update htop with vim bindings"
+./scripts/update-htop-vim.sh
 
 section "Check post-conditions"
 ./scripts/check-preconditions.sh
