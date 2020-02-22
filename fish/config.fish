@@ -31,7 +31,7 @@ set -g theme_nerd_fonts yes
 
 # Key bindings: vim and default emacs
 if status --is-interactive
-  fish_hybrid_key_bindings
+  set -U fish_key_bindings fish_hybrid_key_bindings
 end
 
 # sudo !!
