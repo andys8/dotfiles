@@ -25,6 +25,7 @@ if [ "$LINUX" = "LinuxMint" ]; then
 	cd $TMP_DIR/KoffeinFlummi-htop-vim-*
 
 	./autogen.sh
+	./configure
 	make
 
 	echo "Please enter password for 'make install' (htop needs to be available for root user)"
