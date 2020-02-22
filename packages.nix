@@ -51,6 +51,7 @@ in
     maim # screenshots
     mdcat # markdown viewer
     meld # git merge tool (graphical)
+    mpv # video player
     nix # nix package manager
     nixpkgs-fmt # format nix
     pa_applet # volume tray icon

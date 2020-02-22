@@ -22,8 +22,9 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 ## Type: Dict
 # c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
 c.aliases = {
-    'chromium': 'spawn chromium-browser {url}',
+    'chromium': 'spawn --detach chromium-browser {url}',
     'lastpass': 'spawn --userscript qute-lastpass',
+    'mpv': 'spawn --detach mpv {url}',
     'o': 'open',
     'q': 'quit',
     'qrcode': 'spawn i3-sensible-terminal -e sh -c "qrcode-terminal {url}; read -p \'\'"'
@@ -1700,6 +1701,8 @@ config.bind('<Ctrl-o>', 'back')
 config.bind('F', 'hint links tab-bg')
 config.bind('gi', 'hint inputs')
 config.bind('<Ctrl-f>', 'set-cmd-text /')
+config.bind(',m', 'spawn --detach mpv {url}')
+config.bind(',M', 'hint links spawn --detach mpv {hint-url}')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
