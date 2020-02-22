@@ -28,6 +28,8 @@ section "Update Xmonad"
 ./scripts/update-xmonad.sh
 section "Update haskell-ide-engine"
 ./scripts/update-haskell-ide-engine.sh
+section "Update ranger plugins"
+./scripts/update-ranger.sh
 
 section "Check post-conditions"
 ./scripts/check-preconditions.sh
