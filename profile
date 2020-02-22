@@ -19,9 +19,6 @@ fi
 # node global installations
 PATH="$HOME/.npm-global/bin:$PATH"
 
-# fx
-export NODE_PATH="$HOME/.npm-global/lib/node_modules"
-
 # ~/.local/bin
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$HOME/.local/bin:$PATH";

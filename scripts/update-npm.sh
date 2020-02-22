@@ -7,7 +7,6 @@ npminstallations=(
   bash-language-server
   elm-json # Update and change elm.json files
   fx # json viewer
-  ramda # used in fx (needs to be installed globally)
   prettier # JS/TS/CSS/Markdown formatter
   qrcode-terminal # Encode text as QR code
   typescript # TS compiler
