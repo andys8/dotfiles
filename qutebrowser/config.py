@@ -1633,7 +1633,7 @@ c.url.default_page = 'qute://bookmarks'
 ## Open base URL of the searchengine if a searchengine shortcut is
 ## invoked without parameters.
 ## Type: Bool
-# c.url.open_base_url = False
+c.url.open_base_url = True
 
 ## Search engines which can be used via the address bar. Maps a search
 ## engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -1646,13 +1646,15 @@ c.url.default_page = 'qute://bookmarks'
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
+    'amazon': 'https://www.amazon.de/s?k={}',
     'aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
     'DEFAULT': 'https://google.de/search?q={}',
     'dd': 'https://duckduckgo.com/?q={}',
     'npm': 'https://www.npmjs.com/search?q={}',
     'hackage': 'https://hackage.haskell.org/packages/search?terms={}',
     'hoogle': 'https://hoogle.haskell.org/?hoogle={}',
-    'yt': 'https://www.youtube.com/results?search_query={}'
+    'yt': 'https://www.youtube.com/results?search_query={}',
+    'youtube': 'https://www.youtube.com/results?search_query={}'
 }
 
 ## Page(s) to open at the start.
