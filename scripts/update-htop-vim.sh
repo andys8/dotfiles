@@ -8,11 +8,17 @@ EXPECTED_VERSION="htop 2.1.0 - (C) 2004-2020 Hisham Muhammad"
 mkdir -p $TMPDIR
 cd $TMPDIR
 
-# check if install can be skipped
-VERSION=$(htop --version | head -1)
-[[ $VERSION == "$EXPECTED_VERSION" ]] && {
-	echo "htop-vim version '$VERSION' is already installed."
-	exit 0
+# check if already installed
+command -v "htop" >/dev/null 2>&1 && {
+
+	# check if install can be skipped because version matches
+	VERSION=$(htop --version | head -1)
+	if [[ $VERSION == "$EXPECTED_VERSION" ]]; then
+		echo "htop version ($VERSION) is already installed."
+		exit 0
+	else
+		echo "htop version ($VERSION) is not expected."
+	fi
 }
 
 # Download tarball
@@ -30,6 +36,6 @@ sudo make install
 # check if successful
 VERSION=$(htop --version | head -1)
 [[ $VERSION != "$EXPECTED_VERSION" ]] && {
-	echo "htop-vim version '$VERSION' is not expected. Install failed."
+	echo "htop version ($VERSION) is not expected after installation. Something went wrong."
 	exit 1
 }
