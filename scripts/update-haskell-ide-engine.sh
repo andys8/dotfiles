@@ -33,7 +33,8 @@ elif [ "$LINUX" = "ManjaroLinux" ]; then
 	echo ">> haskell-ide-engine $VERSION binary downloaded"
 	exit 0
 
+else
+	echo "Unexpected distribution: $LINUX"
+	exit 1
 fi
 
-echo "Unexpected distribution: $LINUX"
-exit 1
