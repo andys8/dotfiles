@@ -162,6 +162,9 @@ Defaults insults
 Defaults pwfeedback
 ```
 
+- `Defaults secure_path` is **not set** to keep `$PATH` and access to user installed binaries with sudo.
+- `Defaults env_keep += "HOME"` keeps the home directory and uses configuration files.
+
 ## Pacman
 
 Enable in `/etc/pacman.conf`:
