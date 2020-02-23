@@ -22,6 +22,7 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 ## Type: Dict
 # c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
 c.aliases = {
+    'adblock-toggle': 'config-cycle -t content.host_blocking.enabled',
     'chromium': 'spawn --detach chromium-browser {url}',
     'lastpass': 'spawn --userscript qute-lastpass',
     'mpv': 'spawn --detach mpv {url}',
@@ -662,7 +663,7 @@ c.content.headers.do_not_track = True
 
 ## Enable host blocking.
 ## Type: Bool
-# c.content.host_blocking.enabled = True
+c.content.host_blocking.enabled = True
 
 ## List of URLs of lists which contain hosts to block.  The file can be
 ## in one of the following formats:  - An `/etc/hosts`-like file - One
