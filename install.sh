@@ -6,33 +6,33 @@ section() {
 }
 
 section "Update dotfiles repository"
-./scripts/update-dotfiles.sh
+~/dotfiles/scripts/update-dotfiles.sh
 
 section "Check pre-conditions"
-./scripts/check-preconditions.sh
+~/dotfiles/scripts/check-preconditions.sh
 
 section "Create symlinks"
-./scripts/link.sh
+~/dotfiles/scripts/link.sh
 
 section "Update Nix"
-./scripts/update-nix.sh
+~/dotfiles/scripts/update-nix.sh
 section "Update Vim"
-./scripts/update-vim.sh
+~/dotfiles/scripts/update-vim.sh
 section "Update Fish"
-./scripts/update-fish.fish
+~/dotfiles/scripts/update-fish.fish
 section "Update Fish abbreviations"
-./scripts/fish-abbreviations.fish
+~/dotfiles/scripts/fish-abbreviations.fish
 section "Update Node/NPM"
-./scripts/update-npm.sh
+~/dotfiles/scripts/update-npm.sh
 section "Update Xmonad"
-./scripts/update-xmonad.sh
+~/dotfiles/scripts/update-xmonad.sh
 section "Update haskell-ide-engine"
-./scripts/update-haskell-ide-engine.sh
+~/dotfiles/scripts/update-haskell-ide-engine.sh
 section "Update ranger plugins"
-./scripts/update-ranger.sh
+~/dotfiles/scripts/update-ranger.sh
 section "Update htop with vim bindings"
-./scripts/update-htop-vim.sh
+~/dotfiles/scripts/update-htop-vim.sh
 
 section "Check post-conditions"
-./scripts/check-preconditions.sh
-./scripts/check-postconditions.sh
+~/dotfiles/scripts/check-preconditions.sh
+~/dotfiles/scripts/check-postconditions.sh
