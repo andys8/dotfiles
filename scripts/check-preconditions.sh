@@ -8,6 +8,7 @@ commands=(
   bash # shell
   cabal # haskell tool
   fc-list # list fonts
+  find # used in scripts
   fish # shell
   i3 # tiling window manager
   i3-msg

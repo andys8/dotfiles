@@ -154,17 +154,10 @@ confirm = confirmPrompt $ greenXPConfig { font     = myFont
                                         }
 
 fileBrowser = spawn "xdg-open ."
-
 quteWebBrowser = spawn "qutebrowser"
 chromiumWebBrowser = spawn "chromium-browser"
-
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
-
 rofiRun = "rofi -show run -i -display-run \"$ \""
-
-lock = "lock"
-
-rofiPass = "lastpass-rofi"
 
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
 screenshotWholeScreen =
@@ -218,12 +211,13 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((nothing, xF86XK_PowerDown)         , poweroffComputer)
        , ((nothing, xF86XK_PowerOff)          , poweroffComputer)
        , ((controlMask .|. modMask .|. altMask, xK_Escape), poweroffComputer)
-       , ((modMask .|. altMask, xK_l)         , spawn lock)
-       , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn lock)
+       , ((modMask .|. altMask, xK_l)         , spawn "lock")
+       , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn "lock")
        , ((modMask, xK_Tab)                   , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab)     , moveTo Prev NonEmptyWS)
        , ((modMask, xK_i)                     , toggleLastWorkspace nScreens)
-       , ((modMask .|. altMask, xK_p)         , spawn rofiPass)
+       , ((modMask .|. altMask, xK_p)         , spawn "lastpass-rofi")
+       , ((modMask .|. altMask, xK_s)         , spawn "script-rofi")
        , ((nothing, xK_Print)                 , spawn screenshotClipboard)
        , ((altMask, xK_Print)                 , spawn screenshotWholeScreen)
        , ((shiftMask, xK_Print)               , spawn screenshotFile)
