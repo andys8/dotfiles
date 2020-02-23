@@ -34,6 +34,11 @@ if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
   export PATH="$HOME/bin:$PATH";
 fi
 
+# ~/bin
+if [[ ":$PATH:" != *":$HOME/dotfiles/scripts:"* ]]; then
+  export PATH="$HOME/dotfiles/scripts:$PATH";
+fi
+
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
 export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
