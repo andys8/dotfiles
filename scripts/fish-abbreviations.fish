@@ -1,8 +1,16 @@
 #! /usr/bin/fish
 
+# Delete all abbreviations
+for a in (abbr -U --list)
+  if test "$a" != ""
+    abbr -U --erase "$a"
+  end
+end
+
 abbr -a -U -- .. 'cd ..'
 abbr -a -U -- ... 'cd ../..'
 abbr -a -U -- .... 'cd ../../..'
+abbr -a -U -- ..... 'cd ../../../..'
 abbr -a -U -- ackf 'ack -f | ack'
 abbr -a -U -- agc 'sudo apt-get autoclean'
 abbr -a -U -- agi 'sudo apt-get install'
@@ -49,6 +57,7 @@ abbr -a -U -- timestamp 'date +%s%3N'
 abbr -a -U -- tl 'toilet -t -F border -f future --gay'
 abbr -a -U -- v vim
 abbr -a -U -- vi vim
+abbr -a -U -- vmi vim
 abbr -a -U -- öö ll
 
 echo "Fish abbreviations updated"
