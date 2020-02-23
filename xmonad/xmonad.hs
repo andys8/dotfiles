@@ -158,6 +158,7 @@ quteWebBrowser = spawn "qutebrowser"
 chromiumWebBrowser = spawn "chromium-browser"
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
+passwordTool = "lastpass-rofi || keepassx || exit 1"
 
 screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
 screenshotWholeScreen =
@@ -216,7 +217,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask, xK_Tab)                   , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab)     , moveTo Prev NonEmptyWS)
        , ((modMask, xK_i)                     , toggleLastWorkspace nScreens)
-       , ((modMask .|. altMask, xK_p)         , spawn "lastpass-rofi")
+       , ((modMask .|. altMask, xK_p)         , spawn passwordTool)
        , ((modMask .|. altMask, xK_s)         , spawn "script-rofi")
        , ((nothing, xK_Print)                 , spawn screenshotClipboard)
        , ((altMask, xK_Print)                 , spawn screenshotWholeScreen)
