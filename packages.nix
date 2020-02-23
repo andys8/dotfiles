@@ -30,6 +30,7 @@ in
     shfmt # format shell scripts
     stalonetray # tray icons
     time # measure time
+    trash-cli # rm into trash folder
     toilet # ascii art fonts
     vokoscreen # screen recorder
     wcalc # calculator
