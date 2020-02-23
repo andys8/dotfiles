@@ -74,9 +74,6 @@ ln -sf ~/dotfiles/bin/lock ~/bin/lock
 mkdir -p ~/.config/sxiv/exec
 ln -sf ~/dotfiles/bin/image-info ~/.config/sxiv/exec/image-info
 
-# safe-rm
-ln -sf ~/dotfiles/safe-rm ~/.safe-rm
-
 # pulseaudio
 mkdir -p ~/.config/pulse
 ln -sf ~/dotfiles/pulseaudio/client.conf ~/.config/pulse/client.conf

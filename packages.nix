@@ -23,7 +23,6 @@ in
     nethogs # network traffic monitoring
     nodejs-12_x # nodejs and npm
     rofi # dmenu replacement
-    safe-rm # rm with safety
     sbt # sbt package manager
     scala # scala compiler
     sent # suckless presentation tool
