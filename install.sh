@@ -5,8 +5,8 @@ section() {
 	echo "$(tput setaf 2)>>> $1$(tput sgr 0)"
 }
 
-section "Update repository"
-./scripts/update-repository.sh
+section "Update dotfiles repository"
+./scripts/update-dotfiles.sh
 
 section "Check pre-conditions"
 ./scripts/check-preconditions.sh
