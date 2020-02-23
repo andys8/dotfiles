@@ -4,7 +4,7 @@
 cd ~/dotfiles/scripts || exit 1
 
 # select script with rofi
-script=$(find . -type f -printf "%P\n" | rofi -dmenu -i -p 'Script')
+script=$(find . -type f -printf "%P\n" | rofi -dmenu -i -p 'Script' -matching fuzzy)
 [ "$script" == "" ] && exit 0
 
 # execute script
