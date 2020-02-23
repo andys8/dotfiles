@@ -7,6 +7,5 @@ cd ~/dotfiles/scripts || exit 1
 script=$(find . -type f -printf "%P\n" | rofi -dmenu -i -p 'Script')
 [ "$script" == "" ] && exit 0
 
-# execute file
-i3-sensible-terminal -e sh -c "$script"
-notify-send "$script executed"
+# execute script
+i3-sensible-terminal -e sh -c "$script" && notify-send "$script executed"
