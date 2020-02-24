@@ -13,24 +13,11 @@ if [ "$LINUX" = "LinuxMint" ]; then
 
 elif [ "$LINUX" = "ManjaroLinux" ]; then
 
-	VERSION="1.1-4"
-	OUTPUTDIR="$HOME/bin"
-	VERSIONFILE="$OUTPUTDIR/hie-version.txt"
-
-	touch "$VERSIONFILE"
-	PREV_VERSION=$(cat "$VERSIONFILE")
-
-	if [ $VERSION = "$PREV_VERSION" ]; then
-		echo ">> haskell-ide-engine $VERSION already installed"
-		exit 0
-	fi
-
-	cd /tmp
-	curl https://repo.archlinuxcn.org/x86_64/haskell-ide-engine-$VERSION-x86_64.pkg.tar.zst -o hie-$VERSION.tar.zst
-	tar -I zstd -xvf hie-$VERSION.tar.zst
-	cp usr/bin/* "$OUTPUTDIR/"
-	echo $VERSION >"$VERSIONFILE"
-	echo ">> haskell-ide-engine $VERSION binary downloaded"
+	! command -v "yay" >/dev/null 2>&1 && {
+		echo "yay missing"
+		exit 1
+	}
+	yay --editmenu -S haskell-ide-engine
 	exit 0
 
 else
