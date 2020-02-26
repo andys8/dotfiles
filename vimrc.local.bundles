@@ -52,6 +52,3 @@ Plug 'tyru/open-browser.vim'
 
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for' : 'markdown' }
-
-" Haskell Hoogle
-Plug 'twinside/vim-hoogle', { 'for' : 'haskell' }
