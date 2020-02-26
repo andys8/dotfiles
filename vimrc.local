@@ -284,3 +284,7 @@ set foldlevel=0
 
 noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
+
+" Haskell
+let g:brittany_on_save = 0
+autocmd FileType haskell map <buffer> <leader>p :Brittany<CR>

@@ -30,7 +30,29 @@
         "elmAnalyseTrigger": "save"
       }
     },
-    "haskell": {
+    "haskell-language-server": {
+      "enable": true,
+      "command": "haskell-language-server",
+      "args": ["--lsp"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml"
+      ],
+      "filetypes": ["hs", "lhs", "haskell"],
+      "trace.server": "verbose",
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true,
+          "maxNumberOfProblems": 10,
+          "completionSnippetsOn": true,
+          "formattingProvider": "brittany"
+        }
+      }
+    },
+    "haskell-ide-engine": {
+      "enable": false,
       "command": "hie-wrapper",
       "args": ["--lsp"],
       "rootPatterns": [
