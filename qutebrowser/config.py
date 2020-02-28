@@ -24,7 +24,7 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 c.aliases = {
     'adblock-toggle': 'config-cycle -t content.host_blocking.enabled',
     'chromium': 'spawn --detach chromium-browser {url}',
-    'lastpass': 'spawn --userscript qute-lastpass',
+    'lastpass': 'hint --first inputs ;; spawn --userscript qute-lastpass',
     'mpv': 'spawn --detach mpv {url}',
     'o': 'open',
     'q': 'quit',
@@ -1707,6 +1707,7 @@ config.bind('<Ctrl-f>', 'set-cmd-text /')
 config.bind(',m', 'spawn --detach mpv {url}')
 config.bind(',M', 'hint links spawn --detach mpv {hint-url}')
 config.bind(',h', 'history')
+config.bind(',p', 'lastpass')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
@@ -1953,8 +1954,9 @@ config.bind(',h', 'history')
 
 ## Bindings for insert mode
 config.bind('<Ctrl-E>', 'open-editor', mode='insert')
-# config.bind('<Escape>', 'leave-mode', mode='insert')
+config.bind(',p', 'lastpass', mode='insert')
 config.bind('<Escape>', 'leave-mode ;; jseval -q document.activeElement.blur()', mode='insert')
+# config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
 
 ## Bindings for passthrough mode
