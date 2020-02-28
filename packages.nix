@@ -41,6 +41,7 @@ in
     ack # search in files
     autojump # jump into directory with j
     cbatticon # battery icon and warning
+    dragon-drop # drag and drop
     dtrx # extract files
     fd # "find" for files
     feh # Background viewer
