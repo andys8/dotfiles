@@ -14,6 +14,7 @@ commands=(
   i3lock # lockscreen
   idea # intellij ide
   java
+  lightdm # Login display manager
   lxappearance # configure themes
   nix-channel
   nix-env

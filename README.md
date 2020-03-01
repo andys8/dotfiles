@@ -79,19 +79,7 @@ sudo update-alternatives --config x-terminal-emulator
 
 ## Xmonad
 
-`/usr/share/xsessions/xmonad.desktop` for lightdm entry
-
-```text
-[Desktop Entry]
-Type=Application
-Encoding=UTF-8
-Name=Xmonad
-Exec=xmonad
-X-GNOME-WMName=Xmonad
-X-GNOME-Autostart-Phase=WindowManager
-X-GNOME-Provides=windowmanager
-X-GNOME-Autostart-Notify=false
-```
+`lightdm` is expected. `/usr/share/xsessions/xmonad.desktop` will be created if not existing.
 
 ### `Super + Space` on Ubuntu
 
