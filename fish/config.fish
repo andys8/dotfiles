@@ -8,6 +8,7 @@ source $OMF_PATH/init.fish
 
 # Environment
 set -gx EDITOR vim
+set -gx TERMINAL st
 
 # Cursor speed
 xset r rate 200 80

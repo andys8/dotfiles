@@ -8,4 +8,4 @@ script=$(find . -type f -printf "%P\n" | rofi -dmenu -i -p 'Script' -matching fu
 [ "$script" == "" ] && exit 0
 
 # execute script
-i3-sensible-terminal -e sh -c "$script" && notify-send "$script executed"
+$TERMINAL -e sh -c "$script" && notify-send "$script executed"

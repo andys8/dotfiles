@@ -29,9 +29,10 @@ in
     shfmt # format shell scripts
     stalonetray # tray icons
     time # measure time
-    trash-cli # rm into trash folder
     toilet # ascii art fonts
+    trash-cli # rm into trash folder
     vokoscreen # screen recorder
+    watch # repeat command
     wcalc # calculator
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager

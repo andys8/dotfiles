@@ -11,14 +11,10 @@ commands=(
   find # used in scripts
   fish # shell
   i3 # tiling window manager
-  i3-msg
-  i3-nagbar
-  i3-sensible-terminal
   i3lock # lockscreen
   idea # intellij ide
   java
   lxappearance # configure themes
-  lynis # system audit
   nix-channel
   nix-env
   nix-shell

@@ -300,7 +300,7 @@ main = do
         , logHook            = myXmobar xmproc
                                >> updatePointer (0.75, 0.75) (0.75, 0.75)
                                >> WH.workspaceHistoryHook
-        , terminal           = "i3-sensible-terminal"
+        , terminal           = "$TERMINAL || st || alacritty || xterm"
         , focusFollowsMouse  = True
         , borderWidth        = 0
         , modMask            = mod4Mask

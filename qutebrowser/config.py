@@ -28,7 +28,7 @@ c.aliases = {
     'mpv': 'spawn --detach mpv {url}',
     'o': 'open',
     'q': 'quit',
-    'qrcode': 'spawn i3-sensible-terminal -e sh -c "qrcode-terminal {url}; read -p \'\'"'
+    'qrcode': 'spawn st -e watch --color -t -x qrcode-terminal \"{url}\"'
 }
 
 ## Time interval (in milliseconds) between auto-saves of
@@ -922,7 +922,7 @@ c.content.notifications = False
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-c.editor.command = ["i3-sensible-terminal", "-e", "vim", "{}"]
+c.editor.command = ["st", "-e", "vim", "{}"]
 
 ## Encoding to use for the editor.
 ## Type: Encoding
