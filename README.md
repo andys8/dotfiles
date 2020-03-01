@@ -68,7 +68,7 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 
 ### st (suckless-terminal)
 
-Install [`andys8/st`](https://github.com/andys8/st)
+Fork of st: [`andys8/st`](https://github.com/andys8/st)
 
 #### Add st to terminals and set as default
 
