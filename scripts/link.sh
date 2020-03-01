@@ -1,6 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
+# .config dir (if missing)
+mkdir -p ~/.config
+
 # Vim
 mkdir -p ~/.vim
 ln -sf ~/dotfiles/vimrc ~/.vimrc
