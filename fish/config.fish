@@ -6,29 +6,40 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
+if not string match -q "*.nix-profile/bin*" $PATH
+  fenv source ~/.profile
+end
+
+if string match -q "/dev/tty*" (tty)
+  omf theme default
+else
+  omf theme bobthefish
+
+  # Cursor speed
+  xset r rate 200 80
+
+  # Bobthefish theme options
+  set -g theme_color_scheme dracula
+  set -g theme_display_cmd_duration no
+  set -g theme_display_date no
+  set -g theme_display_docker_machine no
+  set -g theme_display_hg no
+  set -g theme_display_k8s_context no
+  set -g theme_display_nvm no
+  set -g theme_display_ruby no
+  set -g theme_display_vagrant no
+  set -g theme_display_vi yes
+  set -g theme_git_worktree_support no
+  set -g theme_nerd_fonts yes
+end
+
 # Environment
 set -gx EDITOR vim
 set -gx TERMINAL st
 
-# Cursor speed
-xset r rate 200 80
-
-# Bobthefish theme options
-set -g theme_color_scheme dracula
-set -g theme_display_cmd_duration no
-set -g theme_display_date no
-set -g theme_display_docker_machine no
-set -g theme_display_hg no
-set -g theme_display_k8s_context no
-set -g theme_display_nvm no
-set -g theme_display_ruby no
-set -g theme_display_vagrant no
-set -g theme_display_vi yes
-set -g theme_git_worktree_support no
-set -g theme_nerd_fonts yes
-
 # Autojump
-[ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ]; and source "$HOME/.nix-profile/share/autojump/autojump.fish"
+[ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
+  and source "$HOME/.nix-profile/share/autojump/autojump.fish"
 
 # Key bindings: vim and default emacs
 if status --is-interactive
@@ -43,9 +54,6 @@ function sudo
     command sudo $argv
   end
 end
-
-# Fix for LD_PRELOAD not found in sdk and screenfetch
-# set -x LD_PRELOAD "/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0"
 
 # Colors in man pages / less
 set -x LESS_TERMCAP_mb (set_color -o magenta)

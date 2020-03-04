@@ -4,6 +4,5 @@ package foreign-env
 package last-working-dir
 package pbcopy
 package sdk
-package yadd
 theme bobthefish
 theme default
