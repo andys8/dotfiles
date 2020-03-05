@@ -31,6 +31,7 @@
       }
     },
     "haskell": {
+      "enable" : true,
       "command": "hie-wrapper",
       "args": ["--lsp"],
       "rootPatterns": [
@@ -62,11 +63,13 @@
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
-    "nix": "nixpkgs-fmt"
+    "nix": "nixpkgs-fmt",
+    "haskell": "brittany"
   },
   "diagnostic-languageserver.formatters": {
     "shfmt": { "command": "shfmt" },
-    "nixpkgs-fmt": { "command": "nixpkgs-fmt" }
+    "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
+    "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] }
   },
   "markdownlint.onOpen": false,
   "markdownlint.config": {
