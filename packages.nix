@@ -88,7 +88,6 @@ in
   with pkgs.haskellPackages; [
     brittany # code formatter
     git-brunch # git checkout branch tui
-    hindent # Haskell format (alternative)
     hoogle # function documentation
     network-manager-tui # network tui
   ]
