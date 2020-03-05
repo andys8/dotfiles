@@ -6,32 +6,27 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-if not string match -q "*.nix-profile/bin*" $PATH
+# Source .profile if missing
+if not test -n "$PROFILE_SOURCED"
   fenv source ~/.profile
 end
 
-if string match -q "/dev/tty*" (tty)
-  omf theme default
-else
-  omf theme bobthefish
+# Cursor speed
+xset r rate 200 80
 
-  # Cursor speed
-  xset r rate 200 80
-
-  # Bobthefish theme options
-  set -g theme_color_scheme dracula
-  set -g theme_display_cmd_duration no
-  set -g theme_display_date no
-  set -g theme_display_docker_machine no
-  set -g theme_display_hg no
-  set -g theme_display_k8s_context no
-  set -g theme_display_nvm no
-  set -g theme_display_ruby no
-  set -g theme_display_vagrant no
-  set -g theme_display_vi yes
-  set -g theme_git_worktree_support no
-  set -g theme_nerd_fonts yes
-end
+# Bobthefish theme options
+set -g theme_color_scheme dracula
+set -g theme_display_cmd_duration no
+set -g theme_display_date no
+set -g theme_display_docker_machine no
+set -g theme_display_hg no
+set -g theme_display_k8s_context no
+set -g theme_display_nvm no
+set -g theme_display_ruby no
+set -g theme_display_vagrant no
+set -g theme_display_vi yes
+set -g theme_git_worktree_support no
+set -g theme_nerd_fonts yes
 
 # Environment
 set -gx EDITOR vim

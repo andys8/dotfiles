@@ -57,3 +57,5 @@ export TERMINAL=st
 if [ -f "$HOME/.profile.local" ]; then
     . "$HOME/.profile.local"
 fi
+
+export PROFILE_SOURCED=1
