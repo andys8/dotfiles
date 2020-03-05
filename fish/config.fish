@@ -14,24 +14,6 @@ end
 # Cursor speed
 xset r rate 200 80
 
-# Bobthefish theme options
-set -g theme_color_scheme dracula
-set -g theme_display_cmd_duration no
-set -g theme_display_date no
-set -g theme_display_docker_machine no
-set -g theme_display_hg no
-set -g theme_display_k8s_context no
-set -g theme_display_nvm no
-set -g theme_display_ruby no
-set -g theme_display_vagrant no
-set -g theme_display_vi yes
-set -g theme_git_worktree_support no
-set -g theme_nerd_fonts yes
-
-# Environment
-set -gx EDITOR vim
-set -gx TERMINAL st
-
 # Autojump
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
   and source "$HOME/.nix-profile/share/autojump/autojump.fish"
@@ -49,13 +31,4 @@ function sudo
     command sudo $argv
   end
 end
-
-# Colors in man pages / less
-set -x LESS_TERMCAP_mb (set_color -o magenta)
-set -x LESS_TERMCAP_md (set_color -o brgreen)
-set -x LESS_TERMCAP_so (set_color -b blue bryellow)
-set -x LESS_TERMCAP_us (set_color -u brred)
-set -x LESS_TERMCAP_me (set_color normal)
-set -x LESS_TERMCAP_ue (set_color normal)
-set -x LESS_TERMCAP_se (set_color normal)
 

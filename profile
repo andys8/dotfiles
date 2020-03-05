@@ -58,4 +58,5 @@ if [ -f "$HOME/.profile.local" ]; then
     . "$HOME/.profile.local"
 fi
 
+# Used to test if this is sourced
 export PROFILE_SOURCED=1
