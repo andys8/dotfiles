@@ -2,6 +2,6 @@
 set -euo pipefail
 
 # Vim plugin installation
-vim +PlugUpgrade +PlugInstall +PlugUpdate +PlugClean! +qall
+vim +PlugUpgrade +PlugUpdate +PlugClean! +qall
 
 echo "Vim updated"
