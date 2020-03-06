@@ -83,7 +83,7 @@
         "column": "startColumn",
         "endLine": "endLine",
         "endColumn": "endColumn",
-        "message": "${hint}\n\nFix:\n${to}",
+        "message": "${hint}",
         "security": "severity"
       },
       "securities": {
