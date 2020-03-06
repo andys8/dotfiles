@@ -31,8 +31,8 @@
       }
     },
     "haskell": {
-      "enable" : true,
-      "command": "hie-wrapper",
+      "enable": false,
+      "command": "ghcide",
       "args": ["--lsp"],
       "rootPatterns": [
         "*.cabal",
@@ -59,7 +59,8 @@
     }
   },
   "diagnostic-languageserver.filetypes": {
-    "sh": "shellcheck"
+    "sh": "shellcheck",
+    "haskell": "hlint"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
@@ -70,6 +71,27 @@
     "shfmt": { "command": "shfmt" },
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
     "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] }
+  },
+  "diagnostic-languageserver.linters": {
+    "hlint": {
+      "command": "hlint",
+      "debounce": 500,
+      "args": ["--json", "-"],
+      "sourceName": "hlint",
+      "parseJson": {
+        "line": "startLine",
+        "column": "startColumn",
+        "endLine": "endLine",
+        "endColumn": "endColumn",
+        "message": "${hint}\n${to}",
+        "security": "severity"
+      },
+      "securities": {
+        "Error": "error",
+        "Warning": "warning",
+        "Suggestion": "info"
+      }
+    }
   },
   "markdownlint.onOpen": false,
   "markdownlint.config": {
