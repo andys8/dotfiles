@@ -31,7 +31,7 @@
       }
     },
     "haskell": {
-      "enable": false,
+      "enable": true,
       "command": "ghcide",
       "args": ["--lsp"],
       "rootPatterns": [
@@ -83,7 +83,7 @@
         "column": "startColumn",
         "endLine": "endLine",
         "endColumn": "endColumn",
-        "message": "${hint}\n${to}",
+        "message": "${hint}\n\nFix:\n${to}",
         "security": "severity"
       },
       "securities": {

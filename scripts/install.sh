@@ -30,6 +30,8 @@ section "Update Xmonad"
 ~/dotfiles/scripts/update-xmonad.sh
 section "Update haskell-ide-engine"
 ~/dotfiles/scripts/update-haskell-ide-engine.sh
+section "Update ghcide"
+~/dotfiles/scripts/update-ghcide.sh
 section "Update ranger plugins"
 ~/dotfiles/scripts/update-ranger.sh
 section "Update htop with vim bindings"

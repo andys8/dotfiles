@@ -7,6 +7,7 @@ commands=(
 	"elm" # elm compiler
 	"elm-json" # elm installation helper
 	"elm-test" # elm test runner
+	"ghcide" # haskell language server
 	"git-brunch" # branch change tool
 	"git-brunch" # git tool
 	"hie-8.6.5" # haskell-ide-engine ghc 8.6.5

@@ -86,6 +86,7 @@ in
   ]
 ) ++ (
   with pkgs.haskellPackages; [
+    apply-refact # hlint: apply refactorings
     brittany # code formatter
     git-brunch # git checkout branch tui
     hoogle # function documentation
