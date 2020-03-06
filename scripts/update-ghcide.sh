@@ -1,14 +1,16 @@
 #!/bin/sh
 set -eu
 
+command -v "ghcide" >/dev/null 2>&1 && {
+	VERSION=$(ghcide --version)
+	echo "htop version is already installed."
+	echo "$VERSION"
+	exit 0
+}
+
 LINUX=$(lsb_release -i -s)
 
 if [ "$LINUX" = "LinuxMint" ]; then
-
-	command -v "ghcide" >/dev/null 2>&1 && {
-		echo "ghcide is already installed"
-		exit 0
-	}
 
 	# install with stack
 	cd /tmp
@@ -31,4 +33,3 @@ else
 	echo "Unexpected distribution: $LINUX"
 	exit 1
 fi
-
