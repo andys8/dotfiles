@@ -37,7 +37,7 @@ elif [ "$LINUX" = "ManjaroLinux" ]; then
 		echo "yay missing"
 		exit 1
 	}
-	yay -S htop-vim-git --noconfirm 
+	yay -S htop-vim-git --noconfirm
 
 else
 	echo "Unexpected distribution: $LINUX"
