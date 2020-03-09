@@ -20,6 +20,7 @@
 	re = reset
 	s = status
 	st = status
+	sw = switch
 	track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
 	default = current
