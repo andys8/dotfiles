@@ -3,7 +3,7 @@ set -eu
 
 command -v "ghcide" >/dev/null 2>&1 && {
 	VERSION=$(ghcide --version)
-	echo "htop version is already installed."
+	echo "ghcide version is already installed."
 	echo "$VERSION"
 	exit 0
 }
