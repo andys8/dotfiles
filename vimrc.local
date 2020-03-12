@@ -49,7 +49,7 @@ let g:airline#extensions#coc#warning_symbol = ' '
 command Dark colo torte
 
 " Ignore files
-set wildignore+=*/node_modules/*,*/.stack-work/*
+set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
@@ -284,3 +284,7 @@ set foldlevel=0
 
 noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
+
+" Haskell: Alex, Happy
+au BufRead,BufNewFile *.x set filetype=alex
+au BufRead,BufNewFile *.y set filetype=happy
