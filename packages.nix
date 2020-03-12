@@ -48,6 +48,7 @@ in
     feh # Background viewer
     fzf # fuzzy find tool
     glow # markdown viewer
+    hyperfine # benchmark (time replacement)
     i3status-rust # i3 status bar
     lazygit # git terminal ui
     maim # screenshots
