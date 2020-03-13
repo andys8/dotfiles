@@ -240,6 +240,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_1)         , setMonitors 1)
        , ((modMask .|. altMask, xK_2)         , setMonitors 2)
        , ((modMask .|. altMask, xK_3)         , setMonitors 3)
+       , ((modMask .|. altMask, xK_4)         , setMonitors 4)
        , ((modMask .|. altMask, xK_r)         , restartXmonad)
        , ((modMask .|. shiftMask, xK_r)       , restartXmonad)
        , ((modMask, xK_e)                     , spawn "emoji")

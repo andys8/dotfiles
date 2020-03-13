@@ -113,6 +113,7 @@ bindsym $alt+$mod+s exec "script-rofi"
 bindsym $mod+$alt+1 exec "autorandr --load 1 && i3-msg restart"
 bindsym $mod+$alt+2 exec "autorandr --load 2 && i3-msg restart"
 bindsym $mod+$alt+3 exec "autorandr --load 3 && i3-msg restart"
+bindsym $mod+$alt+4 exec "autorandr --load 4 && i3-msg restart"
 
 # Brightness
 bindsym XF86MonBrightnessUp exec xrandr --output eDP-1 --brightness 1.0
