@@ -23,6 +23,7 @@ abbr -a -U -- g git
 abbr -a -U -- ga 'git add'
 abbr -a -U -- gc 'git commit -m'
 abbr -a -U -- gco 'git checkout'
+abbr -a -U -- gcp 'git cherry-pick'
 abbr -a -U -- gd 'git diff'
 abbr -a -U -- gds 'git diff --staged'
 abbr -a -U -- gf 'git fetch'

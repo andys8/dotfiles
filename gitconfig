@@ -10,6 +10,7 @@
 	br = branch
 	ci = commit
 	co = checkout
+	cp = cherry-pick
 	currentbranch = rev-parse --abbrev-ref HEAD
 	d = diff
 	fe = fetch
