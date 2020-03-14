@@ -43,7 +43,7 @@ xset r rate 200 80
 xset -b
 
 # Wallpaper
-feh --bg-fill /usr/share/backgrounds/wallpaper.jpg
+nitrogen --restore
 
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &

@@ -45,7 +45,6 @@ in
     dragon-drop # drag and drop
     dtrx # extract files
     fd # "find" for files
-    feh # Background viewer
     fzf # fuzzy find tool
     glow # markdown viewer
     hyperfine # benchmark (time replacement)
@@ -55,6 +54,7 @@ in
     mdcat # markdown viewer
     meld # git merge tool (graphical)
     mpv # video player
+    nitrogen # Wallpaper
     nix # nix package manager
     nixpkgs-fmt # format nix
     pa_applet # volume tray icon
