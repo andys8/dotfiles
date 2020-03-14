@@ -11,4 +11,3 @@ else
 	echo "Unexpected distribution: $LINUX"
 	exit 1
 fi
-
