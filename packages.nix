@@ -70,6 +70,7 @@ in
     translate-shell # trans command
     xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
+    ytop # top/htop replacement
     zstd # compress tool used for .std
   ]
 ) ++ (
