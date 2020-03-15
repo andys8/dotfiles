@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Set monitors
+autorandr --change
+
+# Start xmonad window manager
+xmonad

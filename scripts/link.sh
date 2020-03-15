@@ -71,6 +71,7 @@ mkdir -p ~/bin
 ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
 ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
 ln -sf ~/dotfiles/bin/image-info ~/bin/image-info
+ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
 ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi

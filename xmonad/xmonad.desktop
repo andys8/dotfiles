@@ -2,7 +2,7 @@
 Type=Application
 Encoding=UTF-8
 Name=Xmonad
-Exec=xmonad
+Exec=init-xmonad
 X-GNOME-WMName=Xmonad
 X-GNOME-Autostart-Phase=WindowManager
 X-GNOME-Provides=windowmanager
