@@ -4,7 +4,10 @@ set -euo pipefail
 xmonad --recompile
 echo "XMonad recompiled"
 
-[[ ! $(ls -1 /usr/share/xsessions/) =~ xmonad\.desktop ]] && {
-	echo "Lightdm: Create xmonad entry"
-	sudo cp ~/dotfiles/xmonad/xmonad.desktop /usr/share/xsessions/xmonad.desktop
-}
+SOURCE=~/dotfiles/xmonad/xmonad.desktop
+TARGET=/usr/share/xsessions/xmonad.desktop
+
+if [[ "$(cat $SOURCE)" != "$(cat $TARGET 2> /dev/null || echo '')" ]]; then
+	echo "Lightdm: Write xmonad entry"
+	sudo cp -v $SOURCE $TARGET
+fi
