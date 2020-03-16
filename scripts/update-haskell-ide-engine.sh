@@ -1,6 +1,13 @@
 #!/bin/sh
 set -eu
 
+command -v "hie-wrapper" >/dev/null 2>&1 && {
+	VERSION=$(hie-wrapper --version)
+	echo "haskell-ide-engine is already installed."
+	echo "$VERSION"
+	exit 0
+}
+
 LINUX=$(lsb_release -i -s)
 
 if [ "$LINUX" = "LinuxMint" ]; then
