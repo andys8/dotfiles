@@ -288,3 +288,4 @@ noremap <leader>Z zR<CR>
 " Haskell: Alex, Happy
 au BufRead,BufNewFile *.x set filetype=alex
 au BufRead,BufNewFile *.y set filetype=happy
+au BufWritePre *.hs call CocAction('format')
