@@ -31,6 +31,9 @@ ln -sf ~/dotfiles/git ~/.config
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/tigrc ~/.tigrc
 
+# Ack
+ln -sf ~/dotfiles/ackrc ~/.ackrc
+
 # Alacritty
 ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 

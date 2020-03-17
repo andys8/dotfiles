@@ -1,0 +1,10 @@
+# ack configuration
+
+--ignore-dir=.stack-work/
+--ignore-dir=.stack/
+--ignore-dir=node_modules/
+--ignore-dir=elm-stuff/
+--ignore-dir=.git/
+--ignore-dir=build/
+--ignore-dir=dist/
+--ignore-dir=.idea/
