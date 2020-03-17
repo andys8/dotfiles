@@ -26,7 +26,13 @@ if ! lpass status; then
 fi
 
 # Selection
-ROFI_SELECTION="$(lpass ls --format '•%an' | grep '•' | tr '•' '\n' | sed '/^$/d' | rofi -dmenu -i -p LastPass)"
+ROFI_SELECTION="$(
+	lpass ls --format '%aN' --color=never |
+		grep --invert-match '.*/$' |
+		sed 's|(none)/||' |
+		rofi -dmenu -i -matching fuzzy --p LastPass
+)"
+
 if [ -z "${ROFI_SELECTION}" ]; then
 	exit
 fi
