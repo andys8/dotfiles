@@ -134,6 +134,13 @@ for i in "${fonts[@]}"; do fontInstalled "$i"; done
 	fail "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty"
 }
 
+# Make sure max brightness is configured
+BRIGHTNESS=$(cat /sys/class/backlight/*/brightness)
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
+[[ "$BRIGHTNESS" != "$MAX_BRIGHTNESS" ]] && {
+	fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
+}
+
 # Otherwise good case
 echo "All preconditions are fine"
 exit 0
