@@ -34,6 +34,7 @@ commands=(
 	timeshift # backup tool
 	tr # used in shell scripts
 	unzip
+	uuidgen # generate uuid
 	vim
 	vimdiff
 	xclip # copy/paste

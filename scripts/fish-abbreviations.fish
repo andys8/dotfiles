@@ -57,6 +57,7 @@ abbr -a -U -- sdkman sdk
 abbr -a -U -- t tig
 abbr -a -U -- timestamp 'date +%s%3N'
 abbr -a -U -- tl 'toilet -t -F border -f future --gay'
+abbr -a -U -- uuid uuidgen
 abbr -a -U -- v vim
 abbr -a -U -- vi vim
 abbr -a -U -- vmi vim
