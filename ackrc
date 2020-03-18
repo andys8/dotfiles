@@ -1,6 +1,7 @@
 # ack configuration
 
 --ignore-dir=.stack-work/
+--ignore-dir=.stack-work-docker/
 --ignore-dir=.stack/
 --ignore-dir=node_modules/
 --ignore-dir=elm-stuff/
