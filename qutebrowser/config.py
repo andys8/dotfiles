@@ -290,7 +290,7 @@ c.colors.keyhint.suffix.fg = '#f1fa8c'
 
 ## Foreground color of the statusbar in command mode.
 ## Type: QssColor
-# c.colors.statusbar.command.fg = 'white'
+c.colors.statusbar.command.fg = '#f1fa8c'
 
 ## Background color of the statusbar in private browsing + command mode.
 ## Type: QssColor
