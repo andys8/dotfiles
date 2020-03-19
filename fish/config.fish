@@ -12,7 +12,7 @@ if not test -n "$PROFILE_SOURCED"
 end
 
 # Cursor speed
-xset r rate 200 80
+xset r rate 200 80 2> /dev/null
 
 # Autojump
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
