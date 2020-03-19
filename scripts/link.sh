@@ -96,4 +96,7 @@ ln -sf ~/dotfiles/Xresources ~/.Xresources
 # stalonetray
 ln -sf ~/dotfiles/stalonetrayrc ~/.stalonetrayrc
 
+# slack-term (will be in ~/.config/slack-term/config with 0.5.0)
+ln -sf ~/dotfiles/slack-term ~/.slack-term
+
 echo "Links updated"

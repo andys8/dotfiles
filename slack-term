@@ -1,0 +1,25 @@
+{
+  "sidebar_width": 3,
+  "notify": "mention",
+  "emoji": false,
+  "theme": {
+    "view": {
+      "fg": "white",
+      "bg": "default",
+      "border_fg": "white",
+      "border_bg": "",
+      "label_fg": "green,bold"
+    },
+    "message": {
+      "time_format": "15:04",
+      "time": "fg-blue",
+      "name": "colorize,fg-bold",
+      "text": "fg-white"
+    },
+    "channel": {
+      "prefix": "fg-yellow,fg-bold",
+      "icon": "fg-magenta,fg-bold",
+      "text": "fg-red"
+    }
+  }
+}

@@ -40,6 +40,11 @@ Local script executed on machine startup
 
 Can be used for environment variables (optional).
 
+```sh
+export PATH=/home/user/example-path:$PATH
+export SLACK_TOKEN=example-token
+```
+
 ## Shell
 
 ### Change shell to fish
