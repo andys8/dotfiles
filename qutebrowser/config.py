@@ -334,7 +334,7 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 
 ## Background color of the progress bar.
 ## Type: QssColor
-# c.colors.statusbar.progress.bg = 'white'
+c.colors.statusbar.progress.bg = '#6272a4'
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
@@ -1403,6 +1403,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
 # c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
+c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
