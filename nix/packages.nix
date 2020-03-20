@@ -31,11 +31,13 @@ in
     time # measure time
     toilet # ascii art fonts
     trash-cli # rm into trash folder
+    unzip # extract zip
     vokoscreen # screen recorder
     watch # repeat command
     wcalc # calculator
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
+    zip # compress to zip
   ]
 ) ++ (
   with pkgs; [

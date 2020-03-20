@@ -32,7 +32,6 @@ commands=(
 	tar
 	timeshift # backup tool
 	tr # used in shell scripts
-	unzip
 	uuidgen # generate uuid
 	vim
 	vimdiff
@@ -43,7 +42,6 @@ commands=(
 	xset
 	xss-lock # lock the screen
 	zathura # pdf viewer
-	zip
 )
 
 files=(
