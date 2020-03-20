@@ -17,12 +17,12 @@ commands=(
 	"nmt" # network-manager-tui
 	"prettier" # js/css/markdown formatter
 	"qrcode-terminal" # show qr codes
+	"st" # suckless terminal
 	"tsc" # typescript compiler
 )
 
 fail() {
-	echo "ERROR: $1"
-	exit 1
+	echo "ERROR: $1"; exit 1
 }
 
 check() {

@@ -10,9 +10,10 @@ command -v "cachix" >/dev/null 2>&1 || {
 }
 
 # Install packages
-nix-env -irf ~/dotfiles/packages.nix
+nix-env -irf ~/dotfiles/nix/packages.nix
+nix-env -if ~/dotfiles/nix/st.nix
 
-# Collect garbage (chance ~ 10%)
-if [ $((RANDOM % 10)) -eq 0 ]; then
+# Collect garbage (chance ~ 5%)
+if [ $((RANDOM % 20)) -eq 0 ]; then
 	nix-collect-garbage --delete-older-than 14d
 fi

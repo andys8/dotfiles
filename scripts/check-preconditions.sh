@@ -28,7 +28,6 @@ commands=(
 	python3
 	qutebrowser # Keyboard based webbrowser
 	setxkbmap
-	st # simple terminal
 	stack # haskell build tool
 	tar
 	timeshift # backup tool
@@ -60,8 +59,7 @@ fonts=(
 )
 
 fail() {
-	echo "ERROR: $1"
-	exit 1
+	echo "ERROR: $1"; exit 1
 }
 
 check() {

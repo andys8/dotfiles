@@ -16,8 +16,6 @@ section "Create symlinks"
 
 section "Update Nix"
 ~/dotfiles/scripts/update-nix.sh
-section "Update ST"
-~/dotfiles/scripts/update-st.sh
 section "Update Vim"
 ~/dotfiles/scripts/update-vim.sh
 section "Update Fish"
