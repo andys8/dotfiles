@@ -22,7 +22,8 @@ commands=(
 )
 
 fail() {
-	echo "ERROR: $1"; exit 1
+	echo "ERROR: $1"
+	exit 1
 }
 
 check() {
