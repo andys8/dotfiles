@@ -289,3 +289,6 @@ noremap <leader>Z zR<CR>
 au BufRead,BufNewFile *.x set filetype=alex
 au BufRead,BufNewFile *.y set filetype=happy
 au BufWritePre *.hs call CocAction('format')
+
+" botlang
+au BufRead,BufNewFile *.bot set filetype=botlang

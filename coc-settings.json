@@ -60,7 +60,8 @@
   },
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck",
-    "haskell": "hlint"
+    "haskell": "hlint",
+    "botlang": "ce-dev"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
@@ -90,6 +91,20 @@
         "Error": "error",
         "Warning": "warning",
         "Suggestion": "info"
+      }
+    },
+    "ce-dev": {
+      "command": "ce-dev",
+      "sourceName": "ce-dev",
+      "debounce": 300,
+      "args": ["verify", "--json", "%file"],
+      "parseJson": {
+        "line": "startLine",
+        "column": "startColumn",
+        "endLine": "endLine",
+        "endColumn": "endColumn",
+        "message": "[${source}] ${message}",
+        "severity": "error"
       }
     }
   },
