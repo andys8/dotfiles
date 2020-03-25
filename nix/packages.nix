@@ -47,6 +47,7 @@ in
     cbatticon # battery icon and warning
     dragon-drop # drag and drop
     dtrx # extract files
+    entr # watch files
     fd # "find" for files
     fzf # fuzzy find tool
     glow # markdown viewer
