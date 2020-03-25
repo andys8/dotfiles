@@ -12,6 +12,7 @@
 	co = checkout
 	cp = cherry-pick
 	currentbranch = rev-parse --abbrev-ref HEAD
+	currentcommit = rev-parse HEAD
 	d = diff
 	fe = fetch
 	l = log --graph --date=short
