@@ -258,7 +258,7 @@ exec --no-startup-id xset -b
 exec --no-startup-id xss-lock -l -- lock
 
 # Display standbye
-exec --no-startup-id xset dpms 180
+exec --no-startup-id xset dpms 360
 
 # Battery icon and warning
 exec --no-startup-id cbatticon -u 30
