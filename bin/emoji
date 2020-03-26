@@ -3,7 +3,7 @@
 
 EMOJILIST="https://raw.githubusercontent.com/andys8/rofi-emoji-lists/master/full-list.txt"
 FILE="$HOME/.cache/emojis.txt"
-FONT="Noto Color Emoji 12"
+FONT="Noto Color Emoji 17"
 
 [ -f "$FILE" ] || curl --silent "$EMOJILIST" --output "$FILE"
-rofi -dmenu -markup-rows -i -columns 8 -lines 10 -width 20 -p 'Emoji' -font "$FONT" <"$FILE" | awk '{ print $NF }' | tr -d '\n' | xclip -sel clip
+rofi -dmenu -markup-rows -i -columns 10 -lines 10 -p 'Emoji' -font "$FONT" <"$FILE" | awk '{ print $NF }' | tr -d '\n' | xclip -sel clip
