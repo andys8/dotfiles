@@ -16,7 +16,6 @@ in
     exa # ls replacement
     ghcid # ghci daemon
     gnome3.zenity # show ui messages and dialogs
-    hlint # haskell linter
     jq # json processor
     mdp # markdown presentation
     ncdu # disk usage
@@ -51,6 +50,7 @@ in
     fd # "find" for files
     fzf # fuzzy find tool
     glow # markdown viewer
+    hlint # haskell linter
     hyperfine # benchmark (time replacement)
     i3status-rust # i3 status bar
     lazygit # git terminal ui

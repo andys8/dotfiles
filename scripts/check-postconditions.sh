@@ -12,6 +12,7 @@ commands=(
 	"git-brunch" # git tool
 	"hie-8.6.5" # haskell-ide-engine ghc 8.6.5
 	"hie-wrapper" # haskell-ide-engine
+	"hlint" # haskell linter
 	"htop" # htop (hopefully with vim bindings)
 	"lock" # bin/lock file is on the path
 	"nmt" # network-manager-tui
