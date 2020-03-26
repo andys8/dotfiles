@@ -33,8 +33,14 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Theme
 let g:dracula_colorterm = 0
-let g:dracula_italic = 0
+let g:dracula_italic = 1
 colorscheme dracula
+
+" Switch themes
+let g:seoul256_background = 233
+let g:seoul256_light_background = 256
+command Dark colorscheme seoul256
+command Light colorscheme seoul256-light
 
 " Airline
 let g:airline_theme = 'dracula'
@@ -44,9 +50,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#coc#error_symbol = ' '
 let g:airline#extensions#coc#warning_symbol = ' '
-
-" Switch themes
-command Dark colo torte
 
 " Ignore files
 set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*
@@ -222,13 +225,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Coc Errors
-hi! default link CocErrorHighlight SpellBad
-
-" Coc Floating (e.g. errors)
-hi link CocFloating Visual
-hi link CocErrorFloat Visual
-hi link CocWarningFloat Visual
-hi link CocInfoFloat Visual
+hi link CocErrorHighlight SpellBad
+hi link CocWarningHighlight SpellLocal
+hi link CocInfoHighlight SpellCap
 
 " Pmenu (e.g. completions)
 hi! link Pmenu Visual
