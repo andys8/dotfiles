@@ -228,6 +228,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 hi link CocErrorHighlight SpellBad
 hi link CocWarningHighlight SpellLocal
 hi link CocInfoHighlight SpellCap
+hi link CocHintHighlight SpellCap
+
+" Floating
+hi link CocFloating Visual
+hi link CocErrorFloat Visual
+hi link CocWarningFloat Visual
+hi link CocInfoFloat Visual
+hi link CocHintFloat Visual
 
 " Pmenu (e.g. completions)
 hi! link Pmenu Visual
