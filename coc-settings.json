@@ -59,9 +59,12 @@
     }
   },
   "diagnostic-languageserver.filetypes": {
-    "sh": "shellcheck",
+    "botlang": "ce-dev",
+    "gitcommit": "write-good",
     "haskell": "hlint",
-    "botlang": "ce-dev"
+    "markdown": "write-good",
+    "sh": "shellcheck",
+    "text": "write-good"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
@@ -93,6 +96,19 @@
         "Suggestion": "info"
       }
     },
+    "write-good": {
+      "command": "write-good",
+      "debounce": 500,
+      "args": ["--no-passive", "--text=%text"],
+      "offsetLine": 0,
+      "offsetColumn": 1,
+      "sourceName": "write-good",
+      "formatLines": 1,
+      "formatPattern": [
+        "(.*)\\s+on\\s+line\\s+(\\d+)\\s+at\\s+column\\s+(\\d+)\\s*$",
+        { "line": 2, "column": 3, "message": 1 }
+      ]
+    },
     "ce-dev": {
       "command": "ce-dev",
       "sourceName": "ce-dev",
@@ -103,16 +119,18 @@
         "column": "startColumn",
         "endLine": "endLine",
         "endColumn": "endColumn",
-        "message": "[${source}] ${message}",
-        "severity": "error"
+        "message": "[${source}] ${message}"
       }
     }
   },
-  "markdownlint.onOpen": false,
-  "markdownlint.config": {
-    "default": true,
-    "line_length": false
-  },
+  "cSpell.enabled": true,
+  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.enabledLanguageIds": ["gitcommit", "markdown", "plaintext", "text"],
+  "cSpellExt.enableDictionaries": ["german"],
+  "cSpell.language": "en,de",
+  "cSpell.numSuggestions": 5,
+  "cSpell.spellCheckDelayMs": 300,
+  "cSpell.ignoreRegExpList": ["`.*`", "/^```(?:.|\\s)+?^```/mig"],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",

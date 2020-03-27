@@ -1,6 +1,6 @@
 # dotfiles
 
-This repository needs to be cloned in home directory (`~`). The `install.sh` script checks pre- and post-conditions, links files and installs/updates programs.
+Clone this repository in your home directory (`~`). The `install.sh` script checks pre- and post-conditions, links files and installs/updates programs.
 
 ```sh
 cd ~
@@ -38,7 +38,7 @@ Local script executed on machine startup
 
 ### `~/.profile.local`
 
-Can be used for environment variables (optional).
+Contains per system environment variables (optional).
 
 ```sh
 export PATH=/home/user/example-path:$PATH

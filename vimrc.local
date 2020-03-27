@@ -125,20 +125,6 @@ command! -bang -nargs=* Rg
       \ {'options': '--delimiter : --nth 2..'},
       \ <bang>0)
 
-
-" Spell checking
-highlight clear SpellBad
-highlight SpellBad term=underline cterm=underline ctermfg=009
-command! -nargs=0 SpellToggle set spell!
-command! -nargs=0 German silent set spelllang=de
-command! -nargs=0 English silent set spelllang=en
-augroup markdown
-  au!
-  au FileType markdown,text,gitcommit setlocal spell
-  au FileType markdown,text,gitcommit nnoremap <buffer> <leader>s 1z=]S
-  au FileType markdown,text,gitcommit nnoremap <buffer> <leader>a ]S
-augroup END
-
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
 
@@ -180,7 +166,9 @@ let g:rooter_patterns = [
       \ ]
 
 " Coc
+let g:coc_node_path = "~/.nix-profile/bin/node"
 let g:coc_global_extensions = [
+      \ 'coc-cspell-dicts',
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-eslint',
@@ -189,6 +177,7 @@ let g:coc_global_extensions = [
       \ 'coc-markdownlint',
       \ 'coc-metals',
       \ 'coc-prettier',
+      \ 'coc-spell-checker',
       \ 'coc-tslint-plugin',
       \ 'coc-tsserver',
       \ 'coc-ultisnips',
@@ -227,7 +216,7 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " Coc Errors
 hi link CocErrorHighlight SpellBad
 hi link CocWarningHighlight SpellLocal
-hi link CocInfoHighlight SpellCap
+hi link CocInfoHighlight SpellRare
 hi link CocHintHighlight SpellCap
 
 " Floating
@@ -299,3 +288,6 @@ au BufWritePre *.hs call CocAction('format')
 
 " botlang
 au BufRead,BufNewFile *.bot set filetype=botlang
+
+" Qutebrowser
+au BufRead,BufNewFile qutebrowser-editor-* set filetype=text

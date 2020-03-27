@@ -99,4 +99,7 @@ ln -sf ~/dotfiles/stalonetrayrc ~/.stalonetrayrc
 # slack-term (will be in ~/.config/slack-term/config with 0.5.0)
 ln -sf ~/dotfiles/slack-term ~/.slack-term
 
+# markdownlint
+ln -sf ~/dotfiles/markdownlintrc ~/.markdownlintrc
+
 echo "Links updated"

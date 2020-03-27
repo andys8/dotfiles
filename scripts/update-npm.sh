@@ -10,6 +10,7 @@ npminstallations=(
 	prettier # JS/TS/CSS/Markdown formatter
 	qrcode-terminal # Encode text as QR code
 	typescript # TS compiler
+	write-good # check and improve written text
 )
 
 for i in "${npminstallations[@]}"; do
