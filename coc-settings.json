@@ -60,11 +60,9 @@
   },
   "diagnostic-languageserver.filetypes": {
     "botlang": "ce-dev",
-    "gitcommit": "write-good",
     "haskell": "hlint",
     "markdown": "write-good",
-    "sh": "shellcheck",
-    "text": "write-good"
+    "sh": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
@@ -129,7 +127,6 @@
   "cSpellExt.enableDictionaries": ["german"],
   "cSpell.language": "en,de",
   "cSpell.numSuggestions": 5,
-  "cSpell.spellCheckDelayMs": 300,
   "cSpell.ignoreRegExpList": ["`.*`", "/^```(?:.|\\s)+?^```/mig"],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
