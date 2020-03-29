@@ -105,7 +105,10 @@
       "formatPattern": [
         "(.*)\\s+on\\s+line\\s+(\\d+)\\s+at\\s+column\\s+(\\d+)\\s*$",
         { "line": 2, "column": 3, "message": 1 }
-      ]
+      ],
+      "securities": {
+        "undefined": "info"
+      }
     },
     "ce-dev": {
       "command": "ce-dev",
