@@ -1,5 +1,5 @@
+# Suckless terminal (andys8 fork)
 with import <nixpkgs> {};
-
 with stdenv.lib;
 let
   name = "st";

@@ -11,7 +11,6 @@ command -v "cachix" >/dev/null 2>&1 || {
 
 # Install packages
 nix-env -irf ~/dotfiles/nix/packages.nix
-nix-env -if ~/dotfiles/nix/st.nix
 
 # Collect garbage (chance ~ 5%)
 if [ $((RANDOM % 20)) -eq 0 ]; then

@@ -1,6 +1,7 @@
 let
   pkgs = import <nixpkgs> {};
   fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
+  st = import ./st.nix;
 in
 (
   with fixed; [
@@ -98,4 +99,4 @@ in
     hoogle # function documentation
     network-manager-tui # network tui
   ]
-)
+) ++ [ st ]
