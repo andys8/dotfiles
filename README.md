@@ -134,18 +134,6 @@ If missing, add with:
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
 ```
 
-## Haskell
-
-### haskell-ide-engine from source
-
-```shell
-git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
-cd haskell-ide-engine
-git checkout 0.14.0.0 # version
-git submodule update
-stack ./install.hs hie-8.6.5
-```
-
 ## `sudo`
 
 Open `sudo visudo` and add these lines to enable asterisks and silly feedback.

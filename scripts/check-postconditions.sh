@@ -10,8 +10,6 @@ commands=(
 	"ghcide" # haskell language server
 	"git-brunch" # branch change tool
 	"git-brunch" # git tool
-	"hie-8.6.5" # haskell-ide-engine ghc 8.6.5
-	"hie-wrapper" # haskell-ide-engine
 	"hlint" # haskell linter
 	"htop" # htop (hopefully with vim bindings)
 	"lock" # bin/lock file is on the path
