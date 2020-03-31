@@ -22,6 +22,11 @@ if [ -z "$(pgrep xss-lock)" ]; then
 	xss-lock -l -- lock &
 fi
 
+# Battery warning
+if [ -z "$(pgrep -f i3-battery-popup)" ]; then
+	i3-battery-popup -n &
+fi
+
 # Battery icon(s) (and notification)
 if [ -z "$(pgrep cbatticon)" ]; then
 	BATTERIES=$(cd /sys/class/power_supply && find BAT*)
