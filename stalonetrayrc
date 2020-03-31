@@ -1,10 +1,9 @@
 transparent false
-geometry 10x1-510-0
-max_geometry 10x1-510-0
-icon_gravity SE
-window_layer bottom
+geometry 10x1-470+2
+icon_gravity NE
+window_layer top
 sticky true
 icon_size 16
-slot_size 22
+slot_size 18
 background "#44475a"
 kludges force_icons_size
