@@ -1,9 +1,9 @@
 transparent false
-geometry 10x1-470+2
+geometry 10x1-540+1
 icon_gravity NE
 window_layer top
 sticky true
-icon_size 16
-slot_size 18
-background "#44475a"
+icon_size 20
+slot_size 22
+background "#282a36"
 kludges force_icons_size
