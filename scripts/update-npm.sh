@@ -4,7 +4,8 @@ set -euo pipefail
 # Npm installable dependencies
 npm set prefix ~/.npm-global
 npminstallations=(
-	bash-language-server
+	bash-language-server # bash ls
+	dockerfile-language-server-nodejs # docker ls
 	elm-json # Update and change elm.json files
 	fx # json viewer
 	prettier # JS/TS/CSS/Markdown formatter
