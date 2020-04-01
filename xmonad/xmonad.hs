@@ -322,7 +322,7 @@ myXmobar xmproc = dynamicLogWithPP xmobarPP
   , ppLayout  = xmobarColor xmobarLayoutColor ""
   , ppUrgent  = xmobarColor urgent ""
   , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 50
-  , ppWsSep   = " | "
+  , ppWsSep   = " ▸ "
   , ppSep     = replicate 6 ' '
   , ppOutput  = hPutStrLn xmproc
   }
