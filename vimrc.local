@@ -286,8 +286,5 @@ au BufRead,BufNewFile *.x set filetype=alex
 au BufRead,BufNewFile *.y set filetype=happy
 au BufWritePre *.hs call CocAction('format')
 
-" botlang
-au BufRead,BufNewFile *.bot set filetype=botlang
-
 " Qutebrowser
 au BufRead,BufNewFile qutebrowser-editor-* set filetype=text

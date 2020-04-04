@@ -54,8 +54,8 @@ export EDITOR=vim
 export TERMINAL=st
 
 # Source local profile if it exists
-if [ -f "$HOME/.profile.local" ]; then
-    . "$HOME/.profile.local"
+if [ -f "$HOME/.profile.machine" ]; then
+    . "$HOME/.profile.machine"
 fi
 
 # Used to test if this is sourced

@@ -46,6 +46,11 @@ if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
 
+" Include machine specific bundle or config
+if filereadable(expand("~/.vimrc.machine"))
+  source ~/.vimrc.machine
+endif
+
 call plug#end()
 
 " Required:

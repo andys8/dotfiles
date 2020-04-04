@@ -11,6 +11,9 @@ section "Update dotfiles repository"
 section "Check pre-conditions"
 ~/dotfiles/scripts/check-preconditions.sh
 
+section "Machine specific files"
+~/dotfiles/scripts/create-machine-specific-files.sh
+
 section "Create symlinks"
 ~/dotfiles/scripts/link.sh
 

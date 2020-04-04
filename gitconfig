@@ -79,4 +79,4 @@
 [hub]
 	protocol = https
 [include]
-	path = ~/.gitconfig.user
+	path = ~/.gitconfig.machine

@@ -9,20 +9,7 @@ cd dotfiles
 ./install.sh
 ```
 
-## Local files (depending on machine)
-
-### `~/.gitconfig.user`
-
-Local default git user configuration with an example for conditional includes.
-
-```text
-[user]
-    name = andys8
-    email = andys8@users.noreply.github.com
-
-[includeIf "gitdir:~/dev/repository/work/"]
-    path = ~/.gitconfig.work
-```
+## Machine specific configuration
 
 ### `~/bin/startup.sh`
 
@@ -36,13 +23,35 @@ Local script executed on machine startup
 [ -z "$(pgrep pulseaudio)" ] && pulseaudio --daemonize
 ```
 
-### `~/.profile.local`
+### `~/.gitconfig.machine`
+
+Local default git user configuration with an example for conditional includes.
+
+```text
+[user]
+    name = andys8
+    email = andys8@users.noreply.github.com
+
+[includeIf "gitdir:~/dev/repository/work/"]
+    path = ~/.gitconfig.work
+```
+
+
+### `~/.profile.machine`
 
 Contains per system environment variables (optional).
 
 ```sh
 export PATH=/home/user/example-path:$PATH
 export SLACK_TOKEN=example-token
+```
+
+### `~/.vimrc.machine`
+
+Machine specific vim configuration
+
+```vim
+Plug 'https://account@github.com/org/plugin', { 'for' : 'language' }
 ```
 
 ## Shell

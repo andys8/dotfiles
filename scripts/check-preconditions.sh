@@ -44,11 +44,6 @@ commands=(
 	zathura # pdf viewer
 )
 
-files=(
-	~/.gitconfig.user
-	~/bin/startup.sh
-)
-
 fonts=(
 	"Font Awesome 5 Free Solid"
 	"Iosevka Nerd"
@@ -65,6 +60,12 @@ check() {
 	command -v "$1" >/dev/null 2>&1 || {
 		fail "Command '$1' missing"
 	}
+}
+
+exists() {
+	if [ ! -f "$1" ]; then
+		fail "File '$1' missing"
+	fi
 }
 
 exists() {
@@ -116,9 +117,6 @@ QUTEBROWSER_EXPECTED="v1.10."
 [[ $QUTEBROWSER_VERSION =~ $QUTEBROWSER_EXPECTED ]] || {
 	fail "Qutebrowser version has to match $QUTEBROWSER_EXPECTED ($QUTEBROWSER_VERSION)"
 }
-
-# Verify files exist
-for i in "${files[@]}"; do exists "$i"; done
 
 # Check fonts
 for i in "${fonts[@]}"; do fontInstalled "$i"; done
