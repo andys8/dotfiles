@@ -111,6 +111,18 @@ for i in "${commands[@]}"; do check "$i"; done
 	fail "Ant-Dracula theme is not configured as gtk 3.0 theme"
 }
 
+[[ $(cat ~/.gtkrc-2.0) =~ "Ant-Dracula" ]] || {
+	fail "Ant-Dracula theme is not configured as gtk 2.0 theme"
+}
+
+[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Iosevka" ]] || {
+	fail "Iosevka font is not configured as gtk 3.0 font"
+}
+
+[[ $(cat ~/.gtkrc-2.0) =~ "Iosevka" ]] || {
+	fail "Iosevka font is not configured as gtk 2.0 font"
+}
+
 # qutebrowser fixed version
 QUTEBROWSER_VERSION=$(qutebrowser --version | head -n1)
 QUTEBROWSER_EXPECTED="v1.10."
