@@ -908,6 +908,7 @@ c.content.notifications = False
 ##   - top
 ##   - bottom
 # c.downloads.position = 'top'
+c.downloads.position = 'bottom'
 
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
@@ -1379,7 +1380,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-# c.statusbar.hide = False
+c.statusbar.hide = True
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
@@ -1403,7 +1404,8 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
 # c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
-c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
+# c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
+c.statusbar.widgets = ['url']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
@@ -1551,6 +1553,7 @@ c.tabs.background = True
 ##   - multiple: Hide the tab bar if only one tab is open.
 ##   - switching: Show the tab bar when switching tabs.
 # c.tabs.show = 'always'
+c.tabs.show = 'multiple'
 
 ## Duration (in milliseconds) to show the tab bar before hiding it when
 ## tabs.show is set to 'switching'.
@@ -1582,6 +1585,7 @@ c.tabs.background = True
 ## `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
 # c.tabs.title.format = '{audio}{index}: {current_title}'
+c.tabs.title.format = '{audio} {current_title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
