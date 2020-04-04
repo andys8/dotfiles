@@ -14,3 +14,5 @@ for file in "${files[@]}"; do
 		touch "$file"
 	fi
 done
+
+echo "Machine specific files exist"
