@@ -263,9 +263,6 @@ exec --no-startup-id xset dpms 360
 # Battery warning
 exec --no-startup-id i3-battery-popup -n
 
-# Battery icon and warning
-exec --no-startup-id cbatticon -u 30
-
 # Wallpaper
 exec --no-startup-id nitrogen --restore
 

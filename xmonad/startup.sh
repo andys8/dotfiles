@@ -27,14 +27,6 @@ if [ -z "$(pgrep -f i3-battery-popup)" ]; then
 	i3-battery-popup -n &
 fi
 
-# Battery icon(s) (and notification)
-if [ -z "$(pgrep cbatticon)" ]; then
-	BATTERIES=$(cd /sys/class/power_supply && find BAT*)
-	for BAT in $BATTERIES; do
-		cbatticon -u 30 "$BAT" &
-	done
-fi
-
 # Keyboard layout: German, no dead keys
 setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
