@@ -12,16 +12,11 @@ if not test -n "$PROFILE_SOURCED"
 end
 
 # Cursor speed
-xset r rate 200 80 2> /dev/null
+xset r rate 200 80 2> /dev/null &
 
 # Autojump
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
   and source "$HOME/.nix-profile/share/autojump/autojump.fish"
-
-# Key bindings: vim and default emacs
-if status --is-interactive
-  set -U fish_key_bindings fish_hybrid_key_bindings
-end
 
 # sudo !!
 function sudo

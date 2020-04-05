@@ -1,7 +1,6 @@
 #!/usr/bin/fish
 
 omf --version
-
 if [ $status -ne 0 ]
   echo "Install omf"
   curl -L https://get.oh-my.fish | fish
@@ -9,9 +8,8 @@ end
 
 omf update
 
-# Environment
-set -Ux EDITOR vim
-set -Ux TERMINAL st
+# Key bindings: vim and default emacs
+set -U fish_key_bindings fish_hybrid_key_bindings
 
 # Bobthefish theme options
 set -U theme_color_scheme dracula
