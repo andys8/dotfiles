@@ -1,9 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-# Npm installable dependencies
 npm set prefix ~/.npm-global
-npminstallations=(
+
+# NPM installable packages
+packages=(
 	bash-language-server # bash ls
 	dockerfile-language-server-nodejs # docker ls
 	elm-json # Update and change elm.json files
@@ -14,6 +15,6 @@ npminstallations=(
 	write-good # check and improve written text
 )
 
-for i in "${npminstallations[@]}"; do
-	(npm install -g "$i")
+for package in "${packages[@]}"; do
+	(npm_config_loglevel=error npm install -g "$package")
 done
