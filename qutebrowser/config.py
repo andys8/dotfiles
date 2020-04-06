@@ -1380,7 +1380,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.hide = True
+c.statusbar.hide = False
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
@@ -1404,8 +1404,8 @@ c.statusbar.hide = True
 ##   - keypress: Display pressed keys when composing a vi command.
 ##   - progress: Progress bar for the current page loading.
 # c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
-# c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
-c.statusbar.widgets = ['url']
+# c.statusbar.widgets = ['url']
+c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
