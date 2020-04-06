@@ -60,9 +60,12 @@ instance Show Workspace where
 myWorkspaces :: [String]
 myWorkspaces = show <$> [WorkspaceWWW ..]
 
-toClickableWorkspace ws =
-  "<action=`xdotool key super+" ++ show (index + 1) ++ "`>" ++ ws ++ "</action>"
-  where index = fromMaybe 0 $ elemIndex ws myWorkspaces
+renderWorkspace color ws = withColor clickable
+ where
+  index     = fromMaybe 0 $ elemIndex ws myWorkspaces
+  action    = "xdotool key super+" ++ show (index + 1)
+  clickable = "<action=`" ++ action ++ "`>" ++ ws ++ "</action>"
+  withColor = xmobarColor color ""
 
 -- Window rules --
 myManageHook = composeAll
@@ -118,9 +121,13 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
 active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"
-xmobarActiveWorkspaceColor = "#ff79c6"
-xmobarTitleColor = "#8be9fd"
-xmobarLayoutColor = "#ffb86c"
+xmobarWs = "#6272a4"
+xmobarWsActive = "#ff79c6"
+xmobarWsUrgent = "#ff5555"
+xmobarWsInactive = "#44475a"
+xmobarWsSep = "#44475a"
+xmobarTitle = "#8be9fd"
+xmobarLayout = "#ffb86c"
 
 myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
 
@@ -316,15 +323,16 @@ main = do
         }
 
 myXmobar xmproc = dynamicLogWithPP xmobarPP
-  { ppCurrent = xmobarColor xmobarActiveWorkspaceColor ""
-  , ppVisible = toClickableWorkspace
-  , ppHidden  = toClickableWorkspace
-  , ppLayout  = xmobarColor xmobarLayoutColor ""
-  , ppUrgent  = xmobarColor urgent ""
-  , ppTitle   = xmobarColor xmobarTitleColor "" . shorten 80
-  , ppWsSep   = " ▸ "
-  , ppSep     = replicate 6 ' '
-  , ppOutput  = hPutStrLn xmproc
+  { ppCurrent         = renderWorkspace xmobarWsActive
+  , ppVisible         = renderWorkspace xmobarWs
+  , ppHidden          = renderWorkspace xmobarWs
+  , ppHiddenNoWindows = renderWorkspace xmobarWsInactive
+  , ppUrgent          = renderWorkspace xmobarWsUrgent
+  , ppLayout          = xmobarColor xmobarLayout ""
+  , ppTitle           = xmobarColor xmobarTitle "" . shorten 80
+  , ppWsSep           = xmobarColor xmobarWsSep "" " | "
+  , ppSep             = replicate 6 ' '
+  , ppOutput          = hPutStrLn xmproc
   }
 
 -- Screens --
