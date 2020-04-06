@@ -37,10 +37,9 @@ let g:dracula_italic = 1
 colorscheme dracula
 
 " Switch themes
-let g:seoul256_background = 233
-let g:seoul256_light_background = 256
-command Dark colorscheme seoul256
-command Light colorscheme seoul256-light
+command Dracula colorscheme dracula | set nocursorline
+command Dark colorscheme darkblue | set cursorline
+command Light colorscheme shirotelin | set cursorline
 
 " Airline
 let g:airline_theme = 'dracula'
