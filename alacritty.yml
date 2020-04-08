@@ -51,18 +51,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 8
-
 # Font configuration (changes require restart)
 #
 # Important font attributes like antialiasing, subpixel aa, and hinting can be
@@ -106,7 +94,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
@@ -123,30 +111,30 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: "0x282a36"
-    foreground: "0xf8f8f2"
+    background: "#282a36"
+    foreground: "#f8f8f2"
 
   # Normal colors
   normal:
-    black: "0x000000"
-    red: "0xff5555"
-    green: "0x50fa7b"
-    yellow: "0xf1fa8c"
-    blue: "0xcaa9fa"
-    magenta: "0xff79c6"
-    cyan: "0x8be9fd"
-    white: "0xbfbfbf"
+    black: "#000000"
+    red: "#ff5555"
+    green: "#50fa7b"
+    yellow: "#f1fa8c"
+    blue: "#caa9fa"
+    magenta: "#ff79c6"
+    cyan: "#8be9fd"
+    white: "#bfbfbf"
 
   # Bright colors
   bright:
-    black: "0x282a35"
-    red: "0xff6e67"
-    green: "0x5af78e"
-    yellow: "0xf4f99d"
-    blue: "0xcaa9fa"
-    magenta: "0xff92d0"
-    cyan: "0x9aedfe"
-    white: "0xe6e6e6"
+    black: "#575b70"
+    red: "#ff6e67"
+    green: "#5af78e"
+    yellow: "#f4f99d"
+    blue: "#caa9fa"
+    magenta: "#ff92d0"
+    cyan: "#9aedfe"
+    white: "#e6e6e6"
 
 # Visual Bell
 #
