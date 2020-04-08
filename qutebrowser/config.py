@@ -24,6 +24,7 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 c.aliases = {
     'adblock-toggle': 'config-cycle -t content.host_blocking.enabled',
     'chromium': 'spawn --detach chromium-browser {url}',
+    'incognito': 'open --private',
     'lastpass': 'hint --first inputs ;; spawn --userscript qute-lastpass',
     'mpv': 'spawn --detach mpv {url}',
     'o': 'open',
@@ -327,6 +328,7 @@ c.colors.statusbar.insert.bg = '#ff79c6'
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
 # c.colors.statusbar.private.bg = '#666666'
+c.colors.statusbar.private.bg = '#ff5555'
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
