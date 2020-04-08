@@ -57,3 +57,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for' :
 " Haskell: Happy/Alex parser/lexer
 Plug 'vim-scripts/alex.vim', { 'for' : 'alex' }
 Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
+
+" Ranger
+Plug 'francoiscabrol/ranger.vim'

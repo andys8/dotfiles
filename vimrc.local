@@ -290,3 +290,7 @@ au BufWritePre *.hs call CocAction('format')
 
 " Qutebrowser
 au BufRead,BufNewFile qutebrowser-editor-* set filetype=text
+
+" Ranger
+let g:ranger_map_keys = 0
+nmap <leader><space> :Ranger<CR>
