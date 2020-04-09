@@ -200,7 +200,7 @@ nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 xmap <silent> <leader>p <Plug>(coc-format-selected)
-nnoremap <silent> <leader>o :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+nnoremap <silent> <leader>O :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -293,4 +293,4 @@ au BufRead,BufNewFile qutebrowser-editor-* set filetype=text
 
 " Ranger
 let g:ranger_map_keys = 0
-nmap <leader><space> :Ranger<CR>
+nmap <leader>o :Ranger<CR>
