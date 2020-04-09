@@ -69,6 +69,7 @@ in
     screenkey # visualize typed keys
     shellcheck # linter for shell scripts
     slack-term # slack tui
+    speedtest-cli # measure down/upload
     sxiv # image viewer
     translate-shell # trans command
     xmobar # status bar for xmonad
