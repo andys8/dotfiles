@@ -14,7 +14,6 @@ in
     chromium # web browser
     coursier # scala build tool
     ctop # top for containers
-    ghcid # ghci daemon
     gnome3.zenity # show ui messages and dialogs
     jq # json processor
     mdp # markdown presentation
@@ -49,6 +48,7 @@ in
     exa # ls replacement
     fd # "find" for files
     fzf # fuzzy find tool
+    ghcid # ghci daemon
     glow # markdown viewer
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
