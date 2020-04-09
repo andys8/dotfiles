@@ -14,7 +14,6 @@ in
     chromium # web browser
     coursier # scala build tool
     ctop # top for containers
-    exa # ls replacement
     ghcid # ghci daemon
     gnome3.zenity # show ui messages and dialogs
     jq # json processor
@@ -47,6 +46,7 @@ in
     dragon-drop # drag and drop
     dtrx # extract files
     entr # watch files
+    exa # ls replacement
     fd # "find" for files
     fzf # fuzzy find tool
     glow # markdown viewer
@@ -54,6 +54,7 @@ in
     hyperfine # benchmark (time replacement)
     i3status-rust # i3 status bar
     lazygit # git terminal ui
+    lsd # ls replacement
     maim # screenshots
     mdcat # markdown viewer
     meld # git merge tool (graphical)

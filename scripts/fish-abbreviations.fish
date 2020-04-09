@@ -43,7 +43,9 @@ abbr -a -U -- gst 'git stash'
 abbr -a -U -- gti git
 abbr -a -U -- jd 'cd ~/dotfiles'
 abbr -a -U -- lg lazygit
-abbr -a -U -- ll 'exa -al'
+abbr -a -U -- ll 'lsd -Al --date relative --group-dirs first'
+abbr -a -U -- lll 'lsd -Al --date relative --timesort --reverse'
+abbr -a -U -- ls 'lsd'
 abbr -a -U -- mirror 'autorandr common'
 abbr -a -U -- n npm
 abbr -a -U -- nr 'npm run'
