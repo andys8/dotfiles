@@ -58,6 +58,7 @@ abbr -a -U -- pacu 'sudo pacman -Syu'
 abbr -a -U -- r ranger
 abbr -a -U -- rm 'trash'
 abbr -a -U -- sdkman sdk
+abbr -a -U -- suspend 'systemctl suspend'
 abbr -a -U -- t tig
 abbr -a -U -- timestamp 'date +%s%3N'
 abbr -a -U -- tl 'toilet -t -F border -f future --gay'
