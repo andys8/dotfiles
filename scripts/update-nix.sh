@@ -4,11 +4,6 @@ set -euo pipefail
 # Update the channel
 nix-channel --update
 
-# cachix
-command -v "cachix" >/dev/null 2>&1 || {
-	nix-env -iA cachix -f https://cachix.org/api/v1/install
-}
-
 # Install packages
 nix-env -irf ~/dotfiles/nix/packages.nix
 

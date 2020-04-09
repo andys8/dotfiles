@@ -9,7 +9,6 @@ in
     autorandr # xrandr monitor profiles
     awscli # amazon web services
     cabal2nix # Convert cabal files to nix
-    cachix # nix chaching
     cargo # rust package manager
     chromium # web browser
     coursier # scala build tool
