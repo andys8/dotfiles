@@ -3,19 +3,14 @@ set -euo pipefail
 
 # Dependencies
 commands=(
-	alacritty # terminal-emulator
 	awk # used in shell scripts
 	bash # shell
-	cabal # haskell tool
 	fc-list # list fonts
 	find # used in scripts
 	fish # shell
-	i3 # tiling window manager
 	i3lock # lockscreen
 	idea # intellij ide
-	java
 	lightdm # Login display manager
-	lxappearance # configure themes
 	nix-channel
 	nix-env
 	nix-shell
@@ -28,20 +23,15 @@ commands=(
 	python3
 	qutebrowser # Keyboard based webbrowser
 	setxkbmap
-	stack # haskell build tool
 	tar
-	timeshift # backup tool
 	tr # used in shell scripts
-	uuidgen # generate uuid
 	vim
-	vimdiff
 	xclip # copy/paste
 	xdotool # control x via command line
 	xrandr # monitor setup
 	xrdb # load Xresources
 	xset
 	xss-lock # lock the screen
-	zathura # pdf viewer
 )
 
 fonts=(
@@ -51,37 +41,22 @@ fonts=(
 	"SauceCodePro Nerd"
 )
 
+errors=0
+warnings=0
+
 fail() {
-	echo "ERROR: $1"
-	exit 1
+	echo "$(tput setaf 1)ERROR:$(tput sgr 0) $1"
+	errors=$((errors + 1))
 }
 
-check() {
+commandExists() {
 	command -v "$1" >/dev/null 2>&1 || {
 		fail "Command '$1' missing"
 	}
 }
 
-exists() {
-	if [ ! -f "$1" ]; then
-		fail "File '$1' missing"
-	fi
-}
-
-exists() {
-	if [ ! -f "$1" ]; then
-		fail "File '$1' missing"
-	fi
-}
-
-fontInstalled() {
-	fc-list | grep -i "$1" >/dev/null 2>&1 || {
-		fail "Font '$1' missing"
-	}
-}
-
 # Check commands
-for i in "${commands[@]}"; do check "$i"; done
+for i in "${commands[@]}"; do commandExists "$i"; done
 
 # Vim copy paste
 [[ $(vim --version) =~ \+clipboard ]] || {
@@ -93,36 +68,6 @@ for i in "${commands[@]}"; do check "$i"; done
 	fail "sdkman installation is missing"
 }
 
-# cursor theme: xcursor-breeze
-[[ $(find /usr/share/icons -type d -name "cursors") =~ "breeze" ]] || {
-	fail "xcursor-breeze cursor theme is missing"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "breeze" ]] || {
-	fail "xcursor-breeze cursor theme is not configured as gtk 3.0 theme"
-}
-
-# theme: ant-dracula
-[[ -d /usr/share/themes/Ant-Dracula ]] || {
-	fail "Ant-Dracula theme is missing"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Ant-Dracula" ]] || {
-	fail "Ant-Dracula theme is not configured as gtk 3.0 theme"
-}
-
-[[ $(cat ~/.gtkrc-2.0) =~ "Ant-Dracula" ]] || {
-	fail "Ant-Dracula theme is not configured as gtk 2.0 theme"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Iosevka" ]] || {
-	fail "Iosevka font is not configured as gtk 3.0 font"
-}
-
-[[ $(cat ~/.gtkrc-2.0) =~ "Iosevka" ]] || {
-	fail "Iosevka font is not configured as gtk 2.0 font"
-}
-
 # qutebrowser fixed version
 QUTEBROWSER_VERSION=$(qutebrowser --version | head -n1)
 QUTEBROWSER_EXPECTED="v1.10."
@@ -131,23 +76,18 @@ QUTEBROWSER_EXPECTED="v1.10."
 }
 
 # Check fonts
+fontInstalled() {
+	fc-list | grep -i "$1" >/dev/null 2>&1 || {
+		fail "Font '$1' missing"
+	}
+}
+
 for i in "${fonts[@]}"; do fontInstalled "$i"; done
 
-[ -z "${JAVA_HOME-}" ] && {
-	fail "\$JAVA_HOME has to be set"
-}
-
-[[ "${WINIT_HIDPI_FACTOR-}" != "1.0" ]] && {
-	fail "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty"
-}
-
-# Make sure max brightness is configured
-BRIGHTNESS=$(cat /sys/class/backlight/*/brightness)
-MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
-[[ "$BRIGHTNESS" != "$MAX_BRIGHTNESS" ]] && {
-	fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
-}
-
-# Otherwise good case
-echo "All preconditions are fine"
-exit 0
+# Result
+[[ $warnings != 0 ]] && echo "$(tput setaf 2)Pre-Conditions have $warnings warning(s)$(tput sgr 0)"
+if [[ $errors != 0 ]]; then
+	echo "$(tput setaf 1)Pre-Conditions failed with $errors error(s)$(tput sgr 0)" && exit 1
+else
+	echo "$(tput setaf 2)Pre-Conditions are fine$(tput sgr 0)" && exit 0
+fi
