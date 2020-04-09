@@ -15,6 +15,5 @@ packages=(
 	write-good # check and improve written text
 )
 
-for package in "${packages[@]}"; do
-	(npm_config_loglevel=error npm install -g "$package")
-done
+npm_config_loglevel=error npm install -g "${packages[@]}"
+echo "NPM packages updated"

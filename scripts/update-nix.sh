@@ -16,3 +16,5 @@ nix-env -irf ~/dotfiles/nix/packages.nix
 if [ $((RANDOM % 20)) -eq 0 ]; then
 	nix-collect-garbage --delete-older-than 14d
 fi
+
+echo "Nix packages updated"

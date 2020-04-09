@@ -2,7 +2,7 @@
 set -eu pipefail
 
 section() {
-	echo "$(tput setaf 2)>>> $1$(tput sgr 0)"
+	echo "$(tput setaf 4)>>=$(tput setaf 5) $1 $(tput setaf 4)=<<$(tput sgr 0)"
 }
 
 section "Update dotfiles repository"
@@ -36,6 +36,6 @@ section "Update ranger plugins"
 section "Update htop with vim bindings"
 ~/dotfiles/scripts/update-htop-vim.sh
 
-section "Check post-conditions"
+section "Run all checks"
 ~/dotfiles/scripts/check-preconditions.sh
 ~/dotfiles/scripts/check-postconditions.sh
