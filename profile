@@ -51,9 +51,11 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set environment
 export EDITOR=vim
+export VISUAL=vim
 export TERMINAL=st
 export BROWSER=qutebrowser
 export READER=zathura
+export LANG=en_US.UTF-8
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then
