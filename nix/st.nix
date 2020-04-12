@@ -11,8 +11,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "andys8";
     repo = "st";
-    rev = "c7a45fedd03b9689c9ba0ef0f11a186265df76e8";
-    sha256 = "0xcscgckcn2kzrrdszdq6pljgvzr226lv2v64gw1dcs1yvp8mw6z";
+    rev = "fe6eb82689818029381bec3c914bf2edcc3d9789";
+    sha256 = "18rnad1wc259q4544y2i28vvbfsgbxgis49x6md8vgdahygyrhz6";
   };
 
   nativeBuildInputs = [ pkgconfig ];
