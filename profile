@@ -57,6 +57,7 @@ export BROWSER=qutebrowser
 export READER=zathura
 export LANG=en_US.UTF-8
 export XCURSOR_THEME=xcursor-breeze
+export XCURSOR_PATH=/usr/share/icons:~/.icons:~/.nix-profile/share/icons/:$XCURSOR_PATH
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then

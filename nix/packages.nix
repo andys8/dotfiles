@@ -67,12 +67,12 @@ in
     rclone # copy cloud to cloud
     ripgrep # fast grep
     screenkey # visualize typed keys
-    unclutter # hide idle mouse
     shellcheck # linter for shell scripts
     slack-term # slack tui
     speedtest-cli # measure down/upload
     sxiv # image viewer
     translate-shell # trans command
+    unclutter # hide idle mouse
     xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
     ytop # top/htop replacement
