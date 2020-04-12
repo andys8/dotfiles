@@ -56,6 +56,7 @@ export TERMINAL=st
 export BROWSER=qutebrowser
 export READER=zathura
 export LANG=en_US.UTF-8
+export XCURSOR_THEME=xcursor-breeze
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then

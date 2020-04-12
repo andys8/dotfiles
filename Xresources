@@ -28,4 +28,3 @@ Xft.lcdfilter: lcddefault
 
 ! cursor
 Xcursor.theme: xcursor-breeze
-Xcursor.size:  0
