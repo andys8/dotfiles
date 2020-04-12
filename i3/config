@@ -266,6 +266,9 @@ exec --no-startup-id i3-battery-popup -n
 # Wallpaper
 exec --no-startup-id nitrogen --restore
 
+# Hide idle mouse
+exec --no-startup-id unclutter
+
 # Run startup script (which is different on each machine)
 exec --no-startup-id ~/bin/startup.sh
 

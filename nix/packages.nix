@@ -67,6 +67,7 @@ in
     rclone # copy cloud to cloud
     ripgrep # fast grep
     screenkey # visualize typed keys
+    unclutter # hide idle mouse
     shellcheck # linter for shell scripts
     slack-term # slack tui
     speedtest-cli # measure down/upload

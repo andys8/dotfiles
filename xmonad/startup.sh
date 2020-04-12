@@ -27,6 +27,11 @@ if [ -z "$(pgrep -f i3-battery-popup)" ]; then
 	i3-battery-popup -n &
 fi
 
+# Hide idle mouse
+if [ -z "$(pgrep unclutter)" ]; then
+	unclutter &
+fi
+
 # Keyboard layout: German, no dead keys
 setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
