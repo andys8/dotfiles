@@ -11,6 +11,10 @@ if not test -n "$PROFILE_SOURCED"
   fenv source ~/.profile
 end
 
+# Keybindings
+bind --user --mode visual --sets-mode insert i force-repaint end-selection
+bind --user --mode visual --sets-mode insert s kill-selection end-selection repaint-mode
+
 # Cursor speed
 xset r rate 200 80 2> /dev/null &
 
