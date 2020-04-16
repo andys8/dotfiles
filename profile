@@ -1,3 +1,5 @@
+#!/bin/bash
+# shellcheck disable=SC1090
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -12,7 +14,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+	source "$HOME/.bashrc"
     fi
 fi
 
@@ -25,8 +27,8 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
 fi
 
 # Nix
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-    . $HOME/.nix-profile/etc/profile.d/nix.sh;
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
 # ~/bin
@@ -61,8 +63,9 @@ export XCURSOR_PATH=/usr/share/icons:~/.icons:~/.nix-profile/share/icons/:$XCURS
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then
-    . "$HOME/.profile.machine"
+    source "$HOME/.profile.machine"
 fi
 
 # Used to test if this is sourced
 export PROFILE_SOURCED=1
+echo ".profile sourced"

@@ -1,5 +1,4 @@
 package apt
-package foreign-env
 package last-working-dir
 package pbcopy
 package sdk

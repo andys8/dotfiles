@@ -6,6 +6,11 @@ if [ $status -ne 0 ]
   curl -L https://get.oh-my.fish | fish
 end
 
+# Path to Oh My Fish install.
+set -q XDG_DATA_HOME
+  and set -Ux OMF_PATH "$XDG_DATA_HOME/omf"
+  or set -Ux OMF_PATH "$HOME/.local/share/omf"
+
 omf update
 
 # Key bindings: vim and default emacs
@@ -24,6 +29,7 @@ set -U theme_display_vagrant no
 set -U theme_display_vi yes
 set -U theme_git_worktree_support no
 set -U theme_nerd_fonts yes
+set -U theme_show_exit_status yes
 
 # Colors in man pages / less
 set -Ux LESS_TERMCAP_mb (set_color -o magenta)
