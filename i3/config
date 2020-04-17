@@ -105,6 +105,7 @@ bindsym $alt+$mod+n exec sudo systemctl restart network-manager
 
 # password manager
 bindsym $alt+$mod+p exec "lastpass-rofi || keepassx || exit 1"
+bindsym $mod+p exec "lastpass-rofi || keepassx || exit 1"
 
 # execute dotfiles scripts
 bindsym $alt+$mod+s exec "script-rofi"
