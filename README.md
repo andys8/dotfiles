@@ -36,7 +36,6 @@ Local default git user configuration with an example for conditional includes.
     path = ~/.gitconfig.work
 ```
 
-
 ### `~/.profile.machine`
 
 Contains per system environment variables (optional).
@@ -116,6 +115,8 @@ git clone https://github.com/qutebrowser/qutebrowser.git
 ./qutebrowser/scripts/dictcli.py install en-US
 ./qutebrowser/scripts/dictcli.py install de-DE
 ```
+
+Might be necessary to copy to `~/.local/share/qutebrowser/qtwebengine_dictionaries`
 
 ## Time
 
