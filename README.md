@@ -111,9 +111,11 @@ xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 Download dictionaries for spell checking
 
 ```sh
-git clone https://github.com/qutebrowser/qutebrowser.git
-./qutebrowser/scripts/dictcli.py install en-US
-./qutebrowser/scripts/dictcli.py install de-DE
+git clone https://github.com/qutebrowser/qutebrowser.git && cd qutebrowser
+./scripts/dictcli.py install en-US
+./scripts/dictcli.py install de-DE
+# or with virtualenv (if wrong directory)
+./.venv/bin/python3 ./scripts/dictcli.py install en-US
 ```
 
 Might be necessary to copy to `~/.local/share/qutebrowser/qtwebengine_dictionaries`
