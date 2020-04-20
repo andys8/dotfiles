@@ -15,6 +15,7 @@ commands=(
 	nmt # network-manager-tui
 	prettier # js/css/markdown formatter
 	qrcode-terminal # show qr codes
+	refactor # apply-refact (for hlint)
 	st # suckless terminal
 	tsc # typescript compiler
 )

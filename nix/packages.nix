@@ -1,10 +1,11 @@
 let
-  pkgs = import <nixpkgs> {};
-  fixed = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
+  unstable = import <nixpkgs> {};
+  release1909 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
+  beta2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03-beta.tar.gz") {};
   st = import ./st.nix;
 in
 (
-  with fixed; [
+  with release1909; [
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     awscli # amazon web services
@@ -37,7 +38,7 @@ in
     zip # compress to zip
   ]
 ) ++ (
-  with pkgs; [
+  with unstable; [
     ack # search in files
     autojump # jump into directory with j
     bat # cat replacement
@@ -79,23 +80,26 @@ in
     zstd # compress tool used for .std
   ]
 ) ++ (
-  with pkgs.gitAndTools; [
+  with unstable.gitAndTools; [
     diff-so-fancy # git diff with colors
     git-gone # prune merged branches
     hub # github commandline tool
     tig # diff and comit view
   ]
 ) ++ (
-  with pkgs.elmPackages; [
+  with unstable.elmPackages; [
     elm # compiler
     elm-format # elm pretty print
     elm-language-server # language-server
     elm-test # elm test runner
   ]
 ) ++ (
-  with pkgs.haskellPackages; [
+  with beta2003.haskellPackages; [
     apply-refact # hlint: apply refactorings
     brittany # code formatter
+  ]
+) ++ (
+  with unstable.haskellPackages; [
     git-brunch # git checkout branch tui
     hoogle # function documentation
     network-manager-tui # network tui
