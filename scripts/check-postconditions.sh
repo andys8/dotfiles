@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-# Mandatory commands
-commands=(
+# Asserted commands (should be installed by script)
+assertCommands=(
 	chromium-browser # web browser
 	elm # elm compiler
 	elm-json # elm installation helper
@@ -20,11 +20,13 @@ commands=(
 	tsc # typescript compiler
 )
 
-# Optional user commands
+# Optional user commands (installed manually)
 commandsOptional=(
 	alacritty # terminal-emulator
 	cabal # haskell tool
+	gh # github cli
 	i3 # tiling window manager
+	idea # intellij ide
 	java # java runtime
 	lxappearance # configure themes
 	stack # haskell build tool
@@ -60,7 +62,7 @@ warnIfCommandMissing() {
 }
 
 # Check commands
-for i in "${commands[@]}"; do commandExists "$i"; done
+for i in "${assertCommands[@]}"; do commandExists "$i"; done
 
 # autorandr config
 [[ $(autorandr --current) == "" ]] && {

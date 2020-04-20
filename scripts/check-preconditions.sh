@@ -9,7 +9,6 @@ commands=(
 	find # used in scripts
 	fish # shell
 	i3lock # lockscreen
-	idea # intellij ide
 	lightdm # Login display manager
 	nix-channel
 	nix-env
