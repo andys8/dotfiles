@@ -14,6 +14,7 @@
 	currentbranch = rev-parse --abbrev-ref HEAD
 	currentcommit = rev-parse HEAD
 	d = diff
+	f = fetch
 	fe = fetch
 	l = log --graph --date=short
 	pl = pull
