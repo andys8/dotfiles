@@ -196,6 +196,8 @@ updateMonitors = spawn "autorandr --change"
 
 invertXColors = spawn "xrandr-invert-colors"
 
+suspend = spawn "systemctl suspend"
+
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
   windows $ viewOnScreen screenId workspace
@@ -223,6 +225,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((controlMask .|. modMask .|. altMask, xK_Escape), poweroffComputer)
        , ((modMask .|. altMask, xK_l)         , spawn "lock")
        , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn "lock")
+       , ((controlMask .|. modMask .|. altMask, xK_space), suspend)
        , ((modMask, xK_Tab)                   , moveTo Next NonEmptyWS)
        , ((modMask .|. shiftMask, xK_Tab)     , moveTo Prev NonEmptyWS)
        , ((modMask, xK_i)                     , toggleLastWorkspace nScreens)

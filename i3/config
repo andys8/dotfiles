@@ -100,6 +100,9 @@ bindsym Ctrl+$alt+$mod+Escape exec poweroff
 bindsym $alt+$mod+l exec lock
 bindsym Ctrl+$alt+$mod+BackSpace exec lock
 
+# suspend
+bindsym Ctrl+$alt+$mod+space exec "systemctl suspend"
+
 # restart network
 bindsym $alt+$mod+n exec sudo systemctl restart network-manager
 
