@@ -158,8 +158,8 @@ let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [
       \ 'package.json',
       \ 'elm.json',
-      \ '.git/',
       \ 'stack.yaml',
+      \ '.git/',
       \ 'pom.xml',
       \ 'requirements.txt'
       \ ]
