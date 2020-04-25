@@ -52,6 +52,7 @@ abbr -a -U -- mirror 'autorandr common'
 abbr -a -U -- n npm
 abbr -a -U -- nr 'npm run'
 abbr -a -U -- ns 'nix-env -qaP | grep'
+abbr -a -U -- ntop nethogs
 abbr -a -U -- open xdg-open
 abbr -a -U -- paci 'sudo pacman -S'
 abbr -a -U -- pacr 'sudo pacman -Rs'
