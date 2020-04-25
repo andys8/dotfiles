@@ -11,12 +11,12 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "andys8";
     repo = "st";
-    rev = "fe6eb82689818029381bec3c914bf2edcc3d9789";
-    sha256 = "18rnad1wc259q4544y2i28vvbfsgbxgis49x6md8vgdahygyrhz6";
+    rev = "aaa663776c0fbf0b42473685e53d40e1dd29a25f";
+    sha256 = "04qa0kx9a8ny4r896kr9myp4275hd2dfbn62y70j094yh5lh23mn";
   };
 
   nativeBuildInputs = [ pkgconfig ];
-  buildInputs = [ ncurses pkgs.xorg.libX11 pkgs.xorg.libXft.dev pkgs.xorg.libXcursor fontconfig ];
+  buildInputs = [ ncurses pkgs.xorg.libX11 pkgs.xorg.libXft.dev pkgs.xorg.libXcursor fontconfig harfbuzz ];
 
   installPhase = ''
     TERMINFO=$out/share/terminfo make install PREFIX=$out
