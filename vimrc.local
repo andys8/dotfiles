@@ -295,3 +295,6 @@ au BufRead,BufNewFile qutebrowser-editor-* set filetype=text
 " Ranger
 let g:ranger_map_keys = 0
 nmap <leader>o :Ranger<CR>
+
+" Preseting
+let g:presenting_top_margin = 2

@@ -54,6 +54,9 @@ Plug 'tyru/open-browser.vim'
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for' : 'markdown' }
 
+" Markdown Presentation
+Plug 'sotte/presenting.vim', { 'for' : 'markdown' }
+
 " Haskell: Happy/Alex parser/lexer
 Plug 'vim-scripts/alex.vim', { 'for' : 'alex' }
 Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
