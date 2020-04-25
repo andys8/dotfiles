@@ -46,6 +46,7 @@ in
     dtrx # extract files
     entr # watch files
     exa # ls replacement
+    fast-cli # speedtest
     fd # "find" for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
