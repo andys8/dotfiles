@@ -49,6 +49,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#coc#error_symbol = ' '
 let g:airline#extensions#coc#warning_symbol = ' '
+let g:airline#extensions#tabline#buffer_min_count = 2
 
 " Ignore files
 set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*
