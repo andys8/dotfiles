@@ -65,7 +65,7 @@ warnIfCommandMissing() {
 for i in "${assertCommands[@]}"; do commandExists "$i"; done
 
 # autorandr config
-[[ $(autorandr --current) == "" ]] && {
+[[ $(autorandr --dry-run) == "" ]] && {
 	fail "autorandr needs to be setup with configurations"
 }
 

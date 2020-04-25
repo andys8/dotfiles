@@ -1,11 +1,10 @@
 let
   unstable = import <nixpkgs> {};
-  release1909 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/19.09.tar.gz") {};
-  beta2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03-beta.tar.gz") {};
+  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") {};
   st = import ./st.nix;
 in
 (
-  with release1909; [
+  with release2003; [
     arandr # gui for monitors with xrandr
     autorandr # xrandr monitor profiles
     awscli # amazon web services
@@ -13,12 +12,14 @@ in
     cargo # rust package manager
     chromium # web browser
     coursier # scala build tool
-    ctop # top for containers
     gnome3.zenity # show ui messages and dialogs
+    i3status-rust # i3 status bar
     jq # json processor
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
+    nitrogen # Wallpaper
+    nix # nix package manager
     nodejs-12_x # nodejs and npm
     rofi # dmenu replacement
     sbt # sbt package manager
@@ -33,6 +34,8 @@ in
     vokoscreen # screen recorder
     watch # repeat command
     wcalc # calculator
+    xmobar # status bar for xmonad
+    xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
     zip # compress to zip
@@ -42,6 +45,7 @@ in
     ack # search in files
     autojump # jump into directory with j
     bat # cat replacement
+    ctop # top for containers
     dragon-drop # drag and drop
     dtrx # extract files
     entr # watch files
@@ -53,15 +57,12 @@ in
     glow # markdown viewer
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
-    i3status-rust # i3 status bar
     lazygit # git terminal ui
     lsd # ls replacement
     maim # screenshots
     mdcat # markdown viewer
     meld # git merge tool (graphical)
     mpv # video player
-    nitrogen # Wallpaper
-    nix # nix package manager
     nixpkgs-fmt # format nix
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
@@ -75,8 +76,6 @@ in
     sxiv # image viewer
     translate-shell # trans command
     unclutter # hide idle mouse
-    xmobar # status bar for xmonad
-    xmonad-with-packages # window manager in haskell
     ytop # top/htop replacement
     zstd # compress tool used for .std
   ]
@@ -95,14 +94,14 @@ in
     elm-test # elm test runner
   ]
 ) ++ (
-  with beta2003.haskellPackages; [
+  with release2003.haskellPackages; [
     apply-refact # hlint: apply refactorings
     brittany # code formatter
+    hoogle # function documentation
   ]
 ) ++ (
   with unstable.haskellPackages; [
     git-brunch # git checkout branch tui
-    hoogle # function documentation
     network-manager-tui # network tui
   ]
 ) ++ [ st ]
