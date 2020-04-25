@@ -16,6 +16,7 @@ abbr -a -U -- agc 'sudo apt-get autoclean'
 abbr -a -U -- agi 'sudo apt-get install'
 abbr -a -U -- agr 'sudo apt-get remove'
 abbr -a -U -- agu 'sudo apt-get update && sudo apt-get upgrade'
+abbr -a -U -- benchmark hyperfine
 abbr -a -U -- cheat 'curl https://cheat.sh/'
 abbr -a -U -- copy-screenshot 'cp (ls -t ~/Pictures/screenshot-* | head -n1) .'
 abbr -a -U -- dco docker-compose
