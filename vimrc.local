@@ -278,6 +278,9 @@ autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 let g:NERDTreeMinimalUI = 1
 nmap <silent> <leader>n :NERDTreeToggle<CR>
 nmap <silent> <leader>N :NERDTreeFind<CR>
+hi link NERDTreeOpenable Type
+hi link NERDTreeClosable Special
+hi link NERDTreeDir Question
 
 " Folding
 set foldmethod=indent
