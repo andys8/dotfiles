@@ -54,6 +54,8 @@ let g:airline_skip_empty_sections = 0
 let g:airline#extensions#coc#error_symbol = '  '
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#branch#vcs_priority = ["git"]
+let g:airline#extensions#branch#vcs_checks = []
 
 " Ignore files
 set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*
