@@ -63,3 +63,6 @@ Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
 
 " Ranger
 Plug 'francoiscabrol/ranger.vim'
+
+" Conceal
+Plug 'andys8/vim-haskellconceal', { 'for' : 'haskell' }

@@ -10,6 +10,10 @@ set nowritebackup
 set noswapfile
 set signcolumn=yes
 
+" Conceal feature
+set conceallevel=2
+set concealcursor=nciv
+
 " updatetime has performance impact
 set updatetime=300
 
@@ -296,5 +300,5 @@ au BufRead,BufNewFile qutebrowser-editor-* set filetype=text
 let g:ranger_map_keys = 0
 nmap <leader>o :Ranger<CR>
 
-" Preseting
+" Presenting
 let g:presenting_top_margin = 2
