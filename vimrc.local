@@ -12,7 +12,10 @@ set signcolumn=yes
 
 " Conceal feature
 set conceallevel=2
-set concealcursor=nciv
+augroup haskell
+  au!
+  au FileType haskell setlocal concealcursor=nciv
+augroup END
 
 " updatetime has performance impact
 set updatetime=300
@@ -307,3 +310,7 @@ nmap <leader>o :Ranger<CR>
 
 " Presenting
 let g:presenting_top_margin = 2
+
+" Markdown
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_conceal_code_blocks = 1
