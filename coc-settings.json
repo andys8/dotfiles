@@ -72,13 +72,12 @@
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
     "nix": "nixpkgs-fmt",
-    "haskell": ["hlint-refactor", "brittany"]
+    "haskell": "hlint-brittany"
   },
   "diagnostic-languageserver.formatters": {
     "shfmt": { "command": "shfmt" },
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
-    "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] },
-    "hlint-refactor": { "command": "hlint", "args": ["--refactor", "-"] }
+    "hlint-brittany": { "command": "hlint-brittany" }
   },
   "diagnostic-languageserver.linters": {
     "hlint": {
