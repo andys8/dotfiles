@@ -44,9 +44,9 @@ let g:dracula_italic = 1
 colorscheme dracula
 
 " Switch themes
-command Dracula colorscheme dracula | set nocursorline
-command Dark colorscheme darkblue | set cursorline
-command Light colorscheme shirotelin | set cursorline
+command Dracula colorscheme dracula | set nocursorline | e
+command Dark colorscheme darkblue | set cursorline | e
+command Light colorscheme shirotelin | set cursorline | e
 
 " Airline
 let g:airline_theme = 'dracula'
