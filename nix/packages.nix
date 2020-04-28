@@ -9,7 +9,6 @@ in
     autorandr # xrandr monitor profiles
     awscli # amazon web services
     cabal2nix # Convert cabal files to nix
-    cargo # rust package manager
     chromium # web browser
     coursier # scala build tool
     gnome3.zenity # show ui messages and dialogs
@@ -45,6 +44,7 @@ in
     ack # search in files
     autojump # jump into directory with j
     bat # cat replacement
+    cargo # rust package manager
     ctop # top for containers
     dragon-drop # drag and drop
     dtrx # extract files
