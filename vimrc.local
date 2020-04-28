@@ -12,7 +12,7 @@ set signcolumn=yes
 
 " Conceal feature
 set conceallevel=2
-augroup haskell
+augroup haskellconceal
   au!
   au FileType haskell setlocal concealcursor=nciv
 augroup END
@@ -296,7 +296,7 @@ noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
 
 " haskell
-augroup haskell
+augroup haskellrename
   au!
   au FileType haskell nmap <buffer> <leader>r <Plug>CtrlSFCwordExec
   au FileType haskell vmap <buffer> <leader>r <Plug>CtrlSFVwordExec
