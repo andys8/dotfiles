@@ -66,3 +66,6 @@ Plug 'francoiscabrol/ranger.vim'
 
 " Conceal
 Plug 'andys8/vim-haskellconceal', { 'for' : 'haskell' }
+
+" Rename in files
+Plug 'dyng/ctrlsf.vim'

@@ -295,6 +295,12 @@ set foldlevel=0
 noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
 
+" haskell
+augroup haskell
+  au!
+  au FileType haskell nmap <buffer> <leader>r <Plug>CtrlSFCwordExec
+  au FileType haskell vmap <buffer> <leader>r <Plug>CtrlSFVwordExec
+augroup END
 
 " haskell: Alex, Happy
 au BufRead,BufNewFile *.x set filetype=alex
