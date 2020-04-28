@@ -10,13 +10,6 @@ set nowritebackup
 set noswapfile
 set signcolumn=yes
 
-" Conceal feature
-set conceallevel=2
-augroup haskellconceal
-  au!
-  au FileType haskell setlocal concealcursor=nciv
-augroup END
-
 " updatetime has performance impact
 set updatetime=300
 
