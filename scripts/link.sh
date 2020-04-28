@@ -105,4 +105,8 @@ ln -sf ~/dotfiles/slack-term ~/.config/slack-term/config
 # markdownlint
 ln -sf ~/dotfiles/markdownlintrc ~/.markdownlintrc
 
+# slack-term
+mkdir -p ~/.config/bottom
+ln -sf ~/dotfiles/bottom.toml ~/.config/bottom/bottom.toml
+
 echo "Links updated"

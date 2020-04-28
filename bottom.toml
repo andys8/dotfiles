@@ -1,0 +1,33 @@
+# bottom config
+# <https://github.com/ClementTsang/bottom/tree/master/sample_configs>
+
+# Layout
+[[row]]
+  [[row.child]]
+  ratio=2
+  type="cpu"
+  [[row.child]]
+  type="mem"
+[[row]]
+  ratio=3
+  [[row.child]]
+  type="proc"
+  default=true
+
+[flags]
+basic = false
+group_processes = true
+case_sensitive = false
+rate = 700
+dot_marker = false
+
+[colors]
+avg_cpu_color="Red"
+border_color="White"
+graph_color="Gray"
+highlighted_border_color="LightMagenta"
+selected_bg_color="Magenta"
+selected_text_color="Black"
+table_header_color="Blue"
+text_color="White"
+widget_title_color="Cyan"
