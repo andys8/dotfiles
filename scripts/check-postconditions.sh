@@ -124,7 +124,7 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 for i in "${commandsOptional[@]}"; do warnIfCommandMissing "$i"; done
 
 # Result
-[[ $warnings != 0 ]] && echo "$(tput setaf 2)Post-Conditions have $warnings warning(s)$(tput sgr 0)"
+[[ $warnings != 0 ]] && echo "$(tput setaf 3)Post-Conditions have $warnings warning(s)$(tput sgr 0)"
 if [[ $errors != 0 ]]; then
 	echo "$(tput setaf 1)Post-Conditions failed with $errors error(s)$(tput sgr 0)" && exit 1
 else
