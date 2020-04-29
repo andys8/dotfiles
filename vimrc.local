@@ -10,6 +10,11 @@ set nowritebackup
 set noswapfile
 set signcolumn=yes
 
+set termguicolors
+set t_Co=256
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " updatetime has performance impact
 set updatetime=300
 
@@ -31,15 +36,16 @@ set guioptions=c
 set guifont=Iosevka\ Nerd\ Font\ 14
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
+" Switch themes
+command Dracula colorscheme dracula    | AirlineTheme dracula | set nocursorline | silent! e
+command Nord    colorscheme nord       | AirlineTheme nord    | set nocursorline | silent! e
+command Dark    colorscheme torte      | AirlineTheme dark    | set nocursorline | silent! e
+command Light   colorscheme shirotelin | AirlineTheme dark    | set cursorline   | silent! e
+
 " Theme
-let g:dracula_colorterm = 0
+let g:dracula_colorterm = 1
 let g:dracula_italic = 1
 colorscheme dracula
-
-" Switch themes
-command Dracula colorscheme dracula | set nocursorline | e
-command Dark colorscheme darkblue | set cursorline | e
-command Light colorscheme shirotelin | set cursorline | e
 
 " Airline
 let g:airline_theme = 'dracula'

@@ -10,6 +10,7 @@ Plug 'tpope/vim-surround'
 " Colorscheme dracula
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'yasukotelin/shirotelin'
+Plug 'arcticicestudio/nord-vim'
 
 " Repeat surround commands
 Plug 'tpope/vim-repeat'
