@@ -20,15 +20,17 @@ abbr -a -U -- benchmark hyperfine
 abbr -a -U -- cheat 'curl https://cheat.sh/'
 abbr -a -U -- copy-screenshot 'cp (ls -t ~/Pictures/screenshot-* | head -n1) .'
 abbr -a -U -- dco docker-compose
+abbr -a -U -- de 'trans de:en'
+abbr -a -U -- en 'trans en:de'
 abbr -a -U -- g git
 abbr -a -U -- ga 'git add'
 abbr -a -U -- gc 'git commit -m'
+abbr -a -U -- gcd 'git checkout development'
+abbr -a -U -- gcm 'git checkout master'
 abbr -a -U -- gco 'git checkout'
 abbr -a -U -- gcp 'git cherry-pick'
 abbr -a -U -- gd 'git diff'
 abbr -a -U -- gds 'git diff --staged'
-abbr -a -U -- gcd 'git checkout development'
-abbr -a -U -- gcm 'git checkout master'
 abbr -a -U -- gf 'git fetch'
 abbr -a -U -- gi git
 abbr -a -U -- gl 'git log'
