@@ -69,9 +69,8 @@ for i in "${commands[@]}"; do commandExists "$i"; done
 
 # qutebrowser fixed version
 QUTEBROWSER_VERSION=$(qutebrowser --version | head -n1)
-QUTEBROWSER_EXPECTED="v1.10."
-[[ $QUTEBROWSER_VERSION =~ $QUTEBROWSER_EXPECTED ]] || {
-	fail "Qutebrowser version has to match $QUTEBROWSER_EXPECTED ($QUTEBROWSER_VERSION)"
+[[ $QUTEBROWSER_VERSION =~ v1\.1[0-9]\. ]] || {
+	fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
 }
 
 # Check fonts
