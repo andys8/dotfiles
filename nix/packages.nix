@@ -15,6 +15,7 @@ in
     gnome3.zenity # show ui messages and dialogs
     i3status-rust # i3 status bar
     jq # json processor
+    lsd # ls replacement
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
@@ -58,7 +59,6 @@ in
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
-    lsd # ls replacement
     maim # screenshots
     mdcat # markdown viewer
     meld # git merge tool (graphical)
