@@ -83,7 +83,9 @@ ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
 
 # sxiv
 mkdir -p ~/.config/sxiv/exec
-ln -sf ~/dotfiles/bin/image-info ~/.config/sxiv/exec/image-info
+ln -sf ~/dotfiles/sxiv/key-handler ~/.config/sxiv/exec/key-handler
+ln -sf ~/dotfiles/sxiv/image-info ~/.config/sxiv/exec/image-info
+ln -sf ~/dotfiles/sxiv/image-info ~/bin/image-info
 
 # pulseaudio
 mkdir -p ~/.config/pulse
