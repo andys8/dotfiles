@@ -11,6 +11,7 @@ in
     cabal2nix # Convert cabal files to nix
     chromium # web browser
     coursier # scala build tool
+    dtrx # extract files
     gnome3.zenity # show ui messages and dialogs
     i3status-rust # i3 status bar
     jq # json processor
@@ -47,7 +48,6 @@ in
     cargo # rust package manager
     ctop # top for containers
     dragon-drop # drag and drop
-    dtrx # extract files
     entr # watch files
     exa # ls replacement
     fast-cli # speedtest
