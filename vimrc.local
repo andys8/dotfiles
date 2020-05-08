@@ -40,7 +40,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 command Dracula colorscheme dracula    | AirlineTheme dracula | set nocursorline | silent! e
 command Nord    colorscheme nord       | AirlineTheme nord    | set nocursorline | silent! e
 command Dark    colorscheme torte      | AirlineTheme dark    | set nocursorline | silent! e
-command Light   colorscheme shirotelin | AirlineTheme dark    | set cursorline   | silent! e
+command Light   colorscheme zellner    | AirlineTheme dark    | set cursorline   | silent! e
 
 " Theme
 let g:dracula_colorterm = 1
