@@ -72,6 +72,7 @@ abbr -a -U -- uuid uuidgen
 abbr -a -U -- v vim
 abbr -a -U -- vi vim
 abbr -a -U -- vmi vim
+abbr -a -U -- wttr 'curl https://wttr.in'
 abbr -a -U -- öö ll
 
 echo "Fish abbreviations updated"
