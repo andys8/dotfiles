@@ -1,7 +1,6 @@
 let
-  unstable = import <nixpkgs> {};
-  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") {};
-  st = import ./st.nix;
+  unstable = import <nixpkgs> { };
+  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") { };
 in
 (
   with release2003; [
@@ -104,4 +103,7 @@ in
     git-brunch # git checkout branch tui
     network-manager-tui # network tui
   ]
-) ++ [ st ]
+) ++ [
+  (import ./st.nix)
+  (import ./colorpicker.nix)
+]
