@@ -90,6 +90,7 @@ in
     elm # compiler
     elm-format # elm pretty print
     elm-language-server # language-server
+    elm-live # dev server
     elm-test # elm test runner
   ]
 ) ++ (
