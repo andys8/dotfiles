@@ -318,3 +318,29 @@ let g:presenting_top_margin = 2
 " Markdown
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1
+
+" Vim colorscheme by temperature
+" au WinEnter,BufEnter * call Ambienter.Sensor() " Adapt colorsheme to ambient light
+let g:ambienter_config = {
+      \     "disable": 0,
+      \     "debug": 1,
+      \     "sensor": {
+      \         "path": "/tmp/vimtemp",
+      \         "value": { "min": 40 }
+      \     },
+      \     "theme": {
+      \         "light": {
+      \             "background": "light",
+      \             "colorsheme": "zellner"
+      \         },
+      \         "dark": {
+      \             "background": "dark",
+      \             "colorsheme": "dracula"
+      \         }
+      \     },
+      \     "callbacks": [function("airline#load_theme")]
+      \ }
+
+" Run on start
+" call Ambienter.Sensor()
+au VimEnter * call Ambienter.Sensor() " Adapt colorsheme to ambient light
