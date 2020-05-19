@@ -37,10 +37,19 @@ set guifont=Iosevka\ Nerd\ Font\ 14
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Switch themes
-command Dracula colorscheme dracula    | AirlineTheme dracula | set nocursorline | silent! e
-command Nord    colorscheme nord       | AirlineTheme nord    | set nocursorline | silent! e
-command Dark    colorscheme torte      | AirlineTheme dark    | set nocursorline | silent! e
-command Light   colorscheme zellner    | AirlineTheme dark    | set cursorline   | silent! e
+function SaveTheme(theme)
+  if a:theme ==? "Dracula"
+    exec "silent ! rm /tmp/.vimrc 2>/dev/null &"
+  else
+    exec "silent ! echo 'autocmd VimEnter * :" . a:theme . "' > /tmp/.vimrc &"
+  endif
+  redraw!
+endfunction
+
+command Dracula colorscheme dracula | AirlineTheme dracula | set nocursorline | call SaveTheme("Dracula")
+command Nord    colorscheme nord    | AirlineTheme nord    | set nocursorline | call SaveTheme("Nord")
+command Dark    colorscheme torte   | AirlineTheme dark    | set nocursorline | call SaveTheme("Dark")
+command Light   colorscheme zellner | AirlineTheme dark    | set cursorline   | call SaveTheme("Light")
 
 " Theme
 let g:dracula_colorterm = 1
@@ -318,3 +327,8 @@ let g:presenting_top_margin = 2
 " Markdown
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1
+
+" Include temporary vim settings
+if filereadable("/tmp/.vimrc")
+  source /tmp/.vimrc
+endif
