@@ -6,8 +6,8 @@ set -euo pipefail
 
 # Collect nix garbage (randomly)
 RAND=$((RANDOM % 20))
-[ $((RAND)) -eq 0 ] && nix-collect-garbage --delete-older-than 14d
-[ $((RAND)) -eq 1 ] && nix-collect-garbage -d
+[ $((RAND)) -eq 0 ] && nix-collect-garbage -d
+[ ! $((RAND)) -eq 0 ] && nix-collect-garbage --delete-older-than 30d
 
 # Yay
 if [ -x "$(command -v "yay")" ]; then
@@ -16,6 +16,6 @@ fi
 
 # Apt
 if [ -x "$(command -v "apt")" ]; then
-	sudo apt -y autoremove
-	sudo apt -y clean
+	sudo apt autoremove -y
+	sudo apt autoclean -y
 fi
