@@ -80,6 +80,7 @@ ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
 ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
+ln -sf ~/dotfiles/bin/webcam ~/bin/webcam
 
 # sxiv
 mkdir -p ~/.config/sxiv/exec
