@@ -1968,7 +1968,8 @@ config.bind('<Alt-D>', 'edit-url')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Ctrl-e>', 'open-editor', mode='insert')
+config.bind('<Alt-i>', 'open-editor', mode='insert')
 config.bind('<Ctrl-p>', 'lastpass', mode='insert')
 config.bind('<Escape>', 'leave-mode ;; jseval -q document.activeElement.blur()', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
