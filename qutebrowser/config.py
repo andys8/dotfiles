@@ -925,7 +925,7 @@ c.downloads.position = 'bottom'
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
 # c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
-c.editor.command = ["st", "-e", "vim", "{}"]
+c.editor.command = ["st", "-e", "vim", "-c", "startinsert", "{file}"]
 
 ## Encoding to use for the editor.
 ## Type: Encoding
