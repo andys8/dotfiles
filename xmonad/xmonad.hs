@@ -70,6 +70,7 @@ renderWorkspace color ws = withColor clickable
 -- Window rules --
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
+  , resource =? "stalonetray" --> doIgnore
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
   , className =? "Code" --> doShift (show WorkspaceWork)
   , className =? "Rambox" --> doShift (show WorkspaceChat)
@@ -108,7 +109,7 @@ zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace BSP.emptyBSP
 layouts = bsp ||| oneBig ||| grid ||| zenMode
 
 myLayout =
-  avoidStruts $ smartBorders $ mkToggle (NOBORDERS ?? FULL ?? EOT) layouts
+  mkToggle1 NBFULL $ avoidStruts $ smartBorders $ mkToggle1 FULL layouts
 
 myNav2DConf = def { defaultTiledNavigation = centerNavigation
                   , floatNavigation        = centerNavigation
@@ -239,7 +240,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((nothing, xF86XK_MonBrightnessDown) , setBrightness "0.6")
        , ((nothing, xK_Insert)                , pasteSelection)
        , ((modMask, xK_f)                     , sendMessage $ Toggle FULL)
-       , ((modMask .|. shiftMask, xK_f)       , sendMessage ToggleStruts)
+       , ((modMask .|. shiftMask, xK_f)       , sendMessage $ Toggle NBFULL)
        , ((modMask, xK_space)                 , sendMessage NextLayout)
        , ((modMask .|. controlMask, xK_space) , sinkAll)
        , ((modMask .|. shiftMask, xK_space)   , setLayout (layoutHook conf))
