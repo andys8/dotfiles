@@ -143,6 +143,7 @@ command! -bang -nargs=* Rg
 
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
+nnoremap <leader>- :Goyo<CR>
 
 " Command to read windows files (crlf)
 abbrev windowsfile e ++ff=dos
