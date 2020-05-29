@@ -25,6 +25,7 @@ commands=(
 	tar
 	tr # used in shell scripts
 	vim
+	w3m # used in explainshell script
 	xclip # copy/paste
 	xdotool # control x via command line
 	xrandr # monitor setup

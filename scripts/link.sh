@@ -72,6 +72,7 @@ ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
 # bin
 mkdir -p ~/bin
 ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
+ln -sf ~/dotfiles/bin/explainshell ~/bin/explainshell
 ln -sf ~/dotfiles/bin/hlint-brittany ~/bin/hlint-brittany
 ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
 ln -sf ~/dotfiles/bin/i3-battery-popup ~/bin/i3-battery-popup
