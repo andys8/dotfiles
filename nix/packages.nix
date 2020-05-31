@@ -81,6 +81,7 @@ in
 ) ++ (
   with unstable.gitAndTools; [
     diff-so-fancy # git diff with colors
+    gh # github-cli
     git-gone # prune merged branches
     hub # github commandline tool
     tig # diff and comit view

@@ -25,7 +25,6 @@ commandsOptional=(
 	alacritty # terminal-emulator
 	btm # bottom process monitor
 	cabal # haskell tool
-	gh # github cli
 	i3 # tiling window manager
 	idea # intellij ide
 	java # java runtime
