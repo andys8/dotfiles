@@ -189,6 +189,7 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-eslint',
+      \ 'coc-gitignore',
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-markdownlint',
