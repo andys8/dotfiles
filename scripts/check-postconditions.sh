@@ -33,6 +33,7 @@ commandsOptional=(
 	timeshift # backup tool
 	uuidgen # generate uuid
 	vimdiff # git diffs in vim
+	xkill # click on window to kill
 	zathura # pdf viewer
 )
 
