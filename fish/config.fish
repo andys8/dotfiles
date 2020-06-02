@@ -22,6 +22,7 @@ set -U theme_display_date no
 set -U theme_display_docker_machine no
 set -U theme_display_hg no
 set -U theme_display_k8s_context no
+set -U theme_display_nix no
 set -U theme_display_nvm no
 set -U theme_display_ruby no
 set -U theme_display_vagrant no
