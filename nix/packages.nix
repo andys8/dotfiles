@@ -73,6 +73,7 @@ in
     slack-term # slack tui
     speedtest-cli # measure down/upload
     sxiv # image viewer
+    termonad-with-packages # haskell terminal
     translate-shell # trans command
     unclutter # hide idle mouse
     ytop # top/htop replacement

@@ -60,6 +60,10 @@ ln -sf ~/dotfiles/xmonad/startup.sh ~/.xmonad/startup.sh
 ln -sf ~/dotfiles/xmonad/stack.yaml ~/.xmonad/stack.yaml
 ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
 
+# Termonad
+mkdir -p ~/.termonad
+ln -sf ~/dotfiles/termonad/termonad.hs ~/.config/termonad/termonad.hs
+
 # Ranger
 mkdir -p ~/.config/ranger
 ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
