@@ -1,10 +1,8 @@
-import           System.Exit
-import           System.IO
-
 import           Data.List
-import qualified Data.Map
 import           Data.Maybe
 import           Graphics.X11.ExtraTypes.XF86
+import           System.Exit
+import           System.IO
 import           XMonad
 import           XMonad.Actions.CycleWS
 import           XMonad.Actions.Navigation2D
@@ -21,7 +19,6 @@ import           XMonad.Layout.BinarySpacePartition
                                                as BSP
 import           XMonad.Layout.Grid
 import           XMonad.Layout.IndependentScreens
-                                                ( countScreens )
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
 import           XMonad.Layout.NoBorders
@@ -35,11 +32,13 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
-import qualified XMonad.StackSet               as W
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
+import qualified Data.Map                      as Map
+import qualified XMonad.StackSet               as W
 
 -- Workspaces --
+
 data Workspace
   = WorkspaceWWW
   | WorkspaceWork
@@ -67,23 +66,8 @@ renderWorkspace color ws = withColor clickable
   clickable = "<action=`" ++ action ++ "`>" ++ ws ++ "</action>"
   withColor = xmobarColor color ""
 
--- Window rules --
-myManageHook = composeAll
-  [ resource =? "desktop_window" --> doIgnore
-  , resource =? "stalonetray" --> doIgnore
-  , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
-  , className =? "Code" --> doShift (show WorkspaceWork)
-  , className =? "Rambox" --> doShift (show WorkspaceChat)
-  , className =? "Screenruler" --> doFloat
-  , className =? "Slack" --> doShift (show WorkspaceChat)
-  , className =? "Zenity" --> doFloat
-  , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
-  , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
-  , className =? "qutebrowser" --> doShift (show WorkspaceWWW)
-  , title =? "Battery Warning" --> doFloat
-  ]
-
 -- Layouts --
+
 addSpace = spacingRaw True (Border 5 5 5 5) True (Border 10 10 10 10) True
 
 addTopBar = noFrillsDeco shrinkText topBarTheme
@@ -101,7 +85,7 @@ grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
 
 oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
-zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace BSP.emptyBSP
+zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace Grid
  where
   zenSpace =
     spacingRaw False (Border 100 100 500 500) True (Border 10 10 10 10) True
@@ -111,14 +95,9 @@ layouts = bsp ||| oneBig ||| grid ||| zenMode
 myLayout =
   mkToggle1 NBFULL $ avoidStruts $ smartBorders $ mkToggle1 FULL layouts
 
-myNav2DConf = def { defaultTiledNavigation = centerNavigation
-                  , floatNavigation        = centerNavigation
-                  , screenNavigation       = lineNavigation
-                  , layoutNavigation       = [("Full", centerNavigation)]
-                  , unmappedWindowRect     = [("Full", singleWindowRect)]
-                  }
-
 -- Theme --
+
+myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
 active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"
@@ -129,8 +108,6 @@ xmobarWsInactive = "#44475a"
 xmobarWsSep = "#44475a"
 xmobarTitle = "#8be9fd"
 xmobarLayout = "#ffb86c"
-
-myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
 
 topBarTheme = def { fontName            = myFont
                   , inactiveBorderColor = inactive
@@ -154,63 +131,12 @@ myTabTheme = def { fontName            = myFont
                  }
 
 -- Key bindings --
-altMask = mod1Mask
 
+altMask = mod1Mask
 nothing = 0
 
-confirm = confirmPrompt $ greenXPConfig { font     = myFont
-                                        , height   = 60
-                                        , position = CenteredAt 0.5 0.3
-                                        }
-
-fileBrowser = spawn "xdg-open ."
-quteWebBrowser = spawn "qutebrowser"
-chromiumWebBrowser = spawn "chromium-browser"
-rofiApplications = "rofi -modi drun,run -show drun -show-icons"
-rofiRun = "rofi -show run -i -display-run \"$ \""
-passwordTool = "lastpass-rofi || keepassx || exit 1"
-
-screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
-screenshotWholeScreen =
-  "maim --hidecursor ~/Pictures/screenshot-$(date +%s).png"
-
-screenshotClipboard =
-  "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
-
-poweroffComputer = confirm "poweroff" $ spawn "poweroff"
-
-setBrightness b =
-  spawn
-    $  "xrandr --output eDP-1 --brightness "
-    ++ b
-    ++ " || xrandr --output eDP1 --brightness "
-    ++ b
-
-exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
-
-restartXmonad = restart "xmonad" True
-
-setMonitors :: Int -> X ()
-setMonitors i = spawn ("autorandr --load " <> show i)
-
-updateMonitors = spawn "autorandr --change"
-
-invertXColors = spawn "xrandr-invert-colors"
-
-suspend = spawn "systemctl suspend"
-
-viewWorkspace nScreens workspace = do
-  screenId <- toScreenId nScreens workspace
-  windows $ viewOnScreen screenId workspace
-
-moveToWorkspace = windows . W.shift
-
-toggleLastWorkspace nScreens = do
-  (_ : lastWorkspace : _) <- WH.workspaceHistory
-  viewWorkspace nScreens lastWorkspace
-
 myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspaces = workspaces }
-  = Data.Map.fromList
+  = Map.fromList
     $  [ ((modMask, xK_Return)                , spawn terminal)
        , ((modMask, xK_n)                     , fileBrowser)
        , ((modMask .|. shiftMask, xK_Return)  , quteWebBrowser)
@@ -272,7 +198,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        ]
 
 -- Mouse Bindings --
-myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
+
+myMouseBindings XConfig { modMask = modMask } = Map.fromList
   [ ( (modMask .|. controlMask, button1)
     , \w -> focus w >> mouseMoveWindow w >> windows W.shiftMaster
     )
@@ -282,7 +209,91 @@ myMouseBindings XConfig { modMask = modMask } = Data.Map.fromList
     )
   ]
 
+-- Commands --
+
+fileBrowser = spawn "xdg-open ."
+quteWebBrowser = spawn "qutebrowser"
+chromiumWebBrowser = spawn "chromium-browser"
+rofiApplications = "rofi -modi drun,run -show drun -show-icons"
+rofiRun = "rofi -show run -i -display-run \"$ \""
+passwordTool = "lastpass-rofi || keepassx || exit 1"
+
+screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+screenshotWholeScreen =
+  "maim --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+screenshotClipboard =
+  "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
+
+setBrightness b = spawn $ brightness "eDP-1" b ++ " || " ++ brightness "eDP1" b
+  where brightness d b = "xrandr --output " ++ d ++ " --brightness " ++ b
+
+invertXColors = spawn "xrandr-invert-colors"
+
+suspend = spawn "systemctl suspend"
+poweroffComputer = confirm "poweroff" $ spawn "poweroff"
+exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
+restartXmonad = restart "xmonad" True
+
+setMonitors :: Int -> X ()
+setMonitors i = spawn ("autorandr --load " <> show i)
+
+updateMonitors = spawn "autorandr --change"
+
+viewWorkspace nScreens workspace = do
+  screenId <- toScreenId nScreens workspace
+  windows $ viewOnScreen screenId workspace
+
+moveToWorkspace = windows . W.shift
+
+toggleLastWorkspace nScreens = do
+  (_ : lastWorkspace : _) <- WH.workspaceHistory
+  viewWorkspace nScreens lastWorkspace
+
+confirm = confirmPrompt conf
+ where
+  conf =
+    greenXPConfig { font = myFont, height = 60, position = CenteredAt 0.5 0.3 }
+
+-- Screens --
+
+toScreenId :: Int -> String -> X ScreenId
+toScreenId nScreens ws = fromMaybe (S 0)
+  <$> getScreen horizontalScreenOrderer (toPhysicalScreen nScreens ws)
+
+toPhysicalScreen :: Int -> String -> PhysicalScreen
+toPhysicalScreen 2 ws | ws == show WorkspaceWork = P 1
+                      | otherwise                = P 0
+toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = P 0
+                      | ws == show WorkspaceWork = P 1
+                      | otherwise                = P 2
+toPhysicalScreen _ _ = P 0
+
+-- Window rules --
+
+myManageHook = composeAll
+  [ resource =? "desktop_window" --> doIgnore
+  , resource =? "stalonetray" --> doIgnore
+  , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
+  , className =? "Code" --> doShift (show WorkspaceWork)
+  , className =? "Rambox" --> doShift (show WorkspaceChat)
+  , className =? "Screenruler" --> doFloat
+  , className =? "Slack" --> doShift (show WorkspaceChat)
+  , className =? "Zenity" --> doFloat
+  , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
+  , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
+  , className =? "qutebrowser" --> doShift (show WorkspaceWWW)
+  , title =? "Battery Warning" --> doFloat
+  ]
+
+myNav2DConf = def { defaultTiledNavigation = centerNavigation
+                  , floatNavigation        = centerNavigation
+                  , screenNavigation       = lineNavigation
+                  , layoutNavigation       = [("Full", centerNavigation)]
+                  , unmappedWindowRect     = [("Full", singleWindowRect)]
+                  }
+
 -- Startup --
+
 myStartupHook = do
   setWMName "LG3D"
   spawn "bash ~/.xmonad/startup.sh"
@@ -294,7 +305,13 @@ monitorSetupHook nScreens workspaces = mconcat
     screenId <- toScreenId nScreens workspace
     windows $ viewOnScreen screenId workspace
 
+myLogHook xmproc =
+  myXmobar xmproc
+    >> updatePointer (0.75, 0.75) (0.75, 0.75)
+    >> WH.workspaceHistoryHook
+
 -- Main --
+
 main = do
   xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobar.config"
   nScreens <- countScreens
@@ -313,10 +330,8 @@ main = do
     $ def
         { keys               = myKeys nScreens
         , mouseBindings      = myMouseBindings
-        , logHook            = myXmobar xmproc
-                               >> updatePointer (0.75, 0.75) (0.75, 0.75)
-                               >> WH.workspaceHistoryHook
-        , terminal           = "$TERMINAL || st || alacritty || xterm"
+        , logHook            = myLogHook xmproc
+        , terminal           = "st"
         , focusFollowsMouse  = True
         , borderWidth        = 0
         , modMask            = mod4Mask
@@ -340,16 +355,3 @@ myXmobar xmproc = dynamicLogWithPP xmobarPP
   , ppSep             = replicate 6 ' '
   , ppOutput          = hPutStrLn xmproc
   }
-
--- Screens --
-toScreenId :: Int -> String -> X ScreenId
-toScreenId nScreens ws = fromMaybe (S 0)
-  <$> getScreen horizontalScreenOrderer (toPhysicalScreen nScreens ws)
-
-toPhysicalScreen :: Int -> String -> PhysicalScreen
-toPhysicalScreen 2 ws | ws == show WorkspaceWork = P 1
-                      | otherwise                = P 0
-toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = P 0
-                      | ws == show WorkspaceWork = P 1
-                      | otherwise                = P 2
-toPhysicalScreen _ _ = P 0
