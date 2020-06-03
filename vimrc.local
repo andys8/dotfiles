@@ -206,7 +206,7 @@ let g:coc_global_extensions = [
 nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
-nmap <silent> <leader>s <Plug>(coc-codeaction)
+nmap <silent> <leader>s <Plug>(coc-codeaction-line)
 nmap <silent> <leader>S <Plug>(coc-fix-current)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
