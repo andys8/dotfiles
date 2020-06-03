@@ -61,7 +61,7 @@ ln -sf ~/dotfiles/xmonad/stack.yaml ~/.xmonad/stack.yaml
 ln -sf ~/dotfiles/xmonad/package.yaml ~/.xmonad/package.yaml
 
 # Termonad
-mkdir -p ~/.termonad
+mkdir -p ~/.config/termonad
 ln -sf ~/dotfiles/termonad/termonad.hs ~/.config/termonad/termonad.hs
 
 # Ranger
