@@ -8,28 +8,15 @@ command -v "ghcide" >/dev/null 2>&1 && {
 	exit 0
 }
 
-LINUX=$(lsb_release -i -s)
+REPO=andys8/ghcide
+BRANCH=update-to-ghc-883
+FOLDER=ghcide-$(shuf -i0-10000000 -n1)
 
-if [ "$LINUX" = "LinuxMint" ]; then
-
-	# install with stack
-	cd /tmp
-	git clone https://github.com/digital-asset/ghcide.git
-	cd ghcide
-	stack install
-	echo ">> ghcide installed with stack"
-	exit 0
-
-elif [ "$LINUX" = "ManjaroLinux" ]; then
-
-	! command -v "yay" >/dev/null 2>&1 && {
-		echo "yay missing"
-		exit 1
-	}
-	yay -S ghcide --noconfirm
-	exit 0
-
-else
-	echo "Unexpected distribution: $LINUX"
-	exit 1
-fi
+# install with stack
+cd /tmp
+git clone -b $BRANCH --single-branch https://github.com/$REPO "$FOLDER"
+cd "$FOLDER"
+stack install
+echo ">> ghcide installed with stack"
+ghcide --version
+exit 0

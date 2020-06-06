@@ -22,6 +22,7 @@ commands=(
 	python3
 	qutebrowser # Keyboard based webbrowser
 	setxkbmap
+	shuf # used in shell scripts
 	tar
 	tr # used in shell scripts
 	vim
