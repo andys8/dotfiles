@@ -13,10 +13,10 @@ BRANCH=update-to-ghc-883
 FOLDER=ghcide-$(shuf -i0-10000000 -n1)
 
 # install with stack
+echo ">> Installing ghcide (building from source)"
 cd /tmp
 git clone -b $BRANCH --single-branch https://github.com/$REPO "$FOLDER"
 cd "$FOLDER"
-stack install
+stack install --stack-yaml stack88.yaml
 echo ">> ghcide installed with stack"
-ghcide --version
 exit 0
