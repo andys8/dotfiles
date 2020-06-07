@@ -12,10 +12,10 @@
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	source "$HOME/.bashrc"
-    fi
+	# include .bashrc if it exists
+	if [ -f "$HOME/.bashrc" ]; then
+		source "$HOME/.bashrc"
+	fi
 fi
 
 # node global installations
@@ -23,22 +23,22 @@ PATH="$HOME/.npm-global/bin:$PATH"
 
 # ~/.local/bin
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  export PATH="$HOME/.local/bin:$PATH";
+	export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Nix
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
+	source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
 # ~/bin
 if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
-  export PATH="$HOME/bin:$PATH";
+	export PATH="$HOME/bin:$PATH"
 fi
 
 # ~/bin
 if [[ ":$PATH:" != *":$HOME/dotfiles/scripts:"* ]]; then
-  export PATH="$HOME/dotfiles/scripts:$PATH";
+	export PATH="$HOME/dotfiles/scripts:$PATH"
 fi
 
 export XDG_DATA_DIRS=$HOME/.nix-profile/share:$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
@@ -63,7 +63,7 @@ export XCURSOR_PATH=/usr/share/icons:~/.icons:~/.nix-profile/share/icons/:$XCURS
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then
-    source "$HOME/.profile.machine"
+	source "$HOME/.profile.machine"
 fi
 
 # Used to test if this is sourced

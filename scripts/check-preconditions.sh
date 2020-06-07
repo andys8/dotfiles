@@ -3,21 +3,21 @@ set -euo pipefail
 
 # Dependencies
 commands=(
-	awk # used in shell scripts
-	bash # shell
+	awk     # used in shell scripts
+	bash    # shell
 	fc-list # list fonts
-	find # used in scripts
-	fish # shell
-	i3lock # lockscreen
+	find    # used in scripts
+	fish    # shell
+	i3lock  # lockscreen
 	lightdm # Login display manager
 	nix-channel
 	nix-env
 	nix-shell
-	nm-applet # network manager applet
+	nm-applet   # network manager applet
 	notify-send # notifications used by script
-	pgrep # grep processes
-	pip3 # python packages
-	preload # keep programs in ram
+	pgrep       # grep processes
+	pip3        # python packages
+	preload     # keep programs in ram
 	pulseaudio
 	python3
 	qutebrowser # Keyboard based webbrowser
@@ -26,12 +26,12 @@ commands=(
 	tar
 	tr # used in shell scripts
 	vim
-	w3m # used in explainshell script
-	xargs # scripting
-	xclip # copy/paste
+	w3m     # used in explainshell script
+	xargs   # scripting
+	xclip   # copy/paste
 	xdotool # control x via command line
-	xrandr # monitor setup
-	xrdb # load Xresources
+	xrandr  # monitor setup
+	xrdb    # load Xresources
 	xset
 	xss-lock # lock the screen
 )

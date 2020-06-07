@@ -4,37 +4,37 @@ set -euo pipefail
 # Asserted commands (should be installed by script)
 assertCommands=(
 	chromium-browser # web browser
-	elm # elm compiler
-	elm-json # elm installation helper
-	elm-test # elm test runner
-	ghcide # haskell language server
-	git-brunch # branch change tool
-	hlint # haskell linter
-	htop # htop (hopefully with vim bindings)
-	lock # bin/lock file is on the path
-	nmt # network-manager-tui
-	prettier # js/css/markdown formatter
-	qrcode-terminal # show qr codes
-	refactor # apply-refact (for hlint)
-	st # suckless terminal
-	tsc # typescript compiler
+	elm              # elm compiler
+	elm-json         # elm installation helper
+	elm-test         # elm test runner
+	ghcide           # haskell language server
+	git-brunch       # branch change tool
+	hlint            # haskell linter
+	htop             # htop (hopefully with vim bindings)
+	lock             # bin/lock file is on the path
+	nmt              # network-manager-tui
+	prettier         # js/css/markdown formatter
+	qrcode-terminal  # show qr codes
+	refactor         # apply-refact (for hlint)
+	st               # suckless terminal
+	tsc              # typescript compiler
 )
 
 # Optional user commands (installed manually)
 commandsOptional=(
-	alacritty # terminal-emulator
-	btm # bottom process monitor
-	cabal # haskell tool
-	i3 # tiling window manager
-	idea # intellij ide
-	java # java runtime
+	alacritty    # terminal-emulator
+	btm          # bottom process monitor
+	cabal        # haskell tool
+	i3           # tiling window manager
+	idea         # intellij ide
+	java         # java runtime
 	lxappearance # configure themes
-	stack # haskell build tool
-	timeshift # backup tool
-	uuidgen # generate uuid
-	vimdiff # git diffs in vim
-	xkill # click on window to kill
-	zathura # pdf viewer
+	stack        # haskell build tool
+	timeshift    # backup tool
+	uuidgen      # generate uuid
+	vimdiff      # git diffs in vim
+	xkill        # click on window to kill
+	zathura      # pdf viewer
 )
 
 errors=0

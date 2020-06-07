@@ -1,5 +1,5 @@
 # Colorpicker
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 with stdenv.lib;
 let
   name = "colorpicker";
