@@ -69,3 +69,6 @@ Plug 'dyng/ctrlsf.vim'
 
 " Sort motions (e.g. gsi( or gs)
 Plug 'christoomey/vim-sort-motion'
+
+" Hard time (disallow holding HJKL)
+Plug 'takac/vim-hardtime'

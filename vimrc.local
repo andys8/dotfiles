@@ -330,6 +330,9 @@ let g:presenting_top_margin = 2
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1
 
+" Hard time
+let g:hardtime_default_on = 1
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc
