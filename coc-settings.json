@@ -78,11 +78,13 @@
   "diagnostic-languageserver.formatFiletypes": {
     "sh": "shfmt",
     "nix": "nixpkgs-fmt",
+    "purescript": "purty",
     "haskell": "brittany"
   },
   "diagnostic-languageserver.formatters": {
     "shfmt": { "command": "shfmt" },
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
+    "purty": { "command": "purty", "args": ["-"] },
     "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] }
   },
   "diagnostic-languageserver.linters": {

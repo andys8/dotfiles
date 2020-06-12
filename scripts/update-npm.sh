@@ -12,6 +12,7 @@ packages=(
 	prettier                          # JS/TS/CSS/Markdown formatter
 	purescript                        # purescript compiler (purs)
 	purescript-language-server        # purescript langauge server
+	purty                             # purescript formatter
 	qrcode-terminal                   # Encode text as QR code
 	spago                             # purescript bundler
 	typescript                        # TS compiler
