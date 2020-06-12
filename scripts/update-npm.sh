@@ -10,7 +10,10 @@ packages=(
 	elm-json                          # Update and change elm.json files
 	fx                                # json viewer
 	prettier                          # JS/TS/CSS/Markdown formatter
+	purescript                        # purescript compiler (purs)
+	purescript-language-server        # purescript langauge server
 	qrcode-terminal                   # Encode text as QR code
+	spago                             # purescript bundler
 	typescript                        # TS compiler
 	uglify-js                         # minimize js
 	write-good                        # check and improve written text
