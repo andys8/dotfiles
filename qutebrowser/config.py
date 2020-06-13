@@ -1700,29 +1700,44 @@ c.url.start_pages = ['qute://bookmarks']
 ## Type: Bool
 # c.zoom.text_only = False
 
+# Keybindings
+# Could be faster if single setting:
+# <https://www.reddit.com/r/qutebrowser/comments/92c1qb/starting_qutebrowser_takes_a_really_long_time/e34prtm/>
+c.bindings.commands = {
+    'normal': {
+        '+': 'zoom-in',
+        '-': 'zoom-out',
+        ',M': 'hint links spawn --detach mpv {hint-url}',
+        ',c': 'tab-close',
+        ',e': 'set-cmd-text -s :open',
+        ',h': 'history',
+        ',m': 'spawn --detach mpv {url}',
+        ',q': 'tab-prev',
+        ',w': 'tab-next',
+        '<Alt-D>': 'edit-url',
+        '<Ctrl+0>': 'zoom',
+        '<Ctrl-+>': 'zoom-in',
+        '<Ctrl-->': 'zoom-out',
+        '<Ctrl-Shift-Tab>': 'tab-prev',
+        '<Ctrl-Tab>': 'tab-next',
+        '<Ctrl-f>': 'set-cmd-text /',
+        '<Ctrl-i>': 'forward',
+        '<Ctrl-o>': 'back',
+        '<Ctrl-p>': 'lastpass',
+        '=': 'zoom',
+        'F': 'hint links tab-bg',
+        'gi': 'hint inputs'
+    },
+    'insert': {
+        '<Alt-i>': 'open-editor',
+        '<Ctrl-e>': 'open-editor',
+        '<Ctrl-p>': 'lastpass',
+        '<Escape>': 'leave-mode ;; jseval -q document.activeElement.blur()'
+    }
+}
+
 ## Bindings for normal mode
-config.bind(',c', 'tab-close')
-config.bind(',q', 'tab-prev')
-config.bind(',w', 'tab-next')
-config.bind('<Ctrl-Tab>', 'tab-next')
-config.bind('<Ctrl-Shift-Tab>', 'tab-prev')
-config.bind('<Ctrl-i>', 'forward')
-config.bind('<Ctrl-o>', 'back')
-config.bind('F', 'hint links tab-bg')
-config.bind('gi', 'hint inputs')
-config.bind('<Ctrl-f>', 'set-cmd-text /')
-config.bind(',m', 'spawn --detach mpv {url}')
-config.bind(',e', 'set-cmd-text -s :open')
-config.bind(',M', 'hint links spawn --detach mpv {hint-url}')
-config.bind(',h', 'history')
-config.bind('<Ctrl-p>', 'lastpass')
-config.bind('+', 'zoom-in')
-config.bind('-', 'zoom-out')
-config.bind('=', 'zoom')
-config.bind('<Ctrl-+>', 'zoom-in')
-config.bind('<Ctrl-->', 'zoom-out')
-config.bind('<Ctrl+0>', 'zoom')
-config.bind('<Alt-D>', 'edit-url')
+# config.bind(',c', 'tab-close')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
@@ -1968,10 +1983,6 @@ config.bind('<Alt-D>', 'edit-url')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-config.bind('<Ctrl-e>', 'open-editor', mode='insert')
-config.bind('<Alt-i>', 'open-editor', mode='insert')
-config.bind('<Ctrl-p>', 'lastpass', mode='insert')
-config.bind('<Escape>', 'leave-mode ;; jseval -q document.activeElement.blur()', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
 
