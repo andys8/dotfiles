@@ -34,7 +34,6 @@ in
     vokoscreen # screen recorder
     watch # repeat command
     wcalc # calculator
-    xmobar # status bar for xmonad
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
@@ -76,6 +75,7 @@ in
     termonad-with-packages # haskell terminal
     translate-shell # trans command
     unclutter # hide idle mouse
+    xmobar # status bar for xmonad
     ytop # top/htop replacement
     zstd # compress tool used for .std
   ]
