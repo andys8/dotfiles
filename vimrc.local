@@ -207,6 +207,7 @@ nnoremap <F5> :CocRebuild<CR>
 nmap <leader>r <Plug>(coc-rename)
 nmap <leader>R <Plug>(coc-refactor)
 nmap <silent> <leader>s <Plug>(coc-codeaction-line)
+xmap <silent> <leader>s <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>S <Plug>(coc-fix-current)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
@@ -228,8 +229,13 @@ endfunction
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " Coc Errors
 hi link CocErrorHighlight SpellBad
