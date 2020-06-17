@@ -45,7 +45,6 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
 
 " Typescript JSX
-Plug 'peitalin/vim-jsx-typescript', { 'for': ['javascript', 'typescript'] }
 Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
 " Open links in browser
