@@ -30,8 +30,10 @@ import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
+
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
+import           XMonad.Util.NamedScratchpad
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
 import qualified Data.Map                      as Map
@@ -188,6 +190,12 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_e)         , exitXmonad)
        , ((modMask .|. shiftMask, xK_e)       , exitXmonad)
        , ((modMask .|. altMask, xK_i)         , invertXColors)
+       , ( (modMask, xK_minus)
+         , namedScratchpadAction scratchPads (name $ head scratchPads)
+         )
+       , ( (modMask .|. shiftMask, xK_minus)
+         , namedScratchpadAction scratchPads (name $ last scratchPads)
+         )
        ]
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
@@ -211,6 +219,7 @@ myMouseBindings XConfig { modMask = modMask } = Map.fromList
 
 -- Commands --
 
+term = "st"
 fileBrowser = spawn "xdg-open ."
 quteWebBrowser = spawn "qutebrowser"
 chromiumWebBrowser = spawn "chromium-browser"
@@ -267,6 +276,17 @@ toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = P 0
                       | ws == show WorkspaceWork = P 1
                       | otherwise                = P 2
 toPhysicalScreen _ _ = P 0
+
+-- Scratchpads --
+
+scratchPads :: [NamedScratchpad]
+scratchPads = [createSP "sp_primary", createSP "sp_secondary"]
+ where
+  createSP name =
+    let spawnTerm  = term ++ " -n " ++ name
+        findTerm   = resource =? name
+        manageTerm = customFloating $ W.RationalRect 0.2 0.2 0.6 0.6
+    in  NS name spawnTerm findTerm manageTerm
 
 -- Window rules --
 
@@ -331,7 +351,7 @@ main = do
         { keys               = myKeys nScreens
         , mouseBindings      = myMouseBindings
         , logHook            = myLogHook xmproc
-        , terminal           = "st"
+        , terminal           = term
         , focusFollowsMouse  = True
         , borderWidth        = 0
         , modMask            = mod4Mask
@@ -339,7 +359,9 @@ main = do
         , normalBorderColor  = active
         , focusedBorderColor = inactive
         , layoutHook         = myLayout
-        , manageHook         = manageDocks <+> myManageHook
+        , manageHook         = manageDocks
+                               <+> myManageHook
+                               <+> namedScratchpadManageHook scratchPads
         , startupHook = myStartupHook <+> monitorSetupHook nScreens myWorkspaces
         }
 
