@@ -1654,15 +1654,17 @@ c.url.open_base_url = True
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
-    'amazon': 'https://www.amazon.de/s?k={}',
-    'aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
-    'DEFAULT': 'https://google.de/search?q={}',
-    'dd': 'https://duckduckgo.com/?q={}',
-    'npm': 'https://www.npmjs.com/search?q={}',
-    'hackage': 'https://hackage.haskell.org/packages/search?terms={}',
-    'hoogle': 'https://hoogle.haskell.org/?hoogle={}',
-    'yt': 'https://www.youtube.com/results?search_query={}',
-    'youtube': 'https://www.youtube.com/results?search_query={}'
+    '?github': 'https://github.com/search?type=Repositories&q={}',
+    '?amazon': 'https://www.amazon.de/s?k={}',
+    '?aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
+    '?dd': 'https://duckduckgo.com/?q={}',
+    '?hackage': 'https://hackage.haskell.org/packages/search?terms={}',
+    '?hoogle': 'https://hoogle.haskell.org/?hoogle={}',
+    '?npm': 'https://www.npmjs.com/search?q={}',
+    '?youtube': 'https://www.youtube.com/results?search_query={}',
+    '?yt': 'https://www.youtube.com/results?search_query={}',
+    '?': 'https://google.de/search?q={}',
+    'DEFAULT': 'https://google.de/search?q={}'
 }
 
 ## Page(s) to open at the start.
@@ -1706,7 +1708,6 @@ c.url.start_pages = ['qute://bookmarks']
 c.bindings.commands = {
     'normal': {
         '+': 'zoom-in',
-        '-': 'zoom-out',
         ',M': 'hint links spawn --detach mpv {hint-url}',
         ',c': 'tab-close',
         ',e': 'set-cmd-text -s :open',
@@ -1714,6 +1715,7 @@ c.bindings.commands = {
         ',m': 'spawn --detach mpv {url}',
         ',q': 'tab-prev',
         ',w': 'tab-next',
+        '-': 'zoom-out',
         '<Alt-D>': 'edit-url',
         '<Ctrl+0>': 'zoom',
         '<Ctrl-+>': 'zoom-in',
@@ -1725,6 +1727,7 @@ c.bindings.commands = {
         '<Ctrl-o>': 'back',
         '<Ctrl-p>': 'lastpass',
         '=': 'zoom',
+        '?': 'set-cmd-text :open -t ?',
         'F': 'hint links tab-bg',
         'gi': 'hint inputs'
     },
