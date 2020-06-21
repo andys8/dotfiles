@@ -58,7 +58,7 @@ abbr -a -U nr 'npm run'
 abbr -a -U ng 'nix-env -qaP | grep'
 abbr -a -U ns 'nix search -v'
 abbr -a -U ntop nethogs
-abbr -a -U open xdg-open
+abbr -a -U open 'devour xdg-open'
 abbr -a -U paci 'sudo pacman -S'
 abbr -a -U pacr 'sudo pacman -Rs'
 abbr -a -U pacs 'pacman -Ss'

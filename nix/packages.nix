@@ -34,6 +34,7 @@ in
     vokoscreen # screen recorder
     watch # repeat command
     wcalc # calculator
+    xdo # x tool used in scripts
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager

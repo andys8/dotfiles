@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+id=$(xdo id)
+xdo hide
+# shellcheck disable=SC2091
+$("$@") >/dev/null 2>&1
+xdo show "$id"
