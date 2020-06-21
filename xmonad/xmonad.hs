@@ -97,7 +97,7 @@ myLayout =
 
 -- Theme --
 
-myFont = "xft:SauceCodePro Nerd Font:size=10:bold:antialias=true"
+myFont = "xft:Iosevka Nerd Font:size=14:bold:antialias=true"
 active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"

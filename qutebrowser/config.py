@@ -953,14 +953,14 @@ c.editor.command = ["st", "-e", "vim", "{file}"]
 ## empty value, a system-specific monospace default is used.
 ## Type: List of Font, or Font
 # c.fonts.default_family = []
-c.fonts.default_family = ['SauceCodePro Nerd Font', 'Courier', 'Liberation Mono', 'monospace', 'Fixed', 'Consolas', 'Terminal']
+c.fonts.default_family = ['Iosevka Nerd Font', 'Courier', 'Liberation Mono', 'monospace', 'Fixed', 'Consolas', 'Terminal']
 
 ## Default font size to use. Whenever "default_size" is used in a font
 ## setting, it's replaced with the size listed here. Valid values are
 ## either a float value with a "pt" suffix, or an integer value with a
 ## "px" suffix.
 ## Type: String
-c.fonts.default_size = '13pt'
+c.fonts.default_size = '14pt'
 
 ## Font used for the downloadbar.
 ## Type: Font

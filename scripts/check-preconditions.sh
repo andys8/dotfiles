@@ -40,7 +40,6 @@ fonts=(
 	"Font Awesome 5 Free Solid"
 	"Iosevka Nerd"
 	"Noto Color Emoji"
-	"SauceCodePro Nerd"
 )
 
 errors=0
