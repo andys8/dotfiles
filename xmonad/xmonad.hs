@@ -21,7 +21,6 @@ import           XMonad.Layout.Grid
 import           XMonad.Layout.IndependentScreens
 import           XMonad.Layout.MultiToggle
 import           XMonad.Layout.MultiToggle.Instances
-import           XMonad.Layout.NoBorders
 import           XMonad.Layout.NoFrillsDecoration
 import           XMonad.Layout.OneBig
 import           XMonad.Layout.Renamed
@@ -79,7 +78,7 @@ bsp =
     $ addTopBar
     $ windowNavigation
     $ renamed [Replace "BSP"]
-    $ addTabs shrinkText myTabTheme
+    $ addTabs shrinkText topBarTheme
     $ subLayout [] Simplest
     $ addSpace BSP.emptyBSP
 
@@ -94,8 +93,7 @@ zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace Grid
 
 layouts = bsp ||| oneBig ||| grid ||| zenMode
 
-myLayout =
-  mkToggle1 NBFULL $ avoidStruts $ smartBorders $ mkToggle1 FULL layouts
+myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
 -- Theme --
 
@@ -112,25 +110,17 @@ xmobarTitle = "#8be9fd"
 xmobarLayout = "#ffb86c"
 
 topBarTheme = def { fontName            = myFont
-                  , inactiveBorderColor = inactive
-                  , inactiveColor       = inactive
-                  , inactiveTextColor   = inactive
-                  , activeBorderColor   = active
                   , activeColor         = active
+                  , inactiveColor       = inactive
+                  , urgentColor         = urgent
                   , activeTextColor     = active
-                  , urgentBorderColor   = urgent
+                  , inactiveTextColor   = inactive
                   , urgentTextColor     = urgent
+                  , activeBorderColor   = active
+                  , inactiveBorderColor = inactive
+                  , urgentBorderColor   = urgent
                   , decoHeight          = 6
                   }
-
-myTabTheme = def { fontName            = myFont
-                 , activeColor         = active
-                 , activeTextColor     = active
-                 , inactiveColor       = inactive
-                 , inactiveTextColor   = inactive
-                 , activeBorderColor   = active
-                 , inactiveBorderColor = inactive
-                 }
 
 -- Key bindings --
 
@@ -285,7 +275,7 @@ scratchPads = [createSP "sp_primary", createSP "sp_secondary"]
   createSP name =
     let spawnTerm  = term ++ " -n " ++ name
         findTerm   = resource =? name
-        manageTerm = customFloating $ W.RationalRect 0.2 0.2 0.6 0.6
+        manageTerm = customFloating (W.RationalRect 0.2 0.2 0.6 0.6)
     in  NS name spawnTerm findTerm manageTerm
 
 -- Window rules --
@@ -356,8 +346,8 @@ main = do
         , borderWidth        = 0
         , modMask            = mod4Mask
         , workspaces         = myWorkspaces
-        , normalBorderColor  = active
-        , focusedBorderColor = inactive
+        , normalBorderColor  = inactive
+        , focusedBorderColor = active
         , layoutHook         = myLayout
         , manageHook         = manageDocks
                                <+> myManageHook
