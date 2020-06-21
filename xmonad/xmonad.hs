@@ -97,7 +97,7 @@ myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
 -- Theme --
 
-myFont = "xft:Iosevka Nerd Font:size=14:bold:antialias=true"
+myFont = "xft:Iosevka Nerd Font:size=12:bold:antialias=true"
 active = "#ff79c6"
 inactive = "#6272a4"
 urgent = "#dc322f"
@@ -248,10 +248,15 @@ toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
   viewWorkspace nScreens lastWorkspace
 
-confirm = confirmPrompt conf
+confirm = confirmPrompt c
  where
-  conf =
-    greenXPConfig { font = myFont, height = 60, position = CenteredAt 0.5 0.3 }
+  c = def { font              = myFont
+          , position          = Top
+          , height            = 25
+          , promptBorderWidth = 0
+          , fgColor           = "#f1fa8c"
+          , bgColor           = "#282a36"
+          }
 
 -- Screens --
 
