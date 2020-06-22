@@ -204,8 +204,10 @@ let g:coc_global_extensions = [
       \ ]
 
 nnoremap <F5> :CocRebuild<CR>
-nmap <leader>r <Plug>(coc-rename)
-nmap <leader>R <Plug>(coc-refactor)
+" nmap <leader>r <Plug>(coc-refactor)
+nmap <leader>r <Plug>CtrlSFCwordPath
+vmap <leader>r <Plug>CtrlSFVwordExec
+nmap <leader>R <Plug>(coc-rename)
 nmap <silent> <leader>s <Plug>(coc-codeaction-line)
 xmap <silent> <leader>s <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>S <Plug>(coc-fix-current)
@@ -309,13 +311,6 @@ set nofoldenable
 set foldlevel=0
 noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
-
-" haskell
-augroup haskellrename
-  au!
-  au FileType haskell nmap <buffer> <leader>r <Plug>CtrlSFCwordExec
-  au FileType haskell vmap <buffer> <leader>r <Plug>CtrlSFVwordExec
-augroup END
 
 " haskell: Alex, Happy
 au BufRead,BufNewFile *.x set filetype=alex
