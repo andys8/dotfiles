@@ -32,7 +32,7 @@ import           XMonad.Layout.WindowNavigation
 
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
-import           XMonad.Util.NamedScratchpad
+import           XMonad.Util.Scratchpad
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
 import qualified Data.Map                      as Map
@@ -180,12 +180,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_e)         , exitXmonad)
        , ((modMask .|. shiftMask, xK_e)       , exitXmonad)
        , ((modMask .|. altMask, xK_i)         , invertXColors)
-       , ( (modMask, xK_minus)
-         , namedScratchpadAction scratchPads (name $ head scratchPads)
-         )
-       , ( (modMask .|. shiftMask, xK_minus)
-         , namedScratchpadAction scratchPads (name $ last scratchPads)
-         )
+       , ((modMask, xK_minus)                 , toggleScratchpad)
        ]
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
@@ -244,9 +239,12 @@ viewWorkspace nScreens workspace = do
 
 moveToWorkspace = windows . W.shift
 
+toggleScratchpad = scratchpadSpawnActionCustom $ term ++ " -n scratchpad"
+
 toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
   viewWorkspace nScreens lastWorkspace
+
 
 confirm = confirmPrompt c
  where
@@ -272,17 +270,6 @@ toPhysicalScreen 3 ws | ws == show WorkspaceWWW  = P 0
                       | otherwise                = P 2
 toPhysicalScreen _ _ = P 0
 
--- Scratchpads --
-
-scratchPads :: [NamedScratchpad]
-scratchPads = [createSP "sp_primary", createSP "sp_secondary"]
- where
-  createSP name =
-    let spawnTerm  = term ++ " -n " ++ name
-        findTerm   = resource =? name
-        manageTerm = customFloating (W.RationalRect 0.2 0.2 0.6 0.6)
-    in  NS name spawnTerm findTerm manageTerm
-
 -- Window rules --
 
 myManageHook = composeAll
@@ -306,6 +293,8 @@ myNav2DConf = def { defaultTiledNavigation = centerNavigation
                   , layoutNavigation       = [("Full", centerNavigation)]
                   , unmappedWindowRect     = [("Full", singleWindowRect)]
                   }
+
+scratchpadHook = scratchpadManageHook (W.RationalRect 0.2 0.2 0.6 0.6)
 
 -- Startup --
 
@@ -354,9 +343,7 @@ main = do
         , normalBorderColor  = inactive
         , focusedBorderColor = active
         , layoutHook         = myLayout
-        , manageHook         = manageDocks
-                               <+> myManageHook
-                               <+> namedScratchpadManageHook scratchPads
+        , manageHook         = manageDocks <+> myManageHook <+> scratchpadHook
         , startupHook = myStartupHook <+> monitorSetupHook nScreens myWorkspaces
         }
 
