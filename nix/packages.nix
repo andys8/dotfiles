@@ -75,6 +75,7 @@ in
     sxiv # image viewer
     termonad-with-packages # haskell terminal
     translate-shell # trans command
+    ueberzug # draw images in terminal
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
     ytop # top/htop replacement
