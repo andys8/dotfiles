@@ -20,9 +20,9 @@ abbr -a -U benchmark hyperfine
 abbr -a -U cheat 'curl https://cheat.sh/'
 abbr -a -U copy-screenshot 'cp (ls -t ~/Pictures/screenshot-* | head -n1) .'
 abbr -a -U dco docker-compose
-abbr -a -U de 'trans de:en'
+abbr -a -U de 'trans en:de'
 abbr -a -U e 'fzf | xargs -ro vim'
-abbr -a -U en 'trans en:de'
+abbr -a -U en 'trans de:en'
 abbr -a -U g git
 abbr -a -U ga 'git add'
 abbr -a -U gc 'git commit -m'
