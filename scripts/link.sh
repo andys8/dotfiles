@@ -120,4 +120,10 @@ ln -sf ~/dotfiles/markdownlintrc ~/.markdownlintrc
 mkdir -p ~/.config/bottom
 ln -sf ~/dotfiles/bottom.toml ~/.config/bottom/bottom.toml
 
+# doom emacs
+mkdir -p ~/.doom.d
+ln -sf ~/dotfiles/doom-emacs/config.el ~/.doom.d/config.el
+ln -sf ~/dotfiles/doom-emacs/init.el ~/.doom.d/init.el
+ln -sf ~/dotfiles/doom-emacs/packages.el ~/.doom.d/packages.el
+
 echo "Links updated"
