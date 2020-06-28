@@ -10,6 +10,7 @@ in
     cabal2nix # Convert cabal files to nix
     chromium # web browser
     coursier # scala build tool
+    diskus # disk usage
     dtrx # extract files
     emacs # alternative editor
     gnome3.zenity # show ui messages and dialogs
