@@ -17,9 +17,6 @@ Plug 'tpope/vim-repeat'
 " Start screen
 Plug 'mhinz/vim-startify'
 
-" Toggle location list (errors)
-Plug 'Valloric/listtoggle'
-
 " Auto detect indentation width
 Plug 'tpope/vim-sleuth'
 

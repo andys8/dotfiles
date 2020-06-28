@@ -123,10 +123,6 @@ endfunction
 " Elm
 let g:polyglot_disabled = ['elm']
 
-" List toggle
-let g:lt_location_list_toggle_map = '<leader>l'
-let g:lt_quickfix_list_toggle_map = '<leader>ö'
-
 " Ctags
 set tags+=tags;tags.vendors;,tags;
 
@@ -223,6 +219,8 @@ nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 xmap <silent> <leader>p <Plug>(coc-format-selected)
 nnoremap <silent> <leader>O :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+nnoremap <silent> <nowait> <leader>l :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <nowait> <leader>L :<C-u>CocList -I symbols<cr>
 
 function! s:check_back_space() abort
   let col = col('.') - 1
