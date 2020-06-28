@@ -31,6 +31,7 @@ in
     stalonetray # tray icons
     time # measure time
     toilet # ascii art fonts
+    tokei # count code lines
     trash-cli # rm into trash folder
     unzip # extract zip
     vokoscreen # screen recorder
