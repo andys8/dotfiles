@@ -12,6 +12,7 @@ echo "$(tput setaf 8)Update Vim plugins$(tput sgr 0)"
 vim +PlugUpgrade +PlugUpdate +PlugClean! +qall
 
 echo "$(tput setaf 8)Update CoC extensions$(tput sgr 0)"
-vim +CocInstall +CocUpdateSync +qall
+vim +CocInstall +qall
+vim +CocUpdateSync +qall
 
 echo "Vim updated"
