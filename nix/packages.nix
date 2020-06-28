@@ -11,6 +11,7 @@ in
     chromium # web browser
     coursier # scala build tool
     dtrx # extract files
+    emacs # alternative editor
     gnome3.zenity # show ui messages and dialogs
     i3status-rust # i3 status bar
     jq # json processor

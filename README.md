@@ -174,7 +174,7 @@ Install `xcursor-breeze` and [`Ant-Dracula`](https://github.com/EliverLara/Ant-D
 
 ## Emacs
 
-- Install `emacs`
+- `emacs` is installed with nix
 - Install [`doom-emacs`](https://github.com/hlissner/doom-emacs)
 
 ```shell
