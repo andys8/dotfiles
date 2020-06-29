@@ -13,6 +13,7 @@ in
     diskus # disk usage
     dtrx # extract files
     emacs # alternative editor
+    ffmpeg # convert videos
     gnome3.zenity # show ui messages and dialogs
     i3status-rust # i3 status bar
     jq # json processor

@@ -7,6 +7,7 @@ assertCommands=(
 	elm              # elm compiler
 	elm-json         # elm installation helper
 	elm-test         # elm test runner
+	ffmpeg           # convert videos (used in scripts)
 	ghcide           # haskell language server
 	git-brunch       # branch change tool
 	hlint            # haskell linter

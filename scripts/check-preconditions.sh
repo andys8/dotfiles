@@ -3,37 +3,37 @@ set -euo pipefail
 
 # Dependencies
 commands=(
-	awk     # used in shell scripts
-	bash    # shell
-	fc-list # list fonts
-	find    # used in scripts
-	fish    # shell
-	i3lock  # lockscreen
-	lightdm # Login display manager
-	nix-channel
-	nix-env
-	nix-shell
+	awk         # used in shell scripts
+	bash        # shell
+	fc-list     # list fonts
+	find        # used in scripts
+	fish        # shell
+	i3lock      # lockscreen
+	lightdm     # Login display manager
+	nix-channel # nix
+	nix-env     # nix
+	nix-shell   # nix
 	nm-applet   # network manager applet
 	notify-send # notifications used by script
 	pgrep       # grep processes
 	pip3        # python packages
 	preload     # keep programs in ram
-	pulseaudio
-	python3
+	pulseaudio  # better audio
+	python3     # pythong
 	qutebrowser # Keyboard based webbrowser
-	setxkbmap
-	shuf # used in shell scripts
-	tar
-	tr # used in shell scripts
-	vim
-	w3m     # used in explainshell script
-	xargs   # scripting
-	xclip   # copy/paste
-	xdotool # control x via command line
-	xrandr  # monitor setup
-	xrdb    # load Xresources
-	xset
-	xss-lock # lock the screen
+	setxkbmap   # used in scripts
+	shuf        # used in shell scripts
+	tar         # archive
+	tr          # used in shell scripts
+	vim         # editor
+	w3m         # used in explainshell script
+	xargs       # scripting
+	xclip       # copy/paste
+	xdotool     # control x via command line
+	xrandr      # monitor setup
+	xrdb        # load Xresources
+	xset        # scripts
+	xss-lock    # lock the screen
 )
 
 fonts=(
