@@ -1709,6 +1709,7 @@ c.bindings.commands = {
     'normal': {
         '+': 'zoom-in',
         ',M': 'hint links spawn --detach mpv {hint-url}',
+        ',b': 'set-cmd-text -s :buffer',
         ',c': 'tab-close',
         ',e': 'set-cmd-text -s :open',
         ',h': 'history',
