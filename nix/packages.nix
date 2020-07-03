@@ -29,6 +29,7 @@ in
     scala # scala compiler
     sent # suckless presentation tool
     shfmt # format shell scripts
+    simplescreenrecorder # screen recorder
     stalonetray # tray icons
     time # measure time
     toilet # ascii art fonts
