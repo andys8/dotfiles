@@ -31,6 +31,7 @@ in
     shfmt # format shell scripts
     simplescreenrecorder # screen recorder
     stalonetray # tray icons
+    termonad-with-packages # haskell terminal
     time # measure time
     toilet # ascii art fonts
     tokei # count code lines
@@ -78,7 +79,6 @@ in
     slack-term # slack tui
     speedtest-cli # measure down/upload
     sxiv # image viewer
-    termonad-with-packages # haskell terminal
     translate-shell # trans command
     ueberzug # draw images in terminal
     unclutter # hide idle mouse
