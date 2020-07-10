@@ -85,6 +85,7 @@ ln -sf ~/dotfiles/bin/hlint-brittany ~/bin/hlint-brittany
 ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
 ln -sf ~/dotfiles/bin/i3-battery-popup ~/bin/i3-battery-popup
 ln -sf ~/dotfiles/bin/image-info ~/bin/image-info
+ln -sf ~/dotfiles/bin/image-preview ~/bin/image-preview
 ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
 ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock

@@ -8,6 +8,7 @@ in
     autorandr # xrandr monitor profiles
     awscli # amazon web services
     cabal2nix # Convert cabal files to nix
+    chafa # preview images in terminal
     chromium # web browser
     coursier # scala build tool
     diskus # disk usage

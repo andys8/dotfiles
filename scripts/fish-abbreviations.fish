@@ -47,6 +47,7 @@ abbr -a -U gs 'git status'
 abbr -a -U gst 'git stash'
 abbr -a -U gti git
 abbr -a -U htop btm
+abbr -a -U imp 'image-preview'
 abbr -a -U jd 'cd ~/dotfiles'
 abbr -a -U lg lazygit
 abbr -a -U ll 'lsd -Al --date relative --group-dirs first'
@@ -54,8 +55,8 @@ abbr -a -U lll 'lsd -Al --date relative --timesort --reverse'
 abbr -a -U ls 'lsd'
 abbr -a -U mirror 'autorandr common'
 abbr -a -U n npm
-abbr -a -U nr 'npm run'
 abbr -a -U ng 'nix-env -qaP | grep'
+abbr -a -U nr 'npm run'
 abbr -a -U ns 'nix search -v'
 abbr -a -U ntop nethogs
 abbr -a -U open 'devour xdg-open'
