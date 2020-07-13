@@ -19,6 +19,7 @@ in
     i3status-rust # i3 status bar
     jq # json processor
     lsd # ls replacement
+    lsof # list open files/ports
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
