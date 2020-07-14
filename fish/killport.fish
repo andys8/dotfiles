@@ -6,8 +6,13 @@ function killport
             echo No process with port $port
         else
             for pid in $pids
-                kill $pid
-                echo Killed process with pid $pid and port $port
+                kill -15 $pid
+                echo SIGTERM pid $pid and port $port
+            end
+            sleep 0.5
+            for pid in (lsof -ti :$port)
+                kill -9 $pid
+                echo SIGKILL pid $pid and port $port
             end
         end
     else
