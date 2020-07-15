@@ -16,6 +16,7 @@ in
     emacs # alternative editor
     ffmpeg # convert videos
     gnome3.zenity # show ui messages and dialogs
+    hasmail # mail imap notifier for new mails
     i3status-rust # i3 status bar
     jq # json processor
     lsd # ls replacement

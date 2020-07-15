@@ -23,6 +23,13 @@ Local script executed on machine startup
 [ -z "$(pgrep pulseaudio)" ] && pulseaudio --daemonize
 ```
 
+```bash
+#!/bin/bash
+[ -z "$(pgrep -f slack)" ] && slack --startup &
+[ -z "$(pgrep -f gcal-notifier-kotlin-gtk)" ] && gcal-notifier-kotlin-gtk &
+[ -z "$(pgrep -f hasmail)" ] && hasmail &
+```
+
 ### `~/.gitconfig.machine`
 
 Local default git user configuration with an example for conditional includes.
