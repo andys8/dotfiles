@@ -138,7 +138,7 @@
     }
   },
   "cSpell.enabled": true,
-  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.diagnosticLevel": "Information",
   "cSpell.enabledLanguageIds": ["gitcommit", "markdown", "plaintext", "text"],
   "cSpellExt.enableDictionaries": ["german"],
   "cSpell.language": "en,de",
