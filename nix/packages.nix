@@ -107,12 +107,12 @@ in
   ]
 ) ++ (
   with release2003.haskellPackages; [
-    apply-refact # hlint: apply refactorings
     brittany # code formatter
     hoogle # function documentation
   ]
 ) ++ (
   with unstable.haskellPackages; [
+    apply-refact # hlint: apply refactorings
     git-brunch # git checkout branch tui
     network-manager-tui # network tui
   ]
