@@ -344,7 +344,7 @@ c.colors.statusbar.progress.bg = '#6272a4'
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.url.fg = 'white'
+c.colors.statusbar.url.fg = 'white'
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
@@ -353,7 +353,7 @@ c.colors.statusbar.progress.bg = '#6272a4'
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-# c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.http.fg = 'white'
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
@@ -1382,7 +1382,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.hide = False
+c.statusbar.show = 'in-mode'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
@@ -1407,7 +1407,7 @@ c.statusbar.hide = False
 ##   - progress: Progress bar for the current page loading.
 # c.statusbar.widgets = ['keypress', 'url', 'scroll', 'history', 'tabs', 'progress']
 # c.statusbar.widgets = ['url']
-c.statusbar.widgets = ['progress', 'keypress', 'url', 'scroll', 'history']
+c.statusbar.widgets = ['url']
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
