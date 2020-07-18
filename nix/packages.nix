@@ -33,12 +33,12 @@ in
     sent # suckless presentation tool
     shfmt # format shell scripts
     simplescreenrecorder # screen recorder
-    stalonetray # tray icons
     termonad-with-packages # haskell terminal
     time # measure time
     toilet # ascii art fonts
     tokei # count code lines
     trash-cli # rm into trash folder
+    trayer # tray icons
     unzip # extract zip
     vokoscreen # screen recorder
     watch # repeat command
