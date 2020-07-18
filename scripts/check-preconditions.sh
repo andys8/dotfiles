@@ -70,8 +70,8 @@ for i in "${commands[@]}"; do commandExists "$i"; done
 }
 
 # qutebrowser fixed version
-QUTEBROWSER_VERSION=$(qutebrowser --version | head -n1)
-[[ $QUTEBROWSER_VERSION =~ v1\.1[0-9]\. ]] || {
+QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
+[[ $QUTEBROWSER_VERSION =~ v1\.1[3-9]\. ]] || {
 	fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
 }
 
