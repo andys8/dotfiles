@@ -274,7 +274,6 @@ toPhysicalScreen _ _ = P 0
 
 myManageHook = composeAll
   [ resource =? "desktop_window" --> doIgnore
-  , resource =? "stalonetray" --> doIgnore
   , className =? "Chromium-browser" --> doShift (show WorkspaceWWW)
   , className =? "Code" --> doShift (show WorkspaceWork)
   , className =? "Rambox" --> doShift (show WorkspaceChat)

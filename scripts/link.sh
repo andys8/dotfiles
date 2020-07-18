@@ -108,9 +108,6 @@ ln -sf ~/dotfiles/ghci ~/.ghci
 # Xresources
 ln -sf ~/dotfiles/Xresources ~/.Xresources
 
-# stalonetray
-ln -sf ~/dotfiles/stalonetrayrc ~/.stalonetrayrc
-
 # slack-term
 mkdir -p ~/.config/slack-term
 ln -sf ~/dotfiles/slack-term ~/.config/slack-term/config
