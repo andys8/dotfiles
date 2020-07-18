@@ -358,7 +358,7 @@ c.colors.statusbar.url.success.http.fg = 'white'
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-# c.colors.statusbar.url.success.https.fg = 'lime'
+c.colors.statusbar.url.success.https.fg = 'white'
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
