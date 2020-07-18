@@ -2,9 +2,10 @@
 set -eu
 
 LINUX=$(lsb_release -i -s)
+LINUX=${LINUX,,}
 CLEANUP=$((RANDOM % 20))
 
-if [ "$LINUX" = "LinuxMint" ]; then
+if [ "$LINUX" = "linuxmint" ]; then
 	echo "Update system"
 	sudo apt update
 	sudo apt upgrade
@@ -13,7 +14,7 @@ if [ "$LINUX" = "LinuxMint" ]; then
 		sudo apt clean
 		sudo apt autoremove
 	fi
-elif [ "$LINUX" = "ManjaroLinux" ]; then
+elif [ "$LINUX" = "manjarolinux" ]; then
 	echo "Update system"
 	yay -Syu
 	if [ $CLEANUP -eq 0 ]; then

@@ -8,8 +8,9 @@ command -v "htop" >/dev/null 2>&1 && {
 }
 
 LINUX=$(lsb_release -i -s)
+LINUX=${LINUX,,}
 
-if [ "$LINUX" = "LinuxMint" ]; then
+if [ "$LINUX" = "linuxmint" ]; then
 
 	COMMIT=70c91d6d598f15b0311ae6779810e036133e72d2
 	TARBALL=https://github.com/KoffeinFlummi/htop-vim/tarball/$COMMIT
@@ -31,7 +32,7 @@ if [ "$LINUX" = "LinuxMint" ]; then
 	echo "Please enter password for 'make install' (htop needs to be available for root user)"
 	sudo make install
 
-elif [ "$LINUX" = "ManjaroLinux" ]; then
+elif [ "$LINUX" = "manjarolinux" ]; then
 
 	! command -v "yay" >/dev/null 2>&1 && {
 		echo "yay missing"
