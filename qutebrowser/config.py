@@ -1301,6 +1301,7 @@ c.input.insert_mode.leave_on_load = True
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
 # c.scrolling.bar = 'when-searching'
+c.scrolling.bar = 'when-searching'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
