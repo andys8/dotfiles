@@ -4,20 +4,18 @@
 xrdb ~/.Xresources
 
 # System tray
-if [ -z "$(pgrep trayer)" ]; then
-	trayer \
-		--align center \
-		--alpha 0 \
-		--distance 2 \
-		--edge top \
-		--height 18 \
-		--heighttype pixel \
-		--iconspacing 6 \
-		--monitor primary \
-		--tint 0x282a36 \
-		--transparent true \
-		--widthtype request &
-fi
+killall trayer && trayer \
+	--align center \
+	--alpha 0 \
+	--distance 2 \
+	--edge top \
+	--height 18 \
+	--heighttype pixel \
+	--iconspacing 6 \
+	--monitor primary \
+	--tint 0x282a36 \
+	--transparent true \
+	--widthtype request &
 
 # Network Manager Icon
 if [ -z "$(pgrep nm-applet)" ]; then
