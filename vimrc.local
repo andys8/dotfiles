@@ -89,6 +89,9 @@ inoremap <C-s> <ESC>:w<CR>
 
 " Saves the file (handling the permission-denied error)
 cnoremap w!! w !sudo tee % >/dev/null
+" Save without format
+cnoremap W noa w
+cnoremap X noa x
 
 " Date
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
