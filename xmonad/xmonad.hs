@@ -86,12 +86,7 @@ grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
 
 oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
-zenMode = renamed [Replace "Zen"] $ addTopBar $ zenSpace Grid
- where
-  zenSpace =
-    spacingRaw False (Border 100 100 500 500) True (Border 10 10 10 10) True
-
-layouts = bsp ||| oneBig ||| grid ||| zenMode
+layouts = bsp ||| oneBig ||| grid
 
 myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
