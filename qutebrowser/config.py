@@ -1383,7 +1383,7 @@ c.spellcheck.languages = ['en-US', 'de-DE']
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.show = 'in-mode'
+# c.statusbar.show = 'in-mode'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
