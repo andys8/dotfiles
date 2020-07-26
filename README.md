@@ -19,7 +19,7 @@ Local script executed on machine startup
 #!/bin/bash
 [ -z "$(pgrep dropbox)" ] && dropbox start &
 [ -z "$(pgrep -f duplicati)" ] && duplicati &
-# ubuntu, but not arch
+# ubuntu only
 [ -z "$(pgrep pulseaudio)" ] && pulseaudio --daemonize
 ```
 
@@ -27,7 +27,8 @@ Local script executed on machine startup
 #!/bin/bash
 [ -z "$(pgrep -f slack)" ] && slack --startup &
 [ -z "$(pgrep -f gcal-notifier-kotlin-gtk)" ] && gcal-notifier-kotlin-gtk &
-[ -z "$(pgrep -f hasmail)" ] && hasmail &
+[ -z "$(pgrep -f hasmail)" ] || killall hasmail
+hasmail &
 ```
 
 ### `~/.gitconfig.machine`
