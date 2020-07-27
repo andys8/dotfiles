@@ -4,7 +4,8 @@
 xrdb ~/.Xresources
 
 # System tray
-killall trayer && trayer \
+[ -n "$(pgrep trayer)" ] && killall trayer
+trayer \
 	--align center \
 	--alpha 0 \
 	--distance 2 \
