@@ -84,6 +84,12 @@ xnoremap p "_dP
 inoremap jj <ESC>
 inoremap jk <ESC>
 
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+imap <C-@> <Backspace>
+
 " Yank consistency with other commands
 nnoremap Y y$
 
