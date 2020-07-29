@@ -82,6 +82,10 @@ xnoremap p "_dP
 
 " Exit insert mode
 inoremap jj <ESC>
+inoremap jk <ESC>
+
+" Yank consistency with other commands
+nnoremap Y y$
 
 " Save
 nnoremap <C-s> :w<CR>
