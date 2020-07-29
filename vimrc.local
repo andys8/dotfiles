@@ -99,9 +99,21 @@ inoremap <C-s> <ESC>:w<CR>
 
 " Saves the file (handling the permission-denied error)
 cnoremap w!! w !sudo tee % >/dev/null
+
 " Save without format
 command Writenoformat noa w
 command Wnoformat noa w
+cabbrev wn Wnoformat
+
+" Abbreviations
+cabbrev Ft Filetypes
+cabbrev ft Filetypes
+cabbrev Ci CocInfo
+cabbrev ci CocInfo
+cabbrev Cr CocRestart
+cabbrev cr CocRestart
+cabbrev Sn Snippets
+cabbrev sn Snippets
 
 " Date
 inoremap <C-d> <C-R>=strftime("%Y-%m-%d")<CR>
@@ -155,8 +167,8 @@ nnoremap <F6> :Goyo<CR>
 nnoremap <leader>- :Goyo<CR>
 
 " Command to read windows files (crlf)
-abbrev windowsfile e ++ff=dos
-abbrev dosfile e ++ff=dos
+cabbrev windowsfile e ++ff=dos
+cabbrev dosfile e ++ff=dos
 
 " Startify
 let g:startify_files_number = 5
