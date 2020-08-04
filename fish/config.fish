@@ -44,10 +44,8 @@ set -Ux LESS_TERMCAP_se (set_color normal)
 bind --user --mode visual --sets-mode insert i force-repaint end-selection
 bind --user --mode visual --sets-mode insert s kill-selection end-selection repaint-mode
 
-# Keybindings QMK like: Ctrl-Space, Ctrl-h, Ctrl-l
+# Keybindings QMK like: Ctrl-Space
 bind --user --mode insert --key nul backward-delete-char
-bind --user --mode insert \ch backward-char
-bind --user --mode insert \cl forward-char
 
 # Cursor speed
 xset r rate 200 80 2> /dev/null &
