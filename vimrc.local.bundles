@@ -65,3 +65,6 @@ Plug 'dyng/ctrlsf.vim'
 
 " Sort motions (e.g. gsi( or gs)
 Plug 'christoomey/vim-sort-motion'
+
+" Dhall direct instead of polyglot
+Plug 'vmchale/dhall-vim', { 'for' : 'dhall' }

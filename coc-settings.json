@@ -76,12 +76,14 @@
     "sh": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
-    "sh": "shfmt",
+    "dhall": "dhall",
+    "haskell": "brittany",
     "nix": "nixpkgs-fmt",
     "purescript": "purty",
-    "haskell": "brittany"
+    "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
+    "dhall": { "command": "dhall", "args": ["format"] },
     "shfmt": { "command": "shfmt" },
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
     "purty": { "command": "purty", "args": ["-"] },

@@ -146,7 +146,7 @@ function! Multiple_cursors_after()
 endfunction
 
 " Elm
-let g:polyglot_disabled = ['elm']
+let g:polyglot_disabled = ['elm', 'dhall']
 
 " Ctags
 set tags+=tags;tags.vendors;,tags;

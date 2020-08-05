@@ -56,6 +56,7 @@ in
     bat # cat replacement
     cargo # rust package manager
     ctop # top for containers
+    dhall # dhall (format)
     dragon-drop # drag and drop
     entr # watch files
     exa # ls replacement
