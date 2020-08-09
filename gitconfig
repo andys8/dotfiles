@@ -11,7 +11,7 @@
 	ci = commit
 	co = checkout
 	cp = cherry-pick
-	currentbranch = !git rev-parse --abbrev-ref HEAD | tr -d '\n'
+	currentbranch = !git branch --show-current | tr -d '\n'
 	currentcommit = !git rev-parse HEAD | tr -d '\n'
 	d = diff
 	f = fetch
