@@ -1,6 +1,24 @@
 let
   unstable = import <nixpkgs> { };
   release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") { };
+  pkgs = unstable;
+  purescript =
+    import
+      (pkgs.fetchFromGitHub {
+        owner = "justinwoo";
+        repo = "easy-purescript-nix";
+        rev = "a5fd0328827ac46954db08f624c09eba981f1ab2";
+        sha256 = "1g3bk2y8hz0y998yixz3jmvh553kjpj2k7j0xrp4al1jrbdcmgjq";
+      }) { inherit pkgs; };
+  purescriptFork =
+    import
+      (pkgs.fetchFromGitHub {
+        owner = "andys8";
+        repo = "easy-purescript-nix";
+        rev = "3ab6ecee664c92ba7ac067a3d2c9c64c853b2652";
+        sha256 = "1mfxfqzcwiv9vhp2k6w8a5kz49r080i91g4xrwx6c04xpcixwbw8";
+      }) { inherit pkgs; };
+  purescriptLocal = import ~/Dev/repository/easy-purescript-nix/default.nix { inherit pkgs; };
 in
 (
   with release2003; [
@@ -116,6 +134,13 @@ in
     apply-refact # hlint: apply refactorings
     git-brunch # git checkout branch tui
     network-manager-tui # network tui
+  ]
+) ++ (
+  with purescriptFork; [
+    pscid # compiler daemon (like ghcid)
+    purs # compiler
+    purty # formatter
+    spago # package manager
   ]
 ) ++ [
   (import ./st.nix)
