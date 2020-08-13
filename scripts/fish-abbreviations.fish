@@ -19,6 +19,7 @@ abbr -a -U agu 'sudo apt update && sudo apt upgrade'
 abbr -a -U benchmark hyperfine
 abbr -a -U cheat 'curl https://cheat.sh/'
 abbr -a -U copy-screenshot 'cp (ls -t ~/Pictures/screenshot-* | head -n1) .'
+abbr -a -U colorpicker gcolor3
 abbr -a -U dco docker-compose
 abbr -a -U de 'trans en:de'
 abbr -a -U e 'fzf | xargs -ro vim'

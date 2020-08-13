@@ -15,6 +15,7 @@ in
     dtrx # extract files
     emacs # alternative editor
     ffmpeg # convert videos
+    gcolor3 # color picker
     gnome3.zenity # show ui messages and dialogs
     hasmail # mail imap notifier for new mails
     i3status-rust # i3 status bar
@@ -119,5 +120,4 @@ in
   ]
 ) ++ [
   (import ./st.nix)
-  (import ./colorpicker.nix)
 ]
