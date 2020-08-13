@@ -29,6 +29,8 @@ section "Update Node/NPM"
 ~/dotfiles/scripts/update-npm.sh
 section "Update Xmonad"
 ~/dotfiles/scripts/update-xmonad.sh
+section "Update qutebrowser"
+~/dotfiles/scripts/update-qutebrowser.sh
 section "Update ghcide"
 ~/dotfiles/scripts/update-ghcide.sh
 section "Update ranger plugins"

@@ -3,7 +3,7 @@ set -euo pipefail
 
 command -v "htop" >/dev/null 2>&1 && {
 	VERSION=$(htop --version | head -1)
-	echo "htop version ($VERSION) is already installed."
+	echo "htop ($VERSION) is already installed."
 	exit 0
 }
 
