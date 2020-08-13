@@ -5,27 +5,27 @@
 
 # Echo help/usage message
 show_help() {
-  echo "gifgen 1.2.0"
-  echo
-  echo "Usage: gifgen [options] [input]"
-  echo
-  echo "Options:"
-  echo "  -o   Output file [input.gif]"
-  echo "  -f   Frames per second [10]"
-  echo "  -s   Optimize for static background"
-  echo "  -v   Display verbose output from ffmpeg"
-  echo "  -w   Scale output with horizontal resolution"
-  echo "  -b   Begin the clip at a given timestamp (in seconds)"
-  echo "  -d   Duration in seconds of the resulting gif, can be combined with at"
-  echo
-  echo "Examples:"
-  echo "  $ gifgen video.mp4"
-  echo "  $ gifgen -o demo.gif SCM_1457.mp4"
-  echo "  $ gifgen -sf 15 screencap.mov"
-  echo "  $ gifgen -sf 15 -w 320 screencap.mov"
-  echo
-  echo "Begin at 3.5 seconds into the video, make the gif using the next 5.5 seconds"
-  echo "  $ gifgen -b 3.5 -d 5.5 screencap.mov"
+	echo "gifgen 1.2.0"
+	echo
+	echo "Usage: gifgen [options] [input]"
+	echo
+	echo "Options:"
+	echo "  -o   Output file [input.gif]"
+	echo "  -f   Frames per second [10]"
+	echo "  -s   Optimize for static background"
+	echo "  -v   Display verbose output from ffmpeg"
+	echo "  -w   Scale output with horizontal resolution"
+	echo "  -b   Begin the clip at a given timestamp (in seconds)"
+	echo "  -d   Duration in seconds of the resulting gif, can be combined with at"
+	echo
+	echo "Examples:"
+	echo "  $ gifgen video.mp4"
+	echo "  $ gifgen -o demo.gif SCM_1457.mp4"
+	echo "  $ gifgen -sf 15 screencap.mov"
+	echo "  $ gifgen -sf 15 -w 320 screencap.mov"
+	echo
+	echo "Begin at 3.5 seconds into the video, make the gif using the next 5.5 seconds"
+	echo "  $ gifgen -b 3.5 -d 5.5 screencap.mov"
 }
 
 # Setup defaults
@@ -41,35 +41,35 @@ duration=""
 
 # Parse args
 while getopts "hi:o:f:w:b:d:sv" opt; do
-  case "$opt" in
-    h)
-      show_help=true
-      ;;
-    o)
-      output=$OPTARG
-      ;;
-    f)
-      fps=$OPTARG
-      ;;
-    s)
-      stats_mode="diff"
-      dither="none"
-      ;;
-    w)
-      scale=",scale=$OPTARG:-1:flags=lanczos"
-      ;;
-    b)
-      begin="-ss $OPTARG"
-      ;;
-    d)
-      duration="-t $OPTARG"
-      ;;
-    v)
-      verbosity="info"
-      ;;
-  esac
+	case "$opt" in
+	h)
+		show_help=true
+		;;
+	o)
+		output=$OPTARG
+		;;
+	f)
+		fps=$OPTARG
+		;;
+	s)
+		stats_mode="diff"
+		dither="none"
+		;;
+	w)
+		scale=",scale=$OPTARG:-1:flags=lanczos"
+		;;
+	b)
+		begin="-ss $OPTARG"
+		;;
+	d)
+		duration="-t $OPTARG"
+		;;
+	v)
+		verbosity="info"
+		;;
+	esac
 done
-shift "$((OPTIND-1))"
+shift "$((OPTIND - 1))"
 # Grab input file from end of command
 input=$1
 
@@ -78,14 +78,14 @@ input=$1
 
 # Check for ffmpeg before encoding
 type ffmpeg >/dev/null 2>&1 || {
-  echo "Error: gifgen requires ffmpeg to be installed"
-  exit 1
+	echo "Error: gifgen requires ffmpeg to be installed"
+	exit 1
 }
 
 # Set output if not specified
 if [[ "$output" = "" ]]; then
-  input_filename=${input##*/}
-  output=${input_filename%.*}.gif
+	input_filename=${input##*/}
+	output=${input_filename%.*}.gif
 fi
 
 # Encode GIF
