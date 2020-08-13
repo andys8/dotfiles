@@ -121,6 +121,12 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 	fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
 }
 
+# qutebrowser fixed version
+QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
+[[ $QUTEBROWSER_VERSION =~ v1\.1[3-9]\. ]] || {
+	fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
+}
+
 # Check commands
 for i in "${commandsOptional[@]}"; do warnIfCommandMissing "$i"; done
 

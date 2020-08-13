@@ -69,12 +69,6 @@ for i in "${commands[@]}"; do commandExists "$i"; done
 	fail "sdkman installation is missing"
 }
 
-# qutebrowser fixed version
-QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
-[[ $QUTEBROWSER_VERSION =~ v1\.1[3-9]\. ]] || {
-	fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
-}
-
 # Check fonts
 fontInstalled() {
 	fc-list | grep -i "$1" >/dev/null 2>&1 || {
