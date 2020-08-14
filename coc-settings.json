@@ -24,7 +24,7 @@
       "command": "elm-language-server",
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
-      "trace.server": "verbose",
+      "trace.server": "off",
       "initializationOptions": {
         "elmFormatPath": "elm-format",
         "elmAnalyseTrigger": "save"
@@ -41,7 +41,7 @@
         "package.yaml"
       ],
       "filetypes": ["hs", "lhs", "haskell"],
-      "trace.server": "verbose",
+      "trace.server": "off",
       "initializationOptions": {
         "languageServerHaskell": {
           "hlintOn": true,
@@ -66,6 +66,7 @@
       "command": "purescript-language-server",
       "args": ["--stdio"],
       "filetypes": ["purescript"],
+      "trace.server": "off",
       "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"]
     }
   },
