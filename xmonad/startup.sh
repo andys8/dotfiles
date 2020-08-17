@@ -56,7 +56,7 @@ xset r rate 200 80
 xset -b
 
 # Wallpaper
-nitrogen --restore
+nitrogen --set-zoom-fill --random ~/Pictures/wallpaper/
 
 # Run startup script (which is different on each machine)
 ~/bin/startup.sh &
