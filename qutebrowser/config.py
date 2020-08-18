@@ -1655,16 +1655,17 @@ c.url.open_base_url = True
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
-    '?github': 'https://github.com/search?type=Repositories&q={}',
+    '?': 'https://google.de/search?q={}',
     '?amazon': 'https://www.amazon.de/s?k={}',
     '?aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
     '?dd': 'https://duckduckgo.com/?q={}',
+    '?github': 'https://github.com/search?type=Repositories&q={}',
     '?hackage': 'https://hackage.haskell.org/packages/search?terms={}',
     '?hoogle': 'https://hoogle.haskell.org/?hoogle={}',
     '?npm': 'https://www.npmjs.com/search?q={}',
+    '?purs': 'https://pursuit.purescript.org/search?q={}',
     '?youtube': 'https://www.youtube.com/results?search_query={}',
     '?yt': 'https://www.youtube.com/results?search_query={}',
-    '?': 'https://google.de/search?q={}',
     'DEFAULT': 'https://google.de/search?q={}'
 }
 
