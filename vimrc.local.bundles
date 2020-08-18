@@ -38,9 +38,6 @@ Plug 'airblade/vim-rooter'
 " Coc (Language Server and Completion)
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Elm syntax
-Plug 'andys8/vim-elm-syntax', { 'for': 'elm' }
-
 " Typescript JSX
 Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
 
