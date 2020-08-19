@@ -79,6 +79,7 @@ c.backend = 'webengine'
 ## Foreground color of completion widget category headers.
 ## Type: QtColor
 # c.colors.completion.category.fg = 'white'
+c.colors.completion.category.fg = '#ff79c6'
 
 ## Background color of the completion widget for even rows.
 ## Type: QssColor
@@ -124,6 +125,7 @@ c.backend = 'webengine'
 ## Color of the scrollbar handle in the completion view.
 ## Type: QssColor
 # c.colors.completion.scrollbar.fg = 'white'
+c.colors.completion.scrollbar.fg = '#6272a4'
 
 ## Background color of the context menu. If set to null, the Qt default
 ## is used.
