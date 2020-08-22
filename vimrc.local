@@ -88,7 +88,6 @@ imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
-imap <C-@> <Backspace>
 
 " Yank consistency with other commands
 nnoremap Y y$
@@ -263,6 +262,9 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+
+" Use <c-space> to trigger completion.
+imap <silent><expr> <c-@> coc#refresh()
 
 " Coc Errors
 hi link CocErrorHighlight SpellBad
