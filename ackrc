@@ -9,3 +9,8 @@
 --ignore-dir=build/
 --ignore-dir=dist/
 --ignore-dir=.idea/
+--ignore-dir=output/
+--ignore-dir=.spago/
+
+--type-add=purescript:ext:purs
+--type-add=elm:ext:elm
