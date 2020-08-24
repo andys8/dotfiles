@@ -1,0 +1,12 @@
+snippet testspec
+	module Test.${1:Suite}Spec where
+
+	import Prelude
+	import Test.Spec (Spec, describe, it)
+	import Test.Spec.Assertions (shouldEqual)
+
+	spec :: Spec Unit
+	spec =
+	  describe "$1" do
+		it "${3:Test}" do
+		  true \`shouldEqual\` true
