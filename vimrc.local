@@ -265,7 +265,7 @@ endif
 
 " Use <c-space> to trigger completion.
 imap <silent><expr> <c-@> coc#refresh()
-nmap <silent>       <c-@> ea<C-@>
+nmap <silent>       <c-@> wbEa<C-@>
 
 " Coc Errors
 hi link CocErrorHighlight SpellBad
