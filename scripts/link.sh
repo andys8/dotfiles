@@ -10,6 +10,7 @@ ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vimrc.local ~/.vimrc.local
 ln -sf ~/dotfiles/vimrc.local.bundles ~/.vimrc.local.bundles
 ln -sf ~/dotfiles/coc-settings.json ~/.vim/coc-settings.json
+rm -rf ~/.vim/snippets
 ln -sf ~/dotfiles/vim-snippets ~/.vim/snippets
 
 # Idea VIM
