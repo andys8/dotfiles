@@ -14,7 +14,7 @@
   "suggest.disableMenu": true,
   "suggest.maxCompleteItemCount": 10,
   "suggest.minTriggerInputLength": 2,
-  "suggest.snippetIndicator": " ►",
+  "suggest.snippetIndicator": " 🔥",
   "tsserver.formatOnType": false,
   "vetur.format.scriptInitialIndent": true,
   "vetur.format.styleInitialIndent": true,
