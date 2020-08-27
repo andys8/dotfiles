@@ -131,6 +131,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask, xK_Escape)                , kill)
        , ((modMask .|. shiftMask, xK_Escape)  , kill)
        , ((modMask, xK_q)                     , kill)
+       , ((modMask, xK_BackSpace)             , kill)
        , ((altMask, xK_F4)                    , kill)
        , ((modMask, xK_d)                     , spawn rofiApplications)
        , ((modMask .|. shiftMask, xK_d)       , spawn rofiRun)

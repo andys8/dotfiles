@@ -26,6 +26,7 @@ bindsym $mod+Ctrl+Return exec "chromium-browser"
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+q kill
+bindsym $mod+BackSpace kill
 bindsym $mod+Escape kill
 bindsym $alt+F4 kill
 
