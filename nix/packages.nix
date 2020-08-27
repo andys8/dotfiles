@@ -14,6 +14,7 @@ in
     diskus # disk usage
     dtrx # extract files
     emacs # alternative editor
+    fast-cli # speedtest
     ffmpeg # convert videos
     gcolor3 # color picker
     gnome3.zenity # show ui messages and dialogs
@@ -61,7 +62,6 @@ in
     dragon-drop # drag and drop
     entr # watch files
     exa # ls replacement
-    fast-cli # speedtest
     fd # "find" for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
