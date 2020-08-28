@@ -156,8 +156,9 @@ let g:polyglot_disabled = ['elm', 'dhall']
 set tags+=tags;tags.vendors;,tags;
 
 " Search with Rg (overwrites vimrc)
-nnoremap <silent> <Leader>f :Rg<CR>
-nnoremap <silent> <leader>F :Rgrep<CR>
+nnoremap <silent> <leader>f :Rg<CR>
+nnoremap <silent> <leader>F :Rg <c-r><c-w><cr>
+
 " Rg will ignore filenames
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
@@ -230,9 +231,9 @@ let g:coc_global_extensions = [
 
 nnoremap <F5> :CocRebuild<CR>
 " nmap <leader>r <Plug>(coc-refactor)
-nmap <leader>r <Plug>CtrlSFCwordPath
-vmap <leader>r <Plug>CtrlSFVwordExec
-nmap <leader>R <Plug>(coc-rename)
+nmap          <leader>r <Plug>CtrlSFCwordPath
+vmap          <leader>r <Plug>CtrlSFVwordExec
+nmap          <leader>R <Plug>(coc-rename)
 nmap <silent> <leader>s <Plug>(coc-codeaction-line)
 xmap <silent> <leader>s <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>S <Plug>(coc-fix-current)
@@ -365,7 +366,7 @@ let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1
 
 " PureScript
-autocmd FileType purescript setlocal commentstring=--\ %s
+au FileType purescript setlocal commentstring=--\ %s
 au BufWritePre *.purs call CocAction('format')
 
 " Include temporary vim settings
