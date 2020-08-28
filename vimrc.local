@@ -104,6 +104,11 @@ command Writenoformat noa w
 command Wnoformat noa w
 cabbrev wn Wnoformat
 
+" Load and save Vim config
+command Reload source $MYVIMRC
+command Config :e ~/dotfiles/vimrc.local
+command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
+
 " Abbreviations
 cabbrev Ft Filetypes
 cabbrev ft Filetypes
