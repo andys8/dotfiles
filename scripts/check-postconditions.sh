@@ -30,7 +30,6 @@ commandsOptional=(
 	idea         # intellij ide
 	java         # java runtime
 	lxappearance # configure themes
-	stack        # haskell build tool
 	timeshift    # backup tool
 	uuidgen      # generate uuid
 	vimdiff      # git diffs in vim
@@ -121,10 +120,16 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 	fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
 }
 
-# qutebrowser fixed version
+# qutebrowser min version
 QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
 [[ $QUTEBROWSER_VERSION =~ v1\.1[3-9]\. ]] || {
 	fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
+}
+
+# stack min version
+STACK_VERSION=$(stack --version)
+[[ $STACK_VERSION =~ Version[[:space:]]2\.[3-9]\. ]] || {
+	fail "Stack version not expected ($STACK_VERSION)"
 }
 
 # Check commands
