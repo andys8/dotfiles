@@ -18,7 +18,6 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Include user's extra bundle

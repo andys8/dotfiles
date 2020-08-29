@@ -221,10 +221,10 @@ let g:coc_global_extensions = [
       \ 'coc-markdownlint',
       \ 'coc-metals',
       \ 'coc-prettier',
+      \ 'coc-snippets',
       \ 'coc-spell-checker',
       \ 'coc-tslint-plugin',
       \ 'coc-tsserver',
-      \ 'coc-ultisnips',
       \ 'coc-vetur',
       \ 'coc-yaml'
       \ ]
