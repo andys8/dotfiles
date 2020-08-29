@@ -1,3 +1,24 @@
+snippet describe
+	describe "$1" do
+	  $0
+
+snippet it
+	it "${1:Test}" do
+	  $0
+
+snippet test
+	it "${1:Test}" do
+	  $0
+
+snippet foreign
+	foreign import ${1:name} :: ${2:Type}
+
+snippet module
+	module `substitute(substitute(expand('%:r'), '[/\\]','.','g'),'^\%(\l*\.\)\?','','')` where
+
+	import Prelude
+	${0}
+
 snippet testspec
 	module Test.${1:Suite}Spec where
 
@@ -10,10 +31,3 @@ snippet testspec
 	  describe "$1" do
 		it "${3:Test}" do
 		  true \`shouldEqual\` true
-
-snippet desc
-	describe "$1" do
-
-snippet test
-	it "${1:Test}" do
-	  true \`shouldEqual\` true
