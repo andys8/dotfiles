@@ -9,6 +9,7 @@ packages=(
 	dockerfile-language-server-nodejs # docker ls
 	elm-json                          # Update and change elm.json files
 	fx                                # json viewer
+	http-server                       # spin up http server in directory
 	prettier                          # JS/TS/CSS/Markdown formatter
 	pscid                             # purescript compiler daemon (like ghcid)
 	purescript                        # purescript compiler (purs)
