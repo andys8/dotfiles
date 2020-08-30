@@ -370,6 +370,11 @@ let g:vim_markdown_conceal_code_blocks = 1
 au FileType purescript setlocal commentstring=--\ %s
 au BufWritePre *.purs call CocAction('format')
 
+" Expand region
+map - <Plug>(expand_region_expand)
+map + <Plug>(expand_region_expand)
+map _ <Plug>(expand_region_shrink)
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc
