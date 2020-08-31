@@ -69,7 +69,14 @@
       "args": ["--stdio"],
       "filetypes": ["purescript"],
       "trace.server": "off",
-      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"]
+      "rootPatterns": ["bower.json", "psc-package.json", "spago.dhall"],
+      "settings": {
+        "purescript": {
+          "pursExe": "purs",
+          "autocompleteLimit": 8,
+          "addSpagoSources": true
+        }
+      }
     }
   },
   "diagnostic-languageserver.filetypes": {
