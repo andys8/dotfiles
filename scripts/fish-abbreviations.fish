@@ -49,7 +49,6 @@ abbr -a -U grm 'git rebase -i origin/master'
 abbr -a -U gs 'git status'
 abbr -a -U gst 'git stash'
 abbr -a -U gti git
-abbr -a -U htop btm
 abbr -a -U imp 'image-preview'
 abbr -a -U jd 'cd ~/dotfiles'
 abbr -a -U lg lazygit
