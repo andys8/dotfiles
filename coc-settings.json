@@ -32,18 +32,18 @@
         "elmAnalyseTrigger": "save"
       }
     },
-    "haskell": {
+    "haskell-language-server": {
       "enable": true,
-      "command": "ghcide",
+      "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
+      "filetypes": ["haskell", "lhaskell"],
       "rootPatterns": [
         "*.cabal",
         "stack.yaml",
         "cabal.project",
-        "package.yaml"
+        "package.yaml",
+        "hie.yaml"
       ],
-      "filetypes": ["hs", "lhs", "haskell"],
-      "trace.server": "off",
       "initializationOptions": {
         "languageServerHaskell": {
           "hlintOn": true,
