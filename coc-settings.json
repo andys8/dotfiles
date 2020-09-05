@@ -34,7 +34,7 @@
     },
     "haskell": {
       "enable": true,
-      "command": "ghcide",
+      "command": "haskell-language-server",
       "args": ["--lsp"],
       "rootPatterns": [
         "*.cabal",
