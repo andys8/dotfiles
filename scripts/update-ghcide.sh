@@ -9,7 +9,7 @@ command -v "ghcide" >/dev/null 2>&1 && {
 }
 
 REPO=andys8/ghcide
-BRANCH=update-to-ghc-883
+BRANCH=ghc-883-v03
 FOLDER=ghcide-$(shuf -i0-10000000 -n1)
 
 # install with stack
