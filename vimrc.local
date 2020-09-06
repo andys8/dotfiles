@@ -68,7 +68,7 @@ let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#vcs_checks = []
 
 " Ignore files
-set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*,*/dist/*,*/build/*
+set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*,*/dist/*,*/build/*,*/output/*
 
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
