@@ -13,6 +13,7 @@ in
     coursier # scala build tool
     diskus # disk usage
     dtrx # extract files
+    dunst # notification daemon
     emacs # alternative editor
     fast-cli # speedtest
     ffmpeg # convert videos
