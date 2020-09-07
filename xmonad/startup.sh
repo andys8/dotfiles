@@ -18,6 +18,11 @@ trayer \
 	--transparent true \
 	--widthtype request &
 
+# Notification daemon
+if [ -z "$(pgrep dunst)" ]; then
+	dunst &
+fi
+
 # Network Manager Icon
 if [ -z "$(pgrep nm-applet)" ]; then
 	nm-applet --sm-disable &
