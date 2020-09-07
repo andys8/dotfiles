@@ -34,6 +34,7 @@ import           XMonad.Prompt.ConfirmPrompt
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
 import           XMonad.Util.Scratchpad
+import           XMonad.Util.WorkspaceCompare
 import qualified Data.Map                      as Map
 import qualified XMonad.StackSet               as W
 
@@ -128,6 +129,7 @@ topBarTheme = def { fontName            = myFont
 altMask = mod1Mask
 nothing = 0
 
+
 myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspaces = workspaces }
   = Map.fromList
     $  [ ((modMask, xK_Return)                , spawn terminal)
@@ -148,8 +150,8 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. altMask, xK_l)         , spawn "lock")
        , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn "lock")
        , ((controlMask .|. modMask .|. altMask, xK_space), suspend)
-       , ((modMask, xK_Tab)                   , moveTo Next NonEmptyWS)
-       , ((modMask .|. shiftMask, xK_Tab)     , moveTo Prev NonEmptyWS)
+       , ((modMask, xK_Tab), workspaceInDirection nScreens Next)
+       , ((modMask .|. shiftMask, xK_Tab), workspaceInDirection nScreens Prev)
        , ((modMask, xK_i)                     , toggleLastWorkspace nScreens)
        , ((modMask, xK_p)                     , spawn passwordTool)
        , ((modMask .|. altMask, xK_p)         , spawn passwordTool)
@@ -248,6 +250,8 @@ toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
   viewWorkspace nScreens lastWorkspace
 
+workspaceInDirection nScreens direction =
+  doTo direction NonEmptyWS getSortByIndex (viewWorkspace nScreens)
 
 confirm = confirmPrompt c
  where
