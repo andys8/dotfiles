@@ -251,8 +251,11 @@ toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
   viewWorkspace nScreens lastWorkspace
 
-workspaceInDirection nScreens direction =
-  doTo direction NonEmptyWS getSortByIndex (viewWorkspace nScreens)
+workspaceInDirection nScreens direction = doTo
+  direction
+  NonEmptyWS
+  ((. scratchpadFilterOutWorkspace) <$> getSortByIndex)
+  (viewWorkspace nScreens)
 
 confirm = confirmPrompt c
  where
