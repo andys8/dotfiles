@@ -128,4 +128,8 @@ ln -sf ~/dotfiles/doom-emacs/config.el ~/.doom.d/config.el
 ln -sf ~/dotfiles/doom-emacs/init.el ~/.doom.d/init.el
 ln -sf ~/dotfiles/doom-emacs/packages.el ~/.doom.d/packages.el
 
+# Dunst (notifications)
+mkdir -p ~/.config/dunst
+ln -sf ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
+
 echo "Links updated"
