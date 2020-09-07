@@ -2,7 +2,7 @@
 set -eu pipefail
 
 section() {
-	echo "$(tput setaf 4)>>=$(tput setaf 5) $1 $(tput setaf 4)=<<$(tput sgr 0)"
+    echo "$(tput setaf 4)>>=$(tput setaf 5) $1 $(tput setaf 4)=<<$(tput sgr 0)"
 }
 
 section "Update dotfiles repository"

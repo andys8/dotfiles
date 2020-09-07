@@ -4,16 +4,16 @@ set -euo pipefail
 PLUGIN_DIR=~/.config/ranger/plugins
 
 function install_plugin() {
-	REPO="$1"
-	DIR="$2"
+    REPO="$1"
+    DIR="$2"
 
-	echo "Ranger plugin $REPO"
+    echo "Ranger plugin $REPO"
 
-	if [[ ! -d $DIR ]]; then
-		git clone "$REPO" "$DIR"
-	else
-		(cd "$DIR" && git pull)
-	fi
+    if [[ ! -d $DIR ]]; then
+        git clone "$REPO" "$DIR"
+    else
+        (cd "$DIR" && git pull)
+    fi
 }
 
 mkdir -p $PLUGIN_DIR

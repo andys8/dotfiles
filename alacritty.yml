@@ -204,6 +204,7 @@ mouse:
     # The URL is always added to the command as the last parameter.
     launcher: xdg-open
 
+
     # URL modifiers
     #
     # These are the modifiers that need to be held down for opening URLs when clicking

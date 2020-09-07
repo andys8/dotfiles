@@ -5,10 +5,10 @@ EXTS=(png svg jpg jpeg)
 FILES=$*
 [[ $FILES == "" ]] && FILES="$(pwd)/*"
 for file in $FILES; do
-	filename=$(basename -- "$file")
-	ext="${filename##*.}"
-	if [[ " ${EXTS[*]} " == *" $ext "* ]]; then
-		echo "$filename"
-		chafa "$file"
-	fi
+    filename=$(basename -- "$file")
+    ext="${filename##*.}"
+    if [[ " ${EXTS[*]} " == *" $ext "* ]]; then
+        echo "$filename"
+        chafa "$file"
+    fi
 done

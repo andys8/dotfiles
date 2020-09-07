@@ -4,9 +4,9 @@
 set -euo pipefail
 
 if [ ! "$*" = "" ]; then
-	INPUT=$(cat "$@") # file
+    INPUT=$(cat "$@") # file
 else
-	INPUT=$(cat -) # stdin
+    INPUT=$(cat -) # stdin
 fi
 
 HLINT=$(echo "$INPUT" | hlint --refactor -)

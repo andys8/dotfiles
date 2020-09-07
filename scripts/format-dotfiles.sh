@@ -4,7 +4,7 @@ set -eu
 cd ~/dotfiles
 
 echo "Format shell scripts"
-shfmt -w .
+shfmt -w -i 4 .
 
 echo "Format markdown, yaml and json"
 prettier --write "**/*.{md,json,yaml,yml}"

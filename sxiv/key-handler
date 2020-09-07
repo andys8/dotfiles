@@ -1,11 +1,11 @@
 #!/bin/sh
 # Press C-x to activate to key handler!
 while read -r file; do
-	case "$1" in
-	"y") dragon "$file" ;;
-	"d") dragon "$file" ;;
-	"C-x") dragon "$file" ;;
-	"D") trash "$file" ;;
-	"t") trash "$file" ;;
-	esac
+    case "$1" in
+    "y") dragon "$file" ;;
+    "d") dragon "$file" ;;
+    "C-x") dragon "$file" ;;
+    "D") trash "$file" ;;
+    "t") trash "$file" ;;
+    esac
 done

@@ -2,10 +2,10 @@
 set -eu
 
 command -v "ghcide" >/dev/null 2>&1 && {
-	VERSION=$(ghcide --version)
-	echo "ghcide is already installed."
-	echo "$VERSION"
-	exit 0
+    VERSION=$(ghcide --version)
+    echo "ghcide is already installed."
+    echo "$VERSION"
+    exit 0
 }
 
 REPO=andys8/ghcide

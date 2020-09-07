@@ -6,46 +6,46 @@ xrdb ~/.Xresources
 # System tray
 [ -n "$(pgrep trayer)" ] && killall trayer
 trayer \
-	--align center \
-	--alpha 0 \
-	--distance 2 \
-	--edge top \
-	--height 18 \
-	--heighttype pixel \
-	--iconspacing 6 \
-	--monitor primary \
-	--tint 0x282a36 \
-	--transparent true \
-	--widthtype request &
+    --align center \
+    --alpha 0 \
+    --distance 2 \
+    --edge top \
+    --height 18 \
+    --heighttype pixel \
+    --iconspacing 6 \
+    --monitor primary \
+    --tint 0x282a36 \
+    --transparent true \
+    --widthtype request &
 
 # Notification daemon
 if [ -z "$(pgrep dunst)" ]; then
-	dunst &
+    dunst &
 fi
 
 # Network Manager Icon
 if [ -z "$(pgrep nm-applet)" ]; then
-	nm-applet --sm-disable &
+    nm-applet --sm-disable &
 fi
 
 # Volume Icon
 if [ -z "$(pgrep pa-applet)" ]; then
-	pa-applet &
+    pa-applet &
 fi
 
 # Lock screen on disabled monitor
 if [ -z "$(pgrep xss-lock)" ]; then
-	xss-lock -l -- lock &
+    xss-lock -l -- lock &
 fi
 
 # Battery warning
 if [ -z "$(pgrep -f i3-battery-popup)" ]; then
-	i3-battery-popup -n &
+    i3-battery-popup -n &
 fi
 
 # Hide idle mouse
 if [ -z "$(pgrep unclutter)" ]; then
-	unclutter &
+    unclutter &
 fi
 
 # Keyboard layout: German, no dead keys

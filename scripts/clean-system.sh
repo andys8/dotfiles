@@ -11,11 +11,11 @@ RAND=$((RANDOM % 20))
 
 # Yay
 if [ -x "$(command -v "yay")" ]; then
-	yay -Sc --noconfirm
+    yay -Sc --noconfirm
 fi
 
 # Apt
 if [ -x "$(command -v "apt")" ]; then
-	sudo apt autoremove -y
-	sudo apt autoclean -y
+    sudo apt autoremove -y
+    sudo apt autoclean -y
 fi

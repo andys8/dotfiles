@@ -6,5 +6,5 @@ HOOK_LOCAL_PATH="./.git/hooks/$HOOK_NAME"
 # Run local hook in repository, too
 # <https://stackoverflow.com/questions/51178382>
 if [ -e "$HOOK_LOCAL_PATH" ]; then
-	$HOOK_LOCAL_PATH "$@"
+    $HOOK_LOCAL_PATH "$@"
 fi

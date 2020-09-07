@@ -2,10 +2,10 @@
 set -eu
 
 command -v "refactor" >/dev/null 2>&1 && {
-	VERSION=$(refactor --version)
-	echo "apply-refact (refactor for hlint) is already installed."
-	echo "$VERSION"
-	exit 0
+    VERSION=$(refactor --version)
+    echo "apply-refact (refactor for hlint) is already installed."
+    echo "$VERSION"
+    exit 0
 }
 
 # install with stack

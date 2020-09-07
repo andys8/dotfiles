@@ -7,34 +7,34 @@
 # Check for required tools
 REQUIRED_COMMANDS="rofi lpass zenity"
 for COMMAND in $REQUIRED_COMMANDS; do
-	if ! [ -x "$(command -v "$COMMAND")" ]; then
-		echo "Command '$COMMAND' not found"
-		exit 1
-	fi
+    if ! [ -x "$(command -v "$COMMAND")" ]; then
+        echo "Command '$COMMAND' not found"
+        exit 1
+    fi
 done
 
 # Login
 if ! lpass status; then
-	# environment variable `LPASS_USER` is read
-	[ -z "$LPASS_USER" ] && LPASS_USER="$(zenity --entry --text='LastPass Username:')"
-	[ -z "$LPASS_USER" ] && exit
+    # environment variable `LPASS_USER` is read
+    [ -z "$LPASS_USER" ] && LPASS_USER="$(zenity --entry --text='LastPass Username:')"
+    [ -z "$LPASS_USER" ] && exit
 
-	if ! lpass login --trust "$LPASS_USER"; then
-		zenity --error --text="Failed to login to LastPass. Please check your credentials and try again."
-		exit 1
-	fi
+    if ! lpass login --trust "$LPASS_USER"; then
+        zenity --error --text="Failed to login to LastPass. Please check your credentials and try again."
+        exit 1
+    fi
 fi
 
 # Selection
 ROFI_SELECTION="$(
-	lpass ls --format '%aN' --color=never |
-		grep --invert-match '.*/$' |
-		sed 's|(none)/||' |
-		rofi -dmenu -i -matching fuzzy --p LastPass
+    lpass ls --format '%aN' --color=never |
+        grep --invert-match '.*/$' |
+        sed 's|(none)/||' |
+        rofi -dmenu -i -matching fuzzy --p LastPass
 )"
 
 if [ -z "${ROFI_SELECTION}" ]; then
-	exit
+    exit
 fi
 
 # Copy to clipboard

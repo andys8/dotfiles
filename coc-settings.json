@@ -94,7 +94,7 @@
   },
   "diagnostic-languageserver.formatters": {
     "dhall": { "command": "dhall", "args": ["format"] },
-    "shfmt": { "command": "shfmt" },
+    "shfmt": { "command": "shfmt", "args": ["-i", "4"] },
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
     "purty": { "command": "purty", "args": ["-"] },
     "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] }

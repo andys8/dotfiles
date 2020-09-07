@@ -7,11 +7,11 @@ COMMIT_MSG_FILE=$1
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
 if [[ "$BRANCH_NAME" =~ ([A-Z]{2,4}-[[:digit:]]+) ]]; then
-	sed -i -e "1s/^$/${BASH_REMATCH[1]}/" "$COMMIT_MSG_FILE"
+    sed -i -e "1s/^$/${BASH_REMATCH[1]}/" "$COMMIT_MSG_FILE"
 fi
 
 # Run local hook in repository, too
 # <https://stackoverflow.com/questions/51178382>
 if [ -e "$HOOK_LOCAL_PATH" ]; then
-	$HOOK_LOCAL_PATH "$@"
+    $HOOK_LOCAL_PATH "$@"
 fi
