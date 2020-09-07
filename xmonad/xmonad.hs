@@ -132,6 +132,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
   = Map.fromList
     $  [ ((modMask, xK_Return)                , spawn terminal)
        , ((modMask, xK_n)                     , fileBrowser)
+       , ((modMask .|. altMask, xK_n)         , spawn "dunstctl close-all")
        , ((modMask .|. shiftMask, xK_Return)  , quteWebBrowser)
        , ((modMask .|. controlMask, xK_Return), chromiumWebBrowser)
        , ((modMask, xK_Escape)                , kill)

@@ -4,6 +4,7 @@ set -euo pipefail
 # Asserted commands (should be installed by script)
 assertCommands=(
 	chromium-browser # web browser
+	dunstctl         # dunst control
 	elm              # elm compiler
 	elm-json         # elm installation helper
 	elm-test         # elm test runner
