@@ -3,7 +3,7 @@ with import <nixpkgs> { };
 with stdenv.lib;
 let
   name = "st";
-  version = "0.8.3-andys8";
+  version = "0.8.4-andys8";
 in
 stdenv.mkDerivation rec {
   inherit name;
@@ -11,8 +11,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "andys8";
     repo = "st";
-    rev = "73b8746d585bd2cb706156c4ae79c9b056cad837";
-    sha256 = "1xp628j0y6ip7ng89lgrd6c1x7lvd4v6dd33gd5nr5gz7kgasndi";
+    rev = "6adcbc63316796d707752ab3ef3166b68b8276a6";
+    sha256 = "0ph4mzzix5f90xzv9vl5lpqlrpsn9hgvshnikkwpsik08vgj6sz7";
   };
 
   nativeBuildInputs = [ pkgconfig ];

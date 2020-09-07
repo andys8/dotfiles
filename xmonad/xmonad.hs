@@ -235,7 +235,7 @@ viewWorkspace nScreens workspace = do
 
 moveToWorkspace = windows . W.shift
 
-toggleScratchpad = scratchpadSpawnActionCustom $ term ++ " -n scratchpad"
+toggleScratchpad = scratchpadSpawnActionCustom $ term ++ " -s -n scratchpad"
 
 toggleLastWorkspace nScreens = do
   (_ : lastWorkspace : _) <- WH.workspaceHistory
