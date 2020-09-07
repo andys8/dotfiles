@@ -29,12 +29,11 @@ import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
-
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
-import           XMonad.Util.Scratchpad
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.Scratchpad
 import qualified Data.Map                      as Map
 import qualified XMonad.StackSet               as W
 
@@ -69,7 +68,9 @@ renderWorkspace color ws = withColor clickable
 
 -- Layouts --
 
-addSpace = spacingRaw True (Border 5 5 5 5) True (Border 10 10 10 10) True
+screenBorder' = Border 5 5 5 5
+windowBorder' = Border 10 10 10 10
+addSpace = spacingRaw True screenBorder' True windowBorder' True
 
 addTopBar = noFrillsDeco shrinkText topBarTheme
 
@@ -177,6 +178,10 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. shiftMask, xK_e)       , exitXmonad)
        , ((modMask .|. altMask, xK_i)         , invertXColors)
        , ((modMask, xK_minus)                 , toggleScratchpad)
+       , ( (modMask, xK_comma)
+         , setScreenSpacing screenBorder' >> setSmartSpacing True
+         )
+       , ((modMask, xK_period), incScreenSpacing 40 >> setSmartSpacing False)
        ]
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
