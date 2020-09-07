@@ -29,12 +29,11 @@ import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
-
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
-import           XMonad.Util.Scratchpad
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
+import           XMonad.Util.Scratchpad
 import qualified Data.Map                      as Map
 import qualified XMonad.StackSet               as W
 
@@ -69,7 +68,9 @@ renderWorkspace color ws = withColor clickable
 
 -- Layouts --
 
-addSpace = spacingRaw True (Border 5 5 5 5) True (Border 10 10 10 10) True
+screenBorder' = Border 5 5 5 5
+windowBorder' = Border 10 10 10 10
+addSpace = spacingRaw True screenBorder' True windowBorder' True
 
 addTopBar = noFrillsDeco shrinkText topBarTheme
 
@@ -86,7 +87,12 @@ grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
 
 oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
-layouts = bsp ||| oneBig ||| grid
+zen = renamed [Replace "Zen"] $ addTopBar $ zenSpace Grid
+ where
+  zenScreenBorder = Border 100 100 500 500
+  zenSpace        = spacingRaw False zenScreenBorder True windowBorder' True
+
+layouts = bsp ||| oneBig ||| grid ||| zen
 
 myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
