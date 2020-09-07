@@ -151,6 +151,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn "lock")
        , ((controlMask .|. modMask .|. altMask, xK_space), suspend)
        , ((modMask, xK_Tab), workspaceInDirection nScreens Next)
+       , ((modMask, xK_Shift_R), workspaceInDirection nScreens Next)
        , ((modMask .|. shiftMask, xK_Tab), workspaceInDirection nScreens Prev)
        , ((modMask, xK_i)                     , toggleLastWorkspace nScreens)
        , ((modMask, xK_p)                     , spawn passwordTool)
