@@ -37,6 +37,7 @@ abbr -a -U gd 'git diff'
 abbr -a -U gds 'git diff --staged'
 abbr -a -U gf 'git fetch'
 abbr -a -U gi git
+abbr -a -U gitb 'git b'
 abbr -a -U gl 'git log'
 abbr -a -U gm 'git merge'
 abbr -a -U gp 'git push'
