@@ -65,3 +65,6 @@ Plug 'christoomey/vim-sort-motion'
 
 " Dhall direct instead of polyglot
 Plug 'vmchale/dhall-vim', { 'for' : 'dhall' }
+
+" Coerce casing (e.g. crc to camelcase or crs to snake case)
+Plug 'tpope/vim-abolish'
