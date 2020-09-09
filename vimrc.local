@@ -110,12 +110,16 @@ command Config :e ~/dotfiles/vimrc.local
 command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 
 " Abbreviations
-cabbrev Ft Filetypes
-cabbrev ft Filetypes
 cabbrev Ci CocInfo
 cabbrev ci CocInfo
 cabbrev Cr CocRestart
 cabbrev cr CocRestart
+cabbrev Cs CocSearch
+cabbrev cs CocSearch
+cabbrev Ft Filetypes
+cabbrev ft Filetypes
+cabbrev Re Reload
+cabbrev re Reload
 cabbrev Sn Snippets
 cabbrev sn Snippets
 
@@ -289,10 +293,6 @@ hi link CocHintFloat Visual
 hi! link Pmenu Visual
 hi! link PmenuSel ErrorMsg
 
-" Java
-let g:syntastic_java_checkers = []
-command! -nargs=0 IdeaFormat silent :w | exec "!idea format %" | :e
-
 " vimdiff
 if &diff
   map <leader>1 :diffget LOCAL<CR>
@@ -345,10 +345,13 @@ set foldlevel=0
 noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
 
-" haskell: Alex, Happy
-au BufRead,BufNewFile *.x set filetype=alex
-au BufRead,BufNewFile *.y set filetype=happy
-au BufWritePre *.hs call CocAction('format')
+" Expand region
+map - <Plug>(expand_region_expand)
+map + <Plug>(expand_region_expand)
+map _ <Plug>(expand_region_shrink)
+
+" Abolish (coerce casing)
+nmap crp crm
 
 " Qutebrowser
 au BufRead,BufNewFile qutebrowser-editor-* set filetype=text
@@ -360,21 +363,24 @@ nmap <leader>o :Ranger<CR>
 " Presenting
 let g:presenting_top_margin = 2
 
+" Haskell
+au BufWritePre *.hs call CocAction('format')
+
+" Alex, Happy (Parser)
+au BufRead,BufNewFile *.x set filetype=alex
+au BufRead,BufNewFile *.y set filetype=happy
+
 " Markdown
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1
 
+" Java
+let g:syntastic_java_checkers = []
+command! -nargs=0 IdeaFormat silent :w | exec "!idea format %" | :e
+
 " PureScript
 au FileType purescript setlocal commentstring=--\ %s
 au BufWritePre *.purs call CocAction('format')
-
-" Expand region
-map - <Plug>(expand_region_expand)
-map + <Plug>(expand_region_expand)
-map _ <Plug>(expand_region_shrink)
-
-" Abolish
-nmap crp crm
 
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
