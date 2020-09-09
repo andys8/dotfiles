@@ -1715,6 +1715,7 @@ c.bindings.commands = {
         ',M': 'hint links spawn --detach mpv {hint-url}',
         ',b': 'set-cmd-text -s :buffer',
         ',c': 'tab-close',
+        ',C': 'tab-only',
         ',e': 'set-cmd-text -s :open',
         ',h': 'history',
         ',m': 'spawn --detach mpv {url}',
