@@ -57,9 +57,6 @@ Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
 " Ranger
 Plug 'francoiscabrol/ranger.vim'
 
-" Rename in files
-Plug 'dyng/ctrlsf.vim'
-
 " Sort motions (e.g. gsi( or gs)
 Plug 'christoomey/vim-sort-motion'
 

@@ -229,11 +229,9 @@ let g:coc_global_extensions = [
       \ 'coc-yaml'
       \ ]
 
-nnoremap <F5> :CocRebuild<CR>
-" nmap <leader>r <Plug>(coc-refactor)
-nmap          <leader>r <Plug>CtrlSFCwordPath
-vmap          <leader>r <Plug>CtrlSFVwordExec
-nmap          <leader>R <Plug>(coc-rename)
+nmap          <F5>      :CocRebuild<CR>
+nmap          <leader>r :CocSearch <c-r><c-w><CR>
+nmap <silent> <leader>R <Plug>(coc-rename)
 nmap <silent> <leader>s <Plug>(coc-codeaction-line)
 xmap <silent> <leader>s <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>S <Plug>(coc-fix-current)
