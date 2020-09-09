@@ -163,17 +163,17 @@ set tags+=tags;tags.vendors;,tags;
 nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>F :Rg <c-r><c-w><cr>
 
-" Close all other buffers
-command! BufOnly silent! execute "%bd|e#|bd#"
-noremap <silent> <leader>C :BufOnly<CR>
-
-" Rg will ignore filenames
+" Rg search command
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
       \ 1,
       \ {'options': '--delimiter : --nth 2..'},
       \ <bang>0)
+
+" Close all other buffers
+command! BufOnly silent! execute "%bd|e#|bd#"
+noremap <silent> <leader>C :BufOnly<CR>
 
 " Zen mode / goyo
 nnoremap <F6> :Goyo<CR>
