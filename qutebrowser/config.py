@@ -1628,7 +1628,7 @@ c.tabs.title.format = '{audio} {current_title}'
 ## for a blank page.
 ## Type: FuzzyUrl
 # c.url.default_page = 'https://start.duckduckgo.com/'
-c.url.default_page = 'qute://bookmarks'
+c.url.default_page = 'about:blank'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1674,7 +1674,7 @@ c.url.searchengines = {
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
 # c.url.start_pages = ['https://start.duckduckgo.com']
-c.url.start_pages = ['qute://bookmarks']
+c.url.start_pages = ['about:blank']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
