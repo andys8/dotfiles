@@ -163,6 +163,10 @@ set tags+=tags;tags.vendors;,tags;
 nnoremap <silent> <leader>f :Rg<CR>
 nnoremap <silent> <leader>F :Rg <c-r><c-w><cr>
 
+" Close all other buffers
+command! BufOnly silent! execute "%bd|e#|bd#"
+noremap <silent> <leader>C :BufOnly<CR>
+
 " Rg will ignore filenames
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
