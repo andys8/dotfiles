@@ -162,7 +162,7 @@ nnoremap <silent> <leader>F :Rg <c-r><c-w><cr>
 " Rg will ignore filenames
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
-      \ 'rg --column --line-number --no-heading --color=always --glob=!package-lock.json --smart-case '.shellescape(<q-args>),
+      \ 'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>),
       \ 1,
       \ {'options': '--delimiter : --nth 2..'},
       \ <bang>0)

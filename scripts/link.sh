@@ -132,4 +132,7 @@ ln -sf ~/dotfiles/doom-emacs/packages.el ~/.doom.d/packages.el
 mkdir -p ~/.config/dunst
 ln -sf ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
 
+# Rigpgrep
+ln -sf ~/dotfiles/rgignore ~/.rgignore
+
 echo "Links updated"
