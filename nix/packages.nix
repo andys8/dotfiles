@@ -40,6 +40,7 @@ in
     simplescreenrecorder # screen recorder
     termonad-with-packages # haskell terminal
     time # measure time
+    tmatrix # terminal matrix animation
     toilet # ascii art fonts
     tokei # count code lines
     trash-cli # rm into trash folder
