@@ -18,9 +18,10 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " updatetime has performance impact
 set updatetime=300
 
-" timouts regarding keys
+" timout for keys
 set timeoutlen=500
-set ttimeoutlen=50
+" timeout esc sequence
+set ttimeoutlen=20
 
 set lazyredraw
 set scrolljump=3
