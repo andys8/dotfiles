@@ -5,6 +5,7 @@ in
 (
   with release2003; [
     arandr # gui for monitors with xrandr
+    asciinema # record terminal
     autorandr # xrandr monitor profiles
     awscli # amazon web services
     cabal2nix # Convert cabal files to nix
