@@ -87,15 +87,13 @@
   },
   "diagnostic-languageserver.formatFiletypes": {
     "dhall": "dhall",
-    "haskell": "brittany",
     "nix": "nixpkgs-fmt",
     "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
     "dhall": { "command": "dhall", "args": ["format"] },
     "shfmt": { "command": "shfmt", "args": ["-i", "4"] },
-    "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
-    "brittany": { "command": "brittany", "args": ["--write-mode=inplace"] }
+    "nixpkgs-fmt": { "command": "nixpkgs-fmt" }
   },
   "diagnostic-languageserver.linters": {
     "hlint": {
