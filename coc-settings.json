@@ -10,7 +10,6 @@
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": true,
-  "snippets.convertToSnippetsAction": false,
   "eslint.filetypes": ["javascript", "javascriptreact"],
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "suggest.disableMenu": true,
