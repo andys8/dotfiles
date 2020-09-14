@@ -177,5 +177,22 @@
     "snippet": "\ue60b",
     "typeParameter": "\uf728",
     "default": "\uf29c"
+  },
+  "explorer.file.root.template": "  [root]",
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.enableVimDevicons": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.quitOnOpen": true,
+  "explorer.sources": [{ "name": "file", "expand": true }],
+  "explorer.file.column.git.icon.added": "✚",
+  "explorer.file.column.git.icon.deleted": "✖",
+  "explorer.file.column.git.icon.modified": "±",
+  "explorer.file.column.git.icon.renamed": "±",
+  "explorer.file.column.git.icon.untracked": "?",
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
+    "<space>": "toggleSelection",
+    "d": "deleteForever",
+    "m": "actionMenu"
   }
 }

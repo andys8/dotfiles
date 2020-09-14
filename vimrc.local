@@ -35,7 +35,6 @@ set secure
 " gvim
 set guioptions=c
 set guifont=Iosevka\ Nerd\ Font\ 14
-let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Switch themes
 function SaveTheme(theme)
@@ -67,6 +66,9 @@ let g:airline#extensions#coc#error_symbol = '  '
 let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#vcs_checks = []
+let g:airline_filetype_overrides = {
+  \ 'coc-explorer': [ 'CoC Explorer', '' ]
+  \ }
 
 " Ignore files
 set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*,*/dist/*,*/build/*,*/output/*
@@ -224,6 +226,7 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-eslint',
+      \ 'coc-explorer',
       \ 'coc-gitignore',
       \ 'coc-java',
       \ 'coc-json',
@@ -334,13 +337,8 @@ endfunction
 " git: Do not remember commit message cursor position
 autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 
-" NerdTree
-let g:NERDTreeMinimalUI = 1
-nmap <silent> <leader>n :NERDTreeToggle<CR>
-nmap <silent> <leader>N :NERDTreeFind<CR>
-hi link NERDTreeOpenable Type
-hi link NERDTreeClosable Special
-hi link NERDTreeDir Question
+" File Explorer (coc-explorer)
+nmap <silent> <leader>n :CocCommand explorer<CR>
 
 " Folding
 set foldmethod=indent
