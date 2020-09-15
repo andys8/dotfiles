@@ -336,11 +336,21 @@ autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 
 " NerdTree
 let g:NERDTreeMinimalUI = 1
-nmap <silent> <leader>n :NERDTreeToggle<CR>
-nmap <silent> <leader>N :NERDTreeFind<CR>
+nmap <leader>n :call NerdTreeToggleFind()<CR>
+nmap <leader>N :NERDTreeToggle<CR>
 hi link NERDTreeOpenable Type
 hi link NERDTreeClosable Special
 hi link NERDTreeDir Question
+
+function! NerdTreeToggleFind()
+    if exists("g:NERDTree") && g:NERDTree.IsOpen()
+        NERDTreeClose
+    elseif filereadable(expand('%'))
+        NERDTreeFind
+    else
+        NERDTree
+    endif
+endfunction
 
 " Folding
 set foldmethod=indent
