@@ -337,6 +337,8 @@ autocmd BufReadPost COMMIT_EDITMSG exe "normal! gg"
 " NerdTree
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeMapActivateNode = "l"
+let g:NERDTreeMapCloseDir = "h"
 nmap <silent> <leader>n :call NerdTreeToggleFind()<CR>
 nmap <silent> <leader>N :NERDTreeToggle<CR>
 hi link NERDTreeOpenable Type
