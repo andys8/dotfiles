@@ -68,9 +68,6 @@ let g:airline#extensions#coc#warning_symbol = ' '
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#vcs_checks = []
 
-" Ignore files
-set wildignore+=*/node_modules/*,*/.stack-work/*,*/.stack/*,*/dist/*,*/build/*,*/output/*
-
 " Copy command
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
@@ -339,12 +336,12 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeMapActivateNode = "l"
 let g:NERDTreeMapCloseDir = "h"
+let g:NERDTreeRespectWildIgnore = 1
 nmap <silent> <leader>n :call NerdTreeToggleFind()<CR>
 nmap <silent> <leader>N :NERDTreeToggle<CR>
 hi link NERDTreeOpenable Type
 hi link NERDTreeClosable Special
 hi link NERDTreeDir Question
-
 function! NerdTreeToggleFind()
     if exists("g:NERDTree") && g:NERDTree.IsOpen()
         NERDTreeClose
