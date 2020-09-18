@@ -3,6 +3,7 @@
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	hooksPath = ~/.config/git/hooks
+	excludesFile = ~/.config/git/ignore
 [alias]
 	a = add
 	amend = commit -a --amend --no-edit

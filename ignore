@@ -1,5 +1,8 @@
+.git/
 .stack-work-docker/
 .stack-work/
 .stack/
 elm-stuff/
 node_modules/
+package-lock.json
+stack.yaml.lock

@@ -223,11 +223,11 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" fzf.vim
 set wildmode=list:longest,list:full
-set wildignore+=**/node_modules,**/.stack-work,**/.stack/**/dist,**/build,**/output,**/ouput-purs-loader
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,package-lock.json,stack.yaml.lock
+set wildignore+=**/node_modules,**/.stack-work,**/.stack/,**/dist,**/build,**/output,**/ouput-purs-loader
+set wildignore+=*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,package-lock.json,stack.yaml.lock
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-require-git --glob "!.git/*"'
 set grepprg=rg\ --vimgrep
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
