@@ -126,8 +126,8 @@ bindsym XF86MonBrightnessDown exec xrandr --output eDP-1 --brightness 0.6
 
 # Screenshot
 bindsym Print exec "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
-bindsym Shift+Print exec "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
-bindsym $alt+Print exec "maim --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+bindsym Shift+Print exec "maim -s --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
+bindsym $alt+Print exec "maim --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
 
 
 # ----- Workspaces -----

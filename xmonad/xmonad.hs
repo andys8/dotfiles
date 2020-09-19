@@ -218,9 +218,9 @@ rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"
 
-screenshotFile = "maim -s --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+screenshotFile = "maim -s --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
 screenshotWholeScreen =
-  "maim --hidecursor ~/Pictures/screenshot-$(date +%s).png"
+  "maim --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
 screenshotClipboard =
   "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
 

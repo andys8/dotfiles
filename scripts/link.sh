@@ -135,4 +135,7 @@ ln -sf ~/dotfiles/dunstrc ~/.config/dunst/dunstrc
 # Ignore in ripgrep and others
 ln -sf ~/dotfiles/ignore ~/.ignore
 
+# Screenshots
+mkdir -p ~/Pictures/screenshots
+
 echo "Links updated"
