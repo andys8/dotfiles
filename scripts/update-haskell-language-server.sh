@@ -2,10 +2,10 @@
 set -eu
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
-	VERSION=$(haskell-language-server --version)
-	echo "haskell-language-server is already installed."
-	echo "$VERSION"
-	exit 0
+    VERSION=$(haskell-language-server --version)
+    echo "haskell-language-server is already installed."
+    echo "$VERSION"
+    exit 0
 }
 
 REPO=haskell/haskell-language-server
