@@ -94,6 +94,7 @@ ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
 ln -sf ~/dotfiles/bin/webcam ~/bin/webcam
+ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
 
 # sxiv
 mkdir -p ~/.config/sxiv/exec

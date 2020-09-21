@@ -23,6 +23,7 @@
 	ps = push
 	re = reset
 	s = status
+	setup-fork = remote-setup-fork
 	st = status
 	sw = switch
 	tpush = push

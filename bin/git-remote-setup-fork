@@ -1,0 +1,23 @@
+#!/bin/sh
+# Changes github remotes: upsteam to original repository, origin to fork
+
+username=andys8
+origin=$(git remote get-url origin)
+reponame=$(basename "$origin")
+forkurl="https://github.com/$username/$reponame"
+
+remotes=$(git remote)
+
+if [ "$origin" = "$forkurl" ]; then
+    git remote -v
+    if [ "$remotes" = "origin" ]; then
+        echo "Repository is own repository, and not a fork."
+    else
+        echo "Repository was already setup as fork."
+    fi
+    exit 1
+fi
+
+git remote add upstream "$origin"
+git remote set-url origin "$forkurl"
+git remote -v
