@@ -123,4 +123,5 @@ in
   ]
 ) ++ [
   (import ./st.nix)
+  (import ./tty-share.nix)
 ]
