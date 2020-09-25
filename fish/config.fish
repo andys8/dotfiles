@@ -26,7 +26,7 @@ set -U theme_display_nix no
 set -U theme_display_nvm no
 set -U theme_display_ruby no
 set -U theme_display_vagrant no
-set -U theme_display_vi yes
+set -U theme_display_vi no
 set -U theme_git_worktree_support no
 set -U theme_nerd_fonts yes
 set -U theme_show_exit_status no
