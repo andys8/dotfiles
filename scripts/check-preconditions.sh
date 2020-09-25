@@ -65,11 +65,6 @@ for i in "${commands[@]}"; do commandExists "$i"; done
     fail "Vim should have '+clipboard'"
 }
 
-# sdkman
-[[ -f ~/.sdkman/bin/sdkman-init.sh ]] || {
-    fail "sdkman installation is missing"
-}
-
 # Check fonts
 fontInstalled() {
     fc-list | grep -i "$1" >/dev/null 2>&1 || {
