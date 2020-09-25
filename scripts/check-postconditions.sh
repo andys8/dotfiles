@@ -31,7 +31,6 @@ commandsOptional=(
     idea         # intellij ide
     java         # java runtime
     lxappearance # configure themes
-    timeshift    # backup tool
     uuidgen      # generate uuid
     vimdiff      # git diffs in vim
     xkill        # click on window to kill
