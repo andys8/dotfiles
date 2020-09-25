@@ -22,6 +22,7 @@ in
     gnome3.zenity # show ui messages and dialogs
     hasmail # mail imap notifier for new mails
     i3status-rust # i3 status bar
+    iotop # io usage
     jq # json processor
     lsd # ls replacement
     lsof # list open files/ports
