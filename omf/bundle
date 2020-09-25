@@ -1,4 +1,3 @@
-package apt
 package last-working-dir
 package pbcopy
 package sdk
