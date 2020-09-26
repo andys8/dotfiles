@@ -29,6 +29,12 @@ group_processes = true
 case_sensitive = false
 rate = 700
 dot_marker = false
+hide_table_gap = true
+
+[disk_filter]
+is_list_ignored = true
+list = ["/dev/loop\\d+"]
+regex = true
 
 [colors]
 avg_cpu_color="Red"
