@@ -9,6 +9,15 @@
   [[row.child]]
   type="mem"
 [[row]]
+  [[row.child]]
+  type="net"
+  ratio=2
+  [[row.child]]
+  type="disk"
+  ratio=2
+  [[row.child]]
+  type="temp"
+[[row]]
   ratio=3
   [[row.child]]
   type="proc"
