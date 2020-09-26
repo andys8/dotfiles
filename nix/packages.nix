@@ -125,4 +125,5 @@ in
 ) ++ [
   (import ./st.nix)
   (import ./tty-share.nix)
+  (import ./bottom.nix)
 ]
