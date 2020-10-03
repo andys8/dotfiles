@@ -1740,8 +1740,8 @@ c.bindings.commands = {
     'insert': {
         '<Ctrl-i>': 'open-editor',
         '<Ctrl-e>': 'open-editor',
-        '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach((i) => i.value && alert(i.value))',
-        '<Ctrl-u>': 'jseval document.querySelectorAll("input[type=password]").forEach((i) => i.value && alert(i.value))',
+        '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
+        '<Ctrl-u>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
         '<Ctrl-p>': 'lastpass',
         '<Escape>': 'leave-mode ;; jseval -q document.activeElement.blur()'
     }
