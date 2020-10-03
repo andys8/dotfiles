@@ -1738,7 +1738,7 @@ c.bindings.commands = {
         'gi': 'hint inputs'
     },
     'insert': {
-        '<Alt-i>': 'open-editor',
+        '<Ctrl-i>': 'open-editor',
         '<Ctrl-e>': 'open-editor',
         '<Ctrl-p>': 'lastpass',
         '<Escape>': 'leave-mode ;; jseval -q document.activeElement.blur()'
