@@ -9,7 +9,7 @@ command -v "haskell-language-server" >/dev/null 2>&1 && {
 }
 
 REPO=haskell/haskell-language-server
-REV=0.4.0
+REV=0.5.0
 FOLDER=haskell-language-server-$(shuf -i0-10000000 -n1)
 
 # install with stack
