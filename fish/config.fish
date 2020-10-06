@@ -47,6 +47,9 @@ bind --user --mode visual --sets-mode insert s kill-selection end-selection repa
 # Keybindings QMK like: Ctrl-Space
 bind --user --mode insert --key nul backward-delete-char
 
+# Keybinding: Ctrl-Backspace
+bind --user --mode insert \cH backward-kill-path-component
+
 # Cursor speed
 xset r rate 300 80 2> /dev/null &
 
