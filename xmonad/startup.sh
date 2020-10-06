@@ -55,7 +55,7 @@ setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 xset dpms 360
 
 # Keyboard rate
-xset r rate 200 80
+xset r rate 300 80
 
 # No bell
 xset -b

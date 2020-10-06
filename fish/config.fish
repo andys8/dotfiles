@@ -48,7 +48,7 @@ bind --user --mode visual --sets-mode insert s kill-selection end-selection repa
 bind --user --mode insert --key nul backward-delete-char
 
 # Cursor speed
-xset r rate 200 80 2> /dev/null &
+xset r rate 300 80 2> /dev/null &
 
 # Autojump
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
