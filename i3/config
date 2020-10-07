@@ -254,7 +254,7 @@ exec --no-startup-id nm-applet --sm-disable
 exec --no-startup-id setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
 # Keyboard rate
-exec --no-startup-id xset r rate 300 80
+exec --no-startup-id xset r rate 200 80
 
 # No bell
 exec --no-startup-id xset -b
