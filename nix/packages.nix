@@ -60,6 +60,7 @@ in
     ack # search in files
     autojump # jump into directory with j
     bat # cat replacement
+    bottom # system monitor
     cargo # rust package manager
     ctop # top for containers
     dhall # dhall (format)
@@ -125,5 +126,4 @@ in
 ) ++ [
   (import ./st.nix)
   (import ./tty-share.nix)
-  (import ./bottom.nix)
 ]
