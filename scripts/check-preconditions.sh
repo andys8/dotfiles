@@ -60,9 +60,13 @@ commandExists() {
 # Check commands
 for i in "${commands[@]}"; do commandExists "$i"; done
 
-# Vim copy paste
+# Vim flags
 [[ $(vim --version) =~ \+clipboard ]] || {
     fail "Vim should have '+clipboard'"
+}
+
+[[ $(vim --version) =~ \+python3 ]] || {
+    fail "Vim should have '+python3'"
 }
 
 # Check fonts
