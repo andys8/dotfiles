@@ -1,18 +1,24 @@
-#!/bin/sh
-set -eu
-
-command -v "haskell-language-server" >/dev/null 2>&1 && {
-    VERSION=$(haskell-language-server --version)
-    echo "haskell-language-server is already installed."
-    echo "$VERSION"
-    exit 0
-}
+#!/bin/bash
+set -euo pipefail
 
 REPO=haskell/haskell-language-server
 REV=0.5.1
-FOLDER=haskell-language-server-$(shuf -i0-10000000 -n1)
 
-# install with stack
+command -v "haskell-language-server" >/dev/null 2>&1 && {
+    VERSION=$(haskell-language-server --numeric-version)
+    echo "haskell-language-server is installed"
+    echo "Expected: $REV (tag)"
+    echo "Actual: $VERSION (numeric version)"
+    if [[ $VERSION =~ $REV ]]; then
+        echo "-> Version is up-to-date"
+        exit 0
+    else
+        echo "-> Version is outdated"
+    fi
+}
+
+# Installation by building from source
+FOLDER=haskell-language-server-$RANDOM
 echo ">> Installing haskell-language-server (building from source)"
 cd /tmp
 git clone -b $REV --recurse-submodules --single-branch https://github.com/$REPO "$FOLDER"
