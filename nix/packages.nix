@@ -117,6 +117,7 @@ in
   with release2003.haskellPackages; [
     brittany # code formatter
     hoogle # function documentation
+    stack2cabal # generate cabal files from stack
   ]
 ) ++ (
   with unstable.haskellPackages; [
