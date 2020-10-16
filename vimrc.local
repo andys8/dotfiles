@@ -256,6 +256,9 @@ nnoremap <silent> <leader>O :call CocAction('runCommand', 'editor.action.organiz
 nnoremap <silent> <nowait> <leader>l :<C-u>CocList diagnostics<CR>
 nnoremap <silent> <nowait> <leader>L :<C-u>CocList -I symbols<cr>
 
+nnoremap <expr><C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+nnoremap <expr><C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
+
 let g:coc_snippet_next = '<tab>'
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

@@ -6,7 +6,7 @@
   "diagnostic.messageDelay": 800,
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.refreshAfterSave": false,
-  "diagnostic.maxWindowHeight": 30,
+  "diagnostic.maxWindowHeight": 10,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.snippets.enable": true,
