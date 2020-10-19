@@ -4,6 +4,7 @@ let
 in
 (
   with release2003; [
+    any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
     asciinema # record terminal
     asciiquarium # terminal aquarium animation
