@@ -1712,21 +1712,21 @@ c.url.start_pages = ['~/dotfiles/qutebrowser/start.html']
 c.bindings.commands = {
     'normal': {
         '+': 'zoom-in',
-        ',M': 'hint links spawn --detach mpv {hint-url}',
+        ',<Space>': 'search',
         ',C': 'tab-only',
+        ',M': 'hint links spawn --detach mpv {hint-url}',
         ',b': 'set-cmd-text -s :buffer',
         ',c': 'tab-close',
         ',e': 'set-cmd-text -s :open',
         ',h': 'history',
         ',m': 'spawn --detach mpv {url}',
         ',q': 'tab-prev',
-        ',<Space>': 'search',
         ',w': 'tab-next',
         '-': 'zoom-out',
         '<Alt-D>': 'edit-url',
-        '<Ctrl-0>': 'zoom',
         '<Ctrl-+>': 'zoom-in',
         '<Ctrl-->': 'zoom-out',
+        '<Ctrl-0>': 'zoom',
         '<Ctrl-Shift-Tab>': 'tab-prev',
         '<Ctrl-Tab>': 'tab-next',
         '<Ctrl-f>': 'set-cmd-text /',
@@ -1739,11 +1739,14 @@ c.bindings.commands = {
         'gi': 'hint inputs'
     },
     'insert': {
-        '<Ctrl-i>': 'open-editor',
+        '<Ctrl-+>': 'zoom-in',
+        '<Ctrl-->': 'zoom-out',
+        '<Ctrl-0>': 'zoom',
         '<Ctrl-e>': 'open-editor',
+        '<Ctrl-i>': 'open-editor',
+        '<Ctrl-p>': 'lastpass',
         '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
         '<Ctrl-u>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
-        '<Ctrl-p>': 'lastpass',
         '<Escape>': 'leave-mode ;; jseval -q document.activeElement.blur()'
     }
 }
