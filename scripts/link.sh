@@ -84,6 +84,7 @@ ln -sf ~/dotfiles/bin/explainshell ~/bin/explainshell
 ln -sf ~/dotfiles/bin/ghc ~/bin/ghc
 ln -sf ~/dotfiles/bin/ghci ~/bin/ghci
 ln -sf ~/dotfiles/bin/gifgen ~/bin/gifgen
+ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
 ln -sf ~/dotfiles/bin/hlint-brittany ~/bin/hlint-brittany
 ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
 ln -sf ~/dotfiles/bin/i3-battery-popup ~/bin/i3-battery-popup
@@ -93,8 +94,8 @@ ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
 ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
+ln -sf ~/dotfiles/bin/stack-test ~/bin/stack-test
 ln -sf ~/dotfiles/bin/webcam ~/bin/webcam
-ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
 
 # sxiv
 mkdir -p ~/.config/sxiv/exec
