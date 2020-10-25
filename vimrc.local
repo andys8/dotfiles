@@ -336,6 +336,7 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeMapActivateNode = "l"
 let g:NERDTreeRespectWildIgnore = 1
+let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeCustomOpenArgs =  {'file': {'where':'p'}}
 nmap <silent> <leader>n :call NerdTreeToggleFind()<CR>
 nmap <silent> <leader>N :NERDTreeToggle<CR>
