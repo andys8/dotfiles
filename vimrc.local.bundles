@@ -68,3 +68,6 @@ Plug 'tpope/vim-abolish'
 
 " Support .editorconfig
 Plug 'editorconfig/editorconfig-vim'
+
+" Autojump (:J)
+Plug 'trotter/autojump.vim'
