@@ -1,0 +1,5 @@
+#!/bin/sh
+# Script will be executed after profile switched with autorandr
+
+sleep 4
+xmonad --restart

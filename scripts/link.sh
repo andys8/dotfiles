@@ -140,4 +140,8 @@ ln -sf ~/dotfiles/ignore ~/.ignore
 # Screenshots
 mkdir -p ~/Pictures/screenshots
 
+# autorandr
+mkdir -p ~/.config/autorandr
+ln -sf ~/dotfiles/autorandr/postswitch ~/.config/autorandr/postswitch
+
 echo "Links updated"
