@@ -395,7 +395,6 @@ let g:syntastic_java_checkers = []
 command! -nargs=0 IdeaFormat silent :w | exec "!idea format %" | :e
 
 " PureScript
-au BufWritePre *.purs call CocAction('format')
 let g:purescript_indent_let = 2
 let g:purescript_indent_in = 0
 let g:purescript_indent_where = 0
