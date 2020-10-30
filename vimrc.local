@@ -110,6 +110,8 @@ command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 " Abbreviations
 cabbrev Ci CocInfo
 cabbrev ci CocInfo
+cabbrev gitignore :CocList gitignore
+cabbrev GitIgnore :CocList gitignore
 cabbrev Cr CocRestart
 cabbrev cr CocRestart
 cabbrev Cs CocSearch
