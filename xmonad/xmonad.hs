@@ -174,6 +174,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. controlMask, xK_k)     , sendMessage $ ExpandTowards U)
        , ((modMask, xK_r)                     , sendMessage BSP.Rotate)
        , ((modMask, xK_s)                     , sendMessage BSP.Swap)
+       , ((controlMask .|. modMask .|. altMask, xK_Shift_R), updateMonitors)
        , ((modMask .|. altMask, xK_0)         , updateMonitors)
        , ((modMask .|. altMask, xK_1)         , setMonitors 1)
        , ((modMask .|. altMask, xK_2)         , setMonitors 2)
