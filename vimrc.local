@@ -8,7 +8,7 @@ set shortmess+=c
 set nobackup
 set nowritebackup
 set noswapfile
-set signcolumn=number
+set signcolumn=yes
 
 set termguicolors
 set t_Co=256
