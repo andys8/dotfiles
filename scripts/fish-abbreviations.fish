@@ -72,6 +72,8 @@ abbr -a -U pacs 'pacman -Ss'
 abbr -a -U pacu 'sudo pacman -Syu'
 abbr -a -U r ranger
 abbr -a -U rm 'trash'
+abbr -a -U sb 'stack build'
+abbr -a -U si 'stack install'
 abbr -a -U suspend 'systemctl suspend'
 abbr -a -U t tig
 abbr -a -U timestamp 'date +%s%3N'
