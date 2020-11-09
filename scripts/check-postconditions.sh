@@ -128,7 +128,7 @@ QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
 
 # stack min version
 STACK_VERSION=$(stack --version)
-[[ $STACK_VERSION =~ Version[[:space:]]2\.[3-9]\. ]] || {
+[[ $STACK_VERSION =~ Version[[:space:]]2\.[5-9]\. ]] || {
     fail "Stack version not expected ($STACK_VERSION)"
 }
 

@@ -31,6 +31,8 @@ section "Update Xmonad"
 ~/dotfiles/scripts/update-xmonad.sh
 section "Update qutebrowser"
 ~/dotfiles/scripts/update-qutebrowser.sh
+section "Update stack"
+~/dotfiles/scripts/update-stack.sh
 section "Update haskell-language-server"
 ~/dotfiles/scripts/update-haskell-language-server.sh
 section "Update ranger plugins"
