@@ -135,7 +135,7 @@
       "command": "ce-dev",
       "sourceName": "ce-dev",
       "debounce": 300,
-      "args": ["verify", "--json", "--ignore-imports", "%file"],
+      "args": ["verify", "--json", "--typecheck", "--ignore-imports", "%file"],
       "parseJson": {
         "line": "startLine",
         "column": "startColumn",
