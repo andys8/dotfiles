@@ -130,7 +130,7 @@ Might be necessary to copy to `~/.local/share/qutebrowser/qtwebengine_dictionari
 
 ## Time
 
-Arch: Enable time synchronization with `timedatectl set-ntp true`.
+Enable time synchronization with `timedatectl set-ntp true`.
 
 ## Git
 
