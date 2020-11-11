@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO=haskell/haskell-language-server
-REV=0.5.1
+REV=0.6.0
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
     VERSION=$(haskell-language-server --numeric-version)
