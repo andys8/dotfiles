@@ -24,6 +24,7 @@ commands=(
     setxkbmap   # used in scripts
     shuf        # used in shell scripts
     stack       # haskell build tool
+    synclient   # used in scripts
     tar         # archive
     tr          # used in shell scripts
     vim         # editor

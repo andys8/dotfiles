@@ -95,6 +95,7 @@ ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
 ln -sf ~/dotfiles/bin/stack-test ~/bin/stack-test
+ln -sf ~/dotfiles/bin/touchpad-toggle ~/bin/touchpad-toggle
 ln -sf ~/dotfiles/bin/webcam ~/bin/webcam
 
 # sxiv
