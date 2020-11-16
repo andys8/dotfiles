@@ -75,6 +75,7 @@ in
     ghcid # ghci daemon
     glow # markdown viewer
     hlint # haskell linter
+    httpie # curl alternative
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
     maim # screenshots
