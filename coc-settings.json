@@ -34,7 +34,7 @@
     },
     "haskell-language-server": {
       "enable": true,
-      "command": "haskell-language-server",
+      "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "filetypes": ["haskell", "lhaskell"],
       "rootPatterns": [
