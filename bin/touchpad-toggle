@@ -1,5 +1,14 @@
 #!/bin/sh
 # toggle touchpad off
 
-synclient TouchpadOff="$(synclient -l | grep -q 'TouchpadOff.*1'; echo $?)"
+command -v "synclient" >/dev/null 2>&1 || {
+    echo "Error: synclient not available"
+    exit 1
+}
+
+synclient TouchpadOff="$(
+    synclient -l | grep -q 'TouchpadOff.*1'
+    echo $?
+)"
+
 synclient -l | grep "TouchpadOff"
