@@ -123,6 +123,10 @@ in
     stack2cabal # generate cabal files from stack
   ]
 ) ++ (
+  with release2003.python38Packages; [
+    cfn-lint # cloudformation linter
+  ]
+) ++ (
   with unstable.haskellPackages; [
     git-brunch # git checkout branch tui
     network-manager-tui # network tui
