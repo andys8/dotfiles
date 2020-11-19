@@ -1,0 +1,14 @@
+#!/bin/sh
+
+path="$HOME/Documents/todo"
+date=$(date +"%Y-%m-%d")
+file="$path/$date.md"
+
+[ -f "$file" ] || {
+    mkdir -p "$path"
+    echo "# TODO $date" >"$file"
+    echo '' >>"$file"
+    echo '- [ ]' >>"$file"
+}
+
+vim "$file"
