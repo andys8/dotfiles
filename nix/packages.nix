@@ -34,6 +34,7 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     nodejs-12_x # nodejs and npm
+    pass-otp # pass otp for token
     rofi # dmenu replacement
     sbt # sbt package manager
     scala # scala compiler
