@@ -93,6 +93,7 @@ ln -sf ~/dotfiles/bin/image-preview ~/bin/image-preview
 ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
 ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
 ln -sf ~/dotfiles/bin/lock ~/bin/lock
+ln -sf ~/dotfiles/bin/passmenu-otp ~/bin/passmenu-otp
 ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
 ln -sf ~/dotfiles/bin/stack-test ~/bin/stack-test
 ln -sf ~/dotfiles/bin/touchpad-toggle ~/bin/touchpad-toggle
