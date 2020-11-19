@@ -1,3 +1,10 @@
 #!/bin/sh
 
-i3lock --color=44475a
+file="$HOME/Pictures/lockscreen/lockscreen.png"
+monitors=$(xrandr --listmonitors | head -1 | cut -d' ' -f2)
+
+if [ -f "$file" ] && [ "$monitors" = 1 ]; then
+    i3lock --image "$file"
+else
+    i3lock --color=44475a
+fi
