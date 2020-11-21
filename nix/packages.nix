@@ -1,9 +1,9 @@
 let
   unstable = import <nixpkgs> { };
-  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") { };
+  release2009 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz") { };
 in
 (
-  with release2003; [
+  with release2009; [
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
     asciinema # record terminal
@@ -58,6 +58,19 @@ in
     zip # compress to zip
   ]
 ) ++ (
+  with release2009.elmPackages; [
+    elm # compiler
+    elm-format # elm pretty print
+    elm-language-server # language-server
+    elm-live # dev server
+    elm-test # elm test runner
+  ]
+) ++ (
+  with release2009.haskellPackages; [
+    brittany # code formatter
+    hoogle # function documentation
+  ]
+) ++ (
   with unstable; [
     ack # search in files
     autojump # jump into directory with j
@@ -109,21 +122,8 @@ in
     tig # diff and comit view
   ]
 ) ++ (
-  with unstable.elmPackages; [
-    elm # compiler
-    elm-format # elm pretty print
-    elm-language-server # language-server
-    elm-live # dev server
-    elm-test # elm test runner
-  ]
-) ++ (
-  with release2003.python38Packages; [
+  with unstable.python38Packages; [
     cfn-lint # cloudformation linter
-  ]
-) ++ (
-  with release2003.haskellPackages; [
-    brittany # code formatter
-    hoogle # function documentation
   ]
 ) ++ (
   with unstable.haskellPackages; [
