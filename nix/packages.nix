@@ -117,14 +117,13 @@ in
     elm-test # elm test runner
   ]
 ) ++ (
+  with release2003.python38Packages; [
+    cfn-lint # cloudformation linter
+  ]
+) ++ (
   with release2003.haskellPackages; [
     brittany # code formatter
     hoogle # function documentation
-    stack2cabal # generate cabal files from stack
-  ]
-) ++ (
-  with release2003.python38Packages; [
-    cfn-lint # cloudformation linter
   ]
 ) ++ (
   with unstable.haskellPackages; [
