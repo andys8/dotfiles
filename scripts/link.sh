@@ -147,4 +147,8 @@ mkdir -p ~/Pictures/screenshots
 mkdir -p ~/.config/autorandr
 ln -sf ~/dotfiles/autorandr/postswitch ~/.config/autorandr/postswitch
 
+# nix
+mkdir -p ~/.nixpkgs
+ln -sf ~/dotfiles/nix/config.nix ~/.nixpkgs/config.nix
+
 echo "Links updated"
