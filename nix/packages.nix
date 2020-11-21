@@ -32,7 +32,7 @@ in
     nethogs # network traffic monitoring
     nitrogen # Wallpaper
     nix # nix package manager
-    nodejs-12_x # nodejs and npm
+    nodejs-14_x # nodejs and npm
     pass-otp # pass otp for token
     rofi # dmenu replacement
     sbt # sbt package manager
