@@ -215,7 +215,7 @@ myMouseBindings XConfig { modMask = modMask } = Map.fromList
 term = "st"
 fileBrowser = spawn "xdg-open ."
 quteWebBrowser = spawn "qutebrowser"
-chromiumWebBrowser = spawn "chromium-browser"
+chromiumWebBrowser = spawn "chromium"
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"

@@ -21,7 +21,7 @@ bindsym $mod+n exec xdg-open .
 
 # Internet Browser
 bindsym $mod+Shift+Return exec "qutebrowser"
-bindsym $mod+Ctrl+Return exec "chromium-browser"
+bindsym $mod+Ctrl+Return exec "chromium"
 
 # kill focused window
 bindsym $mod+Shift+q kill
