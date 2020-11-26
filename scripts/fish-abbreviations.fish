@@ -78,7 +78,7 @@ abbr -a -U suspend 'systemctl suspend'
 abbr -a -U t tig
 abbr -a -U timestamp 'date +%s%3N'
 abbr -a -U tl 'toilet -t -F border -f future --gay'
-abbr -a -U todols 'cd ~/Documents/todo && fzf --tac | xargs -ro vim'
+abbr -a -U todols 'ranger ~/Documents/todo'
 abbr -a -U toggle-touchpad 'touchpad-toggle'
 abbr -a -U uuid uuidgen
 abbr -a -U v vim
