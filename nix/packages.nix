@@ -1,5 +1,6 @@
 let
   unstable = import <nixpkgs> { };
+  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") { };
   release2009 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz") { };
 in
 (
@@ -25,7 +26,6 @@ in
     i3status-rust # i3 status bar
     iotop # io usage
     jq # json processor
-    lsd # ls replacement
     lsof # list open files/ports
     mdp # markdown presentation
     ncdu # disk usage
@@ -56,6 +56,10 @@ in
     xrandr-invert-colors # invert colors
     yarn # alternative node package manager
     zip # compress to zip
+  ]
+) ++ (
+  with release2003; [
+    lsd # ls replacement
   ]
 ) ++ (
   with release2009.elmPackages; [
