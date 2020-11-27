@@ -17,7 +17,6 @@ in
     coursier # scala build tool
     diskus # disk usage
     dtrx # extract files
-    duf # disk usage
     emacs # alternative editor
     fast-cli # speedtest
     ffmpeg # convert videos
@@ -85,6 +84,7 @@ in
     ctop # top for containers
     dhall # dhall (format)
     dragon-drop # drag and drop
+    duf # disk usage
     dunst # notification daemon
     entr # watch files
     exa # ls replacement
