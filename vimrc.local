@@ -110,8 +110,6 @@ command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 " Abbreviations
 cabbrev Ci CocInfo
 cabbrev ci CocInfo
-cabbrev gitignore :CocList gitignore
-cabbrev GitIgnore :CocList gitignore
 cabbrev Cr CocRestart
 cabbrev cr CocRestart
 cabbrev Cs CocSearch
@@ -228,7 +226,6 @@ let g:coc_global_extensions = [
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-eslint',
-      \ 'coc-gitignore',
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-markdownlint',
