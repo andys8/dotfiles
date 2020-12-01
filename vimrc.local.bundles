@@ -38,9 +38,6 @@ Plug 'airblade/vim-rooter'
 " Coc (Language Server and Completion)
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-" Typescript JSX
-Plug 'joaohkfaria/vim-jest-snippets', { 'for': ['javascript', 'typescript'] }
-
 " Open links in browser
 Plug 'tyru/open-browser.vim'
 
