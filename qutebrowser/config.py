@@ -1664,6 +1664,7 @@ c.url.searchengines = {
     '?github': 'https://github.com/search?type=Repositories&q={}',
     '?hackage': 'https://hackage.haskell.org/packages/search?terms={}',
     '?hoogle': 'https://hoogle.haskell.org/?hoogle={}',
+    '?nix': 'https://search.nixos.org/packages?query={}',
     '?npm': 'https://www.npmjs.com/search?q={}',
     '?purs': 'https://pursuit.purescript.org/search?q={}',
     '?youtube': 'https://www.youtube.com/results?search_query={}',
