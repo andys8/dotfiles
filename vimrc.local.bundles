@@ -62,3 +62,6 @@ Plug 'tpope/vim-abolish'
 
 " Support .editorconfig
 Plug 'editorconfig/editorconfig-vim'
+
+" Haskell Hoogle
+Plug 'monkoose/fzf-hoogle.vim', { 'for' : 'haskell' }
