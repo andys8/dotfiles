@@ -50,6 +50,7 @@ abbr -a -U gra 'git rebase --abort'
 abbr -a -U grc 'git rebase --continue'
 abbr -a -U grd 'git rebase -i origin/development'
 abbr -a -U grm 'git rebase -i origin/master'
+abbr -a -U gru 'git rebase -i upstream/master'
 abbr -a -U gs 'git status'
 abbr -a -U gst 'git stash'
 abbr -a -U gti git
