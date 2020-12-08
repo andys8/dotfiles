@@ -80,7 +80,7 @@
     }
   },
   "diagnostic-languageserver.filetypes": {
-    "botlang": "ce-dev",
+    "ebotlang": "ce-dev",
     "haskell": "hlint",
     "markdown": "write-good",
     "sh": "shellcheck"
