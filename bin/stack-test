@@ -6,4 +6,4 @@
 testregex="spec = describe \"([a-zA-Z0-9 ]+)\""
 testname=$(grep -r --include="*.hs" -oP "$testregex" . | cut -d'"' -f2 | fzf -0 -1 -q "$1")
 [ -z "$testname" ] && exit 1
-stack test --test-arguments="--match \"$testname"\"
+stack test --test-arguments="--match \"/$testname/"\"
