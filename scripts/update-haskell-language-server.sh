@@ -23,6 +23,6 @@ echo ">> Installing haskell-language-server (building from source)"
 cd /tmp
 git clone -b $REV --recurse-submodules --single-branch https://github.com/$REPO "$FOLDER"
 cd "$FOLDER"
-stack install --stack-yaml stack-8.8.3.yaml
+stack ./install.hs hls-8.8.3 hls-8.8.4
 echo ">> haskell-language-server installed with stack"
 exit 0
