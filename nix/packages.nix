@@ -27,6 +27,7 @@ in
     iotop # io usage
     jq # json processor
     lsof # list open files/ports
+    mdcat # markdown viewer
     mdp # markdown presentation
     ncdu # disk usage
     nethogs # network traffic monitoring
@@ -97,7 +98,6 @@ in
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
     maim # screenshots
-    mdcat # markdown viewer
     meld # git merge tool (graphical)
     mpv # video player
     nixpkgs-fmt # format nix
