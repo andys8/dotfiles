@@ -71,8 +71,11 @@ in
     elm-test # elm test runner
   ]
 ) ++ (
-  with release2009.haskellPackages; [
+  with unstable.haskellPackages; [
     brittany # code formatter
+  ]
+) ++ (
+  with release2009.haskellPackages; [
     hoogle # function documentation
   ]
 ) ++ (
