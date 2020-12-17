@@ -152,4 +152,8 @@ ln -sf ~/dotfiles/autorandr/postswitch ~/.config/autorandr/postswitch
 mkdir -p ~/.nixpkgs
 ln -sf ~/dotfiles/nix/config.nix ~/.nixpkgs/config.nix
 
+# zathura
+mkdir -p ~/.config/zathura
+ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
+
 echo "Links updated"
