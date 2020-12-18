@@ -78,6 +78,7 @@ ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
 
 # bin
 mkdir -p ~/bin
+ln -sf ~/dotfiles/bin/asciinemagif ~/bin/asciinemagif
 ln -sf ~/dotfiles/bin/devour ~/bin/devour
 ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
 ln -sf ~/dotfiles/bin/explainshell ~/bin/explainshell
