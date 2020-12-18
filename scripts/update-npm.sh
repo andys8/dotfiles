@@ -5,9 +5,10 @@ npm set prefix ~/.npm-global
 
 # NPM installable packages
 packages=(
+    asciicast2gif                     # convert asciinema to gif
     bash-language-server              # bash ls
     dockerfile-language-server-nodejs # docker ls
-    elm-json                          # Update and change elm.json files
+    elm-json                          # update and change elm.json files
     fx                                # json viewer
     http-server                       # spin up http server in directory
     prettier                          # JS/TS/CSS/Markdown formatter
