@@ -1,12 +1,15 @@
 with import <nixpkgs> { };
+
+# Upstream has a `./vendor` directory with all deps which we rely upon.
 buildGoPackage rec {
   name = "tty-share";
-  version = "0.6.2";
+  version = "2.0.0";
 
-  src = fetchgit {
-    url = "https://github.com/elisescu/tty-share";
+  src = fetchFromGitHub {
+    owner = "elisescu";
+    repo = "tty-share";
     rev = "v${version}";
-    sha256 = "09f42zkxs1si60ljrs2lbnallhk9sncj3mv8j6d1qmg2mzfak3c5";
+    sha256 = "1d2vd3d1lb4n0jq4s0p5mii1vz4r3z36hykr5mnx53srsni1wsj5";
   };
 
   goPackagePath = "github.com/elisescu/tty-share";
