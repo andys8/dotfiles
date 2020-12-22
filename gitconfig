@@ -1,87 +1,87 @@
 [core]
-	autocrlf = input
-	editor = vim
-	pager = delta
-	hooksPath = ~/.config/git/hooks
-	excludesFile = ~/.config/git/ignore
+    autocrlf = input
+    editor = vim
+    pager = delta
+    hooksPath = ~/.config/git/hooks
+    excludesFile = ~/.config/git/ignore
 [alias]
-	a = add
-	amend = commit -a --amend --no-edit
-	b = brunch
-	br = branch
-	ci = commit
-	co = checkout
-	cp = cherry-pick
-	currentbranch = !git branch --show-current | tr -d '\n'
-	currentcommit = !git rev-parse HEAD | tr -d '\n'
-	d = diff
-	f = fetch
-	fe = fetch
-	l = log --graph --date=short
-	pl = pull
-	please = push --force-with-lease
-	ps = push
-	re = reset
-	s = status
-	setup-fork = remote-setup-fork
-	st = status
-	sw = switch
-	tpush = push
-	track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+    a = add
+    amend = commit -a --amend --no-edit
+    b = brunch
+    br = branch
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    currentbranch = !git branch --show-current | tr -d '\n'
+    currentcommit = !git rev-parse HEAD | tr -d '\n'
+    d = diff
+    f = fetch
+    fe = fetch
+    l = log --graph --date=short
+    pl = pull
+    please = push --force-with-lease
+    ps = push
+    re = reset
+    s = status
+    setup-fork = remote-setup-fork
+    st = status
+    sw = switch
+    tpush = push
+    track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
-	default = current
+    default = current
 [http]
-	postBuffer = 1048576000
+    postBuffer = 1048576000
 [ssh]
-	postBuffer = 524288000
+    postBuffer = 524288000
 [rerere]
-	enabled = 1
+    enabled = 1
 [diff]
-	tool = vimdiff
-	algorithm = patience
+    tool = vimdiff
+    algorithm = patience
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "idea"]
-	cmd = idea diff \"$LOCAL\" \"$REMOTE\"
+    cmd = idea diff \"$LOCAL\" \"$REMOTE\"
 [help]
-	autocorrect = 10
+    autocorrect = 10
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [rebase]
-	missingCommitsCheck = error
-	autoStash = true
-	instructionFormat = %s (%an)
-	instructionFormat = %s (%an)
+    missingCommitsCheck = error
+    autoStash = true
+    instructionFormat = %s (%an)
+    instructionFormat = %s (%an)
 [mergetool]
-	prompt = false
-	keepbackup = false
+    prompt = false
+    keepbackup = false
 [merge]
-	summary = true
-	verbosity = 1
-	tool = vimdiff
+    summary = true
+    verbosity = 1
+    tool = vimdiff
 [mergetool "idea"]
-	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
-	trustExitCode = false
+    cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+    trustExitCode = false
 [interactive]
     diffFilter = delta --color-only
 [color]
-	ui = true
+    ui = true
 [color "branch"]
         current = yellow reverse
-	local = yellow
-	remote = green
+    local = yellow
+    remote = green
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "diff"]
-	meta = 227
-	frag = magenta bold
-	commit = 227 bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = 227
+    frag = magenta bold
+    commit = 227 bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [delta]
     syntax-theme = Dracula
     features = side-by-side line-numbers decorations
@@ -92,8 +92,8 @@
     file-decoration-style = none
     hunk-header-decoration-style = magenta box
 [pull]
-	rebase = true
+    rebase = true
 [hub]
-	protocol = https
+    protocol = https
 [include]
-	path = ~/.gitconfig.machine
+    path = ~/.gitconfig.machine
