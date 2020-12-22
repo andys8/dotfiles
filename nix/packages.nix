@@ -124,6 +124,7 @@ in
   ]
 ) ++ (
   with unstable.gitAndTools; [
+    delta # git diff viewer
     diff-so-fancy # git diff with colors
     gh # github-cli
     git-gone # prune merged branches

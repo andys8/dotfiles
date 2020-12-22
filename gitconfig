@@ -1,7 +1,7 @@
 [core]
 	autocrlf = input
 	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 	hooksPath = ~/.config/git/hooks
 	excludesFile = ~/.config/git/ignore
 [alias]
@@ -62,6 +62,8 @@
 [mergetool "idea"]
 	cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 	trustExitCode = false
+[interactive]
+    diffFilter = delta --color-only
 [color]
 	ui = true
 [color "branch"]
@@ -80,6 +82,15 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[delta]
+    syntax-theme = Dracula
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+    hunk-header-decoration-style = magenta box
 [pull]
 	rebase = true
 [hub]
