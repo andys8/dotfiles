@@ -15,6 +15,10 @@
     currentbranch = !git branch --show-current | tr -d '\n'
     currentcommit = !git rev-parse HEAD | tr -d '\n'
     d = diff
+    diff-default = diff
+    diff-delta = diff
+    diff-so-fancy = diff
+    diff1 = diff
     f = fetch
     fe = fetch
     l = log --graph --date=short
@@ -36,6 +40,11 @@
     postBuffer = 524288000
 [rerere]
     enabled = 1
+[pager]
+    diff-default = less
+    diff-delta = delta
+    diff-so-fancy = diff-so-fancy | less --tabs=4 -RFX
+    diff1 = diff-so-fancy | less --tabs=4 -RFX
 [diff]
     tool = vimdiff
     algorithm = patience
