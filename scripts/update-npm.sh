@@ -1,7 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+# solves npm access rights
 npm set prefix ~/.npm-global
+
+# npm is installed with nix, so it won't update itself
+npm set update-notifier false
 
 # NPM installable packages
 packages=(
