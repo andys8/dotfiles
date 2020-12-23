@@ -667,7 +667,7 @@ c.content.headers.do_not_track = True
 
 ## Enable host blocking.
 ## Type: Bool
-c.content.host_blocking.enabled = True
+c.content.blocking.enabled = True
 
 ## List of URLs of lists which contain hosts to block.  The file can be
 ## in one of the following formats:  - An `/etc/hosts`-like file - One
@@ -678,7 +678,7 @@ c.content.host_blocking.enabled = True
 ## The file `~/.config/qutebrowser/blocked-hosts` is always read if it
 ## exists.
 ## Type: List of Url
-# c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+# c.content.blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 ## A list of patterns that should always be loaded, despite being ad-
 ## blocked. Note this whitelists blocked hosts, not first-party URLs. As
@@ -689,7 +689,7 @@ c.content.host_blocking.enabled = True
 ## from hostblocking.
 ## Type: List of UrlPattern
 # c.content.host_blocking.whitelist = []
-c.content.host_blocking.whitelist = ['www.googleadservices.com']
+c.content.blocking.whitelist = ['www.googleadservices.com']
 
 ## Enable hyperlink auditing (`<a ping>`).
 ## Type: Bool
