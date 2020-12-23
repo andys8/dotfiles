@@ -260,7 +260,7 @@ exec --no-startup-id xset r rate 200 80
 exec --no-startup-id xset -b
 
 # Lock screen on disabled monitor
-exec --no-startup-id xss-lock -l -- lock
+exec --no-startup-id xss-lock -- lock
 
 # Display standbye
 exec --no-startup-id xset dpms 360
