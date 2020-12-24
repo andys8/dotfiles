@@ -7,7 +7,7 @@
   "diagnostic.refreshOnInsertMode": false,
   "diagnostic.maxWindowHeight": 30,
   "coc.preferences.extensionUpdateCheck": "weekly",
-  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "coc.preferences.formatOnSaveFiletypes": ["elm", "purescript"],
   "coc.preferences.snippets.enable": true,
   "coc.preferences.floatActions": false,
   "eslint.filetypes": ["javascript", "javascriptreact"],
