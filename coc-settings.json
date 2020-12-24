@@ -5,7 +5,6 @@
   "diagnostic.warningSign": "",
   "diagnostic.messageDelay": 800,
   "diagnostic.refreshOnInsertMode": false,
-  "diagnostic.refreshAfterSave": false,
   "diagnostic.maxWindowHeight": 30,
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.formatOnSaveFiletypes": ["elm"],
