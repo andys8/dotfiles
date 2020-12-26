@@ -24,7 +24,6 @@ in
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
     hasmail # mail imap notifier for new mails
-    i3status-rust # i3 status bar
     iotop # io usage
     jq # json processor
     lsof # list open files/ports

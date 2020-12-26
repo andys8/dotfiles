@@ -19,11 +19,7 @@ ln -sf ~/dotfiles/ideavimrc ~/.ideavimrc
 # Ctags
 ln -sf ~/dotfiles/ctags ~/.ctags
 
-# i3
-rm -rf ~/.config/i3
-ln -sf ~/dotfiles/i3 ~/.config
-
-# rofi (dmenu for i3)
+# rofi
 rm -rf ~/.config/rofi
 ln -sf ~/dotfiles/rofi ~/.config
 

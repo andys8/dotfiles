@@ -27,7 +27,6 @@ commandsOptional=(
     btm          # bottom process monitor
     cabal        # haskell tool
     chromium     # chromium web browser
-    i3           # tiling window manager
     idea         # intellij ide
     java         # java runtime
     lxappearance # configure themes
