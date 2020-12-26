@@ -159,6 +159,6 @@ ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 
 # Purty
 # Use purty binary directly, avoid node spawning a process (performance)
-ln -s ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty
+ln -sf ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty
 
 echo "Links updated"
