@@ -1,4 +1,5 @@
 import           Data.List
+import qualified Data.Map                      as Map
 import           Data.Maybe
 import           Graphics.X11.ExtraTypes.XF86
 import           System.Exit
@@ -31,12 +32,11 @@ import           XMonad.Layout.Tabbed
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
+import qualified XMonad.StackSet               as W
 import           XMonad.Util.Paste
 import           XMonad.Util.Run                ( spawnPipe )
 import           XMonad.Util.Scratchpad
 import           XMonad.Util.WorkspaceCompare
-import qualified Data.Map                      as Map
-import qualified XMonad.StackSet               as W
 
 -- Workspaces --
 
