@@ -40,7 +40,6 @@ in
     sent # suckless presentation tool
     shfmt # format shell scripts
     simplescreenrecorder # screen recorder
-    termonad-with-packages # haskell terminal
     time # measure time
     tmatrix # terminal matrix animation
     toilet # ascii art fonts
