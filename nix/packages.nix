@@ -17,7 +17,6 @@ in
     coursier # scala build tool
     diskus # disk usage
     dtrx # extract files
-    emacs # alternative editor
     fast-cli # speedtest
     ffmpeg # convert videos
     gcolor3 # color picker

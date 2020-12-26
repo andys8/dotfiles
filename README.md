@@ -179,13 +179,3 @@ VerbosePkgLists
 ## Theme
 
 Install `xcursor-breeze` and [`Ant-Dracula`](https://github.com/EliverLara/Ant-Dracula) theme. Configure with `lxappearance`.
-
-## Emacs
-
-- `emacs` is installed with nix
-- Install [`doom-emacs`](https://github.com/hlissner/doom-emacs)
-
-```shell
-git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
-~/.emacs.d/bin/doom install
-```
