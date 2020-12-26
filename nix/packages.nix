@@ -114,6 +114,7 @@ in
     speedtest-cli # measure down/upload
     sxiv # image viewer
     translate-shell # trans command
+    tty-share # share terminal
     ueberzug # draw images in terminal
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
@@ -140,5 +141,4 @@ in
   ]
 ) ++ [
   (import ./st.nix)
-  (import ./tty-share.nix)
 ]
