@@ -219,7 +219,7 @@ chromiumWebBrowser = spawn "chromium"
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"
-otpTool = "passmenu-otp || exit 1"
+otpTool = "passmenu-otp --type || exit 1"
 
 screenshotFile =
   "maim -s --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
