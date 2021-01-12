@@ -151,6 +151,19 @@
   "cSpell.language": "en,de",
   "cSpell.numSuggestions": 5,
   "cSpell.ignoreRegExpList": ["`.*`", "/^```(?:.|\\s)+?^```/mig"],
+  "yaml.customTags": [
+    "!Equals sequence",
+    "!FindInMap sequence",
+    "!GetAZs",
+    "!GetAtt",
+    "!If sequence",
+    "!ImportValue",
+    "!Join sequence",
+    "!Ref",
+    "!Select sequence",
+    "!Split sequence",
+    "!Sub"
+  ],
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
