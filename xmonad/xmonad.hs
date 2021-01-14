@@ -189,6 +189,10 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. shiftMask, xK_e)       , exitXmonad)
        , ((modMask .|. altMask, xK_i)         , invertXColors)
        , ((modMask, xK_minus)                 , toggleScratchpad)
+       , ((controlMask, xK_F2)                , typeText "ℹ️")
+       , ((controlMask, xK_F3)                , sendKey controlMask xK_d)
+       , ((controlMask, xK_F4)                , typeText "¯\\_(ツ)_/¯")
+       , ((controlMask, xK_F6)                , typeText "(┛ಠ_ಠ)┛彡┻━┻")
        ]
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
@@ -242,6 +246,8 @@ setMonitors :: Int -> X ()
 setMonitors i = spawn ("autorandr --load " <> show i)
 
 updateMonitors = spawn "autorandr --change"
+
+typeText x = spawn $ "xdotool sleep 0.3 type '" ++ x ++ "'"
 
 viewWorkspace nScreens workspace = do
   screenId <- toScreenId nScreens workspace
