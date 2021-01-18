@@ -189,7 +189,7 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((modMask .|. shiftMask, xK_e)       , exitXmonad)
        , ((modMask .|. altMask, xK_i)         , invertXColors)
        , ((modMask, xK_minus)                 , toggleScratchpad)
-       , ((controlMask, xK_F2)                , typeText "ℹ️")
+       , ((controlMask, xK_F2)                , suspend)
        , ((controlMask, xK_F3)                , sendKey controlMask xK_d)
        , ((controlMask, xK_F4)                , typeText "¯\\_(ツ)_/¯")
        , ((controlMask, xK_F6)                , typeText "(┛ಠ_ಠ)┛彡┻━┻")
@@ -236,17 +236,12 @@ setBrightness b = spawn $ brightness "eDP-1" b ++ " || " ++ brightness "eDP1" b
   where brightness d b = "xrandr --output " ++ d ++ " --brightness " ++ b
 
 invertXColors = spawn "xrandr-invert-colors"
-
 suspend = spawn "systemctl suspend"
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
 exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
-
-setMonitors :: Int -> X ()
-setMonitors i = spawn ("autorandr --load " <> show i)
-
+setMonitors i = spawn ("autorandr --load " <> show (i :: Int))
 updateMonitors = spawn "autorandr --change"
-
 typeText x = spawn $ "xdotool sleep 0.3 type '" ++ x ++ "'"
 
 viewWorkspace nScreens workspace = do
