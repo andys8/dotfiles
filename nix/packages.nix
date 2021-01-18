@@ -29,6 +29,7 @@ in
     mdcat # markdown viewer
     mdp # markdown presentation
     ncdu # disk usage
+    neofetch # system information
     nethogs # network traffic monitoring
     nitrogen # Wallpaper
     nix # nix package manager
