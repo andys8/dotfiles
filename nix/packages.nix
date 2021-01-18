@@ -38,6 +38,7 @@ in
     rofi # dmenu replacement
     sbt # sbt package manager
     scala # scala compiler
+    screenfetch # system information
     sent # suckless presentation tool
     shfmt # format shell scripts
     simplescreenrecorder # screen recorder
