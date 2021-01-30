@@ -1,0 +1,7 @@
+#!/bin/bash
+# Usage: jirals
+# Dependencies: jira, fzf, awk
+
+issue=$(jira ls | fzf | awk -F ":" '{print $1}')
+[ -z "$issue" ] && exit 1
+jira browse "$issue" &

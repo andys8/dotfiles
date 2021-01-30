@@ -1,0 +1,21 @@
+#!/bin/bash
+# Usage: jirabranch
+# Dependencies: jira, fzf, tr, sed
+
+branch=$(
+    jira ls |
+        fzf |
+        tr "[:upper:]" "[:lower:]" |
+        tr -cd "[:alnum:]- " |
+        tr -s " " "-" |
+        sed 's/ce-/CE-/'
+)
+[ -z "$branch" ] && exit 1
+
+branchType=$(printf "feature\nimprovement\nbugfix\n" | fzf)
+[ -z "$branchType" ] && exit 1
+
+fullBranch="$branchType/$branch"
+echo "Creating branch '$fullBranch'"
+read -r -s -p $'Press enter to create ...\n'
+git checkout -b "$fullBranch"
