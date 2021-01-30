@@ -10,7 +10,6 @@
   "coc.preferences.formatOnSaveFiletypes": ["elm", "purescript"],
   "coc.preferences.snippets.enable": true,
   "coc.preferences.floatActions": false,
-  "eslint.probe": ["javascript", "javascriptreact"],
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "suggest.disableMenu": true,
   "suggest.maxCompleteItemCount": 10,

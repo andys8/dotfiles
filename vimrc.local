@@ -224,7 +224,6 @@ let g:coc_global_extensions = [
       \ 'coc-deno',
       \ 'coc-diagnostic',
       \ 'coc-docker',
-      \ 'coc-eslint',
       \ 'coc-java',
       \ 'coc-json',
       \ 'coc-markdownlint',
