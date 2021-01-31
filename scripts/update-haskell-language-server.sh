@@ -4,6 +4,8 @@ set -euo pipefail
 REPO=haskell/haskell-language-server
 # Rev can be commit or version "x.x.x"
 REV=6b6c405d14a29ab3d2e7dbb4e2f79229758d26ba
+FOLDER="$HOME/.cache/haskell-language-server-install"
+GHC_VERSIONS=("8.8.3" "8.8.4")
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
     VERSION=$(haskell-language-server --version)
@@ -19,13 +21,21 @@ command -v "haskell-language-server" >/dev/null 2>&1 && {
 }
 
 # Installation by building from source
-FOLDER=haskell-language-server-$RANDOM
 echo ">> Installing haskell-language-server (building from source)"
-cd /tmp
-git clone --recurse-submodules https://github.com/$REPO "$FOLDER"
+if [ -d "$FOLDER" ]; then
+    echo ">> Reusing existing directory $FOLDER"
+else
+    git clone --recurse-submodules https://github.com/$REPO "$FOLDER"
+fi
+
 cd "$FOLDER"
-git checkout $REV
+git fetch
+git checkout $REV || true
+git pull || true
 git submodule update
-stack ./install.hs hls-8.8.3 hls-8.8.4
-echo ">> haskell-language-server installed with stack"
+for ghc in "${GHC_VERSIONS[@]}"; do
+    echo ">> haskell-language-server for ghc $ghc"
+    stack ./install.hs "hls-$ghc"
+done
+echo ">> haskell-language-server ($REV) installed with stack"
 exit 0
