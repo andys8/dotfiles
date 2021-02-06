@@ -1,6 +1,6 @@
 # Suckless terminal (andys8 fork)
 with import <nixpkgs> { };
-with stdenv.lib;
+with pkgs.lib;
 let
   name = "st";
   version = "0.8.4-andys8";
@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
     cp "st.desktop" "$out"/share/applications/
   '';
 
-  meta = with stdenv.lib; {
+  meta = with pkgs.lib; {
     homepage = https://github.com/andys8/st;
     description = "suckless terminal (andys8 fork)";
     license = licenses.mit;
