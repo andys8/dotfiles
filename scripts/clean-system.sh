@@ -30,3 +30,7 @@ if [ -x "$(command -v "docker")" ]; then
     docker container prune -f --filter "until=240h"
     docker image prune -f -a --filter "until=240h"
 fi
+
+# Vim CoC
+echo ">> Cleaning CoC extensions"
+~/dotfiles/scripts/clean-vim-coc.sh
