@@ -12,6 +12,7 @@ if [[ "$expected" = "$actual" ]]; then
     echo "Expected extensions and wanted extensions are matching"
 else
     echo "Difference between expected and wanted extensions."
+    diff <(echo "$expected") <(echo "$actual") || true
     echo "Removing extensions to trigger reinstall."
     rm -r $cocExtensionsPath
 fi

@@ -5,6 +5,7 @@ set -euo pipefail
 commands=(
     awk         # used in shell scripts
     bash        # shell
+    diff        # compare files
     fc-list     # list fonts
     find        # used in scripts
     fish        # shell
