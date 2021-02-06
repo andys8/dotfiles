@@ -1,10 +1,11 @@
 #!/bin/sh
 
-file="$HOME/Pictures/lockscreen/lockscreen.png"
-monitors=$(xrandr --listmonitors | head -1 | cut -d' ' -f2)
+export XSECURELOCK_AUTH_BACKGROUND_COLOR=rgb:28/2a/36 
+export XSECURELOCK_AUTH_FOREGROUND_COLOR=rgb:f8/f8/f2 
+export XSECURELOCK_DISCARD_FIRST_KEYPRESS=1
+export XSECURELOCK_PASSWORD_PROMPT=asterisks
+export XSECURELOCK_SHOW_DATETIME=1
+export XSECURELOCK_SHOW_HOSTNAME=0
+export XSECURELOCK_SHOW_USERNAME=0
 
-if [ -f "$file" ] && [ "$monitors" = 1 ]; then
-    i3lock --image "$file"
-else
-    i3lock --color=44475a
-fi
+xsecurelock

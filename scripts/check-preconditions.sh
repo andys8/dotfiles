@@ -8,7 +8,6 @@ commands=(
     fc-list     # list fonts
     find        # used in scripts
     fish        # shell
-    i3lock      # lockscreen
     lightdm     # Login display manager
     nix-channel # nix
     nix-env     # nix
@@ -33,6 +32,7 @@ commands=(
     xdotool     # control x via command line
     xrandr      # monitor setup
     xrdb        # load Xresources
+    xsecurelock # lockscreen
     xset        # scripts
     xss-lock    # lock the screen
 )
