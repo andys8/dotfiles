@@ -221,7 +221,6 @@ let g:coc_node_path = "~/.nix-profile/bin/node"
 let g:coc_global_extensions = [
       \ 'coc-cfn-lint',
       \ 'coc-cspell-dicts',
-      \ 'coc-deno',
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-java',
