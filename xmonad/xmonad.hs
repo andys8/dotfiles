@@ -29,6 +29,7 @@ import           XMonad.Layout.Simplest
 import           XMonad.Layout.Spacing
 import           XMonad.Layout.SubLayouts
 import           XMonad.Layout.Tabbed
+import           XMonad.Layout.ThreeColumns
 import           XMonad.Layout.WindowNavigation
 import           XMonad.Prompt
 import           XMonad.Prompt.ConfirmPrompt
@@ -72,28 +73,31 @@ renderWorkspace color ws = withColor clickable
 screenBorder' = Border 5 5 5 5
 windowBorder' = Border 10 10 10 10
 addSpace = spacingRaw True screenBorder' True windowBorder' True
-
 addTopBar = noFrillsDeco shrinkText topBarTheme
+layoutName x = renamed [Replace x]
 
 bsp =
   renamed [CutWordsLeft 1]
     $ addTopBar
     $ windowNavigation
-    $ renamed [Replace "BSP"]
+    $ layoutName "BSP"
     $ addTabs shrinkText topBarTheme
     $ subLayout [] Simplest
     $ addSpace BSP.emptyBSP
 
-grid = renamed [Replace "Grid"] $ addTopBar $ addSpace Grid
+threeCol =
+  layoutName "3-Col" $ addTopBar $ addSpace $ ThreeColMid 1 (3 / 100) (1 / 3)
 
-oneBig = renamed [Replace "OneBig"] $ addTopBar $ addSpace $ OneBig 0.75 0.65
+oneBig = layoutName "OneBig" $ addTopBar $ addSpace $ OneBig 0.75 0.65
 
-zen = renamed [Replace "Zen"] $ addTopBar $ zenSpace Grid
+grid = layoutName "Grid" $ addTopBar $ addSpace Grid
+
+zen = layoutName "Zen" $ addTopBar $ zenSpace Grid
  where
   zenScreenBorder = Border 100 100 500 500
   zenSpace        = spacingRaw False zenScreenBorder True windowBorder' True
 
-layouts = bsp ||| oneBig ||| grid ||| zen
+layouts = bsp ||| threeCol ||| oneBig ||| grid ||| zen
 
 myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
