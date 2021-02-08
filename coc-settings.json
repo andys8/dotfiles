@@ -80,7 +80,6 @@
   },
   "diagnostic-languageserver.filetypes": {
     "ebotlang": "ce-dev",
-    "haskell": "hlint",
     "markdown": "write-good",
     "sh": "shellcheck"
   },
@@ -95,25 +94,6 @@
     "nixpkgs-fmt": { "command": "nixpkgs-fmt" }
   },
   "diagnostic-languageserver.linters": {
-    "hlint": {
-      "command": "hlint",
-      "debounce": 500,
-      "args": ["--json", "-"],
-      "sourceName": "hlint",
-      "parseJson": {
-        "line": "startLine",
-        "column": "startColumn",
-        "endLine": "endLine",
-        "endColumn": "endColumn",
-        "message": "${hint}",
-        "security": "severity"
-      },
-      "securities": {
-        "Error": "error",
-        "Warning": "warning",
-        "Suggestion": "info"
-      }
-    },
     "write-good": {
       "command": "write-good",
       "debounce": 500,
