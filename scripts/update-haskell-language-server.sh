@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO=haskell/haskell-language-server
 # Rev can be commit or version "x.x.x"
-REV=6b6c405d14a29ab3d2e7dbb4e2f79229758d26ba
+REV=f4c76bb6a1752087b9ad7571abb7812835bb11b8
 FOLDER="$HOME/.cache/haskell-language-server-install"
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
