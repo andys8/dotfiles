@@ -31,6 +31,10 @@ if [ -x "$(command -v "docker")" ]; then
     docker image prune -f -a --filter "until=240h"
 fi
 
+# Autojump
+echo ">> Cleaning autojump (j)"
+autojump --purge
+
 # Vim CoC
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
