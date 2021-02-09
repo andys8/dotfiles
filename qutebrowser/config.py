@@ -919,7 +919,7 @@ c.downloads.position = 'bottom'
 ## Type: Int
 # c.downloads.remove_finished = -1
 
-## Editor (and arguments) to use for the `open-editor` command. The
+## Editor (and arguments) to use for the `edit-text` command. The
 ## following placeholders are defined:  * `{file}`: Filename of the file
 ## to be edited. * `{line}`: Line in which the caret is found in the
 ## text. * `{column}`: Column in which the caret is found in the text. *
@@ -1743,12 +1743,12 @@ c.bindings.commands = {
         '<Ctrl-+>': 'zoom-in',
         '<Ctrl-->': 'zoom-out',
         '<Ctrl-0>': 'zoom',
-        '<Ctrl-e>': 'open-editor',
-        '<Ctrl-i>': 'open-editor',
+        '<Ctrl-e>': 'edit-text',
+        '<Ctrl-i>': 'edit-text',
         '<Ctrl-p>': 'lastpass',
         '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
         '<Ctrl-u>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
-        '<Escape>': 'leave-mode ;; jseval -q document.activeElement.blur()'
+        '<Escape>': 'mode-leave ;; jseval -q document.activeElement.blur()'
     }
 }
 
