@@ -121,7 +121,7 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 
 # qutebrowser min version
 QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
-[[ $QUTEBROWSER_VERSION =~ v1\.1[4-9]\. ]] || {
+[[ $QUTEBROWSER_VERSION =~ v2\.[0-9]\. ]] || {
     fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
 }
 

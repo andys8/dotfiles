@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-VERSION_MINT="1.14.1"
+VERSION_MINT="2.0.2"
 VERSION_MINT_ALL="$VERSION_MINT-1"
 
 LINUX=$(lsb_release -i -s)
@@ -28,11 +28,11 @@ if [ "$LINUX" = "linuxmint" ]; then
     DEB2=qutebrowser-qtwebengine_${VERSION_MINT_ALL}_all.deb
 
     echo "Download qutebrowser packages"
-    curl "$BASE_URL/$DEB1" -o "/tmp/$DEB1"
-    curl "$BASE_URL/$DEB2" -o "/tmp/$DEB2"
+    curl "$BASE_URL/$DEB1" -o "/tmp/$DEB1" -v
+    curl "$BASE_URL/$DEB2" -o "/tmp/$DEB2" -v
 
     echo "Qutebrowser: dpkg -i (please enter password)"
-    sudo dpkg -i --force-depends --force-depends-version "/tmp/$DEB1" "/tmp/$DEB2"
+    sudo apt install "/tmp/$DEB1" "/tmp/$DEB2"
     echo "Qutebrowser: Fix dependencies "
     sudo apt-get install --fix-broken --assume-yes
 
