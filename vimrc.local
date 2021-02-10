@@ -151,9 +151,6 @@ function! Multiple_cursors_after()
     exe 'DelimitMateOn'
 endfunction
 
-" Elm
-let g:polyglot_disabled = ['elm', 'dhall']
-
 " Ctags
 set tags+=tags;tags.vendors;,tags;
 
