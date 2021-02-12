@@ -30,6 +30,7 @@ ROFI_SELECTION="$(
     lpass ls --format '%aN' --color=never |
         grep --invert-match '.*/$' |
         sed 's|(none)/||' |
+        sort --reverse |
         rofi -dmenu -i -matching fuzzy --p LastPass
 )"
 
