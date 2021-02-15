@@ -34,7 +34,7 @@
     "haskell-language-server": {
       "enable": true,
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
+      "args": ["--lsp", "--logfile", "/tmp/hls.log"],
       "filetypes": ["haskell", "lhaskell"],
       "rootPatterns": [
         "*.cabal",
