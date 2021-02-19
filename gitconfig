@@ -67,7 +67,7 @@
 [merge]
     summary = true
     verbosity = 1
-    tool = vimdiff
+    tool = meld
 [mergetool "idea"]
     cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = false
@@ -76,7 +76,7 @@
 [color]
     ui = true
 [color "branch"]
-        current = yellow reverse
+    current = yellow reverse
     local = yellow
     remote = green
 [color "diff-highlight"]
