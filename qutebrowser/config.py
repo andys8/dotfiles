@@ -1661,6 +1661,7 @@ c.url.searchengines = {
     '?amazon': 'https://www.amazon.de/s?k={}',
     '?aur': 'https://aur.archlinux.org/packages/?SB=p&SO=d&O=0&K={}',
     '?dd': 'https://duckduckgo.com/?q={}',
+    '?giphy': 'https://giphy.com/search/{}',
     '?github': 'https://github.com/search?type=Repositories&q={}',
     '?hackage': 'https://hackage.haskell.org/packages/search?terms={}',
     '?hoogle': 'https://hoogle.haskell.org/?hoogle={}',
