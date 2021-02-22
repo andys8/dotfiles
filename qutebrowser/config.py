@@ -24,6 +24,7 @@ dracula.blood(c, { 'font': { 'size': 11 } })
 c.aliases = {
     'adblock-toggle': 'config-cycle -t content.blocking.enabled',
     'chromium': 'spawn --detach chromium {url}',
+    'firefox': 'spawn --detach firefox {url}',
     'incognito': 'open --private',
     'lastpass': 'hint --first inputs ;; spawn --userscript qute-lastpass',
     'mpv': 'spawn --detach mpv {url}',
