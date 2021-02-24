@@ -34,7 +34,6 @@ in
     nethogs # network traffic monitoring
     nitrogen # Wallpaper
     nix # nix package manager
-    nodejs-14_x # nodejs and npm
     pass-otp # pass otp for token
     rofi # dmenu replacement
     sbt # sbt package manager
@@ -105,6 +104,7 @@ in
     meld # git merge tool (graphical)
     mpv # video player
     nixpkgs-fmt # format nix
+    nodejs-15_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     ranger # file manager
