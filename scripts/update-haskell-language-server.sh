@@ -32,6 +32,6 @@ git fetch
 git checkout $REV || true
 git pull || true
 git submodule update
-stack ./install.hs hls-8.8.3 hls-8.8.4 hls-8.10.3
+stack ./install.hs hls-8.6.5 hls-8.8.3 hls-8.8.4 hls-8.10.4
 echo ">> haskell-language-server ($REV) installed with stack"
 exit 0
