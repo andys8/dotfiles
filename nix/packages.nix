@@ -28,7 +28,6 @@ in
     lsof # list open files/ports
     mdcat # markdown viewer
     mdp # markdown presentation
-    meld # mergetool
     ncdu # disk usage
     neofetch # system information
     nethogs # network traffic monitoring
