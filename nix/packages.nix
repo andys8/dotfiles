@@ -34,6 +34,7 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     pass-otp # pass otp for token
+    lxqt.pavucontrol-qt # control volume per application
     rofi # dmenu replacement
     sbt # sbt package manager
     scala # scala compiler
