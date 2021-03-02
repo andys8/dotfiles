@@ -17,15 +17,22 @@ in
     coursier # scala build tool
     diskus # disk usage
     dtrx # extract files
+    elmPackages.elm # compiler
+    elmPackages.elm-format # elm pretty print
+    elmPackages.elm-language-server # language-server
+    elmPackages.elm-live # dev server
+    elmPackages.elm-test # elm test runner
     fast-cli # speedtest
     ffmpeg # convert videos
     gcolor3 # color picker
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
+    haskellPackages.hoogle # function documentation
     hasmail # mail imap notifier for new mails
     iotop # io usage
     jq # json processor
     lsof # list open files/ports
+    lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer
     mdp # markdown presentation
     ncdu # disk usage
@@ -34,7 +41,6 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     pass-otp # pass otp for token
-    lxqt.pavucontrol-qt # control volume per application
     rofi # dmenu replacement
     sbt # sbt package manager
     scala # scala compiler
@@ -63,22 +69,6 @@ in
     lsd # ls replacement
   ]
 ) ++ (
-  with release2009.elmPackages; [
-    elm # compiler
-    elm-format # elm pretty print
-    elm-language-server # language-server
-    elm-live # dev server
-    elm-test # elm test runner
-  ]
-) ++ (
-  with unstable.haskellPackages; [
-    brittany # code formatter
-  ]
-) ++ (
-  with release2009.haskellPackages; [
-    hoogle # function documentation
-  ]
-) ++ (
   with unstable; [
     ack # search in files
     autojump # jump into directory with j
@@ -95,7 +85,16 @@ in
     fd # "find" for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
+    gitAndTools.delta # git diff viewer
+    gitAndTools.diff-so-fancy # git diff with colors
+    gitAndTools.gh # github-cli
+    gitAndTools.git-gone # prune merged branches
+    gitAndTools.hub # github commandline tool
+    gitAndTools.tig # diff and comit view
     glow # markdown viewer
+    haskellPackages.brittany # code formatter
+    haskellPackages.git-brunch # git checkout branch tui
+    haskellPackages.network-manager-tui # network tui
     hlint # haskell linter
     httpie # curl alternative
     hyperfine # benchmark (time replacement)
@@ -107,6 +106,7 @@ in
     nodejs-15_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
+    python38Packages.cfn-lint # cloudformation linter
     ranger # file manager
     rclone # copy cloud to cloud
     ripgrep # fast grep
@@ -122,24 +122,6 @@ in
     xmobar # status bar for xmonad
     ytop # top/htop replacement
     zstd # compress tool used for .std
-  ]
-) ++ (
-  with unstable.gitAndTools; [
-    delta # git diff viewer
-    diff-so-fancy # git diff with colors
-    gh # github-cli
-    git-gone # prune merged branches
-    hub # github commandline tool
-    tig # diff and comit view
-  ]
-) ++ (
-  with unstable.python38Packages; [
-    cfn-lint # cloudformation linter
-  ]
-) ++ (
-  with unstable.haskellPackages; [
-    git-brunch # git checkout branch tui
-    network-manager-tui # network tui
   ]
 ) ++ [
   (import ./st.nix)
