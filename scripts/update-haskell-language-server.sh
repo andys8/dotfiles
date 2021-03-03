@@ -27,6 +27,9 @@ else
     git clone --recurse-submodules https://github.com/$REPO "$FOLDER"
 fi
 
+echo "Delete previous hls binaries"
+rm -v "$(stack path --local-bin)"/haskell-language-server-* || true
+
 cd "$FOLDER"
 git fetch
 git checkout $REV || true
