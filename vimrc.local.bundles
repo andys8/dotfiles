@@ -49,7 +49,7 @@ Plug 'vim-scripts/alex.vim', { 'for' : 'alex' }
 Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
 
 " PureScript
-Plug 'andys8/purescript-vim', { 'for' : 'purescript' }
+Plug 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
 
 " Ranger
 Plug 'francoiscabrol/ranger.vim'
