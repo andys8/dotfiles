@@ -10,7 +10,7 @@ in
     asciinema # record terminal
     asciiquarium # terminal aquarium animation
     autorandr # xrandr monitor profiles
-    awscli # amazon web services
+    awscli2 # amazon web services
     bc # calculator
     cabal2nix # Convert cabal files to nix
     chafa # preview images in terminal
