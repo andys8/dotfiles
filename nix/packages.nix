@@ -106,7 +106,7 @@ in
     nodejs-15_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
-    python38Packages.cfn-lint # cloudformation linter
+    python39Packages.cfn-lint # cloudformation linter
     ranger # file manager
     rclone # copy cloud to cloud
     ripgrep # fast grep
