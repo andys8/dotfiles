@@ -1,28 +1,23 @@
 #!/bin/bash
+# Update the OS
 set -eu
 
 LINUX=$(lsb_release -i -s)
 LINUX=${LINUX,,}
-CLEANUP=$((RANDOM % 20))
 
-if [ "$LINUX" = "linuxmint" ]; then
-    echo "Update system"
+echo "Update system ($LINUX)"
+
+function updateUbuntu() {
     sudo apt update
     sudo apt upgrade
-    if [ $CLEANUP -eq 0 ]; then
-        echo "Cleanup"
-        sudo apt clean
-        sudo apt autoremove
-    fi
-elif [ "$LINUX" = "manjarolinux" ]; then
-    echo "Update system"
+}
+
+function updateArch() {
     yay -Syu
-    if [ $CLEANUP -eq 0 ]; then
-        echo "Cleanup"
-        yay --clean
-        yay -Sc --noconfirm
-    fi
-else
-    echo "Unexpected distribution: $LINUX"
-    exit 1
-fi
+}
+
+case $LINUX in
+linuxmint | ubuntu) updateUbuntu ;;
+manjarolinux | arch) updateArch ;;
+*) echo "Unexpected linux distribution: $LINUX" && exit 1 ;;
+esac
