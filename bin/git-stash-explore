@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Select git stash and apply
+# Dependencies: fzf, cut, xargs, git
+
+stash=$(
+    git stash list |
+        fzf --ansi --no-sort --reverse \
+            --preview="echo {} | cut -d':' -f1 | xargs git stash show -p" \
+            --preview-window='down:85%' |
+        cut -d ':' -f 1
+)
+
+[ -z "$stash" ] && exit 1
+git stash apply "$stash"

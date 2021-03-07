@@ -29,6 +29,8 @@
     s = status
     setup-fork = remote-setup-fork
     st = status
+    stash-find = stash-explore
+    stash-fzf = stash-explore
     sw = switch
     tpush = push
     track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
