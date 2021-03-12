@@ -197,6 +197,9 @@ myKeys nScreens conf@XConfig { modMask = modMask, terminal = terminal, workspace
        , ((controlMask, xK_F3)                , sendKey controlMask xK_d)
        , ((controlMask, xK_F4)                , typeText "¯\\_(ツ)_/¯")
        , ((controlMask, xK_F6)                , typeText "(┛ಠ_ಠ)┛彡┻━┻")
+       , ((nothing, xF86XK_AudioMute)         , spawn "pulseaudio-ctl mute")
+       , ((nothing, xF86XK_AudioRaiseVolume)  , spawn "pulseaudio-ctl up")
+       , ((nothing, xF86XK_AudioLowerVolume)  , spawn "pulseaudio-ctl down")
        ]
     ++ [ ((modifier, key), action workspace)
        | (workspace, key   ) <- zip workspaces [xK_1 .. xK_6]
