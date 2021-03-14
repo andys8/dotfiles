@@ -186,6 +186,8 @@ noremap! <C-h> <C-w>
 let g:startify_files_number = 5
 let g:startify_change_to_dir = 0
 let startify_custom_header = split(system('toilet -f pagga " VIM Editor"'), '\n')
+let g:startify_enable_special = 0
+autocmd User Startified nmap <buffer> e <leader>e
 
 let g:startify_lists = [
       \ {'type': 'files', 'header': ['   Recently']},
