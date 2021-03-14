@@ -48,6 +48,11 @@ if [ -z "$(pgrep unclutter)" ]; then
     unclutter &
 fi
 
+# Keyboard mouse navigation
+if [ -z "$(pgrep -f keynav)" ]; then
+    keynav &
+fi
+
 # Keyboard layout: German, no dead keys
 setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
