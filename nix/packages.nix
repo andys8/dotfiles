@@ -62,7 +62,6 @@ in
     xdo # x tool used in scripts
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
-    yarn # alternative node package manager
     zip # compress to zip
   ]
 ) ++ (
@@ -121,6 +120,7 @@ in
     ueberzug # draw images in terminal
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
+    yarn # alternative node package manager
     ytop # top/htop replacement
     zstd # compress tool used for .std
   ]
