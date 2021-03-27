@@ -32,6 +32,7 @@ in
     iotop # io usage
     jq # json processor
     keynav # keyboard mouse navigation
+    languagetool # language tool like grammarly
     lsof # list open files/ports
     lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer

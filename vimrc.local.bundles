@@ -68,3 +68,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Haskell Hoogle
 Plug 'monkoose/fzf-hoogle.vim', { 'for' : 'haskell' }
+
+" Language Tool (:LanguageToolCheck)
+Plug 'dpelle/vim-LanguageTool'
