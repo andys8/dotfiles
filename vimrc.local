@@ -403,6 +403,9 @@ let g:purescript_indent_where = 0
 
 " Language tool
 let g:languagetool_cmd='languagetool-commandline'
+let g:languagetool_disable_rules='COMMA_PARENTHESIS_WHITESPACE,DASH_RULE,EN_QUOTES,WHITESPACE_RULE,ARROWS'
+command English set spelllang=en
+command German set spelllang=de
 
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
