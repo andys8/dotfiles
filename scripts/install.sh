@@ -35,8 +35,6 @@ section "Update stack"
 ~/dotfiles/scripts/update-stack.sh
 section "Update haskell-language-server"
 ~/dotfiles/scripts/update-haskell-language-server.sh
-section "Update purescript-language-server"
-~/dotfiles/scripts/update-purescript-language-server.sh
 section "Update ranger plugins"
 ~/dotfiles/scripts/update-ranger.sh
 section "Update htop with vim bindings"
