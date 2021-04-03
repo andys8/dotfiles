@@ -11,6 +11,7 @@ in
     asciiquarium # terminal aquarium animation
     autorandr # xrandr monitor profiles
     awscli2 # amazon web services
+    baobab # disk usage graphical
     bc # calculator
     cabal2nix # Convert cabal files to nix
     chafa # preview images in terminal
