@@ -3,8 +3,7 @@ set -euo pipefail
 
 REPO=haskell/haskell-language-server
 # Rev can be commit or version "x.x.x"
-# Update to lsp-1.2
-REV=6d1f1a55e39a9fd905bea13d6144125fcb42a594
+REV=1.1.0
 FOLDER="$HOME/.cache/haskell-language-server-install"
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
