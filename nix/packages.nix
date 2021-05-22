@@ -105,7 +105,7 @@ in
     meld # git merge tool (graphical)
     mpv # video player
     nixpkgs-fmt # format nix
-    nodejs-15_x # nodejs and npm
+    nodejs-16_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     python39Packages.cfn-lint # cloudformation linter
