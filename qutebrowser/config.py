@@ -784,7 +784,10 @@ c.content.javascript.can_access_clipboard = True
 ##   - true
 ##   - false
 ##   - ask
-c.content.notifications.enabled = False
+if type(c.content.notifications) == str:
+    c.content.notifications = False
+else:
+    c.content.notifications.enabled = False
 
 ## Allow pdf.js to view PDF files in the browser. Note that the files can
 ## still be downloaded by clicking the download button in the pdf.js
