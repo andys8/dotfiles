@@ -28,7 +28,7 @@ else
 fi
 
 echo "Delete previous hls binaries"
-rm -v "$(stack path --local-bin)"/haskell-language-server-* || true
+rm -v "$(stack path --local-bin)"/haskell-language-server* || true
 
 cd "$FOLDER"
 git fetch
