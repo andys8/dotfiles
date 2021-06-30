@@ -1,7 +1,7 @@
 [core]
     autocrlf = input
     editor = vim
-    pager = delta
+    pager = diff-so-fancy | less --tabs=4 -RFX
     hooksPath = ~/.config/git/hooks
     excludesFile = ~/.config/git/ignore
 [alias]
@@ -19,6 +19,7 @@
     diff-delta = diff
     diff-so-fancy = diff
     diff1 = diff
+    diff2 = diff
     f = fetch
     fe = fetch
     l = log --graph --date=short
@@ -47,6 +48,7 @@
     diff-delta = delta
     diff-so-fancy = diff-so-fancy | less --tabs=4 -RFX
     diff1 = diff-so-fancy | less --tabs=4 -RFX
+    diff2 = delta
 [diff]
     tool = vimdiff
     algorithm = patience
