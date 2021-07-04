@@ -1,10 +1,9 @@
 let
   unstable = import <nixpkgs> { };
-  release2003 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.03.tar.gz") { };
-  release2009 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz") { };
+  release2105 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz") { };
 in
 (
-  with release2009; [
+  with release2105; [
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
     asciinema # record terminal
@@ -34,6 +33,7 @@ in
     jq # json processor
     keynav # keyboard mouse navigation
     languagetool # language tool like grammarly
+    lsd # ls replacement
     lsof # list open files/ports
     lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer
@@ -65,10 +65,6 @@ in
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     zip # compress to zip
-  ]
-) ++ (
-  with release2003; [
-    lsd # ls replacement
   ]
 ) ++ (
   with unstable; [
