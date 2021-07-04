@@ -146,6 +146,10 @@ ln -sf ~/dotfiles/nix/config.nix ~/.nixpkgs/config.nix
 mkdir -p ~/.config/zathura
 ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 
+# lsd
+mkdir -p ~/.config/lsd
+ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
+
 # Purty
 # Use purty binary directly, avoid node spawning a process (performance)
 ln -sf ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty

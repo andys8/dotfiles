@@ -1,0 +1,4 @@
+icons:
+  when: auto
+  theme: fancy
+  separator: "  "
