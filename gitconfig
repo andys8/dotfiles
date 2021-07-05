@@ -64,7 +64,6 @@
     missingCommitsCheck = error
     autoStash = true
     instructionFormat = %s (%an)
-    instructionFormat = %s (%an)
 [mergetool]
     prompt = false
     keepbackup = false
