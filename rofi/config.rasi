@@ -1,0 +1,10 @@
+configuration {
+	bw: 2;
+	padding: 8;
+	separator-style: "solid";
+	scrollbar-width: 2;
+	color-normal: "#3a3c4e, #e9e9f4, #3a3c4e, #282936, #f7f7fb";
+	color-urgent: "#3a3c4e, #ea51b2, #3a3c4e, #282936, #ea51b2";
+	color-active: "#3a3c4e, #62d6e8, #3a3c4e, #282936, #62d6e8";
+	color-window: "#3a3c4e, #4d4f68, #4d4f68";
+}
