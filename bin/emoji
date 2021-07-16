@@ -1,9 +1,5 @@
 #!/bin/bash
 # Emoji rofi selection
 
-EMOJILIST="https://raw.githubusercontent.com/andys8/rofi-emoji-lists/master/full-list.txt"
-FILE="$HOME/.cache/emojis.txt"
-FONT="Noto Color Emoji 17"
-
-[ -f "$FILE" ] || curl --silent "$EMOJILIST" --output "$FILE"
-rofi -dmenu -markup-rows -i -columns 10 -lines 10 -p 'Emoji' -font "$FONT" <"$FILE" | awk '{ print $NF }' | tr -d '\n' | xclip -sel clip
+font="Noto Color Emoji 14"
+rofi -modi emoji -show emoji -font "$font"

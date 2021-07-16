@@ -1,6 +1,5 @@
 let
   unstable = import <nixpkgs> { };
-  release2009 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/20.09.tar.gz") { };
   release2105 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz") { };
 in
 (
@@ -45,6 +44,7 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     pass-otp # pass otp for token
+    (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     sbt # sbt package manager
     scala # scala compiler
     screenfetch # system information
@@ -65,10 +65,6 @@ in
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     zip # compress to zip
-  ]
-) ++ (
-  with release2009; [
-    rofi # dmenu replacement (1.5.4 because emoji script not updated)
   ]
 ) ++ (
   with unstable; [
