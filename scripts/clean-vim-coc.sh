@@ -9,7 +9,7 @@ expected=$(grep -ioh "'coc-.*'" $vimrcFile | tr -d "'" | sort)
 actual=$(jq -r ".dependencies | keys | sort | .[]" "$cocExtensionsPath/package.json")
 
 if [[ "$expected" = "$actual" ]]; then
-    echo "Expected extensions and wanted extensions are matching"
+    echo "All good. Expected extensions and wanted extensions are matching."
 else
     echo "Difference between expected and wanted extensions."
     diff <(echo "$expected") <(echo "$actual") || true
