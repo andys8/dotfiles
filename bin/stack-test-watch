@@ -1,0 +1,9 @@
+#!/bin/bash
+# Select a stack (haskell) test to run
+# Usage: stack-test-watch [query]
+# Dependencies: grep, cut, fzf, stack
+
+testregex="(spec = |  )describe \"([a-zA-Z0-9 \.]+)\""
+testname=$(grep -r --include="*.hs" -oP "$testregex" . | cut -d'"' -f2 | fzf -0 -1 -q "$1")
+[ -z "$testname" ] && exit 1
+stack test --file-watch --test-arguments="--match \"/$testname/"\"
