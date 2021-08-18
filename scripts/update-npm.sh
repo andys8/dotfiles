@@ -17,8 +17,9 @@ packages=(
     http-server                       # spin up http server in directory
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
-    purescript-language-server        # purescript ls
     purescript                        # purescript compiler (purs)
+    purescript-language-server        # purescript ls
+    purs-tidy                         # alternative purescript formatter
     purty                             # purescript formatter
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
