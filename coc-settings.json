@@ -75,7 +75,7 @@
           "pursExe": "purs",
           "autocompleteLimit": 8,
           "addSpagoSources": true,
-          "formatter": "purty"
+          "formatter": "purs-tidy"
         }
       }
     }
