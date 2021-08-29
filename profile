@@ -60,6 +60,7 @@ export READER=zathura
 export LANG=en_US.UTF-8
 export XCURSOR_THEME=xcursor-breeze
 export XCURSOR_PATH=/usr/share/icons:~/.icons:~/.nix-profile/share/icons/:$XCURSOR_PATH
+export RANGER_DEVICONS_SEPARATOR="  "
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then

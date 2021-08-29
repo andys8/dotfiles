@@ -19,7 +19,7 @@ function install_plugin() {
 mkdir -p $PLUGIN_DIR
 
 # devicons
-install_plugin https://github.com/andys8/ranger_devicons $PLUGIN_DIR/ranger-devicons
+install_plugin https://github.com/alexanderjeurissen/ranger_devicons $PLUGIN_DIR/ranger-devicons
 
 # autojump
 install_plugin https://github.com/fdw/ranger-autojump $PLUGIN_DIR/ranger-autojump
