@@ -6,6 +6,7 @@
     excludesFile = ~/.config/git/ignore
 [alias]
     a = add
+    aa = add .
     amend = commit -a --amend --no-edit
     b = brunch
     br = branch

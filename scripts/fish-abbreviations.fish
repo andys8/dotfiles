@@ -29,6 +29,7 @@ abbr -a -U en 'trans de:en'
 abbr -a -U fvim 'fzf | xargs -ro vim'
 abbr -a -U g git
 abbr -a -U ga 'git add'
+abbr -a -U gaa 'git add .'
 abbr -a -U gb 'git brunch'
 abbr -a -U gc 'git commit'
 abbr -a -U gca 'git commit -a'
