@@ -315,6 +315,7 @@ let g:gitgutter_sign_modified_removed='±'
 let g:gitgutter_preview_win_floating = 1
 
 command! -nargs=0 GitUndo :GitGutterUndoHunk
+command! -nargs=0 GitBrunch :! git-brunch
 command! -nargs=0 GBrunch :! git-brunch
 command! -nargs=0 Gbrunch :! git-brunch
 command! -nargs=0 Brunch :! git-brunch
