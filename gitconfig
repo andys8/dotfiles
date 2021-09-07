@@ -112,3 +112,5 @@
     protocol = https
 [include]
     path = ~/.gitconfig.machine
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
