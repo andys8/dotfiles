@@ -19,7 +19,7 @@ packages=(
     pscid                             # purescript compiler daemon (like ghcid)
     purescript                        # purescript compiler (purs)
     purescript-language-server        # purescript ls
-    purs-tidy                         # alternative purescript formatter
+    purs-tidy@0.4.6                   # alternative purescript formatter
     purty                             # purescript formatter
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
