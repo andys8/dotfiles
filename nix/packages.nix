@@ -31,6 +31,7 @@ in
     hasmail # mail imap notifier for new mails
     iotop # io usage
     jq # json processor
+    jwt-cli # encode/decode jwts
     keynav # keyboard mouse navigation
     languagetool # language tool like grammarly
     lsd # ls replacement
