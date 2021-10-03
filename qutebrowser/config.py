@@ -1667,6 +1667,8 @@ c.url.searchengines = {
     '?dd': 'https://duckduckgo.com/?q={}',
     '?giphy': 'https://giphy.com/search/{}',
     '?github': 'https://github.com/search?type=Repositories&q={}',
+    '?githubhaskell': 'https://github.com/search?l=haskell&type=Code&q={}',
+    '?githubpurescript': 'https://github.com/search?l=purescript&type=Code&q={}',
     '?hackage': 'https://hackage.haskell.org/packages/search?terms={}',
     '?hoogle': 'https://hoogle.haskell.org/?hoogle={}',
     '?nix': 'https://search.nixos.org/packages?query={}',
