@@ -34,7 +34,7 @@
     "haskell-language-server": {
       "enable": true,
       "command": "haskell-language-server-wrapper",
-      "args": ["--lsp"],
+      "args": ["--lsp", "--logfile", "/tmp/hls.log"],
       "filetypes": ["haskell", "lhaskell"],
       "rootPatterns": [
         "*.cabal",
@@ -44,12 +44,17 @@
         "hie.yaml"
       ],
       "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true,
+        "haskell": {
+          "checkProject": false,
+          "checkParents": "NeverCheck",
           "maxNumberOfProblems": 10,
           "maxCompletions": 10,
           "completionSnippetsOn": true,
-          "formattingProvider": "brittany"
+          "formattingProvider": "brittany",
+          "plugin": {
+            "hlint": { "globalOn": true },
+            "tactics": { "globalOn": false }
+          }
         }
       }
     },
