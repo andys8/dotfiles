@@ -38,6 +38,7 @@ in
     lsof # list open files/ports
     lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer
+    (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     mdp # markdown presentation
     ncdu # disk usage
     neofetch # system information
@@ -45,7 +46,7 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     pass-otp # pass otp for token
-    (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
+    robo3t # mongodb gui
     sbt # sbt package manager
     scala # scala compiler
     screenfetch # system information
