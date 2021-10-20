@@ -1741,6 +1741,7 @@ c.bindings.commands = {
         '<Ctrl-i>': 'forward',
         '<Ctrl-o>': 'back',
         '<Ctrl-p>': 'lastpass',
+        '<Ctrl-a>': 'mode-enter passthrough',
         '=': 'zoom',
         '?': 'set-cmd-text :open -t ?',
         'F': 'hint links tab-bg',
