@@ -5,7 +5,7 @@
   "coc.preferences.rootPatterns": ["package.json", ".git"],
   "diagnostic.enableMessage": "always",
   "diagnostic.errorSign": "",
-  "diagnostic.maxWindowHeight": 30,
+  "diagnostic.floatConfig": { "maxHeight": 30 },
   "diagnostic.messageDelay": 800,
   "diagnostic.messageTarget": "float",
   "diagnostic.refreshOnInsertMode": false,
