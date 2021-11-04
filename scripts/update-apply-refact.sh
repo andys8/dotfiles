@@ -11,7 +11,7 @@ command -v "refactor" >/dev/null 2>&1 && {
 # install with stack
 echo ">> Installing apply-refact with stack"
 cd /tmp
-stack install apply-refact --resolver nightly-2020-08-03
+stack install apply-refact --resolver lts-18.12
 refactor --version
 echo ""
 echo ">> apply-refact (refactor) installed"
