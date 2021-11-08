@@ -28,6 +28,7 @@ in
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
     haskellPackages.hoogle # function documentation
+    haskellPackages.fourmolu # haskell formatter
     hasmail # mail imap notifier for new mails
     iotop # io usage
     jq # json processor

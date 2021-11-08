@@ -50,7 +50,7 @@
           "maxNumberOfProblems": 10,
           "maxCompletions": 10,
           "completionSnippetsOn": true,
-          "formattingProvider": "brittany",
+          "formattingProvider": "fourmolu",
           "plugin": {
             "hlint": { "globalOn": true },
             "tactics": { "globalOn": false }
