@@ -3,7 +3,7 @@ set -euo pipefail
 
 REPO=haskell/haskell-language-server
 # Rev can be commit or version "x.x.x"
-REV=1.4.0
+REV=1.5.0
 FOLDER="$HOME/.cache/haskell-language-server-install"
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
@@ -35,6 +35,6 @@ git fetch
 git checkout $REV || true
 git pull || true
 git submodule update
-stack ./install.hs "hls-8.6.5" "hls-8.8.4" "hls-8.10.4"  "hls-8.10.7"
+stack ./install.hs "hls-8.6.5" "hls-8.8.4" "hls-8.10.7"
 echo ">> haskell-language-server ($REV) installed with stack"
 exit 0
