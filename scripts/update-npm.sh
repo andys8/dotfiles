@@ -15,6 +15,7 @@ packages=(
     elm-json                          # update and change elm.json files
     fx                                # json viewer
     http-server                       # spin up http server in directory
+    npm-check-updates                 # npm update depndencies
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
     purescript                        # purescript compiler (purs)
