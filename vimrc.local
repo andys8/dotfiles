@@ -384,7 +384,7 @@ nmap <leader>o :Ranger<CR>
 let g:presenting_top_margin = 2
 
 " Haskell
-au BufWritePre *.hs call CocAction('format')
+" au BufWritePre *.hs call CocAction('format')
 
 " Alex, Happy (Parser)
 au BufRead,BufNewFile *.x set filetype=alex

@@ -45,15 +45,34 @@
       ],
       "initializationOptions": {
         "haskell": {
-          "checkProject": false,
           "checkParents": "NeverCheck",
-          "maxNumberOfProblems": 10,
-          "maxCompletions": 10,
-          "completionSnippetsOn": true,
+          "checkProject": false,
+          "diagnosticsOnChange": true,
+          "formatOnImportOn": true,
           "formattingProvider": "fourmolu",
+          "hlintOn": true,
+          "liquidOn": false,
+          "maxCompletions": 10,
           "plugin": {
             "hlint": { "globalOn": true },
-            "tactics": { "globalOn": false }
+            "splice": { "globalOn": false },
+            "eval": { "globalOn": false },
+            "haddockComments": { "globalOn": false },
+            "ghcide-type-lenses": { "globalOn": false },
+            "importLens": {
+              "codeLensOn": false,
+              "codeActionsOn": true
+            },
+            "refineImports": {
+              "codeLensOn": false,
+              "codeActionsOn": true
+            },
+            "tactics": {
+              "globalOn": false,
+              "hoverOn": false,
+              "codeLensOn": false,
+              "codeActionsOn": false
+            }
           }
         }
       }
