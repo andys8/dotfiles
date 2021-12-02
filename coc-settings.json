@@ -1,7 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.floatActions": false,
-  "coc.preferences.formatOnSaveFiletypes": ["elm"],
+  "coc.preferences.formatOnSaveFiletypes": ["elm", "haskell"],
   "coc.preferences.rootPatterns": ["package.json", ".git"],
   "diagnostic.enableMessage": "always",
   "diagnostic.errorSign": "",
@@ -45,7 +45,7 @@
       ],
       "initializationOptions": {
         "haskell": {
-          "checkParents": "NeverCheck",
+          "checkParents": "CheckOnSave",
           "checkProject": false,
           "diagnosticsOnChange": true,
           "formatOnImportOn": true,
