@@ -19,7 +19,7 @@ packages=(
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
     purescript                        # purescript compiler (purs)
-    purescript-language-server        # purescript ls
+    purescript-language-server@0.15.8 # purescript ls
     purs-tidy                         # alternative purescript formatter
     purty                             # purescript formatter
     qrcode-terminal                   # Encode text as QR code
