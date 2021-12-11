@@ -27,9 +27,9 @@ fi
 
 # Docker
 if [ -x "$(command -v "docker")" ]; then
-    echo ">> Cleaning docker"
-    docker container prune -f --filter "until=240h"
-    docker image prune -f -a --filter "until=240h"
+    echo ">> Cleaning docker (3 months)"
+    docker container prune -f --filter "until=4380h"
+    docker image prune -f -a --filter "until=4380h"
 fi
 
 # Autojump
