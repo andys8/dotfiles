@@ -107,6 +107,10 @@ command Reload source $MYVIMRC
 command Config :e ~/dotfiles/vimrc.local
 command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 
+" uuid
+command Uuid :r !uuidgen
+command UUID :r !uuidgen
+
 " Abbreviations
 cabbrev Ci CocInfo
 cabbrev ci CocInfo
