@@ -1,10 +1,12 @@
 #!/bin/bash
 set -euo pipefail
+# Usage: ./update-haskell-language-server.sh [-f/--force]
 
 REPO=haskell/haskell-language-server
 # Rev can be commit or version "x.x.x"
 REV=1.5.1
 FOLDER="$HOME/.cache/haskell-language-server-install"
+FLAG=${1:-}
 
 command -v "haskell-language-server" >/dev/null 2>&1 && {
     VERSION=$(haskell-language-server --version)
@@ -13,7 +15,11 @@ command -v "haskell-language-server" >/dev/null 2>&1 && {
     echo "Actual: $VERSION"
     if [[ $VERSION =~ $REV ]]; then
         echo "-> Version is up-to-date"
-        exit 0
+        if [[ $FLAG == "-f" ]] || [[ "$FLAG" == "--force" ]]; then
+            echo "-> Force Update"
+        else
+            exit 0
+        fi
     else
         echo "-> Version is outdated"
     fi
