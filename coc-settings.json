@@ -1,7 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.floatActions": false,
-  "coc.preferences.formatOnSaveFiletypes": ["elm", "haskell"],
+  "coc.preferences.formatOnSaveFiletypes": ["elm"],
   "coc.preferences.rootPatterns": ["package.json", ".git"],
   "diagnostic.enableMessage": "always",
   "diagnostic.errorSign": "",
