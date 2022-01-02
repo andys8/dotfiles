@@ -4,6 +4,7 @@ let
 in
 (
   with release2105; [
+    (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
     asciinema # record terminal
@@ -27,19 +28,19 @@ in
     gcolor3 # color picker
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
-    haskellPackages.hoogle # function documentation
     haskellPackages.fourmolu # haskell formatter
+    haskellPackages.hoogle # function documentation
     hasmail # mail imap notifier for new mails
     iotop # io usage
     jq # json processor
     jwt-cli # encode/decode jwts
     keynav # keyboard mouse navigation
     languagetool # language tool like grammarly
+    libreoffice # office
     lsd # ls replacement
     lsof # list open files/ports
     lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer
-    (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     mdp # markdown presentation
     ncdu # disk usage
     neofetch # system information
