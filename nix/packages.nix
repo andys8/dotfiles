@@ -48,6 +48,7 @@ in
     nitrogen # Wallpaper
     nix # nix package manager
     pass-otp # pass otp for token
+    python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
     sbt # sbt package manager
     scala # scala compiler
@@ -108,7 +109,6 @@ in
     nodejs-16_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
-    python39Packages.cfn-lint # cloudformation linter
     ranger # file manager
     rclone # copy cloud to cloud
     ripgrep # fast grep
