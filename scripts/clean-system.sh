@@ -32,6 +32,12 @@ if [ -x "$(command -v "docker")" ]; then
     docker image prune -f -a --filter "until=4380h"
 fi
 
+# Yarn
+if [ -x "$(command -v "yarn")" ]; then
+    echo ">> Cleaning yarn"
+    yarn cache clean
+fi
+
 # Autojump
 echo ">> Cleaning autojump (j)"
 autojump --purge
