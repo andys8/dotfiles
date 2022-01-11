@@ -110,6 +110,9 @@ command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 command Uuid :r !uuidgen
 command UUID :r !uuidgen
 
+" Ticket
+command Ticket :.!ticket
+
 " Abbreviations
 cabbrev Ci CocInfo
 cabbrev ci CocInfo
