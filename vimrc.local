@@ -250,15 +250,14 @@ nmap <silent> <leader>S <Plug>(coc-fix-current)
 nmap <silent> <leader>a <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>d <Plug>(coc-definition)
-nmap <silent> K         :call CocAction('doHover')<CR>
-nmap <silent> <leader>g :call CocAction('doHover')<CR>
+nnoremap <silent> <leader>g  :call <SID>show_documentation()<CR>
 nmap <silent> <leader>G <Plug>(coc-diagnostic-info)
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
 xmap <silent> <leader>p <Plug>(coc-format-selected)
-nnoremap <silent> <leader>O :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+nnoremap <silent> <leader>O :call CocActionAsync('runCommand', 'editor.action.organizeImport')<CR>
 nnoremap <silent> <nowait> <leader>l :<C-u>CocList diagnostics<CR>
 nnoremap <silent> <nowait> <leader>L :<C-u>CocList -I symbols<cr>
 
@@ -272,6 +271,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+function! s:show_documentation()
+  if (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
 endfunction
 
 if exists('*complete_info')
@@ -390,7 +397,7 @@ nmap <leader>o :Ranger<CR>
 let g:presenting_top_margin = 2
 
 " Haskell
-" au BufWritePre *.hs call CocAction('format')
+" au BufWritePre *.hs call CocActionAsync('format')
 
 " Alex, Happy (Parser)
 au BufRead,BufNewFile *.x set filetype=alex
