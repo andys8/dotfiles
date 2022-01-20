@@ -4,5 +4,5 @@
 BRANCH_NAME=$(git symbolic-ref --short HEAD 2>/dev/null)
 
 if [[ "$BRANCH_NAME" =~ ([A-Z]{2,4}-[[:digit:]]+) ]]; then
-    echo "${BASH_REMATCH[1]}"
+    echo "[${BASH_REMATCH[1]}] "
 fi
