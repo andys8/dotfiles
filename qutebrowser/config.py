@@ -1753,9 +1753,10 @@ c.bindings.commands = {
         '<Ctrl-0>': 'zoom',
         '<Ctrl-e>': 'edit-text',
         '<Ctrl-i>': 'edit-text',
-        '<Ctrl-p>': 'lastpass',
+        '<Ctrl-p>': 'hint --first inputs ;; spawn --userscript qute-lastpass',
+        '<Ctrl-Shift-p>': 'spawn --userscript qute-lastpass --password-only',
+        '<Ctrl-u>': 'spawn --userscript qute-lastpass --username-only',
         '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
-        '<Ctrl-u>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
         '<Escape>': 'mode-leave ;; jseval -q document.activeElement.blur()'
     }
 }
