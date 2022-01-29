@@ -74,8 +74,6 @@ ln -sf ~/dotfiles/bin/asciinemagif ~/bin/asciinemagif
 ln -sf ~/dotfiles/bin/devour ~/bin/devour
 ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
 ln -sf ~/dotfiles/bin/explainshell ~/bin/explainshell
-ln -sf ~/dotfiles/bin/ghc ~/bin/ghc
-ln -sf ~/dotfiles/bin/ghci ~/bin/ghci
 ln -sf ~/dotfiles/bin/gifgen ~/bin/gifgen
 ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
 ln -sf ~/dotfiles/bin/git-stash-explore ~/bin/git-stash-explore
