@@ -9,6 +9,7 @@ commands=(
     fc-list     # list fonts
     find        # used in scripts
     fish        # shell
+    ghcup       # installer for haskell
     lightdm     # Login display manager
     nix-channel # nix
     nix-env     # nix

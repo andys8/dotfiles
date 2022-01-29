@@ -45,3 +45,9 @@ autojump --purge
 # Vim CoC
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
+
+# GHCup
+if [ -x "$(command -v "ghcup")" ]; then
+    echo ">> Cleaning garbage collection"
+    ghcup gc
+fi

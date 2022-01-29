@@ -31,12 +31,17 @@ if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
     source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
+# ghcup
+if [[ ":$PATH:" != *":$HOME/.ghcup/bin:"* ]]; then
+    export PATH="$HOME/.ghcup/bin:$PATH"
+fi
+
 # ~/bin
 if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
     export PATH="$HOME/bin:$PATH"
 fi
 
-# ~/bin
+# ~/dotfiles/scripts
 if [[ ":$PATH:" != *":$HOME/dotfiles/scripts:"* ]]; then
     export PATH="$HOME/dotfiles/scripts:$PATH"
 fi

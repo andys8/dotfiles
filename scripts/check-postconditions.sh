@@ -3,13 +3,15 @@ set -euo pipefail
 
 # Asserted commands (should be installed by script)
 assertCommands=(
+    cabal                           # haskell tool
     dunstctl                        # dunst control
     elm                             # elm compiler
     elm-json                        # elm installation helper
     elm-test                        # elm test runner
     ffmpeg                          # convert videos (used in scripts)
-    haskell-language-server-wrapper # haskell language server
+    ghc                             # haskell compiler
     git-brunch                      # branch change tool
+    haskell-language-server-wrapper # haskell language server
     hlint                           # haskell linter
     htop                            # htop (hopefully with vim bindings)
     lock                            # bin/lock file is on the path
@@ -18,6 +20,7 @@ assertCommands=(
     qrcode-terminal                 # show qr codes
     refactor                        # apply-refact (for hlint)
     st                              # suckless terminal
+    stack                           # haskell tool
     tsc                             # typescript compiler
 )
 
@@ -25,7 +28,6 @@ assertCommands=(
 commandsOptional=(
     alacritty    # terminal-emulator
     btm          # bottom process monitor
-    cabal        # haskell tool
     chromium     # chromium web browser
     idea         # intellij ide
     java         # java runtime
