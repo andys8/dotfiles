@@ -4,6 +4,7 @@ set -euo pipefail
 
 echo ">> Installing cabal"
 ghcup install cabal latest
+cabal update
 
 echo ">> Installing stack"
 ghcup install stack latest
