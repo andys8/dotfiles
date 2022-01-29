@@ -24,7 +24,6 @@ commands=(
     qutebrowser # Keyboard based webbrowser
     setxkbmap   # used in scripts
     shuf        # used in shell scripts
-    stack       # haskell build tool
     tar         # archive
     tr          # used in shell scripts
     vim         # editor
