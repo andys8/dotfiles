@@ -7,7 +7,6 @@ command -v "htop" >/dev/null 2>&1 && {
     exit 0
 }
 
-
 REV=3.0.3vim
 TARBALL=https://github.com/KoffeinFlummi/htop-vim/tarball/$REV
 TMP_DIR=/tmp/htop-vim-installation-$REV
