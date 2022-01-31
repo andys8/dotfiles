@@ -4,6 +4,7 @@
 
 branch=$(
     jira ls |
+        sort -r |
         fzf |
         tr "[:upper:]" "[:lower:]" |
         tr -cd "[:alnum:]- " |
