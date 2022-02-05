@@ -17,7 +17,7 @@ ghcup install ghc 8.10.7 --set
 echo ">> Installing haskell-language-server"
 ghcup compile hls \
     -j 12 \
-    -v 1.6.0.0 \
+    -v 1.6.1.0 \
     --ghc 8.10.7 \
     --ghc 8.8.4 \
     -- --ghc-options='-dynamic'
