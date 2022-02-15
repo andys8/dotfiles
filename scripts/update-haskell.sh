@@ -14,14 +14,19 @@ ghcup install ghc 9.2.1
 ghcup install ghc 8.8.4
 ghcup install ghc 8.10.7 --set
 
-echo ">> Installing haskell-language-server"
-ghcup compile hls \
-    -j 12 \
-    -v 1.6.1.0 \
-    --ghc 8.10.7 \
-    --ghc 8.8.4 \
-    -- --ghc-options='-dynamic'
+echo ">> Checking haskell-language-server"
+hlsVersion="1.6.1.0"
 
+[[ $(haskell-language-server-wrapper --numeric-version) = "$hlsVersion" ]] || {
+    echo ">> Installing haskell-language-server"
+    ghcup compile hls \
+        -v $hlsVersion \
+        --ghc 8.10.7 \
+        --ghc 8.8.4 \
+        -- --ghc-options='-dynamic'
+}
+
+echo ">> Randomly checking hoogle"
 if [ $((RANDOM % 10)) -eq 0 ]; then
     echo ">> Update hoogle"
     hoogle generate
