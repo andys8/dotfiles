@@ -24,6 +24,7 @@
     f = fetch
     fe = fetch
     l = log --graph --date=short
+    logfile = log --follow -p --
     pl = pull
     please = push --force-with-lease
     prevbranch = previousbranch
