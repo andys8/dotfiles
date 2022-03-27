@@ -77,7 +77,7 @@ abbr -a -U rm 'trash'
 abbr -a -U stacktest 'stack-test'
 abbr -a -U stb 'stack build --test --no-run-tests'
 abbr -a -U stbw 'stack build --test --no-run-tests --file-watch'
-abbr -a -U sti 'stack install'
+abbr -a -U sti 'stack build --test --no-run-tests --copy-bins'
 abbr -a -U stt 'stack-test'
 abbr -a -U suspend 'systemctl suspend'
 abbr -a -U t tig
