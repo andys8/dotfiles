@@ -124,7 +124,6 @@ in
     xmobar # status bar for xmonad
     yarn # alternative node package manager
     ytop # top/htop replacement
-    zstd # compress tool used for .std
   ]
 ) ++ [
   (import ./st.nix)
