@@ -15,7 +15,7 @@ ghcup install ghc 8.8.4
 ghcup install ghc 8.10.7 --set
 
 echo ">> Checking haskell-language-server"
-hlsVersion="1.6.1.0"
+hlsVersion="1.7.0.0"
 
 [[ $(haskell-language-server-wrapper --numeric-version) = "$hlsVersion" ]] || {
     echo ">> Installing haskell-language-server"
