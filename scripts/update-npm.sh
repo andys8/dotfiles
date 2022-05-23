@@ -18,7 +18,7 @@ packages=(
     npm-check-updates                 # npm update depndencies
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
-    purescript                        # purescript compiler (purs)
+    purescript@0.14.9                 # purescript compiler (purs)
     purescript-language-server        # purescript ls
     purs-tidy                         # alternative purescript formatter
     purty                             # purescript formatter
