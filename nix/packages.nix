@@ -17,6 +17,7 @@ in
     chafa # preview images in terminal
     coursier # scala build tool
     diskus # disk usage
+    dragon-drop # drag and drop
     dtrx # extract files
     elmPackages.elm # compiler
     elmPackages.elm-format # elm pretty print
@@ -80,7 +81,6 @@ in
     cargo # rust package manager
     ctop # top for containers
     dhall # dhall (format)
-    dragon-drop # drag and drop
     duf # disk usage
     dunst # notification daemon
     entr # watch files
