@@ -29,6 +29,6 @@ stdenv.mkDerivation rec {
     description = "suckless terminal (andys8 fork)";
     license = licenses.mit;
     platforms = platforms.linux;
-    maintainers = maintainers;
+    maintainers = with maintainers; [ andys8 ];
   };
 }
