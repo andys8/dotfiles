@@ -56,6 +56,9 @@ c.aliases = {
 ##   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
 c.backend = 'webengine'
 
+## Fix for crashes
+c.qt.workarounds.remove_service_workers = True
+
 ## This setting can be used to map keys to other keys. When the key used
 ## as dictionary-key is pressed, the binding for the key used as
 ## dictionary-value is invoked instead. This is useful for global
