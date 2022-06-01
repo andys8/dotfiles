@@ -7,7 +7,7 @@ testregex="\s*describe \"(?P<foo>[a-zA-Z0-9 \.]+)\""
 testname=$(
     ack "$testregex" --haskell --output '$+' -m 1 |
         cut -d':' -f1,3 |
-        fzf -0 -1 -q "$1" |
+        fzf -0 -1 -e -q "$1" |
         cut -d':' -f2
 )
 [ -z "$testname" ] && exit 1
