@@ -43,6 +43,7 @@
         "package.yaml",
         "hie.yaml"
       ],
+      "disabledFeatures": ["progress", "codeLens"],
       "initializationOptions": {
         "haskell": {
           "checkParents": "CheckOnSave",
