@@ -1759,6 +1759,7 @@ c.bindings.commands = {
         '<Ctrl-p>': 'hint --first inputs ;; spawn --userscript qute-lastpass',
         '<Ctrl-Shift-p>': 'spawn --userscript qute-lastpass --password-only',
         '<Ctrl-u>': 'spawn --userscript qute-lastpass --username-only',
+        '<Ctrl-Shift-u>': 'spawn --userscript qute-lastpass --username-only',
         '<Ctrl-s>': 'jseval document.querySelectorAll("input[type=password]").forEach(i => { i.type = "text" })',
         '<Escape>': 'mode-leave ;; jseval -q document.activeElement.blur()'
     }
