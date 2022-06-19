@@ -10,7 +10,7 @@ echo ">> Installing stack"
 ghcup install stack latest
 
 echo ">> Installing ghc"
-ghcup install ghc 9.2.2
+ghcup install ghc 9.2.3
 ghcup install ghc 8.8.4
 ghcup install ghc 8.10.7 --set
 
