@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-VERSION_MINT="2.4.0"
+VERSION_MINT="2.5.2"
 VERSION_MINT_ALL="$VERSION_MINT-1"
 
 LINUX=$(lsb_release -i -s)
