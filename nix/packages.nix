@@ -63,6 +63,7 @@ in
     tokei # count code lines
     trash-cli # rm into trash folder
     trayer # tray icons
+    udiskie # usb device automount
     unzip # extract zip
     vokoscreen # screen recorder
     watch # repeat command

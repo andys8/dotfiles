@@ -90,6 +90,7 @@ abbr -a -U tl 'toilet -t -F border -f future --gay'
 abbr -a -U todols 'todo ls'
 abbr -a -U toggle-touchpad 'touchpad-toggle'
 abbr -a -U uuid uuidgen
+abbr -a -U usb 'ranger /run/media/(whoami)'
 abbr -a -U v vim
 abbr -a -U vi vim
 abbr -a -U vimg 'vim (git diff --name-only)'

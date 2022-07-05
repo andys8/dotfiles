@@ -53,6 +53,11 @@ if [ -z "$(pgrep -f keynav)" ]; then
     keynav &
 fi
 
+# Automount usb sticks
+if [ -z "$(pgrep udiskie)" ]; then
+    udiskie --automount --smart-tray --notify &
+fi
+
 # Keyboard layout: German, no dead keys
 setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
