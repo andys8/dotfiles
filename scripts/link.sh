@@ -16,9 +16,6 @@ ln -sf ~/dotfiles/vim-snippets ~/.vim/snippets
 # Idea VIM
 ln -sf ~/dotfiles/ideavimrc ~/.ideavimrc
 
-# Ctags
-ln -sf ~/dotfiles/ctags ~/.ctags
-
 # rofi
 rm -rf ~/.config/rofi
 ln -sf ~/dotfiles/rofi ~/.config
