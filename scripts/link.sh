@@ -78,7 +78,6 @@ ln -sf ~/dotfiles/bin/gifgen ~/bin/gifgen
 ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
 ln -sf ~/dotfiles/bin/git-stash-explore ~/bin/git-stash-explore
 ln -sf ~/dotfiles/bin/gitignore ~/bin/gitignore
-ln -sf ~/dotfiles/bin/hlint-brittany ~/bin/hlint-brittany
 ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
 ln -sf ~/dotfiles/bin/i3-battery-popup ~/bin/i3-battery-popup
 ln -sf ~/dotfiles/bin/image-info ~/bin/image-info
