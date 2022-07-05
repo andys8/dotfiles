@@ -18,7 +18,6 @@ assertCommands=(
     nmt                             # network-manager-tui
     prettier                        # js/css/markdown formatter
     qrcode-terminal                 # show qr codes
-    refactor                        # apply-refact (for hlint)
     st                              # suckless terminal
     stack                           # haskell tool
     tsc                             # typescript compiler

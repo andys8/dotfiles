@@ -37,8 +37,6 @@ section "Update ranger plugins"
 ~/dotfiles/scripts/update-ranger.sh
 section "Update htop with vim bindings"
 ~/dotfiles/scripts/update-htop-vim.sh
-section "Update apply-refact"
-~/dotfiles/scripts/update-apply-refact.sh
 
 section "Run all checks"
 ~/dotfiles/scripts/check-preconditions.sh
