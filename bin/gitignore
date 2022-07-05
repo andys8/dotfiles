@@ -1,4 +1,4 @@
 #!/bin/sh
-language=$(npx gitignore -types 2>/dev/null | tail -n +2 | fzf)
+language=$(npx --yes gitignore -types 2>/dev/null | tail -n +2 | fzf)
 [ -z "$language" ] && exit 1
-npx gitignore "$language"
+npx --yes gitignore "$language"
