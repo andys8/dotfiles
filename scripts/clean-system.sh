@@ -53,5 +53,5 @@ echo ">> Cleaning symlinks"
 # GHCup
 if [ -x "$(command -v "ghcup")" ]; then
     echo ">> Cleaning garbage collection"
-    ghcup gc
+    ghcup gc --ghc-old --hls-no-ghc --cache --tmpdirs
 fi
