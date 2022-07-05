@@ -10,7 +10,7 @@ echo "Format markdown, yaml and json"
 prettier --write "**/*.{md,json,yaml,yml}"
 
 echo "Format haskell"
-brittany --write-mode inplace ./**/*.hs
+fourmolu -i ./**/*.hs
 
 echo "Format nix"
 nixpkgs-fmt .

@@ -1,3 +1,5 @@
+{-# LANGUAGE NamedFieldPuns #-}
+
 import Data.List
 import qualified Data.Map as Map
 import Data.Maybe
@@ -56,9 +58,10 @@ instance Show Workspace where
   show Workspace5 = "5 \62003 " -- "5  "
   show Workspace6 = "6 \63231 " -- "6  "
 
-myWorkspaces :: [String]
+myWorkspaces :: [WorkspaceId]
 myWorkspaces = show <$> [WorkspaceWWW ..]
 
+renderWorkspace :: String -> WorkspaceId -> String
 renderWorkspace color ws = withColor clickable
  where
   index = fromMaybe 0 $ elemIndex ws myWorkspaces
@@ -73,43 +76,30 @@ addSpace = spacingRaw True screenBorder' True windowBorder' True
 addTopBar = noFrillsDeco shrinkText topBarTheme
 layoutName x = renamed [Replace x]
 
+layouts = bsp ||| threeCol ||| oneBig ||| grid ||| zen
+
 bsp =
-  renamed [CutWordsLeft 1] $
-    addTopBar $
-      windowNavigation $
-        layoutName "BSP" $
-          addTabs shrinkText topBarTheme $
-            subLayout [] Simplest $
-              addSpace BSP.emptyBSP
+  renamed [CutWordsLeft 1]
+    . addTopBar
+    . windowNavigation
+    . layoutName "BSP"
+    . addTabs shrinkText topBarTheme
+    . subLayout [] Simplest
+    . addSpace
+    $ BSP.emptyBSP
 
-threeCol =
-  layoutName "3-Col" $ addTopBar $ addSpace $ ThreeColMid 1 (3 / 100) (1 / 3)
-
+threeCol = layoutName "3-Col" $ addTopBar $ addSpace $ ThreeColMid 1 (3 / 100) (1 / 3)
 oneBig = layoutName "OneBig" $ addTopBar $ addSpace $ OneBig 0.75 0.65
-
 grid = layoutName "Grid" $ addTopBar $ addSpace Grid
-
 zen = layoutName "Zen" $ addTopBar $ zenSpace Grid
  where
   zenScreenBorder = Border 100 100 500 500
   zenSpace = spacingRaw False zenScreenBorder True windowBorder' True
 
-layouts = bsp ||| threeCol ||| oneBig ||| grid ||| zen
-
 myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
 
 -- Theme --
 myFont = "xft:Iosevka Nerd Font:size=12:bold:antialias=true"
-active = "#ff79c6"
-inactive = "#6272a4"
-urgent = "#dc322f"
-xmobarWs = "#6272a4"
-xmobarWsActive = "#ff79c6"
-xmobarWsUrgent = "#ff5555"
-xmobarWsInactive = "#44475a"
-xmobarWsSep = "#44475a"
-xmobarTitle = "#8be9fd"
-xmobarLayout = "#ffb86c"
 
 topBarTheme =
   def
@@ -125,12 +115,16 @@ topBarTheme =
     , urgentBorderColor = urgent
     , decoHeight = 6
     }
+ where
+  active = "#ff79c6"
+  inactive = "#6272a4"
+  urgent = "#dc322f"
 
 -- Key bindings --
 altMask = mod1Mask
 nothing = 0
 
-myKeys nScreens conf@XConfig{modMask = modMask, terminal = terminal, workspaces = workspaces} =
+myKeys nScreens conf@XConfig{modMask, terminal, workspaces} =
   Map.fromList $
     [ ((modMask, xK_Return), spawn terminal)
     , ((modMask, xK_n), fileBrowser)
@@ -207,7 +201,7 @@ myKeys nScreens conf@XConfig{modMask = modMask, terminal = terminal, workspaces 
 
 -- Mouse Bindings --
 
-myMouseBindings XConfig{modMask = modMask} =
+myMouseBindings XConfig{modMask} =
   Map.fromList
     [
       ( (modMask .|. controlMask, button1)
@@ -273,7 +267,7 @@ workspaceInDirection nScreens direction =
     (viewWorkspace nScreens)
 
 confirm =
-  confirmPrompt $
+  confirmPrompt
     def
       { font = myFont
       , position = Top
@@ -348,45 +342,47 @@ myLogHook xmproc =
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.config"
   nScreens <- countScreens
-  xmonad $
-    docks $
-      withNavigation2DConfig myNav2DConf $
-        additionalNav2DKeys
-          (xK_Up, xK_Left, xK_Down, xK_Right)
-          [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
-          False
-          $ additionalNav2DKeys
-            (xK_k, xK_h, xK_j, xK_l)
-            [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
-            False
-            $ ewmh $
-              def
-                { keys = myKeys nScreens
-                , mouseBindings = myMouseBindings
-                , logHook = myLogHook xmproc
-                , terminal = term
-                , focusFollowsMouse = True
-                , borderWidth = 0
-                , modMask = mod4Mask
-                , workspaces = myWorkspaces
-                , normalBorderColor = inactive
-                , focusedBorderColor = active
-                , layoutHook = myLayout
-                , manageHook = manageDocks <+> myManageHook <+> scratchpadHook
-                , startupHook = myStartupHook <+> monitorSetupHook nScreens myWorkspaces
-                }
+  let init = xmonad . docks . withNav . ewmh
+  init
+    def
+      { keys = myKeys nScreens
+      , mouseBindings = myMouseBindings
+      , logHook = myLogHook xmproc
+      , terminal = term
+      , focusFollowsMouse = True
+      , borderWidth = 0
+      , modMask = mod4Mask
+      , workspaces = myWorkspaces
+      , normalBorderColor = inactiveBorderColor topBarTheme
+      , focusedBorderColor = activeBorderColor topBarTheme
+      , layoutHook = myLayout
+      , manageHook = manageDocks <+> myManageHook <+> scratchpadHook
+      , startupHook = myStartupHook <+> monitorSetupHook nScreens myWorkspaces
+      }
+ where
+  withNav =
+    withNavigation2DConfig myNav2DConf
+      . additionalNav2DKeys
+        (xK_Up, xK_Left, xK_Down, xK_Right)
+        [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
+        False
+      . additionalNav2DKeys
+        (xK_k, xK_h, xK_j, xK_l)
+        [(mod4Mask, windowGo), (mod4Mask .|. shiftMask, windowSwap)]
+        False
 
+myXmobar :: Handle -> X ()
 myXmobar xmproc =
   dynamicLogWithPP
     xmobarPP
-      { ppCurrent = renderWorkspace xmobarWsActive
-      , ppVisible = renderWorkspace xmobarWs
-      , ppHidden = renderWorkspace xmobarWs
-      , ppHiddenNoWindows = renderWorkspace xmobarWsInactive
-      , ppUrgent = renderWorkspace xmobarWsUrgent
-      , ppLayout = xmobarColor xmobarLayout ""
-      , ppTitle = xmobarColor xmobarTitle "" . shorten 50
-      , ppWsSep = xmobarColor xmobarWsSep "" " | "
+      { ppCurrent = renderWorkspace (activeColor topBarTheme)
+      , ppVisible = renderWorkspace (inactiveColor topBarTheme)
+      , ppHidden = renderWorkspace (inactiveColor topBarTheme)
+      , ppHiddenNoWindows = renderWorkspace "#44475a"
+      , ppUrgent = renderWorkspace "#ff5555"
+      , ppLayout = xmobarColor "#ffb86c" ""
+      , ppTitle = xmobarColor "#8be9fd" "" . shorten 50
+      , ppWsSep = xmobarColor "#44475a" "" " | "
       , ppSep = replicate 6 ' '
       , ppOutput = hPutStrLn xmproc
       }
