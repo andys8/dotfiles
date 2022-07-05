@@ -46,6 +46,10 @@ autojump --purge
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
 
+# Symlinks
+echo ">> Cleaning symlinks"
+~/dotfiles/scripts/clean-symlinks.sh
+
 # GHCup
 if [ -x "$(command -v "ghcup")" ]; then
     echo ">> Cleaning garbage collection"

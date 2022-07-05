@@ -153,4 +153,7 @@ ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
 # Use purty binary directly, avoid node spawning a process (performance)
 ln -sf ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty
 
+# Clean up symlinks
+~/dotfiles/scripts/clean-symlinks.sh
+
 echo "Links updated"
