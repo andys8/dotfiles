@@ -41,6 +41,11 @@ if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
     export PATH="$HOME/bin:$PATH"
 fi
 
+# ~/dotfiles/bin
+if [[ ":$PATH:" != *":$HOME/dotfiles/bin:"* ]]; then
+    export PATH="$HOME/dotfiles/bin:$PATH"
+fi
+
 # ~/dotfiles/scripts
 if [[ ":$PATH:" != *":$HOME/dotfiles/scripts:"* ]]; then
     export PATH="$HOME/dotfiles/scripts:$PATH"
