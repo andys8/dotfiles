@@ -68,34 +68,6 @@ mkdir -p ~/.config/qutebrowser
 ln -sf ~/dotfiles/qutebrowser/config.py ~/.config/qutebrowser/config.py
 ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
 
-# bin
-mkdir -p ~/bin
-ln -sf ~/dotfiles/bin/asciinemagif ~/bin/asciinemagif
-ln -sf ~/dotfiles/bin/devour ~/bin/devour
-ln -sf ~/dotfiles/bin/emoji ~/bin/emoji
-ln -sf ~/dotfiles/bin/explainshell ~/bin/explainshell
-ln -sf ~/dotfiles/bin/gifgen ~/bin/gifgen
-ln -sf ~/dotfiles/bin/git-remote-setup-fork ~/bin/git-remote-setup-fork
-ln -sf ~/dotfiles/bin/git-stash-explore ~/bin/git-stash-explore
-ln -sf ~/dotfiles/bin/gitignore ~/bin/gitignore
-ln -sf ~/dotfiles/bin/hoogle-rofi ~/bin/hoogle-rofi
-ln -sf ~/dotfiles/bin/i3-battery-popup ~/bin/i3-battery-popup
-ln -sf ~/dotfiles/bin/image-info ~/bin/image-info
-ln -sf ~/dotfiles/bin/image-preview ~/bin/image-preview
-ln -sf ~/dotfiles/bin/init-xmonad ~/bin/init-xmonad
-ln -sf ~/dotfiles/bin/jirabranch ~/bin/jirabranch
-ln -sf ~/dotfiles/bin/jirals ~/bin/jirals
-ln -sf ~/dotfiles/bin/lastpass-rofi ~/bin/lastpass-rofi
-ln -sf ~/dotfiles/bin/lock ~/bin/lock
-ln -sf ~/dotfiles/bin/passmenu-otp ~/bin/passmenu-otp
-ln -sf ~/dotfiles/bin/script-rofi ~/bin/script-rofi
-ln -sf ~/dotfiles/bin/stack-test ~/bin/stack-test
-ln -sf ~/dotfiles/bin/stack-test-watch ~/bin/stack-test-watch
-ln -sf ~/dotfiles/bin/ticket ~/bin/ticket
-ln -sf ~/dotfiles/bin/todo ~/bin/todo
-ln -sf ~/dotfiles/bin/touchpad-toggle ~/bin/touchpad-toggle
-ln -sf ~/dotfiles/bin/webcam ~/bin/webcam
-
 # sxiv
 mkdir -p ~/.config/sxiv/exec
 ln -sf ~/dotfiles/sxiv/key-handler ~/.config/sxiv/exec/key-handler
