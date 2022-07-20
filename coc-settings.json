@@ -19,6 +19,16 @@
   "tsserver.formatOnType": false,
   "vetur.format.scriptInitialIndent": true,
   "vetur.format.styleInitialIndent": true,
+  "tailwindCSS.enable": true,
+  "tailwindCSS.experimental.classRegex": [
+    "\\bclassName\\s*:\\s*\\\"([_a-zA-Z0-9\\s\\-\\:\\/]+)\\\""
+  ],
+  "tailwindCSS.headwind.classRegex": {
+    "purescript": "\\bclassName\\s*:\\s*\\\"([_a-zA-Z0-9\\s\\-\\:\\/]+)\\\""
+  },
+  "tailwindCSS.includeLanguages": {
+    "purescript": "javascriptreact"
+  },
   "languageserver": {
     "elmLS": {
       "enable": true,
