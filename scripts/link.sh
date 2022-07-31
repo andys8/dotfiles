@@ -118,6 +118,10 @@ ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 mkdir -p ~/.config/lsd
 ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
 
+# rofi
+rm -rf ~/.config/udiskie
+ln -sf ~/dotfiles/udiskie ~/.config
+
 # Purty
 # Use purty binary directly, avoid node spawning a process (performance)
 ln -sf ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty

@@ -1,0 +1,3 @@
+device_config:
+  - is_loop: true
+    ignore: true
