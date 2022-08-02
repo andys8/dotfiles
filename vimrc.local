@@ -308,7 +308,9 @@ hi link CocHintFloat Visual
 
 " Pmenu (e.g. completions)
 hi! link Pmenu Visual
-hi! link PmenuSel ErrorMsg
+hi! link PmenuSel DraculaOrangeInverse
+hi! link CocMenuSel DraculaOrangeInverse
+hi! link CocSearch DraculaOrange
 
 " vimdiff
 if &diff
