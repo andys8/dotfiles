@@ -17,7 +17,6 @@ in
     chafa # preview images in terminal
     coursier # scala build tool
     diskus # disk usage
-    dragon-drop # drag and drop
     dtrx # extract files
     elmPackages.elm # compiler
     elmPackages.elm-format # elm pretty print
@@ -68,6 +67,7 @@ in
     watch # repeat command
     wcalc # calculator
     xdo # x tool used in scripts
+    xdragon # drag and drop
     xmonad-with-packages # window manager in haskell
     xrandr-invert-colors # invert colors
     zip # compress to zip
