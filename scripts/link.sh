@@ -81,14 +81,10 @@ ln -sf ~/dotfiles/ghci ~/.ghci
 # Xresources
 ln -sf ~/dotfiles/Xresources ~/.Xresources
 
-# slack-term
-mkdir -p ~/.config/slack-term
-ln -sf ~/dotfiles/slack-term ~/.config/slack-term/config
-
 # markdownlint
 ln -sf ~/dotfiles/markdownlintrc ~/.markdownlintrc
 
-# slack-term
+# bottom
 mkdir -p ~/.config/bottom
 ln -sf ~/dotfiles/bottom.toml ~/.config/bottom/bottom.toml
 
