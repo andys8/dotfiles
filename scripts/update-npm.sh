@@ -12,7 +12,6 @@ packages=(
     asciicast2gif                     # convert asciinema to gif
     bash-language-server              # bash ls
     dockerfile-language-server-nodejs # docker ls
-    elm-json                          # update and change elm.json files
     fx                                # json viewer
     http-server                       # spin up http server in directory
     npm-check-updates                 # npm update depndencies

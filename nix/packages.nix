@@ -22,7 +22,6 @@ in
     elmPackages.elm # compiler
     elmPackages.elm-format # elm pretty print
     elmPackages.elm-language-server # language-server
-    elmPackages.elm-live # dev server
     elmPackages.elm-test # elm test runner
     fast-cli # speedtest
     ffmpeg # convert videos
