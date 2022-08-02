@@ -3,26 +3,30 @@ set -euo pipefail
 # Install haskell-language-server via ghcup
 
 echo ">> Installing cabal"
-ghcup install cabal latest
+ghcup install cabal latest --set
+
+echo ">> Cabal update"
 cabal update
 
 echo ">> Installing stack"
-ghcup install stack latest
+ghcup install stack latest --set
 
 echo ">> Installing ghc"
-ghcup install ghc 9.2.3
-ghcup install ghc 8.8.4
-ghcup install ghc 8.10.7 --set
+ghcup install ghc 8.10.7 --no-set
+ghcup install ghc 9.2.4 --set
 
 echo ">> Checking haskell-language-server"
-hlsVersion="1.7.0.0"
+hlsGitRef="a89ba412293327ec838c00d899ea9c6013c46aa3"
+hlsVersion="1.7.0.1"
 
-[[ $(haskell-language-server-wrapper --numeric-version) = "$hlsVersion" ]] || {
-    echo ">> Installing haskell-language-server"
+[[ $(haskell-language-server-wrapper --version) == *"$hlsVersion"* ]] || {
+    echo ">> Installing haskell-language-server ($hlsVersion, $hlsGitRef)"
     ghcup compile hls \
-        -v $hlsVersion \
+        --git-ref "$hlsGitRef" \
+        --overwrite-version "$hlsVersion" \
         --ghc 8.10.7 \
-        --ghc 8.8.4 \
+        --ghc 9.2.4 \
+        --set \
         -- --ghc-options='-dynamic'
 }
 
