@@ -1,9 +1,9 @@
 let
   unstable = import <nixpkgs> { };
-  release2105 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/21.05.tar.gz") { };
+  release2205 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/22.05.tar.gz") { };
 in
 (
-  with release2105; [
+  with release2205; [
     (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
