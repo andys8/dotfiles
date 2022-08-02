@@ -1,0 +1,8 @@
+#!/bin/sh
+# Replacement for nix search since it needs experimental features
+# Usage: nix-search <term>
+
+nix \
+    --extra-experimental-features nix-command \
+    --extra-experimental-features flakes \
+    search nixpkgs "$1"

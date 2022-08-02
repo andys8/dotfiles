@@ -9,8 +9,4 @@ nix-channel --update
 echo "Update packages"
 nix-env -irf ~/dotfiles/nix/packages.nix
 
-# Update search cache
-echo "Update search cache"
-nix search --update-cache >/dev/null
-
 echo "Nix updated"
