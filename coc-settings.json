@@ -121,14 +121,16 @@
     "sh": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
+    "cabal": "cabal-fmt",
     "dhall": "dhall",
     "nix": "nixpkgs-fmt",
     "sh": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
+    "cabal-fmt": { "command": "cabal-fmt", "args": ["-i"] },
     "dhall": { "command": "dhall", "args": ["format"] },
-    "shfmt": { "command": "shfmt", "args": ["-i", "4"] },
-    "nixpkgs-fmt": { "command": "nixpkgs-fmt" }
+    "nixpkgs-fmt": { "command": "nixpkgs-fmt" },
+    "shfmt": { "command": "shfmt", "args": ["-i", "4"] }
   },
   "diagnostic-languageserver.linters": {
     "write-good": {

@@ -96,6 +96,7 @@ in
     gitAndTools.tig # diff and comit view
     glow # markdown viewer
     haskellPackages.brittany # code formatter
+    haskellPackages.cabal-fmt # cabal formatter
     haskellPackages.git-brunch # git checkout branch tui
     haskellPackages.network-manager-tui # network tui
     hlint # haskell linter
