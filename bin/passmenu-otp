@@ -9,6 +9,14 @@ if [[ $1 == "--type" ]]; then
     shift
 fi
 
+command -v "pass" >/dev/null 2>&1 || {
+    notify-send "Error: pass missing" && exit 1
+}
+
+pass otp --version || {
+    notify-send "Error: pass-otp missing" && exit 1
+}
+
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
 password_files=("$prefix"/**/*.gpg)
 password_files=("${password_files[@]#"$prefix"/}")
