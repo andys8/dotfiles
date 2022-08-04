@@ -31,6 +31,17 @@ Local script executed on machine startup
 hasmail &
 ```
 
+### `.hasmailrc`
+
+```text
+click=xdg-open https://mail.google.com
+
+[gmail]
+hostname=imap.gmail.com:993
+username=<email>
+password=lpass show -p personal/gmail-hasmail
+```
+
 ### `~/.gitconfig.machine`
 
 Local default git user configuration with an example for conditional includes.
