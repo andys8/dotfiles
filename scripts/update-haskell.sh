@@ -6,7 +6,7 @@ echo ">> Installing cabal"
 ghcup install cabal latest --set
 
 echo ">> Cabal update"
-cabal update
+(cd /tmp && cabal update)
 
 echo ">> Installing stack"
 ghcup install stack latest --set
