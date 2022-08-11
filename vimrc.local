@@ -428,6 +428,10 @@ let g:languagetool_disable_rules='COMMA_PARENTHESIS_WHITESPACE,DASH_RULE,EN_QUOT
 command English set spelllang=en
 command German set spelllang=de
 
+" Git commit
+autocmd FileType gitcommit set textwidth=72
+autocmd FileType gitcommit set colorcolumn+=73
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc
