@@ -40,6 +40,7 @@
     tpush = push
     track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
+    autoSetupRemote = true
     default = current
 [http]
     postBuffer = 1048576000
