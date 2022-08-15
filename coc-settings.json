@@ -69,6 +69,7 @@
             "splice": { "globalOn": false },
             "eval": { "globalOn": false },
             "haddockComments": { "globalOn": false },
+            "stan": { "globalOn": false },
             "ghcide-type-lenses": { "globalOn": false },
             "importLens": {
               "codeLensOn": false,
