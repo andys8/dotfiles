@@ -21,6 +21,11 @@ fi
 # node global installations
 PATH="$HOME/.npm-global/bin:$PATH"
 
+# Rust (~/.cargo/bin)
+if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # ~/.local/bin
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     export PATH="$HOME/.local/bin:$PATH"
