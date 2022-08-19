@@ -17,7 +17,7 @@ abbr -a -U agi 'sudo apt install'
 abbr -a -U agr 'sudo apt remove'
 abbr -a -U agu 'sudo apt update && sudo apt upgrade'
 abbr -a -U benchmark hyperfine
-abbr -a -U calc bc
+abbr -a -U calc wcalc
 abbr -a -U cheat 'curl https://cheat.sh/'
 abbr -a -U colorpicker gcolor3
 abbr -a -U copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
