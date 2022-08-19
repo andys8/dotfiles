@@ -122,6 +122,10 @@ ln -sf ~/dotfiles/udiskie ~/.config
 # Use purty binary directly, avoid node spawning a process (performance)
 ln -sf ~/.npm-global/lib/node_modules/purty/bin/linux/purty ~/bin/purty
 
+# ghcup
+mkdir -p ~/.ghcup
+ln -sf ~/dotfiles/ghcup/config.yaml ~/.ghcup/config.yaml
+
 # Clean up symlinks
 ~/dotfiles/scripts/clean-symlinks.sh
 
