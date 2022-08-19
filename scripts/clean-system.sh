@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Clean trash directory
 echo ">> Cleaning trash"
-(cd ~ && trash-empty 30)
+(cd ~ && trash-empty -f 30)
 
 # Collect nix garbage (randomly)
 echo ">> Cleaning nix"
