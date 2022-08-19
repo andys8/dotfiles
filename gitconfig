@@ -36,6 +36,8 @@
     st = status
     stash-find = stash-explore
     stash-fzf = stash-explore
+    stash-list = stash-explore
+    stash-ls = stash-explore
     sw = switch
     tpush = push
     track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
