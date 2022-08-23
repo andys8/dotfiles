@@ -116,3 +116,5 @@
     protocol = https
 [include]
     path = ~/.gitconfig.machine
+[advice]
+	skippedCherryPicks = false
