@@ -44,7 +44,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 " PureScript
 Plug 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
 
-" Ranger
+" Ranger (,o)
 Plug 'francoiscabrol/ranger.vim'
 
 " Sort motions (e.g. gsi( or gs)
