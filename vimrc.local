@@ -403,10 +403,6 @@ let g:presenting_top_margin = 2
 " Haskell
 " au BufWritePre *.hs call CocActionAsync('format')
 
-" Alex, Happy (Parser)
-au BufRead,BufNewFile *.x set filetype=alex
-au BufRead,BufNewFile *.y set filetype=happy
-
 " Markdown
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 1

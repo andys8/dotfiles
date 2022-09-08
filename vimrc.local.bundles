@@ -41,10 +41,6 @@ Plug 'tyru/open-browser.vim'
 " Markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
-" Haskell: Happy/Alex parser/lexer
-Plug 'vim-scripts/alex.vim', { 'for' : 'alex' }
-Plug 'vim-scripts/happy.vim', { 'for' : 'happy' }
-
 " PureScript
 Plug 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
 
