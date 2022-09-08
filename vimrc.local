@@ -383,9 +383,9 @@ noremap <leader>z zM<CR>
 noremap <leader>Z zR<CR>
 
 " Expand region
-map - <Plug>(expand_region_expand)
 map + <Plug>(expand_region_expand)
-map _ <Plug>(expand_region_shrink)
+map _ <Plug>(expand_region_expand)
+map - <Plug>(expand_region_shrink)
 
 " Abolish (coerce casing)
 nmap crp crm
