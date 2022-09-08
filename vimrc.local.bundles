@@ -1,6 +1,3 @@
-" Easymotion with ,,w and ,,b and ,,e
-Plug 'easymotion/vim-easymotion'
-
 " Multi Cursor with CTRL+n and c(hange)
 Plug 'terryma/vim-multiple-cursors'
 
