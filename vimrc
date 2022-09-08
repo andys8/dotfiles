@@ -80,6 +80,9 @@ set number
 
 let no_buffers_menu=1
 
+" Better command line completion 
+set wildmenu
+
 set mousemodel=popup
 set t_Co=256
 set guioptions=egmrti
