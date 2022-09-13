@@ -1,6 +1,7 @@
-:set +m
 :set +t
 :set -Wall
+:set -XGHC2021
+:set -XOverloadedRecordDot
 :set -XOverloadedStrings
 :set -XRecordWildCards
 :set -fno-warn-type-defaults
