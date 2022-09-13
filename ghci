@@ -1,6 +1,5 @@
-:def hoogle \str -> return $ ":! hoogle --count=15 \"" ++ str ++ "\""
-:set +m # Multiline with `let`
-:set +t # show type info for `it`
+:set +m
+:set +t
 :set -Wall
 :set -XOverloadedStrings
 :set -XRecordWildCards
