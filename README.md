@@ -55,6 +55,20 @@ Local default git user configuration with an example for conditional includes.
     path = ~/.gitconfig.work
 ```
 
+### `~/.gitconfig.work`
+
+```text
+[user]
+    name = andreas
+    email = andreas@work.com
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg2
+[url "ssh://git@github.com/"]
+    insteadOf = https://andreas-work@github.com/
+```
+
 ### `~/.profile.machine`
 
 Contains per system environment variables (optional).
