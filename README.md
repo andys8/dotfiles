@@ -161,24 +161,6 @@ Enable time synchronization with `timedatectl set-ntp true`.
 
 Set credentials in `~/.netrc`
 
-## Python
-
-### Pip
-
-Arch: Install `sudo pacman -Syu python-pip`
-
-### Select default python version
-
-```shell
-sudo update-alternatives --config python
-```
-
-If missing, add with:
-
-```shell
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 2
-```
-
 ## `sudo`
 
 Open `sudo visudo` and add these lines to enable asterisks and silly feedback.
