@@ -1,4 +1,5 @@
 .git/
+.spago/
 .stack-work-docker/
 .stack-work/
 .stack/
