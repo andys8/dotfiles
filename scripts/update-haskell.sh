@@ -2,6 +2,9 @@
 set -euo pipefail
 # Install haskell-language-server via ghcup
 
+echo ">> Update ghcup"
+ghcup upgrade
+
 echo ">> Installing cabal"
 ghcup install cabal latest --set
 
