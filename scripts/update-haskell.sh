@@ -16,14 +16,12 @@ ghcup install ghc 8.10.7 --no-set
 ghcup install ghc 9.2.4 --set
 
 echo ">> Checking haskell-language-server"
-hlsGitRef="1.8.0.0"
 hlsVersion="1.8.0.0"
 
 [[ $(haskell-language-server-wrapper --version) == *"$hlsVersion"* ]] || {
-    echo ">> Installing haskell-language-server ($hlsVersion, $hlsGitRef)"
+    echo ">> Installing haskell-language-server ($hlsVersion)"
     ghcup compile hls \
-        --git-ref "$hlsGitRef" \
-        --overwrite-version "$hlsVersion" \
+        --version "$hlsVersion" \
         --ghc 8.10.7 \
         --ghc 9.2.4 \
         --set \
