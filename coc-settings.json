@@ -58,33 +58,51 @@
         "haskell": {
           "checkParents": "CheckOnSave",
           "checkProject": false,
-          "diagnosticsOnChange": true,
-          "formatOnImportOn": true,
           "formattingProvider": "fourmolu",
-          "hlintOn": true,
-          "liquidOn": false,
           "maxCompletions": 10,
           "plugin": {
-            "hlint": { "globalOn": true },
+            "alternateNumberFormat": { "globalOn": false },
+            "callHierarchy": { "globalOn": false },
+            "changeTypeSignature": { "globalOn": true },
+            "class": {
+              "codeActionsOn": true,
+              "codeLensOn": false,
+              "config": { "typelensOn": true }
+            },
+            "eval": {
+              "globalOn": false,
+              "config": { "diff": true, "exception": false }
+            },
+            "gadt": { "globalOn": false },
+            "ghcide-code-actions-bindings": { "globalOn": true },
+            "ghcide-code-actions-fill-holes": { "globalOn": false },
+            "ghcide-code-actions-imports-exports": { "globalOn": true },
+            "ghcide-code-actions-type-signatures": { "globalOn": true },
+            "ghcide-completions": {
+              "globalOn": true,
+              "config": { "autoExtendOn": true, "snippetsOn": true }
+            },
+            "ghcide-hover-and-symbols": { "hoverOn": true, "symbolsOn": true },
+            "ghcide-type-lenses": {
+              "globalOn": false,
+              "config": { "mode": "always" }
+            },
+            "hlint": {
+              "codeActionsOn": true,
+              "diagnosticsOn": true,
+              "config": { "flags": [] }
+            },
+            "importLens": { "codeActionsOn": false, "codeLensOn": false },
+            "moduleName": { "globalOn": true },
+            "pragmas": { "codeActionsOn": true, "completionOn": true },
+            "qualifyImportedNames": { "globalOn": true },
+            "refineImports": { "codeActionsOn": false, "codeLensOn": false },
+            "rename": { "globalOn": true, "config": { "crossModule": false } },
+            "--": {},
             "splice": { "globalOn": false },
-            "eval": { "globalOn": false },
             "haddockComments": { "globalOn": false },
             "stan": { "globalOn": false },
-            "ghcide-type-lenses": { "globalOn": false },
-            "importLens": {
-              "codeLensOn": false,
-              "codeActionsOn": true
-            },
-            "refineImports": {
-              "codeLensOn": false,
-              "codeActionsOn": true
-            },
-            "tactics": {
-              "globalOn": false,
-              "hoverOn": false,
-              "codeLensOn": false,
-              "codeActionsOn": false
-            }
+            "tactics": { "globalOn": false }
           }
         }
       }
