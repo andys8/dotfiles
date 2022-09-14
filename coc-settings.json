@@ -64,15 +64,12 @@
             "alternateNumberFormat": { "globalOn": false },
             "callHierarchy": { "globalOn": false },
             "changeTypeSignature": { "globalOn": true },
-            "class": {
-              "codeActionsOn": true,
-              "codeLensOn": false,
-              "config": { "typelensOn": true }
-            },
+            "class": { "codeActionsOn": true, "codeLensOn": false },
             "eval": {
               "globalOn": false,
               "config": { "diff": true, "exception": false }
             },
+            "explicitFixity": { "globalOn": false },
             "gadt": { "globalOn": false },
             "ghcide-code-actions-bindings": { "globalOn": true },
             "ghcide-code-actions-fill-holes": { "globalOn": false },
@@ -87,22 +84,30 @@
               "globalOn": false,
               "config": { "mode": "always" }
             },
+            "haddockComments": { "globalOn": false },
             "hlint": {
               "codeActionsOn": true,
               "diagnosticsOn": true,
               "config": { "flags": [] }
             },
-            "importLens": { "codeActionsOn": false, "codeLensOn": false },
+            "importLens": {
+              "globalOn": false,
+              "codeActionsOn": false,
+              "codeLensOn": false
+            },
             "moduleName": { "globalOn": true },
             "pragmas": { "codeActionsOn": true, "completionOn": true },
             "qualifyImportedNames": { "globalOn": true },
             "refineImports": { "codeActionsOn": false, "codeLensOn": false },
             "rename": { "globalOn": true, "config": { "crossModule": false } },
-            "--": {},
-            "splice": { "globalOn": false },
-            "haddockComments": { "globalOn": false },
+            "retrie": { "globalOn": false },
             "stan": { "globalOn": false },
-            "tactics": { "globalOn": false }
+            "tactics": {
+              "globalOn": false,
+              "codeActionsOn": false,
+              "codeLensOn": false,
+              "hoverOn": false
+            }
           }
         }
       }
