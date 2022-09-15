@@ -54,7 +54,7 @@
         "hie.yaml"
       ],
       "disabledFeatures": ["progress", "codeLens"],
-      "initializationOptions": {
+      "settings": {
         "haskell": {
           "checkParents": "CheckOnSave",
           "checkProject": false,
