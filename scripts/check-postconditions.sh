@@ -30,6 +30,7 @@ commandsOptional=(
     chromium     # chromium web browser
     idea         # intellij ide
     java         # java runtime
+    json-tui     # TUI to visualize json input
     lxappearance # configure themes
     uuidgen      # generate uuid
     vimdiff      # git diffs in vim
