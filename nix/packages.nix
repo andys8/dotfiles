@@ -123,7 +123,6 @@ in
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
     yarn # alternative node package manager
-    ytop # top/htop replacement
   ]
 ) ++ [
   (import ./st.nix)
