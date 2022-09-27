@@ -15,7 +15,7 @@ stdenv.mkDerivation rec {
     sha256 = "0rn6yb4nacxy2dpg7mmf75pwc0hqzjlv9iv4ch1z13bfnpq7ypmk";
   };
 
-  nativeBuildInputs = [ pkgconfig ];
+  nativeBuildInputs = [ pkg-config ];
   buildInputs = [ ncurses pkgs.xorg.libX11 pkgs.xorg.libXft.dev pkgs.xorg.libXcursor fontconfig harfbuzz ];
 
   installPhase = ''
