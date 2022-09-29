@@ -47,6 +47,7 @@ in
     nethogs # network traffic monitoring
     nitrogen # Wallpaper
     nix # nix package manager
+    nodejs-16_x # nodejs and npm
     pass-otp # pass otp for token
     python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
@@ -108,7 +109,6 @@ in
     meld # git merge tool (graphical)
     mpv # video player
     nixpkgs-fmt # format nix
-    nodejs-16_x # nodejs and npm
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     ranger # file manager
