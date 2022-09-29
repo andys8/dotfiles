@@ -28,7 +28,8 @@ hlsVersion="1.8.0.0"
         --ghc 8.10.7 \
         --ghc 9.2.4 \
         --set \
-        -- --ghc-options='-dynamic'
+        --cabal-update \
+        -- --allow-newer --ghc-options='-dynamic'
 }
 
 echo ">> Randomly checking hoogle"
