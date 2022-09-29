@@ -4,6 +4,11 @@ set -euo pipefail
 cocExtensionsPath=~/.config/coc/extensions
 vimrcFile=~/dotfiles/vimrc.local
 
+if [ -f "$cocExtensionsPath/package.json" ]; then
+    echo "Skipping because coc package.json missing"
+    exit 0
+fi
+
 echo "Comparing CoC extensions list with installed extensions"
 expected=$(grep -ioh "'coc-.*'" $vimrcFile | tr -d "'" | sort)
 actual=$(jq -r ".dependencies | keys | sort | .[]" "$cocExtensionsPath/package.json")
