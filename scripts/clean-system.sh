@@ -46,6 +46,10 @@ autojump --purge
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
 
+# Autojump
+echo ">> Cleaning project caches with kondo"
+kondo --all ~
+
 # Symlinks
 echo ">> Cleaning symlinks"
 ~/dotfiles/scripts/clean-symlinks.sh

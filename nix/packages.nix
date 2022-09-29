@@ -34,6 +34,7 @@ in
     jq # json processor
     jwt-cli # encode/decode jwts
     keynav # keyboard mouse navigation
+    kondo # clean project caches
     languagetool # language tool like grammarly
     libreoffice # office
     lsd # ls replacement
