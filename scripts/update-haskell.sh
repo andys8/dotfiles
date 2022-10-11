@@ -24,12 +24,13 @@ hlsVersion="1.8.0.0"
 [[ $(haskell-language-server-wrapper --version) == *"$hlsVersion"* ]] || {
     echo ">> Installing haskell-language-server ($hlsVersion)"
     ghcup compile hls \
-        --version "$hlsVersion" \
+        --git-ref "$hlsVersion" \
+        --git-describe-version \
         --ghc 8.10.7 \
         --ghc 9.2.4 \
         --set \
-        --cabal-update \
-        -- --allow-newer --ghc-options='-dynamic'
+        -- --ghc-options='-dynamic' \
+        --flags="-haddockComments -eval -importLens -retrie -tactic -stan -alternateNumberFormat -gadt -explicitFixity -floskell"
 }
 
 echo ">> Randomly checking hoogle"
