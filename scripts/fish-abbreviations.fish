@@ -39,7 +39,7 @@ abbr -a -U gco 'git checkout'
 abbr -a -U gcp 'git cherry-pick'
 abbr -a -U gd 'git diff'
 abbr -a -U gds 'git diff --staged'
-abbr -a -U gf 'git fetch'
+abbr -a -U gf 'git fetch --all'
 abbr -a -U gi git
 abbr -a -U gitb 'git b'
 abbr -a -U gl 'git log'
