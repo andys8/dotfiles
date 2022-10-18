@@ -14,6 +14,7 @@
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
+        # shellcheck disable=SC1091
         source "$HOME/.bashrc"
     fi
 fi
@@ -33,6 +34,7 @@ fi
 
 # Nix
 if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+    # shellcheck disable=SC1091
     source "$HOME/.nix-profile/etc/profile.d/nix.sh"
 fi
 
@@ -79,6 +81,7 @@ export RANGER_DEVICONS_SEPARATOR="  "
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then
+    # shellcheck disable=SC1091
     source "$HOME/.profile.machine"
 fi
 
