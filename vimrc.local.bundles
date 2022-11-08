@@ -64,3 +64,6 @@ Plug 'monkoose/fzf-hoogle.vim', { 'for' : 'haskell' }
 
 " Language Tool (:LanguageToolCheck)
 Plug 'dpelle/vim-LanguageTool'
+
+" Astro
+Plug 'wuelnerdotexe/vim-astro'

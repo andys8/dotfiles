@@ -423,6 +423,9 @@ command German set spelllang=de
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn+=73
 
+" Astro
+let g:astro_typescript = 'enable'
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc
