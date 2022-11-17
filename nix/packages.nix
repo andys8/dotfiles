@@ -30,6 +30,7 @@ in
     haskellPackages.fourmolu # haskell formatter
     haskellPackages.hoogle # function documentation
     hasmail # mail imap notifier for new mails
+    htop-vim # htop with vim keys
     iotop # io usage
     jq # json processor
     jwt-cli # encode/decode jwts

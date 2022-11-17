@@ -29,12 +29,10 @@ section "Update Node/NPM"
 ~/dotfiles/scripts/update-npm.sh
 section "Update Xmonad"
 ~/dotfiles/scripts/update-xmonad.sh
-section "Update haskell tooling"
+section "Update Haskell"
 ~/dotfiles/scripts/update-haskell.sh
-section "Update ranger plugins"
+section "Update Ranger"
 ~/dotfiles/scripts/update-ranger.sh
-section "Update htop with vim bindings"
-~/dotfiles/scripts/update-htop-vim.sh
 
 section "Run all checks"
 ~/dotfiles/scripts/check-preconditions.sh
