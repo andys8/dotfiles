@@ -95,6 +95,7 @@ abbr -a -U v vim
 abbr -a -U vi vim
 abbr -a -U vimg 'vim (git diff --name-only)'
 abbr -a -U vmi vim
+abbr -a -U weather 'curl https://wttr.in'
 abbr -a -U wttr 'curl https://wttr.in'
 abbr -a -U öö ll
 
