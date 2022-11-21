@@ -232,6 +232,7 @@ set wildignore+=*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,package-lock.json,stack.yam
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --no-require-git --glob "!.git/*"'
+let $FZF_DEFAULT_OPTS = '--info hidden'
 set grepprg=rg\ --vimgrep
 
 cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
