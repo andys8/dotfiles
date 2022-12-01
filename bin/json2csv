@@ -1,0 +1,12 @@
+#!/bin/sh
+# Usage:
+# json2csv file.json > file.csv
+# cat file.json | json2csv > file.csv
+
+command -v "jq" >/dev/null 2>&1 || {
+    echo "Error: jq not available"
+    exit 1
+}
+
+input="${1:-/dev/stdin}"
+jq -r '(.[0] | keys_unsorted) as $keys | $keys, map([.[ $keys[] ]])[] | @csv' <"$input"
