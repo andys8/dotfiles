@@ -46,7 +46,7 @@ autojump --purge
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
 
-# Autojump
+# Kondo cleans project cache folders
 echo ">> Cleaning project caches with kondo"
 kondo --all ~
 
