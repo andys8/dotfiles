@@ -31,6 +31,7 @@ in
     haskellPackages.hoogle # function documentation
     hasmail # mail imap notifier for new mails
     htop-vim # htop with vim keys
+    httpie # curl alternative
     iotop # io usage
     jq # json processor
     jwt-cli # encode/decode jwts
@@ -103,7 +104,6 @@ in
     haskellPackages.git-brunch # git checkout branch tui
     haskellPackages.network-manager-tui # network tui
     hlint # haskell linter
-    httpie # curl alternative
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
     maim # screenshots
