@@ -6,20 +6,20 @@ echo ">> Update ghcup"
 ghcup upgrade
 
 echo ">> Installing cabal"
-ghcup install cabal latest --set
+ghcup install cabal recommended --set
 
 echo ">> Cabal update"
 (cd /tmp && cabal update)
 
 echo ">> Installing stack"
-ghcup install stack latest --set
+ghcup install stack recommended --set
 
 echo ">> Installing ghc"
 ghcup install ghc 8.10.7 --no-set
 ghcup install ghc 9.2.4 --set
 
 echo ">> Checking haskell-language-server"
-hlsVersion="1.8.0.0"
+hlsVersion="1.9.0.0"
 
 [[ $(haskell-language-server-wrapper --version) == *"$hlsVersion"* ]] || {
     echo ">> Installing haskell-language-server ($hlsVersion)"
