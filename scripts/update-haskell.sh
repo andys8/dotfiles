@@ -1,6 +1,9 @@
 #!/bin/bash
-set -euo pipefail
 # Install haskell-language-server via ghcup
+# Usage: update-haskell.sh [--force]
+set -euo pipefail
+
+arg="${1:-}"
 
 echo ">> Update ghcup"
 ghcup upgrade
@@ -21,7 +24,7 @@ ghcup install ghc 9.2.4 --set
 echo ">> Checking haskell-language-server"
 hlsVersion="1.9.0.0"
 
-[[ $(haskell-language-server-wrapper --version) == *"$hlsVersion"* ]] || {
+if [[ $(haskell-language-server-wrapper --version) != *"$hlsVersion"* ]] || [[ $arg == "--force" ]]; then
     echo ">> Installing haskell-language-server ($hlsVersion)"
     ghcup compile hls \
         --git-ref "$hlsVersion" \
@@ -31,7 +34,7 @@ hlsVersion="1.9.0.0"
         --set \
         -- --ghc-options='-dynamic' \
         --flags="-haddockComments -eval -importLens -retrie -tactic -stan -alternateNumberFormat -gadt -explicitFixity -floskell"
-}
+fi
 
 echo ">> Randomly checking hoogle"
 if [ $((RANDOM % 10)) -eq 0 ]; then
