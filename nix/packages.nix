@@ -102,7 +102,6 @@ in
     gitAndTools.tig # diff and comit view
     glow # markdown viewer
     haskellPackages.git-brunch # git checkout branch tui
-    haskellPackages.network-manager-tui # network tui
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
