@@ -19,23 +19,24 @@ ghcup install stack recommended --set
 
 echo ">> Installing ghc"
 ghcup install ghc 8.10.7 --no-set
-ghcup install ghc 9.2.4 --set
+ghcup install ghc 9.2.5 --set
 
 echo ">> Checking haskell-language-server"
 hlsVersion="1.9.0.0"
 
-if [[ $(haskell-language-server-wrapper --version) != *"$hlsVersion"* ]] || [[ $arg == "--force" ]]; then
+if [[ $(haskell-language-server-wrapper --version) != *"$hlsVersion"* ]] || [[ "$arg" == "--force" ]]; then
     echo ">> Installing haskell-language-server ($hlsVersion)"
     ghcup compile hls \
         --git-ref "$hlsVersion" \
         --git-describe-version \
         --ghc 8.10.7 \
-        --ghc 9.2.4 \
+        --ghc 9.2.5 \
         --set \
         -- --ghc-options='-dynamic' \
         --flags="-haddockComments -eval -importLens -retrie -tactic -stan -alternateNumberFormat -gadt -explicitFixity -floskell"
 fi
 
+echo
 echo ">> Randomly checking hoogle"
 if [ $((RANDOM % 10)) -eq 0 ]; then
     echo ">> Update hoogle"
