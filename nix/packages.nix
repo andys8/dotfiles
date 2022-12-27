@@ -27,6 +27,8 @@ in
     gcolor3 # color picker
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
+    haskellPackages.brittany # code formatter
+    haskellPackages.cabal-fmt # cabal formatter
     haskellPackages.fourmolu # haskell formatter
     haskellPackages.hoogle # function documentation
     hasmail # mail imap notifier for new mails
@@ -99,8 +101,6 @@ in
     gitAndTools.hub # github commandline tool
     gitAndTools.tig # diff and comit view
     glow # markdown viewer
-    haskellPackages.brittany # code formatter
-    haskellPackages.cabal-fmt # cabal formatter
     haskellPackages.git-brunch # git checkout branch tui
     haskellPackages.network-manager-tui # network tui
     hlint # haskell linter
