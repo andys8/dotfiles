@@ -15,7 +15,6 @@ assertCommands=(
     hlint                           # haskell linter
     htop                            # htop (hopefully with vim bindings)
     lock                            # bin/lock file is on the path
-    nmt                             # network-manager-tui
     prettier                        # js/css/markdown formatter
     qrcode-terminal                 # show qr codes
     st                              # suckless terminal
