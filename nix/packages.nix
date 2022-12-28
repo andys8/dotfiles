@@ -15,7 +15,6 @@ in
     bc # calculator
     cabal2nix # Convert cabal files to nix
     chafa # preview images in terminal
-    coursier # scala build tool
     diskus # disk usage
     dtrx # extract files
     elmPackages.elm # compiler
@@ -55,8 +54,6 @@ in
     pass-otp # pass otp for token
     python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
-    sbt # sbt package manager
-    scala # scala compiler
     screenfetch # system information
     sent # suckless presentation tool
     shfmt # format shell scripts
