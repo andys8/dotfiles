@@ -26,6 +26,7 @@ in
     gcolor3 # color picker
     gifsicle # used by asciicast2gif
     gnome3.zenity # show ui messages and dialogs
+    guvcview # show webcam on screen
     haskellPackages.brittany # code formatter
     haskellPackages.cabal-fmt # cabal formatter
     haskellPackages.fourmolu # haskell formatter
