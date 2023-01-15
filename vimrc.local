@@ -411,6 +411,9 @@ let g:purescript_disable_indent = 1
 let g:purescript_indent_let = 2
 let g:purescript_indent_in = 0
 let g:purescript_indent_where = 0
+let g:purescript_unicode_conceal_enable = 0
+let g:purescript_unicode_conceal_disable_common = 1
+let g:purescript_unicode_conceal_enable_discretionary = 0
 
 " Language tool
 let g:languagetool_cmd='languagetool-commandline'
