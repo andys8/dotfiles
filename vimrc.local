@@ -299,6 +299,7 @@ hi link CocErrorFloat Visual
 hi link CocWarningFloat Visual
 hi link CocInfoFloat Visual
 hi link CocHintFloat Visual
+hi link CocFloatDividingLine Comment
 
 " Pmenu (e.g. completions)
 hi! link Pmenu Visual
