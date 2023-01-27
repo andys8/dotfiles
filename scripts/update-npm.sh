@@ -15,6 +15,7 @@ packages=(
     fx                                # json viewer
     http-server                       # spin up http server in directory
     npm-check-updates                 # npm update depndencies
+    pnpm                              # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
     purescript                        # purescript compiler (purs)
