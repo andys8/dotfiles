@@ -18,6 +18,7 @@ packages=(
     pnpm                              # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
+    psvm-ps                           # purescript version manager
     purescript                        # purescript compiler (purs)
     purescript-language-server        # purescript ls
     purs-tidy                         # alternative purescript formatter
