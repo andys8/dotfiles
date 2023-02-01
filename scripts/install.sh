@@ -5,35 +5,47 @@ section() {
     echo "$(tput setaf 4)>>=$(tput setaf 5) $1 $(tput setaf 4)=<<$(tput sgr 0)"
 }
 
+cd ~/dotfiles/scripts
+
 section "Update dotfiles repository"
-~/dotfiles/scripts/update-dotfiles.sh
+./update-dotfiles.sh
 
 section "Check pre-conditions"
-~/dotfiles/scripts/check-preconditions.sh
+./check-preconditions.sh
 
 section "Machine specific files"
-~/dotfiles/scripts/create-machine-specific-files.sh
+./create-machine-specific-files.sh
 
 section "Create symlinks"
-~/dotfiles/scripts/link.sh
+./link.sh
 
 section "Update Nix"
-~/dotfiles/scripts/update-nix.sh
+./update-nix.sh
+
 section "Update Vim"
-~/dotfiles/scripts/update-vim.sh
+./update-vim.sh
+
 section "Update Fish"
-~/dotfiles/scripts/update-fish.fish
+./update-fish.fish
+
 section "Update Fish abbreviations"
-~/dotfiles/scripts/fish-abbreviations.fish
+./fish-abbreviations.fish
+
 section "Update Node/NPM"
-~/dotfiles/scripts/update-npm.sh
+./update-npm.sh
+
+section "Update PureScript"
+./update-purescript.sh
+
 section "Update Xmonad"
-~/dotfiles/scripts/update-xmonad.sh
+./update-xmonad.sh
+
 section "Update Haskell"
-~/dotfiles/scripts/update-haskell.sh
+./update-haskell.sh
+
 section "Update Ranger"
-~/dotfiles/scripts/update-ranger.sh
+./update-ranger.sh
 
 section "Run all checks"
-~/dotfiles/scripts/check-preconditions.sh
-~/dotfiles/scripts/check-postconditions.sh
+./check-preconditions.sh
+./check-postconditions.sh

@@ -22,6 +22,9 @@ fi
 # node global installations
 PATH="$HOME/.npm-global/bin:$PATH"
 
+# purescript psvm current binary
+PATH="$HOME/.psvm/current/bin:$PATH"
+
 # Rust (~/.cargo/bin)
 if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
     export PATH="$HOME/.cargo/bin:$PATH"
