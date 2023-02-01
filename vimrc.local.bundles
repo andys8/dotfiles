@@ -18,8 +18,10 @@ Plug 'terryma/vim-multiple-cursors'
 " Surround word: Use e.g. ysiw` and ds`
 Plug 'tpope/vim-surround'
 
-" Colorscheme dracula
+" Colorscheme dracula (default)
 Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Colorscheme nord
 Plug 'arcticicestudio/nord-vim'
 
 " Repeat surround commands
