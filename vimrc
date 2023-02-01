@@ -2,7 +2,7 @@
 " Config in vimrc.local and vimrc.local.bundles
 
 " Disable functionality
-let g:polyglot_disabled = ['elm', 'dhall', 'purescript']
+let g:polyglot_disabled = ['elm', 'purescript']
 
 "*****************************************************************************
 "" Install packages
