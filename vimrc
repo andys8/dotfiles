@@ -7,14 +7,13 @@ let g:polyglot_disabled = ['elm', 'dhall', 'purescript']
 "*****************************************************************************
 "" Jetpack install packages
 "*****************************************************************************
-packadd vim-jetpack
-call jetpack#begin()
+call plug#begin()
 if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
-call jetpack#end()
+call plug#end()
 
-" Required:
+" Required
 filetype plugin indent on
 
 

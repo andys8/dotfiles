@@ -1,15 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-[[ ! -f ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim ]] && {
-    echo "vim-jetpack is missing. Installing ..."
-    curl -fLo ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim \
-        --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim
-    echo "vim-jetpack installed"
-}
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Update Vim plugins"
-vim +JetpackSync +qall!
+vim +PlugInstall +qall!
 
 echo "Update CoC extensions"
 vim +CocInstall +qall!
