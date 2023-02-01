@@ -1,72 +1,86 @@
+Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+Jetpack 'scrooloose/nerdtree'
+Jetpack 'tpope/vim-commentary'
+Jetpack 'tpope/vim-fugitive'
+Jetpack 'vim-airline/vim-airline'
+Jetpack 'airblade/vim-gitgutter'
+Jetpack 'Raimondi/delimitMate'
+Jetpack 'sheerun/vim-polyglot'
+Jetpack 'tpope/vim-rhubarb' " required by fugitive to :GBrowse
+Jetpack 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Jetpack 'junegunn/fzf.vim'
+Jetpack 'Shougo/vimproc.vim', {'do': 'make'}
+Jetpack 'honza/vim-snippets'
+
 " Multi Cursor with CTRL+n and c(hange)
-Plug 'terryma/vim-multiple-cursors'
+Jetpack 'terryma/vim-multiple-cursors'
 
 " Surround word: Use e.g. ysiw` and ds`
-Plug 'tpope/vim-surround'
+Jetpack 'tpope/vim-surround'
 
 " Colorscheme dracula
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'arcticicestudio/nord-vim'
+Jetpack 'dracula/vim', { 'as': 'dracula' }
+Jetpack 'arcticicestudio/nord-vim'
 
 " Repeat surround commands
-Plug 'tpope/vim-repeat'
+Jetpack 'tpope/vim-repeat'
 
 " Start screen
-Plug 'mhinz/vim-startify'
+Jetpack 'mhinz/vim-startify'
 
 " Auto detect indentation width
-Plug 'tpope/vim-sleuth'
+Jetpack 'tpope/vim-sleuth'
 
 " Nerd font icons
-Plug 'ryanoasis/vim-devicons'
+Jetpack 'ryanoasis/vim-devicons'
 
 " Zen mode
-Plug 'junegunn/goyo.vim'
+Jetpack 'junegunn/goyo.vim'
 
 " Expand region (- _)
-Plug 'terryma/vim-expand-region'
+Jetpack 'terryma/vim-expand-region'
 
 " Run test suites with :Test*
-Plug 'janko-m/vim-test'
+Jetpack 'janko-m/vim-test'
 
 " Change root directory automatically
-Plug 'airblade/vim-rooter'
+Jetpack 'airblade/vim-rooter'
 
 " Coc (Language Server and Completion)
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Open links in browser
-Plug 'tyru/open-browser.vim'
+Jetpack 'tyru/open-browser.vim'
 
 " Markdown preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Jetpack 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-jetpack']}
 
 " PureScript
-Plug 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
+Jetpack 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
 
 " Ranger (,o)
-Plug 'francoiscabrol/ranger.vim'
+Jetpack 'francoiscabrol/ranger.vim'
 
 " Sort motions (e.g. gsi( or gs)
-Plug 'christoomey/vim-sort-motion'
+Jetpack 'christoomey/vim-sort-motion'
 
 " Dhall direct instead of polyglot
-Plug 'vmchale/dhall-vim', { 'for' : 'dhall' }
+Jetpack 'vmchale/dhall-vim', { 'for' : 'dhall' }
 
 " Coerce casing (e.g. crc to camelcase or crs to snake case)
-Plug 'tpope/vim-abolish'
+Jetpack 'tpope/vim-abolish'
 
 " Support .editorconfig
-Plug 'editorconfig/editorconfig-vim'
+Jetpack 'editorconfig/editorconfig-vim'
 
 " Haskell Hoogle
-Plug 'monkoose/fzf-hoogle.vim', { 'for' : 'haskell' }
+Jetpack 'monkoose/fzf-hoogle.vim', { 'for' : 'haskell' }
 
 " Language Tool (:LanguageToolCheck)
-Plug 'dpelle/vim-LanguageTool'
+Jetpack 'dpelle/vim-LanguageTool'
 
 " Astro
-Plug 'wuelnerdotexe/vim-astro'
+Jetpack 'wuelnerdotexe/vim-astro'
 
 " Copilot
-Plug 'github/copilot.vim'
+Jetpack 'github/copilot.vim'

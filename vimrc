@@ -5,34 +5,14 @@
 let g:polyglot_disabled = ['elm', 'dhall', 'purescript']
 
 "*****************************************************************************
-"" Plug install packages
+"" Jetpack install packages
 "*****************************************************************************
-call plug#begin(expand('~/.vim/plugged'))
-
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'Raimondi/delimitMate'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
-Plug 'honza/vim-snippets'
-
-"" Include user's extra bundle
+packadd vim-jetpack
+call jetpack#begin()
 if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
-
-" Include machine specific bundle or config
-if filereadable(expand("~/.vimrc.machine"))
-  source ~/.vimrc.machine
-endif
-
-call plug#end()
+call jetpack#end()
 
 " Required:
 filetype plugin indent on

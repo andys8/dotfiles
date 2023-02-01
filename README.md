@@ -78,14 +78,6 @@ export PATH=/home/user/example-path:$PATH
 export SLACK_TOKEN=example-token
 ```
 
-### `~/.vimrc.machine`
-
-Machine specific vim configuration
-
-```vim
-Plug 'https://account@github.com/org/plugin', { 'for' : 'language' }
-```
-
 ## Shell
 
 ### Change shell to fish

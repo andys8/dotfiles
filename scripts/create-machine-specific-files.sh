@@ -3,7 +3,6 @@
 files=(
     ~/.gitconfig.machine
     ~/.profile.machine
-    ~/.vimrc.machine
     ~/bin/startup.sh
 )
 
