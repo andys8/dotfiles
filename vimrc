@@ -1,9 +1,6 @@
 " Fork of vim-bootstrap
 " Config in vimrc.local and vimrc.local.bundles
 
-" Disable functionality
-let g:polyglot_disabled = ['elm', 'purescript']
-
 "*****************************************************************************
 "" Install packages
 "*****************************************************************************
@@ -16,14 +13,14 @@ call plug#end()
 "*****************************************************************************
 "" Basic Setup
 "*****************************************************************************"
+
+filetype plugin indent on
+
 "" Encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set ttyfast
-
-"" Required
-filetype plugin indent on
 
 "" Fix backspace indent
 set backspace=indent,eol,start
