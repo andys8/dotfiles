@@ -5,17 +5,13 @@
 let g:polyglot_disabled = ['elm', 'dhall', 'purescript']
 
 "*****************************************************************************
-"" Jetpack install packages
+"" Install packages
 "*****************************************************************************
 call plug#begin()
 if filereadable(expand("~/.vimrc.local.bundles"))
   source ~/.vimrc.local.bundles
 endif
 call plug#end()
-
-" Required
-filetype plugin indent on
-
 
 "*****************************************************************************
 "" Basic Setup
@@ -25,6 +21,9 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set ttyfast
+
+"" Required
+filetype plugin indent on
 
 "" Fix backspace indent
 set backspace=indent,eol,start
