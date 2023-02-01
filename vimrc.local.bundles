@@ -56,6 +56,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " PureScript
 Plug 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
 
+" Haskell
+Plug 'https://github.com/neovimhaskell/haskell-vim.git', { 'for' : 'haskell' }
+
 " Ranger (,o)
 Plug 'francoiscabrol/ranger.vim'
 
