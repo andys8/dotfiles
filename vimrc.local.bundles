@@ -1,3 +1,4 @@
+" vim-bootstrap
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -26,9 +27,6 @@ Plug 'tpope/vim-repeat'
 
 " Start screen
 Plug 'mhinz/vim-startify'
-
-" Auto detect indentation width
-Plug 'tpope/vim-sleuth'
 
 " Nerd font icons
 Plug 'ryanoasis/vim-devicons'
