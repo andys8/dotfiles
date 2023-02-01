@@ -53,7 +53,7 @@ Jetpack 'neoclide/coc.nvim', { 'branch': 'release' }
 Jetpack 'tyru/open-browser.vim'
 
 " Markdown preview
-Jetpack 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-jetpack']}
+Jetpack 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 " PureScript
 Jetpack 'purescript-contrib/purescript-vim', { 'for' : 'purescript' }
