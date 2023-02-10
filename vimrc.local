@@ -97,9 +97,9 @@ inoremap <C-s> <ESC>:w<CR>
 cnoremap w!! w !sudo tee % >/dev/null
 
 " Save without format
-command Writenoformat noa w
 command Wnoformat noa w
 cabbrev wn Wnoformat
+cabbrev nw Wnoformat
 
 " Load and save Vim config
 command Reload source $MYVIMRC
@@ -394,9 +394,6 @@ nmap <leader>o :Ranger<CR>
 
 " Presenting
 let g:presenting_top_margin = 2
-
-" Haskell
-" au BufWritePre *.hs call CocActionAsync('format')
 
 " Markdown
 let g:vim_markdown_conceal = 1
