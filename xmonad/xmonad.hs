@@ -124,7 +124,7 @@ topBarTheme =
 altMask = mod1Mask
 nothing = 0
 
-myKeys nScreens conf@XConfig{modMask, terminal, workspaces} =
+myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
     Map.fromList $
         [ ((modMask, xK_Return), spawn terminal)
         , ((modMask, xK_n), fileBrowser)
@@ -201,7 +201,7 @@ myKeys nScreens conf@XConfig{modMask, terminal, workspaces} =
 
 -- Mouse Bindings --
 
-myMouseBindings XConfig{modMask} =
+myMouseBindings XConfig {modMask} =
     Map.fromList
         [
             ( (modMask .|. controlMask, button1)
