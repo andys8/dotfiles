@@ -7,6 +7,10 @@ npm set prefix ~/.npm-global
 # npm is installed with nix, so it won't update itself
 npm set update-notifier false
 
+# disable audit/fund (performance improvement)
+npm set audit false
+npm set fund false
+
 # NPM installable packages
 packages=(
     asciicast2gif                     # convert asciinema to gif
