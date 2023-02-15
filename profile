@@ -74,6 +74,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # set environment
 export EDITOR=vim
 export VISUAL=vim
+export GIT_EDITOR="vim +startinsert"
 export TERMINAL=st
 export BROWSER=qutebrowser
 export READER=zathura
