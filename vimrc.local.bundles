@@ -85,3 +85,6 @@ Plug 'wuelnerdotexe/vim-astro'
 
 " Copilot
 Plug 'github/copilot.vim'
+
+" Fish Syntax
+Plug 'khaveesh/vim-fish-syntax'
