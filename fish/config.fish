@@ -57,15 +57,6 @@ xset r rate 200 80 2> /dev/null &
 [ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
   and source "$HOME/.nix-profile/share/autojump/autojump.fish"
 
-# sudo !!
-function sudo
-  if test "$argv" = !!
-    eval command sudo $history[1]
-  else
-    command sudo $argv
-  end
-end
-
 # nix-shell using fix via any-nix-shell
 function nix-shell
   any-nix-shell fish | source
