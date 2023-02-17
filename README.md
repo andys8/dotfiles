@@ -178,3 +178,5 @@ VerbosePkgLists
 ## Theme
 
 Install `xcursor-breeze` and [`Ant-Dracula`](https://github.com/EliverLara/Ant-Dracula) theme. Configure with `lxappearance`.
+
+![stats](https://static.scarf.sh/a.png?x-pxid=8c48fb17-fc67-4552-90d5-7cfb267fd0c8)
