@@ -185,8 +185,6 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((modMask, xK_minus), toggleScratchpad)
         , ((controlMask, xK_F2), suspend)
         , ((controlMask, xK_F3), sendKey controlMask xK_d)
-        , ((controlMask, xK_F4), typeText "¯\\_(ツ)_/¯")
-        , ((controlMask, xK_F6), typeText "(┛ಠ_ಠ)┛彡┻━┻")
         , ((nothing, xF86XK_AudioMute), spawn "pulseaudio-ctl mute")
         , ((nothing, xF86XK_AudioRaiseVolume), spawn "pulseaudio-ctl up")
         , ((nothing, xF86XK_AudioLowerVolume), spawn "pulseaudio-ctl down")
@@ -245,7 +243,6 @@ exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
 setMonitors i = spawn ("autorandr --load " <> show (i :: Int))
 updateMonitors = spawn "autorandr --change"
-typeText x = spawn $ "xdotool sleep 0.3 type '" ++ x ++ "'"
 
 viewWorkspace nScreens workspace = do
     screenId <- toScreenId nScreens workspace
