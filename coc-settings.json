@@ -1,7 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.floatActions": false,
-  "coc.preferences.formatOnSave": false,
+  "coc.preferences.formatOnSave": true,
   "coc.preferences.formatOnSaveTimeout": 5000,
   "coc.preferences.rootPatterns": ["package.json", ".git"],
   "diagnostic.enableMessage": "always",
