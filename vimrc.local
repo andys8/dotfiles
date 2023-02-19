@@ -33,7 +33,7 @@ set secure
 
 " gvim
 set guioptions=c
-set guifont=Iosevka\ Nerd\ Font\ 14
+set guifont=Iosevka\ Nerd\ Font:h14
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " Switch themes
