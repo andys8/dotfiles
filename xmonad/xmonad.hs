@@ -189,12 +189,11 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((nothing, xF86XK_AudioRaiseVolume), spawn "pulseaudio-ctl up")
         , ((nothing, xF86XK_AudioLowerVolume), spawn "pulseaudio-ctl down")
         ]
-            ++ [ ((modifier, key), action workspace)
-               | (workspace, key) <- zip workspaces [xK_1 .. xK_6]
-               , (modifier, action) <-
-                    [ (modMask, viewWorkspace nScreens)
-                    , (modMask .|. shiftMask, moveToWorkspace)
-                    ]
+            <> [ ((modifier, key), action workspace)
+               | let view = (modMask, viewWorkspace nScreens)
+               , let move = (modMask .|. shiftMask, moveToWorkspace)
+               , (workspace, key) <- zip workspaces [xK_1 .. xK_6]
+               , (modifier, action) <- [view, move]
                ]
 
 -- Mouse Bindings --
@@ -225,12 +224,12 @@ rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"
 otpTool = "passmenu-otp --type || exit 1"
 
-screenshotFile =
-    "maim -s --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
-screenshotWholeScreen =
-    "maim --hidecursor ~/Pictures/screenshots/screenshot-$(date +%s).png"
+screenshotPath = "~/Pictures/screenshots/screenshot-$(date +%s).png"
+screenshotFile = "maim -s --hidecursor " <> screenshotPath
+screenshotWholeScreen = "maim --hidecursor " <> screenshotPath
 screenshotClipboard =
-    "maim -s --hidecursor --format png /dev/stdout | xclip -selection clipboard -t image/png"
+    "maim -s --hidecursor --format png /dev/stdout"
+        <> " | xclip -selection clipboard -t image/png"
 
 setBrightness b = spawn $ brightness "eDP-1" b ++ " || " ++ brightness "eDP1" b
   where
@@ -241,7 +240,7 @@ suspend = spawn "systemctl suspend"
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
 exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
-setMonitors i = spawn ("autorandr --load " <> show (i :: Int))
+setMonitors i = spawn $ "autorandr --load " <> show (i :: Int)
 updateMonitors = spawn "autorandr --change"
 
 viewWorkspace nScreens workspace = do
