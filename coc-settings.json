@@ -28,6 +28,7 @@
   "tailwindCSS.includeLanguages": {
     "purescript": "javascriptreact"
   },
+  "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "languageserver": {
     "elmLS": {
       "enable": true,
