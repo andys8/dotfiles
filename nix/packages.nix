@@ -111,6 +111,7 @@ in
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     ranger # file manager
+    rustfmt # rust formatter
     rclone # copy cloud to cloud
     ripgrep # fast grep
     screenkey # visualize typed keys
