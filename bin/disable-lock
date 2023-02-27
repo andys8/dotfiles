@@ -1,0 +1,9 @@
+#!/bin/sh
+# Disable screenlock for some time
+# (handy for calls and movies)
+
+timeSeconds=7200 # 2 hours
+echo "Disabling screenlock for $timeSeconds seconds"
+
+xset -dpms
+(sleep $timeSeconds && xset dpms) &
