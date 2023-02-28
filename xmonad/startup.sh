@@ -62,6 +62,7 @@ fi
 setxkbmap -layout de -variant nodeadkeys -option ctrl:nocaps
 
 # Display standbye
+xset dpms
 xset dpms 360
 
 # Keyboard rate
