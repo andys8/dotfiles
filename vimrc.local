@@ -291,6 +291,7 @@ endfunction
 " Coc Errors
 hi link CocErrorHighlight SpellBad
 hi link CocWarningHighlight SpellLocal
+hi link CocUnusedHighlight Comment
 hi link CocInfoHighlight SpellRare
 hi link CocHintHighlight SpellCap
 
