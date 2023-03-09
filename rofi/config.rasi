@@ -2,6 +2,7 @@
 /* Modified but based on <https://raw.githubusercontent.com/dracula/rofi/master/theme/config1.rasi> */
 
 * {
+  font: "Iosevka Nerdfont 14";
   foreground: #f8f8f2;
   background-color: #282a36;
   active-background: #44475a;
@@ -10,7 +11,7 @@
   selected-urgent-background: @urgent-background;
   selected-active-background: @active-background;
   separatorcolor: @active-background;
-  bordercolor: #ff79c6;
+  bordercolor: @active-background;
 }
 
 #window {
@@ -37,7 +38,7 @@
 
 #listview {
   fixed-height: 0;
-  border: 2px dash 0px 0px;
+  border: 0px;
   border-color: @bordercolor;
   spacing: 2px;
   scrollbar: false;
@@ -46,7 +47,7 @@
 
 #element {
   border: 0;
-  padding: 1px;
+  padding: 2px 1px;
 }
 
 #element.normal.normal {
