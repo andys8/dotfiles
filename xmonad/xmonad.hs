@@ -181,6 +181,7 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((modMask, xK_e), spawn "emoji")
         , ((modMask .|. altMask, xK_e), exitXmonad)
         , ((modMask .|. shiftMask, xK_e), exitXmonad)
+        , ((controlMask .|. modMask .|. altMask, xK_l), exitXmonad)
         , ((modMask .|. altMask, xK_i), invertXColors)
         , ((modMask, xK_minus), toggleScratchpad)
         , ((controlMask, xK_F2), suspend)
