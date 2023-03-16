@@ -89,11 +89,11 @@ bsp =
         $ BSP.emptyBSP
 
 threeCol = layoutName "3-Col" $ addTopBar $ addSpace $ ThreeColMid 1 (3 / 100) (1 / 3)
-oneBig = layoutName "OneBig" $ addTopBar $ addSpace $ OneBig 0.75 0.65
+oneBig = layoutName "OneBig" $ addTopBar $ addSpace $ OneBig 0.6 0.7
 grid = layoutName "Grid" $ addTopBar $ addSpace Grid
 zen = layoutName "Zen" $ addTopBar $ zenSpace Grid
   where
-    zenScreenBorder = Border 100 100 500 500
+    zenScreenBorder = Border 100 100 400 400
     zenSpace = spacingRaw False zenScreenBorder True windowBorder' True
 
 myLayout = mkToggle1 NBFULL $ avoidStruts $ mkToggle1 FULL layouts
