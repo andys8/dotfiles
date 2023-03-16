@@ -1,7 +1,7 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
   "coc.preferences.floatActions": false,
-  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnSave": false,
   "coc.preferences.formatOnSaveTimeout": 5000,
   "coc.preferences.rootPatterns": ["package.json", ".git"],
   "diagnostic.enableMessage": "always",
@@ -28,6 +28,7 @@
   "tailwindCSS.includeLanguages": {
     "purescript": "javascriptreact"
   },
+  "java.enabled": false,
   "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "languageserver": {
     "elmLS": {
@@ -40,6 +41,14 @@
         "elmFormatPath": "elm-format",
         "elmAnalyseTrigger": "save"
       }
+    },
+    "kotlin": {
+      "enable": false,
+      "command": "kotlin-language-server",
+      "filetypes": ["kotlin"],
+      "rootPatterns": ["build.gradle.kts"],
+      "trace.server": "off",
+      "settings": {}
     },
     "haskell-language-server": {
       "enable": true,

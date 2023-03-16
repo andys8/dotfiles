@@ -103,6 +103,7 @@ in
     haskellPackages.git-brunch # git checkout branch tui
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
+    kotlin-language-server # kotlin
     lazygit # git terminal ui
     maim # screenshots
     meld # git merge tool (graphical)
@@ -111,9 +112,9 @@ in
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
     ranger # file manager
-    rustfmt # rust formatter
     rclone # copy cloud to cloud
     ripgrep # fast grep
+    rustfmt # rust formatter
     screenkey # visualize typed keys
     shellcheck # linter for shell scripts
     speedtest-cli # measure down/upload
