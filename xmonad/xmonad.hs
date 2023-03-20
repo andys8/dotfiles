@@ -29,7 +29,6 @@ import XMonad.Layout.Renamed
 import XMonad.Layout.Simplest
 import XMonad.Layout.Spacing
 import XMonad.Layout.SubLayouts
-import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.WindowNavigation
 import XMonad.Prompt
@@ -71,7 +70,7 @@ renderWorkspace color ws = withColor clickable
 
 -- Layouts --
 screenBorder' = Border 5 5 5 5
-windowBorder' = Border 10 10 10 10
+windowBorder' = Border 5 5 5 5
 addSpace = spacingRaw True screenBorder' True windowBorder' True
 addTopBar = noFrillsDeco shrinkText topBarTheme
 layoutName x = renamed [Replace x]
@@ -83,7 +82,6 @@ bsp =
         . addTopBar
         . windowNavigation
         . layoutName "BSP"
-        . addTabs shrinkText topBarTheme
         . subLayout [] Simplest
         . addSpace
         $ BSP.emptyBSP
@@ -113,7 +111,7 @@ topBarTheme =
         , activeBorderColor = active
         , inactiveBorderColor = inactive
         , urgentBorderColor = urgent
-        , decoHeight = 6
+        , decoHeight = 5
         }
   where
     active = "#ff79c6"
