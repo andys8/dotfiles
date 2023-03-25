@@ -18,6 +18,7 @@ packages=(
     dockerfile-language-server-nodejs # docker ls
     fx                                # json viewer
     http-server                       # spin up http server in directory
+    http-status-cli                   # http status lookup tool
     npm-check-updates                 # npm update depndencies
     pnpm                              # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
