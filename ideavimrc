@@ -4,6 +4,7 @@ let mapleader=','
 
 " Plugins
 set surround
+set multiple-cursors
 
 
 set hlsearch
@@ -22,7 +23,14 @@ set clipboard=unnamed,ideaput
 inoremap jj <Esc>
 
 " Multiple cursors
-map <C-n> <A-j>
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
 
 " Jump back and forward
 map <C-o> :action Back<CR>
