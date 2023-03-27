@@ -25,6 +25,7 @@ in
     ffmpeg # convert videos
     gcolor3 # color picker
     gifsicle # used by asciicast2gif
+    gitAndTools.tig # diff and comit view
     gnome3.zenity # show ui messages and dialogs
     guvcview # show webcam on screen
     haskellPackages.brittany # code formatter
@@ -98,7 +99,6 @@ in
     gitAndTools.gh # github-cli
     gitAndTools.git-gone # prune merged branches
     gitAndTools.hub # github commandline tool
-    gitAndTools.tig # diff and comit view
     glow # markdown viewer
     haskellPackages.git-brunch # git checkout branch tui
     hlint # haskell linter
