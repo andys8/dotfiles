@@ -261,6 +261,8 @@ nnoremap <silent> <leader>O :call CocActionAsync('runCommand', 'editor.action.or
 nnoremap <silent> <nowait> <leader>l :<C-u>CocList diagnostics<CR>
 nnoremap <silent> <nowait> <leader>L :<C-u>CocList -I symbols<cr>
 
+command MarkdownFix :call CocAction('runCommand', 'markdownlint.fixAll')<CR>
+
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
