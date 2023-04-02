@@ -23,7 +23,7 @@ ghcup install ghc 9.0.2 --no-set
 ghcup install ghc 9.2.7 --set
 
 echo ">> Checking haskell-language-server"
-hlsVersion="1.9.1.0"
+hlsVersion="1.10.0.0"
 
 if [[ $(haskell-language-server-wrapper --version) != *"$hlsVersion"* ]] || [[ "$arg" == "--force" ]]; then
     echo ">> Installing haskell-language-server ($hlsVersion)"
