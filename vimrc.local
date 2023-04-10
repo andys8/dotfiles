@@ -431,8 +431,9 @@ autocmd FileType gitcommit set colorcolumn+=73
 let g:astro_typescript = 'enable'
 
 " Copilot
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+imap <C-H> <Plug>(copilot-next)
 
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
