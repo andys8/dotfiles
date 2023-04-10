@@ -432,8 +432,8 @@ let g:astro_typescript = 'enable'
 
 " Copilot
 let g:copilot_no_tab_map = v:true
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
-imap <C-H> <Plug>(copilot-next)
+imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+imap <C-k> <Plug>(copilot-next)
 
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
