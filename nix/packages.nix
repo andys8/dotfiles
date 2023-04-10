@@ -54,6 +54,7 @@ in
     nix # nix package manager
     nodejs-16_x # nodejs and npm
     pass-otp # pass otp for token
+    ouch # compress tool
     python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
     screenfetch # system information
