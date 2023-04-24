@@ -28,9 +28,6 @@ section "Update Vim"
 section "Update Fish"
 ./update-fish.fish
 
-section "Update Fish abbreviations"
-./fish-abbreviations.fish
-
 section "Update Node/NPM"
 ./update-npm.sh
 

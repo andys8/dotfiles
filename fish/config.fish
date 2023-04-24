@@ -62,3 +62,96 @@ function nix-shell
   any-nix-shell fish | source
   nix-shell $argv
 end
+
+# Aliases
+abbr -a -- .. 'cd ..'
+abbr -a -- ... 'cd ../..'
+abbr -a -- .... 'cd ../../..'
+abbr -a -- ..... 'cd ../../../..'
+abbr -a -- ackf 'ack -f | ack'
+abbr -a -- agc 'sudo apt autoclean'
+abbr -a -- agi 'sudo apt install'
+abbr -a -- agr 'sudo apt remove'
+abbr -a -- agu 'sudo apt update && sudo apt upgrade'
+abbr -a -- benchmark hyperfine
+abbr -a -- calc wcalc
+abbr -a -- cheat cht.sh
+abbr -a -- colorpicker gcolor3
+abbr -a -- copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
+abbr -a -- dco docker-compose
+abbr -a -- de 'trans en:de'
+abbr -a -- du duf
+abbr -a -- e 'fzf | xargs -ro vim'
+abbr -a -- en 'trans de:en'
+abbr -a -- fvim 'fzf | xargs -ro vim'
+abbr -a -- g git
+abbr -a -- ga 'git add'
+abbr -a -- gaa 'git add .'
+abbr -a -- gb 'git brunch'
+abbr -a -- gc 'git commit'
+abbr -a -- gca 'git commit -a'
+abbr -a -- gcd 'git checkout development'
+abbr -a -- gcm 'git checkout master'
+abbr -a -- gco 'git checkout'
+abbr -a -- gcp 'git cherry-pick'
+abbr -a -- gd 'git diff'
+abbr -a -- gds 'git diff --staged'
+abbr -a -- gf 'git fetch --all'
+abbr -a -- gi git
+abbr -a -- gitb 'git b'
+abbr -a -- gl 'git log'
+abbr -a -- gm 'git merge'
+abbr -a -- gp 'git push'
+abbr -a -- gpl 'git pull'
+abbr -a -- gr 'git remote'
+abbr -a -- gra 'git rebase --abort'
+abbr -a -- grc 'git rebase --continue'
+abbr -a -- grd 'git rebase -i origin/development'
+abbr -a -- grm 'git rebase -i origin/master'
+abbr -a -- gru 'git rebase -i upstream/master'
+abbr -a -- gs 'git status'
+abbr -a -- gst 'git stash'
+abbr -a -- gti git
+abbr -a -- imp image-preview
+abbr -a -- jd 'cd ~/dotfiles'
+abbr -a -- lg lazygit
+abbr -a -- ll 'lsd -Al --date relative --group-dirs first'
+abbr -a -- lll 'lsd -Al --date relative --timesort --reverse'
+abbr -a -- ls lsd
+abbr -a -- mirror 'autorandr common'
+abbr -a -- n npm
+abbr -a -- ng 'nix-env -qaP | grep'
+abbr -a -- nr 'npm run'
+abbr -a -- ns nix-search
+abbr -a -- ntop nethogs
+abbr -a -- open 'devour xdg-open'
+abbr -a -- paci 'sudo pacman -S'
+abbr -a -- pacr 'sudo pacman -Rs'
+abbr -a -- pacs 'pacman -Ss'
+abbr -a -- pacu 'sudo pacman -Syu'
+abbr -a -- r ranger
+abbr -a -- rm trash
+abbr -a -- stacktest stack-test
+abbr -a -- stb 'stack build --test --no-run-tests'
+abbr -a -- stbw 'stack build --test --no-run-tests --file-watch'
+abbr -a -- sti 'stack build --test --no-run-tests --copy-bins'
+abbr -a -- stt stack-test
+abbr -a -- suspend 'systemctl suspend'
+abbr -a -- t tig
+abbr -a -- td todo
+abbr -a -- tdls 'ranger ~/Documents/todo'
+abbr -a -- tdt 'todo tomorrow'
+abbr -a -- tdy 'todo yesterday'
+abbr -a -- timestamp 'date +%s%3N'
+abbr -a -- tl 'toilet -t -F border -f future --gay'
+abbr -a -- todols 'todo ls'
+abbr -a -- toggle-touchpad touchpad-toggle
+abbr -a -- usb 'ranger /run/media/(whoami)'
+abbr -a -- uuid uuidgen
+abbr -a -- v vim
+abbr -a -- vi vim
+abbr -a -- vimg 'vim (git diff --name-only)'
+abbr -a -- vmi vim
+abbr -a -- weather 'curl https://wttr.in'
+abbr -a -- wttr 'curl https://wttr.in'
+abbr -a -- öö ll
