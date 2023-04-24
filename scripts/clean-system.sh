@@ -37,6 +37,12 @@ if [ -x "$(command -v "yarn")" ]; then
     yarn cache clean
 fi
 
+# Cargo / Rust
+if [ -x "$(command -v "cargo-cache")" ]; then
+    echo ">> Cleaning cargo"
+    cargo-cache -a
+fi
+
 # Autojump
 echo ">> Cleaning autojump (j)"
 autojump --purge

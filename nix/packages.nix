@@ -86,6 +86,7 @@ in
     bat # cat replacement
     bottom # system monitor
     cargo # rust package manager
+    cargo-cache # cache clean
     ctop # top for containers
     dhall # dhall (format)
     duf # disk usage
