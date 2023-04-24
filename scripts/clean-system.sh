@@ -14,8 +14,7 @@ RAND=$((RANDOM % 20))
 # Yay
 if [ -x "$(command -v "yay")" ]; then
     echo ">> Cleaning yay"
-    yay --clean
-    yay -Sc --noconfirm
+    yay -Yc --noconfirm
 fi
 
 # Apt
