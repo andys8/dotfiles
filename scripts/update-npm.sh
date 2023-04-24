@@ -15,6 +15,7 @@ npm set fund false
 packages=(
     asciicast2gif                     # convert asciinema to gif
     bash-language-server              # bash ls
+    csv2json                          # convert csv to json
     dockerfile-language-server-nodejs # docker ls
     fx                                # json viewer
     http-server                       # spin up http server in directory
