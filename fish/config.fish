@@ -2,9 +2,9 @@
 source $OMF_PATH/init.fish
 
 # Source .profile if missing
-if not test -n "$PROFILE_SOURCED"
-  # .profile will set .PROFILE_SOURCED therefore no loop
-  bash -c "source ~/.profile; fish"
+if [ "$PROFILE_SOURCED" != "1" ]
+  fenv source ~/.profile
+  set PROFILE_SOURCED 1
 end
 
 # Path to Oh My Fish install.

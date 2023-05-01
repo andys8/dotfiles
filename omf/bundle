@@ -1,3 +1,4 @@
+package foreign-env
 package https://github.com/dracula/fish
 package last-working-dir
 package pbcopy
