@@ -10,11 +10,18 @@ versions=(
     0.15.4
     0.15.6
     0.15.7
+    0.15.8
 )
 
+current=$(psvm ls)
+
 for v in "${versions[@]}"; do
-    echo ">> Installing purescript $v"
-    psvm install "$v"
+    if [[ "$current" == *"$v"* ]]; then
+        echo "$v is already installed"
+    else
+        echo ">> Installing purescript $v"
+        psvm install "$v"
+    fi
 done
 
 # psvm clean
