@@ -1,9 +1,9 @@
 let
   unstable = import <nixpkgs> { };
-  release2205 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/22.05.tar.gz") { };
+  release2305 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/23.05.tar.gz") { };
 in
 (
-  with release2205; [
+  with release2305; [
     (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
@@ -13,7 +13,7 @@ in
     awscli2 # amazon web services
     baobab # disk usage graphical
     bc # calculator
-    cabal2nix # Convert cabal files to nix
+    cabal2nix # convert cabal files to nix
     chafa # preview images in terminal
     diskus # disk usage
     dtrx # extract files
@@ -28,7 +28,6 @@ in
     gitAndTools.tig # diff and comit view
     gnome3.zenity # show ui messages and dialogs
     guvcview # show webcam on screen
-    haskellPackages.brittany # code formatter
     haskellPackages.cabal-fmt # cabal formatter
     haskellPackages.fourmolu # haskell formatter
     haskellPackages.hoogle # function documentation
@@ -50,9 +49,9 @@ in
     ncdu # disk usage
     neofetch # system information
     nethogs # network traffic monitoring
-    nitrogen # Wallpaper
+    nitrogen # wallpaper
     nix # nix package manager
-    nodejs-16_x # nodejs and npm
+    nodejs-18_x # nodejs and npm
     pass-otp # pass otp for token
     ouch # compress tool
     python39Packages.cfn-lint # cloudformation linter
@@ -93,7 +92,7 @@ in
     dunst # notification daemon
     entr # watch files
     exa # ls replacement
-    fd # "find" for files
+    fd # find for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
     gitAndTools.delta # git diff viewer
