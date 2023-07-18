@@ -1,7 +1,7 @@
 package foreign-env
 package https://github.com/dracula/fish
+package https://github.com/kidonng/zoxide.fish
 package last-working-dir
 package pbcopy
-package zoxide
 theme bobthefish
 theme default
