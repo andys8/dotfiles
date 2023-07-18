@@ -127,6 +127,7 @@ in
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
     yarn # alternative node package manager
+    zoxide # jump into directory with z
   ]
 ) ++ [
   (import ./st.nix)

@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 # If not running interactively, don't do anything
@@ -50,3 +51,6 @@ fi
 
 # Autojump
 . $HOME/.nix-profile/share/autojump/autojump.bash
+
+# zoxide
+eval "$(zoxide init bash)"

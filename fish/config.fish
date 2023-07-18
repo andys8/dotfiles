@@ -113,7 +113,7 @@ abbr -a -- gs 'git status'
 abbr -a -- gst 'git stash'
 abbr -a -- gti git
 abbr -a -- imp image-preview
-abbr -a -- jd 'cd ~/dotfiles'
+abbr -a -- j z
 abbr -a -- lg lazygit
 abbr -a -- ll 'lsd -Al --date relative --group-dirs first'
 abbr -a -- lll 'lsd -Al --date relative --timesort --reverse'
