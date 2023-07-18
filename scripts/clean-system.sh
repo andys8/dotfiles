@@ -43,10 +43,6 @@ if [ -x "$(command -v "cargo-cache")" ]; then
     cargo-cache -a
 fi
 
-# Autojump
-echo ">> Cleaning autojump (j)"
-autojump --purge
-
 # Vim CoC
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh

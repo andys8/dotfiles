@@ -21,9 +21,5 @@ mkdir -p $PLUGIN_DIR
 # devicons
 install_plugin https://github.com/alexanderjeurissen/ranger_devicons $PLUGIN_DIR/ranger-devicons
 
-# autojump
-install_plugin https://github.com/fdw/ranger-autojump $PLUGIN_DIR/ranger-autojump
-ln -sf $PLUGIN_DIR/ranger-autojump/autojump.py $PLUGIN_DIR/autojump.py
-
 # zoxide
 install_plugin https://github.com/jchook/ranger-zoxide $PLUGIN_DIR/zoxide

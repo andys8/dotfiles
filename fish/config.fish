@@ -53,10 +53,6 @@ bind --user --mode insert \cH backward-kill-path-component
 # Cursor speed
 xset r rate 200 80 2> /dev/null &
 
-# Autojump
-[ -f "$HOME/.nix-profile/share/autojump/autojump.fish" ];
-  and source "$HOME/.nix-profile/share/autojump/autojump.fish"
-
 # nix-shell using fix via any-nix-shell
 function nix-shell
   any-nix-shell fish | source

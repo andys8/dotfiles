@@ -33,6 +33,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias v='vim'
+alias j='z'
 alias r='ranger'
 alias ackf='ack -f | ack'
 alias pbcopy='xclip -selection clipboard'
@@ -48,9 +49,6 @@ if ! shopt -oq posix; then
         . /etc/bash_completion
     fi
 fi
-
-# Autojump
-. $HOME/.nix-profile/share/autojump/autojump.bash
 
 # zoxide
 eval "$(zoxide init bash)"

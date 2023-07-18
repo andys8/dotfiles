@@ -82,7 +82,6 @@ in
   with unstable; [
     ack # search in files
     act # run github actions locally
-    autojump # jump into directory with j
     bat # cat replacement
     bottom # system monitor
     cargo # rust package manager
