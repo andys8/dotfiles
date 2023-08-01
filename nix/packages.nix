@@ -56,7 +56,6 @@ in
     pass-otp # pass otp for token
     ouch # compress tool
     python39Packages.cfn-lint # cloudformation linter
-    robo3t # mongodb gui
     screenfetch # system information
     sent # suckless presentation tool
     shfmt # format shell scripts
