@@ -13,6 +13,8 @@ versions=(
     0.15.8
 )
 
+mkdir -p ~/.psvm/versions
+
 current=$(psvm ls)
 
 for v in "${versions[@]}"; do
