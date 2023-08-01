@@ -13,7 +13,6 @@ npm set fund false
 
 # NPM installable packages
 packages=(
-    asciicast2gif                     # convert asciinema to gif
     bash-language-server              # bash ls
     csv2json                          # convert csv to json
     dockerfile-language-server-nodejs # docker ls

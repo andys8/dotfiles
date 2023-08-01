@@ -24,7 +24,6 @@ in
     fast-cli # speedtest
     ffmpeg # convert videos
     gcolor3 # color picker
-    gifsicle # used by asciicast2gif
     gitAndTools.tig # diff and comit view
     gnome3.zenity # show ui messages and dialogs
     guvcview # show webcam on screen
