@@ -10,7 +10,7 @@ commands=(
     find        # used in scripts
     fish        # shell
     ghcup       # installer for haskell
-    lightdm     # Login display manager
+    #lightdm     # Login display manager
     nix-channel # nix
     nix-env     # nix
     nix-shell   # nix
