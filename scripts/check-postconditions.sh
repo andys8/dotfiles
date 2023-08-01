@@ -31,6 +31,7 @@ commandsOptional=(
     java         # java runtime
     json-tui     # TUI to visualize json input
     lxappearance # configure themes
+    pulseaudio   # better audio
     uuidgen      # generate uuid
     vimdiff      # git diffs in vim
     xkill        # click on window to kill

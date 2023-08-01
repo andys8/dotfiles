@@ -19,7 +19,6 @@ commands=(
     pgrep       # grep processes
     pip3        # python packages
     preload     # keep programs in ram
-    pulseaudio  # better audio
     python3     # pythong
     qutebrowser # Keyboard based webbrowser
     setxkbmap   # used in scripts
