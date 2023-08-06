@@ -52,7 +52,7 @@ in
     nethogs # network traffic monitoring
     nitrogen # wallpaper
     nix # nix package manager
-    nodejs-18_x # nodejs and npm
+    nodejs-16_x # nodejs and npm
     pass-otp # pass otp for token
     ouch # compress tool
     python39Packages.cfn-lint # cloudformation linter
@@ -125,7 +125,6 @@ in
     ueberzug # draw images in terminal
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
-    yarn # alternative node package manager
     zoxide # jump into directory with z
   ]
 ) ++ [

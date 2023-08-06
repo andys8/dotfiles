@@ -33,6 +33,7 @@ packages=(
     typescript                        # TS compiler
     uglify-js                         # minimize js
     write-good                        # check and improve written text
+    yarn@1.22                         # alternative to npm
 )
 
 npm_config_loglevel=error npm install -g "${packages[@]}"
