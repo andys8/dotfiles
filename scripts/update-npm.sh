@@ -21,6 +21,7 @@ packages=(
     http-server                       # spin up http server in directory
     http-status-cli                   # http status lookup tool
     npm-check-updates                 # npm update depndencies
+    n                                 # node version manager
     pnpm                              # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)

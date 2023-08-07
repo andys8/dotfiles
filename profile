@@ -71,6 +71,9 @@ export IBUS_ENABLE_SYNC_MODE=1
 # Fix xmonad java windows
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# n (node version manager) directory
+export N_PREFIX=$HOME/.local
+
 # set environment
 export EDITOR=vim
 export VISUAL=vim
