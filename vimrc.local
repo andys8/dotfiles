@@ -223,7 +223,6 @@ let g:rooter_patterns = [
       \ ]
 
 " Coc
-let g:coc_node_path = "~/.nix-profile/bin/node"
 let g:coc_global_extensions = [
       \ '@yaegassy/coc-tailwindcss3',
       \ 'coc-cspell-dicts',

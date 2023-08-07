@@ -52,7 +52,6 @@ in
     nethogs # network traffic monitoring
     nitrogen # wallpaper
     nix # nix package manager
-    nodejs-16_x # nodejs and npm
     pass-otp # pass otp for token
     ouch # compress tool
     python39Packages.cfn-lint # cloudformation linter

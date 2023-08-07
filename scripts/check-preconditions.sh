@@ -15,7 +15,9 @@ commands=(
     nix-env     # nix
     nix-shell   # nix
     nm-applet   # network manager applet
+    node        # node
     notify-send # notifications used by script
+    npm         # node package manager
     pgrep       # grep processes
     pip3        # python packages
     preload     # keep programs in ram

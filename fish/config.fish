@@ -118,9 +118,7 @@ abbr -a -- ll 'lsd -Al --date relative --group-dirs first'
 abbr -a -- lll 'lsd -Al --date relative --timesort --reverse'
 abbr -a -- ls lsd
 abbr -a -- mirror 'autorandr common'
-abbr -a -- n npm
 abbr -a -- ng 'nix-env -qaP | grep'
-abbr -a -- nr 'npm run'
 abbr -a -- ns nix-search
 abbr -a -- ntop nethogs
 abbr -a -- open 'devour xdg-open'
