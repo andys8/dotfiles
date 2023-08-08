@@ -135,6 +135,7 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((modMask, xK_BackSpace), kill)
         , ((altMask, xK_F4), kill)
         , ((modMask, xK_d), spawn rofiApplications)
+        , ((altMask, xK_space), spawn rofiApplications)
         , ((modMask .|. shiftMask, xK_d), spawn rofiRun)
         , ((nothing, xF86XK_PowerDown), poweroffComputer)
         , ((nothing, xF86XK_PowerOff), poweroffComputer)
