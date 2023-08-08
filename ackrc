@@ -12,6 +12,7 @@
 --ignore-dir=.idea/
 --ignore-dir=output/
 --ignore-dir=.spago/
+--ignore-dir=.next/
 
 --type-add=purescript:ext:purs
 --type-add=elm:ext:elm
