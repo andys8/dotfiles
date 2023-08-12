@@ -20,10 +20,14 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # node global installations
-PATH="$HOME/.npm-global/bin:$PATH"
+if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then
+    export PATH="$HOME/.npm-global/bin:$PATH"
+fi
 
 # purescript psvm current binary
-PATH="$HOME/.psvm/current/bin:$PATH"
+if [[ ":$PATH:" != *":$HOME/.psvm/current/bin:"* ]]; then
+    export PATH="$HOME/.psvm/current/bin:$PATH"
+fi
 
 # Rust (~/.cargo/bin)
 if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
