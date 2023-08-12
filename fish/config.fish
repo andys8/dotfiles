@@ -20,13 +20,20 @@ set -U theme_color_scheme dracula
 set -U theme_display_cmd_duration no
 set -U theme_display_date no
 set -U theme_display_docker_machine no
+set -U theme_display_git_ahead_verbose no
+set -U theme_display_git_default_branch no
+set -U theme_display_git_dirty yes
+set -U theme_display_git_dirty_verbose no
+set -U theme_display_git_stashed_verbose no
 set -U theme_display_hg no
 set -U theme_display_k8s_context no
 set -U theme_display_nix yes
+set -U theme_display_node no
 set -U theme_display_nvm no
 set -U theme_display_ruby no
 set -U theme_display_vagrant no
 set -U theme_display_vi no
+set -U theme_git_default_branches master main develop
 set -U theme_git_worktree_support no
 set -U theme_nerd_fonts yes
 set -U theme_show_exit_status no
