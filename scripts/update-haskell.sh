@@ -19,8 +19,7 @@ ghcup install stack recommended --set
 
 echo ">> Installing ghc"
 ghcup install ghc 8.10.7 --no-set
-ghcup install ghc 9.0.2 --no-set
-ghcup install ghc 9.2.7 --set
+ghcup install ghc 9.2.8 --set
 
 echo ">> Checking haskell-language-server"
 hlsVersion="1.10.0.0"
@@ -31,8 +30,7 @@ if [[ $(haskell-language-server-wrapper --version) != *"$hlsVersion"* ]] || [[ "
         --git-ref "$hlsVersion" \
         --git-describe-version \
         --ghc 8.10.7 \
-        --ghc 9.2.7 \
-        --ghc 9.0.2 \
+        --ghc 9.2.8 \
         --set \
         -- --ghc-options='-dynamic' \
         --flags="-haddockComments -eval -importLens -retrie -tactic -stan -alternateNumberFormat -gadt -explicitFixity -floskell"
