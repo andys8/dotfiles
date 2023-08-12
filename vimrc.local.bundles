@@ -88,6 +88,3 @@ Plug 'github/copilot.vim'
 
 " Fish Syntax
 Plug 'khaveesh/vim-fish-syntax'
-
-" Kotlin
-Plug 'udalov/kotlin-vim'

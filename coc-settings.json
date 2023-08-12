@@ -42,14 +42,6 @@
         "elmAnalyseTrigger": "save"
       }
     },
-    "kotlin": {
-      "enable": false,
-      "command": "kotlin-language-server",
-      "filetypes": ["kotlin"],
-      "rootPatterns": ["build.gradle.kts"],
-      "trace.server": "off",
-      "settings": {}
-    },
     "haskell-language-server": {
       "enable": true,
       "command": "haskell-language-server-wrapper",

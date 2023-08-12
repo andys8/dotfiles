@@ -103,7 +103,6 @@ in
     haskellPackages.git-brunch # git checkout branch tui
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
-    kotlin-language-server # kotlin
     lazygit # git terminal ui
     maim # screenshots
     meld # git merge tool (graphical)
