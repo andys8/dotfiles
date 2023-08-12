@@ -13,6 +13,7 @@
 --ignore-dir=output/
 --ignore-dir=.spago/
 --ignore-dir=.next/
+--ignore-dir=.nyc_output/
 
 --type-add=purescript:ext:purs
 --type-add=elm:ext:elm
