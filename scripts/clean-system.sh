@@ -43,6 +43,18 @@ if [ -x "$(command -v "cargo-cache")" ]; then
     cargo-cache -a
 fi
 
+# GHCup
+if [ -x "$(command -v "ghcup")" ]; then
+    echo ">> Cleaning garbage collection"
+    ghcup gc --ghc-old --hls-no-ghc --cache --tmpdirs
+fi
+
+# GHCup
+if [ -x "$(command -v "yarn")" ]; then
+    echo ">> Cleaning yarn cache"
+    yarn cache clean
+fi
+
 # Vim CoC
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
@@ -54,9 +66,3 @@ kondo --all ~
 # Symlinks
 echo ">> Cleaning symlinks"
 ~/dotfiles/scripts/clean-symlinks.sh
-
-# GHCup
-if [ -x "$(command -v "ghcup")" ]; then
-    echo ">> Cleaning garbage collection"
-    ghcup gc --ghc-old --hls-no-ghc --cache --tmpdirs
-fi
