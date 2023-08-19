@@ -140,8 +140,8 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((nothing, xF86XK_PowerDown), poweroffComputer)
         , ((nothing, xF86XK_PowerOff), poweroffComputer)
         , ((controlMask .|. modMask .|. altMask, xK_Escape), poweroffComputer)
+        , ((controlMask .|. modMask .|. altMask, xK_BackSpace), rofiPowerMenu)
         , ((modMask .|. altMask, xK_l), spawn "lock")
-        , ((controlMask .|. modMask .|. altMask, xK_BackSpace), spawn "lock")
         , ((controlMask .|. modMask .|. altMask, xK_space), suspend)
         , ((modMask, xK_Tab), workspaceInDirection nScreens Next)
         , ((modMask, xK_Shift_R), workspaceInDirection nScreens Next)
@@ -238,6 +238,7 @@ setBrightness b = spawn $ brightness "eDP-1" b ++ " || " ++ brightness "eDP1" b
 invertXColors = spawn "xrandr-invert-colors"
 suspend = spawn "systemctl suspend"
 poweroffComputer = confirm "poweroff" $ spawn "poweroff"
+rofiPowerMenu = spawn "rofi -show power-menu -modi power-menu:rofi-power-menu"
 exitXmonad = confirm "exit xmonad and logoff" $ io exitSuccess
 restartXmonad = restart "xmonad" True
 setMonitors i = spawn $ "autorandr --load " <> show (i :: Int)
