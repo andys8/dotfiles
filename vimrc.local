@@ -426,9 +426,6 @@ command German set spelllang=de
 autocmd FileType gitcommit set textwidth=72
 autocmd FileType gitcommit set colorcolumn+=73
 
-" Astro
-let g:astro_typescript = 'enable'
-
 " Copilot
 let g:copilot_no_tab_map = v:true
 imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
