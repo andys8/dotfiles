@@ -121,11 +121,13 @@ Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 
 ## Qutebrowser
 
-### Make Qutebrowser the default web browser
+### Default browser
 
 ```shell
 xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 xdg-settings set default-web-browser chromium.desktop # or stick with chromium
+xdg-mime default chromium.desktop x-scheme-handler/https
+xdg-mime default chromium.desktop x-scheme-handler/http
 ```
 
 ### Spell checking
