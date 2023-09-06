@@ -89,6 +89,7 @@ abbr -a -- de 'trans en:de'
 abbr -a -- du duf
 abbr -a -- e 'fzf | xargs -ro vim'
 abbr -a -- en 'trans de:en'
+abbr -a -- fkillall 'killall -s SIGKILL'
 abbr -a -- fvim 'fzf | xargs -ro vim'
 abbr -a -- g git
 abbr -a -- ga 'git add'
