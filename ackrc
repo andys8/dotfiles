@@ -14,6 +14,7 @@
 --ignore-dir=.spago/
 --ignore-dir=.next/
 --ignore-dir=.nyc_output/
+--ignore-dir=coverage/
 
 --type-add=purescript:ext:purs
 --type-add=elm:ext:elm
