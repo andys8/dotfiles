@@ -27,7 +27,6 @@ fi
 # Docker
 if [ -x "$(command -v "docker")" ]; then
     echo ">> Cleaning docker (3 months)"
-    docker container prune -f --filter "until=4380h"
     docker image prune -f -a --filter "until=4380h"
 fi
 
