@@ -107,6 +107,7 @@ in
     maim # screenshots
     meld # git merge tool (graphical)
     mpv # video player
+    nb # notes and todo
     nixpkgs-fmt # format nix
     pa_applet # volume tray icon
     pavucontrol # pulse audio settings
