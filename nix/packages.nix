@@ -100,7 +100,7 @@ in
     gitAndTools.git-gone # prune merged branches
     gitAndTools.hub # github commandline tool
     glow # markdown viewer
-    haskellPackages.git-brunch # git checkout branch tui
+    # haskellPackages.git-brunch # git checkout branch tui
     hlint # haskell linter
     hyperfine # benchmark (time replacement)
     lazygit # git terminal ui
