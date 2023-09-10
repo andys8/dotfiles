@@ -189,7 +189,7 @@ noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 " Startify
-let g:startify_files_number = 5
+let g:startify_files_number = 10
 let g:startify_change_to_dir = 0
 let startify_custom_header = split(system('toilet -f pagga " VIM Editor"'), '\n')
 let g:startify_enable_special = 0
@@ -205,8 +205,6 @@ let g:startify_commands = []
 
 let g:startify_bookmarks = [
       \ {'d': '~/dotfiles'},
-      \ {'v': '~/dotfiles/vimrc.local'},
-      \ {'b': '~/dotfiles/vimrc.local.bundles'},
       \ {'n': '~/dotfiles/nix/packages.nix'},
       \ ]
 
