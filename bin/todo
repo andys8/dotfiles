@@ -1,13 +1,30 @@
 #!/bin/sh
 # set -eu
-# Usage: todo [today|ls|list|yesterday|tomorrow]
+# Usage: todo [today|ls|list|yesterday|tomorrow|next|n|last|l|YYYY-MM-DD]
 
 path="$HOME/Documents/todo"
 arg="${1:-today}"
+format="%Y-%m-%d"
+
+next_date=$(date -d "+1 day" +$format)
+if [ "$(date -d "$next_date" +%u)" -ge 6 ]; then
+    days_to_add=$((8 - $(date -d "$next_date" +%u)))
+    next_date=$(date -d "$next_date + $days_to_add days" +$format)
+fi
+
+last_date=$(date -d "yesterday" +$format)
+if [ "$(date -d "$last_date" +%u)" -ge 6 ]; then
+    days_to_subtract=$((($(date -d "$last_date" +%u) - 5) % 7))
+    last_date=$(date -d "$last_date - $days_to_subtract days" +$format)
+fi
 
 case $arg in
 t) arg="tomorrow" ;;
 y) arg="yesterday" ;;
+next) arg="$next_date" ;;
+n) arg="$next_date" ;;
+last) arg="$last_date" ;;
+l) arg="$last_date" ;;
 esac
 
 if [ "$arg" = "ls" ] || [ "$arg" = "list" ]; then
@@ -15,7 +32,7 @@ if [ "$arg" = "ls" ] || [ "$arg" = "list" ]; then
     exit 0
 fi
 
-date=$(date --date="$arg" +"%Y-%m-%d")
+date=$(date --date="$arg" +$format)
 [ -z "$date" ] && exit 1
 
 file="$path/$date.md"
