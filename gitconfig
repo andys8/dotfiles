@@ -11,10 +11,12 @@
     b = brunch
     br = branch
     ci = commit
+    cd = checkout-default
     co = checkout
     cp = cherry-pick
     currentbranch = !git branch --show-current | tr -d '\n'
     currentcommit = !git rev-parse HEAD | tr -d '\n'
+	checkout-default = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed s@^refs/remotes/origin/@@)
     d = diff
     diff-default = diff
     diff-delta = diff
