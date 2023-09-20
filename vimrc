@@ -229,6 +229,10 @@ if has('autocmd')
 endif
 
 "" Copy/Paste/Cut
+if has('unnamed')
+  set clipboard=unnamed
+endif
+
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 endif

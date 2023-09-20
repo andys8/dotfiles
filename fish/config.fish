@@ -58,7 +58,7 @@ bind --user --mode insert --key nul backward-delete-char
 bind --user --mode insert \cH backward-kill-path-component
 
 # Cursor speed
-xset r rate 200 80 2> /dev/null &
+# xset r rate 200 80 2> /dev/null &
 
 # zoxide init
 zoxide init fish | source
