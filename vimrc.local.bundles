@@ -84,4 +84,10 @@ Plug 'dpelle/vim-LanguageTool'
 Plug 'github/copilot.vim'
 
 " Fish Syntax
-Plug 'khaveesh/vim-fish-syntax'
+Plug 'khaveesh/vim-fish-syntax', { 'for' : 'fish' }
+
+" Handlebars Syntax
+Plug 'mustache/vim-mustache-handlebars', { 'for' : 'handlebars' }
+
+" Zoxide
+Plug 'nanotee/zoxide.vim'
