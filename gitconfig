@@ -87,6 +87,7 @@
     summary = true
     verbosity = 1
     tool = meld
+    ff = true
 [mergetool "idea"]
     cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = false
