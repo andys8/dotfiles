@@ -32,6 +32,7 @@ packages=(
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
     typescript                        # TS compiler
+    typescript-strict-plugin          # tsc-strict
     uglify-js                         # minimize js
     write-good                        # check and improve written text
     yarn@1.22                         # alternative to npm
