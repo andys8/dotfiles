@@ -16,7 +16,8 @@
     cp = cherry-pick
     currentbranch = !git branch --show-current | tr -d '\n'
     currentcommit = !git rev-parse HEAD | tr -d '\n'
-	checkout-default = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed s@^refs/remotes/origin/@@)
+    default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed s@^refs/remotes/origin/@@
+    checkout-default = !git checkout $(git default-branch)
     d = diff
     diff-default = diff
     diff-delta = diff
@@ -27,12 +28,18 @@
     fe = fetch
     l = log --graph --date=short
     logfile = log --follow -p --
+    merge-default = !git merge origin/$(git default-branch)
+    mc = merge --continue
+    ma = merge --abort
+    md = merge-default
     pl = pull
     please = push --force-with-lease
     prevbranch = previousbranch
     previousbranch = !git rev-parse --abbrev-ref @{-1} | tr -d '\n'
     ps = push
     re = reset
+    rebase-default = !git rebase -i origin/$(git default-branch)
+    rd = rebase-default
     s = status
     setup-fork = remote-setup-fork
     st = status
