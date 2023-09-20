@@ -36,8 +36,6 @@ alias v='vim'
 alias j='z'
 alias r='ranger'
 alias ackf='ack -f | ack'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

@@ -24,30 +24,9 @@ if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then
     export PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
-# purescript psvm current binary
-if [[ ":$PATH:" != *":$HOME/.psvm/current/bin:"* ]]; then
-    export PATH="$HOME/.psvm/current/bin:$PATH"
-fi
-
-# Rust (~/.cargo/bin)
-if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
-    export PATH="$HOME/.cargo/bin:$PATH"
-fi
-
 # ~/.local/bin
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Nix
-if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-    # shellcheck disable=SC1091
-    source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-fi
-
-# ghcup
-if [[ ":$PATH:" != *":$HOME/.ghcup/bin:"* ]]; then
-    export PATH="$HOME/.ghcup/bin:$PATH"
 fi
 
 # ~/bin
@@ -78,17 +57,16 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # n (node version manager) directory
 export N_PREFIX=$HOME/.local
 
-# set environment
 export EDITOR=vim
 export VISUAL=vim
 export GIT_EDITOR=vim
-export TERMINAL=st
+export TERMINAL=alacritty
 export BROWSER=thorium-browser
-export READER=zathura
 export LANG=en_US.UTF-8
-export XCURSOR_THEME=xcursor-breeze
-export XCURSOR_PATH=/usr/share/icons:~/.icons:~/.nix-profile/share/icons/:$XCURSOR_PATH
 export RANGER_DEVICONS_SEPARATOR="  "
+
+# Brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Source local profile if it exists
 if [ -f "$HOME/.profile.machine" ]; then
@@ -98,4 +76,3 @@ fi
 
 # Used to test if this is sourced
 export PROFILE_SOURCED=1
-echo ".profile sourced"
