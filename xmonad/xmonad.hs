@@ -128,8 +128,8 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         , ((modMask, xK_n), fileBrowser)
         , ((modMask .|. altMask, xK_n), spawn "dunstctl close-all")
         , ((modMask .|. shiftMask, xK_Return), quteWebBrowser)
-        , ((modMask .|. controlMask, xK_Return), chromiumWebBrowser)
-        , ((modMask .|. shiftMask .|. controlMask, xK_Return), chromiumIncognitoWebBrowser)
+        , ((modMask .|. controlMask, xK_Return), defaultWebBrowser)
+        , ((modMask .|. shiftMask .|. controlMask, xK_Return), defaultIncognitoWebBrowser)
         , ((modMask, xK_Escape), kill)
         , ((modMask .|. shiftMask, xK_Escape), kill)
         , ((modMask, xK_q), kill)
@@ -219,8 +219,8 @@ myMouseBindings XConfig {modMask} =
 term = "st"
 fileBrowser = spawn "xdg-open ."
 quteWebBrowser = spawn "qutebrowser"
-chromiumWebBrowser = spawn "chromium"
-chromiumIncognitoWebBrowser = spawn "chromium --incognito"
+defaultWebBrowser = spawn "thorium-browser"
+defaultIncognitoWebBrowser = spawn "thorium-browser --incognito"
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"

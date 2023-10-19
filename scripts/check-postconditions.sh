@@ -24,18 +24,19 @@ assertCommands=(
 
 # Optional user commands (installed manually)
 commandsOptional=(
-    alacritty    # terminal-emulator
-    btm          # bottom process monitor
-    chromium     # chromium web browser
-    idea         # intellij ide
-    java         # java runtime
-    json-tui     # TUI to visualize json input
-    lxappearance # configure themes
-    pulseaudio   # better audio
-    uuidgen      # generate uuid
-    vimdiff      # git diffs in vim
-    xkill        # click on window to kill
-    zathura      # pdf viewer
+    alacritty        # terminal-emulator
+    btm              # bottom process monitor
+    chromium         # chromium web browser
+    idea             # intellij ide
+    java             # java runtime
+    json-tui         # TUI to visualize json input
+    lxappearance     # configure themes
+    pulseaudio       # better audio
+    throrium-browser # web browser
+    uuidgen          # generate uuid
+    vimdiff          # git diffs in vim
+    xkill            # click on window to kill
+    zathura          # pdf viewer
 )
 
 errors=0
