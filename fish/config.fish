@@ -102,6 +102,7 @@ abbr -a -- gcm 'git checkout master'
 abbr -a -- gco 'git checkout'
 abbr -a -- gcp 'git cherry-pick'
 abbr -a -- gd 'git diff'
+abbr -a -- gdd 'git diff-default'
 abbr -a -- gds 'git diff --staged'
 abbr -a -- gf 'git fetch --all'
 abbr -a -- gi git

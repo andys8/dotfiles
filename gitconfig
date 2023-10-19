@@ -19,7 +19,8 @@
     default-branch = !git symbolic-ref refs/remotes/origin/HEAD | sed s@^refs/remotes/origin/@@
     checkout-default = !git checkout $(git default-branch)
     d = diff
-    diff-default = diff
+    dd = diff-default
+    diff-default = !git diff origin/$(git default-branch)
     diff-delta = diff
     diff-so-fancy = diff
     diff1 = diff
