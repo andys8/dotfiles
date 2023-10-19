@@ -18,7 +18,6 @@
   "suggest.snippetIndicator": " 🔥",
   "suggest.snippetsSupport": true,
   "tsserver.formatOnType": false,
-  "tsserver.pluginPaths": ["typescript-strict-plugin"],
   "tailwindCSS.enable": true,
   "tailwindCSS.experimental.classRegex": [
     "\\bclassName\\s*:\\s*\\\"([_a-zA-Z0-9\\s\\-\\:\\/]+)\\\""
