@@ -24,19 +24,19 @@ assertCommands=(
 
 # Optional user commands (installed manually)
 commandsOptional=(
-    alacritty        # terminal-emulator
-    btm              # bottom process monitor
-    chromium         # chromium web browser
-    idea             # intellij ide
-    java             # java runtime
-    json-tui         # TUI to visualize json input
-    lxappearance     # configure themes
-    pulseaudio       # better audio
-    throrium-browser # web browser
-    uuidgen          # generate uuid
-    vimdiff          # git diffs in vim
-    xkill            # click on window to kill
-    zathura          # pdf viewer
+    alacritty       # terminal-emulator
+    btm             # bottom process monitor
+    chromium        # chromium web browser
+    idea            # intellij ide
+    java            # java runtime
+    json-tui        # TUI to visualize json input
+    lxappearance    # configure themes
+    pulseaudio      # better audio
+    thorium-browser # web browser
+    uuidgen         # generate uuid
+    vimdiff         # git diffs in vim
+    xkill           # click on window to kill
+    zathura         # pdf viewer
 )
 
 errors=0
@@ -124,13 +124,13 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 
 # qutebrowser min version
 QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
-[[ $QUTEBROWSER_VERSION =~ v2\.[0-9]\. ]] || {
+[[ $QUTEBROWSER_VERSION =~ v[2-3]\.[0-9]\. ]] || {
     fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
 }
 
 # stack min version
 STACK_VERSION=$(stack --version)
-[[ $STACK_VERSION =~ Version[[:space:]]2\.[5-9]\. ]] || {
+[[ $STACK_VERSION =~ Version[[:space:]]2\. ]] || {
     fail "Stack version not expected ($STACK_VERSION)"
 }
 
