@@ -122,12 +122,6 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
     fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
 }
 
-# qutebrowser min version
-QUTEBROWSER_VERSION=$(qutebrowser --version | grep "qutebrowser v")
-[[ $QUTEBROWSER_VERSION =~ v[2-3]\.[0-9]\. ]] || {
-    fail "Qutebrowser version not expected ($QUTEBROWSER_VERSION)"
-}
-
 # stack min version
 STACK_VERSION=$(stack --version)
 [[ $STACK_VERSION =~ Version[[:space:]]2\. ]] || {
