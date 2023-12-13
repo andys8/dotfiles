@@ -233,6 +233,7 @@ let g:coc_global_extensions = [
       \ 'coc-spell-checker',
       \ 'coc-tsserver',
       \ 'coc-yaml',
+      \ 'coc-go',
       \ ]
 
 nmap          <F5>      :CocRebuild<CR>
