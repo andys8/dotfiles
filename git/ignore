@@ -3,3 +3,4 @@
 .stack/
 elm-stuff/
 node_modules/
+.aider*

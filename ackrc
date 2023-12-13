@@ -15,6 +15,8 @@
 --ignore-dir=.next/
 --ignore-dir=.nyc_output/
 --ignore-dir=coverage/
+--ignore-file=is:tsconfig.tsbuildinfo
+--ignore-file=is:yarn-error.log
 
 --type-add=purescript:ext:purs
 --type-add=elm:ext:elm
