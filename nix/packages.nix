@@ -47,13 +47,14 @@ in
     lxqt.pavucontrol-qt # control volume per application
     mdcat # markdown viewer
     mdp # markdown presentation
+    mongodb-tools # mongo cli tools
     ncdu # disk usage
     neofetch # system information
     nethogs # network traffic monitoring
     nitrogen # wallpaper
     nix # nix package manager
-    pass-otp # pass otp for token
     ouch # compress tool
+    pass-otp # pass otp for token
     python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
     screenfetch # system information
