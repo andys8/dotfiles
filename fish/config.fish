@@ -163,4 +163,7 @@ abbr -a -- vimg 'vim (git diff --name-only)'
 abbr -a -- vmi vim
 abbr -a -- weather 'curl https://wttr.in'
 abbr -a -- wttr 'curl https://wttr.in'
+abbr -a -- yd 'yarn dev'
+abbr -a -- yi 'yarn install'
+abbr -a -- yt 'yarn test'
 abbr -a -- öö ll
