@@ -29,6 +29,9 @@ ln -sf ~/dotfiles/tigrc ~/.tigrc
 # Ack
 ln -sf ~/dotfiles/ackrc ~/.ackrc
 
+# Ripgrep
+ln -sf ~/dotfiles/ripgreprc ~/.ripgreprc
+
 # Alacritty
 ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
 

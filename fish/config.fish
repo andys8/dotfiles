@@ -139,6 +139,7 @@ abbr -a -- pacr 'sudo pacman -Rs'
 abbr -a -- pacs 'pacman -Ss'
 abbr -a -- pacu 'sudo pacman -Syu'
 abbr -a -- r ranger
+abbr -a -- rgf 'rg --files | rg'
 abbr -a -- rm trash
 abbr -a -- stacktest stack-test
 abbr -a -- stb 'stack build --test --no-run-tests'

@@ -1,0 +1,16 @@
+# Settings
+--smart-case
+--hidden
+
+# Max line length
+--max-columns=10000
+
+# Filetypes
+--type-add 'purescript:*.purs
+--type-add 'elm:*.elm
+
+# Exclude
+--glob=!{.git,.svn,node_modules,build,dist,.idea,.next}
+--glob=!{.nyc_output,coverage,bower_components,elm-stuff}
+--glob=!*.{lock}
+--glob=!{package-lock.json,tsconfig.tsbuildinfo,yarn-error.log}
