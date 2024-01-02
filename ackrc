@@ -18,6 +18,7 @@
 --ignore-dir=coverage/
 --ignore-file=is:tsconfig.tsbuildinfo
 --ignore-file=is:yarn-error.log
+--ignore-file=is:mocha-result.json
 
 --type-add=purescript:ext:purs
 --type-add=elm:ext:elm
