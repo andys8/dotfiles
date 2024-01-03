@@ -122,7 +122,7 @@ in
     sxiv # image viewer
     translate-shell # trans command
     tty-share # share terminal
-    ueberzug # draw images in terminal
+    ueberzugpp # replacement for ueberzug (images in terminal)
     unclutter # hide idle mouse
     xmobar # status bar for xmonad
     zoxide # jump into directory with z
