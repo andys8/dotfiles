@@ -3,7 +3,12 @@
 .stack-work-docker/
 .stack-work/
 .stack/
+.nyc_output/
 elm-stuff/
 node_modules/
+coverage/
 package-lock.json
 stack.yaml.lock
+yarn.lock
+tsconfig.tsbuildinfo
+yarn-error.log

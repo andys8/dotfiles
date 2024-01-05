@@ -13,4 +13,4 @@
 --glob=!{.git,.svn,node_modules,build,dist,.idea,.next}
 --glob=!{.nyc_output,coverage,bower_components,elm-stuff}
 --glob=!*.{lock}
---glob=!{package-lock.json,tsconfig.tsbuildinfo,yarn-error.log}
+--glob=!{package-lock.json,tsconfig.tsbuildinfo,yarn-error.log,yarn.lock}
