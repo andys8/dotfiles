@@ -91,3 +91,6 @@ Plug 'mustache/vim-mustache-handlebars', { 'for' : 'handlebars' }
 
 " Zoxide
 Plug 'nanotee/zoxide.vim'
+
+" Nix Syntax Highlighting
+Plug 'LnL7/vim-nix', { 'for' : 'nix' }
