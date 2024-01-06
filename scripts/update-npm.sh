@@ -27,13 +27,11 @@ packages=(
     pscid                             # purescript compiler daemon (like ghcid)
     psvm-ps                           # purescript version manager
     purescript-language-server        # purescript ls
-    purs-tidy                         # alternative purescript formatter
-    purty                             # purescript formatter
+    purs-tidy                         # purescript formatter
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
     typescript                        # TS compiler
     typescript-strict-plugin          # tsc-strict
-    uglify-js                         # minimize js
     write-good                        # check and improve written text
     yarn@1.22                         # alternative to npm
 )
