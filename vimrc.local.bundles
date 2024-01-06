@@ -38,7 +38,7 @@ Plug 'ryanoasis/vim-devicons'
 " Zen mode
 Plug 'junegunn/goyo.vim'
 
-" Expand region (- _)
+" Expand region (+_-)
 Plug 'terryma/vim-expand-region'
 
 " Run test suites with :Test*
