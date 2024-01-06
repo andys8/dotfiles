@@ -3,14 +3,12 @@
 set -euo pipefail
 
 # Default compiler version
-default=0.15.4
+default=0.15.14
 
 # PureScript compiler versions
 versions=(
     0.15.4
-    0.15.6
-    0.15.7
-    0.15.8
+    0.15.14
 )
 
 current=$(psvm ls)
