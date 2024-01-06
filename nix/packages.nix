@@ -1,9 +1,9 @@
 let
   unstable = import <nixpkgs> { };
-  release2305 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/23.05.tar.gz") { };
+  release2311 = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/23.11.tar.gz") { };
 in
 (
-  with release2305; [
+  with release2311; [
     (rofi.override { plugins = [ rofi-emoji ]; }) # rofi with emoji plugin
     any-nix-shell # use fish as nix-shell
     arandr # gui for monitors with xrandr
@@ -54,7 +54,6 @@ in
     nitrogen # wallpaper
     nix # nix package manager
     ouch # compress tool
-    pass-otp # pass otp for token
     python39Packages.cfn-lint # cloudformation linter
     robo3t # mongodb gui
     screenfetch # system information
