@@ -37,6 +37,7 @@ commandsOptional=(
     vimdiff         # git diffs in vim
     xkill           # click on window to kill
     zathura         # pdf viewer
+    sgpt            # TheR1D/shell_gpt
 )
 
 errors=0
