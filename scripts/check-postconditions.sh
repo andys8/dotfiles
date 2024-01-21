@@ -17,6 +17,7 @@ assertCommands=(
     lock                            # bin/lock file is on the path
     prettier                        # js/css/markdown formatter
     qrcode-terminal                 # show qr codes
+    sgpt                            # TheR1D/shell_gpt
     st                              # suckless terminal
     stack                           # haskell tool
     tsc                             # typescript compiler
@@ -37,7 +38,6 @@ commandsOptional=(
     vimdiff         # git diffs in vim
     xkill           # click on window to kill
     zathura         # pdf viewer
-    sgpt            # TheR1D/shell_gpt
 )
 
 errors=0
