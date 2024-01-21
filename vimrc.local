@@ -207,9 +207,11 @@ let g:startify_bookmarks = [
       \ ]
 
 " Rooter
+let g:rooter_buftypes = ['']
+let g:rooter_targets = '*'
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [
-     \ 'spago.dhall',
+      \ 'spago.dhall',
       \ 'package.json',
       \ 'elm.json',
       \ 'stack.yaml',
