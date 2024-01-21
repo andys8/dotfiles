@@ -159,7 +159,7 @@ set tags+=tags;tags.vendors;,tags;
 
 " Search with Rg (overwrites vimrc)
 nnoremap <silent> <leader>f :Rg<CR>
-nnoremap <silent> <leader>F :Rg <c-r><c-w><cr>
+nnoremap <silent> <leader>F :Gcd<CR>:Rg<CR>
 
 " Rg search command
 command! -bang -nargs=* Rg
