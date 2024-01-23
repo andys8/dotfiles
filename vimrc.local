@@ -113,6 +113,10 @@ command UUID :r !uuidgen
 command CopyFileName :let @+ = expand("%:p")
 nnoremap <C-c> :CopyFileName<CR>
 
+
+" Zoxide / Autojump
+command -nargs=1 J Z <args>
+
 " Ticket
 command Ticket :.!ticket
 
