@@ -110,6 +110,9 @@ command ConfigPlugins :e ~/dotfiles/vimrc.local.bundles
 command Uuid :r !uuidgen
 command UUID :r !uuidgen
 
+command CopyFileName :let @+ = expand("%:p")
+nnoremap <C-c> :CopyFileName<CR>
+
 " Ticket
 command Ticket :.!ticket
 
