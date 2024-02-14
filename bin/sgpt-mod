@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$2" ]; then
+    echo "Usage: $0 <file> <output>"
+    exit 1
+fi
+
+file=$1
+
+if [ ! -f "$file" ]; then
+    echo "File '$1' does not exist"
+    exit 1
+fi
+
+tmpFile=$(mktemp)
+sgptArgs=${*:2}
+
+# shellcheck disable=SC2002,SC2086
+cat "$file" | sgpt --no-interaction --role sgpt-mod "$sgptArgs" >"$tmpFile"
+mv "$tmpFile" "$file"
