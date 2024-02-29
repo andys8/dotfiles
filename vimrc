@@ -202,7 +202,7 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 "" fzf.vim
 set wildmode=list:longest,list:full
-set wildignore+=**/node_modules,**/.stack-work,**/.stack/,**/dist,**/build,**/output,**/ouput-purs-loader
+set wildignore+=**/node_modules,**/.stack-work,**/.stack/,**/dist,**/build,**/output,**/ouput-purs-loader,**/.yarn
 set wildignore+=*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,package-lock.json,stack.yaml.lock,yarn.lock
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 
