@@ -118,7 +118,7 @@ nnoremap <C-c> :CopyFileName<CR>
 command -nargs=1 J Z <args>
 
 " Ticket
-command Ticket :.!ticket
+command Ticket :execute "normal! A" . system('ticket')
 
 " Abbreviations
 cabbrev Ci CocInfo
