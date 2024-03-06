@@ -1,0 +1,40 @@
+#!/bin/bash
+set -e
+
+# Check if the branch name is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <branch_name>"
+    exit 1
+fi
+
+# Abort if there are no git changes
+if [ -z "$(git status --porcelain)" ]; then
+    echo "No changes to commit"
+    exit 1
+fi
+
+# Extract ticket number and branch type from the provided branch name
+BRANCH_NAME="$1"
+TICKET_NUMBER=$(echo "$BRANCH_NAME" | grep -oPi 'vi-\d+' | tr '[:lower:]' '[:upper:]')
+
+BRANCH_TYPE=$(echo "$BRANCH_NAME" | cut -d'/' -f1)
+if [ "$BRANCH_TYPE" == "feature" ]; then
+    BRANCH_TYPE="feat"
+elif [ "$BRANCH_TYPE" == "bugfix" ]; then
+    BRANCH_TYPE="fix"
+fi
+
+TITLE=$(echo "$BRANCH_NAME" | cut -d'-' -f3- | sed 's/-/ /g')
+
+if [ -z "$TICKET_NUMBER" ]; then
+    COMMIT_MSG="$BRANCH_TYPE: $TITLE"
+else
+    COMMIT_MSG="$BRANCH_TYPE: $TICKET_NUMBER $TITLE"
+fi
+
+git checkout -b "$BRANCH_NAME"
+git add .
+git commit -am "$COMMIT_MSG" || true
+git push --set-upstream origin "$BRANCH_NAME"
+
+hub pull-request
