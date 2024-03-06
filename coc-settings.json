@@ -20,15 +20,6 @@
   "tsserver.formatOnType": false,
   "tsserver.maxTsServerMemory": 8192,
   "tailwindCSS.enable": true,
-  "tailwindCSS.experimental.classRegex": [
-    "\\bclassName\\s*:\\s*\\\"([_a-zA-Z0-9\\s\\-\\:\\/]+)\\\""
-  ],
-  "tailwindCSS.headwind.classRegex": {
-    "purescript": "\\bclassName\\s*:\\s*\\\"([_a-zA-Z0-9\\s\\-\\:\\/]+)\\\""
-  },
-  "tailwindCSS.includeLanguages": {
-    "purescript": "javascriptreact"
-  },
   "java.enabled": false,
   "rust-analyzer.diagnostics.disabled": ["unresolved-proc-macro"],
   "languageserver": {
