@@ -9,8 +9,8 @@ fi
 
 # Abort if there are no git changes
 if [ -z "$(git status --porcelain)" ]; then
-    echo "No changes to commit"
-    exit 1
+    echo "No changes to commit. Are you sure?"
+    read -p "Press Enter to continue" -r
 fi
 
 # Extract ticket number and branch type from the provided branch name
