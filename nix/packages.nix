@@ -15,6 +15,7 @@ in
     bc # calculator
     cabal2nix # convert cabal files to nix
     chafa # preview images in terminal
+    colorized-logs # colorize logs
     diskus # disk usage
     dtrx # extract files
     elmPackages.elm # compiler
