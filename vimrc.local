@@ -437,6 +437,9 @@ let g:copilot_no_tab_map = v:true
 imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
 imap <C-k> <Plug>(copilot-next)
 
+" MDX
+autocmd BufNewFile,BufRead *.mdx set filetype=markdown
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc
