@@ -117,7 +117,7 @@ in
     ripgrep # fast grep
     rustfmt # rust formatter
     screenkey # visualize typed keys
-    shell_gpt # TheR1D/shell_gpt (sgpt)
+    shell-gpt # TheR1D/shell_gpt (sgpt)
     shellcheck # linter for shell scripts
     speedtest-cli # measure down/upload
     sxiv # image viewer
