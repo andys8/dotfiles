@@ -1,0 +1,30 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <file>"
+    exit 1
+fi
+
+file=$1
+
+if [ ! -f "$file" ]; then
+    echo "File '$1' does not exist"
+    exit 1
+fi
+#
+# Extract the locale using a regex
+if [[ "$file" =~ /locales/([^/]+) ]]; then
+    locale="${BASH_REMATCH[1]}"
+    echo "Locale: $locale"
+else
+    echo "Locale not found in the filepath."
+    exit 1
+fi
+
+prompt="Modify the a i18n translation file. It was automatically translated, but might errors. Please correct them, and slightly improve the wording. Only edit the values, not the keys. Do only fix grammar mistakes, and not change meaning. Do not use markdown! The locale / language is $locale. Here is the JSON content:"
+
+tmpFile=$(mktemp)
+
+# shellcheck disable=SC2002,SC2086
+cat "$file" | sgpt --no-interaction "$prompt" >"$tmpFile"
+mv "$tmpFile" "$file"
