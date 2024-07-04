@@ -22,7 +22,7 @@ packages=(
     http-status-cli                   # http status lookup tool
     npm-check-updates                 # npm update depndencies
     n                                 # node version manager
-    pnpm                              # alternative to npm
+    pnpm@7                            # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     pscid                             # purescript compiler daemon (like ghcid)
     psvm-ps                           # purescript version manager
@@ -30,7 +30,7 @@ packages=(
     purs-tidy                         # purescript formatter
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
-    typescript                        # TS compiler
+    typescript@5.2.2                  # TS compiler
     typescript-strict-plugin          # tsc-strict
     write-good                        # check and improve written text
     yarn@1.22                         # alternative to npm
