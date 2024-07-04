@@ -91,3 +91,6 @@ Plug 'nanotee/zoxide.vim'
 
 " Nix Syntax Highlighting
 Plug 'LnL7/vim-nix', { 'for' : 'nix' }
+
+" TypeScript Syntax Highlighting
+Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }

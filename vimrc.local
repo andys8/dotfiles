@@ -317,6 +317,9 @@ hi! link PmenuSel DraculaOrangeInverse
 hi! link CocMenuSel DraculaOrangeInverse
 hi! link CocSearch DraculaOrange
 
+" " TypeScript colors
+hi! link typescriptParens DraculaFgBold
+
 " vimdiff
 if &diff
   map <leader>1 :diffget LOCAL<CR>
