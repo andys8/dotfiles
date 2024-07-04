@@ -32,7 +32,7 @@ else
     COMMIT_MSG="$BRANCH_TYPE: $TICKET_NUMBER $TITLE"
 fi
 
-git checkout -b "$BRANCH_NAME"
+git checkout -b "$BRANCH_NAME" || git checkout "$BRANCH_NAME"
 git add .
 git commit -am "$COMMIT_MSG" || true
 git push --set-upstream origin "$BRANCH_NAME"
