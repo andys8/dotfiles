@@ -1,8 +1,8 @@
 # open terminal
-cmd - return : open -n -a "Alacritty"
+alt - return : open -n -a "Alacritty"
 
 # open chrome 
-cmd + shift - return : open -n -a "Google Chrome" 
+ctrl + alt - return : open -n -a "Thorium"
 
 # moves focus between windows in the current focused display
 alt - h : yabai -m window --focus west
@@ -30,6 +30,7 @@ alt - e : yabai -m window --toggle split
 
 # close window
 alt - x : yabai -m window --close
+alt - escape : yabai -m window --close
 
 # minimize window
 alt - m : yabai -m window --minimize
@@ -44,8 +45,8 @@ alt - y : yabai -m space --mirror y-axis
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window parent zoom
-alt - d : yabai -m window --focus mouse && \
-          yabai -m window --toggle zoom-parent
+# alt - d : yabai -m window --focus mouse && \
+#           yabai -m window --toggle zoom-parent
 
 # float / unfloat window and center on screen
 alt - t : yabai -m window --toggle float;\
@@ -121,5 +122,5 @@ ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
 # restart yabai
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
-ctrl + alt + cmd - o : node ~/Projects/Personal/philips-hue-experiments/commands/turn-on.js --all
-ctrl + alt + cmd - f : node ~/Projects/Personal/philips-hue-experiments/commands/turn-off.js --all
+# consistency
+cmd - q : skhd -t "@"
