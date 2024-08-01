@@ -111,14 +111,6 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-## Xmonad
-
-`lightdm` is expected. `/usr/share/xsessions/xmonad.desktop` will be created if not existing.
-
-### `Super + Space` on Ubuntu
-
-Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
-
 ## Qutebrowser
 
 ### Default browser

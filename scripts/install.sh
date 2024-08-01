@@ -34,9 +34,6 @@ section "Update Node/NPM"
 section "Update PureScript"
 ./update-purescript.sh
 
-section "Update Xmonad"
-./update-xmonad.sh
-
 section "Update Haskell"
 ./update-haskell.sh
 

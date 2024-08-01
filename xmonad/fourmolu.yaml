@@ -1,8 +1,0 @@
-indentation: 4
-comma-style: leading
-record-brace-space: true
-indent-wheres: false
-diff-friendly-import-export: true
-respectful: true
-haddock-style: single-line
-newlines-between-decls: 1
