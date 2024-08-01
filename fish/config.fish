@@ -134,7 +134,6 @@ abbr -a -- mirror 'autorandr common'
 abbr -a -- ng 'nix-env -qaP | grep'
 abbr -a -- ns nix-search
 abbr -a -- ntop nethogs
-abbr -a -- open 'devour xdg-open'
 abbr -a -- paci 'sudo pacman -S'
 abbr -a -- pacr 'sudo pacman -Rs'
 abbr -a -- pacs 'pacman -Ss'
