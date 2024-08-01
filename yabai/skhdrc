@@ -124,3 +124,4 @@ ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # consistency
 cmd - q : skhd -t "@"
+cmd - 0x0A : skhd -t "|"
