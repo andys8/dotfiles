@@ -9,34 +9,16 @@ commands=(
     fc-list     # list fonts
     find        # used in scripts
     fish        # shell
-    ghcup       # installer for haskell
-    lightdm     # Login display manager
-    nix-channel # nix
-    nix-env     # nix
-    nix-shell   # nix
-    nm-applet   # network manager applet
     node        # node
-    notify-send # notifications used by script
     npm         # node package manager
     pgrep       # grep processes
     pip3        # python packages
-    preload     # keep programs in ram
     python3     # pythong
-    qutebrowser # Keyboard based webbrowser
-    setxkbmap   # used in scripts
-    shuf        # used in shell scripts
     tar         # archive
     tr          # used in shell scripts
     vim         # editor
-    w3m         # used in explainshell script
     xargs       # scripting
     xclip       # copy/paste
-    xdotool     # control x via command line
-    xrandr      # monitor setup
-    xrdb        # load Xresources
-    xsecurelock # lockscreen
-    xset        # scripts
-    xss-lock    # lock the screen
 )
 
 fonts=(

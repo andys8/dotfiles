@@ -35,6 +35,7 @@ commandsOptional=(
     pulseaudio      # better audio
     thorium-browser # web browser
     trash-put       # trash-cli
+    shfmt           # shell format
     uuidgen         # generate uuid
     vimdiff         # git diffs in vim
     xkill           # click on window to kill
