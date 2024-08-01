@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : open -n -a "Terminal"
+cmd - return : open -n -a "Alacritty"
 
 # open chrome 
 cmd + shift - return : open -n -a "Google Chrome" 
