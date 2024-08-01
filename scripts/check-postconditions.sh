@@ -3,23 +3,13 @@ set -euo pipefail
 
 # Asserted commands (should be installed by script)
 assertCommands=(
-    cabal                           # haskell tool
-    dunstctl                        # dunst control
-    elm                             # elm compiler
-    elm-json                        # elm installation helper
-    elm-test                        # elm test runner
     ffmpeg                          # convert videos (used in scripts)
-    ghc                             # haskell compiler
     git-brunch                      # branch change tool
-    haskell-language-server-wrapper # haskell language server
-    hlint                           # haskell linter
     htop                            # htop (hopefully with vim bindings)
     lock                            # bin/lock file is on the path
     prettier                        # js/css/markdown formatter
     qrcode-terminal                 # show qr codes
     sgpt                            # TheR1D/shell_gpt
-    st                              # suckless terminal
-    stack                           # haskell tool
     tsc                             # typescript compiler
 )
 
@@ -31,15 +21,11 @@ commandsOptional=(
     idea            # intellij ide
     java            # java runtime
     json-tui        # TUI to visualize json input
-    lxappearance    # configure themes
-    pulseaudio      # better audio
     thorium-browser # web browser
     trash-put       # trash-cli
     shfmt           # shell format
     uuidgen         # generate uuid
     vimdiff         # git diffs in vim
-    xkill           # click on window to kill
-    zathura         # pdf viewer
 )
 
 errors=0
@@ -69,67 +55,6 @@ warnIfCommandMissing() {
 
 # Check commands
 for i in "${assertCommands[@]}"; do commandExists "$i"; done
-
-# autorandr config
-[[ $(autorandr --dry-run) == "" ]] && {
-    fail "autorandr needs to be setup with configurations"
-}
-
-# preload
-[[ $(systemctl is-active preload) != "active" ]] && {
-    fail "service 'preload' not active (systemctl enable preload)"
-}
-
-[ -z "${JAVA_HOME-}" ] && {
-    fail "\$JAVA_HOME has to be set"
-}
-
-[[ "${WINIT_HIDPI_FACTOR-}" != "1.0" ]] && {
-    fail "\$WINIT_HIDPI_FACTOR has to be set to 1.0 for alacritty"
-}
-
-# cursor theme: xcursor-breeze
-[[ $(find /usr/share/icons -type d -name "cursors") =~ "breeze" ]] || {
-    fail "xcursor-breeze cursor theme is missing"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "breeze" ]] || {
-    fail "xcursor-breeze cursor theme is not configured as gtk 3.0 theme"
-}
-
-# theme: ant-dracula
-[[ -d /usr/share/themes/Ant-Dracula ]] || {
-    fail "Ant-Dracula theme is missing"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Ant-Dracula" ]] || {
-    fail "Ant-Dracula theme is not configured as gtk 3.0 theme"
-}
-
-[[ $(cat ~/.gtkrc-2.0) =~ "Ant-Dracula" ]] || {
-    fail "Ant-Dracula theme is not configured as gtk 2.0 theme"
-}
-
-[[ $(cat ~/.config/gtk-3.0/settings.ini) =~ "Iosevka" ]] || {
-    fail "Iosevka font is not configured as gtk 3.0 font"
-}
-
-[[ $(cat ~/.gtkrc-2.0) =~ "Iosevka" ]] || {
-    fail "Iosevka font is not configured as gtk 2.0 font"
-}
-
-# Make sure max brightness is configured
-BRIGHTNESS=$(cat /sys/class/backlight/*/brightness)
-MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
-[[ "$BRIGHTNESS" != "$MAX_BRIGHTNESS" ]] && {
-    fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
-}
-
-# stack min version
-STACK_VERSION=$(stack --version)
-[[ $STACK_VERSION =~ Version[[:space:]]2\. ]] || {
-    fail "Stack version not expected ($STACK_VERSION)"
-}
 
 # Check commands
 for i in "${commandsOptional[@]}"; do warnIfCommandMissing "$i"; done
