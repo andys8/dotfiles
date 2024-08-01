@@ -1,8 +1,0 @@
-# Vim keybindings in 'ghcup tui'
-# <https://hackage.haskell.org/package/vty-5.31/docs/Graphics-Vty-Input-Events.html#t:Key>
-# <https://gitlab.haskell.org/haskell/ghcup-hs/-/blob/master/data/config.yaml>
-key-bindings:
-  down:
-    KChar: "j"
-  up:
-    KChar: "k"

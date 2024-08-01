@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 # Clean symlinks where target file doesn't exist
+#
+# TODO: Script is not working under macos
+echo "Skip clean symlinks under macos (TODO)"
+exit 0
 
 symlinks=$(find ~/bin -type l)
 
