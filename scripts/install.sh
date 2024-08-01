@@ -26,7 +26,7 @@ section "Update Vim"
 ./update-vim.sh
 
 section "Update Fish"
-./update-fish.fish
+fish update-fish.fish
 
 section "Update Node/NPM"
 ./update-npm.sh
