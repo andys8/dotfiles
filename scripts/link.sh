@@ -66,6 +66,10 @@ ln -sf ~/dotfiles/ignore ~/.ignore
 mkdir -p ~/.config/lsd
 ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
 
+# Yabai
+ln -sf ~/dotfiles/yabai/yabairc ~/.yabairc
+ln -sf ~/dotfiles/yabai/skhdrc ~/.skhdrc
+
 # Clean up symlinks
 ~/dotfiles/scripts/clean-symlinks.sh
 
