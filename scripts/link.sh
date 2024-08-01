@@ -33,7 +33,7 @@ ln -sf ~/dotfiles/ackrc ~/.ackrc
 ln -sf ~/dotfiles/ripgreprc ~/.ripgreprc
 
 # Alacritty
-ln -sf ~/dotfiles/alacritty.yml ~/.alacritty.yml
+ln -sf ~/dotfiles/alacritty.toml ~/.alacritty.toml
 
 # Profile
 ln -sf ~/dotfiles/profile ~/.profile
