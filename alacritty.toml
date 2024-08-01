@@ -588,18 +588,3 @@ multiplier = 3
 [selection]
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
-[window]
-decorations = "full"
-dynamic_padding = false
-dynamic_title = true
-x = 168.0
-y = 168.0
-
-[window.dimensions]
-columns = 120
-lines = 32
-
-[window.padding]
-x = 0
-y = 0
