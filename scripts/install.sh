@@ -19,8 +19,8 @@ section "Machine specific files"
 section "Create symlinks"
 ./link.sh
 
-section "Update Nix"
-./update-nix.sh
+section "Update Brew"
+./update-brew.sh
 
 section "Update Vim"
 ./update-vim.sh
@@ -30,12 +30,6 @@ section "Update Fish"
 
 section "Update Node/NPM"
 ./update-npm.sh
-
-section "Update PureScript"
-./update-purescript.sh
-
-section "Update Haskell"
-./update-haskell.sh
 
 section "Update Ranger"
 ./update-ranger.sh
