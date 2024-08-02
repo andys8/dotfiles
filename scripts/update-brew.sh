@@ -6,8 +6,6 @@ echo "Update brew"
 
 brew update 
 
-# Brewfile (update via `brew bundle dump`)
-cd ~/dotfiles
-brew bundle --no-lock
-
+# Install from brewfile (created with `brew bundle dump`)
+brew bundle --file ~/dotfiles/Brewfile --no-lock
 brew upgrade
