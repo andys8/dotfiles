@@ -597,12 +597,12 @@ mods = "Shift"
 [[keyboard.bindings]]
 action = "ScrollPageDown"
 key = "J"
-mods = "Alt"
+mods = "Command"
 
 [[keyboard.bindings]]
 action = "ScrollPageUp"
 key = "K"
-mods = "Alt"
+mods = "Command"
 
 [mouse]
 hide_when_typing = true
