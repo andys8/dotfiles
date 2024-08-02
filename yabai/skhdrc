@@ -96,12 +96,12 @@ shift + alt - 1 : yabai -m window --space 1
 shift + alt - 2 : yabai -m window --space 2
 shift + alt - 3 : yabai -m window --space 3
 shift + alt - 4 : yabai -m window --space 4
-shift + alt - 5 : yabai -m window --space 5
-shift + alt - 6 : yabai -m window --space 6
-shift + alt - 7 : yabai -m window --space 7
-shift + alt - 8 : yabai -m window --space 8
-shift + alt - 9 : yabai -m window --space 9
-shift + alt - 0 : yabai -m window --space 10
+# shift + alt - 5 : yabai -m window --space 5
+# shift + alt - 6 : yabai -m window --space 6
+# shift + alt - 7 : yabai -m window --space 7
+# shift + alt - 8 : yabai -m window --space 8
+# shift + alt - 9 : yabai -m window --space 9
+# shift + alt - 0 : yabai -m window --space 10
 
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
@@ -120,7 +120,7 @@ ctrl + alt + cmd - k : yabai -m window --resize top:0:40
 ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
 
 # restart yabai
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + cmd - r : yabai --restart-service
 
 # consistency
 cmd - q : skhd -t "@"
