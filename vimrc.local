@@ -52,7 +52,7 @@ command Dark    colorscheme torte   | AirlineTheme dark    | set nocursorline | 
 command Light   colorscheme zellner | AirlineTheme dark    | set cursorline   | call SaveTheme("Light")
 
 " Theme
-let g:dracula_colorterm = 1
+let g:dracula_colorterm = 0
 let g:dracula_italic = 1
 colorscheme dracula
 
