@@ -96,16 +96,26 @@ ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
 
 # increase window size
-ctrl + alt - h : yabai -m window --resize left:-40:0
-ctrl + alt - j : yabai -m window --resize bottom:0:40
-ctrl + alt - k : yabai -m window --resize top:0:-40
-ctrl + alt - l : yabai -m window --resize right:40:0
+# ctrl + alt - h : yabai -m window --resize left:-40:0
+# ctrl + alt - j : yabai -m window --resize bottom:0:40
+# ctrl + alt - k : yabai -m window --resize top:0:-40
+# ctrl + alt - l : yabai -m window --resize right:40:0
 
 # decrease window size
-ctrl + alt + cmd - h : yabai -m window --resize left:40:0
-ctrl + alt + cmd - j : yabai -m window --resize bottom:0:-40
-ctrl + alt + cmd - k : yabai -m window --resize top:0:40
-ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
+# ctrl + alt + cmd - h : yabai -m window --resize left:40:0
+# ctrl + alt + cmd - j : yabai -m window --resize bottom:0:-40
+# ctrl + alt + cmd - k : yabai -m window --resize top:0:40
+# ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
+
+# increase and decrease window size
+ctrl + alt - h : yabai -m window --resize left:-40:0; \
+                  yabai -m window --resize right:-40:0
+ctrl + alt - j : yabai -m window --resize bottom:0:40; \
+                  yabai -m window --resize top:0:40
+ctrl + alt - k : yabai -m window --resize top:0:-40; \
+                  yabai -m window --resize bottom:0:-40
+ctrl + alt - l : yabai -m window --resize right:40:0; \
+                  yabai -m window --resize left:40:0
 
 # restart yabai
 alt + cmd - r : yabai --restart-service
