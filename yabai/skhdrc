@@ -117,5 +117,5 @@ ctrl + lalt - l : yabai -m window --resize right:40:0; yabai -m window --resize 
 lalt + cmd - r : yabai --restart-service
 
 # consistency
-# cmd - q : skhd -t "@"
+rcmd - q : skhd -t "@"
 # cmd - 0x0A : skhd -t "|"
