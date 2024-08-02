@@ -184,7 +184,12 @@ key = "Back"
 [[keyboard.bindings]]
 chars = "\u001B\u007F"
 key = "Back"
-mods = "Alt"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B\u007F"
+key = "Back"
+mods = "Command"
 
 [[keyboard.bindings]]
 chars = "\u001B[2~"
