@@ -625,7 +625,7 @@ save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
 [window]
-option_as_alt = "Both"
+option_as_alt = "OnlyLeft"
 decorations = "buttonless"
 startup_mode = "Windowed"
 padding.x = 8
