@@ -189,10 +189,6 @@ command! -nargs=0 Zen :Goyo
 cabbrev windowsfile e ++ff=dos
 cabbrev dosfile e ++ff=dos
 
-" Ctrl backspace to delete words
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
-
 " Startify
 let g:startify_files_number = 10
 let g:startify_change_to_dir = 0

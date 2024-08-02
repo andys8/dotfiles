@@ -182,12 +182,12 @@ chars = "\u007F"
 key = "Back"
 
 [[keyboard.bindings]]
-chars = "\u001B\u007F"
+chars = "\u0017"
 key = "Back"
 mods = "Control"
 
 [[keyboard.bindings]]
-chars = "\u001B\u007F"
+chars = "\u0017"
 key = "Back"
 mods = "Command"
 
