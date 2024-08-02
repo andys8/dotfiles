@@ -9,6 +9,16 @@ cd dotfiles
 ./install.sh
 ```
 
+## Keyboard: PC ISO-DE on Mac
+
+Configure German PC keyboard layout
+
+```shell
+sudo cp GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
+```
+
+Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
+
 ## Machine specific configuration
 
 ### `~/bin/startup.sh`
@@ -111,35 +121,6 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 sudo update-alternatives --config x-terminal-emulator
 ```
 
-## Qutebrowser
-
-### Default browser
-
-```shell
-xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
-xdg-settings set default-web-browser chromium.desktop # or stick with chromium
-xdg-mime default chromium.desktop x-scheme-handler/https
-xdg-mime default chromium.desktop x-scheme-handler/http
-```
-
-### Spell checking
-
-Download dictionaries for spell checking
-
-```sh
-git clone https://github.com/qutebrowser/qutebrowser.git && cd qutebrowser
-./scripts/dictcli.py install en-US
-./scripts/dictcli.py install de-DE
-# or with virtualenv (if wrong directory)
-./.venv/bin/python3 ./scripts/dictcli.py install en-US
-```
-
-Might be necessary to copy to `~/.local/share/qutebrowser/qtwebengine_dictionaries`
-
-## Time
-
-Enable time synchronization with `timedatectl set-ntp true`.
-
 ## Git
 
 Set credentials in `~/.netrc`
@@ -155,19 +136,3 @@ Defaults pwfeedback
 
 - `Defaults secure_path` is **not set** to keep `$PATH` and access to user installed binaries with sudo.
 - `Defaults env_keep += "HOME"` keeps the home directory and uses configuration files.
-
-## Pacman
-
-Enable in `/etc/pacman.conf`:
-
-```text
-Color
-ILoveCandy
-VerbosePkgLists
-```
-
-## Theme
-
-Install `xcursor-breeze` and [`Ant-Dracula`](https://github.com/EliverLara/Ant-Dracula) theme. Configure with `lxappearance`.
-
-![stats](https://static.scarf.sh/a.png?x-pxid=8c48fb17-fc67-4552-90d5-7cfb267fd0c8)
