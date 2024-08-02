@@ -237,6 +237,9 @@ noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
+"" Copy for map when selected
+vnoremap y "+y<CR>
+
 "" Buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
