@@ -13,6 +13,7 @@ function updateUbuntu() {
 }
 
 function updateArch() {
+    sudo pacman-mirrors -f 5
     yay -Syu
 }
 
