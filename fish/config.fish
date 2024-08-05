@@ -87,7 +87,6 @@ abbr -a -- colorpicker gcolor3
 abbr -a -- copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
 abbr -a -- dco docker-compose
 abbr -a -- de 'trans en:de'
-abbr -a -- du duf
 abbr -a -- e 'fzf | xargs -ro vim'
 abbr -a -- en 'trans de:en'
 abbr -a -- sigkillall 'killall -s SIGKILL'
