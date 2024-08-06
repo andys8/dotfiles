@@ -116,6 +116,9 @@ ctrl + lalt - l : yabai -m window --resize right:40:0; yabai -m window --resize 
 # restart yabai
 lalt + cmd - r : yabai --restart-service
 
+# screenshots
+lalt - p : /usr/sbin/screencapture -ic
+
 # consistency
 rcmd - q : skhd -t "@"
 # ctrl - f : skhd -k "cmd - f"
@@ -129,7 +132,8 @@ ctrl - h : skhd -k "left"
 ctrl - j : skhd -k "down"
 ctrl - k : skhd -k "up"
 ctrl - l : skhd -k "right"
+
 ctrl - z : skhd -k "home"
 ctrl - u : skhd -k "pagedown"
-ctrl - k : skhd -k "pageup"
+ctrl - i : skhd -k "pageup"
 ctrl - o : skhd -k "end"
