@@ -118,7 +118,7 @@ lalt + cmd - r : yabai --restart-service
 
 # consistency
 rcmd - q : skhd -t "@"
-ctrl - c : skhd -k "cmd - c"
-ctrl - v : skhd -k "cmd - v"
-ctrl - x : skhd -k "cmd - x"
+# ctrl - v : skhd -k "cmd - v"
+# ctrl - x : skhd -k "cmd - x"
+# ctrl - c : skhd -k "cmd - c"
 # cmd - 0x0A : skhd -t "|"
