@@ -14,7 +14,15 @@ cd dotfiles
 Configure German PC keyboard layout
 
 ```shell
-sudo cp GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
+sudo cp keyboard/GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
+```
+
+### Mapping
+
+Right command behaves like right option
+
+```shell
+cp keyboard/com.local.KeyRemapping.plist ~/Library/LaunchAgents/
 ```
 
 Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
