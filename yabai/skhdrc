@@ -122,6 +122,9 @@ lalt + cmd - r : yabai --restart-service
 # screenshots
 lalt - p : /usr/sbin/screencapture -ic
 
+# lock
+lalt + lcmd - l : pmset displaysleepnow 
+
 # consistency
 rcmd - q : skhd -t "@"
 # ctrl - f : skhd -k "cmd - f"
