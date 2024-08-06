@@ -4,6 +4,9 @@ lalt - return : open -n -a "Alacritty"
 # open chrome 
 ctrl + lalt - return : open -n -a "Thorium"
 
+# raycast
+lalt - d : open -g raycast://
+
 # moves focus between windows in the current focused display
 lalt - h : yabai -m window --focus west
 lalt - j : yabai -m window --focus south
@@ -137,3 +140,4 @@ ctrl - z : skhd -k "home"
 ctrl - u : skhd -k "pagedown"
 ctrl - i : skhd -k "pageup"
 ctrl - o : skhd -k "end"
+
