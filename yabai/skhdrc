@@ -118,7 +118,18 @@ lalt + cmd - r : yabai --restart-service
 
 # consistency
 rcmd - q : skhd -t "@"
+# ctrl - f : skhd -k "cmd - f"
 # ctrl - v : skhd -k "cmd - v"
 # ctrl - x : skhd -k "cmd - x"
 # ctrl - c : skhd -k "cmd - c"
 # cmd - 0x0A : skhd -t "|"
+
+# arrow Keys
+ctrl - h : skhd -k "left"
+ctrl - j : skhd -k "down"
+ctrl - k : skhd -k "up"
+ctrl - l : skhd -k "right"
+ctrl - z : skhd -k "home"
+ctrl - u : skhd -k "pagedown"
+ctrl - k : skhd -k "pageup"
+ctrl - o : skhd -k "end"
