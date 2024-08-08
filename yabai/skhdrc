@@ -132,6 +132,7 @@ rcmd - q : skhd -t "@"
 # ctrl - x : skhd -k "cmd - x"
 # ctrl - c : skhd -k "cmd - c"
 # cmd - 0x0A : skhd -t "|"
+# ctrl - backspace : skhd -k "cmd - backspace"
 
 # arrow Keys
 fn - h : skhd -k "left"
