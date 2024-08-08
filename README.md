@@ -27,6 +27,10 @@ cp keyboard/com.local.KeyRemapping.plist ~/Library/LaunchAgents/
 
 Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
 
+### Capslock
+
+Manually map to `Fn/Globe` in keyboard settings
+
 ## Machine specific configuration
 
 ### `~/bin/startup.sh`

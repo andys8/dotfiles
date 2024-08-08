@@ -134,13 +134,12 @@ rcmd - q : skhd -t "@"
 # cmd - 0x0A : skhd -t "|"
 
 # arrow Keys
-ctrl - h : skhd -k "left"
-ctrl - j : skhd -k "down"
-ctrl - k : skhd -k "up"
-ctrl - l : skhd -k "right"
+fn - h : skhd -k "left"
+fn - j : skhd -k "down"
+fn - k : skhd -k "up"
+fn - l : skhd -k "right"
 
-ctrl - z : skhd -k "home"
-ctrl - u : skhd -k "pagedown"
-ctrl - i : skhd -k "pageup"
-ctrl - o : skhd -k "end"
-
+fn - z : skhd -k "home"
+fn - u : skhd -k "pagedown"
+fn - i : skhd -k "pageup"
+fn - o : skhd -k "end"
