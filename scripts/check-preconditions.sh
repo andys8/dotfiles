@@ -3,22 +3,22 @@ set -euo pipefail
 
 # Dependencies
 commands=(
-    awk         # used in shell scripts
-    bash        # shell
-    diff        # compare files
-    fc-list     # list fonts
-    find        # used in scripts
-    fish        # shell
-    node        # node
-    npm         # node package manager
-    pgrep       # grep processes
-    pip3        # python packages
-    python3     # pythong
-    tar         # archive
-    tr          # used in shell scripts
-    vim         # editor
-    xargs       # scripting
-    xclip       # copy/paste
+    awk     # used in shell scripts
+    bash    # shell
+    diff    # compare files
+    fc-list # list fonts
+    find    # used in scripts
+    fish    # shell
+    node    # node
+    npm     # node package manager
+    pgrep   # grep processes
+    pip3    # python packages
+    python3 # pythong
+    tar     # archive
+    tr      # used in shell scripts
+    vim     # editor
+    xargs   # scripting
+    xclip   # copy/paste
 )
 
 fonts=(

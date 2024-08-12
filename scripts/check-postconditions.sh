@@ -3,14 +3,14 @@ set -euo pipefail
 
 # Asserted commands (should be installed by script)
 assertCommands=(
-    ffmpeg                          # convert videos (used in scripts)
-    git-brunch                      # branch change tool
-    htop                            # htop (hopefully with vim bindings)
-    lock                            # bin/lock file is on the path
-    prettier                        # js/css/markdown formatter
-    qrcode-terminal                 # show qr codes
-    sgpt                            # TheR1D/shell_gpt
-    tsc                             # typescript compiler
+    ffmpeg          # convert videos (used in scripts)
+    git-brunch      # branch change tool
+    htop            # htop (hopefully with vim bindings)
+    lock            # bin/lock file is on the path
+    prettier        # js/css/markdown formatter
+    qrcode-terminal # show qr codes
+    sgpt            # TheR1D/shell_gpt
+    tsc             # typescript compiler
 )
 
 # Optional user commands (installed manually)
