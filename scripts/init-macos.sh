@@ -17,6 +17,12 @@ defaults write -g com.apple.swipescrolldirection -boolean NO
 # finder
 defaults write com.apple.finder DisableAllAnimations -bool true
 
+# hot corners
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+
 # animations
 defaults write -g NSScrollViewRubberbanding -int 0
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
