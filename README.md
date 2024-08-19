@@ -90,10 +90,10 @@ Currently using <https://github.com/Wevah/dragterm> (drag binary). Alternative `
 
 ## Keyboard: PC ISO-DE on Mac
 
-Configure German PC keyboard layout
+Configure German PC keyboard layout (modified with Ukelele)
 
 ```shell
-sudo cp keyboard/GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
+sudo cp keyboard/german-pc-no-deadkey.keylayout /Library/Keyboard\ Layouts/
 ```
 
 ### Mapping
@@ -115,3 +115,7 @@ Manually map to `Fn/Globe` in keyboard settings
 Make sure vim of homebrew is installed (python3) and linked.
 
 <https://gist.github.com/SofijaErkin/d428dcbf6a651673af63f45e851783cf>
+
+## PATH
+
+Add `/Users/vivenu/bin` to `/etc/paths` to be able to overwrite system binaries.
