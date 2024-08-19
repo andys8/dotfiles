@@ -93,7 +93,7 @@ Currently using <https://github.com/Wevah/dragterm> (drag binary). Alternative `
 Configure German PC keyboard layout (modified with Ukelele)
 
 ```shell
-sudo cp keyboard/german-pc-no-deadkey.keylayout /Library/Keyboard\ Layouts/
+sudo cp keyboard/iso-de-no-deadkeys.keylayout /Library/Keyboard\ Layouts/
 ```
 
 ### Mapping
