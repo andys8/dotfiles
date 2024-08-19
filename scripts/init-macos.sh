@@ -7,7 +7,7 @@ defaults write com.apple.dock no-bouncing -bool true
 killall Dock
 
 # key repeat
-defaults write -g initialKeyRepeat -int 13
+defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 1
 defaults write -g ApplePressAndHoldEnabled -bool false
 
