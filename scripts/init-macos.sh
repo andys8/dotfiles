@@ -9,6 +9,7 @@ killall Dock
 # key repeat
 defaults write -g initialKeyRepeat -int 13
 defaults write -g KeyRepeat -int 1
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # scroll direction
 defaults write -g com.apple.swipescrolldirection -boolean NO

@@ -9,28 +9,6 @@ cd dotfiles
 ./install.sh
 ```
 
-## Keyboard: PC ISO-DE on Mac
-
-Configure German PC keyboard layout
-
-```shell
-sudo cp keyboard/GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
-```
-
-### Mapping
-
-Right command behaves like right option
-
-```shell
-cp keyboard/com.local.KeyRemapping.plist ~/Library/LaunchAgents/
-```
-
-Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
-
-### Capslock
-
-Manually map to `Fn/Globe` in keyboard settings
-
 ## Machine specific configuration
 
 ### `~/bin/startup.sh`
@@ -98,57 +76,36 @@ export SLACK_TOKEN=example-token
 
 ## Shell
 
-### Change shell to fish
-
-```shell
-bash -c 'chsh -s $(chsh -l | grep -m 1 fish)'
-```
-
 ### Fish theme
 
 Open config with `fish_config` and set theme to `dracula` in Web-UI.
-
-## Terminal
-
-### Alacritty
-
-#### DPI
-
-Add `WINIT_HIDPI_FACTOR=1.0` to `/etc/environment`
-
-### Add alacritty to terminals
-
-```shell
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 80
-```
-
-### st (suckless-terminal)
-
-Fork of st: [`andys8/st`](https://github.com/andys8/st)
-
-#### Add st to terminals and set as default
-
-```shell
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/st 80
-sudo update-alternatives --config x-terminal-emulator
-```
 
 ## Git
 
 Set credentials in `~/.netrc`
 
-## `sudo`
-
-Open `sudo visudo` and add these lines to enable asterisks and silly feedback.
-
-```text
-Defaults insults
-Defaults pwfeedback
-```
-
-- `Defaults secure_path` is **not set** to keep `$PATH` and access to user installed binaries with sudo.
-- `Defaults env_keep += "HOME"` keeps the home directory and uses configuration files.
-
 ## Drag and drop (terminal)
 
 Currently using <https://github.com/Wevah/dragterm> (drag binary). Alternative `open -R`.
+
+## Keyboard: PC ISO-DE on Mac
+
+Configure German PC keyboard layout
+
+```shell
+sudo cp keyboard/GermanWindowsPC.keylayout /Library/Keyboard\ Layouts/
+```
+
+### Mapping
+
+Right command behaves like right option
+
+```shell
+cp keyboard/com.local.KeyRemapping.plist ~/Library/LaunchAgents/
+```
+
+Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
+
+### Capslock
+
+Manually map to `Fn/Globe` in keyboard settings
