@@ -109,3 +109,9 @@ Source: <https://github.com/skrysmanski/windows-pc-keyboard-layout-mac>
 ### Capslock
 
 Manually map to `Fn/Globe` in keyboard settings
+
+## Vim
+
+Make sure vim of homebrew is installed (python3) and linked.
+
+<https://gist.github.com/SofijaErkin/d428dcbf6a651673af63f45e851783cf>
