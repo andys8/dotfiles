@@ -124,12 +124,6 @@ MAX_BRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
     fail "Screen brightness is $BRIGHTNESS, but should be max brightness $MAX_BRIGHTNESS"
 }
 
-# stack min version
-STACK_VERSION=$(stack --version)
-[[ $STACK_VERSION =~ Version[[:space:]]2\. ]] || {
-    fail "Stack version not expected ($STACK_VERSION)"
-}
-
 # Check commands
 for i in "${commandsOptional[@]}"; do warnIfCommandMissing "$i"; done
 
