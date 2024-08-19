@@ -148,3 +148,7 @@ Defaults pwfeedback
 
 - `Defaults secure_path` is **not set** to keep `$PATH` and access to user installed binaries with sudo.
 - `Defaults env_keep += "HOME"` keeps the home directory and uses configuration files.
+
+## Drag and drop (terminal)
+
+Currently using <https://github.com/Wevah/dragterm> (drag binary). Alternative `open -R`.
