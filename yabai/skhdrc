@@ -126,7 +126,7 @@ alt - p : /usr/sbin/screencapture -ic
 alt + lcmd - l : pmset displaysleepnow 
 
 # consistency
-rcmd - q : skhd -t "@"
+cmd - q : skhd -t "@"
 # ctrl - f : skhd -k "cmd - f"
 # ctrl - v : skhd -k "cmd - v"
 # ctrl - x : skhd -k "cmd - x"
