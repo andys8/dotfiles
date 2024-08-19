@@ -24,11 +24,6 @@ if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then
     export PATH="$HOME/.npm-global/bin:$PATH"
 fi
 
-# purescript psvm current binary
-if [[ ":$PATH:" != *":$HOME/.psvm/current/bin:"* ]]; then
-    export PATH="$HOME/.psvm/current/bin:$PATH"
-fi
-
 # Rust (~/.cargo/bin)
 if [[ ":$PATH:" != *":$HOME/.cargo/bin:"* ]]; then
     export PATH="$HOME/.cargo/bin:$PATH"
