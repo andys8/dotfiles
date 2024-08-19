@@ -31,9 +31,6 @@ section "Update Fish"
 section "Update Node/NPM"
 ./update-npm.sh
 
-section "Update PureScript"
-./update-purescript.sh
-
 section "Update Xmonad"
 ./update-xmonad.sh
 

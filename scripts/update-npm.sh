@@ -23,7 +23,6 @@ packages=(
     npm-check-updates                 # npm update depndencies
     pnpm@7                            # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
-    psvm-ps                           # purescript version manager
     purescript                        # purescript compiler
     purescript-language-server        # purescript ls
     purs-tidy                         # purescript formatter
