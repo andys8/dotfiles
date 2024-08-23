@@ -18,11 +18,12 @@ packages=(
     dockerfile-language-server-nodejs # docker ls
     http-server                       # spin up http server in directory
     http-status-cli                   # http status lookup tool
-    npm-check-updates                 # npm update depndencies
     n                                 # node version manager
+    npm-check-updates                 # npm update depndencies
     pnpm@7                            # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     qrcode-terminal                   # Encode text as QR code
+    secure-rm-cli # secure delete
     typescript@5.2.2                  # TS compiler
     write-good                        # check and improve written text
     yarn@1.22                         # alternative to npm
