@@ -1,6 +1,9 @@
 live_config_reload = true
 working_directory = "None"
 
+[shell]
+program = "/opt/homebrew/bin/fish"
+
 [bell]
 animation = "EaseOutExpo"
 duration = 0
