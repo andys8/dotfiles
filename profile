@@ -45,14 +45,6 @@ if [[ ":$PATH:" != *":$HOME/dotfiles/scripts:"* ]]; then
 fi
 
 export XDG_DATA_DIRS=$HOME/.share:"${XDG_DATA_DIRS:-/usr/local/share/:/usr/share/}"
-export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
-
-# IDEA keyboard freeze fix
-# <https://youtrack.jetbrains.com/issue/IDEA-78860>
-export IBUS_ENABLE_SYNC_MODE=1
-
-# Fix xmonad java windows
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 # n (node version manager) directory
 export N_PREFIX=$HOME/.local
