@@ -6,16 +6,16 @@ path="$HOME/Documents/todo"
 arg="${1:-today}"
 format="%Y-%m-%d"
 
-next_date=$(date -d "+1 day" +$format)
-if [ "$(date -d "$next_date" +%u)" -ge 6 ]; then
-    days_to_add=$((8 - $(date -d "$next_date" +%u)))
-    next_date=$(date -d "$next_date + $days_to_add days" +$format)
+next_date=$(gdate -d "+1 day" +$format)
+if [ "$(gdate -d "$next_date" +%u)" -ge 6 ]; then
+    days_to_add=$((8 - $(gdate -d "$next_date" +%u)))
+    next_date=$(gdate -d "$next_date + $days_to_add days" +$format)
 fi
 
-last_date=$(date -d "yesterday" +$format)
-if [ "$(date -d "$last_date" +%u)" -ge 6 ]; then
-    days_to_subtract=$((($(date -d "$last_date" +%u) - 5) % 7))
-    last_date=$(date -d "$last_date - $days_to_subtract days" +$format)
+last_date=$(gdate -d "yesterday" +$format)
+if [ "$(gdate -d "$last_date" +%u)" -ge 6 ]; then
+    days_to_subtract=$((($(gdate -d "$last_date" +%u) - 5) % 7))
+    last_date=$(gdate -d "$last_date - $days_to_subtract days" +$format)
 fi
 
 case $arg in
@@ -32,7 +32,7 @@ if [ "$arg" = "ls" ] || [ "$arg" = "list" ]; then
     exit 0
 fi
 
-date=$(date --date="$arg" +$format)
+date=$(gdate --date="$arg" +$format)
 [ -z "$date" ] && exit 1
 
 file="$path/$date.md"
