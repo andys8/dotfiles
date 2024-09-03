@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# dock
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 1000
-defaults write com.apple.dock no-bouncing -bool true
-killall Dock
-
 # key repeat
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 1
@@ -45,4 +39,12 @@ defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write NSGlobalDomain NSWindowResizeTime .001
 defaults write com.apple.dock expose-animation-duration -int 0
 defaults write com.apple.dock expose-animation-duration -float 0.1
+
+# disable click on desktop
+defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
+
+# dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 1000
+defaults write com.apple.dock no-bouncing -bool true
 killall Dock
