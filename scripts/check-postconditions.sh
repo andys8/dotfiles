@@ -21,7 +21,6 @@ commandsOptional=(
     idea            # intellij ide
     java            # java runtime
     json-tui        # TUI to visualize json input
-    thorium-browser # web browser
     trash-put       # trash-cli
     shfmt           # shell format
     uuidgen         # generate uuid

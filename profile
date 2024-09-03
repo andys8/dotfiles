@@ -53,7 +53,6 @@ export EDITOR=vim
 export VISUAL=vim
 export GIT_EDITOR=vim
 export TERMINAL=alacritty
-export BROWSER=thorium-browser
 export LANG=en_US.UTF-8
 export RANGER_DEVICONS_SEPARATOR="  "
 

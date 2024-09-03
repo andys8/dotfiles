@@ -2,7 +2,7 @@
 alt - return : open -n -a "Alacritty"
 
 # open chrome 
-ctrl + alt - return : open -n -a "Thorium"
+ctrl + alt - return : open -n -a "Google Chrome"
 
 # raycast
 alt - d : open -g raycast://
