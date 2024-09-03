@@ -93,7 +93,7 @@ Currently using <https://github.com/Wevah/dragterm> (drag binary). Alternative `
 Configure German PC keyboard layout (modified with Ukelele)
 
 ```shell
-sudo cp keyboard/iso-de-no-deadkeys.keylayout /Library/Keyboard\ Layouts/
+sudo cp keyboard/isode.keylayout /Library/Keyboard\ Layouts/
 ```
 
 ### Mapping
@@ -118,4 +118,4 @@ Make sure vim of homebrew is installed (python3) and linked.
 
 ## PATH
 
-Add `/Users/vivenu/bin` to `/etc/paths` to be able to overwrite system binaries.
+Add `/Users/username/bin` to `/etc/paths` to be able to overwrite system binaries.
