@@ -4,6 +4,7 @@
     pager = diff-so-fancy | less --tabs=4 -RFX
     hooksPath = ~/.config/git/hooks
     excludesFile = ~/.config/git/ignore
+	untrackedcache = true
 [alias]
     a = add
     aa = add .
@@ -125,7 +126,7 @@
     rebase = true
 [hub]
     protocol = https
-[include]
-    path = ~/.gitconfig.machine
 [advice]
     skippedCherryPicks = false
+[include]
+    path = ~/.gitconfig.machine
