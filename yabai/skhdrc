@@ -120,7 +120,8 @@ ctrl + alt - l : yabai -m window --resize right:40:0; yabai -m window --resize l
 alt + cmd - r : yabai --restart-service
 
 # screenshots
-alt - p : /usr/sbin/screencapture -ic
+alt - p : screencapture -icx
+alt + shift - p : screencapture -i ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # lock
 alt + lcmd - l : pmset displaysleepnow 
