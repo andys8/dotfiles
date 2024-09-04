@@ -237,8 +237,8 @@ noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
-"" Copy for map when selected
-vnoremap y "+y<CR>
+"" Copy for map when selected (adapted on mac)
+vnoremap y "+y
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
