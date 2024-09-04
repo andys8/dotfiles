@@ -1,7 +1,7 @@
 # open terminal
 alt - return : open -n -a "Alacritty"
 
-# open chrome 
+# open chrome
 ctrl + alt - return : open -n -a "Google Chrome"
 
 # raycast
@@ -13,13 +13,13 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-# moves focus between spaces 
+# moves focus between spaces
 # alt - 1 : yabai -m space --focus 1
 # alt - 2 : yabai -m space --focus 2
 # alt - 3 : yabai -m space --focus 3
 # alt - 4 : yabai -m space --focus 4
 
-# moves focus between displays 
+# moves focus between displays
 alt - 1 : yabai -m display --focus 1
 alt - 2 : yabai -m display --focus 2
 
@@ -96,13 +96,13 @@ shift + cmd - j : yabai -m window --warp south
 shift + cmd - k : yabai -m window --warp north
 shift + cmd - l : yabai -m window --warp east
 
-# send window to a space 
+# send window to a space
 # shift + alt - 1 : yabai -m window --space 1
 # shift + alt - 2 : yabai -m window --space 2
 # shift + alt - 3 : yabai -m window --space 3
 # shift + alt - 4 : yabai -m window --space 4
 
-# send window to a display 
+# send window to a display
 shift + alt - 1 : yabai -m window --display 1
 shift + alt - 2 : yabai -m window --display 2
 
@@ -132,11 +132,15 @@ ctrl + alt - l : yabai -m window --resize right:40:0; yabai -m window --resize l
 alt + cmd - r : yabai --restart-service
 
 # screenshots
-alt - p : screencapture -icx
-alt + shift - p : screencapture -i ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+alt - p : screencapture -ixc
+f13 : screencapture -ixc
+alt + shift - p : screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+shift - f13 : Screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # lock
-alt + lcmd - l : pmset displaysleepnow 
+alt + lcmd - l : pmset displaysleepnow
+alt + lcmd - backspace : pmset displaysleepnow
+alt + lcmd - space : pmset displaysleepnow
 
 # consistency
 cmd - q : skhd -t "@"
