@@ -12,3 +12,4 @@ stack.yaml.lock
 yarn.lock
 tsconfig.tsbuildinfo
 yarn-error.log
+.zsh_sessions/
