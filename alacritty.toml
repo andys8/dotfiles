@@ -603,13 +603,23 @@ mode = "~Alt"
 mods = "Shift"
 
 [[keyboard.bindings]]
-action = "ScrollPageDown"
+action = "ScrollLineDown"
 key = "J"
 mods = "Command"
 
 [[keyboard.bindings]]
-action = "ScrollPageUp"
+action = "ScrollLineUp"
 key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "U"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "I"
 mods = "Command"
 
 [mouse]
