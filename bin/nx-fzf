@@ -1,0 +1,25 @@
+#!/bin/bash
+# nx-fzf script to run nx commands with fzf
+
+PROJECTS=$(nx show projects)
+EXIT_CODE=$?
+
+if [ "$EXIT_CODE" -ne 0 ]; then
+    echo "No nx projects found."
+    exit 1
+fi
+
+PROJECT=$(echo "$PROJECTS" | fzf)
+
+if [ -z "$PROJECT" ]; then
+    exit 1
+fi
+
+TARGET=$(nx show project "$PROJECT" --json | jq -r '.targets | keys | .[]' | fzf)
+
+if [ -z "$TARGET" ]; then
+    exit 1
+fi
+
+nx run "$PROJECT":"$TARGET"
+
