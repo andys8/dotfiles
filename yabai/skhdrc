@@ -144,8 +144,8 @@ alt + lcmd - space : pmset displaysleepnow
 
 # consistency
 cmd - q : skhd -t "@"
+ctrl - v : skhd -k "cmd - v"
 # ctrl - f : skhd -k "cmd - f"
-# ctrl - v : skhd -k "cmd - v"
 # ctrl - x : skhd -k "cmd - x"
 # ctrl - c : skhd -k "cmd - c"
 # cmd - 0x0A : skhd -t "|"
