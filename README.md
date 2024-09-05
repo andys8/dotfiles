@@ -74,6 +74,12 @@ export PATH=/home/user/example-path:$PATH
 export SLACK_TOKEN=example-token
 ```
 
+### `.vimrc.machine`
+
+```vim
+let g:fugitive_gitlab_domains = ['https://gitlab.work-internal.de']
+```
+
 ## Shell
 
 ### Fish theme

@@ -319,3 +319,8 @@ else
   let g:airline_symbols.maxlinenr = ''
   let g:airline_symbols.dirty='⚡'
 endif
+
+"" Include machine config
+if filereadable(expand("~/.vimrc.machine"))
+  source ~/.vimrc.machine
+endif
