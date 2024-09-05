@@ -1,5 +1,5 @@
 #!/bin/bash
-# nx-fzf script to run nx commands with fzf
+# nx-run script to run nx commands with fzf
 
 PROJECTS=$(nx show projects)
 EXIT_CODE=$?
