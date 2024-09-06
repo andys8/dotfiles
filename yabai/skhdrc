@@ -3,6 +3,7 @@ alt - return : open -n -a "Alacritty"
 
 # open chrome
 ctrl + alt - return : open -n -a "Google Chrome"
+ctrl + alt + shift - return : open -n -a "Google Chrome" --args --incognito
 
 # raycast
 cmd - space : open -g raycast://
@@ -108,8 +109,8 @@ shift + alt - 1 : yabai -m window --display 1
 shift + alt - 2 : yabai -m window --display 2
 
 # change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout float
+cmd + alt + ctrl - j : yabai -m space --layout bsp
+cmd + alt + ctrl - k : yabai -m space --layout stack
 
 # increase window size
 # ctrl + alt - h : yabai -m window --resize left:-40:0
@@ -140,8 +141,7 @@ shift - f13 : Screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-
 
 # lock
 alt + lcmd - l : pmset displaysleepnow
-alt + lcmd - backspace : pmset displaysleepnow
-alt + lcmd - space : pmset displaysleepnow
+cmd + alt + ctrl - space : pmset displaysleepnow
 
 # consistency
 cmd - q : skhd -t "@"
