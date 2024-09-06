@@ -5,6 +5,7 @@ alt - return : open -n -a "Alacritty"
 ctrl + alt - return : open -n -a "Google Chrome"
 
 # raycast
+cmd - space : open -g raycast://
 alt - d : open -g raycast://
 
 # moves focus between windows in the current focused display
