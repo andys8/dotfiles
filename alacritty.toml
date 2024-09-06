@@ -591,13 +591,13 @@ key = "F12"
 mods = "Super"
 
 [[keyboard.bindings]]
-action = "ScrollPageDown"
+action = "ScrollHalfPageDown"
 key = "PageDown"
 mode = "~Alt"
 mods = "Shift"
 
 [[keyboard.bindings]]
-action = "ScrollPageUp"
+action = "ScrollHalfPageUp"
 key = "PageUp"
 mode = "~Alt"
 mods = "Shift"
