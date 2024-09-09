@@ -32,8 +32,12 @@ alt + shift - tab : yabai -m window --focus prev || yabai -m window --focus last
 # delete focused space
 # alt - q : yabai -m space --destroy
 
+# rotate tree
+# alt - r : yabai -m space --rotate 90
+
 # toggle window split type
 alt - e : yabai -m window --toggle split
+alt - r : yabai -m window --toggle split
 
 # close window
 alt - x : yabai -m window --close
@@ -42,11 +46,9 @@ alt - escape : yabai -m window --close
 # minimize window
 alt - m : yabai -m window --minimize
 
-# rotate tree
-alt - r : yabai -m space --rotate 90
-
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
+alt - s : yabai -m space --mirror y-axis
 
 # toggle desktop offset
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
@@ -56,12 +58,10 @@ alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 #           yabai -m window --toggle zoom-parent
 
 # float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float;\
-          yabai -m window --grid 4:4:1:1:2:2
+alt - t : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window fullscreen zoom
-alt - f : yabai -m window --focus mouse && \
-          yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --focus mouse && yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
@@ -131,7 +131,7 @@ ctrl + alt - k : yabai -m window --resize top:0:-40; yabai -m window --resize bo
 ctrl + alt - l : yabai -m window --resize right:40:0; yabai -m window --resize left:40:0
 
 # restart yabai
-alt + cmd - r : yabai --restart-service
+ctrl + alt + cmd - r : yabai --restart-service
 
 # screenshots
 alt - p : screencapture -ixc
@@ -146,6 +146,7 @@ cmd + alt + ctrl - space : pmset displaysleepnow
 # consistency
 cmd - q : skhd -t "@"
 ctrl - v : skhd -k "cmd - v"
+ctrl - backspace : skhd -k "alt - backspace"
 # ctrl - f : skhd -k "cmd - f"
 # ctrl - f : skhd -k "cmd - f"
 # ctrl - x : skhd -k "cmd - x"
