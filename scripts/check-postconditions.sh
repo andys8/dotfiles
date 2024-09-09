@@ -10,21 +10,22 @@ assertCommands=(
     prettier        # js/css/markdown formatter
     qrcode-terminal # show qr codes
     sgpt            # TheR1D/shell_gpt
+    trans           # translate-shell
     tsc             # typescript compiler
 )
 
 # Optional user commands (installed manually)
 commandsOptional=(
-    alacritty       # terminal-emulator
-    btm             # bottom process monitor
-    chromium        # chromium web browser
-    idea            # intellij ide
-    java            # java runtime
-    json-tui        # TUI to visualize json input
-    trash-put       # trash-cli
-    shfmt           # shell format
-    uuidgen         # generate uuid
-    vimdiff         # git diffs in vim
+    alacritty # terminal-emulator
+    btm       # bottom process monitor
+    chromium  # chromium web browser
+    idea      # intellij ide
+    java      # java runtime
+    json-tui  # TUI to visualize json input
+    trash-put # trash-cli
+    shfmt     # shell format
+    uuidgen   # generate uuid
+    vimdiff   # git diffs in vim
 )
 
 errors=0

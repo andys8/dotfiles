@@ -16,6 +16,7 @@ packages=(
     bash-language-server              # bash ls
     csv2json                          # convert csv to json
     dockerfile-language-server-nodejs # docker ls
+    fast-cli                          # test speed
     http-server                       # spin up http server in directory
     http-status-cli                   # http status lookup tool
     npm-check-updates                 # npm update depndencies
