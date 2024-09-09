@@ -18,12 +18,11 @@ assertCommands=(
 commandsOptional=(
     alacritty # terminal-emulator
     btm       # bottom process monitor
-    chromium  # chromium web browser
-    idea      # intellij ide
     java      # java runtime
     json-tui  # TUI to visualize json input
-    trash-put # trash-cli
     shfmt     # shell format
+    thorium   # chromium web browser
+    trash-put # trash-cli
     uuidgen   # generate uuid
     vimdiff   # git diffs in vim
 )
