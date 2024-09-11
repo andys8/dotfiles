@@ -145,7 +145,7 @@ cmd + alt + ctrl - space : pmset displaysleepnow
 
 # consistency
 cmd - q : skhd -t "@"
-ctrl - v : skhd -k "cmd - v"
+# ctrl - v : skhd -k "cmd - v"
 ctrl - backspace : skhd -k "alt - backspace"
 # ctrl - f : skhd -k "cmd - f"
 # ctrl - f : skhd -k "cmd - f"
