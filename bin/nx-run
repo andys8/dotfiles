@@ -21,5 +21,5 @@ if [ -z "$TARGET" ]; then
     exit 1
 fi
 
+echo "nx run $PROJECT:$TARGET"
 nx run "$PROJECT":"$TARGET"
-
