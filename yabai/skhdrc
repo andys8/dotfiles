@@ -24,6 +24,7 @@ alt - l : yabai -m window --focus east
 # moves focus between displays
 alt - 1 : yabai -m display --focus 1
 alt - 2 : yabai -m display --focus 2
+alt - 3 : yabai -m display --focus 3
 
 # Cycle through windows
 alt - tab : yabai -m window --focus next || yabai -m window --focus first
@@ -107,6 +108,7 @@ shift + cmd - l : yabai -m window --warp east
 # send window to a display
 shift + alt - 1 : yabai -m window --display 1
 shift + alt - 2 : yabai -m window --display 2
+shift + alt - 2 : yabai -m window --display 3
 
 # change layout of desktop
 cmd + alt + ctrl - j : yabai -m space --layout bsp
@@ -140,8 +142,8 @@ alt + shift - p : screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y
 shift - f13 : Screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # lock
-alt + lcmd - l : pmset displaysleepnow
 cmd + alt + ctrl - space : pmset displaysleepnow
+# alt + lcmd - l : pmset displaysleepnow
 
 # consistency
 cmd - q : skhd -t "@"
