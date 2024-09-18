@@ -13,3 +13,6 @@ yarn.lock
 tsconfig.tsbuildinfo
 yarn-error.log
 .zsh_sessions/
+!.gitlab-ci.yml
+!.pipeline
+!.projen
