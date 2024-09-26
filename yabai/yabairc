@@ -47,4 +47,13 @@ yabai -m signal --add event=window_minimized active=yes action="if \$(yabai -m q
 
 # yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
+# Zoom workaround
+# <https://github.com/koekeishiya/yabai/issues/1706#issuecomment-1510572076<
+yabai -m signal --add event=window_focused app=^zoom.us$ action="yabai -m config focus_follows_mouse off"
+yabai -m signal --add event=application_deactivated app=^zoom.us$ action="yabai -m config focus_follows_mouse autofocus"
+yabai -m signal --add event=application_terminated app=^zoom.us$ action="yabai -m config focus_follows_mouse autofocus"
+yabai -m signal --add event=application_hidden app=^zoom.us$ action="yabai -m config focus_follows_mouse autofocus"
+yabai -m signal --add event=window_destroyed app=^zoom.us$ action="yabai -m config focus_follows_mouse autofocus"
+yabai -m signal --add event=window_minimized app=^zoom.us$ action="yabai -m config focus_follows_mouse autofocus"
+
 echo "yabai configuration loaded.."
