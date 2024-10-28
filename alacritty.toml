@@ -1,7 +1,8 @@
+[general]
 live_config_reload = true
 working_directory = "None"
 
-[shell]
+[terminal.shell]
 program = "/opt/homebrew/bin/fish"
 
 [bell]
