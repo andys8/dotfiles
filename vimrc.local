@@ -436,6 +436,7 @@ autocmd FileType gitcommit set colorcolumn+=73
 " Copilot
 let g:copilot_no_tab_map = v:true
 imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+imap <silent><script><expr> <C-f> copilot#Accept("\<CR>")
 imap <C-k> <Plug>(copilot-next)
 
 " MDX
