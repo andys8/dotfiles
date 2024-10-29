@@ -130,3 +130,4 @@ Add `/Users/username/bin` to `/etc/paths` to be able to overwrite system binarie
 
 Use `duti` or `dutis` to configure.
 Use `automator` to create an application that runs a shell script (e.g. `/opt/homebrew/bin/alacritty -e vim "$@"`)
+Use `E` in ranger to edit.
