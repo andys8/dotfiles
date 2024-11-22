@@ -1,0 +1,24 @@
+#!/bin/sh
+# set -eu
+# Usage: brag [ls|list|YYYY-MM]
+
+path="$HOME/Documents/brag"
+arg="${1}"
+format="%Y-%m"
+
+if [ "$arg" = "ls" ] || [ "$arg" = "list" ]; then
+    ranger "$path"
+    exit 0
+fi
+
+date=$(gdate --date="$arg" +$format)
+
+[ -z "$date" ] && exit 1
+
+file="$path/$date.md"
+[ -f "$file" ] || {
+    mkdir -p "$path"
+    echo "# Brag $date" >"$file"
+}
+
+cd "$path" && vim "$file"
