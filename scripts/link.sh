@@ -42,6 +42,7 @@ ln -sf ~/dotfiles/fish/hostip.fish ~/.config/fish/functions/hostip.fish
 ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
 ln -sf ~/dotfiles/fish/sudo.fish ~/.config/fish/functions/sudo.fish
 ln -sf ~/dotfiles/fish/mkcd.fish ~/.config/fish/functions/mkcd.fish
+ln -sf ~/dotfiles/fish/fcd.fish ~/.config/fish/functions/fcd.fish
 rm -rf ~/.config/omf
 ln -sf ~/dotfiles/omf ~/.config
 
