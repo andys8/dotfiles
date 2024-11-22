@@ -95,3 +95,8 @@ Plug 'LnL7/vim-nix', { 'for' : 'nix' }
 
 " TypeScript Syntax Highlighting
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
+
+" PHP / Laravel
+Plug 'yaegassy/coc-laravel', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-blade', {'do': 'yarn install --frozen-lockfile'}
+Plug 'jwalton512/vim-blade', { 'for' : 'blade' }

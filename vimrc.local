@@ -226,6 +226,8 @@ let g:rooter_patterns = [
 " Coc
 let g:coc_global_extensions = [
       \ '@yaegassy/coc-tailwindcss3',
+      \ '@yaegassy/coc-laravel',
+      \ 'coc-blade',
       \ 'coc-cspell-dicts',
       \ 'coc-deno',
       \ 'coc-diagnostic',
@@ -242,6 +244,7 @@ let g:coc_global_extensions = [
       \ 'coc-spell-checker',
       \ 'coc-tsserver',
       \ 'coc-yaml',
+      \ 'coc-redocly'
       \ ]
 
 nmap          <F5>      :CocRebuild<CR>
