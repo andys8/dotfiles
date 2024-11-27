@@ -22,6 +22,7 @@ commandsOptional=(
     json-tui  # TUI to visualize json input
     shfmt     # shell format
     thorium   # chromium web browser
+    toilet    # used in vim startify
     trash-put # trash-cli
     uuidgen   # generate uuid
     vimdiff   # git diffs in vim
