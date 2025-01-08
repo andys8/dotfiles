@@ -244,7 +244,6 @@ let g:coc_global_extensions = [
       \ 'coc-spell-checker',
       \ 'coc-tsserver',
       \ 'coc-yaml',
-      \ 'coc-redocly'
       \ ]
 
 nmap          <F5>      :CocRebuild<CR>
@@ -444,6 +443,10 @@ imap <C-k> <Plug>(copilot-next)
 
 " MDX
 autocmd BufNewFile,BufRead *.mdx set filetype=markdown
+
+" Test js/ts with jest
+let test#javascript#runner = 'jest'
+command! Jest execute '!npx jest %'
 
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
