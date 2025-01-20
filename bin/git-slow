@@ -1,0 +1,6 @@
+#!/bin/sh
+# Improve performance of large, slow git repositories
+
+git gc --aggressive --prune=now
+git repack -a -d
+git fsck --full
