@@ -39,6 +39,8 @@ yabai -m config left_padding 4
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Wally$" manage=off
 yabai -m rule --add app="^Pulse Secure$" manage=off
+yabai -m rule --add app="^QuickRecorder$" manage=off
+yabai -m rule --add app="^Kap$" manage=off
 
 # signals
 yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"

@@ -139,7 +139,7 @@ ctrl + alt + cmd - r : yabai --restart-service
 alt - p : screencapture -ixc
 f13 : screencapture -ixc
 alt + shift - p : screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
-shift - f13 : Screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+shift - f13 : screencapture -ix ~/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # lock
 cmd + alt + ctrl - space : pmset displaysleepnow
