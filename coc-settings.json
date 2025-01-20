@@ -138,13 +138,15 @@
   "diagnostic-languageserver.filetypes": {
     "ebotlang": "ce-dev",
     "markdown": "write-good",
-    "sh": "shellcheck"
+    "sh": "shellcheck",
+    "bash": "shellcheck"
   },
   "diagnostic-languageserver.formatFiletypes": {
     "cabal": "cabal-fmt",
     "dhall": "dhall",
     "nix": "nixpkgs-fmt",
-    "sh": "shfmt"
+    "sh": "shfmt",
+    "bash": "shfmt"
   },
   "diagnostic-languageserver.formatters": {
     "cabal-fmt": { "command": "cabal-fmt", "args": ["-i"] },
