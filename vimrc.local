@@ -448,6 +448,9 @@ autocmd BufNewFile,BufRead *.mdx set filetype=markdown
 let test#javascript#runner = 'jest'
 command! Jest execute '!npx jest %'
 
+" Clean tty on close
+autocmd VimLeave * !stty sane
+
 " Include temporary vim settings
 if filereadable("/tmp/.vimrc")
   source /tmp/.vimrc

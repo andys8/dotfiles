@@ -144,6 +144,7 @@ abbr -a -- pacu 'sudo pacman -Syu'
 abbr -a -- r ranger
 abbr -a -- rgf 'rg --files | rg'
 abbr -a -- rm trash
+abbr -a -- ss 'stty sane'
 abbr -a -- stacktest stack-test
 abbr -a -- stb 'stack build --test --no-run-tests'
 abbr -a -- stbw 'stack build --test --no-run-tests --file-watch'
