@@ -16,7 +16,7 @@ bright_foreground = "#ffffff"
 
 [colors.cursor]
 text = "#282a36"
-cursor = "#f8f8f2"
+cursor = "#ffdd33"
 
 [colors.vi_mode_cursor]
 text = "CellBackground"
