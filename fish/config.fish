@@ -60,17 +60,8 @@ bind --user --mode insert --key nul backward-delete-char
 # Keybinding: Ctrl-Backspace
 bind --user --mode insert \cH backward-kill-path-component
 
-# Cursor speed
-# xset r rate 200 80 2> /dev/null &
-
 # zoxide init
 zoxide init fish | source
-
-# nix-shell using fix via any-nix-shell
-function nix-shell
-  any-nix-shell fish | source
-  nix-shell $argv
-end
 
 # Aliases
 abbr -a -- .. 'cd ..'
