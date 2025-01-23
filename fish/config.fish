@@ -50,6 +50,10 @@ set -Ux LESS_TERMCAP_me (set_color normal)
 set -Ux LESS_TERMCAP_ue (set_color normal)
 set -Ux LESS_TERMCAP_se (set_color normal)
 
+# Terminal
+set -gx TERM xterm-256color
+set -gx TERMINAL xterm-256color
+
 # Keybindings in visual mode
 bind --user --mode visual --sets-mode insert i force-repaint end-selection
 bind --user --mode visual --sets-mode insert s kill-selection end-selection repaint-mode

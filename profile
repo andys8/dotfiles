@@ -52,6 +52,7 @@ export N_PREFIX=$HOME/.local
 export EDITOR=vim
 export VISUAL=vim
 export GIT_EDITOR=vim
+export TERM=xterm-256color
 export TERMINAL=xterm-256color
 export LANG=en_US.UTF-8
 export RANGER_DEVICONS_SEPARATOR="  "
