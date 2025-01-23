@@ -22,6 +22,9 @@ section "Create symlinks"
 section "Update Brew"
 ./update-brew.sh
 
+section "Update asdf"
+./update-asdf.sh
+
 section "Update Vim"
 ./update-vim.sh
 
