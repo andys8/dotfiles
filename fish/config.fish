@@ -107,6 +107,8 @@ abbr -a -- gcp 'git cherry-pick'
 abbr -a -- gd 'git diff'
 abbr -a -- gdd 'git diff-default'
 abbr -a -- gds 'git diff --staged'
+abbr -a -- gdn 'git dn'
+abbr -a -- gdnu 'git dnu'
 abbr -a -- gf 'git fetch'
 abbr -a -- gfa 'git fetch --all'
 abbr -a -- gi git

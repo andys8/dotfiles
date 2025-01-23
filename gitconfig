@@ -26,6 +26,8 @@
     diff-so-fancy = diff
     diff1 = diff
     diff2 = diff
+    dn = diff --name-only
+    dnu = diff --name-only --diff-filter=U
     f = fetch
     fe = fetch
     l = log --graph --date=short
