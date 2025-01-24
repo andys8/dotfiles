@@ -180,11 +180,6 @@ command! -bang -nargs=* Rg
 command! BufOnly silent! execute "%bd|e#|bd#"
 noremap <silent> <leader>C :BufOnly<CR>
 
-" Zen mode / goyo
-nnoremap <F6> :Goyo<CR>
-nnoremap <leader>- :Goyo<CR>
-command! -nargs=0 Zen :Goyo
-
 " Command to read windows files (crlf)
 cabbrev windowsfile e ++ff=dos
 cabbrev dosfile e ++ff=dos
