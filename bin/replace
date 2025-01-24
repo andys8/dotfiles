@@ -1,0 +1,14 @@
+#!/bin/bash
+# replace - replace all occurrences of a pattern in input
+
+if [ "$#" -lt 1 ]; then
+    echo "Usage: replace <pattern> [replacement]"
+    exit 1
+fi
+
+pattern="$1"
+replacement="${2:-}"
+
+while IFS= read -r line; do
+    echo "${line//$pattern/$replacement}"
+done
