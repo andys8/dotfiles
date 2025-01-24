@@ -225,21 +225,14 @@ let g:rooter_patterns = [
 
 " Coc
 let g:coc_global_extensions = [
-      \ '@yaegassy/coc-tailwindcss3',
-      \ '@yaegassy/coc-laravel',
-      \ 'coc-blade',
       \ 'coc-cspell-dicts',
       \ 'coc-deno',
       \ 'coc-diagnostic',
       \ 'coc-docker',
       \ 'coc-eslint',
-      \ 'coc-go',
-      \ 'coc-java',
       \ 'coc-json',
-      \ 'coc-kotlin',
       \ 'coc-markdownlint',
       \ 'coc-prettier',
-      \ 'coc-rust-analyzer',
       \ 'coc-snippets',
       \ 'coc-spell-checker',
       \ 'coc-tsserver',
