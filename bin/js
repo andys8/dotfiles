@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+// Execute JavaScript code from the command line.
+// Usage: js "1 + 1" 
+// Usage: echo 1 | js "x => Number(x) * 2"
+// Usage: cat file.txt | js "x => x.split('\n').join(',')"
+
+const args = process.argv.slice(2);
+
+if (args.length === 0) {
+  console.error("Error: Please provide a value for x as an argument.");
+  process.exit(1);
+}
+
+const x = args[0];
+const z = eval(x);
+
+if (typeof z === "function") {
+  process.stdin.on("data", (data) => {
+    process.stdout.write(z(data.toString()).toString());
+  });
+} else {
+  process.stdout.write(z.toString());
+}
