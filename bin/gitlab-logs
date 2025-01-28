@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Check if the first argument (initial job id) is provided
+if [ -z "$1" ]; then
+    echo "Usage: gitlab-logs <initial_job_id> [<number_of_jobs>]"
+    exit 1
+fi
+
+# Test if glab is installed
+if ! command -v glab &>/dev/null; then
+    echo "Error: glab is not installed. Please install glab to use this script."
+    exit 1
+fi
+
+# Assign arguments to variables
+initial_job_id=$1
+num_jobs=${2:-1} # Default to 1 if no second argument is provided
+
+# Create the output file path
+output_file="/tmp/gitlab-jobs-${initial_job_id}-${num_jobs}.txt"
+
+# Inform the user
+echo "Fetching logs for jobs starting from ${initial_job_id} for ${num_jobs} jobs"
+echo "Output will be saved to ${output_file}"
+
+# Initialize or clear the output file
+>"$output_file"
+
+# Fetch logs for each job ID and append to the output file
+for ((i = 0; i < num_jobs; i++)); do
+    job_id=$((initial_job_id + i))
+    echo "Fetching logs for job ID: $job_id"
+    echo "===== Logs for Job ID: $job_id =====" >>"$output_file"
+    glab ci trace "$job_id" >>"$output_file" 2>&1
+    echo "===== End of Logs for Job ID: $job_id =====" >>"$output_file"
+done
+
+# Inform the user that the operation is complete
+echo "Logs have been fetched and saved to ${output_file}"
