@@ -18,8 +18,21 @@ fi
 pipeline_id=$1
 filter=${2:-}
 
-jq_expr='.jobs | map(select(.name | contains("'$filter'"))) | map(.id) | .[]'
-job_ids=$(glab ci get -p "$pipeline_id" -F json | jq -r "$jq_expr")
+echo "Fetching jobs for pipeline ID: $pipeline_id"
+
+# Fetch pipeline jobs JSON once
+pipeline_json=$(glab ci get -p "$pipeline_id" -F json)
+
+# Extract job names
+jq_expr_name='.jobs | map(select(.name | startswith("'$filter'"))) | map(.name) | .[]'
+job_names=$(echo "$pipeline_json" | jq -r "$jq_expr_name" | sort)
+
+# Extract job IDs
+jq_expr_id='.jobs | map(select(.name | startswith("'$filter'"))) | map(.id) | .[]'
+job_ids=$(echo "$pipeline_json" | jq -r "$jq_expr_id" | sort)
+
+echo "Job Names:"
+echo "$job_names"
 
 # Create the output file path
 output_file="/tmp/gitlab-jobs-${pipeline_id}-${filter}.txt"
