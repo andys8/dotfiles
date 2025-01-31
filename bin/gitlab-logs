@@ -31,6 +31,11 @@ job_names=$(echo "$pipeline_json" | jq -r "$jq_expr_name" | sort)
 jq_expr_id='.jobs | map(select(.name | startswith("'$filter'"))) | map(.id) | .[]'
 job_ids=$(echo "$pipeline_json" | jq -r "$jq_expr_id" | sort)
 
+if [ -z "$job_ids" ]; then
+    echo "No jobs found for pipeline ID: $pipeline_id"
+    exit 1
+fi
+
 echo "Job Names:"
 echo "$job_names"
 
