@@ -4,7 +4,6 @@
     pager = diff-so-fancy | less --tabs=4 -RFX
     excludesFile = ~/.config/git/ignore
 	untrackedcache = true
-    preloadindex = true
 [alias]
     a = add
     aa = add .
