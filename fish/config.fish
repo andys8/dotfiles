@@ -14,6 +14,9 @@ set -q XDG_DATA_HOME
 
 # Key bindings: vim and default emacs
 set -U fish_key_bindings fish_hybrid_key_bindings
+set -U fish_vi_force_cursor yes
+set -U fish_cursor_default block
+set -U fish_cursor_insert block
 
 # Bobthefish theme options
 set -U theme_color_scheme dracula
