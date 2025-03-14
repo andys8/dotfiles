@@ -35,7 +35,7 @@ set -U theme_display_node no
 set -U theme_display_nvm no
 set -U theme_display_ruby no
 set -U theme_display_vagrant no
-set -U theme_display_vi no
+set -U theme_display_vi yes
 set -U theme_git_default_branches master main develop
 set -U theme_git_worktree_support no
 set -U theme_nerd_fonts yes
@@ -128,6 +128,7 @@ abbr -a -- gst 'git stash'
 abbr -a -- gti git
 abbr -a -- imp image-preview
 abbr -a -- j z
+abbr -a -- jf jest-file
 abbr -a -- lg lazygit
 abbr -a -- ll 'lsd -Al --date relative --group-dirs first'
 abbr -a -- lll 'lsd -Al --date relative --timesort --reverse'
@@ -136,6 +137,8 @@ abbr -a -- mirror 'autorandr common'
 abbr -a -- ng 'nix-env -qaP | grep'
 abbr -a -- ns nix-search
 abbr -a -- ntop nethogs
+abbr -a -- pi "pnpm install"
+abbr -a -- pnpmi "pnpm i"
 abbr -a -- paci 'sudo pacman -S'
 abbr -a -- pacr 'sudo pacman -Rs'
 abbr -a -- pacs 'pacman -Ss'
@@ -167,6 +170,7 @@ abbr -a -- vimg 'vim (git diff --name-only)'
 abbr -a -- vmi vim
 abbr -a -- weather 'curl https://wttr.in'
 abbr -a -- wttr 'curl https://wttr.in'
+abbr -a -- xargs 'xargs -o'
 abbr -a -- yd 'yarn dev'
 abbr -a -- yi 'yarn install'
 abbr -a -- yt 'yarn test'
