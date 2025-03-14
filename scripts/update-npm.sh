@@ -20,7 +20,7 @@ packages=(
     http-server                       # spin up http server in directory
     http-status-cli                   # http status lookup tool
     npm-check-updates                 # npm update depndencies
-    pnpm@^8.10.5                      # pnpm
+    pnpm@8.10.5                       # pnpm
     prettier                          # JS/TS/CSS/Markdown formatter
     qrcode-terminal                   # Encode text as QR code
     secure-rm-cli                     # secure delete
