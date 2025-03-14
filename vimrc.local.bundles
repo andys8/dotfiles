@@ -13,7 +13,7 @@ Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'honza/vim-snippets'
 
 " Multi Cursor with CTRL+n and c(hange)
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Surround word: Use e.g. ysiw` and ds`
 Plug 'tpope/vim-surround'
