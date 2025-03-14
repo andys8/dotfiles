@@ -1,0 +1,35 @@
+snippet wf
+await waitFor(() => $0)
+
+snippet sleep
+await new Promise((resolve) => setTimeout(resolve, 1000));
+
+snippet beforeEach
+beforeEach(() => {
+  $0
+});
+
+snippet afterEach
+afterEach(() => {
+  $0
+});
+
+snippet beforeAll
+beforeAll(() => {
+  $0
+});
+
+snippet afterAll
+afterAll(() => {
+  $0
+});
+
+snippet describe
+describe('$1', () => {
+  $0
+});
+
+snippet it
+it('$1', () => {
+  $0
+});
