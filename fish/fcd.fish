@@ -1,6 +1,6 @@
 function fcd --description "Fuzzy change directory"
     set -l tmpfile (mktemp)
-    fd --type d | fzf > $tmpfile
+    fd --type d | fzf --tiebreak=length > $tmpfile
     set -l destdir (cat $tmpfile)
     rm $tmpfile
 
