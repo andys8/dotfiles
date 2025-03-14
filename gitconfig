@@ -27,6 +27,7 @@
     diff2 = diff
     dn = diff --name-only
     dnu = diff --name-only --diff-filter=U
+    edit-modified = !git diff --name-only --diff-filter=U | xargs -o vim
     f = fetch
     fe = fetch
     l = log --graph --date=short
