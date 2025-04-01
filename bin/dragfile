@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Usage: cat file | ./dragfile [filename]
+# If a filename is provided, the file will be created as /tmp/<filename>
+# Otherwise, a temporary file is created and removed after execution.
+
+# Ensure the script is used with piped input
+if [ -t 0 ]; then
+    echo "Usage: cat file | $0 [filename]" >&2
+    exit 1
+fi
+
+# Determine the file name to use
+if [ $# -gt 0 ]; then
+    tmpfile="/tmp/$1.txt"
+else
+    tmpfile=$(mktemp /tmp/output.XXXXXX.txt)
+fi
+
+# Save piped input into the file
+cat >"$tmpfile"
+
+# Execute the 'drag' command on the file
+drag "$tmpfile"
+
+# Remove the temporary file if we generated it automatically
+if [ $# -eq 0 ]; then
+    rm "$tmpfile"
+fi
