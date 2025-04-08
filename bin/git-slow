@@ -1,6 +1,7 @@
 #!/bin/sh
 # Improve performance of large, slow git repositories
 
-git gc --aggressive --prune=now
+git gc --auto --prune=2.week.ago
+git prune --expire=2.weeks.ago
 git repack -a -d
 git fsck --full
