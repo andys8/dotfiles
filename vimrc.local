@@ -121,8 +121,6 @@ command -nargs=1 J Z <args>
 command Ticket :execute "normal! A" . system('ticket')
 
 " Abbreviations
-cabbrev Ci CocInfo
-cabbrev ci CocInfo
 cabbrev Cr CocRestart
 cabbrev cr CocRestart
 cabbrev Cs CocSearch
