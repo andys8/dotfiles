@@ -16,6 +16,10 @@ ln -sf ~/dotfiles/coc-settings.json ~/.vim/coc-settings.json
 rm -rf ~/.vim/snippets
 ln -sf ~/dotfiles/vim-snippets ~/.vim/snippets
 
+# Neovim
+rm -rf ~/.config/nvim
+ln -sf ~/dotfiles/nvim ~/.config/nvim
+
 # Git
 rm -rf ~/.config/git
 ln -sf ~/dotfiles/git ~/.config
