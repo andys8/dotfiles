@@ -69,11 +69,6 @@ if status_ok then
   completion_config.setup()
 end
 
-local status_ok, multi_cursor_config = pcall(require, 'multi_cursor_config')
-if status_ok then
-  multi_cursor_config.setup()
-end
-
 -- Configure nvim-tree
 local nvim_tree_status_ok, nvim_tree = pcall(require, 'nvim-tree')
 if nvim_tree_status_ok then

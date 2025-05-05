@@ -67,9 +67,6 @@ return require('packer').startup(function(use)
   -- Git integration
   use 'lewis6991/gitsigns.nvim'
 
-  -- Multi-cursor
-  use 'mg979/vim-visual-multi'
-
   -- Color schemes
   use 'dracula/vim'
   use 'arcticicestudio/nord-vim'

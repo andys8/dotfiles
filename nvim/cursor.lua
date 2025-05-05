@@ -30,10 +30,6 @@ if vim.g.vscode then
   vim.keymap.set('n', '<leader>t', function() vscode.action('editor.action.goToTypeDefinition') end, { silent = true })
   vim.keymap.set('n', '<leader>u', function() vscode.action('editor.action.goToReferences') end, { silent = true })
 
-  -- Multi cursor support
-  vim.keymap.set('n', '<C-n>', function() vscode.action('editor.action.addSelectionToNextFindMatch') end, { silent = true })
-  vim.keymap.set('x', '<C-n>', function() vscode.action('editor.action.addSelectionToNextFindMatch') end, { silent = true })
-
   -- Clear search highlighting
   vim.keymap.set('n', '<leader><space>', function() vscode.action('editor.action.clearFind') end, { silent = true })
 
