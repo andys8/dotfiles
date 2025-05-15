@@ -26,6 +26,12 @@ echo ">> Cleaning CoC extensions"
 echo ">> Cleaning project caches with kondo"
 kondo --all ~
 
+# Brew cleanup
+if [ -x "$(command -v "brew")" ]; then
+    echo ">> Cleaning brew"
+    brew cleanup
+fi
+
 # Symlinks
 echo ">> Cleaning symlinks"
 ~/dotfiles/scripts/clean-symlinks.sh
