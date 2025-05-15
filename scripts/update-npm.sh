@@ -13,6 +13,7 @@ npm set fund false
 
 # NPM installable packages
 packages=(
+    @antfu/ni                         # ni: use the right package manager
     bash-language-server              # bash ls
     csv2json                          # convert csv to json
     dockerfile-language-server-nodejs # docker ls
