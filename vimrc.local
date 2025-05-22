@@ -113,6 +113,8 @@ command UUID :r !uuidgen
 command CopyFileName :let @+ = expand("%:p")
 nnoremap <C-c> :CopyFileName<CR>
 
+" Make executable
+command! MakeExecutable !chmod +x %
 
 " Zoxide / Autojump
 command -nargs=1 J Z <args>
