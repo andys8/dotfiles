@@ -1,5 +1,6 @@
 package foreign-env
 package https://github.com/dracula/fish
+package https://github.com/rcny/gh-copilot-cli-alias.fish
 package last-working-dir
 theme bobthefish
 theme default
