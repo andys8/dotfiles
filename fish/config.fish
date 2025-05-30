@@ -69,6 +69,9 @@ bind --user --mode insert --key nul backward-delete-char
 # Keybinding: Ctrl-Backspace
 bind --user --mode insert \cH backward-kill-path-component
 
+# Bind CTRL+j to complete suggestions
+bind --user --mode insert \cj accept-autosuggestion
+
 # zoxide init
 zoxide init fish | source
 
