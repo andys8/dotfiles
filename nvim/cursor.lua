@@ -43,6 +43,9 @@ if vim.g.vscode then
     end)
   end, { silent = true })
 
+  -- Accept AI completions with Ctrl+J (same as Tab)
+  vim.keymap.set('i', '<C-j>', function() vscode.action('editor.action.acceptCursorTabSuggestion') end, { silent = true })
+
   -- Buffer/tab navigation
   vim.keymap.set('n', '<leader>x', function() vscode.action('workbench.action.nextEditor') end, { silent = true })
   vim.keymap.set('n', '<leader>w', function() vscode.action('workbench.action.nextEditor') end, { silent = true })
