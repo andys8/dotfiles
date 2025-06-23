@@ -14,7 +14,9 @@ fi
 if [ $# -gt 0 ]; then
     tmpfile="/tmp/$1.txt"
 else
-    tmpfile=$(mktemp /tmp/output.XXXXXX.txt)
+    tmpfile=$(mktemp /tmp/output.XXXXXXXX)
+    mv "$tmpfile" "$tmpfile.txt"
+    tmpfile="$tmpfile.txt"
 fi
 
 # Save piped input into the file
