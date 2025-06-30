@@ -71,6 +71,12 @@ let g:airline#extensions#branch#vcs_checks = []
 vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
 
+" Vscode
+command! Vscode execute '!code ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p'))
+
+" Cursor
+command! Cursor execute '!cursor ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p'))
+
 " Tab is the same as <C-i> and should jump forward
 nunmap <Tab>
 
