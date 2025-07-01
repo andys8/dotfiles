@@ -1,0 +1,28 @@
+#!/bin/bash
+
+lat=48.1333
+lon=11.5833
+current_hour=$(TZ=Europe/Berlin date +"%Y-%m-%dT%H:00")
+
+# Open-Meteo API
+openmeteo_url="https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=uv_index&timezone=Europe%2FBerlin"
+
+openmeteo_response=$(curl -sf "$openmeteo_url")
+if [ -z "$openmeteo_response" ]; then
+    openmeteo_uv="Error: API request failed"
+else
+    # Try to get the UV index for the current hour
+    openmeteo_uv=$(echo "$openmeteo_response" | jq -r --arg time "$current_hour" '(.hourly.time | index($time)) as $i | if $i != null then .hourly.uv_index[$i] else "N/A" end')
+fi
+
+# wttr.in
+wttr_response=$(curl -sf "wttr.in/Eichenau?format=j1")
+if [ -z "$wttr_response" ]; then
+    wttr_uv="Error: API request failed"
+else
+    wttr_uv=$(echo "$wttr_response" | jq -r '.current_condition[0].uvIndex')
+fi
+
+echo "Current UV index at around $current_hour:"
+echo "- Open-Meteo: $openmeteo_uv"
+echo "- wttr.in: $wttr_uv"
