@@ -1,7 +1,7 @@
 [core]
     autocrlf = input
     editor = vim
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = diff-so-fancy
     excludesFile = ~/.config/git/ignore
 	untrackedcache = true
 [alias]
@@ -97,7 +97,7 @@
     cmd = idea merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
     trustExitCode = false
 [interactive]
-    diffFilter = delta --color-only
+    diffFilter = diff-so-fancy --patch
 [color]
     ui = true
 [color "branch"]
