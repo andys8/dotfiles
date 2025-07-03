@@ -72,10 +72,10 @@ vnoremap <C-x> :!pbcopy<CR>
 vnoremap <C-c> :w !pbcopy<CR><CR>
 
 " Vscode
-command! Vscode execute '!code ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p'))
+command! Vscode execute 'silent! !code ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p')) | redraw!
 
 " Cursor
-command! Cursor execute '!cursor ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p'))
+command! Cursor execute 'silent! !cursor ' . shellescape(FindRootDirectory()) . ' ' . shellescape(expand('%:p')) | redraw!
 
 " Tab is the same as <C-i> and should jump forward
 nunmap <Tab>
