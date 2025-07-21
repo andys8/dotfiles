@@ -17,9 +17,9 @@ if vim.g.vscode then
   vim.keymap.set('n', '<Space>e', function() vscode.action('workbench.action.quickOpen') end, { silent = true })
 
   -- Override key bindings with Cursor-specific commands
-  vim.keymap.set('n', '<leader>e', function() vscode.action('workbench.action.quickOpen') end, { silent = true })
+  vim.keymap.set('n', '<leader>e', function() vscode.action('find-it-faster.findFiles') end, { silent = true })
   vim.keymap.set('n', '<leader>E', function() vscode.action('workbench.action.quickOpen') end, { silent = true })
-  vim.keymap.set('n', '<leader>f', function() vscode.action('workbench.action.findInFiles') end, { silent = true })
+  vim.keymap.set('n', '<leader>f', function() vscode.action('find-it-faster.findWithinFiles') end, { silent = true })
   vim.keymap.set('n', '<leader>F', function() vscode.action('workbench.action.findInFiles') end, { silent = true })
   vim.keymap.set('n', '<leader>p', function() vscode.action('editor.action.formatDocument') end, { silent = false })
   vim.keymap.set('n', '<leader>d', function() vscode.action('editor.action.revealDefinition') end, { silent = true })
