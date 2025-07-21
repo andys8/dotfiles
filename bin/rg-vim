@@ -1,0 +1,2 @@
+#!/bin/bash
+rg "$@" -l | xargs -o vim
