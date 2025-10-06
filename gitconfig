@@ -133,5 +133,3 @@
     skippedCherryPicks = false
 [include]
     path = ~/.gitconfig.machine
-[url "git@github.com:"]
-	insteadOf = https://github.com/
