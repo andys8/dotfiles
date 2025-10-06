@@ -63,9 +63,6 @@ set -gx LC_ALL "en_US.UTF-8"
 bind --user --mode visual --sets-mode insert i force-repaint end-selection
 bind --user --mode visual --sets-mode insert s kill-selection end-selection repaint-mode
 
-# Keybindings QMK like: Ctrl-Space
-bind --user --mode insert --key nul backward-delete-char
-
 # Keybinding: Ctrl-Backspace
 bind --user --mode insert \cH backward-kill-path-component
 
