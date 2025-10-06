@@ -127,6 +127,7 @@ abbr -a -- gr 'git remote'
 abbr -a -- gra 'git rebase --abort'
 abbr -a -- grc 'git rebase --continue'
 abbr -a -- grd 'git rebase-default'
+abbr -a -- gre 'git restore --source origin/main'
 abbr -a -- grm 'git rebase -i origin/master'
 abbr -a -- gru 'git rebase -i upstream/master'
 abbr -a -- gs 'git status'
@@ -151,6 +152,7 @@ abbr -a -- pacs 'pacman -Ss'
 abbr -a -- pacu 'sudo pacman -Syu'
 abbr -a -- r ranger
 abbr -a -- rgf 'rg --files | rg'
+abbr -a -- rgfh 'rg --files --hidden | rg'
 abbr -a -- rm trash
 abbr -a -- ss 'stty sane'
 abbr -a -- stacktest stack-test
