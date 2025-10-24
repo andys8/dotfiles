@@ -140,6 +140,7 @@ abbr -a -- ls lsd
 abbr -a -- mirror 'autorandr common'
 abbr -a -- ng 'nix-env -qaP | grep'
 abbr -a -- ns nix-search
+abbr -a -- nxr "pnpm nx run --skip-nx-cache"
 abbr -a -- ntop nethogs
 abbr -a -- pi "pnpm install"
 abbr -a -- pnpmi "pnpm i"
