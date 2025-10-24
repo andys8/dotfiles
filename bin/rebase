@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "Fetching latest changes..."
+git fetch
+
+if [ -z "$1" ]; then
+  BRANCH=$(git branch --show-current)
+  echo "No branch specified, using current branch: $BRANCH"
+else
+  BRANCH=$1
+  echo "Checking out branch: $BRANCH"
+  git checkout "$BRANCH"
+fi
+
+echo "Rebasing on default branch..."
+DEFAULT_BRANCH=$(git default-branch)
+git rebase "origin/$DEFAULT_BRANCH"
+
+echo "Pushing changes..."
+git push --force-with-lease
