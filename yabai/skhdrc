@@ -127,10 +127,10 @@ cmd + alt + ctrl - k : yabai -m space --layout stack
 # ctrl + alt + cmd - l : yabai -m window --resize right:-40:0
 
 # increase and decrease window size
-ctrl + alt - h : yabai -m window --ratio rel:-0.05
-ctrl + alt - l : yabai -m window --ratio rel:0.05
+ctrl + alt - h : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
 ctrl + alt - j : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
 ctrl + alt - k : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
+ctrl + alt - l : yabai -m window --resize right:50:0; yabai -m window --resize left:50:0
 
 # restart yabai
 ctrl + alt + cmd - r : yabai --restart-service
