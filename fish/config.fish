@@ -130,6 +130,10 @@ abbr -a -- gru 'git rebase -i upstream/master'
 abbr -a -- gs 'git status'
 abbr -a -- gst 'git stash'
 abbr -a -- gti git
+abbr -a -- gw 'git worktree'
+abbr -a -- gwa 'git worktree add'
+abbr -a -- gwl 'git worktree list'
+abbr -a -- gwr 'git worktree remove'
 abbr -a -- imp image-preview
 abbr -a -- j z
 abbr -a -- jf jest-file
