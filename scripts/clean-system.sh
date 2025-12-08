@@ -18,6 +18,18 @@ if [ -x "$(command -v "yarn")" ]; then
     yarn cache clean
 fi
 
+# pnpm
+if [ -x "$(command -v "pnpm")" ]; then
+    echo ">> Cleaning pnpm"
+    pnpm store prune
+fi
+
+# npm
+if [ -x "$(command -v "npm")" ]; then
+    echo ">> Cleaning npm"
+    npm cache clean --force
+fi
+
 # Vim CoC
 echo ">> Cleaning CoC extensions"
 ~/dotfiles/scripts/clean-vim-coc.sh
