@@ -5,7 +5,8 @@ set -e
 BRANCH=${1:-$(git branch --show-current)}
 REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
 DEFAULT_BRANCH=$(git default-branch)
-WORKTREE_PATH="../${REPO_NAME}-${BRANCH}-rebase"
+BRANCH_SAFE=${BRANCH//\//-}
+WORKTREE_PATH="../${REPO_NAME}-${BRANCH_SAFE}-rebase"
 
 echo "Fetching latest changes..."
 git fetch
