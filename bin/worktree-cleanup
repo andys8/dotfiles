@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -e
+
+MAIN_PATH=$(git rev-parse --show-toplevel)
+
+echo "Listing all worktrees..."
+WORKTREES=$(git worktree list --porcelain | grep -E "^worktree " | awk '{print $2}')
+
+TO_DELETE=()
+while IFS= read -r worktree; do
+  if [ "$worktree" != "$MAIN_PATH" ]; then
+    TO_DELETE+=("$worktree")
+  fi
+done <<< "$WORKTREES"
+
+if [ ${#TO_DELETE[@]} -eq 0 ]; then
+  echo "No worktrees to delete (main worktree excluded)"
+  exit 0
+fi
+
+echo ""
+echo "Found ${#TO_DELETE[@]} worktree(s) to delete:"
+for worktree in "${TO_DELETE[@]}"; do
+  echo "  - $worktree"
+done
+
+echo ""
+read -p "Delete all worktrees? (y/N) " -n 1 -r
+echo ""
+
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  echo "Cancelled"
+  exit 0
+fi
+
+echo "Removing worktrees..."
+for worktree in "${TO_DELETE[@]}"; do
+  echo "Removing $worktree..."
+  git worktree remove "$worktree" --force
+done
+
+echo "Done! All worktrees removed"
