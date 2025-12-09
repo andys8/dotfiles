@@ -2,21 +2,24 @@
 
 set -e
 
+BRANCH=${1:-$(git branch --show-current)}
+REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
+DEFAULT_BRANCH=$(git default-branch)
+WORKTREE_PATH="../${REPO_NAME}-${BRANCH}-rebase"
+
 echo "Fetching latest changes..."
 git fetch
 
-if [ -z "$1" ]; then
-  BRANCH=$(git branch --show-current)
-  echo "No branch specified, using current branch: $BRANCH"
-else
-  BRANCH=$1
-  echo "Checking out branch: $BRANCH"
-  git checkout "$BRANCH"
-fi
+echo "Creating temporary worktree at: $WORKTREE_PATH"
+git worktree add "$WORKTREE_PATH" "$BRANCH"
 
-echo "Rebasing on default branch..."
-DEFAULT_BRANCH=$(git default-branch)
-git rebase "origin/$DEFAULT_BRANCH"
+(
+  cd "$WORKTREE_PATH"
+  echo "Rebasing on default branch..."
+  git rebase "origin/$DEFAULT_BRANCH"
+  echo "Pushing changes..."
+  git push --force-with-lease
+)
 
-echo "Pushing changes..."
-git push --force-with-lease
+echo "Removing worktree..."
+git worktree remove "$WORKTREE_PATH"
