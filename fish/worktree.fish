@@ -21,9 +21,34 @@ function worktree --description "Create a git worktree and cd to it"
     set -l branch_safe (string replace -a / - $branch)
     set -l worktree_path "../$repo_name-$branch_safe"
 
+    if not git show-ref --verify --quiet refs/heads/$branch
+        echo "Branch not found locally, fetching from remote..."
+        git fetch
+
+        # Check if branch exists remotely or locally after fetch
+        if not git show-ref --verify --quiet refs/heads/$branch; and not git show-ref --verify --quiet refs/remotes/origin/$branch
+            echo "Branch '$branch' does not exist. Creating new branch from $default_branch..."
+            git branch $branch $default_branch
+        end
+    end
+
     echo "Creating worktree at: $worktree_path"
     git worktree add "$worktree_path" "$branch"
     echo "Worktree created successfully at: $worktree_path"
 
     cd "$worktree_path"
+
+    echo "Installing tools"
+    if asdf install
+        echo "Tools installed successfully"
+    else
+        echo "Warning: Failed to asdf install faled" >&2
+    end
+
+    echo "Installing dependencies..."
+    if ni
+        echo "Dependencies installed successfully"
+    else
+        echo "Warning: Failed to install dependencies with 'ni'" >&2
+    end
 end
