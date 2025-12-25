@@ -22,6 +22,7 @@ in
     elmPackages.elm-format # elm pretty print
     elmPackages.elm-language-server # language-server
     elmPackages.elm-test # elm test runner
+    exa # ls replacement
     fast-cli # speedtest
     ffmpeg # convert videos
     gcolor3 # color picker
@@ -91,7 +92,6 @@ in
     duf # disk usage
     dunst # notification daemon
     entr # watch files
-    exa # ls replacement
     fd # find for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
