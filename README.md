@@ -119,31 +119,6 @@ sudo update-alternatives --config x-terminal-emulator
 
 Run `ibus-setup` and delete shortcut to remove conflict with keybinding.
 
-## Qutebrowser
-
-### Default browser
-
-```shell
-xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
-xdg-settings set default-web-browser chromium.desktop # or stick with chromium
-xdg-mime default chromium.desktop x-scheme-handler/https
-xdg-mime default chromium.desktop x-scheme-handler/http
-```
-
-### Spell checking
-
-Download dictionaries for spell checking
-
-```sh
-git clone https://github.com/qutebrowser/qutebrowser.git && cd qutebrowser
-./scripts/dictcli.py install en-US
-./scripts/dictcli.py install de-DE
-# or with virtualenv (if wrong directory)
-./.venv/bin/python3 ./scripts/dictcli.py install en-US
-```
-
-Might be necessary to copy to `~/.local/share/qutebrowser/qtwebengine_dictionaries`
-
 ## Time
 
 Enable time synchronization with `timedatectl set-ntp true`.

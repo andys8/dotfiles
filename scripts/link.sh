@@ -65,11 +65,6 @@ ln -sf ~/dotfiles/xmonad/fourmolu.yaml ~/.xmonad/fourmolu.yaml
 mkdir -p ~/.config/ranger
 ln -sf ~/dotfiles/rc.conf ~/.config/ranger/rc.conf
 
-# Qutebrowser
-mkdir -p ~/.config/qutebrowser
-ln -sf ~/dotfiles/qutebrowser/config.py ~/.config/qutebrowser/config.py
-ln -sf ~/dotfiles/qutebrowser/dracula.py ~/.config/qutebrowser/dracula.py
-
 # sxiv
 mkdir -p ~/.config/sxiv/exec
 ln -sf ~/dotfiles/sxiv/key-handler ~/.config/sxiv/exec/key-handler

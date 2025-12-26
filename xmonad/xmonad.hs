@@ -127,7 +127,7 @@ myKeys nScreens conf@XConfig {modMask, terminal, workspaces} =
         [ ((modMask, xK_Return), spawn terminal)
         , ((modMask, xK_n), fileBrowser)
         , ((modMask .|. altMask, xK_n), spawn "dunstctl close-all")
-        , ((modMask .|. shiftMask, xK_Return), quteWebBrowser)
+        , ((modMask .|. shiftMask, xK_Return), defaultWebBrowser)
         , ((modMask .|. controlMask, xK_Return), defaultWebBrowser)
         , ((modMask .|. shiftMask .|. controlMask, xK_Return), defaultIncognitoWebBrowser)
         , ((modMask, xK_Escape), kill)
@@ -218,9 +218,8 @@ myMouseBindings XConfig {modMask} =
 -- Commands --
 term = "st"
 fileBrowser = spawn "xdg-open ."
-quteWebBrowser = spawn "qutebrowser"
-defaultWebBrowser = spawn "thorium-browser"
-defaultIncognitoWebBrowser = spawn "thorium-browser --incognito"
+defaultWebBrowser = spawn "chromium"
+defaultIncognitoWebBrowser = spawn "chromium --incognito"
 rofiApplications = "rofi -modi drun,run -show drun -show-icons"
 rofiRun = "rofi -show run -i -display-run \"$ \""
 passwordTool = "lastpass-rofi || keepassx || exit 1"
@@ -305,7 +304,6 @@ myManageHook =
         , className =? "Zenity" --> doFloat
         , className =? "jetbrains-idea" --> doShift (show WorkspaceWork)
         , className =? "jetbrains-idea-ce" --> doShift (show WorkspaceWork)
-        , className =? "qutebrowser" --> doShift (show WorkspaceWWW)
         , title =? "Battery Warning" --> doFloat
         ]
 

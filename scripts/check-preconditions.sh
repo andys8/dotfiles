@@ -22,7 +22,6 @@ commands=(
     pip3        # python packages
     preload     # keep programs in ram
     python3     # pythong
-    qutebrowser # Keyboard based webbrowser
     setxkbmap   # used in scripts
     shuf        # used in shell scripts
     tar         # archive
