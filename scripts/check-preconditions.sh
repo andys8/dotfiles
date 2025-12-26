@@ -39,7 +39,7 @@ commands=(
 )
 
 fonts=(
-    "Font Awesome 7 Free Solid"
+    "Font Awesome.*Free Solid"
     "Iosevka Nerd"
     "Noto Color Emoji"
 )
