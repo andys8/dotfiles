@@ -17,6 +17,7 @@ packages=(
     bash-language-server              # bash ls
     csv2json                          # convert csv to json
     dockerfile-language-server-nodejs # docker ls
+    @google/gemini-cli                # google gemini cli
     http-server                       # spin up http server in directory
     http-status-cli                   # http status lookup tool
     n                                 # node version manager
