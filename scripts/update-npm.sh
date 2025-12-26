@@ -29,9 +29,9 @@ packages=(
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
     typescript-strict-plugin          # tsc-strict
-    typescript@5.2.2                  # TS compiler
+    typescript                  # TS compiler
     write-good                        # check and improve written text
-    yarn@1.22                         # alternative to npm
+    yarn@21.22                         # alternative to npm
 )
 
 npm_config_loglevel=error npm install -g "${packages[@]}"
