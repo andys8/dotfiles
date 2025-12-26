@@ -33,7 +33,6 @@ commandsOptional=(
     json-tui        # TUI to visualize json input
     lxappearance    # configure themes
     pulseaudio      # better audio
-    thorium-browser # web browser
     trash-put       # trash-cli
     uuidgen         # generate uuid
     vimdiff         # git diffs in vim
