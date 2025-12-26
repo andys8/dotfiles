@@ -21,7 +21,7 @@ packages=(
     http-status-cli                   # http status lookup tool
     n                                 # node version manager
     npm-check-updates                 # npm update depndencies
-    pnpm@7                            # alternative to npm
+    pnpm                              # alternative to npm
     prettier                          # JS/TS/CSS/Markdown formatter
     purescript                        # purescript compiler
     purescript-language-server        # purescript ls
@@ -29,9 +29,9 @@ packages=(
     qrcode-terminal                   # Encode text as QR code
     spago                             # purescript bundler
     typescript-strict-plugin          # tsc-strict
-    typescript                  # TS compiler
+    typescript                        # TS compiler
     write-good                        # check and improve written text
-    yarn@21.22                         # alternative to npm
+    yarn                              # alternative to npm
 )
 
 npm_config_loglevel=error npm install -g "${packages[@]}"
