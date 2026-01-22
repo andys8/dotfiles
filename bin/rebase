@@ -11,8 +11,17 @@ WORKTREE_PATH="../${REPO_NAME}-${BRANCH_SAFE}-rebase"
 echo "Fetching latest changes..."
 git fetch
 
-echo "Creating temporary worktree at: $WORKTREE_PATH"
-git worktree add "$WORKTREE_PATH" "$BRANCH"
+WORKTREE_EXISTS=false
+EXISTING_WORKTREE=$(git worktree list --porcelain | grep -B 2 "branch refs/heads/$BRANCH" | grep "^worktree" | head -1 | cut -d ' ' -f 2)
+
+if [ -n "$EXISTING_WORKTREE" ]; then
+  echo "Worktree already exists at: $EXISTING_WORKTREE"
+  WORKTREE_PATH="$EXISTING_WORKTREE"
+  WORKTREE_EXISTS=true
+else
+  echo "Creating temporary worktree at: $WORKTREE_PATH"
+  git worktree add "$WORKTREE_PATH" "$BRANCH"
+fi
 
 (
   cd "$WORKTREE_PATH"
@@ -22,5 +31,9 @@ git worktree add "$WORKTREE_PATH" "$BRANCH"
   git push --force-with-lease
 )
 
-echo "Removing worktree..."
-git worktree remove "$WORKTREE_PATH"
+if [ "$WORKTREE_EXISTS" = false ]; then
+  echo "Removing worktree..."
+  git worktree remove "$WORKTREE_PATH"
+else
+  echo "Keeping existing worktree at: $WORKTREE_PATH"
+fi
