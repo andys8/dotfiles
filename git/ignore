@@ -6,3 +6,9 @@ node_modules/
 .aider*
 .claude/
 **/.claude/settings.local.json
+
+# ralph-tui
+.ralph-tui/
+prd.json
+.beads/
+tasks/prd-*.md
