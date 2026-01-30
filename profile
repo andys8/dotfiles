@@ -20,6 +20,11 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # node global installations
+if [[ ":$PATH:" != *":$HOME/.bun/bin:"* ]]; then
+    export PATH="$HOME/.bun/bin:$PATH"
+fi
+
+# node global installations
 if [[ ":$PATH:" != *":$HOME/.npm-global/bin:"* ]]; then
     export PATH="$HOME/.npm-global/bin:$PATH"
 fi
