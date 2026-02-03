@@ -41,6 +41,7 @@ ln -sf ~/dotfiles/profile ~/.profile
 # Fish
 mkdir -p ~/.config/fish/functions
 ln -sf ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
+ln -sf ~/dotfiles/fish/jt.fish ~/.config/fish/functions/jt.fish
 ln -sf ~/dotfiles/fish/fkill.fish ~/.config/fish/functions/fkill.fish
 ln -sf ~/dotfiles/fish/hostip.fish ~/.config/fish/functions/hostip.fish
 ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
