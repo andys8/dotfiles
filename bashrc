@@ -37,6 +37,13 @@ alias j='z'
 alias r='ranger'
 alias ackf='ack -f | ack'
 
+# functions
+worktree() {
+    local path
+    path=$(git-worktree-create "$@") || return 1
+    cd "$path"
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
