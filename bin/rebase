@@ -2,14 +2,29 @@
 
 set -e
 
-BRANCH=${1:-$(git branch --show-current)}
-REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
 DEFAULT_BRANCH=$(git default-branch)
-BRANCH_SAFE=${BRANCH//\//-}
-WORKTREE_PATH="../${REPO_NAME}-${BRANCH_SAFE}-rebase"
 
 echo "Fetching latest changes..."
 git fetch
+
+GIT_DIR=$(git rev-parse --git-dir)
+IN_WORKTREE=false
+if [[ "$GIT_DIR" == *".git/worktrees/"* ]]; then
+  IN_WORKTREE=true
+fi
+
+if [ -z "$1" ] && [ "$IN_WORKTREE" = true ]; then
+  echo "Rebasing current worktree on origin/$DEFAULT_BRANCH..."
+  git rebase "origin/$DEFAULT_BRANCH"
+  echo "Pushing changes..."
+  git push --force-with-lease
+  exit 0
+fi
+
+BRANCH=${1:-$(git branch --show-current)}
+REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
+BRANCH_SAFE=${BRANCH//\//-}
+WORKTREE_PATH="../${REPO_NAME}-${BRANCH_SAFE}-rebase"
 
 WORKTREE_EXISTS=false
 EXISTING_WORKTREE=$(git worktree list --porcelain | grep -B 2 "branch refs/heads/$BRANCH" | grep "^worktree" | head -1 | cut -d ' ' -f 2)
@@ -25,7 +40,7 @@ fi
 
 (
   cd "$WORKTREE_PATH"
-  echo "Rebasing on default branch..."
+  echo "Rebasing on origin/$DEFAULT_BRANCH..."
   git rebase "origin/$DEFAULT_BRANCH"
   echo "Pushing changes..."
   git push --force-with-lease
