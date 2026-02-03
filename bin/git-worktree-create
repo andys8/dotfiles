@@ -7,6 +7,21 @@ current_branch=$(git branch --show-current)
 
 branch="${1:-}"
 
+# Check if argument is a PR number
+if [[ -n "$branch" && "$branch" =~ ^[0-9]+$ ]]; then
+    echo "Detected PR number: $branch, fetching branch name..." >&2
+    pr_branch=$(gh pr view "$branch" --json headRefName -q '.headRefName' 2>/dev/null) || {
+        echo "Error: PR #$branch not found or gh CLI failed" >&2
+        exit 1
+    }
+    if [[ -z "$pr_branch" ]]; then
+        echo "Error: Could not determine branch for PR #$branch" >&2
+        exit 1
+    fi
+    echo "Resolved PR #$branch to branch: $pr_branch" >&2
+    branch="$pr_branch"
+fi
+
 if [[ -z "$branch" ]]; then
     branch="$current_branch"
     if [[ "$branch" == "$default_branch" ]]; then
