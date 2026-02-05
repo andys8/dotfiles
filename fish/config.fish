@@ -86,6 +86,7 @@ abbr -a -- agu 'sudo apt update && sudo apt upgrade'
 abbr -a -- benchmark hyperfine
 abbr -a -- calc wcalc
 abbr -a -- cheat cht.sh
+abbr -a -- cl claude
 abbr -a -- colorpicker gcolor3
 abbr -a -- copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
 abbr -a -- dco docker-compose
