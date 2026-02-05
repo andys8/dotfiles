@@ -1,13 +1,86 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+skip_deps=false
+skip_asdf=false
+branch=""
+worktree_path=""
+
+usage() {
+    cat >&2 <<EOF
+Usage: git-worktree-create [OPTIONS] [BRANCH|PR_NUMBER]
+
+Create a git worktree for the specified branch or PR.
+
+Options:
+    --skip-deps, --no-deps    Skip dependency installation (pnpm i / ni)
+    --skip-asdf               Skip asdf install
+    -h, --help                Show this help message
+
+Examples:
+    git-worktree-create feature/my-branch
+    git-worktree-create 1234                    # PR number
+    git-worktree-create feature/quick --skip-deps
+EOF
+    exit 0
+}
+
+cleanup() {
+    local exit_code=$?
+    if [[ -n "$worktree_path" && -d "$worktree_path" && $exit_code -ne 0 ]]; then
+        echo "Interrupted, cleaning up worktree..." >&2
+        git worktree remove --force "$worktree_path" 2>/dev/null || true
+    fi
+    exit $exit_code
+}
+
+trap cleanup INT TERM
+
+remove_stale_locks() {
+    local git_dir
+    git_dir=$(git rev-parse --git-dir 2>/dev/null) || return 0
+
+    find "$git_dir" -name "*.lock" -mmin +5 -type f 2>/dev/null | while read -r lock; do
+        echo "Removing stale lock: $lock" >&2
+        rm -f "$lock"
+    done
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --skip-deps|--no-deps)
+            skip_deps=true
+            shift
+            ;;
+        --skip-asdf)
+            skip_asdf=true
+            shift
+            ;;
+        -h|--help)
+            usage
+            ;;
+        -*)
+            echo "Unknown option: $1" >&2
+            exit 1
+            ;;
+        *)
+            if [[ -z "$branch" ]]; then
+                branch="$1"
+            else
+                echo "Error: Multiple branch arguments provided" >&2
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+remove_stale_locks
+
 repo_name=$(basename "$(git rev-parse --show-toplevel)")
 default_branch=$(git default-branch)
 current_branch=$(git branch --show-current)
 
-branch="${1:-}"
-
-# Check if argument is a PR number
 if [[ -n "$branch" && "$branch" =~ ^[0-9]+$ ]]; then
     echo "Detected PR number: $branch, fetching branch name..." >&2
     pr_branch=$(gh pr view "$branch" --json headRefName -q '.headRefName' 2>/dev/null) || {
@@ -39,11 +112,10 @@ branch_safe="${branch//\//-}"
 worktree_path="../$repo_name-$branch_safe"
 
 if ! git show-ref --verify --quiet "refs/heads/$branch"; then
-    echo "Branch not found locally, fetching from remote..." >&2
-    git fetch >&2
-
-    if ! git show-ref --verify --quiet "refs/heads/$branch" && \
-       ! git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
+    if git ls-remote --exit-code --heads origin "$branch" >/dev/null 2>&1; then
+        echo "Branch exists on remote, fetching..." >&2
+        git fetch origin "$branch" >&2
+    elif ! git show-ref --verify --quiet "refs/remotes/origin/$branch"; then
         echo "Branch '$branch' does not exist. Creating new branch from $default_branch..." >&2
         git branch "$branch" "$default_branch" >&2
     fi
@@ -55,27 +127,34 @@ echo "Worktree created successfully at: $worktree_path" >&2
 
 pushd "$worktree_path" > /dev/null
 
-echo "Installing tools" >&2
-if asdf install 2>/dev/null; then
-    echo "Tools installed successfully" >&2
+if [[ "$skip_asdf" == false ]]; then
+    echo "Installing tools..." >&2
+    if asdf install 2>/dev/null; then
+        echo "Tools installed successfully" >&2
+    else
+        echo "Warning: asdf install failed or not available" >&2
+    fi
 else
-    echo "Warning: asdf install failed" >&2
+    echo "Skipping asdf install (--skip-asdf)" >&2
 fi
 
-echo "Installing dependencies..." >&2
-if [[ -f "pnpm-lock.yaml" ]]; then
-    if pnpm i --prefer-offline --frozen-lockfile >&2; then
+if [[ "$skip_deps" == false ]]; then
+    echo "Installing dependencies..." >&2
+    if [[ -f "pnpm-lock.yaml" ]]; then
+        if pnpm i --prefer-offline --frozen-lockfile >&2; then
+            echo "Dependencies installed successfully" >&2
+        else
+            echo "Warning: Failed to install dependencies" >&2
+        fi
+    elif command -v ni &> /dev/null && ni >&2; then
         echo "Dependencies installed successfully" >&2
     else
         echo "Warning: Failed to install dependencies" >&2
     fi
-elif command -v ni &> /dev/null && ni >&2; then
-    echo "Dependencies installed successfully" >&2
 else
-    echo "Warning: Failed to install dependencies" >&2
+    echo "Skipping dependency installation (--skip-deps)" >&2
 fi
 
 popd > /dev/null
 
-# Print the worktree path to stdout (this is the only stdout output)
 echo "$worktree_path"

@@ -55,6 +55,7 @@
     sw = switch
     tpush = push
     track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+    unlock = "!git-unlock"
 [push]
     autoSetupRemote = true
     default = current
@@ -133,3 +134,5 @@
     skippedCherryPicks = false
 [include]
     path = ~/.gitconfig.machine
+[gc]
+    autoPackLimit = 10

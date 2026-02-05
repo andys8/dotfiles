@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dry_run=false
+force=false
+age_minutes=5
+
+usage() {
+    cat >&2 <<EOF
+Usage: git-unlock [OPTIONS]
+
+Remove stale git lock files from the current repository.
+
+Options:
+    --dry-run    Show which locks would be removed without removing them
+    --force      Remove all lock files regardless of age
+    -h, --help   Show this help message
+
+By default, only removes lock files older than $age_minutes minutes.
+EOF
+    exit 0
+}
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --dry-run)
+            dry_run=true
+            shift
+            ;;
+        --force)
+            force=true
+            shift
+            ;;
+        -h|--help)
+            usage
+            ;;
+        *)
+            echo "Unknown option: $1" >&2
+            exit 1
+            ;;
+    esac
+done
+
+git_dir=$(git rev-parse --git-dir 2>/dev/null) || {
+    echo "Error: Not in a git repository" >&2
+    exit 1
+}
+
+find_args=("$git_dir" -name "*.lock" -type f)
+if [[ "$force" == false ]]; then
+    find_args+=(-mmin +"$age_minutes")
+fi
+
+locks=$(find "${find_args[@]}" 2>/dev/null || true)
+
+if [[ -z "$locks" ]]; then
+    if [[ "$force" == true ]]; then
+        echo "No lock files found"
+    else
+        echo "No stale lock files found (older than $age_minutes minutes)"
+    fi
+    exit 0
+fi
+
+echo "$locks" | while read -r lock; do
+    if [[ "$dry_run" == true ]]; then
+        echo "[dry-run] Would remove: $lock"
+    else
+        echo "Removing: $lock"
+        rm -f "$lock"
+    fi
+done
