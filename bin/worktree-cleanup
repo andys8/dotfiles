@@ -2,31 +2,26 @@
 
 set -e
 
-MAIN_PATH=$(git rev-parse --show-toplevel)
+force_delete=""
+for arg in "$@"; do
+  case $arg in
+    -f|--force) force_delete="-D" ;;
+  esac
+done
 
-echo "Listing all worktrees..."
-WORKTREES=$(git worktree list --porcelain | grep -E "^worktree " | awk '{print $2}')
+branches=$(wt list --format=json | jq -r '.[] | select(.is_main == false and .kind == "worktree") | .branch')
 
-TO_DELETE=()
-while IFS= read -r worktree; do
-  if [ "$worktree" != "$MAIN_PATH" ]; then
-    TO_DELETE+=("$worktree")
-  fi
-done <<< "$WORKTREES"
-
-if [ ${#TO_DELETE[@]} -eq 0 ]; then
-  echo "No worktrees to delete (main worktree excluded)"
+if [ -z "$branches" ]; then
+  echo "No worktrees to remove"
   exit 0
 fi
 
+echo "Removing worktrees:"
+echo "$branches" | sed 's/^/  /'
+[ -n "$force_delete" ] && echo "(force-deleting unmerged branches)"
 echo ""
-echo "Found ${#TO_DELETE[@]} worktree(s) to delete:"
-for worktree in "${TO_DELETE[@]}"; do
-  echo "  - $worktree"
-done
 
-echo ""
-read -p "Delete all worktrees? (y/N) " -n 1 -r
+read -p "Remove all? (y/N) " -n 1 -r
 echo ""
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -34,10 +29,4 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
   exit 0
 fi
 
-echo "Removing worktrees..."
-for worktree in "${TO_DELETE[@]}"; do
-  echo "Removing $worktree..."
-  git worktree remove "$worktree" --force
-done
-
-echo "Done! All worktrees removed"
+wt remove --force --yes $force_delete $branches
