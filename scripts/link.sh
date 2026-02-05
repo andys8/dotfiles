@@ -74,6 +74,10 @@ ln -sf ~/dotfiles/ignore ~/.ignore
 mkdir -p ~/.config/lsd
 ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
 
+# wt (worktrunk)
+mkdir -p ~/.config/worktrunk
+ln -sf ~/dotfiles/wt.toml ~/.config/worktrunk/config.toml
+
 # Yabai
 ln -sf ~/dotfiles/yabai/yabairc ~/.yabairc
 ln -sf ~/dotfiles/yabai/skhdrc ~/.skhdrc
