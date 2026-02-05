@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-skip_deps=false
-skip_asdf=false
+install_deps=false
 branch=""
 worktree_path=""
 
@@ -13,14 +12,13 @@ Usage: git-worktree-create [OPTIONS] [BRANCH|PR_NUMBER]
 Create a git worktree for the specified branch or PR.
 
 Options:
-    --skip-deps, --no-deps    Skip dependency installation (pnpm i / ni)
-    --skip-asdf               Skip asdf install
+    --deps                    Install tools (asdf) and dependencies (pnpm i / ni)
     -h, --help                Show this help message
 
 Examples:
     git-worktree-create feature/my-branch
     git-worktree-create 1234                    # PR number
-    git-worktree-create feature/quick --skip-deps
+    git-worktree-create feature/full --deps     # With dependency installation
 EOF
     exit 0
 }
@@ -48,12 +46,8 @@ remove_stale_locks() {
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --skip-deps|--no-deps)
-            skip_deps=true
-            shift
-            ;;
-        --skip-asdf)
-            skip_asdf=true
+        --deps)
+            install_deps=true
             shift
             ;;
         -h|--help)
@@ -127,18 +121,16 @@ echo "Worktree created successfully at: $worktree_path" >&2
 
 pushd "$worktree_path" > /dev/null
 
-if [[ "$skip_asdf" == false ]]; then
-    echo "Installing tools..." >&2
-    if asdf install 2>/dev/null; then
-        echo "Tools installed successfully" >&2
-    else
-        echo "Warning: asdf install failed or not available" >&2
+if [[ "$install_deps" == true ]]; then
+    if command -v asdf &> /dev/null; then
+        echo "Installing tools..." >&2
+        if asdf install 2>/dev/null; then
+            echo "Tools installed successfully" >&2
+        else
+            echo "Warning: asdf install failed" >&2
+        fi
     fi
-else
-    echo "Skipping asdf install (--skip-asdf)" >&2
-fi
 
-if [[ "$skip_deps" == false ]]; then
     echo "Installing dependencies..." >&2
     if [[ -f "pnpm-lock.yaml" ]]; then
         if pnpm i --prefer-offline --frozen-lockfile >&2; then
@@ -152,7 +144,7 @@ if [[ "$skip_deps" == false ]]; then
         echo "Warning: Failed to install dependencies" >&2
     fi
 else
-    echo "Skipping dependency installation (--skip-deps)" >&2
+    echo "Skipping tools and dependency installation (use --deps to install)" >&2
 fi
 
 popd > /dev/null
