@@ -3,6 +3,7 @@
 
 [post-create]
 deps = "[ -d '{{ primary_worktree_path }}/node_modules' ] && ln -sf '{{ primary_worktree_path }}/node_modules' . || true"
+husky = "[ -d '{{ primary_worktree_path }}/.husky/_' ] && ln -sf '{{ primary_worktree_path }}/.husky/_' .husky/ || true"
 
 [commit.generation]
 command = "MAX_THINKING_TOKENS=0 claude -p --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
