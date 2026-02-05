@@ -40,7 +40,7 @@ set -U theme_display_ruby no
 set -U theme_display_vagrant no
 set -U theme_display_vi yes
 set -U theme_git_default_branches master main develop
-set -U theme_git_worktree_support no
+set -U theme_git_worktree_support yes
 set -U theme_nerd_fonts yes
 set -U theme_show_exit_status no
 
@@ -187,6 +187,7 @@ abbr -a -- wtl 'wt list'
 abbr -a -- wtr 'wt remove'
 abbr -a -- wtc 'wt switch --create'
 abbr -a -- wtcc 'wt switch -x claude --create'
+abbr -a -- wtsc 'wt step commit'
 abbr -a -- xargs 'xargs -o'
 abbr -a -- yd 'yarn dev'
 abbr -a -- yi 'yarn install'
