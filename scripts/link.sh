@@ -49,6 +49,7 @@ ln -sf ~/dotfiles/fish/sudo.fish ~/.config/fish/functions/sudo.fish
 ln -sf ~/dotfiles/fish/mkcd.fish ~/.config/fish/functions/mkcd.fish
 ln -sf ~/dotfiles/fish/fcd.fish ~/.config/fish/functions/fcd.fish
 ln -sf ~/dotfiles/fish/worktree.fish ~/.config/fish/functions/worktree.fish
+ln -sf ~/dotfiles/fish/wt.fish ~/.config/fish/functions/wt.fish
 rm -rf ~/.config/omf
 ln -sf ~/dotfiles/omf ~/.config
 
