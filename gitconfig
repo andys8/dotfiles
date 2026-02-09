@@ -136,3 +136,5 @@
     path = ~/.gitconfig.machine
 [gc]
     autoPackLimit = 10
+[fetch]
+    parallel = 4
