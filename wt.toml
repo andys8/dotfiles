@@ -8,4 +8,7 @@ husky = "[ -f node_modules/.bin/husky ] && pnpm exec husky install || true"
 [commit.generation]
 command = "MAX_THINKING_TOKENS=0 claude -p --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
 
+[select]
+pager = "cat"
+
 [projects]
