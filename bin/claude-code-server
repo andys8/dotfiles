@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Claude Code Server - caddy reverse proxy with basic auth for claude-code-webui
+set -euo pipefail
+
+WEBUI_PID=""
+CADDYFILE=""
+
+for cmd in caddy claude-code-webui op; do
+  if ! command -v "$cmd" &>/dev/null; then
+    echo "Error: $cmd is not installed" >&2
+    exit 1
+  fi
+done
+
+USER=$(op read "op://Employee/claude-code-server/username")
+PASS=$(op read "op://Employee/claude-code-server/password")
+HASHED_PASS=$(caddy hash-password --plaintext "$PASS")
+CADDYFILE=$(mktemp /tmp/claude-code-server-XXXXXX.caddyfile)
+
+cat > "$CADDYFILE" <<EOF
+:8080 {
+    basicauth * {
+        ${USER} ${HASHED_PASS}
+    }
+    reverse_proxy 127.0.0.1:7860
+}
+EOF
+
+cleanup() {
+  [[ -n "$WEBUI_PID" ]] && kill "$WEBUI_PID" 2>/dev/null || true
+  rm -f "$CADDYFILE"
+}
+trap cleanup EXIT INT TERM
+
+echo "Starting claude-code-webui on 127.0.0.1:7860..."
+claude-code-webui --host 127.0.0.1 --port 7860 &
+WEBUI_PID=$!
+
+sleep 1
+if ! kill -0 "$WEBUI_PID" 2>/dev/null; then
+  echo "Error: claude-code-webui failed to start" >&2
+  exit 1
+fi
+
+LOCAL_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "unknown")
+URL="http://${LOCAL_IP}:8080"
+
+echo ""
+echo "Claude Code Server running at:"
+echo "  ${URL}"
+echo ""
+if command -v qrcode-terminal &>/dev/null; then
+  echo "${URL}" | qrcode-terminal
+  echo ""
+fi
+
+caddy run --config "$CADDYFILE"
