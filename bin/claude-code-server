@@ -12,6 +12,7 @@ for cmd in caddy claude-code-webui op; do
   fi
 done
 
+LOCAL_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "unknown")
 AUTH_USER=$(op read "op://Employee/claude-code-server/username")
 AUTH_PASS=$(op read "op://Employee/claude-code-server/password")
 HASHED_PASS=$(caddy hash-password --plaintext "$AUTH_PASS")
@@ -42,7 +43,6 @@ if ! kill -0 "$WEBUI_PID" 2>/dev/null; then
   exit 1
 fi
 
-LOCAL_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "unknown")
 URL="http://${LOCAL_IP}:8080"
 
 echo ""
