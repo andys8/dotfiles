@@ -12,15 +12,15 @@ for cmd in caddy claude-code-webui op; do
   fi
 done
 
-USER=$(op read "op://Employee/claude-code-server/username")
-PASS=$(op read "op://Employee/claude-code-server/password")
-HASHED_PASS=$(caddy hash-password --plaintext "$PASS")
+AUTH_USER=$(op read "op://Employee/claude-code-server/username")
+AUTH_PASS=$(op read "op://Employee/claude-code-server/password")
+HASHED_PASS=$(caddy hash-password --plaintext "$AUTH_PASS")
 CADDYFILE=$(mktemp /tmp/claude-code-server-XXXXXX.caddyfile)
 
 cat > "$CADDYFILE" <<EOF
 :8080 {
     basicauth * {
-        ${USER} ${HASHED_PASS}
+        ${AUTH_USER} ${HASHED_PASS}
     }
     reverse_proxy 127.0.0.1:7860
 }
