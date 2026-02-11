@@ -4,6 +4,7 @@ set -euo pipefail
 
 WEBUI_PID=""
 CADDYFILE=""
+SLEEP_DISABLED=false
 
 for cmd in caddy claude-code-webui op; do
   if ! command -v "$cmd" &>/dev/null; then
@@ -30,8 +31,17 @@ EOF
 cleanup() {
   [[ -n "$WEBUI_PID" ]] && kill "$WEBUI_PID" 2>/dev/null || true
   rm -f "$CADDYFILE"
+  if [[ "$SLEEP_DISABLED" == true ]]; then
+    echo "Re-enabling sleep..."
+    sudo pmset -a disablesleep 0
+    SLEEP_DISABLED=false
+  fi
 }
 trap cleanup EXIT INT TERM
+
+echo "Disabling sleep (lid close protection)..."
+sudo pmset -a disablesleep 1
+SLEEP_DISABLED=true
 
 echo "Starting claude-code-webui on 127.0.0.1:7860..."
 claude-code-webui --host 127.0.0.1 --port 7860 &
