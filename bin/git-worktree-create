@@ -46,26 +46,26 @@ remove_stale_locks() {
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --deps)
-            install_deps=true
-            shift
-            ;;
-        -h|--help)
-            usage
-            ;;
-        -*)
-            echo "Unknown option: $1" >&2
+    --deps)
+        install_deps=true
+        shift
+        ;;
+    -h | --help)
+        usage
+        ;;
+    -*)
+        echo "Unknown option: $1" >&2
+        exit 1
+        ;;
+    *)
+        if [[ -z "$branch" ]]; then
+            branch="$1"
+        else
+            echo "Error: Multiple branch arguments provided" >&2
             exit 1
-            ;;
-        *)
-            if [[ -z "$branch" ]]; then
-                branch="$1"
-            else
-                echo "Error: Multiple branch arguments provided" >&2
-                exit 1
-            fi
-            shift
-            ;;
+        fi
+        shift
+        ;;
     esac
 done
 
@@ -119,10 +119,10 @@ echo "Creating worktree at: $worktree_path" >&2
 git worktree add "$worktree_path" "$branch" >&2
 echo "Worktree created successfully at: $worktree_path" >&2
 
-pushd "$worktree_path" > /dev/null
+pushd "$worktree_path" >/dev/null
 
 if [[ "$install_deps" == true ]]; then
-    if command -v asdf &> /dev/null; then
+    if command -v asdf &>/dev/null; then
         echo "Installing tools..." >&2
         if asdf install 2>/dev/null; then
             echo "Tools installed successfully" >&2
@@ -138,7 +138,7 @@ if [[ "$install_deps" == true ]]; then
         else
             echo "Warning: Failed to install dependencies" >&2
         fi
-    elif command -v ni &> /dev/null && ni >&2; then
+    elif command -v ni &>/dev/null && ni >&2; then
         echo "Dependencies installed successfully" >&2
     else
         echo "Warning: Failed to install dependencies" >&2
@@ -147,6 +147,6 @@ else
     echo "Skipping tools and dependency installation (use --deps to install)" >&2
 fi
 
-popd > /dev/null
+popd >/dev/null
 
 echo "$worktree_path"

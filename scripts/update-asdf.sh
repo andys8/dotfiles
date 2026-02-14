@@ -4,7 +4,7 @@ set -eu
 
 echo "Update asdf"
 
-if ! command -v asdf &> /dev/null; then
+if ! command -v asdf &>/dev/null; then
     echo "asdf not found"
     exit 0
 fi

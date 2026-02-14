@@ -2,16 +2,16 @@
 set -euo pipefail
 
 case "$(uname -s)" in
-    Darwin)
-        local_ip=$(ipconfig getifaddr en0 2>/dev/null || echo "N/A")
-        ;;
-    Linux)
-        local_ip=$(hostname -I 2>/dev/null | awk '{print $1}')
-        local_ip=${local_ip:-N/A}
-        ;;
-    *)
-        local_ip="N/A"
-        ;;
+Darwin)
+    local_ip=$(ipconfig getifaddr en0 2>/dev/null || echo "N/A")
+    ;;
+Linux)
+    local_ip=$(hostname -I 2>/dev/null | awk '{print $1}')
+    local_ip=${local_ip:-N/A}
+    ;;
+*)
+    local_ip="N/A"
+    ;;
 esac
 
 public_ip=$(curl -sf --max-time 5 https://ifconfig.me || echo "N/A")

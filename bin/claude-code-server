@@ -11,10 +11,10 @@ FIREWALL_ACTIVE=false
 SHUTTING_DOWN=false
 
 for cmd in caddy the-companion op; do
-  if ! command -v "$cmd" &>/dev/null; then
-    echo "Error: $cmd is not installed" >&2
-    exit 1
-  fi
+    if ! command -v "$cmd" &>/dev/null; then
+        echo "Error: $cmd is not installed" >&2
+        exit 1
+    fi
 done
 
 echo "Cleaning up previous instances..."
@@ -28,7 +28,7 @@ AUTH_PASS=$(op read "op://Employee/claude-code-server/password")
 HASHED_PASS=$(caddy hash-password --plaintext "$AUTH_PASS")
 CADDYFILE=$(mktemp /tmp/companion-server-XXXXXX.caddyfile)
 
-cat > "$CADDYFILE" <<EOF
+cat >"$CADDYFILE" <<EOF
 :${CADDY_PORT} {
     basicauth * {
         ${AUTH_USER} ${HASHED_PASS}
@@ -38,30 +38,30 @@ cat > "$CADDYFILE" <<EOF
 EOF
 
 cleanup() {
-  SHUTTING_DOWN=true
-  echo ""
-  echo "Shutting down..."
+    SHUTTING_DOWN=true
+    echo ""
+    echo "Shutting down..."
 
-  if [[ -n "$COMPANION_PID" ]]; then
-    kill "$COMPANION_PID" 2>/dev/null || true
-    wait "$COMPANION_PID" 2>/dev/null || true
-  fi
+    if [[ -n "$COMPANION_PID" ]]; then
+        kill "$COMPANION_PID" 2>/dev/null || true
+        wait "$COMPANION_PID" 2>/dev/null || true
+    fi
 
-  caddy stop 2>/dev/null || true
+    caddy stop 2>/dev/null || true
 
-  if [[ "$FIREWALL_ACTIVE" == true ]]; then
-    echo "Removing firewall rule..."
-    sudo pfctl -a "companion" -F all 2>/dev/null || true
-    FIREWALL_ACTIVE=false
-  fi
+    if [[ "$FIREWALL_ACTIVE" == true ]]; then
+        echo "Removing firewall rule..."
+        sudo pfctl -a "companion" -F all 2>/dev/null || true
+        FIREWALL_ACTIVE=false
+    fi
 
-  rm -f "$CADDYFILE"
+    rm -f "$CADDYFILE"
 
-  if [[ "$SLEEP_DISABLED" == true ]]; then
-    echo "Re-enabling sleep..."
-    sudo pmset -a disablesleep 0
-    SLEEP_DISABLED=false
-  fi
+    if [[ "$SLEEP_DISABLED" == true ]]; then
+        echo "Re-enabling sleep..."
+        sudo pmset -a disablesleep 0
+        SLEEP_DISABLED=false
+    fi
 }
 trap cleanup EXIT INT TERM
 
@@ -84,21 +84,21 @@ echo "Companion Server running at:"
 echo "  ${URL}"
 echo ""
 if command -v qrcode-terminal &>/dev/null; then
-  echo "${URL}" | qrcode-terminal
-  echo ""
+    echo "${URL}" | qrcode-terminal
+    echo ""
 fi
 
 while [[ "$SHUTTING_DOWN" == false ]]; do
-  echo "Starting the-companion on port ${COMPANION_PORT}..."
-  PORT=$COMPANION_PORT the-companion serve &
-  COMPANION_PID=$!
-  wait "$COMPANION_PID" || true
-  COMPANION_PID=""
+    echo "Starting the-companion on port ${COMPANION_PORT}..."
+    PORT=$COMPANION_PORT the-companion serve &
+    COMPANION_PID=$!
+    wait "$COMPANION_PID" || true
+    COMPANION_PID=""
 
-  if [[ "$SHUTTING_DOWN" == true ]]; then
-    break
-  fi
+    if [[ "$SHUTTING_DOWN" == true ]]; then
+        break
+    fi
 
-  echo "Companion exited, restarting in 3s..."
-  sleep 3
+    echo "Companion exited, restarting in 3s..."
+    sleep 3
 done

@@ -10,15 +10,15 @@ git fetch
 GIT_DIR=$(git rev-parse --git-dir)
 IN_WORKTREE=false
 if [[ "$GIT_DIR" == *".git/worktrees/"* ]]; then
-  IN_WORKTREE=true
+    IN_WORKTREE=true
 fi
 
 if [ -z "$1" ] && [ "$IN_WORKTREE" = true ]; then
-  echo "Rebasing current worktree on origin/$DEFAULT_BRANCH..."
-  git rebase "origin/$DEFAULT_BRANCH"
-  echo "Pushing changes..."
-  git push --force-with-lease
-  exit 0
+    echo "Rebasing current worktree on origin/$DEFAULT_BRANCH..."
+    git rebase "origin/$DEFAULT_BRANCH"
+    echo "Pushing changes..."
+    git push --force-with-lease
+    exit 0
 fi
 
 BRANCH=${1:-$(git branch --show-current)}
@@ -30,25 +30,25 @@ WORKTREE_EXISTS=false
 EXISTING_WORKTREE=$(git worktree list --porcelain | grep -B 2 "branch refs/heads/$BRANCH" | grep "^worktree" | head -1 | cut -d ' ' -f 2)
 
 if [ -n "$EXISTING_WORKTREE" ]; then
-  echo "Worktree already exists at: $EXISTING_WORKTREE"
-  WORKTREE_PATH="$EXISTING_WORKTREE"
-  WORKTREE_EXISTS=true
+    echo "Worktree already exists at: $EXISTING_WORKTREE"
+    WORKTREE_PATH="$EXISTING_WORKTREE"
+    WORKTREE_EXISTS=true
 else
-  echo "Creating temporary worktree at: $WORKTREE_PATH"
-  git worktree add "$WORKTREE_PATH" "$BRANCH"
+    echo "Creating temporary worktree at: $WORKTREE_PATH"
+    git worktree add "$WORKTREE_PATH" "$BRANCH"
 fi
 
 (
-  cd "$WORKTREE_PATH"
-  echo "Rebasing on origin/$DEFAULT_BRANCH..."
-  git rebase "origin/$DEFAULT_BRANCH"
-  echo "Pushing changes..."
-  git push --force-with-lease
+    cd "$WORKTREE_PATH"
+    echo "Rebasing on origin/$DEFAULT_BRANCH..."
+    git rebase "origin/$DEFAULT_BRANCH"
+    echo "Pushing changes..."
+    git push --force-with-lease
 )
 
 if [ "$WORKTREE_EXISTS" = false ]; then
-  echo "Removing worktree..."
-  git worktree remove "$WORKTREE_PATH"
+    echo "Removing worktree..."
+    git worktree remove "$WORKTREE_PATH"
 else
-  echo "Keeping existing worktree at: $WORKTREE_PATH"
+    echo "Keeping existing worktree at: $WORKTREE_PATH"
 fi

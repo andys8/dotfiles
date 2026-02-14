@@ -4,54 +4,54 @@
 set -e
 
 command_exists() {
-  command -v "$1" >/dev/null 2>&1
+    command -v "$1" >/dev/null 2>&1
 }
 
 if [ -f ".tool-versions" ]; then
-  echo "📦 Found .tool-versions file, running asdf install..."
-  if command_exists asdf; then
-    asdf install
-  else
-    echo "⚠️ Error: asdf is not installed but required by .tool-versions file."
-    exit 1
-  fi
+    echo "📦 Found .tool-versions file, running asdf install..."
+    if command_exists asdf; then
+        asdf install
+    else
+        echo "⚠️ Error: asdf is not installed but required by .tool-versions file."
+        exit 1
+    fi
 fi
 
 if [ -f "pnpm-lock.yaml" ]; then
-  echo "📦 Found pnpm-lock.yaml, using pnpm..."
-  if command_exists pnpm; then
-    pnpm install
-  else
-    echo "⚠️ Error: pnpm is not installed but required by pnpm-lock.yaml."
-    exit 1
-  fi
+    echo "📦 Found pnpm-lock.yaml, using pnpm..."
+    if command_exists pnpm; then
+        pnpm install
+    else
+        echo "⚠️ Error: pnpm is not installed but required by pnpm-lock.yaml."
+        exit 1
+    fi
 elif [ -f "yarn.lock" ]; then
-  echo "📦 Found yarn.lock, using yarn..."
-  if command_exists yarn; then
-    yarn install
-  else
-    echo "⚠️ Error: yarn is not installed but required by yarn.lock."
-    exit 1
-  fi
+    echo "📦 Found yarn.lock, using yarn..."
+    if command_exists yarn; then
+        yarn install
+    else
+        echo "⚠️ Error: yarn is not installed but required by yarn.lock."
+        exit 1
+    fi
 elif [ -f "package-lock.json" ]; then
-  echo "📦 Found package-lock.json, using npm..."
-  if command_exists npm; then
-    npm install
-  else
-    echo "⚠️ Error: npm is not installed but required by package-lock.json."
-    exit 1
-  fi
+    echo "📦 Found package-lock.json, using npm..."
+    if command_exists npm; then
+        npm install
+    else
+        echo "⚠️ Error: npm is not installed but required by package-lock.json."
+        exit 1
+    fi
 elif [ -f "package.json" ]; then
-  echo "📦 Found package.json but no lock file, using npm..."
-  if command_exists npm; then
-    npm install
-  else
-    echo "⚠️ Error: npm is not installed but required by package.json."
-    exit 1
-  fi
+    echo "📦 Found package.json but no lock file, using npm..."
+    if command_exists npm; then
+        npm install
+    else
+        echo "⚠️ Error: npm is not installed but required by package.json."
+        exit 1
+    fi
 else
-  echo "⚠️ No package.json or lock files found. Nothing to install."
-  exit 1
+    echo "⚠️ No package.json or lock files found. Nothing to install."
+    exit 1
 fi
 
 echo "✅ Installation completed successfully!"

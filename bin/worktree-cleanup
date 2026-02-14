@@ -4,16 +4,16 @@ set -e
 
 force_delete=""
 for arg in "$@"; do
-  case $arg in
-    -f|--force) force_delete="-D" ;;
-  esac
+    case $arg in
+    -f | --force) force_delete="-D" ;;
+    esac
 done
 
 branches=$(wt list --format=json | jq -r '.[] | select(.is_main == false and .kind == "worktree") | .branch')
 
 if [ -z "$branches" ]; then
-  echo "No worktrees to remove"
-  exit 0
+    echo "No worktrees to remove"
+    exit 0
 fi
 
 echo "Removing worktrees:"
@@ -25,8 +25,8 @@ read -p "Remove all? (y/N) " -n 1 -r
 echo ""
 
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-  echo "Cancelled"
-  exit 0
+    echo "Cancelled"
+    exit 0
 fi
 
 wt remove --force --yes $force_delete $branches

@@ -23,21 +23,21 @@ EOF
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --dry-run)
-            dry_run=true
-            shift
-            ;;
-        --force)
-            force=true
-            shift
-            ;;
-        -h|--help)
-            usage
-            ;;
-        *)
-            echo "Unknown option: $1" >&2
-            exit 1
-            ;;
+    --dry-run)
+        dry_run=true
+        shift
+        ;;
+    --force)
+        force=true
+        shift
+        ;;
+    -h | --help)
+        usage
+        ;;
+    *)
+        echo "Unknown option: $1" >&2
+        exit 1
+        ;;
     esac
 done
 
