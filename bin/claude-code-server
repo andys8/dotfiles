@@ -17,6 +17,11 @@ for cmd in caddy the-companion op; do
   fi
 done
 
+echo "Cleaning up previous instances..."
+caddy stop 2>/dev/null || true
+pkill -f "the-companion serve" 2>/dev/null || true
+rm -f /tmp/companion-server-*.caddyfile
+
 LOCAL_IP=$(ipconfig getifaddr en0 2>/dev/null || ipconfig getifaddr en1 2>/dev/null || echo "unknown")
 AUTH_USER=$(op read "op://Employee/claude-code-server/username")
 AUTH_PASS=$(op read "op://Employee/claude-code-server/password")
