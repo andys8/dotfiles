@@ -56,7 +56,7 @@ cleanup() {
         SLEEP_DISABLED=false
     fi
 }
-trap cleanup EXIT INT TERM
+trap cleanup EXIT INT TERM HUP QUIT
 
 echo "Disabling sleep (lid close protection)..."
 sudo pmset -a disablesleep 1
