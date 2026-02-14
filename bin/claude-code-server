@@ -7,7 +7,6 @@ CADDY_PORT=8080
 COMPANION_PID=""
 CADDYFILE=""
 SLEEP_DISABLED=false
-FIREWALL_ACTIVE=false
 SHUTTING_DOWN=false
 
 for cmd in caddy the-companion op; do
@@ -49,12 +48,6 @@ cleanup() {
 
     caddy stop 2>/dev/null || true
 
-    if [[ "$FIREWALL_ACTIVE" == true ]]; then
-        echo "Removing firewall rule..."
-        sudo pfctl -a "companion" -F all 2>/dev/null || true
-        FIREWALL_ACTIVE=false
-    fi
-
     rm -f "$CADDYFILE"
 
     if [[ "$SLEEP_DISABLED" == true ]]; then
@@ -64,11 +57,6 @@ cleanup() {
     fi
 }
 trap cleanup EXIT INT TERM
-
-echo "Blocking external access to port ${COMPANION_PORT}..."
-echo "block in on ! lo0 proto tcp to any port ${COMPANION_PORT}" | sudo pfctl -a "companion" -f - 2>/dev/null
-sudo pfctl -e 2>/dev/null || true
-FIREWALL_ACTIVE=true
 
 echo "Disabling sleep (lid close protection)..."
 sudo pmset -a disablesleep 1
