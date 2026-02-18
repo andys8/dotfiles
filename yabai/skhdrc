@@ -108,7 +108,7 @@ shift + cmd - l : yabai -m window --warp east
 # send window to a display
 shift + alt - 1 : yabai -m window --display 1
 shift + alt - 2 : yabai -m window --display 2
-shift + alt - 2 : yabai -m window --display 3
+shift + alt - 3 : yabai -m window --display 3
 
 # change layout of desktop
 cmd + alt + ctrl - j : yabai -m space --layout bsp
