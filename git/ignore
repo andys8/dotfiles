@@ -6,6 +6,7 @@ node_modules/
 .aider*
 .claude/
 **/.claude/settings.local.json
+.mcp.json
 
 # ralph-tui
 .ralph-tui/
