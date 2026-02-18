@@ -6,7 +6,8 @@ node_modules/
 .aider*
 .claude/
 **/.claude/settings.local.json
-.mcp.json
+++/.mcp.json
+.playwright-cli/**
 
 # ralph-tui
 .ralph-tui/
