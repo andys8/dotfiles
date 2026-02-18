@@ -24,6 +24,7 @@ ln -sf ~/dotfiles/nvim ~/.config/nvim
 rm -rf ~/.config/git
 ln -sf ~/dotfiles/git ~/.config
 ln -sf ~/dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/git/ignore ~/.gitexclude
 ln -sf ~/dotfiles/tigrc ~/.tigrc
 
 # Ack
