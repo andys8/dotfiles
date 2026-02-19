@@ -87,6 +87,9 @@ abbr -a -- benchmark hyperfine
 abbr -a -- calc wcalc
 abbr -a -- cheat cht.sh
 abbr -a -- cl claude
+abbr -a -- clh "claude --model=haiku"
+abbr -a -- cls "claude --model=sonnet"
+abbr -a -- clo "claude --model=opus"
 abbr -a -- colorpicker gcolor3
 abbr -a -- copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
 abbr -a -- dco docker-compose
@@ -157,6 +160,7 @@ abbr -a -- pacu 'sudo pacman -Syu'
 abbr -a -- r ranger
 abbr -a -- rgf 'rg --files | rg'
 abbr -a -- rgfh 'rg --files --hidden | rg'
+abbr -a -- rgfa 'rg --files --hidden --no-ignore | rg'
 abbr -a -- rm trash
 abbr -a -- ss 'stty sane'
 abbr -a -- stacktest stack-test
