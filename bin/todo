@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env bash
 # set -eu
-# Usage: todo [today|ls|list|yesterday|tomorrow|next|n|last|l|YYYY-MM-DD]
+# Usage: todo [today|ls|list|triage|yesterday|tomorrow|next|n|last|l|YYYY-MM-DD]
 
 path="$HOME/Documents/todo"
 arg="${1:-today}"
@@ -29,6 +29,80 @@ esac
 
 if [ "$arg" = "ls" ] || [ "$arg" = "list" ]; then
     ranger "$path"
+    exit 0
+fi
+
+if [ "$arg" = "triage" ]; then
+    offset=0
+    count_done=0 count_keep=0 count_remove=0 count_move=0
+    next_file="$path/$next_date.md"
+    tmpfile=$(mktemp)
+    today=$(gdate +$format)
+    today_file="$path/$today.md"
+    if [ ! -f "$today_file" ]; then
+        echo "No todo file for today ($today)."
+        rm -f "$tmpfile"
+        exit 0
+    fi
+    grep -n '^\- \[ \]' "$today_file" 2>/dev/null >"$tmpfile"
+
+    total=$(wc -l <"$tmpfile" | tr -d ' ')
+
+    if [ "$total" -eq 0 ]; then
+        echo "No open items to triage."
+        rm -f "$tmpfile"
+        exit 0
+    fi
+
+    current=0
+    while IFS= read -r match <&3; do
+        lineno="${match%%:*}"
+        task="${match#*:}"
+        task_text="${task#- \[ \]}"
+        task_text="${task_text# }"
+
+        [ -z "$task_text" ] && continue
+
+        current=$((current + 1))
+        adjusted=$((lineno - offset))
+
+        printf "\n\033[2m[%d/%d]\033[0m \033[1m%s\033[0m\n" "$current" "$total" "$task_text"
+        printf "  \033[32md\033[0m done  \033[2mk\033[0m keep  \033[31mr\033[0m remove  \033[34mm\033[0m move → %s\n" "$next_date"
+        read -n 1 -r -p "  > " action
+        echo ""
+
+        case $action in
+        d)
+            sed -i '' "${adjusted}s/- \[ \]/- [x]/" "$today_file"
+            count_done=$((count_done + 1))
+            ;;
+        k)
+            count_keep=$((count_keep + 1))
+            ;;
+        r)
+            sed -i '' "${adjusted}d" "$today_file"
+            offset=$((offset + 1))
+            count_remove=$((count_remove + 1))
+            ;;
+        m)
+            sed -i '' "${adjusted}d" "$today_file"
+            offset=$((offset + 1))
+            [ -f "$next_file" ] || {
+                mkdir -p "$path"
+                echo "# TODO $next_date" >"$next_file"
+                echo "" >>"$next_file"
+            }
+            echo "$task" >>"$next_file"
+            count_move=$((count_move + 1))
+            ;;
+        *)
+            count_keep=$((count_keep + 1))
+            ;;
+        esac
+    done 3<"$tmpfile"
+    rm -f "$tmpfile"
+
+    printf "\n\033[32m%d done\033[0m  %d kept  \033[31m%d removed\033[0m  \033[34m%d moved\033[0m\n" "$count_done" "$count_keep" "$count_remove" "$count_move"
     exit 0
 fi
 
