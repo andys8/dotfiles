@@ -4,6 +4,8 @@
 [post-create]
 deps = "[ -d '{{ primary_worktree_path }}/node_modules' ] && ln -sf '{{ primary_worktree_path }}/node_modules' . || true"
 husky = "[ -f node_modules/.bin/husky ] && pnpm exec husky install || true"
+claude-mcp = "[ -f '{{ primary_worktree_path }}/.mcp.json' ] && cp '{{ primary_worktree_path }}/.mcp.json' . || true"
+claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .claude && [ -f '{{ primary_worktree_path }}/.claude/settings.local.json' ] && cp '{{ primary_worktree_path }}/.claude/settings.local.json' .claude/ || true"
 
 [commit.generation]
 command = "MAX_THINKING_TOKENS=0 claude -p --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
