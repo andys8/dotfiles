@@ -4,3 +4,5 @@
 elm-stuff/
 node_modules/
 .aider*
+
+**/.claude/settings.local.json
