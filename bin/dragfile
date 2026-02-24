@@ -12,7 +12,10 @@ fi
 
 # Determine the file name to use
 if [ $# -gt 0 ]; then
-    tmpfile="/tmp/$1.txt"
+    case "$1" in
+        *.*) tmpfile="/tmp/$1" ;;
+        *) tmpfile="/tmp/$1.txt" ;;
+    esac
 else
     tmpfile=$(mktemp /tmp/output.XXXXXXXX)
     mv "$tmpfile" "$tmpfile.txt"
