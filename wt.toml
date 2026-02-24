@@ -10,7 +10,7 @@ claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .cla
 [commit.generation]
 command = "MAX_THINKING_TOKENS=0 claude -p --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
 
-[select]
+[switch.picker]
 pager = "cat"
 
 [projects]
