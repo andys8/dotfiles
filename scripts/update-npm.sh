@@ -33,6 +33,7 @@ packages=(
     typescript                        # TS compiler
     write-good                        # check and improve written text
     yarn                              # alternative to npm
+    @playwright/cli                   # playwright-cli (browser automation)
 )
 
 npm_config_loglevel=error npm install -g "${packages[@]}"
