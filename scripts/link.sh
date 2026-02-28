@@ -46,6 +46,10 @@ ln -sf ~/dotfiles/fish/hostip.fish ~/.config/fish/functions/hostip.fish
 ln -sf ~/dotfiles/fish/killport.fish ~/.config/fish/functions/killport.fish
 ln -sf ~/dotfiles/fish/sudo.fish ~/.config/fish/functions/sudo.fish
 ln -sf ~/dotfiles/fish/mkcd.fish ~/.config/fish/functions/mkcd.fish
+ln -sf ~/dotfiles/fish/fcd.fish ~/.config/fish/functions/fcd.fish
+ln -sf ~/dotfiles/fish/worktree.fish ~/.config/fish/functions/worktree.fish
+ln -sf ~/dotfiles/fish/jt.fish ~/.config/fish/functions/jt.fish
+ln -sf ~/dotfiles/fish/wt.fish ~/.config/fish/functions/wt.fish
 ln -sf ~/dotfiles/fish/worktree-switch.fish ~/.config/fish/functions/worktree-switch.fish
 rm -rf ~/.config/omf
 ln -sf ~/dotfiles/omf ~/.config
@@ -114,6 +118,10 @@ ln -sf ~/dotfiles/zathurarc ~/.config/zathura/zathurarc
 # lsd
 mkdir -p ~/.config/lsd
 ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
+
+# wt (worktrunk)
+mkdir -p ~/.config/worktrunk
+ln -sf ~/dotfiles/wt.toml ~/.config/worktrunk/config.toml
 
 # rofi
 rm -rf ~/.config/udiskie
