@@ -160,6 +160,13 @@ abbr -a -- vimg 'vim (git diff --name-only)'
 abbr -a -- vmi vim
 abbr -a -- weather 'curl https://wttr.in'
 abbr -a -- wttr 'curl https://wttr.in'
+abbr -a -- wts worktree-switch
+abbr -a -- wtf worktree-switch
+abbr -a -- wtl 'wt list'
+abbr -a -- wtr 'wt remove'
+abbr -a -- wtc 'wt switch --create'
+abbr -a -- wtcc 'wt switch -x claude --create'
+abbr -a -- wtsc 'wt step commit'
 abbr -a -- yd 'yarn dev'
 abbr -a -- yi 'yarn install'
 abbr -a -- yt 'yarn test'
