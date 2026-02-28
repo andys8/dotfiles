@@ -1,0 +1,13 @@
+#!/bin/bash
+# Simple wake script for Linux (systemd)
+# Prevents idle sleep, manual suspend, and lid-close sleep.
+
+# Disable screen blanking (X11)
+xset -dpms s off 2>/dev/null
+
+# Block sleep/suspend until user presses Enter or Ctrl+C
+systemd-inhibit --why="Manual wake" --what=idle:sleep:handle-lid-switch \
+    bash -c "echo 'System wakefulness activated. Press Enter to restore...'; read"
+
+# Re-enable screen blanking on exit
+xset +dpms s on 2>/dev/null
