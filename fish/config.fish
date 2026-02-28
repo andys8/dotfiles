@@ -54,6 +54,7 @@ set -Ux LESS_TERMCAP_ue (set_color normal)
 set -Ux LESS_TERMCAP_se (set_color normal)
 
 # Terminal
+set -gx SHELL (command -s fish)
 set -gx TERM "xterm-256color"
 set -gx TERMINAL "xterm-256color"
 set -gx LANG "en_US.UTF-8"
