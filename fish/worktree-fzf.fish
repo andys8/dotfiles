@@ -1,4 +1,4 @@
-function worktree-switch -d "Fast worktree switcher with fzf"
+function worktree-fzf -d "Fast worktree switcher with fzf"
     set -l lines (git worktree list)
     set -l sorted
     for line in $lines

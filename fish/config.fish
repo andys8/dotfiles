@@ -187,10 +187,10 @@ abbr -a -- vimg 'vim (git diff --name-only)'
 abbr -a -- vmi vim
 abbr -a -- weather 'curl https://wttr.in'
 abbr -a -- wttr 'curl https://wttr.in'
-abbr -a -- wts worktree-switch
-abbr -a -- wtf worktree-switch
+abbr -a -- wtf worktree-fzf
 abbr -a -- wtl 'wt list'
 abbr -a -- wtr 'wt remove'
+abbr -a -- wts 'wt switch'
 abbr -a -- wtc 'wt switch --create'
 abbr -a -- wtcc 'wt switch -x claude --create'
 abbr -a -- wtsc 'wt step commit'
