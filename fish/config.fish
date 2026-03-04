@@ -70,8 +70,8 @@ bind --user --mode insert \cH backward-kill-path-component
 # Bind CTRL+j to complete suggestions
 bind --user --mode insert \cj accept-autosuggestion
 
-# zoxide init
-zoxide init fish | source
+# zoxide init (cached, regenerate with: zoxide init fish > ~/dotfiles/fish/zoxide-init.fish)
+source ~/dotfiles/fish/zoxide-init.fish
 
 # Aliases
 abbr -a -- .. 'cd ..'

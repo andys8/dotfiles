@@ -7,3 +7,6 @@ if [ $status -ne 0 ]
 end
 
 omf update
+
+echo "Updating zoxide init cache"
+zoxide init fish > ~/dotfiles/fish/zoxide-init.fish
