@@ -1,9 +1,9 @@
 # open terminal
-alt - return : open -n -a "Alacritty"
+alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # open chrome
-ctrl + alt - return : open -n -a "Google Chrome"
-ctrl + alt + shift - return : open -n -a "Google Chrome" --args --incognito
+ctrl + alt - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+ctrl + alt + shift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --incognito
 
 # raycast
 cmd - space : open -g raycast://
