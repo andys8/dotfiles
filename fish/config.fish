@@ -191,6 +191,7 @@ abbr -a -- wtf worktree-fzf
 abbr -a -- wtl 'wt list'
 abbr -a -- wtr 'wt remove'
 abbr -a -- wts 'wt switch'
+abbr -a -- wtm 'wt switch main'
 abbr -a -- wtc 'wt switch --create'
 abbr -a -- wtcc 'wt switch -x claude --create'
 abbr -a -- wtsc 'wt step commit'
