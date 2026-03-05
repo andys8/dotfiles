@@ -28,11 +28,11 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # padding
-yabai -m config window_gap 10
-yabai -m config top_padding 8
-yabai -m config bottom_padding 8
-yabai -m config right_padding 8
-yabai -m config left_padding 8
+yabai -m config window_gap 12
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config right_padding 10
+yabai -m config left_padding 10
 
 # rules
 ## makes system preferences always floating
@@ -59,6 +59,6 @@ yabai -m signal --add event=window_destroyed app=^zoom.us$ action="yabai -m conf
 yabai -m signal --add event=window_minimized app=^zoom.us$ action="yabai -m config focus_follows_mouse autoraise"
 
 # borders
-borders active_color=0xffff79c6 inactive_color=0xff6272a4 width=8.0 style=uniform &
+borders active_color=0xffBD93F9 inactive_color=0xff44475A width=8.0 style=uniform &
 
 echo "yabai configuration loaded.."
