@@ -40,6 +40,9 @@ defaults write NSGlobalDomain NSWindowResizeTime .001
 defaults write com.apple.dock expose-animation-duration -int 0
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
+# reduce motion
+defaults write com.apple.universalaccess reduceMotion -bool true
+
 # disable click on desktop
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
