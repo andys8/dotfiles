@@ -2,10 +2,10 @@
 # copy = "wt step copy-ignored"
 
 [post-create]
-deps = "[ -d '{{ primary_worktree_path }}/node_modules' ] && ln -sf '{{ primary_worktree_path }}/node_modules' . || true"
-husky = "[ -f node_modules/.bin/husky ] && pnpm exec husky install || true"
-claude-mcp = "[ -f '{{ primary_worktree_path }}/.mcp.json' ] && cp '{{ primary_worktree_path }}/.mcp.json' . || true"
-claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .claude && [ -f '{{ primary_worktree_path }}/.claude/settings.local.json' ] && cp '{{ primary_worktree_path }}/.claude/settings.local.json' .claude/ || true"
+deps = "[ -f pnpm-lock.yaml ] && pnpm install --frozen-lockfile --prefer-offline --ignore-scripts || true"
+generated-files = "for f in featureFlags.ts softwareCatalogTypes.ts; do [ -f '{{ primary_worktree_path }}/'$f ] && ln -sf '{{ primary_worktree_path }}/'$f $f; done 2>/dev/null || true"
+claude-mcp = "[ -f '{{ primary_worktree_path }}/.mcp.json' ] && ln -sf '{{ primary_worktree_path }}/.mcp.json' .mcp.json || true"
+claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .claude && [ -f '{{ primary_worktree_path }}/.claude/settings.local.json' ] && ln -sf '{{ primary_worktree_path }}/.claude/settings.local.json' .claude/settings.local.json || true"
 
 [commit.generation]
 command = "CLAUDECODE= MAX_THINKING_TOKENS=0 claude -p --model=haiku --tools='' --disable-slash-commands --setting-sources='' --system-prompt=''"
