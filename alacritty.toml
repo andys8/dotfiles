@@ -6,9 +6,9 @@ working_directory = "None"
 program = "/opt/homebrew/bin/fish"
 
 [bell]
-animation = "EaseOutExpo"
-duration = 500
-color = "#FF79C6"
+animation = "EaseOutCubic"
+duration = 400
+color = "#f1fa8c"
 
 [colors.primary]
 background = "#282a36"
