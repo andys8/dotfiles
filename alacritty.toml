@@ -8,7 +8,7 @@ program = "/opt/homebrew/bin/fish"
 [bell]
 animation = "EaseOutCubic"
 duration = 400
-color = "#f1fa8c"
+color = "#ff79c6"
 
 [colors.primary]
 background = "#282a36"
