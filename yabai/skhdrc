@@ -45,7 +45,7 @@ alt - x : yabai -m window --close
 alt - escape : yabai -m window --close
 
 # minimize window
-alt - m : yabai -m window --minimize
+# alt - m : yabai -m window --minimize
 
 # mirror tree y-axis
 alt - y : yabai -m space --mirror y-axis
