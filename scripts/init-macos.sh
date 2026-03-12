@@ -47,7 +47,7 @@ defaults write com.apple.universalaccess reduceMotion -bool true
 defaults write com.apple.WindowManager EnableStandardClickToShowDesktop -bool false
 
 # disable cmd+m minimize
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Minimize" '\0'
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "Minimize" '@~^$m'
 
 # dock
 defaults write com.apple.dock autohide -bool true
