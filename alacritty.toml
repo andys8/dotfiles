@@ -7,7 +7,8 @@ program = "/opt/homebrew/bin/fish"
 
 [bell]
 animation = "EaseOutExpo"
-duration = 0
+duration = 300
+color = "#bd93f9"
 
 [colors.primary]
 background = "#282a36"
