@@ -624,6 +624,11 @@ action = "ScrollPageUp"
 key = "I"
 mods = "Command"
 
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+
 [mouse]
 hide_when_typing = true
 
@@ -647,3 +652,4 @@ padding.x = 6
 padding.y = 6
 dynamic_padding = false
 opacity = 1
+
