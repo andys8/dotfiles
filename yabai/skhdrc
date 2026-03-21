@@ -113,6 +113,7 @@ shift + alt - 3 : yabai -m window --display 3
 # change layout of desktop
 cmd + alt + ctrl - j : yabai -m space --layout bsp
 cmd + alt + ctrl - k : yabai -m space --layout stack
+cmd + alt + ctrl - l : yabai -m space --balance
 
 # increase window size
 # ctrl + alt - h : yabai -m window --resize left:-40:0
