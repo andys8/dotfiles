@@ -629,6 +629,11 @@ key = "Return"
 mods = "Shift"
 chars = "\u001B\r"
 
+[[keyboard.bindings]]
+key = "J"
+mods = "Control"
+chars = "\n"
+
 [mouse]
 hide_when_typing = true
 
