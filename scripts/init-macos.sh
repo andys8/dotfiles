@@ -55,5 +55,19 @@ defaults write com.apple.dock autohide-delay -float 1000
 defaults write com.apple.dock no-bouncing -bool true
 killall Dock || true
 
+# yabai
+if command -v yabai &>/dev/null; then
+    yabai --stop-service
+    killall yabai || true
+    yabai --start-service
+fi
+
+# skhd
+if command -v skhd &>/dev/null; then
+    skhd --stop-service
+    killall skhd || true
+    skhd --start-service
+fi
+
 echo "Init mac os done"
 exit 0

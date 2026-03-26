@@ -136,6 +136,9 @@ ctrl + alt - l : yabai -m window --resize right:50:0; yabai -m window --resize l
 # restart yabai
 ctrl + alt + cmd - r : yabai --restart-service
 
+# reinit macos defaults
+ctrl + alt + cmd - 0 : ~/dotfiles/scripts/init-macos.sh
+
 # screenshots
 alt - p : screencapture -ixc
 f13 : screencapture -ixc
