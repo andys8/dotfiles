@@ -226,3 +226,6 @@ node_modules/
 prd.json
 .beads/
 tasks/prd-*.md
+
+# Superset
+.superset/

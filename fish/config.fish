@@ -162,6 +162,10 @@ abbr -a -- r ranger
 abbr -a -- rgf 'rg --files | rg'
 abbr -a -- rgfh 'rg --files --hidden | rg'
 abbr -a -- rgfa 'rg --files --hidden --no-ignore | rg'
+abbr -a -- rgi 'rg -i'
+abbr -a -- rgih 'rg -i --hidden'
+abbr -a -- rgh 'rg --hidden'
+abbr -a -- rghi 'rg --hidden -i'
 abbr -a -- rm trash
 abbr -a -- ss 'stty sane'
 abbr -a -- stacktest stack-test
@@ -194,6 +198,7 @@ abbr -a -- wts 'wt switch'
 abbr -a -- wtm 'wt switch main'
 abbr -a -- wtc 'wt switch --create'
 abbr -a -- wtcc 'wt switch -x claude --create'
+abbr -a -- wtcr 'wt switch -x "claude /review this branch"'
 abbr -a -- wtsc 'wt step commit'
 abbr -a -- wtsca 'wt step commit --stage all'
 abbr -a -- wtsct 'wt step commit --stage tracked'
