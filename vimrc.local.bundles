@@ -23,9 +23,6 @@ Plug 'tpope/vim-sleuth'
 " Colorscheme dracula (default)
 Plug 'dracula/vim', { 'as': 'dracula' }
 
-" Colorscheme nord
-Plug 'arcticicestudio/nord-vim'
-
 " Repeat surround commands
 Plug 'tpope/vim-repeat'
 
@@ -34,9 +31,6 @@ Plug 'mhinz/vim-startify'
 
 " Nerd font icons
 Plug 'ryanoasis/vim-devicons'
-
-" Zen mode
-Plug 'junegunn/goyo.vim'
 
 " Expand region (+_-)
 Plug 'terryma/vim-expand-region'
@@ -83,14 +77,8 @@ Plug 'github/copilot.vim'
 " Fish Syntax
 Plug 'khaveesh/vim-fish-syntax', { 'for' : 'fish' }
 
-" Handlebars Syntax
-Plug 'mustache/vim-mustache-handlebars', { 'for' : 'handlebars' }
-
 " Zoxide
 Plug 'nanotee/zoxide.vim'
-
-" Nix Syntax Highlighting
-Plug 'LnL7/vim-nix', { 'for' : 'nix' }
 
 " TypeScript Syntax Highlighting
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
