@@ -26,6 +26,8 @@ assertCommands=(
 # Optional user commands (installed manually)
 commandsOptional=(
     alacritty       # terminal-emulator
+    handy           # voice to text
+    worktrunk       # git worktree management
     btm             # bottom process monitor
     chromium        # chromium web browser
     idea            # intellij ide
