@@ -87,6 +87,7 @@ in
     bottom # system monitor
     cargo # rust package manager
     cargo-cache # cache clean
+    rustc # rust compiler
     ctop # top for containers
     dhall # dhall (format)
     duf # disk usage
@@ -95,11 +96,11 @@ in
     fd # find for files
     fzf # fuzzy find tool
     ghcid # ghci daemon
-    gitAndTools.delta # git diff viewer
-    gitAndTools.diff-so-fancy # git diff with colors
-    gitAndTools.gh # github-cli
-    gitAndTools.git-gone # prune merged branches
-    gitAndTools.hub # github commandline tool
+    delta # git diff viewer
+    diff-so-fancy # git diff with colors
+    gh # github-cli
+    git-gone # prune merged branches
+    hub # github commandline tool
     glow # markdown viewer
     go # go language
     haskellPackages.git-brunch # git checkout branch tui
