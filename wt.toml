@@ -1,10 +1,16 @@
 # [post-start]
 # copy = "wt step copy-ignored"
 
-[pre-start]
+[[pre-start]]
 deps = "[ -d '{{ primary_worktree_path }}/node_modules' ] && ln -sf '{{ primary_worktree_path }}/node_modules' . || true"
+
+[[pre-start]]
 husky = "[ -f node_modules/.bin/husky ] && pnpm exec husky install || true"
+
+[[pre-start]]
 claude-mcp = "[ -f '{{ primary_worktree_path }}/.mcp.json' ] && cp '{{ primary_worktree_path }}/.mcp.json' . || true"
+
+[[pre-start]]
 claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .claude && [ -f '{{ primary_worktree_path }}/.claude/settings.local.json' ] && cp '{{ primary_worktree_path }}/.claude/settings.local.json' .claude/ || true"
 
 [commit.generation]
