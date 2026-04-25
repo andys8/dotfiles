@@ -1,7 +1,7 @@
 # [post-start]
 # copy = "wt step copy-ignored"
 
-[post-create]
+[pre-start]
 deps = "[ -d '{{ primary_worktree_path }}/node_modules' ] && ln -sf '{{ primary_worktree_path }}/node_modules' . || true"
 husky = "[ -f node_modules/.bin/husky ] && pnpm exec husky install || true"
 claude-mcp = "[ -f '{{ primary_worktree_path }}/.mcp.json' ] && cp '{{ primary_worktree_path }}/.mcp.json' . || true"
