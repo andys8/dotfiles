@@ -1,0 +1,30 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $(basename "$0") <pr-number|pr-url>" >&2
+    exit 1
+fi
+
+ARG="$1"
+
+if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Error: not inside a git repository" >&2
+    exit 1
+fi
+
+if [[ "$ARG" =~ ^[0-9]+$ ]]; then
+    PR_NUMBER="$ARG"
+    REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+    PR_URL="https://github.com/$REPO/pull/$PR_NUMBER"
+elif [[ "$ARG" =~ ^https://github\.com/[^/]+/[^/]+/pull/([0-9]+)/?$ ]]; then
+    PR_NUMBER="${BASH_REMATCH[1]}"
+    PR_URL="$ARG"
+else
+    echo "Error: argument must be a PR number or a GitHub PR URL" >&2
+    exit 1
+fi
+
+wt switch "pr:$PR_NUMBER"
+
+exec claude --model=opus "/review $PR_URL"
