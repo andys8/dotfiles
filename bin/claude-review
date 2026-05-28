@@ -1,12 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-if [ $# -ne 1 ]; then
-    echo "Usage: $(basename "$0") <pr-number|pr-url>" >&2
+if [ $# -lt 1 ]; then
+    echo "Usage: $(basename "$0") <pr-number|pr-url> [extra instructions...]" >&2
     exit 1
 fi
 
 ARG="$1"
+shift
+EXTRA="$*"
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Error: not inside a git repository" >&2
@@ -27,4 +29,8 @@ fi
 
 wt switch "pr:$PR_NUMBER"
 
-exec claude --model=opus "/review $PR_URL"
+if [ -n "$EXTRA" ]; then
+    exec claude --model=opus "/review $PR_URL $EXTRA"
+else
+    exec claude --model=opus "/review $PR_URL"
+fi

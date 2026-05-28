@@ -1,7 +1,5 @@
-worktree-path = "{{ repo_path }}/.claude/worktrees/{{ branch | sanitize }}"
-
 [post-start]
-deps = "[ -f pnpm-lock.yaml ] && pnpm install --frozen-lockfile --prefer-offline || true"
+deps = "[ -f pnpm-lock.yaml ] && [ ! -d node_modules ] && pnpm install --frozen-lockfile --prefer-offline || true"
 generated-files = "for f in featureFlags.ts softwareCatalogTypes.ts; do [ -f '{{ primary_worktree_path }}/'$f ] && ln -sf '{{ primary_worktree_path }}/'$f $f; done 2>/dev/null || true"
 claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .claude && [ -f '{{ primary_worktree_path }}/.claude/settings.local.json' ] && ln -sf '{{ primary_worktree_path }}/.claude/settings.local.json' .claude/settings.local.json || true"
 
