@@ -27,10 +27,8 @@ else
     exit 1
 fi
 
-wt switch "pr:$PR_NUMBER"
-
 if [ -n "$EXTRA" ]; then
-    exec claude --model=opus "/review $PR_URL $EXTRA"
+    exec wt switch "pr:$PR_NUMBER" --execute claude -- --model=opus "/review $PR_URL $EXTRA"
 else
-    exec claude --model=opus "/review $PR_URL"
+    exec wt switch "pr:$PR_NUMBER" --execute claude -- --model=opus "/review $PR_URL"
 fi
