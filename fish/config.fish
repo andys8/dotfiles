@@ -1,11 +1,8 @@
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-# Source .profile if missing
-if [ "$PROFILE_SOURCED" != "1" ]
-  fenv source ~/.profile
-  set PROFILE_SOURCED 1
-end
+# Native fish environment (replaces sourcing ~/.profile via foreign-env)
+source ~/dotfiles/fish/env.fish
 
 # Path to Oh My Fish install.
 set -q XDG_DATA_HOME
