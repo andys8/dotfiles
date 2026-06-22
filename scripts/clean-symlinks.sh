@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-for l in $(find ~/bin -type l); do
+for l in $(find ~/bin ~/.config -type l); do
     if [ ! -e "$l" ]; then
         echo "Target of '$l' doesn't exist. Cleaning up."
         rm "$l"

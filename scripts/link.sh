@@ -34,7 +34,9 @@ ln -sf ~/dotfiles/ackrc ~/.ackrc
 ln -sf ~/dotfiles/ripgreprc ~/.ripgreprc
 
 # Alacritty
-ln -sf ~/dotfiles/alacritty.toml ~/.alacritty.toml
+# rm -f ~/.alacritty.toml
+mkdir -p ~/.config/alacritty
+ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Profile
 ln -sf ~/dotfiles/profile ~/.profile
