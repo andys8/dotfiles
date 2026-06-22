@@ -36,11 +36,13 @@ yabai -m config left_padding 10
 
 # rules
 ## makes system preferences always floating
-yabai -m rule --add app="^System Preferences$" manage=off
+# yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Wally$" manage=off
 yabai -m rule --add app="^Pulse Secure$" manage=off
 yabai -m rule --add app="^QuickRecorder$" manage=off
 yabai -m rule --add app="^Kap$" manage=off layer=above
+yabai -m rule --add app="^OpenSuperWhisper$" manage=on
+yabai -m rule --add app="^Openscreen$" manage=on
 
 # signals
 yabai -m signal --add event=window_destroyed active=yes action="yabai -m window --focus recent || yabai -m window --focus first"
