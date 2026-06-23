@@ -3,8 +3,6 @@
     editor = vim
     pager = diff-so-fancy
     excludesFile = ~/.config/git/ignore
-	untrackedcache = true
-	fsmonitor = true
 [alias]
     a = add
     aa = add .
