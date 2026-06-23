@@ -43,12 +43,10 @@ yabai -m rule --add app="^QuickRecorder$" manage=off
 yabai -m rule --add app="^Kap$" manage=off layer=above
 yabai -m rule --add app="^OpenSuperWhisper$" manage=on
 yabai -m rule --add app="^Openscreen$" manage=on
+## disable cursor warp for apps that steal focus (avoids mouse jumping)
+yabai -m rule --add app="^(Google Chrome|Slack)$" mouse_follows_focus=off
 
 # signals
-yabai -m signal --add event=window_destroyed active=yes action="yabai -m window --focus recent || yabai -m window --focus first"
-
-yabai -m signal --add event=window_minimized active=yes action="yabai -m window --focus recent || yabai -m window --focus first"
-
 # yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
 # Zoom workaround
