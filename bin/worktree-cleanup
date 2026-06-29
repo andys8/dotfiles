@@ -2,31 +2,103 @@
 
 set -e
 
+days=7
 force_delete=""
-for arg in "$@"; do
-    case $arg in
+sweep_all=false
+base_dir="$HOME/dev/personio"
+skip_confirm=false
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
     -f | --force) force_delete="-D" ;;
+    -y | --yes) skip_confirm=true ;;
+    --all)
+        sweep_all=true
+        if [[ -n "${2-}" && "${2}" != -* ]]; then
+            base_dir="$2"
+            shift
+        fi
+        ;;
+    --days)
+        days="$2"
+        shift
+        ;;
     esac
+    shift
 done
 
-branches=$(wt list --format=json | jq -r '.[] | select(.is_main == false and .kind == "worktree") | .branch')
+stale_branches_for() {
+    local dir="$1"
+    local cutoff=$(($(date +%s) - days * 86400))
+    wt -C "$dir" list --format=json 2>/dev/null |
+        jq -r --argjson cutoff "$cutoff" \
+            '.[] | select(.is_main == false and .kind == "worktree" and .commit.timestamp < $cutoff) | .branch'
+}
 
-if [ -z "$branches" ]; then
-    echo "No worktrees to remove"
+if ! $sweep_all; then
+    branches=$(stale_branches_for "$PWD")
+
+    if [[ -z "$branches" ]]; then
+        echo "No worktrees to remove"
+        exit 0
+    fi
+
+    echo "Removing worktrees:"
+    echo "$branches" | sed 's/^/  /'
+    [[ -n "$force_delete" ]] && echo "(force-deleting unmerged branches)"
+    echo ""
+
+    if ! $skip_confirm; then
+        read -p "Remove all? (y/N) " -n 1 -r
+        echo ""
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            echo "Cancelled"
+            exit 0
+        fi
+    fi
+
+    # shellcheck disable=SC2086
+    wt remove --force --yes $force_delete $branches
+    exit 0
+fi
+
+# --all mode: sweep every main checkout under base_dir
+repos=()
+branches_list=()
+
+for dir in "$base_dir"/*/; do
+    [[ -d "$dir/.git" ]] || continue
+    set +e
+    branches=$(stale_branches_for "$dir")
+    set -e
+    [[ -z "$branches" ]] && continue
+    repos+=("$dir")
+    branches_list+=("$branches")
+done
+
+if [[ ${#repos[@]} -eq 0 ]]; then
+    echo "Nothing to clean up"
     exit 0
 fi
 
 echo "Removing worktrees:"
-echo "$branches" | sed 's/^/  /'
-[ -n "$force_delete" ] && echo "(force-deleting unmerged branches)"
+for i in "${!repos[@]}"; do
+    echo "  $(basename "${repos[$i]}"):"
+    echo "${branches_list[$i]}" | sed 's/^/    /'
+done
+[[ -n "$force_delete" ]] && echo "(force-deleting unmerged branches)"
 echo ""
 
-read -p "Remove all? (y/N) " -n 1 -r
-echo ""
-
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    echo "Cancelled"
-    exit 0
+if ! $skip_confirm; then
+    read -p "Remove all? (y/N) " -n 1 -r
+    echo ""
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Cancelled"
+        exit 0
+    fi
 fi
 
-wt remove --force --yes $force_delete $branches
+for i in "${!repos[@]}"; do
+    # shellcheck disable=SC2086
+    wt -C "${repos[$i]}" remove --force --yes $force_delete ${branches_list[$i]} || true
+done
