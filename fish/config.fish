@@ -88,6 +88,7 @@ abbr -a -- cl claude
 abbr -a -- clh "claude --model=haiku"
 abbr -a -- cls "claude --model=sonnet"
 abbr -a -- clo "claude --model=opus"
+abbr -a -- clop "claude --model=opusplan"
 abbr -a -- colorpicker gcolor3
 abbr -a -- copy-screenshot 'cp (ls -t ~/Pictures/screenshots/screenshot-* | head -n1) .'
 abbr -a -- dco docker-compose
@@ -143,7 +144,10 @@ abbr -a -- lg lazygit
 abbr -a -- ll 'lsd -Al --date relative --group-dirs first'
 abbr -a -- lll 'lsd -Al --date relative --timesort --reverse'
 abbr -a -- ls lsd
+abbr -a -- markdown-preview 'gh markdown-preview'
+abbr -a -- markdownpreview 'gh markdown-preview'
 abbr -a -- mirror 'autorandr common'
+abbr -a -- mp 'gh markdown-preview'
 abbr -a -- ng 'nix-env -qaP | grep'
 abbr -a -- ns nix-search
 abbr -a -- nxr "pnpm nx run --skip-nx-cache"

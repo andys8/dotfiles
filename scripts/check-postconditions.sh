@@ -59,6 +59,9 @@ for i in "${assertCommands[@]}"; do commandExists "$i"; done
 # Check commands
 for i in "${commandsOptional[@]}"; do warnIfCommandMissing "$i"; done
 
+# Check gh extensions
+gh extension list 2>/dev/null | grep -q markdown-preview || warn "gh extension 'markdown-preview' missing (gh extension install yusukebe/gh-markdown-preview)"
+
 # Result
 [[ $warnings != 0 ]] && echo "$(tput setaf 3)Post-Conditions have $warnings warning(s)$(tput sgr 0)"
 if [[ $errors != 0 ]]; then
