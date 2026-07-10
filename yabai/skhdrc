@@ -1,5 +1,5 @@
-# open terminal (reuse running process for instant new windows, fall back to a cold launch)
-alt - return : /opt/homebrew/bin/alacritty msg create-window 2>/dev/null || /Applications/Alacritty.app/Contents/MacOS/alacritty &
+# open terminal (instant new window from the always-warm daemon, always bring to front)
+alt - return : /opt/homebrew/bin/alacritty msg -s $HOME/.cache/alacritty.sock create-window 2>/dev/null; open -a Alacritty
 
 # open chrome
 ctrl + alt - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &
