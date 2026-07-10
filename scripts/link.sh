@@ -38,13 +38,10 @@ ln -sf ~/dotfiles/ripgreprc ~/.ripgreprc
 mkdir -p ~/.config/alacritty
 ln -sf ~/dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
 
-# Alacritty daemon LaunchAgent
+# LaunchAgents
 mkdir -p ~/.cache ~/Library/LaunchAgents
-cp ~/dotfiles/alacritty/com.local.alacritty-daemon.plist ~/Library/LaunchAgents/
-
-# Chrome daemon LaunchAgent
-mkdir -p ~/Library/LaunchAgents
-cp ~/dotfiles/chrome/com.local.chrome-daemon.plist ~/Library/LaunchAgents/
+cp ~/dotfiles/launchagents/com.local.alacritty-daemon.plist ~/Library/LaunchAgents/
+cp ~/dotfiles/launchagents/com.local.chrome-daemon.plist ~/Library/LaunchAgents/
 
 # Profile
 ln -sf ~/dotfiles/profile ~/.profile
