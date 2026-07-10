@@ -69,13 +69,13 @@ if command -v skhd &>/dev/null; then
     skhd --start-service
 fi
 
-# alacritty daemon
-launchctl bootout gui/$(id -u)/com.local.alacritty-daemon 2>/dev/null || true
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
+# alacritty daemon (skip if already loaded, it may be hosting open windows)
+launchctl print gui/$(id -u)/com.local.alacritty-daemon &>/dev/null ||
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
 
-# chrome daemon
-launchctl bootout gui/$(id -u)/com.local.chrome-daemon 2>/dev/null || true
-launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.chrome-daemon.plist
+# chrome daemon (skip if already loaded, it may be hosting open windows)
+launchctl print gui/$(id -u)/com.local.chrome-daemon &>/dev/null ||
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.chrome-daemon.plist
 
 echo "Init mac os done"
 exit 0
