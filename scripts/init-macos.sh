@@ -73,5 +73,9 @@ fi
 launchctl bootout gui/$(id -u)/com.local.alacritty-daemon 2>/dev/null || true
 launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
 
+# chrome daemon
+launchctl bootout gui/$(id -u)/com.local.chrome-daemon 2>/dev/null || true
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.chrome-daemon.plist
+
 echo "Init mac os done"
 exit 0
