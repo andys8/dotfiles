@@ -1,0 +1,51 @@
+#!/bin/bash
+set -euo pipefail
+
+# Kills claude processes that are stopped (T state) AND have no controlling
+# terminal (tty "??" / "-"). That combination only happens when the terminal
+# window/tab that owned the session is gone, so the process is orphaned and
+# can never be resumed or interacted with again.
+
+DRY_RUN=0
+if [ "${1:-}" = "-n" ] || [ "${1:-}" = "--dry-run" ]; then
+    DRY_RUN=1
+fi
+
+# never kill an ancestor of this script (in case it's invoked from inside a running claude session)
+ancestors=()
+pid=$$
+while [ "$pid" -gt 1 ]; do
+    ancestors+=("$pid")
+    pid=$(ps -o ppid= -p "$pid" 2>/dev/null | tr -d ' ')
+    [ -z "$pid" ] && break
+done
+
+stale=()
+while read -r spid sstat stty; do
+    [[ "$sstat" == T* ]] || continue
+    [[ "$stty" == "??" || "$stty" == "-" ]] || continue
+    skip=0
+    for a in "${ancestors[@]}"; do
+        [ "$a" = "$spid" ] && skip=1 && break
+    done
+    [ "$skip" = 1 ] && continue
+    stale+=("$spid")
+done < <(ps -axo pid,stat,tty,comm | awk '$4 == "claude" {print $1, $2, $3}')
+
+if [ ${#stale[@]} -eq 0 ]; then
+    echo "No stale claude processes found."
+    exit 0
+fi
+
+echo "Stale claude processes (stopped, no controlling terminal):"
+ps -axo pid,stat,tty,lstart,command | awk -v pids="${stale[*]}" 'BEGIN{split(pids,p," ");for(i in p)want[p[i]]=1} want[$1]'
+
+if [ "$DRY_RUN" = 1 ]; then
+    echo "Dry run, not killing anything."
+    exit 0
+fi
+
+for spid in "${stale[@]}"; do
+    kill -9 "$spid" 2>/dev/null || true
+done
+echo "Killed ${#stale[@]} stale claude process(es)."
