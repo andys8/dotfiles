@@ -57,6 +57,6 @@ yabai -m signal --add event=window_destroyed app=^zoom.us$ action="yabai -m conf
 yabai -m signal --add event=window_minimized app=^zoom.us$ action="yabai -m config focus_follows_mouse autoraise"
 
 # borders
-borders active_color=0xffBD93F9 inactive_color=0xff44475A width=8.0 style=uniform &
+borders active_color=0xffBD93F9 inactive_color=0xff44475A width=8.0 style=uniform ax_focus=off &
 
 echo "yabai configuration loaded.."
