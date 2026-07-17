@@ -85,8 +85,9 @@ abbr -a -- benchmark hyperfine
 abbr -a -- calc wcalc
 abbr -a -- cheat cht.sh
 abbr -a -- cl claude
+abbr -a -- clf "claude --model=faible --advisor=off"
 abbr -a -- clh "claude --model=haiku"
-abbr -a -- cls "claude --model=sonnet"
+abbr -a -- cls "claude --model=sonnet --advisor=opus"
 abbr -a -- clo "claude --model=opus"
 abbr -a -- clop "claude --model=opusplan"
 abbr -a -- colorpicker gcolor3
