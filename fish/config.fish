@@ -85,9 +85,9 @@ abbr -a -- benchmark hyperfine
 abbr -a -- calc wcalc
 abbr -a -- cheat cht.sh
 abbr -a -- cl claude
-abbr -a -- clf "claude --model=fable --advisor=off"
+abbr -a -- clf "claude --model=fable"
 abbr -a -- clh "claude --model=haiku"
-abbr -a -- cls "claude --model=sonnet --advisor=opus"
+abbr -a -- cls "claude --model=sonnet"
 abbr -a -- clo "claude --model=opus"
 abbr -a -- clop "claude --model=opusplan"
 abbr -a -- colorpicker gcolor3
@@ -201,9 +201,9 @@ abbr -a -- wts 'wt switch'
 abbr -a -- wtm 'wt switch main'
 abbr -a -- wtc 'wt switch --create'
 abbr -a -- wtcc 'wt switch -x claude --create'
-abbr -a -- wtcco 'wt switch -x claude --create % -- --model=opus'
+abbr -a --set-cursor=% -- wtcco 'wt switch -x claude --create % -- --model=opus'
 abbr -a --set-cursor=% -- wtccop 'wt switch -x claude --create % -- --model=opusplan'
-abbr -a --set-cursor=% -- wtccs 'wt switch -x claude --create % -- --model=sonnet --advisor=opus'
+abbr -a --set-cursor=% -- wtccs 'wt switch -x claude --create % -- --model=sonnet'
 abbr -a -- wtcr 'wt switch -x "claude /review this branch"'
 abbr -a -- wtsc 'wt step commit'
 abbr -a -- wtsca 'wt step commit --stage all'
