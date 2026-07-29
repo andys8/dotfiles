@@ -28,7 +28,7 @@ else
 fi
 
 if [ -n "$EXTRA" ]; then
-    exec wt switch "pr:$PR_NUMBER" --execute claude -- --model=opus "/review $PR_URL $EXTRA"
+    exec wt switch "pr:$PR_NUMBER" --execute claude -- --permission-mode=auto --model=opus "/review $PR_URL $EXTRA"
 else
-    exec wt switch "pr:$PR_NUMBER" --execute claude -- --model=opus "/review $PR_URL"
+    exec wt switch "pr:$PR_NUMBER" --execute claude -- --permission-mode=auto --model=opus "/review $PR_URL"
 fi
