@@ -5,7 +5,7 @@ claude-settings = "[ -d '{{ primary_worktree_path }}/.claude' ] && mkdir -p .cla
 # racing to regenerate through it.
 deps = """
 for f in featureFlags.ts softwareCatalogTypes.ts; do [ -f '{{ primary_worktree_path }}/'$f ] && ln -sf '{{ primary_worktree_path }}/'$f $f; done 2>/dev/null || true
-[ ! -d node_modules ] && { [ -f pnpm-lock.yaml ] || [ -f yarn.lock ] || [ -f package-lock.json ]; } && nci || true
+{ [ -f pnpm-lock.yaml ] || [ -f yarn.lock ] || [ -f package-lock.json ]; } && nci || true
 """
 
 [commit]
