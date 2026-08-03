@@ -1,5 +1,8 @@
 #!/bin/bash
 
+reset_daemons=false
+[[ "${1:-}" == "--reset" ]] && reset_daemons=true
+
 # key repeat
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 1
@@ -70,10 +73,16 @@ if command -v skhd &>/dev/null; then
 fi
 
 # alacritty daemon (skip if already loaded, it may be hosting open windows)
+if $reset_daemons; then
+    killall alacritty &>/dev/null || true
+fi
 launchctl print gui/$(id -u)/com.local.alacritty-daemon &>/dev/null ||
     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
 
 # chrome daemon (skip if already loaded, it may be hosting open windows)
+if $reset_daemons; then
+    killall "Google Chrome" &>/dev/null || true
+fi
 launchctl print gui/$(id -u)/com.local.chrome-daemon &>/dev/null ||
     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.chrome-daemon.plist
 
