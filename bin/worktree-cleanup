@@ -4,6 +4,7 @@ set -e
 
 days=7
 force_delete=""
+force_dirty=""
 sweep_all=false
 base_dir="$HOME/dev/personio"
 skip_confirm=false
@@ -11,6 +12,7 @@ skip_confirm=false
 while [[ $# -gt 0 ]]; do
     case "$1" in
     -f | --force) force_delete="-D" ;;
+    --force-dirty) force_dirty="-f" ;;
     -y | --yes) skip_confirm=true ;;
     --all)
         sweep_all=true
@@ -30,9 +32,15 @@ done
 stale_branches_for() {
     local dir="$1"
     local cutoff=$(($(date +%s) - days * 86400))
-    wt -C "$dir" list --format=json 2>/dev/null |
-        jq -r --argjson cutoff "$cutoff" \
-            '.[] | select(.is_main == false and .kind == "worktree" and .commit.timestamp < $cutoff) | .branch'
+    local branch path created
+    while IFS=$'\t' read -r branch path; do
+        created=$(stat -f %B "$path" 2>/dev/null) || continue
+        ((created < cutoff)) && echo "$branch"
+    done < <(
+        wt -C "$dir" list --format=json 2>/dev/null |
+            jq -r --argjson cutoff "$cutoff" \
+                '.[] | select(.is_main == false and .kind == "worktree" and .branch != null and .commit.timestamp < $cutoff) | [.branch, .path] | @tsv'
+    )
 }
 
 if ! $sweep_all; then
@@ -58,7 +66,11 @@ if ! $sweep_all; then
     fi
 
     # shellcheck disable=SC2086
-    wt remove --force --yes $force_delete $branches
+    wt remove --yes $force_delete $force_dirty $branches || {
+        echo ""
+        echo "Some worktrees have uncommitted changes and were kept."
+        echo "Rerun with --force-dirty to remove them anyway."
+    }
     exit 0
 fi
 
@@ -98,7 +110,14 @@ if ! $skip_confirm; then
     fi
 fi
 
+skipped_dirty=false
 for i in "${!repos[@]}"; do
     # shellcheck disable=SC2086
-    wt -C "${repos[$i]}" remove --force --yes $force_delete ${branches_list[$i]} || true
+    wt -C "${repos[$i]}" remove --yes $force_delete $force_dirty ${branches_list[$i]} || skipped_dirty=true
 done
+
+if $skipped_dirty; then
+    echo ""
+    echo "Some worktrees have uncommitted changes and were kept."
+    echo "Rerun with --force-dirty to remove them anyway."
+fi
