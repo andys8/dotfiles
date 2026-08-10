@@ -87,6 +87,10 @@ ln -sf ~/dotfiles/lsd.yaml ~/.config/lsd/config.yaml
 mkdir -p ~/.config/worktrunk
 ln -sf ~/dotfiles/wt.toml ~/.config/worktrunk/config.toml
 
+# Herdr
+mkdir -p ~/.config/herdr
+ln -sf ~/dotfiles/herdr.toml ~/.config/herdr/config.toml
+
 # Yabai
 ln -sf ~/dotfiles/yabai/yabairc ~/.yabairc
 ln -sf ~/dotfiles/yabai/skhdrc ~/.skhdrc
