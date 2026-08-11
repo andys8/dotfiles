@@ -209,10 +209,9 @@ let g:rooter_targets = '*'
 let g:rooter_silent_chdir = 1
 let g:rooter_patterns = [
       \ 'spago.dhall',
-      \ 'package.json',
       \ 'elm.json',
       \ 'stack.yaml',
-      \ '.git/',
+      \ '.git',
       \ 'pom.xml',
       \ 'requirements.txt'
       \ ]

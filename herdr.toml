@@ -9,7 +9,7 @@
 # Built-in themes: catppuccin, terminal, tokyo-night, dracula, nord,
 #                  gruvbox, one-dark, solarized, kanagawa, rose-pine,
 #                  vesper
-# name = "catppuccin"
+name = "dracula"
 
 # Follow host terminal light/dark appearance and switch Herdr UI themes.
 # Existing manual behavior is unchanged unless this is true.
@@ -113,6 +113,28 @@
 # navigate_pane_down = "j"
 # navigate_pane_up = "k"
 # navigate_pane_right = "l"     # right arrow always focuses the pane to the right
+
+# Worktree management delegates to worktrunk (wt) via the herdr-worktrunk plugin
+# (https://github.com/devashish2203/herdr-worktrunk), so worktrees land as sibling
+# directories (<repo>.<branch>) per wt.toml instead of herdr's [worktrees] root layout.
+# Install: herdr plugin install devashish2203/herdr-worktrunk
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+[[keys.command]]
+key = "prefix+shift+c"
+type = "plugin_action"
+command = "worktrunk.open-current"
+description = "Worktree: switch / create from current branch"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
 
 # Custom commands use the same binding syntax.
 # type = "shell" runs detached in the background.
