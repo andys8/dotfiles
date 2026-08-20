@@ -149,6 +149,7 @@ abbr -a -- markdown-preview 'gh markdown-preview'
 abbr -a -- markdownpreview 'gh markdown-preview'
 abbr -a -- mirror 'autorandr common'
 abbr -a -- mp 'gh markdown-preview'
+abbr -a -- mpl 'gh markdown-preview --light-mode'
 abbr -a --set-cursor=%  -- nmp 'nohup gh markdown-preview % &'
 abbr -a -- ng 'nix-env -qaP | grep'
 abbr -a -- ns nix-search
