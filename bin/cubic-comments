@@ -1,0 +1,68 @@
+#!/bin/bash
+set -euo pipefail
+
+usage() {
+    echo "Usage: $(basename "$0") [pr-number|pr-url] [-R owner/repo] [--author login]" >&2
+    exit 1
+}
+
+ARG=""
+REPO=""
+AUTHOR="cubic-dev-ai[bot]"
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -R)
+            REPO="$2"
+            shift 2
+            ;;
+        --author)
+            AUTHOR="$2"
+            shift 2
+            ;;
+        -h|--help)
+            usage
+            ;;
+        *)
+            if [ -n "$ARG" ]; then
+                usage
+            fi
+            ARG="$1"
+            shift
+            ;;
+    esac
+done
+
+if [[ "$ARG" =~ ^https://github\.com/([^/]+)/([^/]+)/pull/([0-9]+)(/.*)?$ ]]; then
+    REPO="${BASH_REMATCH[1]}/${BASH_REMATCH[2]}"
+    PR_NUMBER="${BASH_REMATCH[3]}"
+elif [[ "$ARG" =~ ^[0-9]+$ ]]; then
+    PR_NUMBER="$ARG"
+    if [ -z "$REPO" ]; then
+        REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+    fi
+elif [ -z "$ARG" ]; then
+    if [ -z "$REPO" ]; then
+        REPO=$(gh repo view --json nameWithOwner -q .nameWithOwner)
+    fi
+    PR_NUMBER=$(gh pr view --json number -q .number)
+else
+    echo "Error: argument must be a PR number or a GitHub PR URL" >&2
+    exit 1
+fi
+
+BODY=$(gh api "repos/$REPO/pulls/$PR_NUMBER/reviews" | jq -r --arg author "$AUTHOR" \
+    '[.[] | select(.user.login == $author)] | last | .body // ""')
+
+if [ -z "$BODY" ]; then
+    echo "No reviews found from $AUTHOR on $REPO#$PR_NUMBER."
+    exit 0
+fi
+
+CLEANED=$(printf '%s\n' "$BODY" | grep -v '^<!--')
+
+if printf '%s\n' "$CLEANED" | grep -q '```text'; then
+    printf '%s\n' "$CLEANED" | sed -n '/```text/,/```/p' | sed '1d;$d'
+else
+    printf '%s\n' "$CLEANED" | sed -n '/^\*\*.*issues found/p' | head -1
+fi

@@ -24,6 +24,7 @@ packages=(
     prettier                          # JS/TS/CSS/Markdown formatter
     qrcode-terminal                   # Encode text as QR code
     secure-rm-cli                     # secure delete
+    typescript-language-server        # used by claude
     typescript@6.0.3                  # TS compiler
     write-good                        # check and improve written text
 )
