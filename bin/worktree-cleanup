@@ -38,8 +38,8 @@ stale_branches_for() {
         ((created < cutoff)) && echo "$branch"
     done < <(
         wt -C "$dir" list --format=json 2>/dev/null |
-            jq -r --argjson cutoff "$cutoff" \
-                '.[] | select(.is_main == false and .kind == "worktree" and .branch != null and .commit.timestamp < $cutoff) | [.branch, .path] | @tsv'
+            jq -r \
+                '.items[] | select(.worktree.main == false and .branch != null) | [.branch, .worktree.path] | @tsv'
     )
 }
 

@@ -3,19 +3,19 @@ set -euo pipefail
 
 # Clean trash directory
 echo ">> Cleaning trash"
-(cd ~ && trash-empty -f 14)
+(cd ~ && trash-empty -f 7)
 
 # Docker
 # Note: volumes are intentionally left alone. `docker volume prune` has no
 # age-based filter, so it would risk deleting project data (e.g. dev DBs in
 # developer-portal) that just isn't in active use right now. Prune volumes
 # manually and deliberately if disk space is still tight after this.
-# if [ -x "$(command -v "docker")" ]; then
-#     echo ">> Cleaning docker (older 720h ~ 1 month)"
-#     docker image prune -f -a --filter "until=720h"
-#     docker container prune --filter "until=720h"
-#     docker builder prune -f --filter "until=720h"
-# fi
+if [ -x "$(command -v "docker")" ]; then
+    echo ">> Cleaning docker (older 720h ~ 1 month)"
+    docker image prune -f -a --filter "until=720h"
+    docker container prune --filter "until=720h"
+    # docker builder prune -f --filter "until=720h"
+fi
 
 # Colima
 # `colima prune` only clears cached downloaded VM assets, not space freed by
