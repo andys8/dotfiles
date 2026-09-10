@@ -18,12 +18,12 @@
     <key>SoftResourceLimits</key>
     <dict>
         <key>NumberOfFiles</key>
-        <integer>4096</integer>
+        <integer>65536</integer>
     </dict>
     <key>HardResourceLimits</key>
     <dict>
         <key>NumberOfFiles</key>
-        <integer>4096</integer>
+        <integer>65536</integer>
     </dict>
     <key>StandardOutPath</key>
     <string>/tmp/alacritty-daemon.log</string>
