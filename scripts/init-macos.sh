@@ -72,13 +72,6 @@ if command -v skhd &>/dev/null; then
     skhd --start-service
 fi
 
-# alacritty daemon (skip if already loaded, it may be hosting open windows)
-if $reset_daemons; then
-    killall alacritty &>/dev/null || true
-fi
-launchctl print gui/$(id -u)/com.local.alacritty-daemon &>/dev/null ||
-    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
-
 # chrome daemon (skip if already loaded, it may be hosting open windows)
 if $reset_daemons; then
     killall "Google Chrome" &>/dev/null || true
@@ -87,4 +80,13 @@ launchctl print gui/$(id -u)/com.local.chrome-daemon &>/dev/null ||
     launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.chrome-daemon.plist
 
 echo "Init mac os done"
+
+# alacritty daemon (skip if already loaded, it may be hosting open windows)
+# run last: killing alacritty here also kills the terminal running this script
+if $reset_daemons; then
+    killall alacritty &>/dev/null || true
+fi
+launchctl print gui/$(id -u)/com.local.alacritty-daemon &>/dev/null ||
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.local.alacritty-daemon.plist
+
 exit 0
