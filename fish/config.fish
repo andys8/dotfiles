@@ -28,6 +28,7 @@ set -U theme_display_git_dirty yes
 set -U theme_display_git_dirty_verbose no
 set -U theme_display_git_stashed_verbose no
 set -U theme_display_git_untracked no
+set -U theme_display_go no
 set -U theme_display_hg no
 set -U theme_display_k8s_context no
 set -U theme_display_nix no
