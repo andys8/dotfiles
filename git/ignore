@@ -229,3 +229,5 @@ tasks/prd-*.md
 
 # Superset
 .superset/
+
+**/.claude/.cc-writes/
