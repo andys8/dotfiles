@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+# Some apps (e.g. Slack) hide their window on close instead of destroying it,
+# so yabai keeps an empty tile. Float those windows and tile them again once
+# they are visible. https://github.com/asmvik/yabai/issues/2828
+
+state=/tmp/yabai-untiled-hidden
+touch "$state"
+
+for id in $(cat "$state"); do
+    case $(yabai -m query --windows --window "$id" 2>/dev/null | jq -r '"\(."is-visible") \(."is-floating")"') in
+    "false "*) ;;
+    "true true") yabai -m window "$id" --toggle float && sed -i '' "/^$id\$/d" "$state" ;;
+    *) sed -i '' "/^$id\$/d" "$state" ;;
+    esac
+done
+
+spaces=$(yabai -m query --spaces | jq -c 'map(select(."is-visible").index)')
+
+yabai -m query --windows |
+    jq -r --argjson spaces "$spaces" '.[]
+        | select(.space | IN($spaces[]))
+        | select((."is-visible" or ."is-floating" or ."is-minimized" or ."is-hidden") | not)
+        | .id' |
+    while read -r id; do
+        yabai -m window "$id" --toggle float
+        echo "$id" >>"$state"
+    done

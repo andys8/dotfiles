@@ -46,6 +46,9 @@ yabai -m rule --add app="^OpenSuperWhisper$" manage=on
 
 # signals
 # yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# Workaround for apps that hide windows on close (Slack). Remove with bin/yabai-untile-hidden once fixed upstream:
+# https://github.com/asmvik/yabai/issues/2828
+yabai -m signal --add label=untile_hidden event=application_front_switched action="lockf -s -t 0 /tmp/yabai-untiled-hidden.lock yabai-untile-hidden"
 
 # Zoom workaround
 # <https://github.com/koekeishiya/yabai/issues/1706#issuecomment-1510572076<

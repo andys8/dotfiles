@@ -41,8 +41,8 @@ alt - e : yabai -m window --toggle split
 alt - r : yabai -m window --toggle split
 
 # close window
-alt - x : yabai -m window --close
-alt - escape : yabai -m window --close
+alt - x : yabai -m window --close || skhd -k "cmd - w"
+alt - escape : yabai -m window --close || skhd -k "cmd - w"
 
 # minimize window
 # alt - m : yabai -m window --minimize
